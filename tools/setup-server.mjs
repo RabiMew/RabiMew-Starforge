@@ -9,6 +9,7 @@ import { spawnSync, execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { checkNode, findJava21 } from './lib/env.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const run = (...args) => {
@@ -16,14 +17,9 @@ const run = (...args) => {
   if (r.status !== 0) throw new Error(`command failed: ${args.join(' ')}`);
 };
 
-// 1. Java 21
-const javaExe = process.env.STARFORGE_JAVA ?? 'java';
-const v = spawnSync(javaExe, ['-version'], { encoding: 'utf8' });
-const vm = (v.stderr + v.stdout).match(/version "(\d+)/);
-if (!vm || +vm[1] !== 21) {
-  console.error(`need Java 21 (got ${vm?.[1] ?? 'none'}). Install Temurin 21 or set STARFORGE_JAVA.`);
-  process.exit(1);
-}
+// 1. Node + Java 21 (STARFORGE_JAVA -> PATH -> installed JDK scan)
+checkNode();
+const javaExe = findJava21();
 console.log('java 21 ok');
 
 // 2. NeoForge dedicated server
@@ -46,8 +42,8 @@ if (!existsSync(argsFile)) {
 if (!existsSync(argsFile)) throw new Error('neoforge install did not produce win_args.txt');
 console.log('neoforge server ok');
 
-// 3-4. mods + pack
-run('node', 'tools/fetch-mods.mjs');
+// 3-4. mods + pack (lockfile-pinned downloads; never re-resolves versions)
+run('node', 'tools/fetch-mods.mjs', '--locked');
 run('node', 'tools/sync-mods.mjs', 'server');
 run('node', 'tools/sync-pack.mjs', 'server');
 

@@ -29,16 +29,38 @@ Minecraft 1.21.1 / NeoForge 21.1.x 的工业科幻整合包，**Alpha（服务�
 node tools/validate-design.mjs
 ```
 
-## 安装与启动（Alpha）
+## 玩家安装（Alpha）
 
-要求：Node.js ≥ 20、**Java 21**（Temurin 21 推荐；非默认 java 时设 `STARFORGE_JAVA` 指向 `java` 可执行文件）。
+正式发布包是标准 Modrinth `.mrpack`：`starforge-alpha-<version>.mrpack`（见 GitHub Releases / `dist/`）。它声明 Minecraft 1.21.1 + NeoForge 21.1.251 与全部客户端模组的官方下载地址，可被 **Prism Launcher**、**HMCL**、**PCL** 直接导入——不使用任何启动器私有格式。
+
+安装步骤（三个启动器通用）：
+
+1. 下载 `starforge-alpha-<version>.mrpack`
+2. 打开启动器，选择"导入整合包 / 新建实例 → 导入"
+3. 选择该 `.mrpack` 文件
+4. 等待启动器按清单下载模组（全部来自官方来源并经 hash 校验）
+5. 启动游戏
+
+> 第三方模组 jar 不随 `.mrpack` 分发；导入时由启动器从 Modrinth / CurseForge CDN / GitHub Releases / FTB Maven 等官方地址下载。个别仅有 CurseForge CDN 地址的模组在 `dist/client-package-report.md` 中逐条记录。
+
+## 开发者客户端
+
+要求：Node.js ≥ 20、**Java 21**（Temurin 21 推荐；脚本会依次尝试 `STARFORGE_JAVA` → PATH → 常见 JDK 安装目录自动定位 21）。
 
 ```sh
 git clone <repo> && cd "RabiMew's Starforge"
+node tools/setup-client.mjs
+```
+
+构建 `run/client/`（mods 仅含 `side=both|client`、pack/ 覆盖层），用于本地开发调试。另有 `node tools/package-client.mjs --local` 生成本机测试 ZIP（内含完整 jar，标记 **LOCAL TEST ONLY**，不发布、不入库、不代表已获得再分发许可）。
+
+## 开发者服务端
+
+```sh
 node tools/setup-server.mjs
 ```
 
-setup 会校验 Java 21、下载并安装 NeoForge 21.1.251 专用服务端到 `run/server/`、按 `manifest/locked-mods.json` 从官方来源（Modrinth CDN / CurseForge CDN / GitHub Releases / FTB Maven）下载全部锁定模组并校验哈希、同步 `pack/` 配置与 KubeJS 脚本、写入 eula 与基线 `server.properties`。第三方 jar 不入库，全部经 manifest 合法解析。
+setup 会校验 Java 21、下载并安装 NeoForge 21.1.251 专用服务端到 `run/server/`、按 `manifest/locked-mods.json` 固定 URL 下载全部锁定模组并校验哈希、同步 `pack/` 配置与 KubeJS 脚本、写入 eula 与基线 `server.properties`。第三方 jar 不入库，全部经 manifest 合法解析。
 
 启动：
 
@@ -49,7 +71,20 @@ java @user_jvm_args.txt @libraries/net/neoforged/neoforge/21.1.251/win_args.txt 
 
 无参验证：`node tools/check-mapping.mjs`（语义映射+阶段锁）、`node tools/check-closure.mjs <id...>`（地球生产闭环）、RCON 运行时阶段自测 `node tools/rcon.mjs stagetest`。
 
-打包分发：`node tools/package.mjs` → `dist/starforge-alpha-*.zip`（不含第三方 jar）。
+> **安全默认值**：自动生成的 `server.properties` 设 `online-mode=false`、RCON 密码 `starforge`——**仅供本地开发测试**。公开服务器必须改为 `online-mode=true` 并更换独立 RCON 密码或关闭 RCON。
+
+## 生成 Release
+
+```sh
+node tools/release.mjs          # 完整流水线
+node tools/release.mjs --local  # 额外产出开发者本地测试 ZIP
+```
+
+流水线：validate-design → build-pack → fetch-mods（锁定 hash 校验）→ dependency audit → client/server sync → `.mrpack` + server zip → verify-release → `dist/release-report.md`。任一步失败立即中止，不产出"看似成功"的 Release。
+
+版本号唯一来源是 `manifest/version.json`；模组版本、下载源、side、hash 唯一来源是 `manifest/locked-mods.json`。
+
+职责划分：`package-client.mjs` → 玩家 `.mrpack`；`package-server.mjs` → 服务端安装包；`package.mjs` → 源码/配置分发 ZIP（旧流程，保留）；`release.mjs` → 完整流水线。
 
 ## 署名与许可
 

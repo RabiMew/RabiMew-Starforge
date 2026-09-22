@@ -1,18 +1,39 @@
 // Resolves manifest/mod-list.json to real files, downloads them, hashes them,
 // and writes manifest/locked-mods.json. Jars land in mods/ (gitignored).
-// Usage: node tools/fetch-mods.mjs [--check]
+// Usage: node tools/fetch-mods.mjs [--check|--locked]
+//   (default)  re-resolve every source and rewrite locked-mods.json
+//   --check    re-resolve but only verify jars exist; does NOT rewrite the lockfile
+//   --locked   no resolution: download missing jars from the lockfile's pinned
+//              download_url, verify size+sha256+sha512, backfill sha1
 import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { ensureLockedJars, backfillSha1 } from './lib/jars.mjs';
+import { verifyLocked } from './lib/hash.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const listPath = path.join(root, 'manifest/mod-list.json');
 const lockPath = path.join(root, 'manifest/locked-mods.json');
 const modsDir = path.join(root, 'mods');
 const checkOnly = process.argv.includes('--check');
+const lockedMode = process.argv.includes('--locked');
 const list = JSON.parse(readFileSync(listPath, 'utf8'));
 mkdirSync(modsDir, { recursive: true });
+
+if (lockedMode) {
+  // Lockfile-pinned mode: fetch the exact files the lockfile declares, verify
+  // every hash, backfill sha1. Never re-resolves upstream versions.
+  const lock = JSON.parse(readFileSync(lockPath, 'utf8'));
+  const { jars, errors } = await ensureLockedJars(lock);
+  if (errors.length) {
+    for (const e of errors) console.error(`FAIL ${e}`);
+    process.exit(1);
+  }
+  const n = backfillSha1(lock, jars);
+  console.log(`locked: ${jars.size} mods verified` + (n ? `, backfilled sha1 on ${n}` : ''));
+  process.exit(0);
+}
 
 const HEADERS = { 'User-Agent': 'RabiMew-Starforge/modpack-dev (github.com/RabiMew/RabiMew-Starforge)' };
 
@@ -131,5 +152,9 @@ for (const mod of list.mods) {
   console.log(`OK   ${mod.key} = ${r.version} (${r.filename})`);
 }
 
-writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n');
-console.log(`\nWrote ${lockPath}: ${lock.mods.filter((m) => m.enabled).length} enabled mods.`);
+if (checkOnly) {
+  console.log(`\n--check: all resolved files present in mods/; lockfile left untouched.`);
+} else {
+  writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n');
+  console.log(`\nWrote ${lockPath}: ${lock.mods.filter((m) => m.enabled).length} enabled mods.`);
+}
