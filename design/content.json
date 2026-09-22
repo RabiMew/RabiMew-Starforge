@@ -739,6 +739,18 @@
     {
       "id": "horde_engineers",
       "text_key": "modpack.tutorial.horde_engineers"
+    },
+    {
+      "id": "storage_progression",
+      "text_key": "modpack.tutorial.storage_progression"
+    },
+    {
+      "id": "backpack_kit",
+      "text_key": "modpack.tutorial.backpack_kit"
+    },
+    {
+      "id": "unified_oil",
+      "text_key": "modpack.tutorial.unified_oil"
     }
   ],
   "bosses": [

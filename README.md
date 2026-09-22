@@ -13,6 +13,7 @@ Minecraft 1.21.1 / NeoForge 的工业科幻整合包设计基线，版本 0.1，
 | 科技树、七条专业路线、配方与资源经济 | [总体设计](docs/design.md) |
 | 怪潮、星球生态、多人规则与性能预算 | [攻防与殖民](docs/defense-and-colonies.md) |
 | 模组版本证据、能力边界与适配事项 | [兼容性核查](docs/compatibility.md) |
+| 性能模组分侧、真实热点与验收原则 | [性能层](docs/performance.md) |
 | i18n、任务导出、实施顺序和验收 | [实施与验收](docs/implementation.md) |
 | 阶段、路线、任务和提示的语言键引用 | [内容目录](design/content.json) |
 | 自定义中文 / 英文文本 | [简体中文](localization/zh_cn.json) / [English](localization/en_us.json) |
