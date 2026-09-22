@@ -1,0 +1,14 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "ad_astra:lunar_wastelands"
+  ],
+  "spawners": [
+    {
+      "type": "creaturefeature:nothing",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

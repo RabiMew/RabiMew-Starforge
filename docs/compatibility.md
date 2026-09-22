@@ -31,7 +31,8 @@
 | Building Gadgets 2 | 1.3.9 | [作者项目页](https://www.curseforge.com/minecraft/mc-mods/building-gadgets) | 现代文件名是 BuildingGadgets2；库存复制、撤销和权限 |
 | Enderman Overhaul | 2.0.3 | [版本记录](https://modrinth.com/mod/enderman-overhaul/version/TH9YXp9r) | 真空环境、瞬移目标、主动敌对性与炮塔识别 |
 | Mutant Monsters | v21.1.1-1.21.1-NeoForge | [版本记录](https://modrinth.com/mod/mutant-monsters/version/dauEcrnZ) | 爆炸、实体体型、环境伤害、掉落 |
-| Phenominae | 1.3.3-neoforge-1.21.1 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/phenominae) | 可配置维度、实体创建来源、世界观和可控事件 |
+| Creature Feature | 1.2.3.3 | [Modrinth](https://modrinth.com/mod/creature-feature) | MIT；替代 Phenominae；稀有异常/特殊机制敌对生物，按自带生物群系标签低权重生成；依赖 Blueprint |
+| Arachnids | 0.3.0 | [Modrinth](https://modrinth.com/mod/arachnids) | MIT；星河战队式虫群敌人；默认仅沙漠/恶地生成，经 `kubejs/data` 生物群系标签扩展到金星/水星/霜原星，In Control 在月球/火星拒绝并在主世界限流；依赖 AzureLib |
 | Easy Villagers | neoforge-1.21.1-1.1.42 | [Modrinth](https://modrinth.com/mod/easy-villagers) | 许可证为保留所有权利，分发方式需确认；自动输入输出、漏斗/BC 管道/AE2 对接、村民 NBT 保留、多人、大量设施性能 |
 | Guard Villagers | 2.4.12 | [Modrinth](https://modrinth.com/mod/guard-villagers) | 自定义许可证；护甲/武器槽、巡逻 AI、团队与炮塔友军识别、怪潮互动、外星环境、大量守卫性能 |
 | TaCZ（非官方 NeoForge 移植） | 1.1.8-hotfix-r6 | [Modrinth](https://modrinth.com/mod/tacz-1.21.1) | GPL-3.0-only；非官方移植质量基线、枪包格式、武器数据配置、弹药/附件、爆头与护甲计算、服务端 MSPT 与客户端 FPS |

@@ -15,6 +15,7 @@
 - [P0] `tools/audit-deps.mjs`：直接解析每个 JAR 内 `META-INF/neoforge.mods.toml`/`mods.toml`，验证必需依赖闭包（首次运行即捕获 `guideme`、`common_storage_lib`、`mezz_config` 缺失，已补齐）。
 - [P0] 完整 65-mod 服务端组合启动通过：NeoForge 加载 73.9s，世界生成 + Done 正常，无模组级 ERROR（除下述 incontrol 警告）。
 - [P0] KubeJS 注册表/配方导出器 `pack/kubejs/server_scripts/starforge_dump.js`：输出 item/block/fluid/entity_type/recipe_type/recipe_serializer/mob_effect、item/block/fluid/entity 标签全集、levels/dimensions/dimension_types，以及 6595 条配方（6420 条含完整 JSON 与 ingredient 明细，175 条为不可编码类型）。导出物在 `registry-export/`。
+- 模组集变更（锁定侧已生效，运行时未复测）：移除 Phenominae 1.3.3（CurseForge 源，分发条款不明）；新增 Creature Feature 1.2.3.3 + Arachnids 0.3.0（均 Modrinth/MIT）及其依赖 Blueprint 8.2.0、AzureLib 3.1.11。当前 76 个启用模组（both 65 / client 8 / server 3）。上述 65/71-mod 服务端实测记录基于旧模组集；新集合（含 Blueprint/AzureLib 与 In Control/KubeJS 生成规则）尚未做运行时验证。
 
 ## 已确认的关键真实 ID（示例，完整见 registry-export/）
 

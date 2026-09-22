@@ -749,8 +749,7 @@
 		"minecraft:wooden_axe",
 		"minecraft:wooden_hoe",
 		"minecraft:wooden_pickaxe",
-		"minecraft:wooden_shovel",
-		"phenominae:monolithic_ufo_attractor"
+		"minecraft:wooden_shovel"
 	],
 	"supplementaries:blackboard_yellow": [
 		"minecraft:yellow_dye"
@@ -1125,8 +1124,7 @@
 		"minecraft:iron_pickaxe",
 		"minecraft:netherite_pickaxe",
 		"minecraft:stone_pickaxe",
-		"minecraft:wooden_pickaxe",
-		"phenominae:monolithic_ufo_attractor"
+		"minecraft:wooden_pickaxe"
 	],
 	"c:storage_blocks/diamond": [
 		"minecraft:diamond_block"
@@ -1408,8 +1406,7 @@
 		"minecraft:leather_helmet",
 		"minecraft:netherite_helmet",
 		"minecraft:turtle_helmet",
-		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet"
+		"mutantmonsters:mutant_skeleton_skull"
 	],
 	"c:tools/mining_tool": [
 		"minecraft:diamond_pickaxe",
@@ -1810,8 +1807,7 @@
 		"mutantmonsters:mutant_skeleton_boots",
 		"mutantmonsters:mutant_skeleton_chestplate",
 		"mutantmonsters:mutant_skeleton_leggings",
-		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet"
+		"mutantmonsters:mutant_skeleton_skull"
 	],
 	"c:sheetmetals/iron": [
 		"immersiveengineering:sheetmetal_iron"
@@ -2129,8 +2125,7 @@
 		"minecraft:wooden_axe",
 		"minecraft:wooden_hoe",
 		"minecraft:wooden_pickaxe",
-		"minecraft:wooden_shovel",
-		"phenominae:monolithic_ufo_attractor"
+		"minecraft:wooden_shovel"
 	],
 	"c:crops/onion": [
 		"farmersdelight:onion"
@@ -2204,8 +2199,7 @@
 		"minecraft:wooden_hoe",
 		"minecraft:wooden_pickaxe",
 		"minecraft:wooden_shovel",
-		"minecraft:wooden_sword",
-		"phenominae:monolithic_ufo_attractor"
+		"minecraft:wooden_sword"
 	],
 	"rechiseled:spruce_planks_slabs": [
 		"rechiseled:spruce_planks_beams_slab",
@@ -4368,8 +4362,6 @@
 		"mutantmonsters:mutant_skeleton_chestplate",
 		"mutantmonsters:mutant_skeleton_leggings",
 		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet",
-		"phenominae:monolithic_ufo_attractor",
 		"supplementaries:bubble_blower",
 		"supplementaries:enderman_head",
 		"supplementaries:slingshot",
@@ -5080,8 +5072,7 @@
 		"minecraft:netherite_chestplate",
 		"minecraft:netherite_helmet",
 		"minecraft:netherite_leggings",
-		"minecraft:turtle_helmet",
-		"phenominae:foil_hat_helmet"
+		"minecraft:turtle_helmet"
 	],
 	"ad_astra:heat_resistant_armor": [
 		"ad_astra:jet_suit",
@@ -5365,8 +5356,6 @@
 		"mutantmonsters:mutant_skeleton_chestplate",
 		"mutantmonsters:mutant_skeleton_leggings",
 		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet",
-		"phenominae:monolithic_ufo_attractor",
 		"supplementaries:bubble_blower",
 		"supplementaries:enderman_head",
 		"supplementaries:slingshot",
@@ -7382,8 +7371,7 @@
 		"minecraft:leather_helmet",
 		"minecraft:netherite_helmet",
 		"minecraft:turtle_helmet",
-		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet"
+		"mutantmonsters:mutant_skeleton_skull"
 	],
 	"c:raw_materials/tin": [
 		"ic2cre:raw_tin"
@@ -7617,7 +7605,6 @@
 		"minecraft:wooden_pickaxe",
 		"minecraft:wooden_shovel",
 		"minecraft:wooden_sword",
-		"phenominae:monolithic_ufo_attractor",
 		"supplementaries:bubble_blower",
 		"supplementaries:slingshot",
 		"supplementaries:wrench"
@@ -11098,8 +11085,7 @@
 		"mutantmonsters:mutant_skeleton_boots",
 		"mutantmonsters:mutant_skeleton_chestplate",
 		"mutantmonsters:mutant_skeleton_leggings",
-		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet"
+		"mutantmonsters:mutant_skeleton_skull"
 	],
 	"c:gravels": [
 		"immersiveengineering:slag_gravel",
@@ -13488,7 +13474,6 @@
 		"mutantmonsters:mutant_skeleton_chestplate",
 		"mutantmonsters:mutant_skeleton_leggings",
 		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet",
 		"supplementaries:enderman_head",
 		"supplementaries:spider_head"
 	],
@@ -14083,7 +14068,6 @@
 		"minecraft:wooden_pickaxe",
 		"minecraft:wooden_shovel",
 		"minecraft:wooden_sword",
-		"phenominae:monolithic_ufo_attractor",
 		"supplementaries:bubble_blower",
 		"supplementaries:slingshot",
 		"supplementaries:wrench"
@@ -14523,8 +14507,6 @@
 		"mutantmonsters:mutant_skeleton_chestplate",
 		"mutantmonsters:mutant_skeleton_leggings",
 		"mutantmonsters:mutant_skeleton_skull",
-		"phenominae:foil_hat_helmet",
-		"phenominae:monolithic_ufo_attractor",
 		"supplementaries:slingshot",
 		"supplementaries:wrench"
 	],

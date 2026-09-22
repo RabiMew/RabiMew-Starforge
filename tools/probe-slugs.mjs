@@ -4,7 +4,7 @@ const slugs = [
   'the-hordes','zombies-break-and-build','defenseturrets','in-control','progressivestages',
   'kubejs','ftb-quests','farmers-delight','cooking-for-blockheads','rechiseled','framedblocks',
   'supplementaries','building-gadgets','building-gadgets2','enderman-overhaul','mutant-monsters',
-  'phenominae','easy-villagers','guard-villagers','tacz-1.21.1','guard-villagers-tacz-support',
+  'creature-feature','arachnids','easy-villagers','guard-villagers','tacz-1.21.1','guard-villagers-tacz-support',
   'polymorph','controlling','searchables','mouse-tweaks','crafting-tweaks','balm','appleskin',
   'jade-addons','jade','carry-on','jei','modernfix','ferrite-core','servercore','fastsuite',
   'placebo','let-me-despawn','almanac','clumps','sodium','immediatelyfast','entityculling',

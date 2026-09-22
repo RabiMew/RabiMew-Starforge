@@ -28,5 +28,21 @@
     "dimension": "ad_astra:glacio_orbit",
     "hostile": true,
     "result": "deny"
+  },
+  {
+    "dimension": "ad_astra:moon",
+    "mod": "arachnids",
+    "result": "deny"
+  },
+  {
+    "dimension": "ad_astra:mars",
+    "mod": "arachnids",
+    "result": "deny"
+  },
+  {
+    "dimension": "minecraft:overworld",
+    "mod": "arachnids",
+    "mincount": 16,
+    "result": "deny"
   }
 ]

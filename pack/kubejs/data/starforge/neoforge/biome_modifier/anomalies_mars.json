@@ -1,0 +1,16 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "ad_astra:martian_wastelands",
+    "ad_astra:martian_canyon_creek",
+    "ad_astra:martian_polar_caps"
+  ],
+  "spawners": [
+    {
+      "type": "creaturefeature:eeper",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "ad_astra:venus_wastelands",
+    "ad_astra:infernal_venus_barrens"
+  ],
+  "spawners": [
+    {
+      "type": "creaturefeature:fiend",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 1
+    },
+    {
+      "type": "creaturefeature:machination",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 1
+    }
+  ]
+}

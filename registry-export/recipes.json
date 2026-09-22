@@ -39197,8 +39197,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/diamond"
@@ -39230,7 +39230,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39259,7 +39259,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39288,8 +39288,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39324,8 +39324,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39362,8 +39362,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39400,8 +39400,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39438,8 +39438,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39476,8 +39476,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39514,8 +39514,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39552,8 +39552,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39590,8 +39590,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39628,8 +39628,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39666,8 +39666,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39704,8 +39704,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39742,8 +39742,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39780,8 +39780,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39818,8 +39818,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39856,8 +39856,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39894,8 +39894,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39932,8 +39932,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -39970,8 +39970,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40008,7 +40008,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40037,7 +40037,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40066,8 +40066,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40102,8 +40102,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:gate_copier"
@@ -40134,8 +40134,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/gold"
@@ -40167,8 +40167,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/iron"
@@ -40200,8 +40200,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40234,8 +40234,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40268,8 +40268,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40302,8 +40302,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40336,8 +40336,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40370,8 +40370,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40404,8 +40404,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40438,8 +40438,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40472,8 +40472,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40506,8 +40506,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40540,8 +40540,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40574,8 +40574,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40608,8 +40608,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40642,8 +40642,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40676,8 +40676,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40710,8 +40710,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40744,8 +40744,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40778,7 +40778,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40805,7 +40805,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40832,7 +40832,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40859,7 +40859,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40886,7 +40886,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40913,7 +40913,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40940,7 +40940,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40967,7 +40967,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -40994,7 +40994,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41021,7 +41021,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41048,7 +41048,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41075,7 +41075,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41102,7 +41102,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41129,7 +41129,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41156,7 +41156,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41183,7 +41183,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41210,7 +41210,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41237,7 +41237,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/light_sensor"
@@ -41262,8 +41262,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				2.0
+				1,
+				2
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/pulsar"
@@ -41297,7 +41297,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/timer"
@@ -41322,8 +41322,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/quartz"
@@ -41355,7 +41355,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/red"
@@ -41381,7 +41381,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_crystal"
@@ -41407,8 +41407,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/black",
@@ -41441,8 +41441,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/blue",
@@ -41475,8 +41475,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/brown",
@@ -41509,8 +41509,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/cyan",
@@ -41543,8 +41543,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/gray",
@@ -41577,8 +41577,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/green",
@@ -41611,8 +41611,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/light_blue",
@@ -41645,8 +41645,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/light_gray",
@@ -41679,8 +41679,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/lime",
@@ -41713,8 +41713,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/magenta",
@@ -41747,8 +41747,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/orange",
@@ -41781,8 +41781,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/pink",
@@ -41815,8 +41815,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/purple",
@@ -41849,8 +41849,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/red",
@@ -41883,8 +41883,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/white",
@@ -41917,8 +41917,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/yellow",
@@ -115417,7 +115417,7 @@
 		"serializer": "immersiveengineering:turn_and_copy",
 		"json": {
 			"copyNBT": [
-				0.0
+				0
 			],
 			"key": {
 				"c": {
@@ -134313,7 +134313,7 @@
 		"serializer": "immersiveengineering:turn_and_copy",
 		"json": {
 			"copyNBT": [
-				4.0
+				4
 			],
 			"quarter_turn": true,
 			"key": {
@@ -134521,9 +134521,9 @@
 			},
 			"category": "misc",
 			"copyNBT": [
-				1.0,
-				4.0,
-				6.0
+				1,
+				4,
+				6
 			]
 		},
 		"ingredients": [
@@ -208162,214 +208162,6 @@
 			}
 		],
 		"result": "mutantmonsters:mutant_skeleton_rib_cage x1"
-	},
-	{
-		"id": "phenominae:atmosp",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"item": "phenominae:monofragment"
-				},
-				"b": {
-					"item": "minecraft:iron_bars"
-				},
-				"c": {
-					"item": "minecraft:redstone_lamp"
-				}
-			},
-			"pattern": [
-				"aba",
-				"aca"
-			],
-			"result": {
-				"id": "phenominae:atmospheric_monolith_decoder",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"item": "minecraft:iron_bars"
-			},
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"item": "minecraft:redstone_lamp"
-			},
-			{
-				"item": "phenominae:monofragment"
-			}
-		],
-		"result": "phenominae:atmospheric_monolith_decoder x1"
-	},
-	{
-		"id": "phenominae:coremono",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:stones"
-				},
-				"b": {
-					"item": "phenominae:monofragment"
-				},
-				"c": {
-					"item": "phenominae:domonolyth_head"
-				}
-			},
-			"pattern": [
-				"aaa",
-				"bcb",
-				"aaa"
-			],
-			"result": {
-				"id": "phenominae:mono_core",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:stones"
-			},
-			{
-				"tag": "c:stones"
-			},
-			{
-				"tag": "c:stones"
-			},
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"item": "phenominae:domonolyth_head"
-			},
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"tag": "c:stones"
-			},
-			{
-				"tag": "c:stones"
-			},
-			{
-				"tag": "c:stones"
-			}
-		],
-		"result": "phenominae:mono_core x1"
-	},
-	{
-		"id": "phenominae:decoder_text",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"item": "phenominae:monofragment"
-				},
-				"b": {
-					"tag": "c:glass_blocks/cheap"
-				},
-				"c": {
-					"item": "minecraft:stone_button"
-				}
-			},
-			"pattern": [
-				"aba",
-				"aca"
-			],
-			"result": {
-				"id": "phenominae:atmospheric_monolith_decoder_text",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"tag": "c:glass_blocks/cheap"
-			},
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"item": "minecraft:stone_button"
-			},
-			{
-				"item": "phenominae:monofragment"
-			}
-		],
-		"result": "phenominae:atmospheric_monolith_decoder_text x1"
-	},
-	{
-		"id": "phenominae:foil",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"item": "minecraft:iron_nugget"
-				},
-				"b": {
-					"item": "minecraft:amethyst_shard"
-				},
-				"c": {
-					"item": "phenominae:monofragment"
-				}
-			},
-			"pattern": [
-				" a ",
-				"aba",
-				"aca"
-			],
-			"result": {
-				"id": "phenominae:foil_hat_helmet",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			[],
-			{
-				"item": "minecraft:iron_nugget"
-			},
-			[],
-			{
-				"item": "minecraft:iron_nugget"
-			},
-			{
-				"item": "minecraft:amethyst_shard"
-			},
-			{
-				"item": "minecraft:iron_nugget"
-			},
-			{
-				"item": "minecraft:iron_nugget"
-			},
-			{
-				"item": "phenominae:monofragment"
-			},
-			{
-				"item": "minecraft:iron_nugget"
-			}
-		],
-		"result": "phenominae:foil_hat_helmet x1"
 	},
 	{
 		"id": "rechiseled:chisel",

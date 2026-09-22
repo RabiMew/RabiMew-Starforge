@@ -37,7 +37,8 @@
 | 农夫乐事 / 懒人厨房 | 烹饪、厨房储备与基地食堂 | 农产供餐、供 IE 生物燃料；工业回馈设施 | 矿区、前线和殖民据点持续需要补给 |
 | Rechiseled / FramedBlocks / Supplementaries | 外观、结构造型、标识与实用设施 | 消耗标准建筑材料；按实际功能调整配方 | 工业建筑与防御空间设计，不以摆家具计分 |
 | Building Gadgets 2 | 批量施工 | IC2 电池、电路、IE 材料、后期 AE2 部件 | 建筑师承担大型工厂与殖民扩建 |
-| Enderman Overhaul / Mutant Monsters / Phenominae | 定向敌对生态候选 | 进入维度白名单、遗迹或异常事件池 | 补战术角色，禁止所有生物全维度随机混刷 |
+| Enderman Overhaul / Mutant Monsters / Creature Feature | 定向敌对生态候选 | 进入维度白名单、遗迹或异常事件池 | 补战术角色，禁止所有生物全维度随机混刷 |
+| Arachnids | 虫群/区域威胁 | 主世界仅限沙漠与恶地；经生物群系标签扩展到金星、水星、霜原星；月球与火星禁用 | 提供大规模战斗与基地防御压力，不替代异常生物定位 |
 
 Polymorph、Controlling、Mouse Tweaks、Crafting Tweaks、AppleSkin、Jade Addons 属体验辅助层，性能模组属运维层：均不进入科技树、不产生新路线，职责与装载侧见[兼容性核查](compatibility.md)与[性能层](performance.md)。不加入 Iron Chests、Tom's Simple Storage 或其他与 AE2 定位重复的大型数字仓储。不引入 MineColonies、MCA Reborn、TACZ NPCs 或大型 RPG NPC 系统；殖民人口与驻军体系见[殖民人口与驻军](colonies.md)，战斗数值验收见[战斗基准](combat-benchmark.md)。
 
