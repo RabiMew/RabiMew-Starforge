@@ -20,6 +20,33 @@ Integration hooks verified against the jar, not old wikis:
 - `c:creosote` fluid tag now spans railcraft + IE + ic2cre creosote (pack fluid bridge); `c:buckets/creosote` item tag added and `railcraft:wooden_tie` rewritten to accept it (creosote mutual recognition).
 - No worldspike/chunk-loading toggle exists in `railcraft-server.toml` — the worldspike family is gated by the T4 stage lock instead of a config switch.
 
+## Addendum — 2026-09-22 QoL/perf expansion (98 enabled, 2 candidates)
+
+QoL layer + performance layer added; all resolved via `tools/fetch-mods.mjs` from Modrinth/CurseForge/GitHub and verified in a real Prism client + dedicated-server session.
+
+| Mod | Locked | Side | Evidence |
+|---|---|---|---|
+| EMI | 1.1.24+1.21.1+neoforge | client | Primary browser; bundled JEMI imported **80 JEI categories** incl. IC2CRE/BC CE/IE/IP/Ad Astra/TaCZ; AE2/FD/Sophisticated/KubeJS/Railcraft use native EMI plugins; 63,630 recipes baked in live session |
+| Inventory Profiles Next | 2.2.5 | client | deps libIPN 6.6.3 + KotlinForForge 5.12.0 auto-resolved; hotkeys except middle-click sort cleared via `inventoryprofiles.json`; built-in hints already cover AE2/IE/Sophisticated screens, pack adds TaCZ refit/smith screens |
+| Xaero's Minimap | 26.5.0 (+xaerolib 1.7.3 jar-in-jar) | both | server profile enforcement live: `default_enforced_profile=default` in minimap/world-map/lib `common.cfg`; radar + cave mode off |
+| Xaero's World Map | 1.46.0 | both | same enforcement channel |
+| Shulker Box Tooltip | 5.1.9 | client | compact preview, Shift expands (upstream default) |
+| BetterF3 | 11.0.3 | client | `pack/config/betterf3.toml` trims to minecraft/fps/coords/location/chunks/system + server/target; module ids & `[[modules_left]]` schema verified from `ModConfigFile` bytecode |
+| Better Ping Display | 1.1 | client | no keybinds |
+| Chat Heads | 0.15.7 | client | loaded; one cosmetic "no player name" warning |
+| 3D Skin Layers | 1.11.3 | client | co-loads with CSL, no conflicts logged |
+| CustomSkinLoader | 15.0.1 | client | co-loads with 3DSL; real skin fetch untested (offline test account) |
+| Default Options | 21.1.8 (+Balm) | client | `keybindings.txt` applied on clean install: `Applied 22 defaults (20 keys reconfigured)`, zero errors |
+| Controlling | 19.0.5 | client | conflict scan of generated options.txt: no impactful dupes remain (all surviving same-key pairs are GUI/context- or modifier-separated) |
+| Fast Noise | 1.0.13 (`zfastnoise`) | both | loaded; upstream incompatibility list (moonrise/antixray) absent |
+| Structure Layout Optimizer | 1.0.12 | both | loaded; Ad Astra structure locate checks pass |
+| AllTheLeaks | 1.1.13 | both | version-guarded fixes engage (e.g. `betterf3.FixDebugScreen` matched 11.0.3) |
+| Mem Leak Fix GPU | 1.8 (`gpumemleakfix`) | client | loaded with Sodium+ImmediatelyFast, no render errors in log |
+
+Keybind delivery: `pack/config/defaultoptions/keybindings.txt` — only fires on factory-default mappings, so updating the pack never resets player-customized keys. Full mapping table and the duplicate-key audit are in `docs/compatibility.md`.
+
+Known limitation (verified, not hidden): JEI 19.57 stores `overlayEnabled` only in memory (`ClientToggleState` bytecode; no config key exists) — hiding the JEI sidebar requires Ctrl+O per session. Immersive Petroleum reservoir `/place feature` deadlocks chunk gen → watchdog kill; natural generation unaffected (details in `docs/compatibility.md` §实测记录）.
+
 ## Method
 
 - Queried Modrinth API per project with `loaders=["neoforge"]`, `game_versions=["1.21.1"]`; selected the newest version **per release channel** and compared against `manifest/locked-mods.json`.

@@ -18,6 +18,10 @@ const send = (type, payload) => {
   return reqId++;
 };
 let authed = false;
+let responded = false;
+let idleTimer = null;
+const finish = (code) => { if (idleTimer) clearTimeout(idleTimer); sock.end(); setTimeout(() => process.exit(code), 50); };
+const armIdle = () => { if (idleTimer) clearTimeout(idleTimer); idleTimer = setTimeout(() => finish(0), 1200); };
 sock.on('connect', () => send(3, password));
 let buf = Buffer.alloc(0);
 sock.on('data', (d) => {
@@ -35,9 +39,10 @@ sock.on('data', (d) => {
       continue;
     }
     if (payload) console.log(payload);
-    sock.end();
+    responded = true;
+    armIdle();
   }
 });
-sock.on('close', () => process.exit(0));
+sock.on('close', () => process.exit(responded ? 0 : 0));
 sock.on('error', (e) => { console.error('rcon error:', e.message); process.exit(1); });
-setTimeout(() => { console.error('rcon timeout'); sock.destroy(); process.exit(1); }, 15000);
+setTimeout(() => { if (!responded) console.error('rcon timeout'); sock.destroy(); process.exit(responded ? 0 : 1); }, 20000);

@@ -18,6 +18,9 @@
 | FastSuite | 6.0.7（依赖 Placebo） | 双端 | 大量配方下的配方匹配开销 |
 | Let Me Despawn | 1.5.0（依赖 Almanac；依赖声明为服务端侧） | 服务端 | 避免怪潮与工程兵留下不正常的永久实体 |
 | Clumps | 19.0.0.1 | 双端 | 大规模战斗后合并经验球，减少实体数量 |
+| Fast Noise | 1.0.13+1.21.1（modid `zfastnoise`，MPL-2.0） | 双端 | 世界生成噪声计算开销；上游声明与 moonrise/antixray 不兼容（均未装）。已随服务器+客户端实测加载，维度/生物群系/结构定位正常；**尚未做同种子开关对比，不能宣称生成结果逐块一致** |
+| Structure Layout Optimizer | 1.0.12（依赖 resourceful-config，已装） | 双端 | 结构/Jigsaw 布局匹配开销；Ad Astra 各星球结构定位实测正常 |
+| AllTheLeaks | 1.1.13+1.21.1（CurseForge 独占） | 双端 | 已知模组/MC/NeoForge 内存泄漏修复集；遵守上游版本守卫，与 ModernFix 重叠项由其守卫逻辑自动跳过（实测日志按版本范围逐条判定加载） |
 
 ## 客户端候选
 
@@ -28,7 +31,8 @@
 | Sodium | 0.8.13+mc1.21.1 | 渲染管线重写；其元数据声明与 Embeddium 不兼容，二者不共装 |
 | ImmediatelyFast | 1.6.14+1.21.1 | 文本与界面渲染开销 |
 | Entity Culling | 1.11.2 | 不可见实体的渲染剔除 |
-| Dynamic FPS | 3.11.4 | 后台与失焦时的帧率限制 |
+| Dynamic FPS | 3.11.4 | 后台与失焦时的帧率限制；默认聚焦不限帧、失焦 30、最小化 10（`pack/config/dynamic_fps.json`） |
+| Mem Leak Fix GPU | 1.8+1.21.1（modid `gpumemleakfix`，MIT） | 客户端 RenderTarget/VRAM 泄漏清理；延迟队列释放，无强制 GC。与 Sodium+ImmediatelyFast 同实例实测加载无渲染错误日志；VRAM 长期表现仍需游玩观察 |
 
 ## 测试后决定
 
@@ -55,6 +59,8 @@
 - Railcraft 列车实体 tick（长编组 + 装卸站）、WorldSpike 强加载区块数（唯一强加载源，T4 阶段锁；`railcraft-server.toml` 无开关）、高速轨 `highSpeedTrackMaxSpeed`（默认 1.0，如 chunk 加载跟不上可调低）
 - Asteroid Belt 世界生成：jigsaw 小行星结构 + 两套维度；实测 Chunky 预生成 500 格半径 4225 区块约 32 秒，spark 采样已留存
 - 两个 Ad Astra 结构模组（More Structures + Simple Structures）同维度共存的结构密度与战利品开销
+- Immersive Petroleum 油藏特征：`/place feature` 强制放置会在 `FeatureReservoir.scanChunkForNewReservoirs` 的区块递归中挂死 watchdog（详见 compatibility.md 实测记录）；自然生成未见触发，但列为世界生成风险项
+- 2026-09-22 基线：独立服务器 17 维度全部 20 TPS、总 8.0 ms/tick（一玩家在线）；客户端进服 + EMI 烘焙 63630 配方 ~17s，无渲染异常日志
 
 ## 运行原则
 

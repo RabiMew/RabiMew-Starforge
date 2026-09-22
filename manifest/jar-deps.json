@@ -4,6 +4,7 @@
     "modIds": [
       "pv_ad_asterobelt"
     ],
+    "embeddedModIds": [],
     "deps": []
   },
   {
@@ -11,6 +12,7 @@
     "modIds": [
       "ad_astra_giselle_addon"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -54,6 +56,7 @@
     "modIds": [
       "ad_astra"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "resourcefullib",
@@ -83,6 +86,7 @@
     "modIds": [
       "ad_astra_more_structures"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -108,10 +112,92 @@
     ]
   },
   {
+    "file": "alltheleaks-1.1.13+1.21.1-neoforge.jar",
+    "modIds": [
+      "alltheleaks",
+      "neoforge"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,1.21.2)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "irons_spellbooks",
+        "type": "incompatible",
+        "versionRange": "(,1.21-3.4.4]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "railcraft",
+        "type": "incompatible",
+        "versionRange": "(,1.2.1]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "geckolib",
+        "type": "incompatible",
+        "versionRange": "(,4.5]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "entityculling",
+        "type": "incompatible",
+        "versionRange": "(,1.6.7]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "dummmmmmy",
+        "type": "incompatible",
+        "versionRange": "(,1.21-2.0.5]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "pneumaticcraft",
+        "type": "incompatible",
+        "versionRange": "(,8.0.3]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "ambientsounds",
+        "type": "incompatible",
+        "versionRange": "(,6.1.0]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "occultism",
+        "type": "incompatible",
+        "versionRange": "(,1.161.2]",
+        "reason": "Update mod above to include latest memory leak fixes!",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "Almanac-1.21.1-2-neoforge-1.5.2.jar",
     "modIds": [
       "almanac"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -134,6 +220,7 @@
     "modIds": [
       "appleskin"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -149,6 +236,7 @@
     "modIds": [
       "ae2"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -202,6 +290,7 @@
     "modIds": [
       "arachnids"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -231,6 +320,7 @@
     "modIds": [
       "architectury"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -253,6 +343,7 @@
     "modIds": [
       "atlaslib"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -273,6 +364,7 @@
     "modIds": [
       "azurelib"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -294,6 +386,9 @@
     "file": "balm-neoforge-1.21.1-21.0.65.jar",
     "modIds": [
       "balm"
+    ],
+    "embeddedModIds": [
+      "kuma_api"
     ],
     "deps": [
       {
@@ -317,6 +412,7 @@
     "modIds": [
       "betteradvancedtooltips"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -328,10 +424,49 @@
     ]
   },
   {
+    "file": "BetterF3-11.0.3-NeoForge-1.21.1.jar",
+    "modIds": [
+      "betterf3"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "[1.21,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "cloth_config",
+        "versionRange": "[15.0.0,)",
+        "mandatory": "true"
+      }
+    ]
+  },
+  {
+    "file": "BetterPingDisplay-1.21.1-1.1.jar",
+    "modIds": [
+      "betterpingdisplay",
+      "neoforge"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1, 1.22)",
+        "ordering": "NONE",
+        "side": "CLIENT"
+      }
+    ]
+  },
+  {
     "file": "blueprint-1.21.1-8.2.0.jar",
     "modIds": [
       "blueprint"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -362,6 +497,7 @@
       "buildcraftrobotics",
       "buildcraftcompat"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -637,6 +773,7 @@
       "buildinggadgets2",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -648,10 +785,34 @@
     ]
   },
   {
+    "file": "chat_heads-0.15.7-neoforge-1.21.jar",
+    "modIds": [
+      "chat_heads"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "mandatory": "true",
+        "versionRange": "[21.0.110-beta,)",
+        "ordering": "NONE",
+        "side": "CLIENT"
+      },
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "[1.21, 1.21.1]",
+        "ordering": "NONE",
+        "side": "CLIENT"
+      }
+    ]
+  },
+  {
     "file": "Chunky-NeoForge-1.4.23.jar",
     "modIds": [
       "chunky"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -670,10 +831,27 @@
     ]
   },
   {
+    "file": "cloth-config-15.0.140-neoforge.jar",
+    "modIds": [
+      "cloth_config"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.0.110-beta,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "Clumps-neoforge-1.21.1-19.0.0.1.jar",
     "modIds": [
       "clumps"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -696,6 +874,7 @@
     "modIds": [
       "common_storage_lib"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -718,6 +897,7 @@
     "modIds": [
       "controlling"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -747,6 +927,7 @@
     "modIds": [
       "cookingforblockheads"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -776,6 +957,7 @@
     "modIds": [
       "craftingtweaks"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -806,6 +988,9 @@
       "creaturefeature",
       "neoforge"
     ],
+    "embeddedModIds": [
+      "galena_hats"
+    ],
     "deps": [
       {
         "modId": "minecraft",
@@ -817,10 +1002,45 @@
     ]
   },
   {
+    "file": "CustomSkinLoader_Universal-15.0.1.jar",
+    "error": "no mods.toml"
+  },
+  {
+    "file": "defaultoptions-neoforge-1.21.1-21.1.8.jar",
+    "modIds": [
+      "defaultoptions"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21-beta,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "balm",
+        "type": "required",
+        "versionRange": "[21.0.39,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "defenseturrets-neoforge-1.21.1-1.2.0.jar",
     "modIds": [
       "defenseturrets"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -843,6 +1063,7 @@
     "modIds": [
       "dynamic_fps"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -858,6 +1079,7 @@
     "modIds": [
       "easy_villagers"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -897,10 +1119,27 @@
     ]
   },
   {
+    "file": "emi-1.1.24+1.21.1+neoforge.jar",
+    "modIds": [
+      "emi"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "REQUIRED",
+        "versionRange": "[20.4.72-beta,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "endermanoverhaul-neoforge-1.21.1-2.0.3.jar",
     "modIds": [
       "endermanoverhaul"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -944,6 +1183,7 @@
     "modIds": [
       "entityculling"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -966,6 +1206,7 @@
     "modIds": [
       "farmersdelight"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -995,6 +1236,7 @@
     "modIds": [
       "fastsuite"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1024,6 +1266,7 @@
     "modIds": [
       "ferritecore"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1046,6 +1289,7 @@
     "modIds": [
       "framedblocks"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1152,6 +1396,7 @@
     "modIds": [
       "ftblibrary"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1181,6 +1426,7 @@
     "modIds": [
       "ftbquests"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1230,6 +1476,7 @@
     "modIds": [
       "ftbteams"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1266,6 +1513,7 @@
     "modIds": [
       "ftbxmodcompat"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1355,6 +1603,7 @@
       "fusion",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1370,6 +1619,7 @@
     "modIds": [
       "geckolib"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1393,11 +1643,29 @@
     ]
   },
   {
+    "file": "gpumemleakfix-neoforge-1.21.1-1.0.0.jar",
+    "modIds": [
+      "gpumemleakfix",
+      "neoforge"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1, 1.22)",
+        "ordering": "NONE",
+        "side": "CLIENT"
+      }
+    ]
+  },
+  {
     "file": "guardvillagers-2.4.12-1.21.1.jar",
     "modIds": [
       "guardvillagers",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1414,6 +1682,7 @@
       "guardvillagerstaczsupport",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1429,6 +1698,7 @@
     "modIds": [
       "guideme"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1451,6 +1721,7 @@
     "modIds": [
       "ic2cre"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1494,6 +1765,7 @@
     "modIds": [
       "immediatelyfast"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1512,6 +1784,7 @@
     "modIds": [
       "immersiveengineering"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1541,6 +1814,7 @@
     "modIds": [
       "immersivepetroleum"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "immersiveengineering",
@@ -1570,6 +1844,7 @@
     "modIds": [
       "incontrol"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1595,10 +1870,35 @@
     ]
   },
   {
+    "file": "InventoryProfilesNext-neoforge-1.21.1-2.2.5.jar",
+    "modIds": [
+      "inventoryprofilesnext"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "mandatory": "true",
+        "versionRange": "[21, 22.2)"
+      },
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "[1.21.1, 1.21.2)"
+      },
+      {
+        "modId": "libipn",
+        "mandatory": "true",
+        "versionRange": "[6.6.3, 6.7)"
+      }
+    ]
+  },
+  {
     "file": "Jade-1.21.1-NeoForge-15.10.6.jar",
     "modIds": [
       "jade"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1614,6 +1914,7 @@
     "modIds": [
       "jadeaddons"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "jade",
@@ -1627,6 +1928,9 @@
     "file": "jei-1.21.1-neoforge-19.57.0.446.jar",
     "modIds": [
       "jei"
+    ],
+    "embeddedModIds": [
+      "mezz_config"
     ],
     "deps": [
       {
@@ -1661,9 +1965,16 @@
     ]
   },
   {
+    "file": "kotlinforforge-5.12.0-all.jar",
+    "error": "no mods.toml"
+  },
+  {
     "file": "kubejs-neoforge-2101.7.2-build.377.jar",
     "modIds": [
       "kubejs"
+    ],
+    "embeddedModIds": [
+      "betteradvancedtooltips"
     ],
     "deps": [
       {
@@ -1715,6 +2026,7 @@
     "modIds": [
       "letmedespawn"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1740,10 +2052,30 @@
     ]
   },
   {
+    "file": "libIPN-neoforge-1.21.1-6.6.3.jar",
+    "modIds": [
+      "libipn"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "mandatory": "true",
+        "versionRange": "[21.1,)"
+      },
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "[1.21.1, 1.21.2)"
+      }
+    ]
+  },
+  {
     "file": "mezz_config-1.21.1-neoforge-0.6.3.jar",
     "modIds": [
       "mezz_config"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1767,6 +2099,7 @@
       "modernfix",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1789,6 +2122,9 @@
     "modIds": [
       "moonlight"
     ],
+    "embeddedModIds": [
+      "codecui"
+    ],
     "deps": [
       {
         "modId": "minecraft",
@@ -1804,6 +2140,7 @@
     "modIds": [
       "mousetweaks"
     ],
+    "embeddedModIds": [],
     "deps": []
   },
   {
@@ -1811,6 +2148,7 @@
     "modIds": [
       "mutantmonsters"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1844,6 +2182,7 @@
     "modIds": [
       "placebo"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1866,6 +2205,7 @@
     "modIds": [
       "polymorph"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -1889,6 +2229,7 @@
       "progressivestages",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1932,6 +2273,7 @@
     "modIds": [
       "puzzleslib"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -1954,6 +2296,7 @@
     "modIds": [
       "railcraft"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "type": "required",
@@ -1984,6 +2327,7 @@
       "rechiseled",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -2020,6 +2364,7 @@
     "modIds": [
       "resourcefulconfig"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -2042,6 +2387,7 @@
     "modIds": [
       "resourcefullib"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -2064,6 +2410,7 @@
     "modIds": [
       "rhino"
     ],
+    "embeddedModIds": [],
     "deps": []
   },
   {
@@ -2071,6 +2418,7 @@
     "modIds": [
       "searchables"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -2093,6 +2441,7 @@
     "modIds": [
       "servercore"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -2111,15 +2460,69 @@
     ]
   },
   {
+    "file": "shulkerboxtooltip-neoforge-5.1.9+1.21.1.jar",
+    "modIds": [
+      "shulkerboxtooltip"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "mandatory": "true",
+        "versionRange": "[20.6.0-beta,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "[1.21.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "Simple Structures Ad Astra 1.21.1 1.3.jar",
     "modIds": [
       "pv_ad_astra_structures"
     ],
+    "embeddedModIds": [],
     "deps": []
+  },
+  {
+    "file": "skinlayers3d-neoforge-1.11.3-mc1.21.1.jar",
+    "modIds": [
+      "skinlayers3d"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "neoforge",
+        "mandatory": "true",
+        "versionRange": "[20.2,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
   },
   {
     "file": "sodium-neoforge-0.8.13+mc1.21.1.jar",
     "modIds": [
+      "sodium"
+    ],
+    "embeddedModIds": [
+      "fabric_api_base",
+      "fabric_block_view_api_v2",
+      "fabric_renderer_api_v1",
+      "fabric_rendering_data_attachment_v1",
       "sodium"
     ],
     "deps": [
@@ -2152,6 +2555,7 @@
     "modIds": [
       "sophisticatedbackpacks"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "sophisticatedcore",
@@ -2181,6 +2585,7 @@
     "modIds": [
       "sophisticatedcore"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -2203,6 +2608,7 @@
     "modIds": [
       "sophisticatedstorage"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "sophisticatedcore",
@@ -2239,6 +2645,7 @@
     "modIds": [
       "spark"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "neoforge",
@@ -2254,6 +2661,7 @@
     "modIds": [
       "storagedrawers"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -2272,11 +2680,20 @@
     ]
   },
   {
+    "file": "structure_layout_optimizer-neoforge-1.0.12.jar",
+    "modIds": [
+      "structure_layout_optimizer"
+    ],
+    "embeddedModIds": [],
+    "deps": []
+  },
+  {
     "file": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
     "modIds": [
       "supermartijn642configlib",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -2293,6 +2710,7 @@
       "supermartijn642corelib",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -2307,6 +2725,11 @@
     "file": "supplementaries-1.21.1-3.9.9-neoforge.jar",
     "modIds": [
       "supplementaries"
+    ],
+    "embeddedModIds": [
+      "mixinsquared",
+      "sablecompanion",
+      "neoforge"
     ],
     "deps": [
       {
@@ -2366,6 +2789,9 @@
     "modIds": [
       "tacz"
     ],
+    "embeddedModIds": [
+      "simplebedrockmodel"
+    ],
     "deps": [
       {
         "modId": "neoforge",
@@ -2388,6 +2814,7 @@
     "modIds": [
       "hordes"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",
@@ -2410,11 +2837,138 @@
     ]
   },
   {
+    "file": "xaerominimap-neoforge-1.21.1-26.5.0.jar",
+    "modIds": [
+      "xaerominimap",
+      "neoforge"
+    ],
+    "embeddedModIds": [
+      "xaerolib",
+      "neoforge"
+    ],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "1.21.1",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "openpartiesandclaims",
+        "type": "optional",
+        "versionRange": "[0.31.6,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "xaeroworldmap",
+        "type": "optional",
+        "versionRange": "[1.44.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "xaerolib",
+        "type": "required",
+        "versionRange": "[1.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "xaeroworldmap-neoforge-1.21.1-1.46.0.jar",
+    "modIds": [
+      "xaeroworldmap",
+      "neoforge"
+    ],
+    "embeddedModIds": [
+      "xaerolib",
+      "neoforge"
+    ],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21, 1.21.2)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "openpartiesandclaims",
+        "type": "optional",
+        "versionRange": "[0.31.6,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "xaerominimap",
+        "type": "optional",
+        "versionRange": "[26.4.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "xaerobetterpvp",
+        "type": "optional",
+        "versionRange": "[26.4.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "xaerolib",
+        "type": "required",
+        "versionRange": "[1.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "zfastnoise-1.0.13+1.21.1+neoforge.jar",
+    "modIds": [
+      "zfastnoise",
+      "neoforge"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,1.21.8]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "moonrise",
+        "type": "incompatible"
+      },
+      {
+        "modId": "antixray",
+        "type": "incompatible"
+      },
+      {
+        "modId": "c2me",
+        "type": "optional",
+        "reason": "Provides faster chunk generation",
+        "referralUrl": "https://modrinth.com/mod/c2me-neoforge"
+      },
+      {
+        "modId": "lithium",
+        "type": "optional",
+        "reason": "accesswidener",
+        "ordering": "BEFORE"
+      }
+    ]
+  },
+  {
     "file": "ZombiesBreak&Build-neoforge-1.21.1-1.7.0.jar",
     "modIds": [
       "zbb",
       "neoforge"
     ],
+    "embeddedModIds": [],
     "deps": [
       {
         "modId": "minecraft",

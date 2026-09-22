@@ -1,0 +1,91 @@
+# Starforge default BetterF3 layout.
+# Only the modules listed in modules_left / modules_right render.
+# Per-module `lines` tables disable noisy lines; absent keys use mod defaults.
+# Module ids = class name minus "Module", lowercased (verified from bytecode).
+
+[[modules_left]]
+name = "minecraft"
+enabled = true
+
+[[modules_left]]
+name = "fps"
+enabled = true
+
+[[modules_left]]
+name = "coords"
+enabled = true
+  [modules_left.lines]
+  absolute_velocity = false
+
+[[modules_left]]
+name = "location"
+enabled = true
+  [modules_left.lines]
+  facing = true
+  biome = true
+  dimension = true
+  light = false
+  light_server = false
+  local_difficulty = false
+  day_ticks = false
+  days_played = false
+  highest_block = false
+  highest_block_server = false
+  rotation = false
+  slime_chunk = false
+
+[[modules_left]]
+name = "chunks"
+enabled = true
+  [modules_left.lines]
+  client_chunk_cache = true
+  loaded_chunks = true
+  loaded_chunks_server = false
+  pending_chunks = false
+  pending_uploads = false
+  chunk_sections = false
+  chunk_culling = false
+  chunk_file = false
+  forceloaded_chunks = false
+  available_buffers = false
+  spawn_chunks = false
+  r = false
+
+[[modules_left]]
+name = "system"
+enabled = true
+  [modules_left.lines]
+  memory_usage = true
+  java_version = true
+  cpu = true
+  gpu = true
+  allocated_memory = false
+  allocation_rate = false
+  gpu_driver = false
+  gpu_utilization = false
+  display = false
+  opengl_version = false
+  time = false
+
+[[modules_right]]
+name = "server"
+enabled = true
+  [modules_right.lines]
+  server_tick = true
+  tick_manager_status = false
+  packets_sent = false
+  packets_received = false
+
+[[modules_right]]
+name = "target"
+enabled = true
+  [modules_right.lines]
+  targeted_block = true
+  id_block = true
+  targeted_entity = true
+  targeted_fluid = false
+  id_fluid = false
+  fluid_states = false
+  fluid_tags = false
+  block_states = false
+  block_tags = false

@@ -1,0 +1,10 @@
+{
+    "tacz": {
+        "com.tacz.guns.client.gui.GunRefitScreen": {
+            "ignore": true
+        },
+        "com.tacz.guns.client.gui.GunSmithTableScreen": {
+            "ignore": true
+        }
+    }
+}

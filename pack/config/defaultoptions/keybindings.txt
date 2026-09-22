@@ -1,0 +1,52 @@
+// Starforge first-install keybind defaults (Default Options mod).
+// Format: key_<mapping name>:<InputConstants key name>[:MODIFIER]
+// Applied only to bindings still at factory default / never user-set.
+// Player-remapped keys are never overwritten on pack updates.
+
+// Xaero map cluster: M world map, J waypoint list, N new waypoint, Y minimap settings.
+// Upstream defaults B (new waypoint) and U (waypoint list) collide with
+// Sophisticated Backpacks (B = open backpack) and EMI/JEI Uses (U in GUI).
+key_gui.xaero_open_map:key.keyboard.m
+key_gui.xaero_minimap_settings:key.keyboard.y
+key_gui.xaero_waypoints_key:key.keyboard.j
+key_gui.xaero_new_waypoint:key.keyboard.n
+// Enlarged-minimap hold key (was Z) is unbound: Z belongs to TaCZ refit.
+key_gui.xaero_enlarge_map:key.keyboard.unknown
+
+// Ad Astra: R must stay TaCZ reload; V must stay TaCZ melee/zoom.
+key_key.ad_astra.open_radio:key.keyboard.backslash
+key_key.ad_astra.toggle_suit_flight:key.keyboard.grave.accent
+
+// Easy Villagers: V/C collide with TaCZ melee/zoom and TaCZ crawl.
+key_key.easy_villagers.pick_up:key.keyboard.i
+key_key.easy_villagers.cycle_trades:key.keyboard.unknown
+
+// Supplementaries quiver arrow-cycle off TaCZ's V cluster.
+// (upstream translation key has no "key." prefix)
+key_supplementaries.keybind.quiver:key.keyboard.unknown
+
+// IC2CRE registers UNIVERSAL-context keys: keep them off TaCZ/Xaero letters.
+// mode_switch moves off M (world map); side_inventory off C (TaCZ crawl);
+// hud_mode off X; boost off Left Ctrl (vanilla sprint). alt stays on Left Alt.
+key_key.ic2cre.mode_switch:key.keyboard.semicolon
+key_key.ic2cre.side_inventory:key.keyboard.unknown
+key_key.ic2cre.hud_mode:key.keyboard.unknown
+key_key.ic2cre.boost:key.keyboard.unknown
+
+// Railcraft locomotive controls (only useful while riding): moved to arrows,
+// freeing M/B/N for map/backpack/waypoint.
+key_key.railcraft.loco.mode:key.keyboard.up
+key_key.railcraft.loco.whistle:key.keyboard.down
+key_key.railcraft.loco.reverse:key.keyboard.left
+// change_aura (goggles overlay cycle) off G - TaCZ fire-select.
+key_key.railcraft.change_aura:key.keyboard.unknown
+
+// GuideMe (AE2 guide book) off G - TaCZ fire-select keeps G.
+key_key.guideme.guide:key.keyboard.f6
+
+// Immersive Engineering magnet toggle off S (vanilla move-back).
+key_key.immersiveengineering.magnetEquip:key.keyboard.equal
+// Immersive Petroleum projector flip off M (Xaero world map).
+key_key.immersivepetroleum.projector.flip:key.keyboard.minus
+// World-Map settings key (]) duplicates minimap settings on Y; unbound.
+key_gui.xaero_open_settings:key.keyboard.unknown

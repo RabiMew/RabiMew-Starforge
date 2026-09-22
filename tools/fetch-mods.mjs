@@ -83,7 +83,7 @@ async function resolveCurseForge(src) {
   };
   const file = (j.files ?? []).find(want);
   if (!file) throw new Error(`curseforge:${src.slug}: no 1.21.1/neoforge file in widget list`);
-  const url = `https://mediafilez.forgecdn.net/files/${Math.floor(file.id / 1000)}/${file.id % 1000}/${file.name}`;
+  const url = `https://mediafilez.forgecdn.net/files/${Math.floor(file.id / 1000)}/${file.id % 1000}/${encodeURIComponent(file.name)}`;
   return { version: (file.name.match(/(\d+\.\d+[\w.\-]*)/) ?? [null, 'unknown'])[1],
     filename: file.name, url, page: `https://www.curseforge.com/minecraft/mc-mods/${src.slug}`,
     license: 'unknown-cf', deps: [], distribution: 'curseforge_cdn', cfFileId: file.id };

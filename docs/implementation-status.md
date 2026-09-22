@@ -101,12 +101,14 @@
 - P1 收尾：锁 enforcement 实机验证、AE2 冷启动链路实玩验证（新玩家从 T0 合成链是否全程可通）。
 - P2 收尾：starforge-compat 附属（炮塔弹药/能耗消耗、基地威胁 H、事件预算、怪潮阶段化、空间站临时事件白名单）；真实怪潮实机验收。
 - P3–P6：T4–T7 高级链条实测、Ad Astra 首航**实机**验证（配方图闭环已验证，见「地球闭环实测」）、殖民岗位、任务、发行打包、性能实测。
-- 客户端启动：需要本地正版账号与图形环境；当前无法在本环境完成客户端实机验证（服务端可完整验证逻辑内容）。
+- 客户端实机验证已补（Prism 离线账号 `RabiTest`，Starforge-DOtest 实例）：主菜单 → `--quickPlayMultiplayer` 直连专用服务器 → 进世界 → EMI/JEMI 80 个 JEI 分类 + 原生插件共 63630 配方 → Default Options 22 条键位全量生效 0 错误。皮肤拉取/3D 层渲染/小地图雷达实测关闭画面仍待人工目检。
 
 ## 性能结果
 
 - 空服务器 65 mods：启动 73.9s（含首次世界生成），Done 后空载正常。
 - 71 模组空世界待机实测（`/tick query`）：平均 0.4 ms/tick，P50 0.3 ms，P95 0.6 ms，P99 0.8 ms（预算 50 ms）。真实负载（怪潮+机器+管道网络）MSPT/FPS 待客户端实机与多人场景补测。
+- 2026-09-22 QoL+性能层扩展后基线（98 enabled）：专用服务器 17 维度全部 20.000 TPS、总 8.0 ms/tick（一玩家在线）；客户端进服 + EMI 烘焙 63630 配方约 17s。新增 Fast Noise / Structure Layout Optimizer / AllTheLeaks / GPU Mem Leak Fix 均已加载且无冲突日志；AllTheLeaks 版本守卫按预期逐条判定（如 betterf3.FixDebugScreen 命中 11.0.3）。
+- 风险项：Immersive Petroleum 油藏特征 `/place feature` 强制放置会在区块递归中触发 watchdog 终止（自然生成未触发，详见 compatibility.md 实测记录）；VRAM/内存长时间回收表现、连续跨维度压力测试待人工游玩补测。
 
 ## Alpha 打包
 

@@ -39,14 +39,17 @@ function parseModsToml(text) {
   return { modIds, deps };
 }
 
-// Minimal ZIP reader: locate End Of Central Directory, walk entries, inflate one member.
-function readZipEntry(file, wanted) {
-  const buf = readFileSync(file);
+// Minimal ZIP reader: locate End Of Central Directory, walk entries, inflate
+// matching members. Returns [{name, buf}] so nested jarJar jars can be
+// re-opened as zips themselves.
+function readZipEntries(buf, wanted) {
+  const out = [];
+  if (buf.readUInt32LE(0) !== 0x04034b50) return out;
   let eocd = -1;
   for (let i = buf.length - 22; i >= Math.max(0, buf.length - 66000); i--) {
     if (buf.readUInt32LE(i) === 0x06054b50) { eocd = i; break; }
   }
-  if (eocd < 0) return null;
+  if (eocd < 0) return out;
   const count = buf.readUInt16LE(eocd + 10);
   let off = buf.readUInt32LE(eocd + 16);
   for (let i = 0; i < count; i++) {
@@ -58,22 +61,40 @@ function readZipEntry(file, wanted) {
     const method = buf.readUInt16LE(off + 10);
     const compSize = buf.readUInt32LE(off + 20);
     const localOff = buf.readUInt32LE(off + 42);
-    if (wanted.includes(name)) {
+    if (wanted(name)) {
       const ln = buf.readUInt16LE(localOff + 26);
       const le = buf.readUInt16LE(localOff + 28);
       const data = buf.subarray(localOff + 30 + ln + le, localOff + 30 + ln + le + compSize);
-      if (method === 8) return zlib.inflateRawSync(data).toString('utf8');
-      if (method === 0) return data.toString('utf8');
-      return null;
+      try {
+        out.push({ name, buf: method === 8 ? zlib.inflateRawSync(data) : method === 0 ? data : null });
+      } catch { out.push({ name, buf: null }); }
     }
     off += 46 + nameLen + extraLen + commentLen;
   }
-  return null;
+  return out;
+}
+
+function readZipEntry(file, wanted) {
+  const e = readZipEntries(readFileSync(file), (n) => wanted.includes(n))[0];
+  return e?.buf ? e.buf.toString('utf8') : null;
 }
 
 function readTomlFromJar(jarPath) {
   const text = readZipEntry(jarPath, ['META-INF/neoforge.mods.toml', 'META-INF/mods.toml']);
   return text ? { entry: 'mods.toml', text } : null;
+}
+
+// Mod ids provided by embedded jarJar jars (e.g. xaerolib inside Xaero's jars).
+function embeddedModIds(jarPath) {
+  const out = [];
+  for (const e of readZipEntries(readFileSync(jarPath), (n) => /^META-INF\/jarjar\/.+\.jar$/i.test(n))) {
+    if (!e.buf) continue;
+    const inner = readZipEntries(e.buf, (n) => n === 'META-INF/neoforge.mods.toml' || n === 'META-INF/mods.toml')[0];
+    if (!inner?.buf) continue;
+    const { modIds } = parseModsToml(inner.buf.toString('utf8'));
+    for (const id of modIds) out.push({ jar: e.name, modId: id });
+  }
+  return out;
 }
 
 const present = new Map(); // modId -> {file, version}
@@ -83,10 +104,10 @@ for (const file of readdirSync(modsDir).filter((f) => f.endsWith('.jar'))) {
   const found = readTomlFromJar(jar);
   if (!found) { report.push({ file, error: 'no mods.toml' }); continue; }
   const { modIds, deps } = parseModsToml(found.text);
-  const locked = lock.mods.find((m) => m.filename === file);
-  const side = found.text.includes('displayTest') ? '' : '';
-  report.push({ file, modIds, deps });
+  const embedded = embeddedModIds(jar);
+  report.push({ file, modIds, embeddedModIds: embedded.map((e) => e.modId), deps });
   for (const id of modIds) present.set(id.toLowerCase(), file);
+  for (const e of embedded) present.set(e.modId.toLowerCase(), `${file} -> ${e.jar}`);
 }
 
 const missing = [];

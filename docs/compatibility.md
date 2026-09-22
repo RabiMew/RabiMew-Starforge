@@ -55,8 +55,25 @@
 | AppleSkin | 3.0.9 | 客户端 | 食物饱食度与效果展示，配合农业后勤路线 | 与农夫乐事数值一致 |
 | Jade Addons | 6.1.1（依赖 Jade ≥15.10） | 双端 | 补充工业机器、仓储与能源信息展示 | 各模组方块信息提供器的覆盖范围 |
 | Carry On（可选候选） | 2.2.6.13 | 双端 | 搬运方块；启用则必须配置黑名单 | 核反应堆、大型储罐、ME 存储核心、带能源/库存的关键工业设备、特殊 Ad Astra 设施、可绕阶段设备一律禁止搬运 |
+| EMI | 1.1.24+1.21.1+neoforge | 客户端 | 默认配方/物品浏览界面；内建 JEMI 层将 JEI 插件配方导入 EMI | 已实测：客户端连上独立服务器后 JEMI 载入 80 个 JEI 配方分类（含 IC2CRE 金属成型机/洗矿/感应炉/电力高炉、BC CE Assembly/Integration/Programming Table、IE 电弧炉/合金窑/工程装配台、IP 蒸馏塔/焦炭塔/高压精炼、Ad Astra NASA 工作台/氧气装载机/燃料加注器/凛冰冻结装置、TaCZ 枪械/弹药/配件工作台、Railcraft 焦炉/高炉）；AE2、Sophisticated Core/Storage/Backpacks、Farmer's Delight、KubeJS、ProgressiveStages、Railcraft、Supplementaries、FramedBlocks、FTB Library 走 EMI 原生插件，合计烘焙 63630 条配方。JEI 保留装载。注意：JEI 19.57 的列表开关 `overlayEnabled` 是内存态（`ClientToggleState`，字节码核实），官方关闭方式是进世界后按 Ctrl+O（`key.jei.toggleOverlay`），状态不跨重启持久化——无配置项可默认关闭，文档如实记录 |
+| Xaero's Minimap | 26.5.0（内嵌 xaerolib） | 双端 | 小地图与路径点；服务端组件提供世界识别与强制配置 | 实体雷达与洞穴模式由服务端 `server_profiles/default.cfg` 强制关闭；客户端默认配置同值 |
+| Xaero's World Map | 1.46.0（内嵌 xaerolib） | 双端 | 世界地图、路径点列表、维度独立存档 | 同上，洞穴模式/小地图雷达经服务端强制配置关闭 |
+| Inventory Profiles Next | 2.2.5（依赖 libIPN 6.6.3 + Kotlin for Forge 5.12.0） | 客户端 | 库存/容器排序、快捷栏自动补给 | 默认仅保留 GUI 排序按钮与中键排序；其余热键经 `inventoryprofilesnext/inventoryprofiles.json` 置空；排序只在容器 GUI 上下文生效，自带 AE2/Sophisticated/IE 集成提示 |
+| Shulker Box Tooltip | 5.1.9+1.21.1 | 客户端 | 悬停简洁提示，Shift 展开完整内容 | `preview.alwaysOn=false` 上游默认即所需行为，不发额外配置 |
+| BetterF3 | 11.0.3（依赖 Cloth Config 15.0.140） | 客户端 | 精简调试界面 | 默认模块集待实测修剪 |
+| Better Ping Display | 1.1 | 客户端 | Tab 列表数字延迟 | 无键位 |
+| Chat Heads | 0.15.7 | 客户端 | 聊天栏头像 | 无键位；已实测处理聊天事件 |
+| 3D Skin Layers | 1.11.3 | 客户端 | 皮肤 3D 分层 | tr7zw 许可允许官方渠道分发；与 CustomSkinLoader 共存已加载，实际渲染待人工目检 |
+| CustomSkinLoader | 15.0.1 Universal | 客户端 | 第三方皮肤源 | GPL-3.0；Bootstrap 变换服务实测加载，与 3D Skin Layers 共存无冲突日志；皮肤实际拉取待人工目检 |
+| Default Options | 21.1.8（依赖 Balm） | 客户端 | 首次安装默认键位/选项下发 | 只改仍为出厂默认的键位，不覆盖玩家已改设置；`config/defaultoptions/keybindings.txt` |
 
 性能与运维层候选的分侧记录见[性能层](performance.md)。
+
+## 键位整理（Controlling 已装，首装默认经 Default Options 下发）
+
+实测冲突修复（上游默认 → Starforge 默认）：Xaero 新建路径点 `B→N`（B 留给 Sophisticated Backpacks 打开背包）、路径点列表 `U→J`（U 留给 EMI/JEI 的 Uses）、放大地图 `Z→解绑`（Z 为 TaCZ 配件拆装）、世界地图设置 `]` 解绑、小地图设置 `Y`、世界地图 `M` 不变。`R` 全程为 TaCZ 换弹：EMI/JEI 的 Recipe/Uses 只在 GUI 上下文触发，Building Gadgets 的 `R`/`G`/`U`/`H` 注册在"手持 gadget"的自定义冲突上下文，持枪时不生效。IC2CRE 的 `mode_switch`（原 `M`，UNIVERSAL 上下文）移至 `;`，`side_inventory`/`hud_mode`/`boost`（原 Left Ctrl，与疾跑冲突）解绑；Railcraft 机车 `mode/whistle/reverse` 移到方向键、`change_aura` 解绑；Easy Villagers `pick_up` 移至 `I`、`cycle_trades` 解绑；Supplementaries quiver 解绑；GuideMe 指南书 `G→F6`（G 留给 TaCZ 射击模式切换）；Ad Astra `open_radio→\`、`toggle_suit_flight→`` `；IE `magnetEquip` `S→=`（S 是后退键）；Immersive Petroleum `projector.flip` `M→-`。核心操作（WASD/E/Q/F/Shift/Ctrl/Space/数字栏）与 TaCZ 射击/瞄准/换弹/配件不改。
+
+2026-09-22 干净首装验证：删除 `options.txt` 后启动，Default Options 载入并应用全部 22 条默认（0 错误，日志 `Applied 22 defaults to key mappings (20 keys were reconfigured)`），生成键位与上表一致。对生成结果做全量重复键扫描，剩余同键组合全部为上下文隔离（JEI 键仅在 JEI GUI、FTB Quests 编辑键仅在任务界面、CraftingTweaks 仅在合成 GUI、Sophisticated 自带 `BackpackKeyConflictContext` 仅在容器界面、Railcraft 机车键仅在乘车、Building Gadgets 仅在手持 gadget）或修饰键不同（`Alt+T`/`Alt+X`/`Alt+Z`/`Ctrl+O`），无实际影响冲突。
 
 TaCZ Pack Upgrader 2.1.3（LGPL-3.0-or-later）仅在确实使用旧版 1.20.1 TaCZ 枪包时加入，不默认安装。Guard Villagers TACZ Support 的必需前置为 Guard Villagers 与上述 TaCZ 移植版；Easy Villagers 的 The One Probe / JEI / Jade 为可选前置。
 
@@ -95,6 +112,13 @@ FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Com
 
 其余库以选定文件元数据为准递归解析，不从其他 Minecraft 版本抄前置。本轮新增候选已从文件元数据解析出前置：Sophisticated Core（Sophisticated Storage/Backpacks）、Balm（Crafting Tweaks）、Searchables（Controlling）、Jade（Jade Addons）、Placebo（FastSuite）、Almanac（Let Me Despawn）；锁定时递归复核完整闭包。IC2CRE 已把 Energy Core 合入主体，API JAR 仅用于编译，不能当运行模组；1.21.1 的 Energy Control 子附属状态不能按 26.1.2 推断。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases)
 
-默认配方查看器选 JEI，EMI 作为单独验证的替代配置，不强制双装。客户端放渲染与 UI 模组；公共内容、KubeJS 逻辑/资源、任务定义由同一构建源生成。服务端不加载纯客户端渲染依赖，客户端与服务器逻辑内容哈希必须一致。
+默认配方查看器为 EMI（客户端侧），JEI 保留装载作为 API/插件兼容层（ftb-xmod-compat、BC CE、IC2CRE 等依赖其插件注册）。客户端放渲染与 UI 模组；公共内容、KubeJS 逻辑/资源、任务定义由同一构建源生成。服务端不加载纯客户端渲染依赖，客户端与服务器逻辑内容哈希必须一致。
+
+## 实测记录（2026-09-22）
+
+- 独立服务器：NeoForge 21.1.251 启动正常，RCON/spark 可用，`neoforge tps` 显示全部 17 个维度（Overworld、Nether、End、Ad Astra 五星球 + 全部轨道、Asteroid Belt + Orbit、Spatial Storage）20 TPS、总 ~8 ms/tick（有玩家在线）。
+- 维度生物群系定位全部成功（`ad_astra:*` 九个、 `pv_asteroid_belt:asteroid_belt` 等），结构定位成功（`ad_astra_more_structures` 五座塔/竞技场、平原村庄、要塞）。
+- 客户端（Prism 干净实例）：首装默认键位全量生效 → `--quickPlayMultiplayer` 直连服务器成功（`RabiTest joined the game`）→ EMI/JEMI 载入 80 个 JEI 分类 + 原生插件，烘焙 63630 配方。
+- **已知风险（如实记录）**：在 Venus/Glacio 用 `/place feature` 强制放置 Immersive Petroleum 油藏特征时，`FeatureReservoir.scanChunkForNewReservoirs` 在异步区块生成中持锁自递归请求区块，单 tick 超 120 秒触发 watchdog 终止（crash-report 栈见 `run/server/crash-reports/`）。自然世界生成与正常游玩未触发该路径；`immersivepetroleum-server.toml` 的 `regenerate_missing_reservoirs` 已是 `false`。该问题判定为 IP 世界生成实现缺陷，与 Fast Noise / Structure Layout Optimizer 无关（栈上无二者帧）。禁止在联机服务器上强制 place IP 油藏特征；是否换用修复版本待上游 1.21.1 构建确认。
 
 发行前从作者渠道锁定下载地址、版本、文件大小、SHA-512/SHA-256、游戏范围、加载器范围、依赖、装载侧及分发方式。当前表是设计候选表，不能直接改名成安装 manifest。先做最小 IC2/BC/IE 验证，再逐组加入其余内容。
