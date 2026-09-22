@@ -21,6 +21,7 @@ ServerEvents.loaded((e) => {
     var has = function (s) { return ProgressiveStages.has(player, 'modpack:' + s); };
     log('fake player created', player !== null);
     log('all 8 stages registered', ProgressiveStages.all().size() === 8);
+    log('locked before grants: ' + String(ProgressiveStages.locked(player)), ProgressiveStages.locked(player).size() > 0);
 
     ProgressiveStages.grant(player, 'modpack:survival_age');
     log('grant survival_age', has('survival_age'));
@@ -54,6 +55,7 @@ ServerEvents.loaded((e) => {
     }
 
     log('final stages: ' + String(ProgressiveStages.list(player)), true);
+    log('locked after all grants: ' + String(ProgressiveStages.locked(player)), ProgressiveStages.locked(player).size() === 0);
     result.ok = has('mechanical_age') && has('electric_age') && has('information_age')
       && has('heavy_industry_age') && has('atomic_age') && has('space_age') && has('quantum_age');
 

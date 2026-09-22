@@ -62,5 +62,35 @@ if (existsSync(path.join(root, locksPath))) {
     }
   }
 }
+
+// Progression-deadlock guard: a stage's unlock_evidence item must not be locked
+// by any stage outside that stage's ancestor set (otherwise the evidence can
+// never be crafted and the chain stalls).
+{
+  const deps = {};
+  for (const s of content.stages) deps[s.id] = s.depends_on ?? [];
+  const ancestors = (id) => {
+    const seen = new Set();
+    const walk = (x) => (deps[x] ?? []).forEach((d) => { if (!seen.has(d)) { seen.add(d); walk(d); } });
+    walk(id);
+    return seen;
+  };
+  const locks = existsSync(path.join(root, locksPath)) ? j(locksPath) : {};
+  for (const s of content.stages) {
+    const ev = s.unlock_evidence;
+    if (!ev?.component) continue;
+    const itemId = map.items[ev.component];
+    if (!itemId) continue; // already reported above
+    const anc = ancestors(s.id);
+    for (const [lockStage, lock] of Object.entries(locks)) {
+      if (lockStage === 'schema_version' || lockStage === 'comment') continue;
+      const ids = [...(lock.items ?? []), ...(lock.blocks ?? [])].map((k) => map.items[k] ?? k);
+      if (ids.includes(itemId) && !anc.has(lockStage)) {
+        console.error(`DEADLOCK: ${s.id} evidence ${itemId} is locked by non-ancestor stage ${lockStage}`);
+        errors++;
+      }
+    }
+  }
+}
 if (errors) { console.error(`FAIL: ${errors} unresolved mappings`); process.exit(1); }
 console.log(`PASS: all semantic ids resolve (${Object.values(map).filter(v => v && typeof v === 'object').reduce((s, o) => s + Object.keys(o).length, 0)} entries)`);
