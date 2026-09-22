@@ -1,0 +1,602 @@
+{
+	file.3CA1F6C961E490AE.title: "星铸 · 任务书"
+	quest.0E79A6A14CA31F91.title: "欢迎来到星铸"
+	quest.0E79A6A14CA31F91.quest_desc: [
+		"这本任务书是说明书和里程碑地图：阶段晋级靠制造凭证部件，不依赖提交任务。完成后可随时回到任意章节。"
+		""
+		"{\"text\":\"» 详见手册：团队进度与个人专精\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"团队进度与个人专精\"}}"
+	]
+	quest.0E79A6A14CA31F91.quest_subtitle: "推荐阶段：生存时代"
+	quest.0D1AC1E27C5540EB.title: "团队与进度"
+	quest.0D1AC1E27C5540EB.quest_desc: [
+		"团队共享制造研究，新成员加入即同步。个人可以自由专精不同路线；买到成品不会自动获得制造权限。"
+		""
+		"{\"text\":\"» 详见手册：团队进度与个人专精\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"团队进度与个人专精\"}}"
+		"{\"text\":\"» 详见手册：地球自给路线\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6B23A0DB3D268796\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"地球自给路线\"}}"
+	]
+	quest.0D1AC1E27C5540EB.quest_subtitle: "推荐阶段：生存时代"
+	quest.13CFB46ABD3B5830.title: "第一个营地"
+	quest.13CFB46ABD3B5830.quest_desc: [
+		"建立庇护所、床、储物和起步农田。照明与围栏是防线的第一层。"
+	]
+	quest.13CFB46ABD3B5830.quest_subtitle: "推荐阶段：生存时代"
+	quest.2F3A025FCA06D48B.title: "第一口锅"
+	quest.2F3A025FCA06D48B.quest_desc: [
+		"制作农夫乐事烹饪锅，让厨房能集中供餐。农田与仓储的进阶见农业与后勤章。"
+		""
+		"{\"text\":\"» 详见手册：厨房自动化\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"厨房自动化\"}}"
+	]
+	quest.2F3A025FCA06D48B.quest_subtitle: "推荐阶段：生存时代"
+	quest.4CD255DB2734A955.title: "工程装配件"
+	quest.4CD255DB2734A955.quest_desc: [
+		"手工制成工程装配件，团队进入机械时代。晋级凭证一律由制造触发，不靠提交或拾取。"
+		""
+		"{\"text\":\"» 详见手册：仓储成长路线\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储成长路线\"}}"
+	]
+	quest.4CD255DB2734A955.quest_subtitle: "推荐阶段：生存时代"
+	quest.6FD4163A437DB329.title: "登记基地"
+	quest.6FD4163A437DB329.quest_desc: [
+		"在基地状态界面登记主基地：威胁、补给、氧气与电力都按登记范围统计。搬迁后可重新登记。"
+	]
+	quest.6FD4163A437DB329.quest_subtitle: "推荐阶段：生存时代"
+	quest.4A5C4FDCC304869D.title: "七条路线"
+	quest.4A5C4FDCC304869D.quest_desc: [
+		"任务书七章对应七条长期路线，全部可见、无强制顺序。挑顺手的开始，其余交给队友或以后再说。"
+	]
+	quest.4A5C4FDCC304869D.quest_subtitle: "推荐阶段：生存时代"
+	quest.04678E0F669135E0.title: "铁器三件套"
+	quest.04678E0F669135E0.quest_desc: [
+		"备齐铁镐、铁剑与铁桶：下矿、自卫、装水，一件都不能少。"
+	]
+	quest.04678E0F669135E0.quest_subtitle: "推荐阶段：生存时代"
+	chapter.55C7495156B62A20.title: "启程"
+	chapter.55C7495156B62A20.chapter_subtitle: [
+		"从营地到第一台机器的起步引导：认识任务书、团队进度、厨房、晋级凭证与基地登记。"
+	]
+	quest.08529A1698B8AB8E.title: "第一套工业供电"
+	quest.08529A1698B8AB8E.quest_desc: [
+		"准备基础电路、发电机和安全接线。先让一台机器稳定运行，再逐步扩大电网；无需提交或消耗设备。"
+		""
+		"{\"text\":\"» 详见手册：电力优先级\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"电力优先级\"}}"
+	]
+	quest.08529A1698B8AB8E.quest_subtitle: "推荐阶段：机械时代"
+	quest.2539374E4F2A6024.title: "让每块矿石更有价值"
+	quest.2539374E4F2A6024.quest_desc: [
+		"把矿场原料送入工业处理线，分别收集主产物与副产物。检查输入是否堵塞，确认粉末不会被反复当成原矿加工。"
+	]
+	quest.2539374E4F2A6024.quest_subtitle: "推荐阶段：电气时代"
+	quest.43D15883966FA564.title: "为大工业提供稳定电力"
+	quest.43D15883966FA564.quest_desc: [
+		"规划反应堆、冷却、隔离和备用供电。先测试停机与故障时的处理，再让关键生产线接入。"
+		""
+		"{\"text\":\"» 详见手册：电力优先级\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"电力优先级\"}}"
+	]
+	quest.43D15883966FA564.quest_subtitle: "推荐阶段：原子时代"
+	quest.3046722B35FDD226.title: "地球上的量子工业"
+	quest.3046722B35FDD226.quest_desc: [
+		"通过地球精炼取得首份铱，再建立通用物质扫描与复制流程。量子控制组件不要求外星资源或首领掉落。"
+	]
+	quest.3046722B35FDD226.quest_subtitle: "推荐阶段：量子时代"
+	quest.13C7D62337B55213.title: "布线入门"
+	quest.13C7D62337B55213.quest_desc: [
+		"给发电机接上铜缆与电池盒：电要能发，更要能存能送。线路先走短距离，电网扩张留到后面。"
+		""
+		"{\"text\":\"» 详见手册：电力优先级\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"电力优先级\"}}"
+	]
+	quest.13C7D62337B55213.quest_subtitle: "推荐阶段：机械时代"
+	quest.661C32BC2172153E.title: "首批电机"
+	quest.661C32BC2172153E.quest_desc: [
+		"电炉与压缩机上线：烧炼、成型不再靠煤，工业的第一批用电设备就位。"
+	]
+	quest.661C32BC2172153E.quest_subtitle: "推荐阶段：机械时代"
+	quest.74254B1A5ACF0303.title: "第一炉钢"
+	quest.74254B1A5ACF0303.quest_desc: [
+		"焦炉烧焦煤、高炉炼钢锭。钢是铁路、炮塔与重型结构的共同地基，趁早把产线立起来。"
+	]
+	quest.74254B1A5ACF0303.quest_subtitle: "推荐阶段：机械时代"
+	quest.5AA32800D1C581FB.title: "石油起步"
+	quest.5AA32800D1C581FB.quest_desc: [
+		"用泵抽出原油，铁管送回储罐。统一石油链的第一步：先让液体流进基地，再谈精炼与化工。"
+		""
+		"{\"text\":\"» 详见手册：统一石油经济\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"统一石油经济\"}}"
+	]
+	quest.5AA32800D1C581FB.quest_subtitle: "推荐阶段：电气时代"
+	quest.32189FD328AB1060.title: "电子元件"
+	quest.32189FD328AB1060.quest_desc: [
+		"电路板与电子管批量备料——之后每台机器、每组信号、每条产线都要吃这两样。"
+	]
+	quest.32189FD328AB1060.quest_subtitle: "推荐阶段：电气时代"
+	quest.12BF8F4E036DE8B1.title: "重型机械框架"
+	quest.12BF8F4E036DE8B1.quest_desc: [
+		"重型工程块与电弧炉落地：钢与电子件在这里汇流，产能进入重工业量级。"
+	]
+	quest.12BF8F4E036DE8B1.quest_subtitle: "推荐阶段：重工业时代"
+	quest.45E40F3C3FF4ED9C.title: "反应堆大厅"
+	quest.45E40F3C3FF4ED9C.quest_desc: [
+		"核反应堆、反应室与屏蔽层——核电网的硬件底座。先把壳造好，再谈并网发电。"
+	]
+	quest.45E40F3C3FF4ED9C.quest_subtitle: "推荐阶段：原子时代"
+	chapter.6FCE566CEE4CE64E.title: "工业工程"
+	chapter.6FCE566CEE4CE64E.chapter_subtitle: [
+		"提供电力、电路和高级材料，让整个工业体系持续运转。"
+	]
+	quest.1E6E9ECA6921E56E.title: "从箱子到生产线"
+	quest.1E6E9ECA6921E56E.quest_desc: [
+		"为大宗矿物、金属锭、零件和农产品准备抽屉与通用仓储，再用管道或传送带接入机器。先设计满仓去向与停机信号，再提升运输速度。"
+		""
+		"{\"text\":\"» 详见手册：仓储成长路线\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储成长路线\"}}"
+	]
+	quest.1E6E9ECA6921E56E.quest_subtitle: "推荐阶段：机械时代"
+	quest.4F47C604F5D375CC.title: "启动第一个数字仓库"
+	quest.4F47C604F5D375CC.quest_desc: [
+		"先以独立电源驱动压印机制作处理器，再让数字网络通过存储总线接管现有实体仓库。模板有地球制造途径，寻找陨石只是可选捷径；抽屉与库房仍然保留价值。"
+		""
+		"{\"text\":\"» 详见手册：AE2 冷启动\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"79F690776849AD03\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"AE2 冷启动\"}}"
+	]
+	quest.4F47C604F5D375CC.quest_subtitle: "推荐阶段：信息时代"
+	quest.401D4EAB9AB4A6E1.title: "按库存安排生产"
+	quest.401D4EAB9AB4A6E1.quest_desc: [
+		"用仓储控制器汇总实体库存，再为电路、弹药和食物设置补货阈值。优先补充关键物资，并为满仓、断电和缺料留下处理方法。"
+	]
+	quest.401D4EAB9AB4A6E1.quest_subtitle: "推荐阶段：信息时代"
+	quest.4B4C77575CC4219A.title: "连接远端基地"
+	quest.4B4C77575CC4219A.quest_desc: [
+		"用量子桥连接两端已供电、已加载的网络，并保留当地缓冲库存。链路断开时，基地应能继续维持基本运转。"
+	]
+	quest.4B4C77575CC4219A.quest_subtitle: "推荐阶段：量子时代"
+	quest.1E674A8A5C906BBF.title: "建立铁路货运网"
+	quest.1E674A8A5C906BBF.quest_desc: [
+		"用货运列车把矿区与工业基地连接起来：货运车厢与罐车承担大宗运输，装卸机负责两端交接。基地内部的短距离运输仍交给管道与传送带。"
+		""
+		"{\"text\":\"» 详见手册：铁路物流\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4642427A4336C17F\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"铁路物流\"}}"
+	]
+	quest.1E674A8A5C906BBF.quest_subtitle: "推荐阶段：机械时代"
+	quest.3991787934E071A4.title: "把铁路修进星港"
+	quest.3991787934E071A4.quest_desc: [
+		"让矿区货运列车直达发射场：列车进入分拣与仓储网络，再由燃料装载与火箭完成星际段。殖民地的登陆区、矿场、氧气区与发射场之间同样适用。"
+		""
+		"{\"text\":\"» 详见手册：星港铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4BD992661353F0B8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"星港铁路\"}}"
+	]
+	quest.3991787934E071A4.quest_subtitle: "推荐阶段：太空时代"
+	quest.55D5885078439343.title: "仓储接驳"
+	quest.55D5885078439343.quest_desc: [
+		"木管抽取、石管运输：把散装产线接进统一仓储，让每一箱原料都有去处。"
+		""
+		"{\"text\":\"» 详见手册：仓储成长路线\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储成长路线\"}}"
+	]
+	quest.55D5885078439343.quest_subtitle: "推荐阶段：机械时代"
+	quest.0DB724B7A030812E.title: "信号闭塞"
+	quest.0DB724B7A030812E.quest_desc: [
+		"信号电路与闭塞信号机上线：列车按区段运行，干线不再互相追尾。"
+		""
+		"{\"text\":\"» 详见手册：铁路物流\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4642427A4336C17F\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"铁路物流\"}}"
+	]
+	quest.0DB724B7A030812E.quest_subtitle: "推荐阶段：电气时代"
+	quest.3FDA41ACF6A75A22.title: "数字网络上线"
+	quest.3FDA41ACF6A75A22.quest_desc: [
+		"控制器、能源元件、存储总线——网络开始读取实体仓储。先小网跑通，再谈自动化。"
+		""
+		"{\"text\":\"» 详见手册：AE2 冷启动\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"79F690776849AD03\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"AE2 冷启动\"}}"
+	]
+	quest.3FDA41ACF6A75A22.quest_subtitle: "推荐阶段：信息时代"
+	quest.0456D2DC6A3C47D0.title: "自动合成"
+	quest.0456D2DC6A3C47D0.quest_desc: [
+		"合成单元、分子装配室、样板供应器：网络从此能自己动手做东西，而不只是存东西。"
+	]
+	quest.0456D2DC6A3C47D0.quest_subtitle: "推荐阶段：信息时代"
+	chapter.17B3058067D055B5.title: "自动化与物流"
+	chapter.17B3058067D055B5.chapter_subtitle: [
+		"连接原料、机器与需求，让物资在需要的时候送达。"
+	]
+	quest.1752DF1046FD05B2.title: "第一道防线"
+	quest.1752DF1046FD05B2.quest_desc: [
+		"从照明、地形和安全通道开始，设置可以撤退的内外防线。为巡逻、补给和维修保留通道。"
+		""
+		"{\"text\":\"» 详见手册：怪潮工程兵\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"怪潮工程兵\"}}"
+	]
+	quest.1752DF1046FD05B2.quest_subtitle: "推荐阶段：生存时代"
+	quest.499CCB0E42738DC1.title: "让炮塔得到补给"
+	quest.499CCB0E42738DC1.quest_desc: [
+		"部署基础炮塔，检查供电、弹药和友军名单。用小规模演练确认火力范围，避免把所有储备集中在一个位置。"
+		""
+		"{\"text\":\"» 详见手册：怪潮工程兵\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"怪潮工程兵\"}}"
+	]
+	quest.499CCB0E42738DC1.quest_subtitle: "推荐阶段：电气时代"
+	quest.37A21158241ACBD3.title: "为不同敌人配置火力"
+	quest.37A21158241ACBD3.quest_desc: [
+		"机枪对付普通目标，范围火力压制密集群体，重火力应对装甲单位。用射界与补给配合，避免只堆同一种炮塔。"
+	]
+	quest.37A21158241ACBD3.quest_subtitle: "推荐阶段：重工业时代"
+	quest.31583156C2BDAC96.title: "在断供中守住基地"
+	quest.31583156C2BDAC96.quest_desc: [
+		"演练主电网或运输线路中断。确认氧气、基础火力和食物储备仍能使用，并记录每场防御的实际消耗。"
+		""
+		"{\"text\":\"» 详见手册：殖民地补给链\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"744853EABC0E1648\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民地补给链\"}}"
+	]
+	quest.31583156C2BDAC96.quest_subtitle: "推荐阶段：原子时代"
+	quest.6A40076FB5A60443.title: "枪械工坊"
+	quest.6A40076FB5A60443.quest_desc: [
+		"枪械工作台与弹药台落地——守卫与玩家的武器从此走工业化产线，不再靠缴获。"
+		""
+		"{\"text\":\"» 详见手册：殖民军械\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"15C288AF8333C644\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民军械\"}}"
+	]
+	quest.6A40076FB5A60443.quest_subtitle: "推荐阶段：电气时代"
+	quest.605556FAD18F13D3.title: "弹药线"
+	quest.605556FAD18F13D3.quest_desc: [
+		"弹药箱与制式弹批量下线。枪塔再贵也只是铁疙瘩，弹药才是防线的真正口粮。"
+		""
+		"{\"text\":\"» 详见手册：弹药后勤\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C15617E8C8DA7F9\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"弹药后勤\"}}"
+	]
+	quest.605556FAD18F13D3.quest_subtitle: "推荐阶段：电气时代"
+	quest.60865655142D99C6.title: "哨戒网络"
+	quest.60865655142D99C6.quest_desc: [
+		"炮塔基座与探照灯成网部署：哨戒位有了骨架，夜间防线不再靠人盯。"
+	]
+	quest.60865655142D99C6.quest_subtitle: "推荐阶段：电气时代"
+	quest.0E69EBCEBE72E13A.title: "激光火网"
+	quest.0E69EBCEBE72E13A.quest_desc: [
+		"激光防御塔并网：对集群与高价值目标的最后拦截层，接入防线演练一起验收。"
+	]
+	quest.0E69EBCEBE72E13A.quest_subtitle: "推荐阶段：原子时代"
+	chapter.23F04414D2AFEB65.title: "军事防御"
+	chapter.23F04414D2AFEB65.chapter_subtitle: [
+		"规划防线与火力，用充足补给守住生产和生活空间。"
+	]
+	quest.061F44AAFD6FFC83.title: "发射前的工业准备"
+	quest.061F44AAFD6FFC83.quest_desc: [
+		"在地球生产航天材料和控制核心，准备燃料、氧气、食物与返航储备。先验证补给，再安排首航。"
+	]
+	quest.061F44AAFD6FFC83.quest_subtitle: "推荐阶段：原子时代"
+	quest.7FA3F49803108CD1.title: "从工厂走向月球"
+	quest.7FA3F49803108CD1.quest_desc: [
+		"带上启动电源、氧气设备和基础建材，建立可以安全返回的月球前哨。外星采矿提高效率，但不是地球科技的必经之路。"
+		""
+		"{\"text\":\"» 详见手册：航天便利装备\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"航天便利装备\"}}"
+		"{\"text\":\"» 详见手册：安全空间站\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"安全空间站\"}}"
+	]
+	quest.7FA3F49803108CD1.quest_subtitle: "推荐阶段：太空时代"
+	quest.7FD9F6B5176631DF.title: "建设轨道中转站"
+	quest.7FD9F6B5176631DF.quest_desc: [
+		"把空间站建成安全仓储、科研和转运节点。默认不会出现敌人，仍需维持氧气与电力；特殊事件只在明确开启后发生。"
+		""
+		"{\"text\":\"» 详见手册：安全空间站\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"安全空间站\"}}"
+	]
+	quest.7FD9F6B5176631DF.quest_subtitle: "推荐阶段：太空时代"
+	quest.0E6767E1E6DA1ED6.title: "让殖民地能够自治"
+	quest.0E6767E1E6DA1ED6.quest_desc: [
+		"为各据点建立本地库存、供电、温室、居民区和驻军防线。按各星球的优势分工，比较运输与防御成本后再扩大产能。"
+		""
+		"{\"text\":\"» 详见手册：轻量殖民地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5D67189820FB07DC\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"轻量殖民地\"}}"
+		"{\"text\":\"» 详见手册：殖民居民\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6FBF02C8FB016AC6\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民居民\"}}"
+	]
+	quest.0E6767E1E6DA1ED6.quest_subtitle: "推荐阶段：太空时代"
+	quest.0AF6F16EA4174410.title: "航天便利装备"
+	quest.0AF6F16EA4174410.quest_desc: [
+		"氧气罐、燃料装载机、火箭传感器与重力调节器改善航天基地的日常运转。环境附魔手册仍需对应星球的材料，不替代氧气与燃料系统。"
+		""
+		"{\"text\":\"» 详见手册：航天便利装备\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"航天便利装备\"}}"
+	]
+	quest.0AF6F16EA4174410.quest_subtitle: "推荐阶段：太空时代"
+	quest.16E992F88F58E687.title: "前往小行星带"
+	quest.16E992F88F58E687.quest_desc: [
+		"小行星带没有可以正常降落的地面：火箭可能在真空中丢失，氧气为零且没有救援。备好返航手段与补给后再出发，把第一次航行当作侦察而非采矿。"
+		""
+		"{\"text\":\"» 详见手册：小行星带风险\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2BFD78A0764A92FF\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"小行星带风险\"}}"
+	]
+	quest.16E992F88F58E687.quest_subtitle: "推荐阶段：太空时代"
+	quest.52A6CBDE7280FA89.title: "小行星采矿作业"
+	quest.52A6CBDE7280FA89.quest_desc: [
+		"漂浮的矿岩富含铁、铜、金与少量宝石，密度远高于行星矿脉。规划锚点、照明与回收路线，用货运运力把高风险换成稳定产出。"
+		""
+		"{\"text\":\"» 详见手册：小行星带风险\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2BFD78A0764A92FF\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"小行星带风险\"}}"
+	]
+	quest.52A6CBDE7280FA89.quest_subtitle: "推荐阶段：太空时代"
+	quest.125E01F71BB1770C.title: "火箭装配间"
+	quest.125E01F71BB1770C.quest_desc: [
+		"NASA 工作台、发射台与尾翼备齐——火箭开始总装。发射场选址记得留足净空。"
+		""
+		"{\"text\":\"» 详见手册：航天便利装备\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"航天便利装备\"}}"
+	]
+	quest.125E01F71BB1770C.quest_subtitle: "推荐阶段：太空时代"
+	quest.31E14278C99F13AB.title: "燃料加注链"
+	quest.31E14278C99F13AB.quest_desc: [
+		"炼油厂出燃料、加注机喂火箭：发射不再靠手拎桶。这条链同时也是石油经济的终段。"
+		""
+		"{\"text\":\"» 详见手册：统一石油经济\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"统一石油经济\"}}"
+	]
+	quest.31E14278C99F13AB.quest_subtitle: "推荐阶段：太空时代"
+	quest.56FE663A93DD6F1A.title: "月面落点"
+	quest.56FE663A93DD6F1A.quest_desc: [
+		"在月球插下第一面旗——轨道之外的第一站，也是检验氧气与返程储备的试金石。"
+	]
+	quest.56FE663A93DD6F1A.quest_subtitle: "推荐阶段：太空时代"
+	quest.3FDFA2A65CA97C91.title: "火星远征"
+	quest.3FDFA2A65CA97C91.quest_desc: [
+		"抵达火星：戴斯矿脉与第二个永久殖民点。去之前把氧气、燃料与返航方案各备一份冗余。"
+	]
+	quest.3FDFA2A65CA97C91.quest_subtitle: "推荐阶段：太空时代"
+	quest.04089907F6DAA567.title: "生命维持"
+	quest.04089907F6DAA567.quest_desc: [
+		"制氧机、输氧端、抽水泵上线——站点从「能落脚」变成「能住人」。殖民地扩张的先决条件。"
+		""
+		"{\"text\":\"» 详见手册：安全空间站\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"安全空间站\"}}"
+	]
+	quest.04089907F6DAA567.quest_subtitle: "推荐阶段：太空时代"
+	chapter.7A1F8F3DD46D426E.title: "航天殖民"
+	chapter.7A1F8F3DD46D426E.chapter_subtitle: [
+		"规划航行、氧气和补给，把远方据点建设成稳定的生产基地。"
+	]
+	quest.5CFC818ECAF2A1E1.title: "带着目标勘察"
+	quest.5CFC818ECAF2A1E1.quest_desc: [
+		"记录矿点、道路、地形和潜在据点。勘察成果帮助工程与建筑选址，无需通过战斗证明价值。"
+	]
+	quest.5CFC818ECAF2A1E1.quest_subtitle: "推荐阶段：生存时代"
+	quest.2E3803EB5B7C3AB1.title: "把遗迹变成工业捷径"
+	quest.2E3803EB5B7C3AB1.quest_desc: [
+		"回收可用材料、模板和蓝图。它们能节省工厂投入，但同类基础功能始终保留确定性的制造途径。"
+	]
+	quest.2E3803EB5B7C3AB1.quest_subtitle: "推荐阶段：信息时代"
+	quest.6B02183287572A0A.title: "挑战高危遗迹"
+	quest.6B02183287572A0A.quest_desc: [
+		"自行选择是否挑战遗迹首领。准备撤离路线和补给，争取高价值材料或特殊模块；胜利不解锁必需科技。"
+	]
+	quest.6B02183287572A0A.quest_subtitle: "推荐阶段：太空时代"
+	quest.33F96CADFA9891F7.title: "调查外星异常"
+	quest.33F96CADFA9891F7.quest_desc: [
+		"先观察异常预警，再决定采样或撤离。把回收成果交给工业与科研设施处理，不将未知样本直接带入生活舱。"
+	]
+	quest.33F96CADFA9891F7.quest_subtitle: "推荐阶段：太空时代"
+	quest.17108BC68E5E17B5.title: "勘察外星结构"
+	quest.17108BC68E5E17B5.quest_desc: [
+		"行星表面的废墟与高塔藏有补给，也有原生个体的刷怪笼。战利品按星球强度分级，但任何发现都不能替代工业制造。"
+	]
+	quest.17108BC68E5E17B5.quest_subtitle: "推荐阶段：太空时代"
+	quest.5FB2C68FD35C744B.title: "搜集外星遗物饰品"
+	quest.5FB2C68FD35C744B.quest_desc: [
+		"Artifacts 饰品只可通过探索获得。地球遗迹与营地出产基础便利饰品；月球/火星遗迹藏有生存与探索辅助；金星/水星遗迹藏有战斗与防御饰品；Glacio 遗迹与小行星带藏有最稀有遗物。强力饰品不替代氧气、宇航服与火箭等级。"
+	]
+	quest.5FB2C68FD35C744B.quest_subtitle: "推荐阶段：太空时代"
+	quest.7B5BD275BEF97E3E.title: "远征行装"
+	quest.7B5BD275BEF97E3E.quest_desc: [
+		"罗盘、地图与火把：出门探索的三件套。背包进阶用法见手册《背包与远征物资》。"
+		""
+		"{\"text\":\"» 详见手册：背包与远征物资\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"28C9F6D61C4E55C2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"背包与远征物资\"}}"
+	]
+	quest.7B5BD275BEF97E3E.quest_subtitle: "推荐阶段：生存时代"
+	quest.0B6E927FD2CC7D1B.title: "下界侦察"
+	quest.0B6E927FD2CC7D1B.quest_desc: [
+		"穿过下界门侦察一圈：石英、烈焰棒与菌光体都值得标记。快进快出，别贪。"
+	]
+	quest.0B6E927FD2CC7D1B.quest_subtitle: "推荐阶段：机械时代"
+	quest.76B7ECD689453090.title: "陨石研究"
+	quest.76B7ECD689453090.quest_desc: [
+		"充能器点亮陨石晶体，氟露英水晶开始批量产出——这是数字网络的原料命脉。"
+	]
+	quest.76B7ECD689453090.quest_subtitle: "推荐阶段：信息时代"
+	chapter.637830D327841CC8.title: "探索"
+	chapter.637830D327841CC8.chapter_subtitle: [
+		"调查遗迹与异常，带回资源、蓝图和工业捷径。"
+	]
+	quest.7C549AB52654538C.title: "一座能供餐的厨房"
+	quest.7C549AB52654538C.quest_desc: [
+		"建立农田、烹饪锅和集中厨房，准备碗与基础燃料。让队友方便取得食物，而不是各自反复寻找原料。"
+		""
+		"{\"text\":\"» 详见手册：厨房自动化\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"厨房自动化\"}}"
+	]
+	quest.7C549AB52654538C.quest_subtitle: "推荐阶段：生存时代"
+	quest.091668F16A21A35F.title: "把收成送到需要的地方"
+	quest.091668F16A21A35F.quest_desc: [
+		"连接农场、厨房和远征补给箱，预留主粮库存。检查容器回收和满仓情况，让运输保持稳定。"
+		""
+		"{\"text\":\"» 详见手册：厨房自动化\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"厨房自动化\"}}"
+	]
+	quest.091668F16A21A35F.quest_subtitle: "推荐阶段：机械时代"
+	quest.6B7786C4146F1A73.title: "食堂优先，余粮供能"
+	quest.6B7786C4146F1A73.quest_desc: [
+		"用农产支撑生物燃料生产，先保证厨房与种子的库存。工业扩张时同步规划种植规模，避免燃料线耗尽食物。"
+		""
+		"{\"text\":\"» 详见手册：统一石油经济\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"统一石油经济\"}}"
+	]
+	quest.6B7786C4146F1A73.quest_subtitle: "推荐阶段：重工业时代"
+	quest.39AD03268D0C83AE.title: "在外星种下第一片农田"
+	quest.39AD03268D0C83AE.quest_desc: [
+		"为月球或火星农场准备密封、供氧、光照、水和备用电。先验证环境与作物适应性，再扩大生产。"
+	]
+	quest.39AD03268D0C83AE.quest_subtitle: "推荐阶段：太空时代"
+	quest.60EC892D396AFC26.title: "开垦农田"
+	quest.60EC892D396AFC26.quest_desc: [
+		"种下第一片麦田并围好护栏：厨房有了稳定原料，怪潮夜也饿不着人。"
+		""
+		"{\"text\":\"» 详见手册：厨房自动化\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"厨房自动化\"}}"
+	]
+	quest.60EC892D396AFC26.quest_subtitle: "推荐阶段：生存时代"
+	quest.6E99CCD7093D32CF.title: "牧场启动"
+	quest.6E99CCD7093D32CF.quest_desc: [
+		"养殖棚与农夫装置上线：食物来源不再只靠田，皮革、羽毛、肥料一并进账。"
+	]
+	quest.6E99CCD7093D32CF.quest_subtitle: "推荐阶段：机械时代"
+	quest.76B18E56A2AF597A.title: "季节储备"
+	quest.76B18E56A2AF597A.quest_desc: [
+		"为远征与怪潮季单列一座干粮仓：罐头、饼干与备份种子，平时不动、急时救命。"
+	]
+	quest.76B18E56A2AF597A.quest_subtitle: "推荐阶段：电气时代"
+	chapter.4274BFE7FD246AAF.title: "农业与后勤"
+	chapter.4274BFE7FD246AAF.chapter_subtitle: [
+		"供应食物、农产和生物燃料，保障工厂、前线与殖民地。"
+	]
+	quest.67D80191074CCF3A.title: "给工厂留下成长空间"
+	quest.67D80191074CCF3A.quest_desc: [
+		"规划车间、仓库、管廊与检修通道。先搭出容易扩建的布局，再安排外观和装饰；不要求提交固定数量的方块。"
+	]
+	quest.67D80191074CCF3A.quest_subtitle: "推荐阶段：生存时代"
+	quest.6EB064B477848BC2.title: "用工业工具扩大施工"
+	quest.6EB064B477848BC2.quest_desc: [
+		"制作基础建造工具，准备电池与建筑材料。先在小范围验证放置与撤销，再用于厂房和道路。"
+	]
+	quest.6EB064B477848BC2.quest_subtitle: "推荐阶段：电气时代"
+	quest.5CD5CEBA5468B347.title: "建设可维护的工业区"
+	quest.5CD5CEBA5468B347.quest_desc: [
+		"用钢架、混凝土、玻璃与标识统一厂区，区分供电、生产和储备空间。保证防线射界及维修通道，外观不代替实际防护。"
+	]
+	quest.5CD5CEBA5468B347.quest_subtitle: "推荐阶段：重工业时代"
+	quest.26EC2B4817F9C25D.title: "让殖民建筑服务生存"
+	quest.26EC2B4817F9C25D.quest_desc: [
+		"为生活舱、温室、机房和隔离区分舱，设置清晰路线与应急储备。检查真实气密性，不能仅凭玻璃外观判断安全。"
+		""
+		"{\"text\":\"» 详见手册：三层防御\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"482CA592DE6BAB84\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"三层防御\"}}"
+	]
+	quest.26EC2B4817F9C25D.quest_subtitle: "推荐阶段：太空时代"
+	quest.40DFD7A80A1BED57.title: "建材批量"
+	quest.40DFD7A80A1BED57.quest_desc: [
+		"混凝土与玻璃量产入池：厂区扩建、殖民建筑、防御工事都从这一仓出料。"
+	]
+	quest.40DFD7A80A1BED57.quest_subtitle: "推荐阶段：机械时代"
+	quest.751DE25742D71D15.title: "换置与复制"
+	quest.751DE25742D71D15.quest_desc: [
+		"换置小工具改材质、复制小工具铺结构——大型厂区与重复单元的建造提速一个量级。"
+	]
+	quest.751DE25742D71D15.quest_subtitle: "推荐阶段：重工业时代"
+	quest.13129660D86A5A69.title: "拆除重建"
+	quest.13129660D86A5A69.quest_desc: [
+		"拆除小工具安全清场：旧区改造、事故处理、地形修正都不再靠手拆。"
+	]
+	quest.13129660D86A5A69.quest_subtitle: "推荐阶段：原子时代"
+	chapter.56F4CC5F9343242B.title: "建筑"
+	chapter.56F4CC5F9343242B.chapter_subtitle: [
+		"建设便于扩展、维护与防守的工厂、基地和空间站。"
+	]
+	quest.306787D7CF3A4AAE.title: "团队进度与个人专精"
+	quest.306787D7CF3A4AAE.quest_desc: [
+		"团队共享制造研究，个人可以专精不同路线。买到成品不会自动获得制造权限；任务书只提供指引。"
+	]
+	quest.306787D7CF3A4AAE.quest_subtitle: "进度与生存"
+	quest.6B23A0DB3D268796.title: "地球自给路线"
+	quest.6B23A0DB3D268796.quest_desc: [
+		"大部分基础资源和必需高级材料都能在地球获得。外星殖民节省原料与能源，探索提供捷径，但两者都不是继续工业的强制门槛。"
+	]
+	quest.6B23A0DB3D268796.quest_subtitle: "进度与生存"
+	quest.08F61C4EED508F67.title: "电力优先级"
+	quest.08F61C4EED508F67.quest_desc: [
+		"先保氧气、应急电池和基础防线，再供应食堂与生产设备。把关键设施与高耗能机器分开，断电时保留本地储备。"
+	]
+	quest.08F61C4EED508F67.quest_subtitle: "能源·石油·网络"
+	quest.79F690776849AD03.title: "AE2 冷启动"
+	quest.79F690776849AD03.quest_desc: [
+		"压印机先用独立电源运行，完成处理器后再建控制器。数字网络通过存储总线读取抽屉与仓储控制器；管道与传送带继续承担外围大宗运输，数字层负责调度与合成。"
+	]
+	quest.79F690776849AD03.quest_subtitle: "能源·石油·网络"
+	quest.4B5A9C30A8FBCA52.title: "安全空间站"
+	quest.4B5A9C30A8FBCA52.quest_desc: [
+		"空间站默认没有敌对生成，但仍需生命保障。只有明确开启的特殊事件可以产生敌人；把隔离区与生活舱分开。"
+	]
+	quest.4B5A9C30A8FBCA52.quest_subtitle: "航天与风险"
+	quest.3B1F9252FB11EAD5.title: "厨房自动化"
+	quest.3B1F9252FB11EAD5.quest_desc: [
+		"厨房集中取料，烹饪锅负责其支持的菜肴。先验证进出料方向、碗和燃料回收，再连接自动补货；余粮制燃料前先保留食物库存。"
+	]
+	quest.3B1F9252FB11EAD5.quest_subtitle: "进度与生存"
+	quest.6AD45769D44A5F98.title: "怪潮工程兵"
+	quest.6AD45769D44A5F98.quest_desc: [
+		"工程兵能在有限范围拆除障碍或搭建通道。用多层防线、清晰射界和维修储备应对，优先处理正在开路的单位。"
+	]
+	quest.6AD45769D44A5F98.quest_subtitle: "怪潮与防御"
+	quest.453A61A0B4D9C159.title: "仓储成长路线"
+	quest.453A61A0B4D9C159.quest_desc: [
+		"箱子与木桶之后，先用抽屉和通用仓储收大宗散料。容量、过滤和压缩升级随电气时代开放，并消耗工业部件。数字网络建成后读取现有仓库，而不是取代它们。"
+	]
+	quest.453A61A0B4D9C159.quest_subtitle: "进度与生存"
+	quest.28C9F6D61C4E55C2.title: "背包与远征物资"
+	quest.28C9F6D61C4E55C2.quest_desc: [
+		"背包承担采矿、工程、探索、远征和殖民施工的随身补给。基础背包较早可用；容量、自动拾取和补给升级随阶段开放。背包不代替工厂物流，也不是随身合成网络。"
+	]
+	quest.28C9F6D61C4E55C2.quest_subtitle: "进度与生存"
+	quest.1932C9CEA2E264BB.title: "统一石油经济"
+	quest.1932C9CEA2E264BB.quest_desc: [
+		"油田经管道进入统一石油链：石油工业精炼、电气控制和重工业加工产出燃料与化工品，供发电、防务和航天使用。两套产油设备以同一流体和标签互认为准。"
+	]
+	quest.1932C9CEA2E264BB.quest_subtitle: "能源·石油·网络"
+	quest.5D67189820FB07DC.title: "轻量殖民地"
+	quest.5D67189820FB07DC.quest_desc: [
+		"殖民地是工业前哨加少量居民、警卫与炮塔，不是城市模拟。工业养活殖民地，军工武装守卫，守卫与炮塔保护工业。"
+	]
+	quest.5D67189820FB07DC.quest_subtitle: "殖民人口与驻军"
+	quest.6FBF02C8FB016AC6.title: "殖民居民"
+	quest.6FBF02C8FB016AC6.quest_desc: [
+		"第一批居民从地球招募并随火箭抵达。用殖民设施承接人口：农业设施供餐、居住中心扩展人口、贸易设施交换物资。"
+	]
+	quest.6FBF02C8FB016AC6.quest_subtitle: "殖民人口与驻军"
+	quest.4C0A7C642219B0D2.title: "殖民警卫"
+	quest.4C0A7C642219B0D2.quest_desc: [
+		"警卫负责巡逻、建筑内部防守和炮塔死角。用工业制造的枪械与护甲武装他们；普通居民在怪潮中躲避而非参战。"
+	]
+	quest.4C0A7C642219B0D2.quest_subtitle: "殖民人口与驻军"
+	quest.15C288AF8333C644.title: "殖民军械"
+	quest.15C288AF8333C644.quest_desc: [
+		"枪械制造接入工业链：精炼金属、冲压零件、化工发射药。按普通警卫、射手、重装与支援区分装备，不给每个守卫发终局装备。"
+	]
+	quest.15C288AF8333C644.quest_subtitle: "殖民人口与驻军"
+	quest.4C15617E8C8DA7F9.title: "弹药后勤"
+	quest.4C15617E8C8DA7F9.quest_desc: [
+		"弹药消耗进入工业经济：弹头、弹壳与发射药都来自产线。为步兵建立独立弹药库存，守卫会从附近箱子取用。"
+	]
+	quest.4C15617E8C8DA7F9.quest_subtitle: "殖民人口与驻军"
+	quest.744853EABC0E1648.title: "殖民地补给链"
+	quest.744853EABC0E1648.quest_desc: [
+		"补给链保留本地缓冲：主库存按阈值补货，实体物流送到前线弹药箱。网络中断时，驻军依靠本地库存继续战斗。"
+	]
+	quest.744853EABC0E1648.quest_subtitle: "殖民人口与驻军"
+	quest.482CA592DE6BAB84.title: "三层防御"
+	quest.482CA592DE6BAB84.quest_desc: [
+		"三层防御各司其职：炮塔守外围与主火力线，警卫守建筑内部与死角，玩家处理精英、工程兵与战线破口。"
+	]
+	quest.482CA592DE6BAB84.quest_subtitle: "怪潮与防御"
+	quest.1630974DE79170F7.title: "殖民地防御压力"
+	quest.1630974DE79170F7.quest_desc: [
+		"殖民地的怪潮靠战术、数量和特殊单位施压，而不是给普通怪堆血量。保持弹药、电力、食物与维修储备。"
+	]
+	quest.1630974DE79170F7.quest_subtitle: "怪潮与防御"
+	quest.4D5475C44C18F8A3.title: "各星球驻军"
+	quest.4D5475C44C18F8A3.quest_desc: [
+		"各星球驻军风格不同：火星靠炮塔扛高压虫群，霜原星需要穿甲火力，水星只留少量精锐。未加载的殖民地不消耗运算。"
+	]
+	quest.4D5475C44C18F8A3.quest_subtitle: "殖民人口与驻军"
+	quest.64258511A9B2A6A2.title: "殖民岗位"
+	quest.64258511A9B2A6A2.quest_desc: [
+		"居民可在工作站领取岗位：农业、后勤、仓储、机械、电气、军械、网络、重工、生命保障与航天。岗位放大工业效率，但无人产线仍能完整运转。"
+	]
+	quest.64258511A9B2A6A2.quest_subtitle: "岗位与维护"
+	quest.42C7021D8B191D18.title: "岗位分配"
+	quest.42C7021D8B191D18.quest_desc: [
+		"岗位绑定所属基地，不跨星球生效。同一产线的岗位收益边际递减；守卫是军事岗位，不兼任工业职位。"
+	]
+	quest.42C7021D8B191D18.quest_subtitle: "岗位与维护"
+	quest.0B6171AAE7597875.title: "维护与收益"
+	quest.0B6171AAE7597875.quest_desc: [
+		"维护消耗工业材料换取效率与稳定：维护良好的产线略有增益，无人维护也不会停机或损坏。"
+	]
+	quest.0B6171AAE7597875.quest_subtitle: "岗位与维护"
+	quest.4642427A4336C17F.title: "铁路物流"
+	quest.4642427A4336C17F.quest_desc: [
+		"铁路承担基地、矿区与星港之间的高吞吐运输：货运车厢装散料，罐车运液体，装卸机对接仓储。基地内部短距离仍用管道与传送带，数字网络负责调度而非取代铁路。"
+	]
+	quest.4642427A4336C17F.quest_subtitle: "铁路物流"
+	quest.4BD992661353F0B8.title: "星港铁路"
+	quest.4BD992661353F0B8.quest_desc: [
+		"星港是铁路的终点而非替代：矿区列车进入分拣区，燃料与氧气经流体装车送达发射台。外星殖民地同样可以用铁路连接登陆区、矿场、氧气区与发射场。"
+	]
+	quest.4BD992661353F0B8.quest_subtitle: "铁路物流"
+	quest.344ED9F136392B5D.title: "航天便利装备"
+	quest.344ED9F136392B5D.quest_desc: [
+		"氧气罐是便携储氧设备，燃料装载机自动为火箭加注，火箭传感器与重力调节器简化基地自动化。这些设备在太空时代开放，仍需真实材料制造。"
+	]
+	quest.344ED9F136392B5D.quest_subtitle: "航天与风险"
+	quest.2BFD78A0764A92FF.title: "小行星带风险"
+	quest.2BFD78A0764A92FF.quest_desc: [
+		"小行星带是真空矿区：重力极低、没有氧气、没有天然落脚点。火箭降落失败可能永久损失，务必携带返航手段并预留火箭备份。"
+	]
+	quest.2BFD78A0764A92FF.quest_subtitle: "航天与风险"
+	chapter.13F04EAD5AD7B827.title: "参考手册"
+	chapter.13F04EAD5AD7B827.chapter_subtitle: [
+		"按主题整理的长教程：进度规则、能源、防御、殖民、岗位、铁路与航天风险。任务描述里的链接会跳到这里。"
+	]
+}

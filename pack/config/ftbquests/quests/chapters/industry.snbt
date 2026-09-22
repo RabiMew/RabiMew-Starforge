@@ -1,0 +1,513 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "industry"
+	group: ""
+	icon: {
+		id: "ic2cre:generator"
+	}
+	id: "6FCE566CEE4CE64E"
+	images: [ ]
+	order_index: 1
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "ic2cre:generator"
+			}
+			id: "08529A1698B8AB8E"
+			x: 0d
+			y: 0d
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "0F815CE3C393E7EE"
+					type: "item"
+					item: {
+						count: 16
+						id: "ic2cre:copper_cable"
+					}
+					team_reward: false
+				}
+				{
+					id: "7D5810A616F326B8"
+					type: "item"
+					item: {
+						count: 2
+						id: "ic2cre:battery"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "4D601FD9DD947086"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:generator"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:macerator"
+			}
+			id: "2539374E4F2A6024"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"661C32BC2172153E"
+			]
+			rewards: [
+				{
+					id: "2FB57E76E821C994"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:iron_ingot"
+					}
+					team_reward: false
+				}
+				{
+					id: "6778A553B15A22C1"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:copper_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "4A3051750A68819D"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:macerator"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:nuclear_reactor"
+			}
+			id: "43D15883966FA564"
+			x: 22.4d
+			y: 10.5d
+			dependencies: [
+				"45E40F3C3FF4ED9C"
+			]
+			rewards: [
+				{
+					id: "6D8466085211F8DF"
+					type: "item"
+					item: {
+						count: 8
+						id: "ic2cre:lead_plate"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "0CF0F4AF75B26675"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:quantum_control"
+			}
+			id: "3046722B35FDD226"
+			x: 25.6d
+			y: 12d
+			dependencies: [
+				"43D15883966FA564"
+			]
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "7E1E2DC9CEA8D5C0"
+					type: "item"
+					item: {
+						count: 4
+						id: "ic2cre:lapotron_crystal"
+					}
+					team_reward: false
+				}
+				{
+					id: "664A1CE3C10B550D"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "51B43E0F3F7BBB8C"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:quantum_control"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:copper_cable"
+			}
+			id: "13C7D62337B55213"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"08529A1698B8AB8E"
+			]
+			rewards: [
+				{
+					id: "56590FD1FD7A7823"
+					type: "item"
+					item: {
+						count: 16
+						id: "ic2cre:insulated_copper_cable"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "06D41BE933037591"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:copper_cable"
+					}
+					count: 32
+					consume_items: false
+				}
+				{
+					id: "1D06DD7539E64AAB"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:batbox"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:electric_furnace"
+			}
+			id: "661C32BC2172153E"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"13C7D62337B55213"
+			]
+			rewards: [
+				{
+					id: "7066D2CA70CF31D5"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:iron_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "1C5B53970AE8C5DF"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:electric_furnace"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "58F10033AEDA353A"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:compressor"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:steel_ingot"
+			}
+			id: "74254B1A5ACF0303"
+			x: 9.6d
+			y: 15d
+			dependencies: [
+				"661C32BC2172153E"
+			]
+			rewards: [
+				{
+					id: "3809D0AE92A13CCE"
+					type: "item"
+					item: {
+						count: 16
+						id: "railcraft:coal_coke"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "018CC55D1F69EA6B"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:coke_oven_bricks"
+					}
+					count: 4
+					consume_items: false
+				}
+				{
+					id: "60F8850271BC5D19"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:blast_furnace_bricks"
+					}
+					count: 4
+					consume_items: false
+				}
+				{
+					id: "4506A4966C2682BA"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:steel_ingot"
+					}
+					count: 8
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "buildcraftfactory:pump"
+			}
+			id: "5AA32800D1C581FB"
+			x: 12.8d
+			y: 13.5d
+			dependencies: [
+				"2539374E4F2A6024"
+			]
+			rewards: [
+				{
+					id: "7C6EB05DF6BBC08C"
+					type: "item"
+					item: {
+						count: 8
+						id: "buildcrafttransport:wood_fluid"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "171EE8701CA8DFD6"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildcraftfactory:pump"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "4436727E587221F5"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildcrafttransport:iron_fluid"
+					}
+					count: 8
+					consume_items: false
+				}
+				{
+					id: "68E0A9C5BED8EE7E"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildcraftfactory:tank"
+					}
+					count: 4
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:circuit"
+			}
+			id: "32189FD328AB1060"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"2539374E4F2A6024"
+			]
+			rewards: [
+				{
+					id: "5BCE7DCFE7277C94"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:gold_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "295C62BEE075EA44"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:circuit"
+					}
+					count: 4
+					consume_items: false
+				}
+				{
+					id: "278DCCE798F6B3B1"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:component_electronic"
+					}
+					count: 2
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "immersiveengineering:arc_furnace"
+			}
+			id: "12BF8F4E036DE8B1"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"32189FD328AB1060"
+				"74254B1A5ACF0303"
+			]
+			rewards: [
+				{
+					id: "688999589A91BD21"
+					type: "item"
+					item: {
+						count: 8
+						id: "immersiveengineering:component_steel"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "7C0F260537B5CE45"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:heavy_engineering"
+					}
+					count: 2
+					consume_items: false
+				}
+				{
+					id: "50E95CAED0ACE9C5"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:arc_furnace"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:nuclear_reactor"
+			}
+			id: "45E40F3C3FF4ED9C"
+			x: 19.2d
+			y: 9d
+			dependencies: [
+				"12BF8F4E036DE8B1"
+			]
+			rewards: [
+				{
+					id: "2BF89F7B546DABA9"
+					type: "item"
+					item: {
+						count: 8
+						id: "ic2cre:lead_plate"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "1AD7107807D5448D"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:nuclear_reactor"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "2C6F19F74ADE98A5"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:reactor_chamber_block"
+					}
+					count: 4
+					consume_items: false
+				}
+				{
+					id: "53F0C5D5335F4148"
+					type: "item"
+					item: {
+						count: 1
+						id: "ic2cre:containment_reactor_plating"
+					}
+					count: 8
+					consume_items: false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,276 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "agriculture"
+	group: ""
+	icon: {
+		id: "easy_villagers:farmer"
+	}
+	id: "4274BFE7FD246AAF"
+	images: [ ]
+	order_index: 6
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "farmersdelight:cooking_pot"
+			}
+			id: "7C549AB52654538C"
+			x: 0d
+			y: 0d
+			rewards: [
+				{
+					id: "52525F73446E2D5B"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:wheat_seeds"
+					}
+					team_reward: false
+				}
+				{
+					id: "4743651E7F729350"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bowl"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "585399A0C4DC2F46"
+					type: "item"
+					item: {
+						count: 1
+						id: "farmersdelight:cooking_pot"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:bowl"
+			}
+			id: "091668F16A21A35F"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"60EC892D396AFC26"
+			]
+			rewards: [
+				{
+					id: "332E6C3BB6817E3B"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:glass"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "69393F42E20DDB53"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "immersiveengineering:jerrycan"
+			}
+			id: "6B7786C4146F1A73"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"6E99CCD7093D32CF"
+				"091668F16A21A35F"
+			]
+			rewards: [
+				{
+					id: "387A87949F1D3CA9"
+					type: "item"
+					item: {
+						count: 32
+						id: "minecraft:bone_meal"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5036E13ECA528344"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:biodiesel_bucket"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "easy_villagers:farmer"
+			}
+			id: "39AD03268D0C83AE"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"6B7786C4146F1A73"
+			]
+			rewards: [
+				{
+					id: "1E19CC3CE824ABBC"
+					type: "item"
+					item: {
+						count: 32
+						id: "minecraft:wheat_seeds"
+					}
+					team_reward: false
+				}
+				{
+					id: "437F7E3E4A3EC4BB"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:bone_meal"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "390BC469640E16CA"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:water_pump"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "4A4E4283622C5E5F"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:wheat"
+			}
+			id: "60EC892D396AFC26"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"7C549AB52654538C"
+			]
+			rewards: [
+				{
+					id: "5A1ADD52D05C5AC2"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:bone_meal"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "645287D6FF4F9C73"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:wheat_seeds"
+					}
+					count: 32
+					consume_items: false
+				}
+				{
+					id: "5A2D669122227BB4"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "easy_villagers:breeder"
+			}
+			id: "6E99CCD7093D32CF"
+			x: 6.4d
+			y: 9d
+			dependencies: [
+				"60EC892D396AFC26"
+			]
+			rewards: [
+				{
+					id: "75C42BB28A7A85AC"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:wheat_seeds"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "18E24CC2149C717C"
+					type: "item"
+					item: {
+						count: 1
+						id: "easy_villagers:breeder"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "25EB5B7B0155DCAB"
+					type: "item"
+					item: {
+						count: 1
+						id: "easy_villagers:farmer"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:hay_block"
+			}
+			id: "76B18E56A2AF597A"
+			x: 9.6d
+			y: 7.5d
+			dependencies: [
+				"091668F16A21A35F"
+			]
+			rewards: [
+				{
+					id: "14A6F56FA0CDE764"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bowl"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "297548C952079318"
+					type: "checkmark"
+				}
+			]
+		}
+	]
+}

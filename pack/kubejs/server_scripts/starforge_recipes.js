@@ -91,7 +91,7 @@ ServerEvents.recipes((e) => {
 
   // ---------- SF-09 T3: pattern provider / crafting unit / assembler ----------
   e.remove({ output: 'ae2:pattern_provider' });
-  e.remove({ id: 'ae2:network/blocks/pattern_providers_interface_alt' });
+  e.remove({ id: 'ae2:network/blocks/pattern_providers_interface_part' });
   e.shaped('ae2:pattern_provider', ['IMI', 'CFC', 'IMI'], {
     I: 'minecraft:iron_ingot', M: i('ie_iron_component'),
     C: i('ic2_circuit'), F: 'ae2:interface'

@@ -1,0 +1,458 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "manual"
+	group: ""
+	icon: {
+		id: "ftbquests:book"
+	}
+	id: "13F04EAD5AD7B827"
+	images: [ ]
+	order_index: 8
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "306787D7CF3A4AAE"
+			x: 0d
+			y: 0d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "705208C1436E09C5"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "6B23A0DB3D268796"
+			x: 0d
+			y: 1.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "2861A4198BF3A90B"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "08F61C4EED508F67"
+			x: 4d
+			y: 0d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "7F869A3322711D7A"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "79F690776849AD03"
+			x: 4d
+			y: 1.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "48D9613F6B701D6B"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "4B5A9C30A8FBCA52"
+			x: 8d
+			y: 0d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "552D4DC1E38C2881"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "3B1F9252FB11EAD5"
+			x: 0d
+			y: 3d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "65FF813174F5408F"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "6AD45769D44A5F98"
+			x: 12d
+			y: 0d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "0960B1C44FCF1DAE"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "453A61A0B4D9C159"
+			x: 0d
+			y: 4.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "24F6D54F5FB7B775"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "28C9F6D61C4E55C2"
+			x: 0d
+			y: 6d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "17F235FDA81D343E"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "1932C9CEA2E264BB"
+			x: 4d
+			y: 3d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "00B9CB45F123C122"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "5D67189820FB07DC"
+			x: 16d
+			y: 0d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "56C87E9450AC848D"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "6FBF02C8FB016AC6"
+			x: 16d
+			y: 1.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "293F13C944035CE0"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "4C0A7C642219B0D2"
+			x: 16d
+			y: 3d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "7649D9E6A64C3039"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "15C288AF8333C644"
+			x: 16d
+			y: 4.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "0A6E026E6757EA84"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "4C15617E8C8DA7F9"
+			x: 16d
+			y: 6d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "2B1CFDB41AB33AF6"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "744853EABC0E1648"
+			x: 16d
+			y: 7.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "3903856EF9FE5E64"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "482CA592DE6BAB84"
+			x: 12d
+			y: 1.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "774A8B45EC7F3FF6"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "1630974DE79170F7"
+			x: 12d
+			y: 3d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "33A1FDCFC270B1D4"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "4D5475C44C18F8A3"
+			x: 16d
+			y: 9d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "6EC8554890083D69"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "64258511A9B2A6A2"
+			x: 20d
+			y: 0d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "2FA528AC97C748D8"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "42C7021D8B191D18"
+			x: 20d
+			y: 1.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "643E40EE151E9A98"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "0B6171AAE7597875"
+			x: 20d
+			y: 3d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "53639269E0E9A0BC"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "4642427A4336C17F"
+			x: 24d
+			y: 0d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "43B63C01460C41BE"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "4BD992661353F0B8"
+			x: 24d
+			y: 1.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "57AA85C5DD00558D"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "344ED9F136392B5D"
+			x: 8d
+			y: 1.5d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "4E5B4747AFEBABAB"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "2BFD78A0764A92FF"
+			x: 8d
+			y: 3d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "0CA0CBE57E0EE532"
+					type: "checkmark"
+				}
+			]
+		}
+	]
+}

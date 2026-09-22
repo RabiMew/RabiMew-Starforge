@@ -28,7 +28,7 @@ function copyTree(src, dest, skipPrefixes) {
 
 // Directories the pack fully owns — wipe stale contents before copying
 // (e.g. ProgressiveStages auto-generates showcase stages we must remove).
-const OWNED_DIRS = ['config/progressivestages/stages'];
+const OWNED_DIRS = ['config/progressivestages/stages', 'config/ftbquests/quests'];
 
 function sync(side) {
   const dest = path.join(root, 'run', side);

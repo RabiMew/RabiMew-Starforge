@@ -1,0 +1,560 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "space"
+	group: ""
+	icon: {
+		id: "ad_astra:tier_1_rocket"
+	}
+	id: "7A1F8F3DD46D426E"
+	images: [ ]
+	order_index: 4
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "modpack:space_control_core"
+			}
+			id: "061F44AAFD6FFC83"
+			x: 0d
+			y: 0d
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "40698FD567E4F87E"
+					type: "item"
+					item: {
+						count: 8
+						id: "ic2cre:alloy"
+					}
+					team_reward: false
+				}
+				{
+					id: "3F1902669DD08446"
+					type: "item"
+					item: {
+						count: 4
+						id: "immersiveengineering:component_steel"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "00BA2049E8B0B895"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:space_control_core"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:tier_1_rocket"
+			}
+			id: "7FA3F49803108CD1"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"31E14278C99F13AB"
+				"0AF6F16EA4174410"
+			]
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "274E3EA753D27D9D"
+					type: "item"
+					item: {
+						count: 2
+						id: "ad_astra:gas_tank"
+					}
+					team_reward: false
+				}
+				{
+					id: "2761A9DC1BC1B9CA"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra_giselle_addon:oxygen_can"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "69FA969F317E3736"
+					type: "advancement"
+					advancement: "starforge:first_launch"
+					criterion: ""
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:white_flag"
+			}
+			id: "7FD9F6B5176631DF"
+			x: 12.8d
+			y: 12d
+			dependencies: [
+				"7FA3F49803108CD1"
+			]
+			rewards: [
+				{
+					id: "182F276ACC659462"
+					type: "item"
+					item: {
+						count: 16
+						id: "ad_astra:steel_plate"
+					}
+					team_reward: false
+				}
+				{
+					id: "135135F11B1E41CE"
+					type: "item"
+					item: {
+						count: 16
+						id: "ad_astra:iron_rod"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "2C8F6E57958F6994"
+					type: "dimension"
+					dimension: "ad_astra:earth_orbit"
+				}
+				{
+					id: "5D4967F7292301C0"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:colony_maintenance"
+			}
+			id: "0E6767E1E6DA1ED6"
+			x: 19.2d
+			y: 15d
+			dependencies: [
+				"7FD9F6B5176631DF"
+				"04089907F6DAA567"
+			]
+			rewards: [
+				{
+					id: "17B31E394E21FC08"
+					type: "item"
+					item: {
+						count: 4
+						id: "modpack:colony_maintenance"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "6F7E53BBEB79E795"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra_giselle_addon:oxygen_can"
+			}
+			id: "0AF6F16EA4174410"
+			x: 3.2d
+			y: 16.5d
+			dependencies: [
+				"061F44AAFD6FFC83"
+			]
+			rewards: [
+				{
+					id: "1BD2B94B7189D036"
+					type: "item"
+					item: {
+						count: 2
+						id: "ad_astra:gas_tank"
+					}
+					team_reward: false
+				}
+				{
+					id: "173A93AEE419221E"
+					type: "item"
+					item: {
+						count: 4
+						id: "ic2cre:battery"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "7B96080FB28D6F38"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra_giselle_addon:oxygen_can"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "6A3ACE451730A3A3"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:space_helmet"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "2B517ED8608D2843"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:space_suit"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "72D465163B4E2FD0"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:space_pants"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "5F87A2DADC88199C"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:space_boots"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:diamond"
+			}
+			id: "16E992F88F58E687"
+			x: 19.2d
+			y: 9d
+			dependencies: [
+				"3FDFA2A65CA97C91"
+			]
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "1DC3633475ED22C6"
+					type: "item"
+					item: {
+						count: 2
+						id: "ad_astra:gas_tank"
+					}
+					team_reward: false
+				}
+				{
+					id: "3A1EA6F116E81497"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra_giselle_addon:oxygen_can"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "72677CAC177B19BD"
+					type: "dimension"
+					dimension: "pv_asteroid_belt:asteroid_belt"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:drill"
+			}
+			id: "52A6CBDE7280FA89"
+			x: 22.4d
+			y: 10.5d
+			dependencies: [
+				"16E992F88F58E687"
+			]
+			rewards: [
+				{
+					id: "074B00540ABC4A1D"
+					type: "item"
+					item: {
+						count: 4
+						id: "minecraft:diamond"
+					}
+					team_reward: false
+				}
+				{
+					id: "4C77DDC034E57284"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "4DDC93FDBA86FC4A"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:nasa_workbench"
+			}
+			id: "125E01F71BB1770C"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"061F44AAFD6FFC83"
+			]
+			rewards: [
+				{
+					id: "0A5000714B37C54C"
+					type: "item"
+					item: {
+						count: 16
+						id: "ad_astra:steel_plate"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "7793E312EBB1E90E"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:nasa_workbench"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "4B58C25E38276585"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:launch_pad"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "4E4FA4FF3AC91EFC"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:rocket_fin"
+					}
+					count: 4
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:fuel_refinery"
+			}
+			id: "31E14278C99F13AB"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"125E01F71BB1770C"
+			]
+			rewards: [
+				{
+					id: "0353C800CF4A9006"
+					type: "item"
+					item: {
+						count: 8
+						id: "ic2cre:alloy"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "47E6217BA67B5F4D"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:fuel_refinery"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "153163936A8B0CAD"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra_giselle_addon:fuel_loader"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "0EDB43C1096FB2FB"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:gas_tank"
+					}
+					count: 2
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:white_flag"
+			}
+			id: "56FE663A93DD6F1A"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"7FA3F49803108CD1"
+			]
+			rewards: [
+				{
+					id: "6323B0284DC89219"
+					type: "item"
+					item: {
+						count: 2
+						id: "ad_astra:gas_tank"
+					}
+					team_reward: false
+				}
+				{
+					id: "39F3E6183405BB94"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra_giselle_addon:oxygen_can"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3E4E072C636F151D"
+					type: "dimension"
+					dimension: "ad_astra:moon"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:white_flag"
+			}
+			id: "3FDFA2A65CA97C91"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"56FE663A93DD6F1A"
+			]
+			rewards: [
+				{
+					id: "64C8F313E84E5D00"
+					type: "item"
+					item: {
+						count: 8
+						id: "ad_astra:desh_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "057B73B822949308"
+					type: "dimension"
+					dimension: "ad_astra:mars"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:oxygen_distributor"
+			}
+			id: "04089907F6DAA567"
+			x: 16d
+			y: 13.5d
+			dependencies: [
+				"7FD9F6B5176631DF"
+			]
+			rewards: [
+				{
+					id: "2321A8A3E7FC0E69"
+					type: "item"
+					item: {
+						count: 2
+						id: "ad_astra:gas_tank"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3EF94EC341071C9C"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:oxygen_loader"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "702CCD5665C42F7E"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:oxygen_distributor"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "52BF447FF795585E"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:water_pump"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+	]
+}

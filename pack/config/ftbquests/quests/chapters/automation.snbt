@@ -1,0 +1,472 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "automation"
+	group: ""
+	icon: {
+		id: "ae2:controller"
+	}
+	id: "17B3058067D055B5"
+	images: [ ]
+	order_index: 2
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "storagedrawers:controller"
+			}
+			id: "1E6E9ECA6921E56E"
+			x: 0d
+			y: 0d
+			rewards: [
+				{
+					id: "4D3AF7B4CF9D0BE8"
+					type: "item"
+					item: {
+						count: 4
+						id: "minecraft:piston"
+					}
+					team_reward: false
+				}
+				{
+					id: "32C5AFE09F3ED85B"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:redstone"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3B617FBE0380F0C6"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildcrafttransport:stone_item"
+					}
+					count: 8
+					consume_items: false
+				}
+				{
+					id: "6C5C463E089B4473"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildcraftfactory:tank"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ae2:inscriber"
+			}
+			id: "4F47C604F5D375CC"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"55D5885078439343"
+			]
+			rewards: [
+				{
+					id: "7EB4EEDC4FB3DE48"
+					type: "item"
+					item: {
+						count: 8
+						id: "ae2:certus_quartz_crystal"
+					}
+					team_reward: false
+				}
+				{
+					id: "2EC1E421A476954D"
+					type: "item"
+					item: {
+						count: 8
+						id: "ae2:silicon"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "1A596C8B6C36DDF9"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:inscriber"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:logistics_console"
+			}
+			id: "401D4EAB9AB4A6E1"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"3FDA41ACF6A75A22"
+			]
+			rewards: [
+				{
+					id: "20DACACA2E31225E"
+					type: "item"
+					item: {
+						count: 2
+						id: "ae2:logic_processor"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "4D0CA1A9068CE7C8"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ae2:quantum_ring"
+			}
+			id: "4B4C77575CC4219A"
+			x: 19.2d
+			y: 9d
+			dependencies: [
+				"0456D2DC6A3C47D0"
+			]
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "45F6436506A4682C"
+					type: "item"
+					item: {
+						count: 2
+						id: "ae2:dense_energy_cell"
+					}
+					team_reward: false
+				}
+				{
+					id: "4DE8E80E0DA56784"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "3109294589ED1920"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:quantum_ring"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:cargo_minecart"
+			}
+			id: "1E674A8A5C906BBF"
+			x: 3.2d
+			y: 10.5d
+			dependencies: [
+				"1E6E9ECA6921E56E"
+			]
+			rewards: [
+				{
+					id: "2763ADC574D32E5A"
+					type: "item"
+					item: {
+						count: 8
+						id: "railcraft:steel_ingot"
+					}
+					team_reward: false
+				}
+				{
+					id: "7E512D4887F1AE8B"
+					type: "item"
+					item: {
+						count: 16
+						id: "railcraft:coal_coke"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "38EF771CF5BC421D"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:cargo_minecart"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "4C4558DC34DA93B8"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:item_loader"
+					}
+					count: 2
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:item_loader"
+			}
+			id: "3991787934E071A4"
+			x: 9.6d
+			y: 13.5d
+			dependencies: [
+				"0DB724B7A030812E"
+			]
+			rewards: [
+				{
+					id: "55B68F7B38CB0005"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:advanced_item_loader"
+					}
+					team_reward: false
+				}
+				{
+					id: "6376E698223413B9"
+					type: "item"
+					item: {
+						count: 8
+						id: "railcraft:steel_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3C8A4A0F60B88613"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "buildcrafttransport:stone_item"
+			}
+			id: "55D5885078439343"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"1E6E9ECA6921E56E"
+			]
+			rewards: [
+				{
+					id: "51D17FD4225AD77D"
+					type: "item"
+					item: {
+						count: 4
+						id: "minecraft:piston"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "0C31C8BA0261EC20"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildcrafttransport:wood_item"
+					}
+					count: 8
+					consume_items: false
+				}
+				{
+					id: "590DC1BE9023875D"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildcrafttransport:stone_item"
+					}
+					count: 16
+					consume_items: false
+				}
+				{
+					id: "061C41E1D9A06EA5"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:block_signal"
+			}
+			id: "0DB724B7A030812E"
+			x: 6.4d
+			y: 12d
+			dependencies: [
+				"1E674A8A5C906BBF"
+			]
+			rewards: [
+				{
+					id: "73F055979A2163ED"
+					type: "item"
+					item: {
+						count: 8
+						id: "railcraft:token_signal"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "050885129E14DD87"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:signal_circuit"
+					}
+					count: 2
+					consume_items: false
+				}
+				{
+					id: "63A4B743608FE2DC"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:block_signal"
+					}
+					count: 4
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ae2:controller"
+			}
+			id: "3FDA41ACF6A75A22"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"4F47C604F5D375CC"
+			]
+			rewards: [
+				{
+					id: "7CE58277D9B9FA23"
+					type: "item"
+					item: {
+						count: 8
+						id: "ae2:quartz_glass"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "0AFFA0A94BFBC016"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:controller"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "7D6D1A783BE29C1D"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:energy_cell"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "46C21C804B5A7D55"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:storage_bus"
+					}
+					count: 2
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ae2:molecular_assembler"
+			}
+			id: "0456D2DC6A3C47D0"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"401D4EAB9AB4A6E1"
+			]
+			rewards: [
+				{
+					id: "1508529A4B97F13E"
+					type: "item"
+					item: {
+						count: 4
+						id: "ae2:calculation_processor"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "53AAB2BC4DD7E0EA"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:crafting_unit"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "33AAB6FD7C1292C2"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:molecular_assembler"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "5B35E81FC75C3705"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:pattern_provider"
+					}
+					count: 2
+					consume_items: false
+				}
+			]
+		}
+	]
+}

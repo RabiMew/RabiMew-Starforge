@@ -1,0 +1,303 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "onboarding"
+	group: ""
+	icon: {
+		id: "modpack:engineering_assembly"
+	}
+	id: "55C7495156B62A20"
+	images: [ ]
+	order_index: 0
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "0E79A6A14CA31F91"
+			x: 0d
+			y: 0d
+			rewards: [
+				{
+					id: "59566BB9E412556C"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bread"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "52D04BBFB1E97CED"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:player_head"
+			}
+			id: "0D1AC1E27C5540EB"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"0E79A6A14CA31F91"
+			]
+			tasks: [
+				{
+					id: "5BAA70E5888E4962"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:campfire"
+			}
+			id: "13CFB46ABD3B5830"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"0D1AC1E27C5540EB"
+			]
+			rewards: [
+				{
+					id: "5B6AB72347DFB625"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:torch"
+					}
+					team_reward: false
+				}
+				{
+					id: "1823C81009391C8E"
+					type: "item"
+					item: {
+						count: 4
+						id: "minecraft:bread"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "216692AD860DB3FA"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:chest"
+					}
+					count: 2
+					consume_items: false
+				}
+				{
+					id: "5A46898B690684F6"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:torch"
+					}
+					count: 16
+					consume_items: false
+				}
+				{
+					id: "51E5DA31858D77EC"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "farmersdelight:cooking_pot"
+			}
+			id: "2F3A025FCA06D48B"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"13CFB46ABD3B5830"
+			]
+			rewards: [
+				{
+					id: "38B1B27CA2B86CD0"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:wheat_seeds"
+					}
+					team_reward: false
+				}
+				{
+					id: "050E92418C127426"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bowl"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3C0A106A5D5183DB"
+					type: "item"
+					item: {
+						count: 1
+						id: "farmersdelight:cooking_pot"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:engineering_assembly"
+			}
+			id: "4CD255DB2734A955"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"2F3A025FCA06D48B"
+				"04678E0F669135E0"
+			]
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "696C35772B198961"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:iron_ingot"
+					}
+					team_reward: false
+				}
+				{
+					id: "7C47231FD361848E"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:copper_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5D728664A71DC993"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:engineering_assembly"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:industrial_console"
+			}
+			id: "6FD4163A437DB329"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"4CD255DB2734A955"
+			]
+			tasks: [
+				{
+					id: "7A05475109747A63"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:map"
+			}
+			id: "4A5C4FDCC304869D"
+			x: 19.2d
+			y: 9d
+			dependencies: [
+				"6FD4163A437DB329"
+			]
+			rewards: [
+				{
+					id: "1F4EAA8F22EB4603"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:compass"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "31858F61CD91C802"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:iron_pickaxe"
+			}
+			id: "04678E0F669135E0"
+			x: 9.6d
+			y: 10.5d
+			dependencies: [
+				"13CFB46ABD3B5830"
+			]
+			rewards: [
+				{
+					id: "59ED9C210A3BD9C0"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bread"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "40F444EA7DD0310C"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:iron_pickaxe"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "7FDFAF7FFDF09ACD"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:iron_sword"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "1E41A145D2AAF222"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:bucket"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+	]
+}

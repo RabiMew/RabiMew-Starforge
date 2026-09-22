@@ -85,7 +85,8 @@
       "ic2_mfsu", "ic2_mfsu_kit",
       "ic2_nano_helmet", "ic2_nano_chestplate", "ic2_nano_leggings", "ic2_nano_boots",
       "dt_laser", "bg_destruction_gadget",
-      "ae2_singularity", "ae2_entangled_singularity"
+      "ae2_singularity", "ae2_entangled_singularity",
+      "anomaly_analysis"
     ],
     "blocks": [],
     "dimensions": []
@@ -110,7 +111,7 @@
   "quantum_age": {
     "items": [
       "ic2_quantum_helmet", "ic2_quantum_chestplate", "ic2_quantum_leggings", "ic2_quantum_boots",
-      "ae2_quantum_ring", "ae2_quantum_link", "ae2_spatial_cell_128", "anomaly_analysis"
+      "ae2_quantum_ring", "ae2_quantum_link", "ae2_spatial_cell_128"
     ],
     "blocks": [],
     "dimensions": []

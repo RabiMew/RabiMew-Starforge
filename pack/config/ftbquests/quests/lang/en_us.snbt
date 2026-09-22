@@ -1,0 +1,602 @@
+{
+	file.3CA1F6C961E490AE.title: "Starforge · Quest Book"
+	quest.0E79A6A14CA31F91.title: "Welcome to Starforge"
+	quest.0E79A6A14CA31F91.quest_desc: [
+		"This quest book is a manual and milestone map: stages advance by crafting evidence components, never by turning in quests. Every chapter stays available."
+		""
+		"{\"text\":\"» See the manual: Team Progression and Specialization\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Team Progression and Specialization\"}}"
+	]
+	quest.0E79A6A14CA31F91.quest_subtitle: "Suggested stage: Survival Age"
+	quest.0D1AC1E27C5540EB.title: "Your Team"
+	quest.0D1AC1E27C5540EB.quest_desc: [
+		"Manufacturing research is shared per team and synced when members join. Players can specialize freely; buying finished goods never grants crafting rights."
+		""
+		"{\"text\":\"» See the manual: Team Progression and Specialization\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Team Progression and Specialization\"}}"
+		"{\"text\":\"» See the manual: The Earth-Sufficient Route\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6B23A0DB3D268796\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Earth-Sufficient Route\"}}"
+	]
+	quest.0D1AC1E27C5540EB.quest_subtitle: "Suggested stage: Survival Age"
+	quest.13CFB46ABD3B5830.title: "First Camp"
+	quest.13CFB46ABD3B5830.quest_desc: [
+		"Build shelter, a bed, storage, and starter fields. Lighting and fencing are the first layer of defense."
+	]
+	quest.13CFB46ABD3B5830.quest_subtitle: "Suggested stage: Survival Age"
+	quest.2F3A025FCA06D48B.title: "The First Pot"
+	quest.2F3A025FCA06D48B.quest_desc: [
+		"Craft a Farmer's Delight cooking pot so the kitchen can serve the whole base. Farming and storage growth live in the Agriculture chapter."
+		""
+		"{\"text\":\"» See the manual: Kitchen Automation\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Kitchen Automation\"}}"
+	]
+	quest.2F3A025FCA06D48B.quest_subtitle: "Suggested stage: Survival Age"
+	quest.4CD255DB2734A955.title: "Engineering Assembly"
+	quest.4CD255DB2734A955.quest_desc: [
+		"Craft an engineering assembly by hand to move the team into the Mechanical Age. Stage evidence always comes from crafting, never from pickups or submissions."
+		""
+		"{\"text\":\"» See the manual: The Storage Growth Path\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Storage Growth Path\"}}"
+	]
+	quest.4CD255DB2734A955.quest_subtitle: "Suggested stage: Survival Age"
+	quest.6FD4163A437DB329.title: "Register the Base"
+	quest.6FD4163A437DB329.quest_desc: [
+		"Register your main base in the base status screen: threat, supply, oxygen, and power are tracked within its bounds. Re-register after relocating."
+	]
+	quest.6FD4163A437DB329.quest_subtitle: "Suggested stage: Survival Age"
+	quest.4A5C4FDCC304869D.title: "Seven Routes"
+	quest.4A5C4FDCC304869D.quest_desc: [
+		"The book's seven chapters map to seven long-term routes — all visible, no required order. Start with what suits you; the rest can wait or go to teammates."
+	]
+	quest.4A5C4FDCC304869D.quest_subtitle: "Suggested stage: Survival Age"
+	quest.04678E0F669135E0.title: "The Iron Kit"
+	quest.04678E0F669135E0.quest_desc: [
+		"An iron pickaxe, sword, and bucket: mining, defense, and water hauling in one kit."
+	]
+	quest.04678E0F669135E0.quest_subtitle: "Suggested stage: Survival Age"
+	chapter.55C7495156B62A20.title: "Getting Started"
+	chapter.55C7495156B62A20.chapter_subtitle: [
+		"Your first steps from campsite to first machine: the quest book, team progression, the kitchen, milestone components, and base registration."
+	]
+	quest.08529A1698B8AB8E.title: "Your First Industrial Power Supply"
+	quest.08529A1698B8AB8E.quest_desc: [
+		"Prepare a basic circuit, a generator, and safe wiring. Run one machine reliably before expanding the grid. Equipment is not submitted or consumed."
+		""
+		"{\"text\":\"» See the manual: Power Priority\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Power Priority\"}}"
+	]
+	quest.08529A1698B8AB8E.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.2539374E4F2A6024.title: "Get More from Every Ore"
+	quest.2539374E4F2A6024.quest_desc: [
+		"Feed mined resources into industrial processing and collect primary products and byproducts separately. Check for blocked inputs and ensure dust is not reprocessed as raw ore."
+	]
+	quest.2539374E4F2A6024.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.43D15883966FA564.title: "Power for Large Industry"
+	quest.43D15883966FA564.quest_desc: [
+		"Plan the reactor, cooling, isolation, and backup power. Test shutdowns and failures before connecting essential production lines."
+		""
+		"{\"text\":\"» See the manual: Power Priority\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Power Priority\"}}"
+	]
+	quest.43D15883966FA564.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.3046722B35FDD226.title: "Quantum Industry on Earth"
+	quest.3046722B35FDD226.quest_desc: [
+		"Refine your first iridium on Earth, then establish UU-Matter scanning and replication. Quantum control assemblies require neither alien resources nor boss drops."
+	]
+	quest.3046722B35FDD226.quest_subtitle: "Suggested stage: Quantum Age"
+	quest.13C7D62337B55213.title: "Wiring Up"
+	quest.13C7D62337B55213.quest_desc: [
+		"Hook the generator to a batbox with copper cable: power must be stored and delivered, not just made. Keep runs short for now."
+		""
+		"{\"text\":\"» See the manual: Power Priority\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Power Priority\"}}"
+	]
+	quest.13C7D62337B55213.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.661C32BC2172153E.title: "First Electric Machines"
+	quest.661C32BC2172153E.quest_desc: [
+		"An electric furnace and compressor come online: smelting and forming stop burning coal."
+	]
+	quest.661C32BC2172153E.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.74254B1A5ACF0303.title: "First Steel"
+	quest.74254B1A5ACF0303.quest_desc: [
+		"Coke oven to blast furnace: steel underpins rail, turrets, and heavy structures. Stand the line up early."
+	]
+	quest.74254B1A5ACF0303.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.5AA32800D1C581FB.title: "Oil Bootstrapping"
+	quest.5AA32800D1C581FB.quest_desc: [
+		"Pump crude oil through iron pipes into storage tanks. The first step of the unified oil chain: get the fluid home before worrying about refining."
+		""
+		"{\"text\":\"» See the manual: The Unified Oil Economy\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Unified Oil Economy\"}}"
+	]
+	quest.5AA32800D1C581FB.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.32189FD328AB1060.title: "Electronics Batch"
+	quest.32189FD328AB1060.quest_desc: [
+		"Stockpile circuit boards and electron tubes — every machine, signal, and production line downstream feeds on these."
+	]
+	quest.32189FD328AB1060.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.12BF8F4E036DE8B1.title: "Heavy Machinery Frames"
+	quest.12BF8F4E036DE8B1.quest_desc: [
+		"Heavy engineering blocks and the arc furnace: steel and electronics converge here, and output reaches heavy-industry scale."
+	]
+	quest.12BF8F4E036DE8B1.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.45E40F3C3FF4ED9C.title: "Reactor Hall"
+	quest.45E40F3C3FF4ED9C.quest_desc: [
+		"Nuclear reactor, chambers, and containment plating — the hardware base of the power grid. Build the shell before worrying about the grid."
+	]
+	quest.45E40F3C3FF4ED9C.quest_subtitle: "Suggested stage: Atomic Age"
+	chapter.6FCE566CEE4CE64E.title: "Industrial Engineering"
+	chapter.6FCE566CEE4CE64E.chapter_subtitle: [
+		"Supply power, circuits, and advanced materials to keep industry running."
+	]
+	quest.1E6E9ECA6921E56E.title: "From Chests to Production Lines"
+	quest.1E6E9ECA6921E56E.quest_desc: [
+		"Use drawers and versatile storage for bulk ore, ingots, parts, and crops, then connect machines with pipes or conveyors. Plan overflow handling and stop signals before increasing transport speed."
+		""
+		"{\"text\":\"» See the manual: The Storage Growth Path\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Storage Growth Path\"}}"
+	]
+	quest.1E6E9ECA6921E56E.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.4F47C604F5D375CC.title: "Start Your First Digital Warehouse"
+	quest.4F47C604F5D375CC.quest_desc: [
+		"Power an inscriber independently to make processors, then let the digital network take over existing physical warehouses through storage buses. Presses can be manufactured on Earth and meteorites are an optional shortcut; drawers and stockrooms keep their value."
+		""
+		"{\"text\":\"» See the manual: AE2 Cold Start\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"79F690776849AD03\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"AE2 Cold Start\"}}"
+	]
+	quest.4F47C604F5D375CC.quest_subtitle: "Suggested stage: Information Age"
+	quest.401D4EAB9AB4A6E1.title: "Produce to Stock Targets"
+	quest.401D4EAB9AB4A6E1.quest_desc: [
+		"Aggregate physical inventory through a storage controller, then set restocking thresholds for circuits, ammunition, and food. Prioritize essential supplies and plan for full storage, power loss, and missing ingredients."
+	]
+	quest.401D4EAB9AB4A6E1.quest_subtitle: "Suggested stage: Information Age"
+	quest.4B4C77575CC4219A.title: "Connect Remote Bases"
+	quest.4B4C77575CC4219A.quest_desc: [
+		"Link powered, loaded networks with a quantum bridge and keep local supply buffers. A disconnected base should still sustain essential operations."
+	]
+	quest.4B4C77575CC4219A.quest_subtitle: "Suggested stage: Quantum Age"
+	quest.1E674A8A5C906BBF.title: "Build a Freight Rail Network"
+	quest.1E674A8A5C906BBF.quest_desc: [
+		"Connect mines and the industrial base with freight trains: cargo carts haul bulk goods, tank carts carry fluids, and loaders handle both ends. Short-range in-base transport still belongs to pipes and conveyors."
+		""
+		"{\"text\":\"» See the manual: Rail Logistics\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4642427A4336C17F\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Rail Logistics\"}}"
+	]
+	quest.1E674A8A5C906BBF.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.3991787934E071A4.title: "Bring the Railway to the Spaceport"
+	quest.3991787934E071A4.quest_desc: [
+		"Run ore trains straight into the launch complex: trains feed sorting and storage, then fuel loading and rockets handle the interplanetary leg. Colony landing zones, mines, oxygen plants, and pads can use the same pattern."
+		""
+		"{\"text\":\"» See the manual: Spaceport Rail\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4BD992661353F0B8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Spaceport Rail\"}}"
+	]
+	quest.3991787934E071A4.quest_subtitle: "Suggested stage: Space Age"
+	quest.55D5885078439343.title: "Warehouse Hookup"
+	quest.55D5885078439343.quest_desc: [
+		"Wooden extraction pipes and stone transport pipes: feed the loose production lines into unified storage so every crate has somewhere to go."
+		""
+		"{\"text\":\"» See the manual: The Storage Growth Path\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Storage Growth Path\"}}"
+	]
+	quest.55D5885078439343.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.0DB724B7A030812E.title: "Signals and Blocks"
+	quest.0DB724B7A030812E.quest_desc: [
+		"Signal circuits and block signals come online: trains run by section, and the trunk line stops rear-ending itself."
+		""
+		"{\"text\":\"» See the manual: Rail Logistics\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4642427A4336C17F\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Rail Logistics\"}}"
+	]
+	quest.0DB724B7A030812E.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.3FDA41ACF6A75A22.title: "The Network Goes Live"
+	quest.3FDA41ACF6A75A22.quest_desc: [
+		"Controller, energy cell, and storage buses — the network starts reading physical storage. Get a small grid stable before scaling automation."
+		""
+		"{\"text\":\"» See the manual: AE2 Cold Start\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"79F690776849AD03\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"AE2 Cold Start\"}}"
+	]
+	quest.3FDA41ACF6A75A22.quest_subtitle: "Suggested stage: Information Age"
+	quest.0456D2DC6A3C47D0.title: "Autocrafting"
+	quest.0456D2DC6A3C47D0.quest_desc: [
+		"Crafting units, molecular assemblers, and pattern providers: the network can now build things, not just store them."
+	]
+	quest.0456D2DC6A3C47D0.quest_subtitle: "Suggested stage: Information Age"
+	chapter.17B3058067D055B5.title: "Automation and Logistics"
+	chapter.17B3058067D055B5.chapter_subtitle: [
+		"Connect resources, machines, and demand so supplies arrive when needed."
+	]
+	quest.1752DF1046FD05B2.title: "Your First Defensive Line"
+	quest.1752DF1046FD05B2.quest_desc: [
+		"Start with lighting, terrain, and safe paths. Build outer and inner lines with room to retreat, patrol, resupply, and repair."
+		""
+		"{\"text\":\"» See the manual: Horde Sappers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Horde Sappers\"}}"
+	]
+	quest.1752DF1046FD05B2.quest_subtitle: "Suggested stage: Survival Age"
+	quest.499CCB0E42738DC1.title: "Keep Your Turret Supplied"
+	quest.499CCB0E42738DC1.quest_desc: [
+		"Deploy a basic turret and check power, ammunition, and friendly targets. Test its coverage in a small drill and spread out your reserves."
+		""
+		"{\"text\":\"» See the manual: Horde Sappers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Horde Sappers\"}}"
+	]
+	quest.499CCB0E42738DC1.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.37A21158241ACBD3.title: "Match Firepower to the Enemy"
+	quest.37A21158241ACBD3.quest_desc: [
+		"Use machine guns against ordinary targets, area fire against crowds, and heavy firepower against armored units. Coordinate firing lanes and supplies across weapon types."
+	]
+	quest.37A21158241ACBD3.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.31583156C2BDAC96.title: "Hold the Base During a Supply Failure"
+	quest.31583156C2BDAC96.quest_desc: [
+		"Drill a power-grid or transport failure. Check that oxygen, basic firepower, and food reserves remain available, and record actual consumption during each defense."
+		""
+		"{\"text\":\"» See the manual: Colony Supply Chains\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"744853EABC0E1648\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Colony Supply Chains\"}}"
+	]
+	quest.31583156C2BDAC96.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.6A40076FB5A60443.title: "Gunsmithing"
+	quest.6A40076FB5A60443.quest_desc: [
+		"The gun workbench and ammo table stand up — guard and player weapons go industrial instead of being scavenged."
+		""
+		"{\"text\":\"» See the manual: The Colony Armory\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"15C288AF8333C644\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Colony Armory\"}}"
+	]
+	quest.6A40076FB5A60443.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.605556FAD18F13D3.title: "The Ammo Line"
+	quest.605556FAD18F13D3.quest_desc: [
+		"Ammo boxes and casull rounds roll off the line. A turret is just furniture without ammunition — the magazines are the real rations."
+		""
+		"{\"text\":\"» See the manual: Ammunition Logistics\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C15617E8C8DA7F9\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Ammunition Logistics\"}}"
+	]
+	quest.605556FAD18F13D3.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.60865655142D99C6.title: "Sentry Network"
+	quest.60865655142D99C6.quest_desc: [
+		"Turret bases and searchlights deployed as a net: the perimeter gets a skeleton and nights stop needing human watch."
+	]
+	quest.60865655142D99C6.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.0E69EBCEBE72E13A.title: "Laser Grid"
+	quest.0E69EBCEBE72E13A.quest_desc: [
+		"Laser defense towers linked into the grid — the final interception layer for swarms and high-value targets. Verify it in the defense drill."
+	]
+	quest.0E69EBCEBE72E13A.quest_subtitle: "Suggested stage: Atomic Age"
+	chapter.23F04414D2AFEB65.title: "Base Defense"
+	chapter.23F04414D2AFEB65.chapter_subtitle: [
+		"Plan defenses and firepower, then keep them supplied to protect industry and homes."
+	]
+	quest.061F44AAFD6FFC83.title: "Industrial Preparation for Launch"
+	quest.061F44AAFD6FFC83.quest_desc: [
+		"Produce aerospace materials and a control core on Earth. Prepare fuel, oxygen, food, and return reserves. Verify supplies before scheduling your first flight."
+	]
+	quest.061F44AAFD6FFC83.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.7FA3F49803108CD1.title: "From the Factory to the Moon"
+	quest.7FA3F49803108CD1.quest_desc: [
+		"Bring startup power, oxygen equipment, and building materials to establish a lunar outpost with a safe return plan. Alien mining improves efficiency but is not required for Earth technology."
+		""
+		"{\"text\":\"» See the manual: Space Utility Gear\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Space Utility Gear\"}}"
+		"{\"text\":\"» See the manual: The Safe Station\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Safe Station\"}}"
+	]
+	quest.7FA3F49803108CD1.quest_subtitle: "Suggested stage: Space Age"
+	quest.7FD9F6B5176631DF.title: "Build an Orbital Hub"
+	quest.7FD9F6B5176631DF.quest_desc: [
+		"Build a safe station for storage, research, and transfers. Enemies do not appear by default, but oxygen and power are still required. Special events only occur when explicitly enabled."
+		""
+		"{\"text\":\"» See the manual: The Safe Station\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Safe Station\"}}"
+	]
+	quest.7FD9F6B5176631DF.quest_subtitle: "Suggested stage: Space Age"
+	quest.0E6767E1E6DA1ED6.title: "Make Colonies Self-Sufficient"
+	quest.0E6767E1E6DA1ED6.quest_desc: [
+		"Give each outpost local storage, power, greenhouses, housing, and a garrison line. Specialize by planetary strengths and account for transport and defense costs before expanding."
+		""
+		"{\"text\":\"» See the manual: Lightweight Colonies\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5D67189820FB07DC\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Lightweight Colonies\"}}"
+		"{\"text\":\"» See the manual: Colony Residents\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6FBF02C8FB016AC6\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Colony Residents\"}}"
+	]
+	quest.0E6767E1E6DA1ED6.quest_subtitle: "Suggested stage: Space Age"
+	quest.0AF6F16EA4174410.title: "Space Utility Gear"
+	quest.0AF6F16EA4174410.quest_desc: [
+		"Oxygen cans, fuel loaders, rocket sensors, and gravity normalizers smooth out daily spaceport work. Environmental enchantment books still cost planet-tier materials and never replace oxygen or fuel systems."
+		""
+		"{\"text\":\"» See the manual: Space Utility Gear\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Space Utility Gear\"}}"
+	]
+	quest.0AF6F16EA4174410.quest_subtitle: "Suggested stage: Space Age"
+	quest.16E992F88F58E687.title: "Reach the Asteroid Belt"
+	quest.16E992F88F58E687.quest_desc: [
+		"The belt has no solid ground to land on: a missed approach can strand or destroy the rocket, oxygen is zero, and no rescue is coming. Pack a return plan and supplies; treat the first flight as a survey, not a mining run."
+		""
+		"{\"text\":\"» See the manual: Asteroid Belt Hazards\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2BFD78A0764A92FF\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Asteroid Belt Hazards\"}}"
+	]
+	quest.16E992F88F58E687.quest_subtitle: "Suggested stage: Space Age"
+	quest.52A6CBDE7280FA89.title: "Asteroid Mining Operations"
+	quest.52A6CBDE7280FA89.quest_desc: [
+		"Floating ore rocks carry iron, copper, gold, and a little gemstone at far greater density than planetary veins. Plan anchor points, lighting, and recovery routes so high risk becomes steady output."
+		""
+		"{\"text\":\"» See the manual: Asteroid Belt Hazards\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2BFD78A0764A92FF\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Asteroid Belt Hazards\"}}"
+	]
+	quest.52A6CBDE7280FA89.quest_subtitle: "Suggested stage: Space Age"
+	quest.125E01F71BB1770C.title: "Rocket Workshop"
+	quest.125E01F71BB1770C.quest_desc: [
+		"NASA workbench, launch pad, and fins in place — rocket assembly begins. Pick the pad site with clear sky overhead."
+		""
+		"{\"text\":\"» See the manual: Space Utility Gear\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Space Utility Gear\"}}"
+	]
+	quest.125E01F71BB1770C.quest_subtitle: "Suggested stage: Space Age"
+	quest.31E14278C99F13AB.title: "Fuel Chain"
+	quest.31E14278C99F13AB.quest_desc: [
+		"The refinery makes fuel and the loader feeds the rocket — no more bucket runs. This chain is also the final leg of the oil economy."
+		""
+		"{\"text\":\"» See the manual: The Unified Oil Economy\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Unified Oil Economy\"}}"
+	]
+	quest.31E14278C99F13AB.quest_subtitle: "Suggested stage: Space Age"
+	quest.56FE663A93DD6F1A.title: "Moonfall"
+	quest.56FE663A93DD6F1A.quest_desc: [
+		"Plant the first flag on the Moon — the first stop beyond orbit, and a proving ground for oxygen and return reserves."
+	]
+	quest.56FE663A93DD6F1A.quest_subtitle: "Suggested stage: Space Age"
+	quest.3FDFA2A65CA97C91.title: "Mars Expedition"
+	quest.3FDFA2A65CA97C91.quest_desc: [
+		"Reach Mars: desh ore and a second permanent colony site. Pack redundant oxygen, fuel, and a return plan before leaving."
+	]
+	quest.3FDFA2A65CA97C91.quest_subtitle: "Suggested stage: Space Age"
+	quest.04089907F6DAA567.title: "Life Support"
+	quest.04089907F6DAA567.quest_desc: [
+		"Oxygen loading, distribution, and water pumping online — the station goes from 'landable' to 'livable'. A prerequisite for colony growth."
+		""
+		"{\"text\":\"» See the manual: The Safe Station\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Safe Station\"}}"
+	]
+	quest.04089907F6DAA567.quest_subtitle: "Suggested stage: Space Age"
+	chapter.7A1F8F3DD46D426E.title: "Spaceflight and Colonization"
+	chapter.7A1F8F3DD46D426E.chapter_subtitle: [
+		"Plan flights, oxygen, and supplies to turn distant outposts into reliable production bases."
+	]
+	quest.5CFC818ECAF2A1E1.title: "Survey with a Purpose"
+	quest.5CFC818ECAF2A1E1.quest_desc: [
+		"Record ore sites, routes, terrain, and potential outposts. Surveys help engineers and builders choose locations without requiring combat."
+	]
+	quest.5CFC818ECAF2A1E1.quest_subtitle: "Suggested stage: Survival Age"
+	quest.2E3803EB5B7C3AB1.title: "Turn Ruins into Industrial Shortcuts"
+	quest.2E3803EB5B7C3AB1.quest_desc: [
+		"Recover useful materials, presses, and blueprints. They save industrial investment, while equivalent essential functions retain deterministic manufacturing routes."
+	]
+	quest.2E3803EB5B7C3AB1.quest_subtitle: "Suggested stage: Information Age"
+	quest.6B02183287572A0A.title: "Challenge a Dangerous Ruin"
+	quest.6B02183287572A0A.quest_desc: [
+		"Choose whether to challenge a ruin boss. Prepare supplies and an escape route for valuable materials or special modules. Victory does not unlock required technology."
+	]
+	quest.6B02183287572A0A.quest_subtitle: "Suggested stage: Space Age"
+	quest.33F96CADFA9891F7.title: "Investigate Alien Anomalies"
+	quest.33F96CADFA9891F7.quest_desc: [
+		"Observe anomaly warnings before choosing to sample or withdraw. Process recovered materials through industrial and research facilities; keep unknown samples out of living quarters."
+	]
+	quest.33F96CADFA9891F7.quest_subtitle: "Suggested stage: Space Age"
+	quest.17108BC68E5E17B5.title: "Survey Alien Structures"
+	quest.17108BC68E5E17B5.quest_desc: [
+		"Ruins and towers on the planets hold supplies — and spawners for native creatures. Loot scales with the planet, but no find replaces industrial manufacturing."
+	]
+	quest.17108BC68E5E17B5.quest_subtitle: "Suggested stage: Space Age"
+	quest.5FB2C68FD35C744B.title: "Recover Alien Relic Curios"
+	quest.5FB2C68FD35C744B.quest_desc: [
+		"Artifacts are exploration-only rewards. Earth's ruins and campsites hold basic utility curios; Moon/Mars ruins hold survival and exploration aids; Venus/Mercury ruins hold combat and defensive curios; Glacio ruins and the Asteroid Belt hold the rarest relics. No curio replaces oxygen, space suits, or rocket tiers."
+	]
+	quest.5FB2C68FD35C744B.quest_subtitle: "Suggested stage: Space Age"
+	quest.7B5BD275BEF97E3E.title: "Expedition Kit"
+	quest.7B5BD275BEF97E3E.quest_desc: [
+		"Compass, map, and torches — the explorer's three essentials. See the manual's Backpacks and Expedition Kits page for loadout upgrades."
+		""
+		"{\"text\":\"» See the manual: Backpacks and Expedition Kits\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"28C9F6D61C4E55C2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Backpacks and Expedition Kits\"}}"
+	]
+	quest.7B5BD275BEF97E3E.quest_subtitle: "Suggested stage: Survival Age"
+	quest.0B6E927FD2CC7D1B.title: "Nether Recon"
+	quest.0B6E927FD2CC7D1B.quest_desc: [
+		"A quick trip through the portal: quartz, blaze rods, and shroomlight are all worth marking. Get in, look around, get out."
+	]
+	quest.0B6E927FD2CC7D1B.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.76B7ECD689453090.title: "Sky Stone Lab"
+	quest.76B7ECD689453090.quest_desc: [
+		"The charger wakes sky stone into fluix crystals — the raw lifeline of the digital network."
+	]
+	quest.76B7ECD689453090.quest_subtitle: "Suggested stage: Information Age"
+	chapter.637830D327841CC8.title: "Exploration"
+	chapter.637830D327841CC8.chapter_subtitle: [
+		"Investigate ruins and anomalies for resources, blueprints, and industrial shortcuts."
+	]
+	quest.7C549AB52654538C.title: "A Kitchen That Feeds the Base"
+	quest.7C549AB52654538C.quest_desc: [
+		"Build fields, a cooking pot, and a shared kitchen with bowls and basic fuel. Make food easy for teammates to collect without repeatedly searching for ingredients."
+		""
+		"{\"text\":\"» See the manual: Kitchen Automation\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Kitchen Automation\"}}"
+	]
+	quest.7C549AB52654538C.quest_subtitle: "Suggested stage: Survival Age"
+	quest.091668F16A21A35F.title: "Deliver the Harvest"
+	quest.091668F16A21A35F.quest_desc: [
+		"Connect farms, kitchens, and expedition supply chests. Keep staple reserves and check container returns and full storage to maintain reliable transport."
+		""
+		"{\"text\":\"» See the manual: Kitchen Automation\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Kitchen Automation\"}}"
+	]
+	quest.091668F16A21A35F.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.6B7786C4146F1A73.title: "Food First, Surplus for Fuel"
+	quest.6B7786C4146F1A73.quest_desc: [
+		"Support biofuel production with crops while reserving food and seeds first. Expand farming with industry so fuel production does not exhaust the food supply."
+		""
+		"{\"text\":\"» See the manual: The Unified Oil Economy\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Unified Oil Economy\"}}"
+	]
+	quest.6B7786C4146F1A73.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.39AD03268D0C83AE.title: "Plant Your First Alien Greenhouse"
+	quest.39AD03268D0C83AE.quest_desc: [
+		"Prepare sealing, oxygen, light, water, and backup power for a lunar or Martian farm. Verify environmental conditions and crop suitability before scaling up."
+	]
+	quest.39AD03268D0C83AE.quest_subtitle: "Suggested stage: Space Age"
+	quest.60EC892D396AFC26.title: "Breaking Ground"
+	quest.60EC892D396AFC26.quest_desc: [
+		"Plant the first wheat fields behind fencing: the kitchen gets a steady supply and nobody starves on horde night."
+		""
+		"{\"text\":\"» See the manual: Kitchen Automation\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3B1F9252FB11EAD5\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Kitchen Automation\"}}"
+	]
+	quest.60EC892D396AFC26.quest_subtitle: "Suggested stage: Survival Age"
+	quest.6E99CCD7093D32CF.title: "Ranch Online"
+	quest.6E99CCD7093D32CF.quest_desc: [
+		"Breeder and farmer blocks come online: food stops depending on fields alone, and leather, feathers, and fertilizer come along."
+	]
+	quest.6E99CCD7093D32CF.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.76B18E56A2AF597A.title: "Seasonal Stockpile"
+	quest.76B18E56A2AF597A.quest_desc: [
+		"Set aside a dedicated rations store for expeditions and horde seasons: preserved food and backup seeds, untouched until needed."
+	]
+	quest.76B18E56A2AF597A.quest_subtitle: "Suggested stage: Electrical Age"
+	chapter.4274BFE7FD246AAF.title: "Agriculture and Provisioning"
+	chapter.4274BFE7FD246AAF.chapter_subtitle: [
+		"Supply food, crops, and biofuel to factories, defenses, and colonies."
+	]
+	quest.67D80191074CCF3A.title: "Leave Room for the Factory to Grow"
+	quest.67D80191074CCF3A.quest_desc: [
+		"Plan workshops, storage, service corridors, and maintenance access. Establish an expandable layout before adding finishes. No fixed block count is required."
+	]
+	quest.67D80191074CCF3A.quest_subtitle: "Suggested stage: Survival Age"
+	quest.6EB064B477848BC2.title: "Build at Industrial Scale"
+	quest.6EB064B477848BC2.quest_desc: [
+		"Make a basic building gadget and stock power and materials. Test placement and undo in a small area before building factories and roads."
+	]
+	quest.6EB064B477848BC2.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.5CD5CEBA5468B347.title: "Build a Maintainable Industrial District"
+	quest.5CD5CEBA5468B347.quest_desc: [
+		"Use steel frames, concrete, glass, and signs to organize power, production, and reserves. Preserve firing lanes and maintenance access; appearance does not replace real protection."
+	]
+	quest.5CD5CEBA5468B347.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.26EC2B4817F9C25D.title: "Build Habitats That Support Survival"
+	quest.26EC2B4817F9C25D.quest_desc: [
+		"Separate living quarters, greenhouses, machinery, and quarantine areas. Provide clear routes and emergency reserves. Verify actual sealing rather than trusting a glass appearance."
+		""
+		"{\"text\":\"» See the manual: Three-Layer Defense\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"482CA592DE6BAB84\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Three-Layer Defense\"}}"
+	]
+	quest.26EC2B4817F9C25D.quest_subtitle: "Suggested stage: Space Age"
+	quest.40DFD7A80A1BED57.title: "Bulk Materials"
+	quest.40DFD7A80A1BED57.quest_desc: [
+		"Concrete and glass roll into a dedicated stockpile: district expansion, colony buildings, and fortifications all draw from it."
+	]
+	quest.40DFD7A80A1BED57.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.751DE25742D71D15.title: "Swap and Copy"
+	quest.751DE25742D71D15.quest_desc: [
+		"The exchanging gadget swaps materials and the copy-paste gadget stamps structures — district-scale building speeds up by an order of magnitude."
+	]
+	quest.751DE25742D71D15.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.13129660D86A5A69.title: "Demolition"
+	quest.13129660D86A5A69.quest_desc: [
+		"The destruction gadget clears ground safely: district rebuilds, accident cleanup, and terrain fixes no longer mean hand-picking."
+	]
+	quest.13129660D86A5A69.quest_subtitle: "Suggested stage: Atomic Age"
+	chapter.56F4CC5F9343242B.title: "Construction"
+	chapter.56F4CC5F9343242B.chapter_subtitle: [
+		"Build factories, bases, and stations that are easy to expand, maintain, and defend."
+	]
+	quest.306787D7CF3A4AAE.title: "Team Progression and Specialization"
+	quest.306787D7CF3A4AAE.quest_desc: [
+		"Teams share manufacturing research, while individuals may specialize. Buying a finished product does not grant manufacturing knowledge. The quest book provides guidance."
+	]
+	quest.306787D7CF3A4AAE.quest_subtitle: "Progression and Survival"
+	quest.6B23A0DB3D268796.title: "The Earth-Sufficient Route"
+	quest.6B23A0DB3D268796.quest_desc: [
+		"Most basic resources and all required advanced materials are obtainable on Earth. Colonization saves materials and energy, and exploration provides shortcuts; neither is mandatory for industrial progress."
+	]
+	quest.6B23A0DB3D268796.quest_subtitle: "Progression and Survival"
+	quest.08F61C4EED508F67.title: "Power Priority"
+	quest.08F61C4EED508F67.quest_desc: [
+		"Prioritize oxygen, emergency batteries, and basic defenses before kitchens and production. Separate essential facilities from heavy loads and maintain local reserves for outages."
+	]
+	quest.08F61C4EED508F67.quest_subtitle: "Power, Oil and Networks"
+	quest.79F690776849AD03.title: "AE2 Cold Start"
+	quest.79F690776849AD03.quest_desc: [
+		"Run the inscriber on independent power first and make processors before the controller. The digital network reads drawers and storage controllers through storage buses; pipes and conveyors still carry bulk transport while the digital layer schedules and crafts."
+	]
+	quest.79F690776849AD03.quest_subtitle: "Power, Oil and Networks"
+	quest.4B5A9C30A8FBCA52.title: "The Safe Station"
+	quest.4B5A9C30A8FBCA52.quest_desc: [
+		"Stations have no hostile spawns by default but still require life support. Only explicitly enabled special events may create enemies. Keep quarantine areas separate from living quarters."
+	]
+	quest.4B5A9C30A8FBCA52.quest_subtitle: "Spaceflight and Hazards"
+	quest.3B1F9252FB11EAD5.title: "Kitchen Automation"
+	quest.3B1F9252FB11EAD5.quest_desc: [
+		"The kitchen provides shared ingredients, while cooking pots prepare supported dishes. Verify input sides, output sides, bowls, and fuel handling before automating restocking. Reserve food before turning surplus crops into fuel."
+	]
+	quest.3B1F9252FB11EAD5.quest_subtitle: "Progression and Survival"
+	quest.6AD45769D44A5F98.title: "Horde Sappers"
+	quest.6AD45769D44A5F98.quest_desc: [
+		"Engineers can remove obstacles or build paths within limits. Use layered defenses, clear firing lanes, and repair reserves, and prioritize units opening routes."
+	]
+	quest.6AD45769D44A5F98.quest_subtitle: "Hordes and Defense"
+	quest.453A61A0B4D9C159.title: "The Storage Growth Path"
+	quest.453A61A0B4D9C159.quest_desc: [
+		"After chests and barrels, use drawers and versatile storage for bulk materials. Capacity, filtering, and compression upgrades open with the Electrical Age and consume industrial components. A digital network reads existing warehouses instead of replacing them."
+	]
+	quest.453A61A0B4D9C159.quest_subtitle: "Progression and Survival"
+	quest.28C9F6D61C4E55C2.title: "Backpacks and Expedition Kits"
+	quest.28C9F6D61C4E55C2.quest_desc: [
+		"Backpacks serve mining, engineering, exploration, expeditions, and colony construction. Basic packs open early; capacity, pickup, and resupply upgrades unlock by stage. A backpack is not factory logistics or a portable crafting network."
+	]
+	quest.28C9F6D61C4E55C2.quest_subtitle: "Progression and Survival"
+	quest.1932C9CEA2E264BB.title: "The Unified Oil Economy"
+	quest.1932C9CEA2E264BB.quest_desc: [
+		"Oil fields feed one unified chain through pipes: petroleum refining, electrical control, and heavy processing produce fuels and chemicals for power, defense, and spaceflight. Both oil systems must share the same fluids and tags."
+	]
+	quest.1932C9CEA2E264BB.quest_subtitle: "Power, Oil and Networks"
+	quest.5D67189820FB07DC.title: "Lightweight Colonies"
+	quest.5D67189820FB07DC.quest_desc: [
+		"A colony is an industrial outpost with a few residents, guards, and turrets — not a city simulation. Industry feeds the colony, the arms industry equips the guards, and guards and turrets protect industry."
+	]
+	quest.5D67189820FB07DC.quest_subtitle: "Residents and Garrisons"
+	quest.6FBF02C8FB016AC6.title: "Colony Residents"
+	quest.6FBF02C8FB016AC6.quest_desc: [
+		"The first residents are recruited on Earth and arrive by rocket. Colony facilities handle growth: farming feeds them, housing expands the population, and trading posts exchange goods."
+	]
+	quest.6FBF02C8FB016AC6.quest_subtitle: "Residents and Garrisons"
+	quest.4C0A7C642219B0D2.title: "Colony Guards"
+	quest.4C0A7C642219B0D2.quest_desc: [
+		"Guards patrol, defend interiors, and cover turret blind spots. Arm them with industrially produced guns and armor; civilians shelter during hordes instead of fighting."
+	]
+	quest.4C0A7C642219B0D2.quest_subtitle: "Residents and Garrisons"
+	quest.15C288AF8333C644.title: "The Colony Armory"
+	quest.15C288AF8333C644.quest_desc: [
+		"Weapon production joins the industrial chain: refined metals, stamped parts, chemical propellants. Split roles into regular, marksman, heavy, and support instead of issuing endgame gear to every guard."
+	]
+	quest.15C288AF8333C644.quest_subtitle: "Residents and Garrisons"
+	quest.4C15617E8C8DA7F9.title: "Ammunition Logistics"
+	quest.4C15617E8C8DA7F9.quest_desc: [
+		"Ammunition is part of the industrial economy: bullets, casings, and propellant come from production lines. Keep a separate infantry ammo stock; guards draw from nearby chests."
+	]
+	quest.4C15617E8C8DA7F9.quest_subtitle: "Residents and Garrisons"
+	quest.744853EABC0E1648.title: "Colony Supply Chains"
+	quest.744853EABC0E1648.quest_desc: [
+		"Supply chains keep local buffers: stock thresholds restock forward crates over physical logistics. If the network fails, the garrison fights on local reserves."
+	]
+	quest.744853EABC0E1648.quest_subtitle: "Residents and Garrisons"
+	quest.482CA592DE6BAB84.title: "Three-Layer Defense"
+	quest.482CA592DE6BAB84.quest_desc: [
+		"Three defensive layers share the work: turrets hold the perimeter and main firing lines, guards cover interiors and blind spots, and players handle elites, sappers, and breaches."
+	]
+	quest.482CA592DE6BAB84.quest_subtitle: "Hordes and Defense"
+	quest.1630974DE79170F7.title: "Colony Defense Pressure"
+	quest.1630974DE79170F7.quest_desc: [
+		"Colony hordes apply pressure through tactics, numbers, and specialist units rather than inflated health pools. Keep reserves of ammunition, power, food, and repairs."
+	]
+	quest.1630974DE79170F7.quest_subtitle: "Hordes and Defense"
+	quest.4D5475C44C18F8A3.title: "Garrisons per Planet"
+	quest.4D5475C44C18F8A3.quest_desc: [
+		"Each planet needs a different garrison: Mars relies on turrets against swarms, Glacio needs armor-piercing firepower, Mercury keeps only a few elites. Unloaded colonies consume no processing."
+	]
+	quest.4D5475C44C18F8A3.quest_subtitle: "Residents and Garrisons"
+	quest.64258511A9B2A6A2.title: "Colony Jobs"
+	quest.64258511A9B2A6A2.quest_desc: [
+		"Residents take jobs at workstations: farming, provisioning, storage, mechanics, electrical, ordnance, networks, heavy industry, life support, and aerospace. Jobs amplify industrial efficiency, but unmanned production lines still run fully."
+	]
+	quest.64258511A9B2A6A2.quest_subtitle: "Jobs and Maintenance"
+	quest.42C7021D8B191D18.title: "Job Assignment"
+	quest.42C7021D8B191D18.quest_desc: [
+		"Jobs bind to their home base and never apply across planets. Job benefits diminish with repetition on the same line; guards are a military post and hold no industrial role."
+	]
+	quest.42C7021D8B191D18.quest_subtitle: "Jobs and Maintenance"
+	quest.0B6171AAE7597875.title: "Maintenance and Returns"
+	quest.0B6171AAE7597875.quest_desc: [
+		"Maintenance spends industrial materials for efficiency and stability: well-maintained lines gain modest bonuses, while unmaintained ones keep running without shutdowns or damage."
+	]
+	quest.0B6171AAE7597875.quest_subtitle: "Jobs and Maintenance"
+	quest.4642427A4336C17F.title: "Rail Logistics"
+	quest.4642427A4336C17F.quest_desc: [
+		"Railways carry high-throughput freight between bases, mines, and spaceports: cargo carts for bulk items, tank carts for fluids, loaders bridging storage at both ends. Pipes and conveyors still serve inside bases; the digital network schedules rather than replaces trains."
+	]
+	quest.4642427A4336C17F.quest_subtitle: "Rail Logistics"
+	quest.4BD992661353F0B8.title: "Spaceport Rail"
+	quest.4BD992661353F0B8.quest_desc: [
+		"A spaceport is the railway's terminus, not its replacement: mine trains feed the sorting yard while fuel and oxygen arrive by fluid loading. Colonies can link landing zone, mines, oxygen plant, and pads the same way."
+	]
+	quest.4BD992661353F0B8.quest_subtitle: "Rail Logistics"
+	quest.344ED9F136392B5D.title: "Space Utility Gear"
+	quest.344ED9F136392B5D.quest_desc: [
+		"Oxygen cans are portable oxygen storage, fuel loaders refill rockets automatically, and rocket sensors plus gravity normalizers simplify base automation. These devices unlock in the Space Age and still cost real materials."
+	]
+	quest.344ED9F136392B5D.quest_subtitle: "Spaceflight and Hazards"
+	quest.2BFD78A0764A92FF.title: "Asteroid Belt Hazards"
+	quest.2BFD78A0764A92FF.quest_desc: [
+		"The Asteroid Belt is a vacuum mining zone: near-zero gravity, no oxygen, no natural footing. A failed landing can permanently cost the rocket — always carry a return plan and a spare launch option."
+	]
+	quest.2BFD78A0764A92FF.quest_subtitle: "Spaceflight and Hazards"
+	chapter.13F04EAD5AD7B827.title: "Reference Manual"
+	chapter.13F04EAD5AD7B827.chapter_subtitle: [
+		"Long-form guides by topic: progression rules, power, defense, colonies, jobs, rail, and spaceflight risks. Links inside quest descriptions jump here."
+	]
+}

@@ -174,7 +174,375 @@
       "always_visible": true
     }
   ],
+  "chapters": [
+    {
+      "id": "onboarding",
+      "title_key": "modpack.chapter.onboarding.title",
+      "description_key": "modpack.chapter.onboarding.description",
+      "icon": "modpack:engineering_assembly",
+      "order": 0
+    },
+    {
+      "id": "industry",
+      "title_key": "modpack.route.industry.title",
+      "description_key": "modpack.route.industry.description",
+      "icon": "ic2_generator",
+      "order": 1
+    },
+    {
+      "id": "automation",
+      "title_key": "modpack.route.automation.title",
+      "description_key": "modpack.route.automation.description",
+      "icon": "ae2_controller",
+      "order": 2
+    },
+    {
+      "id": "military",
+      "title_key": "modpack.route.military.title",
+      "description_key": "modpack.route.military.description",
+      "icon": "dt_machine_gun",
+      "order": 3
+    },
+    {
+      "id": "space",
+      "title_key": "modpack.route.space.title",
+      "description_key": "modpack.route.space.description",
+      "icon": "aa_tier1_rocket",
+      "order": 4
+    },
+    {
+      "id": "exploration",
+      "title_key": "modpack.route.exploration.title",
+      "description_key": "modpack.route.exploration.description",
+      "icon": "aa_flag",
+      "order": 5
+    },
+    {
+      "id": "agriculture",
+      "title_key": "modpack.route.agriculture.title",
+      "description_key": "modpack.route.agriculture.description",
+      "icon": "ev_farmer",
+      "order": 6
+    },
+    {
+      "id": "building",
+      "title_key": "modpack.route.building.title",
+      "description_key": "modpack.route.building.description",
+      "icon": "ie_concrete",
+      "order": 7
+    },
+    {
+      "id": "manual",
+      "title_key": "modpack.chapter.manual.title",
+      "description_key": "modpack.chapter.manual.description",
+      "icon": "ftbquests:book",
+      "order": 8
+    }
+  ],
+  "questbook": {
+    "title_key": "modpack.questbook.title",
+    "manual_link_key": "modpack.quest.manual_link",
+    "stage_hint_key": "modpack.quest.stage_hint"
+  },
+  "tutorial_groups": [
+    {
+      "id": "progression",
+      "title_key": "modpack.tutorial.group.progression"
+    },
+    {
+      "id": "energy",
+      "title_key": "modpack.tutorial.group.energy"
+    },
+    {
+      "id": "defense",
+      "title_key": "modpack.tutorial.group.defense"
+    },
+    {
+      "id": "colony",
+      "title_key": "modpack.tutorial.group.colony"
+    },
+    {
+      "id": "workforce",
+      "title_key": "modpack.tutorial.group.workforce"
+    },
+    {
+      "id": "rail",
+      "title_key": "modpack.tutorial.group.rail"
+    },
+    {
+      "id": "space",
+      "title_key": "modpack.tutorial.group.space"
+    }
+  ],
+  "advancements": [
+    {
+      "id": "first_launch",
+      "title_key": "modpack.advancement.first_launch.title",
+      "description_key": "modpack.advancement.first_launch.description",
+      "icon": "aa_tier1_rocket",
+      "trigger": "changed_dimension",
+      "dimensions": [
+        "earth_orbit",
+        "moon_orbit",
+        "mars_orbit",
+        "venus_orbit",
+        "mercury_orbit",
+        "glacio_orbit"
+      ]
+    }
+  ],
   "quests": [
+    {
+      "id": "welcome",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.welcome.title",
+      "description_key": "modpack.quest.welcome.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "ftbquests:book",
+      "manual_refs": [
+        "team_progression"
+      ],
+      "rewards": [
+        {
+          "item": "minecraft:bread",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": []
+    },
+    {
+      "id": "your_team",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.your_team.title",
+      "description_key": "modpack.quest.your_team.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "minecraft:player_head",
+      "manual_refs": [
+        "team_progression",
+        "earth_alternative"
+      ],
+      "rewards": [],
+      "deps": [
+        "welcome"
+      ]
+    },
+    {
+      "id": "first_camp",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.first_camp.title",
+      "description_key": "modpack.quest.first_camp.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "icon": "minecraft:campfire",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "minecraft:torch",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:bread",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "your_team"
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "target": "minecraft:chest",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "target": "minecraft:torch",
+          "count": 16
+        },
+        {
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "first_kitchen",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.first_kitchen.title",
+      "description_key": "modpack.quest.first_kitchen.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "farmersdelight:cooking_pot",
+        "count": 1
+      },
+      "icon": "farmersdelight:cooking_pot",
+      "manual_refs": [
+        "kitchen_automation"
+      ],
+      "rewards": [
+        {
+          "item": "minecraft:wheat_seeds",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:bowl",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "first_camp"
+      ]
+    },
+    {
+      "id": "milestone_assembly",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.milestone_assembly.title",
+      "description_key": "modpack.quest.milestone_assembly.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "engineering_assembly",
+        "count": 1
+      },
+      "icon": "modpack:engineering_assembly",
+      "manual_refs": [
+        "storage_progression"
+      ],
+      "rewards": [
+        {
+          "item": "iron_ingot",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "copper_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": [
+        "first_kitchen",
+        "iron_kit"
+      ]
+    },
+    {
+      "id": "register_base",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.register_base.title",
+      "description_key": "modpack.quest.register_base.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "modpack:industrial_console",
+      "manual_refs": [],
+      "rewards": [],
+      "deps": [
+        "milestone_assembly"
+      ]
+    },
+    {
+      "id": "routes_overview",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.routes_overview.title",
+      "description_key": "modpack.quest.routes_overview.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "minecraft:map",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "minecraft:compass",
+          "count": 1,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "register_base"
+      ]
+    },
+    {
+      "id": "iron_kit",
+      "chapter": "onboarding",
+      "title_key": "modpack.quest.iron_kit.title",
+      "description_key": "modpack.quest.iron_kit.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "minecraft:bread",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "first_camp"
+      ],
+      "suggested_stage": "survival_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "minecraft:iron_pickaxe",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "minecraft:iron_sword",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "minecraft:bucket",
+          "count": 1
+        }
+      ],
+      "icon": "minecraft:iron_pickaxe"
+    },
     {
       "id": "ic2_generator",
       "route": "industry",
@@ -184,7 +552,31 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "ic2_generator",
+        "count": 1
+      },
+      "icon": "ic2_generator",
+      "manual_refs": [
+        "power_priority"
+      ],
+      "rewards": [
+        {
+          "item": "ic2_copper_cable",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "ic2_battery",
+          "count": 2,
+          "scope": "player"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": []
     },
     {
       "id": "ore_processing",
@@ -195,7 +587,29 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "ic2_macerator",
+        "count": 1
+      },
+      "icon": "ic2_macerator",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "iron_ingot",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "copper_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "first_machines"
+      ]
     },
     {
       "id": "nuclear_grid",
@@ -206,7 +620,24 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "ic2_nuclear_reactor",
+      "manual_refs": [
+        "power_priority"
+      ],
+      "rewards": [
+        {
+          "item": "ic2_lead_plate",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "reactor_hall"
+      ]
     },
     {
       "id": "earth_quantum",
@@ -217,7 +648,296 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "quantum_control",
+        "count": 1
+      },
+      "icon": "quantum_control",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ic2_lapotron_crystal",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": [
+        "nuclear_grid"
+      ]
+    },
+    {
+      "id": "wiring_up",
+      "route": "industry",
+      "title_key": "modpack.quest.wiring_up.title",
+      "description_key": "modpack.quest.wiring_up.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "power_priority"
+      ],
+      "rewards": [
+        {
+          "item": "ic2_insulated_copper_cable",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ic2_generator"
+      ],
+      "suggested_stage": "mechanical_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ic2_copper_cable",
+          "count": 32
+        },
+        {
+          "type": "item",
+          "target": "ic2_batbox",
+          "count": 1
+        }
+      ],
+      "icon": "ic2_copper_cable"
+    },
+    {
+      "id": "first_machines",
+      "route": "industry",
+      "title_key": "modpack.quest.first_machines.title",
+      "description_key": "modpack.quest.first_machines.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "iron_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "wiring_up"
+      ],
+      "suggested_stage": "mechanical_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ic2_electric_furnace",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ic2_compressor",
+          "count": 1
+        }
+      ],
+      "icon": "ic2_electric_furnace"
+    },
+    {
+      "id": "steel_chain",
+      "route": "industry",
+      "title_key": "modpack.quest.steel_chain.title",
+      "description_key": "modpack.quest.steel_chain.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "rc_coal_coke",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "first_machines"
+      ],
+      "suggested_stage": "mechanical_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "rc_coke_oven_bricks",
+          "count": 4
+        },
+        {
+          "type": "item",
+          "target": "rc_blast_furnace_bricks",
+          "count": 4
+        },
+        {
+          "type": "item",
+          "target": "rc_steel_ingot",
+          "count": 8
+        }
+      ],
+      "icon": "rc_steel_ingot"
+    },
+    {
+      "id": "fluid_oil",
+      "route": "industry",
+      "title_key": "modpack.quest.fluid_oil.title",
+      "description_key": "modpack.quest.fluid_oil.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "unified_oil"
+      ],
+      "rewards": [
+        {
+          "item": "bc_pipe_fluid_wood",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ore_processing"
+      ],
+      "suggested_stage": "electric_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "bc_pump",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "bc_pipe_fluid_iron",
+          "count": 8
+        },
+        {
+          "type": "item",
+          "target": "bc_tank",
+          "count": 4
+        }
+      ],
+      "icon": "bc_pump"
+    },
+    {
+      "id": "electronics",
+      "route": "industry",
+      "title_key": "modpack.quest.electronics.title",
+      "description_key": "modpack.quest.electronics.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "gold_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ore_processing"
+      ],
+      "suggested_stage": "electric_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ic2_circuit",
+          "count": 4
+        },
+        {
+          "type": "item",
+          "target": "ie_electronic",
+          "count": 2
+        }
+      ],
+      "icon": "ic2_circuit"
+    },
+    {
+      "id": "heavy_framing",
+      "route": "industry",
+      "title_key": "modpack.quest.heavy_framing.title",
+      "description_key": "modpack.quest.heavy_framing.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ie_steel_component",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "electronics",
+        "steel_chain"
+      ],
+      "suggested_stage": "heavy_industry_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ie_heavy_engineering",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "target": "ie_arc_furnace",
+          "count": 1
+        }
+      ],
+      "icon": "ie_arc_furnace"
+    },
+    {
+      "id": "reactor_hall",
+      "route": "industry",
+      "title_key": "modpack.quest.reactor_hall.title",
+      "description_key": "modpack.quest.reactor_hall.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ic2_lead_plate",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "heavy_framing"
+      ],
+      "suggested_stage": "atomic_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ic2_nuclear_reactor",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ic2_reactor_chamber",
+          "count": 4
+        },
+        {
+          "type": "item",
+          "target": "ic2_containment_plating",
+          "count": 8
+        }
+      ],
+      "icon": "ic2_nuclear_reactor"
     },
     {
       "id": "physical_logistics",
@@ -228,7 +948,36 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "bc_pipe_item_stone",
+          "count": 8
+        },
+        {
+          "type": "item",
+          "target": "bc_tank",
+          "count": 1
+        }
+      ],
+      "icon": "sd_drawer_controller",
+      "manual_refs": [
+        "storage_progression"
+      ],
+      "rewards": [
+        {
+          "item": "piston",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "redstone",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": []
     },
     {
       "id": "ae2_bootstrap",
@@ -239,7 +988,31 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "ae2_inscriber",
+        "count": 1
+      },
+      "icon": "ae2_inscriber",
+      "manual_refs": [
+        "ae2_bootstrap"
+      ],
+      "rewards": [
+        {
+          "item": "ae2_certus_crystal",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "ae2_silicon",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "warehouse"
+      ]
     },
     {
       "id": "stock_control",
@@ -250,7 +1023,22 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "logistics_console",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ae2_logic_processor",
+          "count": 2,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ae2_network"
+      ]
     },
     {
       "id": "remote_supply",
@@ -261,7 +1049,31 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "ae2_quantum_ring",
+        "count": 1
+      },
+      "icon": "ae2_quantum_ring",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ae2_dense_energy_cell",
+          "count": 2,
+          "scope": "player"
+        },
+        {
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": [
+        "autocrafting"
+      ]
     },
     {
       "id": "rail_freight",
@@ -272,7 +1084,38 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "rc_cargo_minecart",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "rc_item_loader",
+          "count": 2
+        }
+      ],
+      "icon": "rc_cargo_minecart",
+      "manual_refs": [
+        "rail_logistics"
+      ],
+      "rewards": [
+        {
+          "item": "rc_steel_ingot",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "rc_coal_coke",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "physical_logistics"
+      ]
     },
     {
       "id": "spaceport_rail",
@@ -283,7 +1126,188 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "rc_item_loader",
+      "manual_refs": [
+        "starport_rail"
+      ],
+      "rewards": [
+        {
+          "item": "rc_advanced_item_loader",
+          "count": 1,
+          "scope": "player"
+        },
+        {
+          "item": "rc_steel_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "rail_signals"
+      ]
+    },
+    {
+      "id": "warehouse",
+      "route": "automation",
+      "title_key": "modpack.quest.warehouse.title",
+      "description_key": "modpack.quest.warehouse.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "storage_progression"
+      ],
+      "rewards": [
+        {
+          "item": "piston",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "physical_logistics"
+      ],
+      "suggested_stage": "mechanical_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "bc_pipe_item_wood",
+          "count": 8
+        },
+        {
+          "type": "item",
+          "target": "bc_pipe_item_stone",
+          "count": 16
+        },
+        {
+          "type": "checkmark"
+        }
+      ],
+      "icon": "bc_pipe_item_stone"
+    },
+    {
+      "id": "rail_signals",
+      "route": "automation",
+      "title_key": "modpack.quest.rail_signals.title",
+      "description_key": "modpack.quest.rail_signals.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "rail_logistics"
+      ],
+      "rewards": [
+        {
+          "item": "rc_token_signal",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "rail_freight"
+      ],
+      "suggested_stage": "electric_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "rc_signal_circuit",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "target": "rc_block_signal",
+          "count": 4
+        }
+      ],
+      "icon": "rc_block_signal"
+    },
+    {
+      "id": "ae2_network",
+      "route": "automation",
+      "title_key": "modpack.quest.ae2_network.title",
+      "description_key": "modpack.quest.ae2_network.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "ae2_bootstrap"
+      ],
+      "rewards": [
+        {
+          "item": "ae2_quartz_glass",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ae2_bootstrap"
+      ],
+      "suggested_stage": "information_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ae2_controller",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ae2_energy_cell",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ae2_storage_bus",
+          "count": 2
+        }
+      ],
+      "icon": "ae2_controller"
+    },
+    {
+      "id": "autocrafting",
+      "route": "automation",
+      "title_key": "modpack.quest.autocrafting.title",
+      "description_key": "modpack.quest.autocrafting.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ae2_calculation_processor",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "stock_control"
+      ],
+      "suggested_stage": "information_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ae2_crafting_unit",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ae2_molecular_assembler",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ae2_pattern_provider",
+          "count": 2
+        }
+      ],
+      "icon": "ae2_molecular_assembler"
     },
     {
       "id": "layered_defense",
@@ -294,7 +1318,27 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "dt_base",
+      "manual_refs": [
+        "horde_engineers"
+      ],
+      "rewards": [
+        {
+          "item": "minecraft:torch",
+          "count": 32,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:bread",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": []
     },
     {
       "id": "first_turret",
@@ -305,7 +1349,31 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "dt_machine_gun",
+        "count": 1
+      },
+      "icon": "dt_machine_gun",
+      "manual_refs": [
+        "horde_engineers"
+      ],
+      "rewards": [
+        {
+          "item": "copper_ingot",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "lead_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "gunsmith"
+      ]
     },
     {
       "id": "combined_fire",
@@ -316,7 +1384,29 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "dt_grenade",
+        "count": 1
+      },
+      "icon": "dt_grenade",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "dt_forged_alloy",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:gunpowder",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "turret_net"
+      ]
     },
     {
       "id": "defense_drill",
@@ -327,7 +1417,176 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "icon": "tacz_ammo_box",
+      "manual_refs": [
+        "colony_supply"
+      ],
+      "rewards": [
+        {
+          "item": "ie_steel_component",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
+        }
+      ],
+      "deps": [
+        "ammo_line",
+        "laser_grid"
+      ],
+      "tasks": [
+        {
+          "type": "checkmark"
+        },
+        {
+          "type": "item",
+          "target": "ie_steel_component",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "gunsmith",
+      "route": "military",
+      "title_key": "modpack.quest.gunsmith.title",
+      "description_key": "modpack.quest.gunsmith.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "colony_armory"
+      ],
+      "rewards": [
+        {
+          "item": "copper_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "layered_defense"
+      ],
+      "suggested_stage": "electric_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "tacz_workbench_a",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "tacz_gun_table",
+          "count": 1
+        }
+      ],
+      "icon": "tacz_workbench_a"
+    },
+    {
+      "id": "ammo_line",
+      "route": "military",
+      "title_key": "modpack.quest.ammo_line.title",
+      "description_key": "modpack.quest.ammo_line.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "colony_ammunition"
+      ],
+      "rewards": [
+        {
+          "item": "ie_gunpart_barrel",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "gunsmith"
+      ],
+      "suggested_stage": "electric_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "tacz_ammo_box",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "target": "ie_bullet_casull",
+          "count": 32
+        }
+      ],
+      "icon": "tacz_ammo_box"
+    },
+    {
+      "id": "turret_net",
+      "route": "military",
+      "title_key": "modpack.quest.turret_net.title",
+      "description_key": "modpack.quest.turret_net.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "dt_barrel",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "first_turret"
+      ],
+      "suggested_stage": "electric_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "dt_base",
+          "count": 2
+        },
+        {
+          "type": "item",
+          "target": "dt_searchlight",
+          "count": 1
+        }
+      ],
+      "icon": "dt_searchlight"
+    },
+    {
+      "id": "laser_grid",
+      "route": "military",
+      "title_key": "modpack.quest.laser_grid.title",
+      "description_key": "modpack.quest.laser_grid.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "dt_forged_alloy",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "combined_fire"
+      ],
+      "suggested_stage": "atomic_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "dt_laser",
+          "count": 2
+        }
+      ],
+      "icon": "dt_laser"
     },
     {
       "id": "launch_preparation",
@@ -338,7 +1597,29 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "space_control_core",
+        "count": 1
+      },
+      "icon": "space_control_core",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ic2_alloy",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "ie_steel_component",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": []
     },
     {
       "id": "first_launch",
@@ -349,7 +1630,34 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "advancement",
+        "target": "starforge:first_launch"
+      },
+      "icon": "aa_tier1_rocket",
+      "manual_refs": [
+        "giselle_equipment",
+        "safe_station"
+      ],
+      "rewards": [
+        {
+          "item": "aa_gas_tank",
+          "count": 2,
+          "scope": "player"
+        },
+        {
+          "item": "gz_oxygen_can",
+          "count": 1,
+          "scope": "player"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": [
+        "fuel_chain",
+        "space_equipment"
+      ]
     },
     {
       "id": "orbital_station",
@@ -360,7 +1668,35 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "icon": "aa_flag",
+      "manual_refs": [
+        "safe_station"
+      ],
+      "rewards": [
+        {
+          "item": "aa_steel_plate",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "aa_iron_rod",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "first_launch"
+      ],
+      "tasks": [
+        {
+          "type": "dimension",
+          "target": "earth_orbit"
+        },
+        {
+          "type": "checkmark"
+        }
+      ]
     },
     {
       "id": "colony_network",
@@ -371,7 +1707,26 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "colony_maintenance",
+      "manual_refs": [
+        "lightweight_colony",
+        "colony_residents"
+      ],
+      "rewards": [
+        {
+          "item": "colony_maintenance",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "orbital_station",
+        "life_support"
+      ]
     },
     {
       "id": "space_equipment",
@@ -382,7 +1737,53 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "icon": "gz_oxygen_can",
+      "manual_refs": [
+        "giselle_equipment"
+      ],
+      "rewards": [
+        {
+          "item": "aa_gas_tank",
+          "count": 2,
+          "scope": "player"
+        },
+        {
+          "item": "ic2_battery",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "launch_preparation"
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "target": "gz_oxygen_can",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_space_suit_helmet",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_space_suit_chest",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_space_suit_pants",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_space_suit_boots",
+          "count": 1
+        }
+      ]
     },
     {
       "id": "asteroid_belt",
@@ -393,7 +1794,32 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "dimension",
+        "target": "asteroid_belt"
+      },
+      "icon": "diamond",
+      "manual_refs": [
+        "asteroid_belt_risk"
+      ],
+      "rewards": [
+        {
+          "item": "aa_gas_tank",
+          "count": 2,
+          "scope": "player"
+        },
+        {
+          "item": "gz_oxygen_can",
+          "count": 1,
+          "scope": "player"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": [
+        "mars_expedition"
+      ]
     },
     {
       "id": "asteroid_mining",
@@ -404,7 +1830,214 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "ic2_drill",
+      "manual_refs": [
+        "asteroid_belt_risk"
+      ],
+      "rewards": [
+        {
+          "item": "diamond",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
+        }
+      ],
+      "deps": [
+        "asteroid_belt"
+      ]
+    },
+    {
+      "id": "rocket_workshop",
+      "route": "space",
+      "title_key": "modpack.quest.rocket_workshop.title",
+      "description_key": "modpack.quest.rocket_workshop.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "giselle_equipment"
+      ],
+      "rewards": [
+        {
+          "item": "aa_steel_plate",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "launch_preparation"
+      ],
+      "suggested_stage": "space_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "aa_nasa_workbench",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_launch_pad",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_rocket_fin",
+          "count": 4
+        }
+      ],
+      "icon": "aa_nasa_workbench"
+    },
+    {
+      "id": "fuel_chain",
+      "route": "space",
+      "title_key": "modpack.quest.fuel_chain.title",
+      "description_key": "modpack.quest.fuel_chain.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "unified_oil"
+      ],
+      "rewards": [
+        {
+          "item": "ic2_alloy",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "rocket_workshop"
+      ],
+      "suggested_stage": "space_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "aa_fuel_refinery",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "gz_fuel_loader",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_gas_tank",
+          "count": 2
+        }
+      ],
+      "icon": "aa_fuel_refinery"
+    },
+    {
+      "id": "moon_landing",
+      "route": "space",
+      "title_key": "modpack.quest.moon_landing.title",
+      "description_key": "modpack.quest.moon_landing.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "aa_gas_tank",
+          "count": 2,
+          "scope": "player"
+        },
+        {
+          "item": "gz_oxygen_can",
+          "count": 1,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "first_launch"
+      ],
+      "suggested_stage": "space_age",
+      "task": {
+        "type": "dimension",
+        "target": "moon"
+      },
+      "icon": "aa_flag"
+    },
+    {
+      "id": "mars_expedition",
+      "route": "space",
+      "title_key": "modpack.quest.mars_expedition.title",
+      "description_key": "modpack.quest.mars_expedition.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "aa_desh_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "moon_landing"
+      ],
+      "suggested_stage": "space_age",
+      "task": {
+        "type": "dimension",
+        "target": "mars"
+      },
+      "icon": "aa_flag"
+    },
+    {
+      "id": "life_support",
+      "route": "space",
+      "title_key": "modpack.quest.life_support.title",
+      "description_key": "modpack.quest.life_support.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "safe_station"
+      ],
+      "rewards": [
+        {
+          "item": "aa_gas_tank",
+          "count": 2,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "orbital_station"
+      ],
+      "suggested_stage": "space_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "aa_oxygen_loader",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_oxygen_distributor",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "aa_water_pump",
+          "count": 1
+        }
+      ],
+      "icon": "aa_oxygen_distributor"
     },
     {
       "id": "survey",
@@ -415,7 +2048,30 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "minecraft:compass",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "minecraft:map",
+          "count": 1,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:bread",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:torch",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": []
     },
     {
       "id": "ruin_salvage",
@@ -426,7 +2082,24 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "ae2_sky_stone",
+        "count": 4
+      },
+      "icon": "ae2_sky_stone",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ie_electronic",
+          "count": 2,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "expedition_pack"
+      ]
     },
     {
       "id": "optional_boss",
@@ -437,7 +2110,31 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "kill",
+        "target": "#mutantmonsters:mutants",
+        "count": 1
+      },
+      "icon": "minecraft:wither_skeleton_skull",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "diamond",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
+        }
+      ],
+      "shape": "pentagon",
+      "size": 1.5,
+      "deps": [
+        "sky_stone_lab"
+      ]
     },
     {
       "id": "anomaly_research",
@@ -448,7 +2145,24 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "anomaly_analysis",
+        "count": 1
+      },
+      "icon": "anomaly_analysis",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ae2_fluix_crystal",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "alien_ruins"
+      ]
     },
     {
       "id": "alien_ruins",
@@ -459,7 +2173,22 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "aa_flag",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "aa_ostrum_ingot",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "sky_stone_lab"
+      ]
     },
     {
       "id": "alien_relics",
@@ -470,7 +2199,131 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "diamond",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "diamond",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
+        }
+      ],
+      "deps": [
+        "alien_ruins"
+      ]
+    },
+    {
+      "id": "expedition_pack",
+      "route": "exploration",
+      "title_key": "modpack.quest.expedition_pack.title",
+      "description_key": "modpack.quest.expedition_pack.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "backpack_kit"
+      ],
+      "rewards": [
+        {
+          "item": "minecraft:bread",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "survey"
+      ],
+      "suggested_stage": "survival_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "minecraft:compass",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "minecraft:map",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "minecraft:torch",
+          "count": 32
+        }
+      ],
+      "icon": "minecraft:compass"
+    },
+    {
+      "id": "nether_scout",
+      "route": "exploration",
+      "title_key": "modpack.quest.nether_scout.title",
+      "description_key": "modpack.quest.nether_scout.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "gold_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "expedition_pack"
+      ],
+      "suggested_stage": "mechanical_age",
+      "task": {
+        "type": "dimension",
+        "target": "minecraft:the_nether"
+      },
+      "icon": "minecraft:netherrack"
+    },
+    {
+      "id": "sky_stone_lab",
+      "route": "exploration",
+      "title_key": "modpack.quest.sky_stone_lab.title",
+      "description_key": "modpack.quest.sky_stone_lab.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ae2_certus_crystal",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ruin_salvage"
+      ],
+      "suggested_stage": "information_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ae2_charger",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ae2_fluix_crystal",
+          "count": 8
+        }
+      ],
+      "icon": "ae2_charger"
     },
     {
       "id": "base_kitchen",
@@ -481,7 +2334,29 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "farmersdelight:cooking_pot",
+        "count": 1
+      },
+      "icon": "farmersdelight:cooking_pot",
+      "manual_refs": [
+        "kitchen_automation"
+      ],
+      "rewards": [
+        {
+          "item": "minecraft:wheat_seeds",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:bowl",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": []
     },
     {
       "id": "food_buffers",
@@ -492,7 +2367,24 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "minecraft:bowl",
+      "manual_refs": [
+        "kitchen_automation"
+      ],
+      "rewards": [
+        {
+          "item": "glass",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "crop_fields"
+      ]
     },
     {
       "id": "fuel_crops",
@@ -503,7 +2395,27 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "immersiveengineering:biodiesel_bucket",
+        "count": 1
+      },
+      "icon": "ie_jerrycan",
+      "manual_refs": [
+        "unified_oil"
+      ],
+      "rewards": [
+        {
+          "item": "minecraft:bone_meal",
+          "count": 32,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ranch",
+        "food_buffers"
+      ]
     },
     {
       "id": "planetary_greenhouse",
@@ -514,7 +2426,132 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "icon": "ev_farmer",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "minecraft:wheat_seeds",
+          "count": 32,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:bone_meal",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "fuel_crops"
+      ],
+      "tasks": [
+        {
+          "type": "item",
+          "target": "aa_water_pump",
+          "count": 1
+        },
+        {
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "crop_fields",
+      "route": "agriculture",
+      "title_key": "modpack.quest.crop_fields.title",
+      "description_key": "modpack.quest.crop_fields.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [
+        "kitchen_automation"
+      ],
+      "rewards": [
+        {
+          "item": "minecraft:bone_meal",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "base_kitchen"
+      ],
+      "suggested_stage": "survival_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "minecraft:wheat_seeds",
+          "count": 32
+        },
+        {
+          "type": "checkmark"
+        }
+      ],
+      "icon": "minecraft:wheat"
+    },
+    {
+      "id": "ranch",
+      "route": "agriculture",
+      "title_key": "modpack.quest.ranch.title",
+      "description_key": "modpack.quest.ranch.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "minecraft:wheat_seeds",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "crop_fields"
+      ],
+      "suggested_stage": "mechanical_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ev_breeder",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "ev_farmer",
+          "count": 1
+        }
+      ],
+      "icon": "ev_breeder"
+    },
+    {
+      "id": "seasonal_stock",
+      "route": "agriculture",
+      "title_key": "modpack.quest.seasonal_stock.title",
+      "description_key": "modpack.quest.seasonal_stock.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "minecraft:bowl",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "food_buffers"
+      ],
+      "suggested_stage": "electric_age",
+      "tasks": [
+        {
+          "type": "checkmark"
+        }
+      ],
+      "icon": "minecraft:hay_block"
     },
     {
       "id": "factory_layout",
@@ -525,7 +2562,25 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "ie_concrete",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ie_concrete",
+          "count": 32,
+          "scope": "player"
+        },
+        {
+          "item": "glass",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": []
     },
     {
       "id": "building_gadget",
@@ -536,7 +2591,29 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "bg_building_gadget",
+        "count": 1
+      },
+      "icon": "bg_building_gadget",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ic2_battery",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "ie_concrete",
+          "count": 32,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "bulk_concrete"
+      ]
     },
     {
       "id": "industrial_district",
@@ -547,7 +2624,22 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "ie_sheetmetal_steel",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ie_sheetmetal_steel",
+          "count": 32,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "swap_tools"
+      ]
     },
     {
       "id": "colony_architecture",
@@ -558,7 +2650,129 @@
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
-      "reward_policy": "optional_non_progression"
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "aa_steel_plate",
+      "manual_refs": [
+        "colony_security"
+      ],
+      "rewards": [
+        {
+          "item": "aa_steel_plate",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "glass",
+          "count": 32,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "industrial_district"
+      ]
+    },
+    {
+      "id": "bulk_concrete",
+      "route": "building",
+      "title_key": "modpack.quest.bulk_concrete.title",
+      "description_key": "modpack.quest.bulk_concrete.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "redstone",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "factory_layout"
+      ],
+      "suggested_stage": "mechanical_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "ie_concrete",
+          "count": 64
+        },
+        {
+          "type": "item",
+          "target": "glass",
+          "count": 32
+        }
+      ],
+      "icon": "ie_concrete"
+    },
+    {
+      "id": "swap_tools",
+      "route": "building",
+      "title_key": "modpack.quest.swap_tools.title",
+      "description_key": "modpack.quest.swap_tools.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "ie_concrete",
+          "count": 32,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "building_gadget"
+      ],
+      "suggested_stage": "heavy_industry_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "bg_exchanging_gadget",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "target": "bg_copy_paste_gadget",
+          "count": 1
+        }
+      ],
+      "icon": "bg_copy_paste_gadget"
+    },
+    {
+      "id": "demolition",
+      "route": "building",
+      "title_key": "modpack.quest.demolition.title",
+      "description_key": "modpack.quest.demolition.description",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "manual_refs": [],
+      "rewards": [
+        {
+          "item": "diamond",
+          "count": 4,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "industrial_district"
+      ],
+      "suggested_stage": "atomic_age",
+      "tasks": [
+        {
+          "type": "item",
+          "target": "bg_destruction_gadget",
+          "count": 1
+        }
+      ],
+      "icon": "bg_destruction_gadget"
     }
   ],
   "items": [
@@ -621,6 +2835,11 @@
       "id": "life_support_console",
       "name_key": "modpack.item.life_support_console",
       "tooltip_key": "modpack.item.life_support_console.tooltip"
+    },
+    {
+      "id": "service_medal",
+      "name_key": "modpack.item.service_medal",
+      "tooltip_key": "modpack.item.service_medal.tooltip"
     }
   ],
   "jobs": [
@@ -940,107 +3159,159 @@
   "tutorials": [
     {
       "id": "team_progression",
-      "text_key": "modpack.tutorial.team_progression"
+      "text_key": "modpack.tutorial.team_progression",
+      "title_key": "modpack.tutorial.team_progression.title",
+      "group": "progression"
     },
     {
       "id": "earth_alternative",
-      "text_key": "modpack.tutorial.earth_alternative"
+      "text_key": "modpack.tutorial.earth_alternative",
+      "title_key": "modpack.tutorial.earth_alternative.title",
+      "group": "progression"
     },
     {
       "id": "power_priority",
-      "text_key": "modpack.tutorial.power_priority"
+      "text_key": "modpack.tutorial.power_priority",
+      "title_key": "modpack.tutorial.power_priority.title",
+      "group": "energy"
     },
     {
       "id": "ae2_bootstrap",
-      "text_key": "modpack.tutorial.ae2_bootstrap"
+      "text_key": "modpack.tutorial.ae2_bootstrap",
+      "title_key": "modpack.tutorial.ae2_bootstrap.title",
+      "group": "energy"
     },
     {
       "id": "safe_station",
-      "text_key": "modpack.tutorial.safe_station"
+      "text_key": "modpack.tutorial.safe_station",
+      "title_key": "modpack.tutorial.safe_station.title",
+      "group": "space"
     },
     {
       "id": "kitchen_automation",
-      "text_key": "modpack.tutorial.kitchen_automation"
+      "text_key": "modpack.tutorial.kitchen_automation",
+      "title_key": "modpack.tutorial.kitchen_automation.title",
+      "group": "progression"
     },
     {
       "id": "horde_engineers",
-      "text_key": "modpack.tutorial.horde_engineers"
+      "text_key": "modpack.tutorial.horde_engineers",
+      "title_key": "modpack.tutorial.horde_engineers.title",
+      "group": "defense"
     },
     {
       "id": "storage_progression",
-      "text_key": "modpack.tutorial.storage_progression"
+      "text_key": "modpack.tutorial.storage_progression",
+      "title_key": "modpack.tutorial.storage_progression.title",
+      "group": "progression"
     },
     {
       "id": "backpack_kit",
-      "text_key": "modpack.tutorial.backpack_kit"
+      "text_key": "modpack.tutorial.backpack_kit",
+      "title_key": "modpack.tutorial.backpack_kit.title",
+      "group": "progression"
     },
     {
       "id": "unified_oil",
-      "text_key": "modpack.tutorial.unified_oil"
+      "text_key": "modpack.tutorial.unified_oil",
+      "title_key": "modpack.tutorial.unified_oil.title",
+      "group": "energy"
     },
     {
       "id": "lightweight_colony",
-      "text_key": "modpack.tutorial.lightweight_colony"
+      "text_key": "modpack.tutorial.lightweight_colony",
+      "title_key": "modpack.tutorial.lightweight_colony.title",
+      "group": "colony"
     },
     {
       "id": "colony_residents",
-      "text_key": "modpack.tutorial.colony_residents"
+      "text_key": "modpack.tutorial.colony_residents",
+      "title_key": "modpack.tutorial.colony_residents.title",
+      "group": "colony"
     },
     {
       "id": "colony_guard",
-      "text_key": "modpack.tutorial.colony_guard"
+      "text_key": "modpack.tutorial.colony_guard",
+      "title_key": "modpack.tutorial.colony_guard.title",
+      "group": "colony"
     },
     {
       "id": "colony_armory",
-      "text_key": "modpack.tutorial.colony_armory"
+      "text_key": "modpack.tutorial.colony_armory",
+      "title_key": "modpack.tutorial.colony_armory.title",
+      "group": "colony"
     },
     {
       "id": "colony_ammunition",
-      "text_key": "modpack.tutorial.colony_ammunition"
+      "text_key": "modpack.tutorial.colony_ammunition",
+      "title_key": "modpack.tutorial.colony_ammunition.title",
+      "group": "colony"
     },
     {
       "id": "colony_supply",
-      "text_key": "modpack.tutorial.colony_supply"
+      "text_key": "modpack.tutorial.colony_supply",
+      "title_key": "modpack.tutorial.colony_supply.title",
+      "group": "colony"
     },
     {
       "id": "colony_security",
-      "text_key": "modpack.tutorial.colony_security"
+      "text_key": "modpack.tutorial.colony_security",
+      "title_key": "modpack.tutorial.colony_security.title",
+      "group": "defense"
     },
     {
       "id": "colony_defense",
-      "text_key": "modpack.tutorial.colony_defense"
+      "text_key": "modpack.tutorial.colony_defense",
+      "title_key": "modpack.tutorial.colony_defense.title",
+      "group": "defense"
     },
     {
       "id": "planetary_garrison",
-      "text_key": "modpack.tutorial.planetary_garrison"
+      "text_key": "modpack.tutorial.planetary_garrison",
+      "title_key": "modpack.tutorial.planetary_garrison.title",
+      "group": "colony"
     },
     {
       "id": "colony_workforce",
-      "text_key": "modpack.tutorial.colony_workforce"
+      "text_key": "modpack.tutorial.colony_workforce",
+      "title_key": "modpack.tutorial.colony_workforce.title",
+      "group": "workforce"
     },
     {
       "id": "job_assignment",
-      "text_key": "modpack.tutorial.job_assignment"
+      "text_key": "modpack.tutorial.job_assignment",
+      "title_key": "modpack.tutorial.job_assignment.title",
+      "group": "workforce"
     },
     {
       "id": "maintenance_rewards",
-      "text_key": "modpack.tutorial.maintenance_rewards"
+      "text_key": "modpack.tutorial.maintenance_rewards",
+      "title_key": "modpack.tutorial.maintenance_rewards.title",
+      "group": "workforce"
     },
     {
       "id": "rail_logistics",
-      "text_key": "modpack.tutorial.rail_logistics"
+      "text_key": "modpack.tutorial.rail_logistics",
+      "title_key": "modpack.tutorial.rail_logistics.title",
+      "group": "rail"
     },
     {
       "id": "starport_rail",
-      "text_key": "modpack.tutorial.starport_rail"
+      "text_key": "modpack.tutorial.starport_rail",
+      "title_key": "modpack.tutorial.starport_rail.title",
+      "group": "rail"
     },
     {
       "id": "giselle_equipment",
-      "text_key": "modpack.tutorial.giselle_equipment"
+      "text_key": "modpack.tutorial.giselle_equipment",
+      "title_key": "modpack.tutorial.giselle_equipment.title",
+      "group": "space"
     },
     {
       "id": "asteroid_belt_risk",
-      "text_key": "modpack.tutorial.asteroid_belt_risk"
+      "text_key": "modpack.tutorial.asteroid_belt_risk",
+      "title_key": "modpack.tutorial.asteroid_belt_risk.title",
+      "group": "space"
     }
   ],
   "bosses": [

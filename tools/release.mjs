@@ -43,6 +43,7 @@ let lock, version, stem, mrpackOk = false, serverOk = false, localOk = false;
 
 await stage('validate-design', async () => runNode('tools/validate-design.mjs'));
 await stage('build-pack', async () => runNode('tools/build-pack.mjs'));
+await stage('export-quests', async () => runNode('tools/export-quests.mjs'));
 await stage('fetch-mods (locked)', async () => runNode('tools/fetch-mods.mjs', ['--locked']));
 
 await stage('hash validation', async () => {

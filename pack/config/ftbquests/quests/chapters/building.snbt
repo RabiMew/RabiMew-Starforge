@@ -1,0 +1,280 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "building"
+	group: ""
+	icon: {
+		id: "immersiveengineering:concrete"
+	}
+	id: "56F4CC5F9343242B"
+	images: [ ]
+	order_index: 7
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "immersiveengineering:concrete"
+			}
+			id: "67D80191074CCF3A"
+			x: 0d
+			y: 0d
+			rewards: [
+				{
+					id: "38E0A314F06577B0"
+					type: "item"
+					item: {
+						count: 32
+						id: "immersiveengineering:concrete"
+					}
+					team_reward: false
+				}
+				{
+					id: "05232FE011E4C8F3"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:glass"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3ED3077C1EAEB7AE"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "buildinggadgets2:gadget_building"
+			}
+			id: "6EB064B477848BC2"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"40DFD7A80A1BED57"
+			]
+			rewards: [
+				{
+					id: "67A8F1BA45215735"
+					type: "item"
+					item: {
+						count: 4
+						id: "ic2cre:battery"
+					}
+					team_reward: false
+				}
+				{
+					id: "2B9656CA592A53A1"
+					type: "item"
+					item: {
+						count: 32
+						id: "immersiveengineering:concrete"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "77AAA726CAAA678B"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildinggadgets2:gadget_building"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "immersiveengineering:sheetmetal_steel"
+			}
+			id: "5CD5CEBA5468B347"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"751DE25742D71D15"
+			]
+			rewards: [
+				{
+					id: "59617783040A9F0B"
+					type: "item"
+					item: {
+						count: 32
+						id: "immersiveengineering:sheetmetal_steel"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3C7BA20EF72DA81A"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:steel_plate"
+			}
+			id: "26EC2B4817F9C25D"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"5CD5CEBA5468B347"
+			]
+			rewards: [
+				{
+					id: "634B544EDB9565FF"
+					type: "item"
+					item: {
+						count: 16
+						id: "ad_astra:steel_plate"
+					}
+					team_reward: false
+				}
+				{
+					id: "40AB6B12C0EA56EC"
+					type: "item"
+					item: {
+						count: 32
+						id: "minecraft:glass"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "362489ECBEA6C119"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "immersiveengineering:concrete"
+			}
+			id: "40DFD7A80A1BED57"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"67D80191074CCF3A"
+			]
+			rewards: [
+				{
+					id: "2AFE5984BEC4018C"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:redstone"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "43553DE49345FA9C"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:concrete"
+					}
+					count: 64
+					consume_items: false
+				}
+				{
+					id: "393C2795FC71F608"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:glass"
+					}
+					count: 32
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "buildinggadgets2:gadget_copy_paste"
+			}
+			id: "751DE25742D71D15"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"6EB064B477848BC2"
+			]
+			rewards: [
+				{
+					id: "200713E85AE942B3"
+					type: "item"
+					item: {
+						count: 32
+						id: "immersiveengineering:concrete"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5EEEAFF43226326D"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildinggadgets2:gadget_exchanging"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "30F40E7481D1965E"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildinggadgets2:gadget_copy_paste"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "buildinggadgets2:gadget_destruction"
+			}
+			id: "13129660D86A5A69"
+			x: 16d
+			y: 9d
+			dependencies: [
+				"5CD5CEBA5468B347"
+			]
+			rewards: [
+				{
+					id: "7E5A673D00ACC1D4"
+					type: "item"
+					item: {
+						count: 4
+						id: "minecraft:diamond"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "146C5BF334ADF53E"
+					type: "item"
+					item: {
+						count: 1
+						id: "buildinggadgets2:gadget_destruction"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+	]
+}

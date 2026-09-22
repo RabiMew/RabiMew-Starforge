@@ -1,0 +1,65 @@
+{
+ "display": {
+  "icon": {
+   "id": "ad_astra:tier_1_rocket"
+  },
+  "title": {
+   "translate": "modpack.advancement.first_launch.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.first_launch.description"
+  },
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": true
+ },
+ "criteria": {
+  "earth_orbit": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:earth_orbit"
+   }
+  },
+  "moon_orbit": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:moon_orbit"
+   }
+  },
+  "mars_orbit": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:mars_orbit"
+   }
+  },
+  "venus_orbit": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:venus_orbit"
+   }
+  },
+  "mercury_orbit": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:mercury_orbit"
+   }
+  },
+  "glacio_orbit": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:glacio_orbit"
+   }
+  }
+ },
+ "requirements": [
+  [
+   "earth_orbit",
+   "moon_orbit",
+   "mars_orbit",
+   "venus_orbit",
+   "mercury_orbit",
+   "glacio_orbit"
+  ]
+ ]
+}

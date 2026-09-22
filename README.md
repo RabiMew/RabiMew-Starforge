@@ -82,7 +82,7 @@ node tools/release.mjs          # 完整流水线
 node tools/release.mjs --local  # 额外产出开发者本地测试 ZIP
 ```
 
-流水线：validate-design → build-pack → fetch-mods（锁定 hash 校验）→ dependency audit → client/server sync → `.mrpack` + server zip → verify-release → `dist/release-report.md`。任一步失败立即中止，不产出"看似成功"的 Release。
+流水线：validate-design → build-pack → export-quests → fetch-mods（锁定 hash 校验）→ dependency audit → client/server sync → `.mrpack` + server zip → verify-release → `dist/release-report.md`。任一步失败立即中止，不产出"看似成功"的 Release。
 
 版本号唯一来源是 `manifest/version.json`；模组版本、下载源、side、hash 唯一来源是 `manifest/locked-mods.json`。
 

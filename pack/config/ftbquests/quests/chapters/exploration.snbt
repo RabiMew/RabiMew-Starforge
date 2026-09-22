@@ -1,0 +1,360 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "exploration"
+	group: ""
+	icon: {
+		id: "ad_astra:white_flag"
+	}
+	id: "637830D327841CC8"
+	images: [ ]
+	order_index: 5
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "minecraft:compass"
+			}
+			id: "5CFC818ECAF2A1E1"
+			x: 0d
+			y: 0d
+			rewards: [
+				{
+					id: "62E6E8609C0A4451"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:map"
+					}
+					team_reward: false
+				}
+				{
+					id: "54B95BE82D62B6D1"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bread"
+					}
+					team_reward: false
+				}
+				{
+					id: "566835BD7214D47A"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:torch"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "4772242FAA0EBA2A"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ae2:smooth_sky_stone_block"
+			}
+			id: "2E3803EB5B7C3AB1"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"7B5BD275BEF97E3E"
+			]
+			rewards: [
+				{
+					id: "60FE5BF61F4C938F"
+					type: "item"
+					item: {
+						count: 2
+						id: "immersiveengineering:component_electronic"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "1AA59A3BC320DDD6"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:smooth_sky_stone_block"
+					}
+					count: 4
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:wither_skeleton_skull"
+			}
+			id: "6B02183287572A0A"
+			x: 12.8d
+			y: 10.5d
+			dependencies: [
+				"76B7ECD689453090"
+			]
+			shape: "pentagon"
+			size: 1.5d
+			rewards: [
+				{
+					id: "3E3F333932512E5F"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:diamond"
+					}
+					team_reward: false
+				}
+				{
+					id: "12692F26FC0F7827"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "4E205EDC6B604545"
+					type: "kill"
+					entityTypeTag: "mutantmonsters:mutants"
+					value: 1
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:anomaly_analysis"
+			}
+			id: "33F96CADFA9891F7"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"17108BC68E5E17B5"
+			]
+			rewards: [
+				{
+					id: "4F1C34BB182EDE9E"
+					type: "item"
+					item: {
+						count: 8
+						id: "ae2:fluix_crystal"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "69BDBC27B30D2BEE"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:anomaly_analysis"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:white_flag"
+			}
+			id: "17108BC68E5E17B5"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"76B7ECD689453090"
+			]
+			rewards: [
+				{
+					id: "4B5EF21C6FB9199A"
+					type: "item"
+					item: {
+						count: 4
+						id: "ad_astra:ostrum_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5C51FBBD1711E674"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:diamond"
+			}
+			id: "5FB2C68FD35C744B"
+			x: 16d
+			y: 9d
+			dependencies: [
+				"17108BC68E5E17B5"
+			]
+			rewards: [
+				{
+					id: "3C3E4527C8B5557C"
+					type: "item"
+					item: {
+						count: 4
+						id: "minecraft:diamond"
+					}
+					team_reward: false
+				}
+				{
+					id: "7B956BB87D815194"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "7D68EBC16C61AA7E"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:compass"
+			}
+			id: "7B5BD275BEF97E3E"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"5CFC818ECAF2A1E1"
+			]
+			rewards: [
+				{
+					id: "46875D3D452D9F6D"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bread"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5D4605551232BD38"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:compass"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "63747EE270D9579B"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:map"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "06D49D5941706C10"
+					type: "item"
+					item: {
+						count: 1
+						id: "minecraft:torch"
+					}
+					count: 32
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:netherrack"
+			}
+			id: "0B6E927FD2CC7D1B"
+			x: 6.4d
+			y: 12d
+			dependencies: [
+				"7B5BD275BEF97E3E"
+			]
+			rewards: [
+				{
+					id: "3E8003B4EA9F9739"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:gold_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "1A2EF62A12CB6E3A"
+					type: "dimension"
+					dimension: "minecraft:the_nether"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ae2:charger"
+			}
+			id: "76B7ECD689453090"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"2E3803EB5B7C3AB1"
+			]
+			rewards: [
+				{
+					id: "3A853922F387A1E8"
+					type: "item"
+					item: {
+						count: 8
+						id: "ae2:certus_quartz_crystal"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "072831B7285ADB29"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:charger"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "21A84945C256B939"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:fluix_crystal"
+					}
+					count: 8
+					consume_items: false
+				}
+			]
+		}
+	]
+}

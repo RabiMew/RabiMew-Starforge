@@ -1,0 +1,350 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "military"
+	group: ""
+	icon: {
+		id: "defenseturrets:machine_gun_turret"
+	}
+	id: "23F04414D2AFEB65"
+	images: [ ]
+	order_index: 3
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "defenseturrets:turret_base"
+			}
+			id: "1752DF1046FD05B2"
+			x: 0d
+			y: 0d
+			rewards: [
+				{
+					id: "169DCB98B75D9D0C"
+					type: "item"
+					item: {
+						count: 32
+						id: "minecraft:torch"
+					}
+					team_reward: false
+				}
+				{
+					id: "44B78B0043EC86F4"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bread"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "6FE3337B7CE29D77"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "defenseturrets:machine_gun_turret"
+			}
+			id: "499CCB0E42738DC1"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"6A40076FB5A60443"
+			]
+			rewards: [
+				{
+					id: "408FA98B4E2F90FD"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:copper_ingot"
+					}
+					team_reward: false
+				}
+				{
+					id: "490AAA7ED762EC0C"
+					type: "item"
+					item: {
+						count: 8
+						id: "immersiveengineering:ingot_lead"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "0B58C67AD8738CAD"
+					type: "item"
+					item: {
+						count: 1
+						id: "defenseturrets:machine_gun_turret"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "defenseturrets:grenade_turret"
+			}
+			id: "37A21158241ACBD3"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"60865655142D99C6"
+			]
+			rewards: [
+				{
+					id: "66354B458C07A51E"
+					type: "item"
+					item: {
+						count: 4
+						id: "defenseturrets:forged_alloy_ingot"
+					}
+					team_reward: false
+				}
+				{
+					id: "726EE26C55AEFA07"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:gunpowder"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "04926DE72B84EDFF"
+					type: "item"
+					item: {
+						count: 1
+						id: "defenseturrets:grenade_turret"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:ammo_box"
+			}
+			id: "31583156C2BDAC96"
+			x: 19.2d
+			y: 9d
+			dependencies: [
+				"605556FAD18F13D3"
+				"0E69EBCEBE72E13A"
+			]
+			rewards: [
+				{
+					id: "2FC4B20CEA91B97C"
+					type: "item"
+					item: {
+						count: 4
+						id: "immersiveengineering:component_steel"
+					}
+					team_reward: false
+				}
+				{
+					id: "75AE78DAF0A97ADC"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "3B934512025FC7EA"
+					type: "checkmark"
+				}
+				{
+					id: "0920C4F38E3944F0"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:component_steel"
+					}
+					count: 4
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:workbench_a"
+			}
+			id: "6A40076FB5A60443"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"1752DF1046FD05B2"
+			]
+			rewards: [
+				{
+					id: "343BFD6E0E4BD980"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:copper_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3E10242E87CA68A2"
+					type: "item"
+					item: {
+						count: 1
+						id: "tacz:workbench_a"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "2243B294EDD78033"
+					type: "item"
+					item: {
+						count: 1
+						id: "tacz:gun_smith_table"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:ammo_box"
+			}
+			id: "605556FAD18F13D3"
+			x: 6.4d
+			y: 10.5d
+			dependencies: [
+				"6A40076FB5A60443"
+			]
+			rewards: [
+				{
+					id: "5999E7B450D4A56E"
+					type: "item"
+					item: {
+						count: 4
+						id: "immersiveengineering:gunpart_barrel"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "1A3774398433EDAD"
+					type: "item"
+					item: {
+						count: 1
+						id: "tacz:ammo_box"
+					}
+					count: 2
+					consume_items: false
+				}
+				{
+					id: "1B52DB57F2EAD1FC"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:bullet_casull"
+					}
+					count: 32
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "defenseturrets:uv_searchlight"
+			}
+			id: "60865655142D99C6"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"499CCB0E42738DC1"
+			]
+			rewards: [
+				{
+					id: "79765854883DDFAE"
+					type: "item"
+					item: {
+						count: 4
+						id: "defenseturrets:turret_barrel"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "00E228587584CB10"
+					type: "item"
+					item: {
+						count: 1
+						id: "defenseturrets:turret_base"
+					}
+					count: 2
+					consume_items: false
+				}
+				{
+					id: "6369CDE8267E6E1C"
+					type: "item"
+					item: {
+						count: 1
+						id: "defenseturrets:uv_searchlight"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "defenseturrets:laser_turret"
+			}
+			id: "0E69EBCEBE72E13A"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"37A21158241ACBD3"
+			]
+			rewards: [
+				{
+					id: "51586089800A4DAD"
+					type: "item"
+					item: {
+						count: 8
+						id: "defenseturrets:forged_alloy_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "604764CE84C50B00"
+					type: "item"
+					item: {
+						count: 1
+						id: "defenseturrets:laser_turret"
+					}
+					count: 2
+					consume_items: false
+				}
+			]
+		}
+	]
+}

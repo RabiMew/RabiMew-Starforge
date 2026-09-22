@@ -11,6 +11,7 @@ global.SM = {
   "colony_maintenance": "modpack:colony_maintenance",
   "quantum_control": "modpack:quantum_control",
   "anomaly_analysis": "modpack:anomaly_analysis",
+  "service_medal": "modpack:service_medal",
   "industrial_console": "modpack:industrial_console",
   "armory_workbench": "modpack:armory_workbench",
   "logistics_console": "modpack:logistics_console",

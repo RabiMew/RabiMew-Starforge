@@ -38,7 +38,7 @@
 - KubeJS 消息：使用目标版本已验证的可翻译组件构造方式；不得使用硬编码 `.tell("中文")`，也不得把键拼成普通字符串当翻译完成。资源输出目标为 `kubejs/assets/starforge/lang/{locale}.json`。
 - 自定义物品：优先显式指定可翻译名称；若原生只能读取 `item.<namespace>.<path>`，由构建器从 `modpack.item.*` 生成原生别名，避免维护两份文案。注册 ID、模型 ID 和语言键分别映射。
 - ProgressiveStages：作者当前文档存在 `display_name`/`description` 字符串示例，不能推断它接受语言键或组件。锁定版本实测后选择原生翻译支持；否则禁用其硬编码 toast，使用可翻译通知，并为阶段 GUI 加适配。[作者文档](https://modrinth.com/mod/progressivestages)
-- FTB Quests：使用锁定版本原生语言文件/导出格式。若它使用固定的任务 ID 翻译键，由构建器做 `modpack.quest.* → 原生任务语言键` 映射；不把中文直接写进章节定义，也不假定任意 `title: "modpack..."` 都会被翻译。无证据前不提交伪 SNBT。[FTB Quests 官方文档](https://docs.feed-the-beast.com/mod-docs/mods/suite/Quests/Developer/Quests/)
+- FTB Quests：2101.x 原生支持 `quests/lang/<locale>.snbt` 语言文件，键按确定性对象 ID 索引（`quest.<HEX>.title` 等）。`tools/export-quests.mjs` 从 `design/content.json` + `localization/*.json` 生成章节 SNBT 与双语 lang 文件；结构文件不含任何文案。细节与字段格式见 `docs/questbook.md`。[FTB Quests 官方文档](https://docs.feed-the-beast.com/mod-docs/mods/suite/Quests/Developer/Quests/)
 - 第三方缺译：通过资源包的原 Mod 命名空间补语言键，保留原 JAR。不在整合包 `modpack.*` 中冒充可覆盖第三方原有键。
 
 KubeJS 1.21+ 的配方查看器事件与旧版本接口不同，应以 7.2 对应 API 为准；不抄旧版 `JEIEvents` 脚本直接宣称可用。[KubeJS 更新说明](https://kubejs.com/wiki/other/major-updates) / [事件目录](https://kubejs.com/wiki/events)

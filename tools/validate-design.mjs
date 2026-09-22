@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { hexId } from './lib/hexid.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = (name) => readFileSync(path.join(root, name), 'utf8');
@@ -79,16 +80,64 @@ function validate() {
 
   const stageIds = uniqueIds(content.stages, 'stages');
   const routeIds = uniqueIds(content.routes, 'routes');
+  const chapterIds = uniqueIds(content.chapters, 'chapters');
   const questIds = uniqueIds(content.quests, 'quests');
-  for (const category of ['items', 'jobs', 'planets', 'messages', 'gui', 'tutorials', 'bosses']) {
+  const tutorialIds = uniqueIds(content.tutorials, 'tutorials');
+  const groupIds = uniqueIds(content.tutorial_groups, 'tutorial_groups');
+  const advancementIds = uniqueIds(content.advancements, 'advancements');
+  for (const category of ['items', 'jobs', 'planets', 'messages', 'gui', 'bosses']) {
     uniqueIds(content[category], category);
   }
   assert.equal(stageIds.size, 8, 'Expected T0 through T7');
   assert.deepEqual(content.stages.map((stage) => stage.tier).sort((a, b) => a - b), [0, 1, 2, 3, 4, 5, 6, 7]);
   assert.equal(routeIds.size, 7);
-  assert.equal(questIds.size, 35);
+  assert.equal(chapterIds.size, 9, 'Expected onboarding + 7 routes + manual');
+  assert.equal(questIds.size, 72);
   assert.equal(content.planets.length, 8);
   const stages = new Map(content.stages.map((stage) => [stage.id, stage]));
+  const tierOf = (id) => stages.get(id).tier;
+
+  // ---------- chapters ----------
+  const sm = parse('design/semantic-map.json');
+  const locks = parse('design/stage-locks.json');
+  const regItems = new Set(parse('registry-export/items.json'));
+  const regDims = new Set(parse('registry-export/dimensions.json'));
+  const regEnts = new Set(parse('registry-export/entity_types.json'));
+  const regEntTags = new Set(Object.keys(parse('registry-export/tags_entity.json')));
+  const ownItems = new Set(content.items.map((i) => `${content.namespace}:${i.id}`));
+  const ID_RE = /^[a-z0-9_.-]+:[a-z0-9_./-]+$/;
+  // Semantic key or literal ns:path -> resolved id, verified against the
+  // registry export; own kubejs items are validated against content.items.
+  const itemRef = (ref) => {
+    const id = sm.items[ref] ?? (ID_RE.test(ref) ? ref : null);
+    return id && (regItems.has(id) || ownItems.has(id)) ? id : null;
+  };
+  const dimRef = (ref) => {
+    const id = sm.dimensions[ref] ?? (ID_RE.test(ref) ? ref : null);
+    return id && regDims.has(id) ? id : null;
+  };
+  // item semantic key -> stage id that unlocks it (absent = ungated)
+  const lockedAt = {};
+  for (const [stage, lock] of Object.entries(locks)) {
+    for (const key of lock.items ?? []) assert(!lockedAt[key], `${key}: locked by two stages`);
+    for (const key of lock.items ?? []) lockedAt[key] = stage;
+  }
+  const availableBy = (ref, stageId, ctx) => {
+    if (!lockedAt[ref]) return; // literal or ungated refs cannot be checked offline
+    assert(tierOf(lockedAt[ref]) <= tierOf(stageId),
+      `${ctx}: ${ref} unlocks at ${lockedAt[ref]}, later than suggested stage ${stageId}`);
+  };
+
+  const orders = new Set();
+  for (const ch of content.chapters) {
+    assert(!orders.has(ch.order), `chapter ${ch.id}: duplicate order ${ch.order}`);
+    orders.add(ch.order);
+    assert(itemRef(ch.icon), `chapter ${ch.id}: unresolvable icon ${ch.icon}`);
+  }
+  for (const route of content.routes) {
+    assert(chapterIds.has(route.id), `route ${route.id}: no matching chapter`);
+  }
+  assert(content.questbook && keyPattern.test(content.questbook.title_key), 'questbook meta missing');
 
   function ancestors(id, visiting = new Set()) {
     assert(stageIds.has(id), `Unknown stage ${id}`);
@@ -125,16 +174,115 @@ function validate() {
     assert(content.quests.filter((quest) => quest.route === route.id).length >= 4,
       `${route.id}: routes need at least 4 quests`);
   }
+
+  // ---------- questbook: tasks, rewards, layout, manual refs ----------
+  const TASK_TYPES = new Set(['item', 'checkmark', 'advancement', 'dimension', 'kill', 'biome', 'structure']);
+  const advTargets = new Set(content.advancements.map((a) => `starforge:${a.id}`));
+  const chapterOf = (q) => q.chapter ?? q.route;
+  const generatedIds = new Set([hexId('file', 'starforge')]);
+  const claim = (id, ctx) => { assert(!generatedIds.has(id), `${ctx}: generated id collision ${id}`); generatedIds.add(id); };
+  for (const ch of content.chapters) claim(hexId('chapter', ch.id), `chapter ${ch.id}`);
+
   for (const quest of content.quests) {
-    assert(routeIds.has(quest.route), `${quest.id}: unknown route`);
+    const chId = chapterOf(quest);
+    assert(chapterIds.has(chId), `${quest.id}: unknown chapter/route ${chId}`);
+    if (quest.route) assert(routeIds.has(quest.route), `${quest.id}: unknown route`);
+    if (quest.chapter && quest.route) assert.equal(quest.chapter, quest.route,
+      `${quest.id}: chapter and route disagree`);
     assert(stageIds.has(quest.suggested_stage), `${quest.id}: unknown suggested stage`);
     assert.deepEqual(quest.depends_on, [], `${quest.id}: baseline quests must remain parallel`);
     assert.equal(quest.grants_stage, false, `${quest.id}: quests must not grant technology`);
     assert.equal(quest.consumes_items, false, `${quest.id}: tutorial must not consume equipment`);
     assert.equal(quest.reward_policy, 'optional_non_progression');
+    assert(itemRef(quest.icon), `${quest.id}: unresolvable icon ${quest.icon}`);
+    claim(hexId('quest', `${chId}/${quest.id}`), `quest ${quest.id}`);
+
+    const tasks = quest.tasks ?? (quest.task ? [quest.task] : []);
+    assert(tasks.length >= 1, `${quest.id}: no task`);
+    tasks.forEach((t, i) => {
+      claim(hexId('task', `${chId}/${quest.id}/${i}`), `task ${quest.id}[${i}]`);
+      assert(TASK_TYPES.has(t.type), `${quest.id}: unsupported task type ${t.type}`);
+      if (t.count !== undefined) assert(Number.isInteger(t.count) && t.count >= 1, `${quest.id}: bad count`);
+      switch (t.type) {
+        case 'item':
+          assert(itemRef(t.target), `${quest.id}: unresolvable item target ${t.target}`);
+          availableBy(t.target, quest.suggested_stage, `${quest.id} task`);
+          break;
+        case 'checkmark':
+          assert(t.target === undefined, `${quest.id}: checkmark must not have a target`);
+          break;
+        case 'dimension':
+          assert(dimRef(t.target), `${quest.id}: unresolvable dimension ${t.target}`);
+          break;
+        case 'advancement':
+          assert(advTargets.has(t.target), `${quest.id}: unknown advancement ${t.target}`);
+          break;
+        case 'kill':
+          if (t.target.startsWith('#')) {
+            assert(regEntTags.has(t.target.slice(1)), `${quest.id}: unknown entity tag ${t.target}`);
+          } else {
+            assert(regEnts.has(t.target), `${quest.id}: unknown entity ${t.target}`);
+          }
+          break;
+        case 'biome':
+        case 'structure':
+          assert(ID_RE.test(t.target), `${quest.id}: bad ${t.type} target ${t.target}`);
+          break;
+      }
+    });
+
+    for (const ref of quest.manual_refs ?? []) {
+      assert(tutorialIds.has(ref), `${quest.id}: unknown manual ref ${ref}`);
+      assert(has(locales.zh_cn, `modpack.tutorial.${ref}.title`), `${quest.id}: manual ref ${ref} has no title`);
+    }
+    for (const ref of quest.deps ?? []) {
+      assert(questIds.has(ref), `${quest.id}: unknown dep ${ref}`);
+      assert.notEqual(ref, quest.id, `${quest.id}: dep self-reference`);
+      const other = content.quests.find((q) => q.id === ref);
+      assert.equal(chapterOf(other), chId, `${quest.id}: dep ${ref} crosses chapters`);
+    }
+    (quest.rewards ?? []).forEach((r, i) => {
+      claim(hexId('reward', `${chId}/${quest.id}/${i}`), `reward ${quest.id}[${i}]`);
+      assert(itemRef(r.item), `${quest.id}: unresolvable reward item ${r.item}`);
+      assert(Number.isInteger(r.count) && r.count >= 1, `${quest.id}: bad reward count`);
+      assert(['player', 'team'].includes(r.scope), `${quest.id}: reward scope must be player|team`);
+      availableBy(r.item, quest.suggested_stage, `${quest.id} reward`);
+    });
   }
-  console.log(`PASS: ${stageIds.size} stages, ${routeIds.size} routes, ${questIds.size} quests, ${keys.length} bilingual keys.`);
-  console.log('PASS: stage graph, unlock availability declarations, optional space route, references, and placeholders.');
+
+  // deps must form a forest (acyclic) inside each chapter
+  for (const chId of chapterIds) {
+    const members = content.quests.filter((q) => chapterOf(q) === chId);
+    const done = new Set();
+    let pending = [...members];
+    while (pending.length) {
+      const ready = pending.filter((q) => (q.deps ?? []).every((d) => done.has(d)));
+      assert(ready.length, `chapter ${chId}: deps cycle`);
+      for (const q of ready) done.add(q.id);
+      pending = pending.filter((q) => !done.has(q.id));
+    }
+    assert(members.some((q) => !(q.deps ?? []).length) || !members.length,
+      `chapter ${chId}: no root quest`);
+  }
+
+  // ---------- manual pages (tutorials) ----------
+  for (const t of content.tutorials) {
+    assert(groupIds.has(t.group), `tutorial ${t.id}: unknown group ${t.group}`);
+    assert(keyPattern.test(t.title_key), `tutorial ${t.id}: missing title_key`);
+    assert(!questIds.has(`manual_${t.id}`), `tutorial ${t.id}: manual page id collides with a quest`);
+    claim(hexId('quest', `manual/${t.id}`), `manual page ${t.id}`);
+  }
+
+  // ---------- custom advancements ----------
+  for (const a of content.advancements) {
+    assert(itemRef(a.icon), `advancement ${a.id}: unresolvable icon ${a.icon}`);
+    assert.equal(a.trigger, 'changed_dimension', `advancement ${a.id}: unsupported trigger ${a.trigger}`);
+    assert(a.dimensions.length >= 1, `advancement ${a.id}: no dimensions`);
+    for (const d of a.dimensions) assert(dimRef(d), `advancement ${a.id}: unresolvable dimension ${d}`);
+  }
+
+  console.log(`PASS: ${stageIds.size} stages, ${routeIds.size} routes, ${chapterIds.size} chapters, ${questIds.size} quests, ${tutorialIds.size} manual pages, ${keys.length} bilingual keys.`);
+  console.log('PASS: stage graph, unlock availability, task/reward/icon refs, layout cycles, generated-id uniqueness.');
   console.log('Scope: static design validation only; no Minecraft runtime or real recipe graph was tested.');
 }
 
