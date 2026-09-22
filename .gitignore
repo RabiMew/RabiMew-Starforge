@@ -1,0 +1,13 @@
+# downloaded mod jars and runtime artifacts are never committed (licenses + size)
+mods/
+build/
+run/
+server-run/
+*.jar
+!gradle-wrapper.jar
+node_modules/
+docs/test-results/raw/
+.DS_Store
+Thumbs.db
+installer.log
+*.log

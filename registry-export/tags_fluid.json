@@ -1,0 +1,343 @@
+{
+	"c:hot_oil": [
+		"buildcraftenergy:oil_heat_1",
+		"buildcraftenergy:oil_heat_1_flowing"
+	],
+	"c:fuel_light": [
+		"buildcraftenergy:fuel_light",
+		"buildcraftenergy:fuel_light_flowing"
+	],
+	"c:phenolic_resin": [
+		"immersiveengineering:phenolic_resin"
+	],
+	"c:searing_fuel_light": [
+		"buildcraftenergy:fuel_light_heat_2",
+		"buildcraftenergy:fuel_light_heat_2_flowing"
+	],
+	"ic2cre:fluid_heat/biogas": [],
+	"c:mushroom_stew": [],
+	"c:searing_oil_heavy": [
+		"buildcraftenergy:oil_heavy_heat_2",
+		"buildcraftenergy:oil_heavy_heat_2_flowing"
+	],
+	"ad_astra:efficient_fuel": [
+		"ad_astra:cryo_fuel"
+	],
+	"ad_astra:tier_1_rocket_fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"immersiveengineering:biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"c:kerosene": [
+		"immersivepetroleum:kerosene"
+	],
+	"c:oil_heavy": [
+		"buildcraftenergy:oil_heavy",
+		"buildcraftenergy:oil_heavy_flowing"
+	],
+	"c:water": [
+		"minecraft:flowing_water",
+		"minecraft:water"
+	],
+	"ic2cre:semifluid_generator/hydrogen": [],
+	"c:hydrogen": [
+		"ad_astra:hydrogen"
+	],
+	"c:rabbit_stew": [],
+	"c:gaseous": [
+		"immersiveengineering:acetaldehyde",
+		"immersivepetroleum:petroleum_gas"
+	],
+	"ic2cre:fluid_heat/biomass": [
+		"ic2cre:biomass"
+	],
+	"ic2cre:fluid_heat/residue": [],
+	"minecraft:water": [
+		"minecraft:flowing_water",
+		"minecraft:water"
+	],
+	"c:hot_fuel_light": [
+		"buildcraftenergy:fuel_light_heat_1",
+		"buildcraftenergy:fuel_light_heat_1_flowing"
+	],
+	"ad_astra:oxygen": [
+		"ad_astra:oxygen"
+	],
+	"c:fuel_mixed_light": [
+		"buildcraftenergy:fuel_mixed_light",
+		"buildcraftenergy:fuel_mixed_light_flowing"
+	],
+	"immersiveengineering:drill_fuel": [
+		"immersiveengineering:biodiesel",
+		"immersiveengineering:high_power_biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:kerosene"
+	],
+	"c:oxygen": [
+		"ad_astra:oxygen"
+	],
+	"c:milk": [
+		"minecraft:flowing_milk",
+		"minecraft:milk"
+	],
+	"ad_astra:freezes_in_space": [
+		"minecraft:water"
+	],
+	"c:oil_residue": [
+		"buildcraftenergy:oil_residue",
+		"buildcraftenergy:oil_residue_flowing"
+	],
+	"ic2cre:fluid_heat/bioethanol": [],
+	"c:lubricant": [
+		"immersivepetroleum:lubricant"
+	],
+	"c:biodiesel": [
+		"immersiveengineering:biodiesel"
+	],
+	"c:diesel_sulfur": [
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"c:oil_dense": [
+		"buildcraftenergy:oil_dense",
+		"buildcraftenergy:oil_dense_flowing"
+	],
+	"c:searing_fuel_mixed_light": [
+		"buildcraftenergy:fuel_mixed_light_heat_2",
+		"buildcraftenergy:fuel_mixed_light_heat_2_flowing"
+	],
+	"ad_astra:tier_2_rocket_fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"immersiveengineering:biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"ic2cre:fluid_heat/oil": [
+		"ad_astra:oil",
+		"buildcraftenergy:oil",
+		"buildcraftenergy:oil_flowing"
+	],
+	"c:ethanol": [
+		"immersiveengineering:ethanol"
+	],
+	"c:suspicious_stew": [],
+	"c:hot_oil_dense": [
+		"buildcraftenergy:oil_dense_heat_1",
+		"buildcraftenergy:oil_dense_heat_1_flowing"
+	],
+	"c:fuel": [
+		"ad_astra:fuel"
+	],
+	"c:napalm": [
+		"immersivepetroleum:napalm"
+	],
+	"c:hot_fuel_mixed_light": [
+		"buildcraftenergy:fuel_mixed_light_heat_1",
+		"buildcraftenergy:fuel_mixed_light_heat_1_flowing"
+	],
+	"c:concrete": [
+		"immersiveengineering:concrete"
+	],
+	"c:searing_fuel_dense": [
+		"buildcraftenergy:fuel_dense_heat_2",
+		"buildcraftenergy:fuel_dense_heat_2_flowing"
+	],
+	"c:plantoil": [
+		"immersiveengineering:plantoil"
+	],
+	"c:petroleum_gas": [
+		"immersivepetroleum:petroleum_gas"
+	],
+	"c:gasoline": [
+		"immersivepetroleum:gasoline"
+	],
+	"ad_astra:tier_4_rocket_fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"immersiveengineering:biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"c:hot_fuel_mixed_heavy": [
+		"buildcraftenergy:fuel_mixed_heavy_heat_1",
+		"buildcraftenergy:fuel_mixed_heavy_heat_1_flowing"
+	],
+	"ad_astra:zip_gun_propellants": [
+		"ad_astra:hydrogen",
+		"ad_astra:oxygen"
+	],
+	"c:fuel_dense": [
+		"buildcraftenergy:fuel_dense",
+		"buildcraftenergy:fuel_dense_flowing"
+	],
+	"c:hot_oil_distilled": [
+		"buildcraftenergy:oil_distilled_heat_1",
+		"buildcraftenergy:oil_distilled_heat_1_flowing"
+	],
+	"c:searing_oil_distilled": [
+		"buildcraftenergy:oil_distilled_heat_2",
+		"buildcraftenergy:oil_distilled_heat_2_flowing"
+	],
+	"ic2cre:semifluid_generator/chlorine": [],
+	"c:diesel": [
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"c:crude_oil": [
+		"immersivepetroleum:crudeoil"
+	],
+	"c:herbicide": [
+		"immersiveengineering:herbicide"
+	],
+	"c:potion": [
+		"immersiveengineering:potion"
+	],
+	"c:searing_oil_dense": [
+		"buildcraftenergy:oil_dense_heat_2",
+		"buildcraftenergy:oil_dense_heat_2_flowing"
+	],
+	"ad_astra:hydrogen": [
+		"ad_astra:hydrogen"
+	],
+	"c:honey": [],
+	"ae2:blacklisted/annihilation_plane": [],
+	"c:hot_oil_heavy": [
+		"buildcraftenergy:oil_heavy_heat_1",
+		"buildcraftenergy:oil_heavy_heat_1_flowing"
+	],
+	"ic2cre:semifluid_generator/creosote": [
+		"ic2cre:creosote"
+	],
+	"c:hot_fuel_dense": [
+		"buildcraftenergy:fuel_dense_heat_1",
+		"buildcraftenergy:fuel_dense_heat_1_flowing"
+	],
+	"c:oil": [
+		"ad_astra:oil",
+		"buildcraftenergy:oil",
+		"buildcraftenergy:oil_flowing"
+	],
+	"ic2cre:fluid_heat/gaseous": [
+		"immersiveengineering:acetaldehyde",
+		"immersivepetroleum:petroleum_gas"
+	],
+	"ic2cre:semifluid_generator/biomass": [
+		"ic2cre:biomass"
+	],
+	"c:hidden_from_recipe_viewers": [],
+	"c:benzol": [
+		"immersivepetroleum:benzol"
+	],
+	"c:naphtha": [
+		"immersivepetroleum:naphtha"
+	],
+	"c:redstone_acid": [
+		"immersiveengineering:redstone_acid"
+	],
+	"c:experience": [
+		"sophisticatedcore:xp_still"
+	],
+	"c:oil_distilled": [
+		"buildcraftenergy:oil_distilled",
+		"buildcraftenergy:oil_distilled_flowing"
+	],
+	"minecraft:lava": [
+		"minecraft:flowing_lava",
+		"minecraft:lava"
+	],
+	"ad_astra:oil": [
+		"ad_astra:oil",
+		"buildcraftenergy:oil",
+		"buildcraftenergy:oil_flowing",
+		"immersivepetroleum:crudeoil"
+	],
+	"c:searing_oil": [
+		"buildcraftenergy:oil_heat_2",
+		"buildcraftenergy:oil_heat_2_flowing"
+	],
+	"ad_astra:evaporates_in_space": [
+		"minecraft:water"
+	],
+	"c:searing_oil_residue": [
+		"buildcraftenergy:oil_residue_heat_2",
+		"buildcraftenergy:oil_residue_heat_2_flowing"
+	],
+	"c:searing_fuel_mixed_heavy": [
+		"buildcraftenergy:fuel_mixed_heavy_heat_2",
+		"buildcraftenergy:fuel_mixed_heavy_heat_2_flowing"
+	],
+	"c:creosote": [
+		"immersiveengineering:creosote"
+	],
+	"c:beetroot_soup": [],
+	"immersivepetroleum:burnable_in_flarestack": [
+		"immersiveengineering:creosote",
+		"immersiveengineering:ethanol",
+		"immersiveengineering:plantoil",
+		"immersivepetroleum:benzol",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:gasoline",
+		"immersivepetroleum:kerosene",
+		"immersivepetroleum:lubricant",
+		"immersivepetroleum:naphtha",
+		"immersivepetroleum:petroleum_gas"
+	],
+	"c:searing_fuel_gaseous": [
+		"buildcraftenergy:fuel_gaseous_heat_2",
+		"buildcraftenergy:fuel_gaseous_heat_2_flowing"
+	],
+	"ad_astra:tier_1_rover_fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"immersiveengineering:biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"ad_astra:fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"immersiveengineering:biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"ad_astra:tier_3_rocket_fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"immersiveengineering:biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"c:hot_fuel_gaseous": [
+		"buildcraftenergy:fuel_gaseous_heat_1",
+		"buildcraftenergy:fuel_gaseous_heat_1_flowing"
+	],
+	"c:hot_oil_residue": [
+		"buildcraftenergy:oil_residue_heat_1",
+		"buildcraftenergy:oil_residue_heat_1_flowing"
+	],
+	"ic2cre:fluid_heat/fuel": [
+		"ad_astra:fuel"
+	],
+	"c:lava": [
+		"minecraft:flowing_lava",
+		"minecraft:lava"
+	],
+	"c:fuel_gaseous": [
+		"buildcraftenergy:fuel_gaseous",
+		"buildcraftenergy:fuel_gaseous_flowing"
+	],
+	"c:fuel_mixed_heavy": [
+		"buildcraftenergy:fuel_mixed_heavy",
+		"buildcraftenergy:fuel_mixed_heavy_flowing"
+	],
+	"c:high_power_biodiesel": [
+		"immersiveengineering:high_power_biodiesel"
+	],
+	"c:acetaldehyde": [
+		"immersiveengineering:acetaldehyde"
+	]
+}
