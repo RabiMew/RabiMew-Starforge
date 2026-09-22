@@ -46,7 +46,8 @@
 - 锁实现：`[recipes].locked_items` 封制造 + `action=use/place` 锁使用/放置 + `action=enter` 锁维度（space_age 锁全部 Ad Astra 维度与轨道）。示例计数：electric_age 28 锁、space_age 35 锁。
 - KubeJS 配方层 `starforge_recipes.js`：SF-01..SF-30 中除 TaCZ（SF-31..33，走枪包数据）外全部落地。实测导出 6606 配方：46 条 `kubejs:`/`minecraft:kjs/` 新配方生效，32 条被替换的原配方全部移除（含 `ic2cre:generator`/`generator_from_furnace` 双路径）。流体原料配方（IE capacitor 三级）用 `e.custom` 原样保留 `immersiveengineering:fluid_stack` 成分。
 - 石油经济已统一（实测 tag 导出）：`starforge_fluids.js` 在 `ServerEvents.tags('fluid')` 桥接两层——原油层 `c:oil`/`c:crude_oil`/`ic2cre:fluid_heat/oil` 现含全部 8 种原油等价物（BC oil/dense/heavy + flowing、ad_astra:oil、IP crudeoil）；燃料层 `c:fuel`/`ic2cre:fluid_heat/fuel` 现含 22 种精炼燃料（IP diesel/diesel_sulfur/gasoline、IE biodiesel/high_power_biodiesel、BC 五种燃料 + flowing、ad_astra fuel/cryo_fuel）。原生 `ad_astra:oil` 与 `ad_astra:tier_*_rocket_fuel` 本已互通，桥接补齐了剩余缺口。
-- 铱的地球路径确认：`ic2cre:iridium` 由 `iridium_shard→iridium_ore→iridium` 链产出（无铱矿 worldgen），UU/scanner 链为地球路线基础。
+- 铱的地球路径确认：`ic2cre:iridium` 由 `iridium_shard→iridium_ore→iridium` 链产出（铱矿无 overworld worldgen，IC2CRE biome_modifier 仅加锡/铅/铀+橡胶树，已核实 jar 内 `neoforge/biome_modifier/`），UU/scanner 链为地球路线基础。
+- **地球闭环实测**（`tools/check-closure.mjs`，基于 6605 条真实配方导出递归展开）：`ad_astra:tier_1_rocket` **0 项太空独占材料**——首航完全由地球工业完成（钢件+IC2 电机+IE 钢构件+气罐，全部地球可产）；`ad_astra:tier_2_rocket` 需月球 desh（符合递进设计，非违规）。T1–T7 全部阶段凭证物品、纳米甲/量子甲、AE2 controller 均 0 太空依赖、0 死槽——**T7 地球量子路线不碰太空已验证到配方图层面**。tag 配料按「任一成员地球可得即通过」处理；IC2/IE 地表矿与橡胶树经 worldgen 白名单豁免（jar 内 biome_modifier 已核实指向 `#minecraft:is_overworld`）。
 
 ### P2 已实现并验证（服务端配置层）
 
