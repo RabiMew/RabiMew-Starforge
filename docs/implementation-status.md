@@ -16,6 +16,7 @@
 - [P0] 完整 65-mod 服务端组合启动通过：NeoForge 加载 73.9s，世界生成 + Done 正常，无模组级 ERROR（除下述 incontrol 警告）。
 - [P0] KubeJS 注册表/配方导出器 `pack/kubejs/server_scripts/starforge_dump.js`：输出 item/block/fluid/entity_type/recipe_type/recipe_serializer/mob_effect、item/block/fluid/entity 标签全集、levels/dimensions/dimension_types，以及 6595 条配方（6420 条含完整 JSON 与 ingredient 明细，175 条为不可编码类型）。导出物在 `registry-export/`。
 - 模组集变更（锁定侧已生效，运行时未复测）：移除 Phenominae 1.3.3（CurseForge 源，分发条款不明）；新增 Creature Feature 1.2.3.3 + Arachnids 0.3.0（均 Modrinth/MIT）及其依赖 Blueprint 8.2.0、AzureLib 3.1.11。当前 76 个启用模组（both 65 / client 8 / server 3）。上述 65/71-mod 服务端实测记录基于旧模组集；新集合（含 Blueprint/AzureLib 与 In Control/KubeJS 生成规则）尚未做运行时验证。
+- 2026-09-22 扩展（已运行时验证）：新增 **Railcraft Reborn 1.2.10**、**Ad-Astra: Giselle Addon 8.1**、**Ad Astra: Asteroid Belt 1.0**（CurseForge，JAR 内 MIT）、**Simple Structures: Ad Astra 1.3**；当前 80 个启用模组。服务器 Java 21 启动 `Done (1.8s)`，四模组全部加载，KubeJS 启动/服务端脚本 0 错 0 警告，stagetest 8/8 阶段链路全 OK（含新增锁规则）。
 
 ## 已确认的关键真实 ID（示例，完整见 registry-export/）
 
@@ -26,6 +27,10 @@
 - Defense Turrets：`defenseturrets:machine_gun_turret|grenade_turret|laser_turret|turret_base|turret_barrel|forged_alloy_ingot|uv_searchlight`。
 - TaCZ：通用物品型（`tacz:modern_kinetic_gun`、`tacz:ammo`、`tacz:attachment`、`tacz:gun_smith_table`）；具体枪/弹在 `tacz_default_gun` 数据包内定义。
 - Ad Astra 维度：`ad_astra:moon|mars|venus|mercury|glacio` 及各自 `_orbit`，含 `ad_astra:earth_orbit`（空间站候选维度集合）。
+- Asteroid Belt（modid `pv_ad_asterobelt`，维度命名空间独立为 `pv_asteroid_belt`）：`pv_asteroid_belt:asteroid_belt`（planet tier 2、0.5g、无氧、-50℃、自然刷怪关）与 `pv_asteroid_belt:asteroid_belt_orbit`（0g、-170℃）；`neoforge tps` 运行时两维度均注册在列。
+- Railcraft：基础轨 `railcraft:strap_iron_track`（**不存在** `railcraft:iron_track`）；轨道族 `electric_track`/`reinforced_track`/`high_speed_track`/`high_speed_electric_track`/`elevator_track`；实体 `cargo_minecart`/`tank_minecart`/`steam_locomotive`/`electric_locomotive`/`world_spike_minecart`（已在小行星带维度实测生成并在 tick）；标签 `c:ingots|plates|gears|nuggets|storage_blocks/steel`、`c:coal_coke`、`c:dusts/saltpeter`、`c:fluids/steam`→`railcraft:steam`；数据图类型 `railcraft:fluid_heat`（fluid 注册表）与 `railcraft:tunnel_bore_head`（item 注册表）。
+- Giselle：`ad_astra_giselle_addon:fuel_loader|rocket_sensor|gravity_normalizer|automation_nasa_workbench|oxygen_can|netherite_oxygen_can` 均已在注册表导出确认。
+- Simple Structures: Ad Astra（modid `pv_ad_astra_structures`）：8 个结构集（spacing 27–38 / separation 18–29），命名空间与 `ad_astra_more_structures` 不重叠；Boss 战利品表含 desh/ostrum/calorite 等行星材料。
 
 ## 正在实现
 
@@ -34,7 +39,7 @@
 
 ## P1 已实现并验证（服务端）
 
-- `design/semantic-map.json` + `tools/check-mapping.mjs`：264 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`）。
+- `design/semantic-map.json` + `tools/check-mapping.mjs`：388 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`），本轮再捕获 `railcraft:iron_track` 臆造 ID（实际为 `railcraft:strap_iron_track`）。
 - `tools/build-pack.mjs`：从 `design/content.json`/`semantic-map.json`/`stage-locks.json`/`localization/*.json` 生成 KubeJS 物品注册、语义映射脚本、双语 lang、物品模型与占位贴图、ProgressiveStages 全局配置与 8 个 stage 定义。`localization/` 仍是唯一文案源。
 - `design/stage-locks.json` + 生成器：每阶段 `stage.toml/progression.toml/rules.toml`。`/progressivestages validate` 8/8 通过；`/stage tree` 显示 T0→T5 链与 T6/T7 分叉（T7 不依赖 T6）。
 - 阶段授予 = 双通道触发（schema-4 `[[triggers]] mode=any_of`）：原生 `craft` 条件 + KubeJS `starforge_triggers.js` 在 `ItemEvents.crafted` 上累加 `custom_counter`。凭证物品：T1 `modpack:engineering_assembly`、T2 `ic2cre:generator`、T3 `information_interface`、T4 `heavy_industry_control`、T5 `reactor_control`、T6 `space_control_core`、T7 `quantum_control`；T0 为 `starting_stages` 自动授予。FTB Teams 团队共享（`team_mode=ftb_teams`）。
@@ -46,7 +51,17 @@
 - 关键技术修正：PS schema-4 的触发语法是 `[[triggers]]` + `[[triggers.conditions]]`（`type`/`item`/`counter`/`count`），不是早期猜测的 `[[grants]] condition={...}`（该写法被静默忽略导致授阶全 FAIL）；`custom_counter` 的字段名是 `counter`（兼容 `key`/`id`/`target`）。
 - 锁实现：`[recipes].locked_items` 封制造 + `action=use/place` 锁使用/放置 + `action=enter` 锁维度（space_age 锁全部 Ad Astra 维度与轨道）。示例计数：electric_age 28 锁、space_age 35 锁。
 - KubeJS 配方层 `starforge_recipes.js`：SF-01..SF-30 中除 TaCZ（SF-31..33，走枪包数据）外全部落地。实测导出 6606 配方：46 条 `kubejs:`/`minecraft:kjs/` 新配方生效，32 条被替换的原配方全部移除（含 `ic2cre:generator`/`generator_from_furnace` 双路径）。流体原料配方（IE capacitor 三级）用 `e.custom` 原样保留 `immersiveengineering:fluid_stack` 成分。
-- 石油经济已统一（实测 tag 导出）：`starforge_fluids.js` 在 `ServerEvents.tags('fluid')` 桥接两层——原油层 `c:oil`/`c:crude_oil`/`ic2cre:fluid_heat/oil` 现含全部 8 种原油等价物（BC oil/dense/heavy + flowing、ad_astra:oil、IP crudeoil）；燃料层 `c:fuel`/`ic2cre:fluid_heat/fuel` 现含 22 种精炼燃料（IP diesel/diesel_sulfur/gasoline、IE biodiesel/high_power_biodiesel、BC 五种燃料 + flowing、ad_astra fuel/cryo_fuel）。原生 `ad_astra:oil` 与 `ad_astra:tier_*_rocket_fuel` 本已互通，桥接补齐了剩余缺口。
+- 石油经济已统一（实测 tag 导出）：`starforge_fluids.js` 在 `ServerEvents.tags('fluid')` 桥接两层——原油层 `c:oil`/`c:crude_oil`/`ic2cre:fluid_heat/oil` 现含全部 8 种原油等价物（BC oil/dense/heavy + flowing、ad_astra:oil、IP crudeoil）；燃料层 `c:fuel`/`ic2cre:fluid_heat/fuel` 现含 22 种精炼燃料（IP diesel/diesel_sulfur/gasoline、IE biodiesel/high_power_biodiesel、BC 五种燃料 + flowing、ad_astra fuel/cryo_fuel）。原生 `ad_astra:oil` 与 `ad_astra:tier_*_rocket_fuel` 本已互通，桥接补齐了剩余缺口。本轮再加第三层——杂酚油 `c:creosote`/`ic2cre:semifluid_generator/creosote` 统一 railcraft+IE+ic2cre 共 6 种流体形态。
+
+### 2026-09-22 扩展集成（已验证）
+
+- **Railcraft 分层**（`design/stage-locks.json`，PS 规则生成实测加载）：T1 蒸汽核心（strap_iron_track、装卸机、焦炉/高炉砖、低压锅炉、蒸汽机车、货运/罐车、基础信号件）；T2 电气化（电力轨/机车、动力辊压机、破碎机、流体燃烧室+高压锅炉+蒸汽涡轮、charge 网络与电池、全套信号盒）；T4 重型（加固/高速轨、隧道掘进机四种钻头、高级装卸机、WorldSpike 全家——唯一的强加载入口）。`railcraft-server.toml` 实测**无区块加载开关**，故以阶段锁而非配置控制 WorldSpike。
+- **Railcraft×统一流体经济**：`pack/kubejs/data/railcraft/data_maps/fluid/fluid_heat.json`（RC 自带同路径文件的合法覆盖，保留 `#c:creosote`=4800 并接入 `#c:oil`=16000、`#c:crude_oil`=16000、`#c:fuel`=64000——BC/IP/Ad Astra 燃料可烧流体锅炉）。
+- **杂酚油互认**：`wooden_tie` 原配方硬编码 `railcraft:creosote_bucket`；新增 `c:buckets/creosote` 物品标签（railcraft/IE/ic2cre 三种桶）并经 KubeJS 重写配方接收该标签（导出确认 `kubejs:kjs/railcraft_wooden_tie` 生效）。
+- **Asteroid Belt**：维度锁并入 `space_age`；`incontrol/spawn.json` 拒绝两 belt 维度的自然敌对生成；Chunky 实测 500 格半径预生成 4225 区块/32 秒，`neoforge tps` 全维度 20.000。矿物为原版系矿石 + Ad Astra 铁构件（NBT palette 实测）；误降/丢火箭机制保留。
+- **战利品护栏**：`pv` 命名空间 `glacio_loot_simple`/`mercury_loot_simple` 经 `kubejs/data` 覆盖，直刷 `ad_astra:space_suit` 被移除（不白送航天服）；其余普通材料与行星素材保留。Simple Structures 与 More Structures 结构集/命名空间不重叠，共存保留。
+- **Giselle**：全部功能性方块纳入 `space_age` 阶段锁（燃料装载机/火箭传感器/重力稳定器/自动 NASA 台/氧气罐/下界合金氧气罐），不绕过氧气、燃料与火箭等级。可选联动（Mekanism/PNC/AE2/TIF）未装，对应 mixin 安静跳过。
+- **工具链修正**：`check-closure.mjs` 学会解析机器配方的 `outputs[]`/`results[]`（此前 84 条 `railcraft:crushing` 全部误判孤儿），新增地球流体容器白名单（杂酚油桶=焦炉地球产出）与 RC 地表矿白名单（jar biome_modifier 核实 `#minecraft:is_overworld`；`firestone` 为下界专属未列入）。
 - 铱的地球路径确认：`ic2cre:iridium` 由 `iridium_shard→iridium_ore→iridium` 链产出（铱矿无 overworld worldgen，IC2CRE biome_modifier 仅加锡/铅/铀+橡胶树，已核实 jar 内 `neoforge/biome_modifier/`），UU/scanner 链为地球路线基础。
 - **地球闭环实测**（`tools/check-closure.mjs`，基于 6605 条真实配方导出递归展开）：`ad_astra:tier_1_rocket` **0 项太空独占材料**——首航完全由地球工业完成（钢件+IC2 电机+IE 钢构件+气罐，全部地球可产）；`ad_astra:tier_2_rocket` 需月球 desh（符合递进设计，非违规）。T1–T7 全部阶段凭证物品、纳米甲/量子甲、AE2 controller 均 0 太空依赖、0 死槽——**T7 地球量子路线不碰太空已验证到配方图层面**。tag 配料按「任一成员地球可得即通过」处理；IC2/IE 地表矿与橡胶树经 worldgen 白名单豁免（jar 内 biome_modifier 已核实指向 `#minecraft:is_overworld`）。
 

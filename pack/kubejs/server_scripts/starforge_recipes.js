@@ -292,5 +292,22 @@ ServerEvents.recipes((e) => {
     S: '#c:strings', I: '#c:ingots/iron', C: i('ic2_circuit'), L: '#c:leathers'
   });
 
+  // ---------- SF-34 T1: creosote mutual recognition for Railcraft ties ----------
+  // railcraft:wooden_tie hard-codes railcraft:creosote_bucket; IE/IC2 creosote
+  // fluids are unified under c:creosote, so accept any creosote bucket.
+  // Same shape/count as the original (bucket over 3 wooden slabs, x3).
+  e.remove({ output: i('rc_wooden_tie') });
+  e.shaped(i('rc_wooden_tie'), [' B ', 'SSS', '   '], {
+    B: '#c:buckets/creosote', S: '#minecraft:wooden_slabs'
+  });
+
   console.log('[starforge] recipe layer loaded');
+});
+
+// Bucket forms of the unified creosote fluids (c:creosote, see starforge_fluids).
+ServerEvents.tags('item', (e) => {
+  const M = global.SM.items;
+  e.add('c:buckets/creosote', [
+    M.rc_creosote_bucket, M.ie_creosote_bucket, M.ic2_creosote_bucket
+  ]);
 });

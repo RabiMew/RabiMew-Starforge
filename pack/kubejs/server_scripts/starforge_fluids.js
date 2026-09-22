@@ -31,7 +31,15 @@ ServerEvents.tags('fluid', (e) => {
     'bc_fuel_mixed_heavy', 'bc_fuel_mixed_heavy_flowing'
   ]);
 
+  // Creosote equivalents (Railcraft coke oven / IE coke oven / IC2 semifluid).
+  const CREOSOTE = all([
+    'rc_creosote', 'rc_creosote_flowing',
+    'ie_creosote', 'ie_creosote_flowing',
+    'ic2_creosote', 'ic2_creosote_flowing'
+  ]);
+
   for (const tag of ['c:oil', 'c:crude_oil', 'ic2cre:fluid_heat/oil']) e.add(tag, CRUDE);
   for (const tag of ['c:fuel', 'ic2cre:fluid_heat/fuel']) e.add(tag, FUEL);
-  console.log('[starforge] fluid bridge: crude x' + CRUDE.length + ', fuel x' + FUEL.length);
+  for (const tag of ['c:creosote', 'ic2cre:semifluid_generator/creosote']) e.add(tag, CREOSOTE);
+  console.log('[starforge] fluid bridge: crude x' + CRUDE.length + ', fuel x' + FUEL.length + ', creosote x' + CREOSOTE.length);
 });

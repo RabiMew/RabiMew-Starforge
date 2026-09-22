@@ -69,6 +69,13 @@
 	"minecraft:smithing",
 	"minecraft:smoking",
 	"minecraft:stonecutting",
+	"railcraft:blasting",
+	"railcraft:coking",
+	"railcraft:crushing",
+	"railcraft:locomotive_painting",
+	"railcraft:rolling",
+	"railcraft:rotor_repair",
+	"railcraft:ticket_duplicate",
 	"supermartijn642corelib:dummy",
 	"tacz:gun_smith_table_crafting"
 ]

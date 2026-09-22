@@ -264,6 +264,28 @@
       "reward_policy": "optional_non_progression"
     },
     {
+      "id": "rail_freight",
+      "route": "automation",
+      "title_key": "modpack.quest.rail_freight.title",
+      "description_key": "modpack.quest.rail_freight.description",
+      "suggested_stage": "mechanical_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "spaceport_rail",
+      "route": "automation",
+      "title_key": "modpack.quest.spaceport_rail.title",
+      "description_key": "modpack.quest.spaceport_rail.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
       "id": "layered_defense",
       "route": "military",
       "title_key": "modpack.quest.layered_defense.title",
@@ -352,6 +374,39 @@
       "reward_policy": "optional_non_progression"
     },
     {
+      "id": "space_equipment",
+      "route": "space",
+      "title_key": "modpack.quest.space_equipment.title",
+      "description_key": "modpack.quest.space_equipment.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "asteroid_belt",
+      "route": "space",
+      "title_key": "modpack.quest.asteroid_belt.title",
+      "description_key": "modpack.quest.asteroid_belt.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "asteroid_mining",
+      "route": "space",
+      "title_key": "modpack.quest.asteroid_mining.title",
+      "description_key": "modpack.quest.asteroid_mining.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
       "id": "survey",
       "route": "exploration",
       "title_key": "modpack.quest.survey.title",
@@ -389,6 +444,17 @@
       "route": "exploration",
       "title_key": "modpack.quest.anomaly_research.title",
       "description_key": "modpack.quest.anomaly_research.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "alien_ruins",
+      "route": "exploration",
+      "title_key": "modpack.quest.alien_ruins.title",
+      "description_key": "modpack.quest.alien_ruins.description",
       "suggested_stage": "space_age",
       "depends_on": [],
       "grants_stage": false,
@@ -606,6 +672,12 @@
       "name_key": "modpack.job.aerospace_mechanic",
       "description_key": "modpack.job.aerospace_mechanic.description",
       "suggested_stage": "space_age"
+    },
+    {
+      "id": "railway_engineer",
+      "name_key": "modpack.job.railway_engineer",
+      "description_key": "modpack.job.railway_engineer.description",
+      "suggested_stage": "heavy_industry_age"
     }
   ],
   "planets": [
@@ -638,6 +710,11 @@
       "id": "glacio",
       "name_key": "modpack.planet.glacio.name",
       "description_key": "modpack.planet.glacio.description"
+    },
+    {
+      "id": "asteroid_belt",
+      "name_key": "modpack.planet.asteroid_belt.name",
+      "description_key": "modpack.planet.asteroid_belt.description"
     },
     {
       "id": "station",
@@ -937,6 +1014,22 @@
     {
       "id": "maintenance_rewards",
       "text_key": "modpack.tutorial.maintenance_rewards"
+    },
+    {
+      "id": "rail_logistics",
+      "text_key": "modpack.tutorial.rail_logistics"
+    },
+    {
+      "id": "starport_rail",
+      "text_key": "modpack.tutorial.starport_rail"
+    },
+    {
+      "id": "giselle_equipment",
+      "text_key": "modpack.tutorial.giselle_equipment"
+    },
+    {
+      "id": "asteroid_belt_risk",
+      "text_key": "modpack.tutorial.asteroid_belt_risk"
     }
   ],
   "bosses": [

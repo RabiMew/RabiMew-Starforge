@@ -6,7 +6,7 @@ Minecraft 1.21.1 / NeoForge 21.1.x 的工业科幻整合包，**Alpha（服务�
 
 **工业的目标，是维持不断扩大的生产、防御和殖民网络。** IC2CRE 提供核心科技，BuildCraft CE 承担工程物流，沉浸工程承担重工业，应用能源 2 在中后期接管复杂调度。
 
-当前状态：**dedicated server 可在 Java 21 + NeoForge 21.1.251 上启动到 `Done`，71 个锁定模组零错误加载**；T0–T7 八阶段 ProgressiveStages 推进链（真实合成触发 + 计数器后备）已在运行时验证；SF-01..30 联动配方、统一石油流体桥（原油 8 种/燃料 22 种互通）、P2 防御配置层（Hordes/In Control/ZBB/TaCZ 守卫）已就位；T1 火箭地球闭环经配方图验证。客户端实机验证尚未进行。实测明细见 [实施状态](docs/implementation-status.md)。
+当前状态：**dedicated server 可在 Java 21 + NeoForge 21.1.251 上启动到 `Done`，80 个锁定模组零错误加载**；T0–T7 八阶段 ProgressiveStages 推进链（真实合成触发 + 计数器后备）已在运行时验证；SF-01..34 联动配方、统一流体桥（原油 8 种/燃料 22 种/杂酚油 6 种互通）、P2 防御配置层（Hordes/In Control/ZBB/TaCZ 守卫）已就位；T1 火箭地球闭环经配方图验证。本轮新增 **Railcraft Reborn**（行星内重型铁路物流层）、**Ad Astra: Giselle Addon**（航天自动化扩展）、**Ad Astra: Asteroid Belt**（高风险采矿维度，T6）与 **Simple Structures: Ad Astra**（外星结构加密）。客户端实机验证尚未进行。实测明细见 [实施状态](docs/implementation-status.md)。
 
 | 内容 | 入口 |
 | --- | --- |

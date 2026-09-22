@@ -1,5 +1,6 @@
 {
   "ad_astra": "adastra-1.21.1-1.16.26-neoforge.jar",
+  "ad_astra_giselle_addon": "Ad-Astra-Giselle-Addon-neoforge-1.21.1-8.1.jar",
   "ad_astra_more_structures": "ad_astra_more_structures-1.21.1-neoforge.jar",
   "ae2": "appliedenergistics2-19.2.17.jar",
   "almanac": "Almanac-1.21.1-2-neoforge-1.5.2.jar",
@@ -67,6 +68,9 @@
   "polymorph": "polymorph-neoforge-1.1.0+1.21.1.jar",
   "progressivestages": "progressivestages-3.0.5.jar",
   "puzzleslib": "PuzzlesLib-v21.1.60-mc1.21.1-NeoForge.jar",
+  "pv_ad_asterobelt": "Ad Astra Asteroid Belt 1.21.1.jar",
+  "pv_ad_astra_structures": "Simple Structures Ad Astra 1.21.1 1.3.jar",
+  "railcraft": "railcraft-reborn-1.21.1-1.2.10.jar",
   "rechiseled": "rechiseled-1.2.6-neoforge-mc1.21.jar",
   "resourcefulconfig": "resourcefulconfig-neoforge-1.21-3.0.11.jar",
   "resourcefullib": "resourcefullib-neoforge-1.21-3.0.12.jar",

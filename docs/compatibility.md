@@ -16,6 +16,10 @@
 | Applied Energistics 2 | 19.2.17 | [版本记录](https://modrinth.com/mod/ae2/version/kfyIqgJ6) | 处理器冷启动、跨维度桥、升级和自动合成绕锁 |
 | Ad Astra | NeoForge 1.16.26 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/ad-astra) | 火箭等级、氧气、环境伤害、站点维度与依赖 |
 | Ad Astra: More Structures | 1.21.1-neoforge | [文件记录](https://www.curseforge.com/minecraft/mc-mods/ad-astra-more-structures/files/all) | 与上述 Ad Astra 组合、Boss 名单、结构战利品 |
+| Railcraft Reborn | 1.2.10（2025-12-29 release，Modrinth） | [Modrinth](https://modrinth.com/mod/railcraft-reborn) / [GitHub](https://github.com/railcraft-reborn/railcraft) | 自定义许可（公开整合包允许，需附源码链接）；NeoForge≥21.1.50、MC[1.21.1,1.22)；无硬依赖，JEI 可选；实测已加载、注册表导出、`strap_iron_track` 等真实 ID 已核；`fluid_heat`/`tunnel_bore_head` 数据图类型已核 |
+| Ad-Astra: Giselle Addon | 8.1（2026-08-29 release，Modrinth） | [Modrinth](https://modrinth.com/mod/ad-astra-giselle-addon) | MIT；硬依赖 `ad_astra≥1.16.0`、`common_storage_lib≥0.0.9`、`resourcefulconfig≥3.0.11`（均已满足）；可选联动 Mekanism/PneumaticCraft/AE2/Industrial Foregoing——均未装，对应 mixin/recipe 安静跳过 |
+| Ad Astra: Asteroid Belt | 1.0（CurseForge 独占，file 8887640，2026-09-15） | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ad-astra-asteroid-belt) | MIT（JAR `neoforge.mods.toml` 确认；CF 项目页 license 字段为空）；modid `pv_ad_asterobelt`，维度命名空间 `pv_asteroid_belt:*`；无硬依赖；**项目较新、下载量小，列为风险项跟踪** |
+| Simple Structures: Ad Astra | 1.3（2026-09-16 release，Modrinth） | [Modrinth](https://modrinth.com/mod/simple-structures-ad-astra) | MIT；modid `pv_ad_astra_structures`；服务端必需/客户端可选；Patchouli 为可选依赖（未装）；与 More Structures 命名空间/结构集互不重叠，共存已实测加载 |
 | The Hordes | 1.21.1-1.6.3f | [文件记录](https://www.curseforge.com/minecraft/mc-mods/the-hordes/files/all?page=1&pageSize=20&version=1.21.1) | 时间控制、按基地波次参数、感染、维度排除 |
 | Zombies Break & Build | 1.21.1-1.7.0-neoforge | [版本记录](https://modrinth.com/mod/zombies-break-and-build/version/OyzwivCD) | 单位标记/阶段支持、领地权限、破坏和搭建限额 |
 | Defense Turrets | NeoForge 1.21.1-1.2.0 | [文件记录](https://www.curseforge.com/minecraft/mc-mods/defenseturrets/files/all) | 弹药输入、能源、红石、友军、AoE 地形损坏 |

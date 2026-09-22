@@ -31,20 +31,36 @@ const WORLDGEN_EARTH = new RegExp([
   'ic2cre:(rubber_log|rubber_wood|stripped_rubber_log|stripped_rubber_wood|rubber_leaves|rubber_sapling|sticky_resin)',
   'ic2cre:((deepslate_)?(tin|lead|uranium)_ore|raw_(tin|lead|uranium)(_block)?)',
   'immersiveengineering:((deepslate_)?ore_(aluminum|lead|nickel|silver|uranium)|raw_(aluminum|lead|nickel|silver|uranium)|raw_block_(aluminum|lead|nickel|silver|uranium))',
+  // Railcraft earth deposits — jar biome modifiers verified: tin/lead/silver/
+  // nickel/sulfur/zinc/saltpeter/quarried target #minecraft:is_overworld
+  // (firestone targets is_nether, intentionally not whitelisted).
+  'railcraft:((deepslate_)?(tin|lead|silver|nickel|sulfur|zinc)_ore|saltpeter_ore|quarried_stone)',
 ].join('|') + '$');
 
+// Bucket items for fluids produced on earth by machines (no crafting recipe by
+// nature — filled from the fluid). Verified: railcraft:coking outputs creosote
+// (creosoteOutput 250–5000 mB), IE coke oven does the same; all are unified
+// under c:creosote by the pack's fluid bridge.
+const EARTH_FLUID_CONTAINER = /^(railcraft|immersiveengineering|ic2cre):creosote_bucket$/;
+
 const byResult = new Map();
+const indexResult = (rid, r) => {
+  if (!rid) return;
+  if (!byResult.has(rid)) byResult.set(rid, []);
+  byResult.get(rid).push(r);
+};
 for (const r of recipes) {
   const m = /^(\S+) x\d+$/.exec(r.result ?? '');
-  const rid = m ? m[1] : r.json?.result?.id ?? r.json?.result?.item;
-  if (rid) {
-    if (!byResult.has(rid)) byResult.set(rid, []);
-    byResult.get(rid).push(r);
+  indexResult(m ? m[1] : r.json?.result?.id ?? r.json?.result?.item, r);
+  // Machine recipes expose outputs[]/results[] instead of a single result.
+  for (const arr of [r.json?.outputs, r.json?.results]) {
+    if (!Array.isArray(arr)) continue;
+    for (const o of arr) indexResult(o?.result?.id ?? o?.result?.item ?? o?.id ?? o?.item, r);
   }
 }
 
 const spaceOnly = (id) => SPACE_ONLY.some((re) => re.test(id));
-const rawEarth = (id) => (EARTH_RAW.test(id) || WORLDGEN_EARTH.test(id)) && !spaceOnly(id);
+const rawEarth = (id) => (EARTH_RAW.test(id) || WORLDGEN_EARTH.test(id) || EARTH_FLUID_CONTAINER.test(id)) && !spaceOnly(id);
 const producible = (id) => rawEarth(id) || (byResult.has(id) && !spaceOnly(id));
 
 // One ingredient slot -> list of alternative item ids.

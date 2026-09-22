@@ -12,5 +12,7 @@
 	"ad_astra:venus_orbit",
 	"minecraft:overworld",
 	"minecraft:the_end",
-	"minecraft:the_nether"
+	"minecraft:the_nether",
+	"pv_asteroid_belt:asteroid_belt",
+	"pv_asteroid_belt:asteroid_belt_orbit"
 ]

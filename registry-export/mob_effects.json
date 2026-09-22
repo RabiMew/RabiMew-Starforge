@@ -1,4 +1,6 @@
 [
+	"creaturefeature:fiendish",
+	"creaturefeature:sleepy",
 	"farmersdelight:comfort",
 	"farmersdelight:nourishment",
 	"hordes:immunity",
@@ -53,6 +55,7 @@
 	"minecraft:wind_charged",
 	"minecraft:wither",
 	"mutantmonsters:chemical_x",
+	"railcraft:creosote",
 	"supplementaries:flammable",
 	"supplementaries:overencumbered"
 ]

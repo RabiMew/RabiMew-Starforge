@@ -2,6 +2,24 @@
 
 Audit date: 2026-02-29 · Pack `0.1.0-alpha` · Minecraft **1.21.1** · NeoForge **21.1.251** · Java 21
 
+## Addendum — 2026-09-22 expansion (80 enabled)
+
+Four mods added; verified from first-party sources and the locked jars, then boot-tested on the dedicated server.
+
+| Mod | Locked | Source / license | Side | External deps (from jar) |
+|---|---|---|---|---|
+| Railcraft Reborn | 1.2.10 | Modrinth `rO6kKst6`; LicenseRef-Railcraft-Reborn (public packs allowed w/ source link) | both | neoforge [21.1.50,) ✓ · minecraft [1.21.1,1.22) ✓ · jei opt |
+| Ad-Astra: Giselle Addon | 8.1 | Modrinth `XQDxCBVw`; MIT | both | ad_astra [1.16.0,) ✓ · common_storage_lib [0.0.9,) ✓ · resourcefulconfig [3.0.11,) ✓ · mekanism/pnc/tif/ae2 opt (absent — skip cleanly) |
+| Ad Astra: Asteroid Belt | 1.0 | CurseForge file 8887640; MIT (jar `neoforge.mods.toml`) | both | — (declared) |
+| Simple Structures: Ad Astra | 1.3 | Modrinth; MIT | server req / client opt | patchouli opt (absent) |
+
+Runtime evidence (server, Java 21): all four loaded — `railcraft` 1.2.10, `ad_astra_giselle_addon` 8.1, `pv_ad_asterobelt` 1.0, `pv_ad_astra_structures` 1.3; KubeJS 5/5 server scripts 0 errors; `neoforge tps` shows `Asteroid Belt` + `Asteroid Belt Orbit` dimensions at 20 TPS. Chunky generated a 500-block radius in `pv_asteroid_belt:asteroid_belt` (4225 chunks in 32 s, spark profiles captured). Registry-verified corrections: base track is `railcraft:strap_iron_track` (no `railcraft:iron_track`); belt dims live under the `pv_asteroid_belt` namespace, not the modid.
+
+Integration hooks verified against the jar, not old wikis:
+- `railcraft:fluid_heat` (fluid registry) and `railcraft:tunnel_bore_head` (item registry) are real NeoForge DataMapTypes — pack overrides `data/railcraft/data_maps/fluid/fluid_heat.json` (superset of RC's own file, keeps `#c:creosote`=4800 and adds `#c:oil`=16000 / `#c:crude_oil`=16000 / `#c:fuel`=64000 so BC/IP/Ad Astra fuels feed RC fluid fireboxes).
+- `c:creosote` fluid tag now spans railcraft + IE + ic2cre creosote (pack fluid bridge); `c:buckets/creosote` item tag added and `railcraft:wooden_tie` rewritten to accept it (creosote mutual recognition).
+- No worldspike/chunk-loading toggle exists in `railcraft-server.toml` — the worldspike family is gated by the T4 stage lock instead of a config switch.
+
 ## Method
 
 - Queried Modrinth API per project with `loaders=["neoforge"]`, `game_versions=["1.21.1"]`; selected the newest version **per release channel** and compared against `manifest/locked-mods.json`.

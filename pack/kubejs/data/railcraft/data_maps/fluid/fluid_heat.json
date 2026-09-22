@@ -1,0 +1,16 @@
+{
+  "values": {
+    "#c:creosote": {
+      "heat_value_per_bucket": 4800
+    },
+    "#c:oil": {
+      "heat_value_per_bucket": 16000
+    },
+    "#c:crude_oil": {
+      "heat_value_per_bucket": 16000
+    },
+    "#c:fuel": {
+      "heat_value_per_bucket": 64000
+    }
+  }
+}

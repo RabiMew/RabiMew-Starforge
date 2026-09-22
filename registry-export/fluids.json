@@ -141,6 +141,9 @@
 	"minecraft:lava",
 	"minecraft:milk",
 	"minecraft:water",
+	"railcraft:creosote",
+	"railcraft:flowing_creosote",
+	"railcraft:steam",
 	"sophisticatedcore:xp_flowing",
 	"sophisticatedcore:xp_still",
 	"supplementaries:lumisene"

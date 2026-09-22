@@ -30,6 +30,16 @@
     "result": "deny"
   },
   {
+    "dimension": "pv_asteroid_belt:asteroid_belt",
+    "hostile": true,
+    "result": "deny"
+  },
+  {
+    "dimension": "pv_asteroid_belt:asteroid_belt_orbit",
+    "hostile": true,
+    "result": "deny"
+  },
+  {
     "dimension": "ad_astra:moon",
     "mod": "arachnids",
     "result": "deny"

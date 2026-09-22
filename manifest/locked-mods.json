@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-22T06:03:49.510Z",
+  "generated_at": "2026-09-22T08:20:26.121Z",
   "minecraft": "1.21.1",
   "loader": "neoforge",
   "neoforge_version": "21.1.251",
@@ -174,6 +174,25 @@
       "notes": null
     },
     {
+      "key": "railcraft",
+      "name": "Railcraft Reborn",
+      "enabled": true,
+      "role": "content",
+      "side": "both",
+      "version": "1.2.10",
+      "filename": "railcraft-reborn-1.21.1-1.2.10.jar",
+      "size": 5290986,
+      "sha1": "e6bad517eed5d60923b2a0b28d9f7f83d7299f10",
+      "sha256": "7de3dfeac277da57f9897822824332c99e53b9d36956143b38c0966f39144328",
+      "sha512": "0b35792a295d5c6ba9487b5a02d292871bb8d6a5bbe8a255ae82f8e62f00d0e106039b93d2ffbb2749c40dc5e92fcc86688ca6b688465e1b2432707570101049",
+      "download_url": "https://cdn.modrinth.com/data/rO6kKst6/versions/BrIwB6GH/railcraft-reborn-1.21.1-1.2.10.jar",
+      "project_page": "https://modrinth.com/mod/railcraft-reborn",
+      "license": "LicenseRef-Railcraft-Reborn-License",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "Custom license: public modpacks allowed (no sale, link GitHub, release builds only). Layer: inter-base rail logistics between BC/IE in-base transport and AE2/Ad Astra."
+    },
+    {
       "key": "ad_astra",
       "name": "Ad Astra",
       "enabled": true,
@@ -196,11 +215,11 @@
         },
         {
           "source": "modrinth",
-          "slug": "common-storage-lib"
+          "slug": "resourceful-config"
         },
         {
           "source": "modrinth",
-          "slug": "resourceful-config"
+          "slug": "common-storage-lib"
         }
       ],
       "notes": null
@@ -228,6 +247,63 @@
         }
       ],
       "notes": null
+    },
+    {
+      "key": "ad_astra_giselle",
+      "name": "Ad-Astra: Giselle Addon",
+      "enabled": true,
+      "role": "content",
+      "side": "both",
+      "version": "8.1",
+      "filename": "Ad-Astra-Giselle-Addon-neoforge-1.21.1-8.1.jar",
+      "size": 486266,
+      "sha1": "fb1425a7e4024a485e6790e17f53091610a53eb8",
+      "sha256": "8b50abe78976e7a85fd506b868ec896fe8d058ceb134e6cc5f5fe78f489e57bf",
+      "sha512": "f87db7faf700c8b4f8ee7090060ca2f9999bab34ec384600d8daa4b80d861d5ed5d750a96a318ae1872a8891221cdc22c99265e6ecf6ec91f624a58795ced598",
+      "download_url": "https://cdn.modrinth.com/data/XQDxCBVw/versions/ACL2XPNJ/Ad-Astra-Giselle-Addon-neoforge-1.21.1-8.1.jar",
+      "project_page": "https://modrinth.com/mod/ad-astra-giselle-addon",
+      "license": "MIT",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "Ad Astra QoL/compat layer (MIT). Audit which automation conveniences fit stage rules; must not bypass oxygen/fuel/rocket tiers."
+    },
+    {
+      "key": "ad_astra_asteroid_belt",
+      "name": "Ad Astra: Asteroid Belt",
+      "enabled": true,
+      "role": "content",
+      "side": "both",
+      "version": "1.0",
+      "filename": "Ad Astra Asteroid Belt 1.21.1.jar",
+      "size": 541462,
+      "sha1": "c283e30c0e1f1ae1a3c200e6e4481a82a8bd3d15",
+      "sha256": "1c1d60dee77444c465d1040b11c4e6d33cbf409cd4cb0c5c6015fb0d1b0d9501",
+      "sha512": "e0b1bcfed975c0f467676037bf51bd151a676b5d8dc135a60e65f7f4cc7720519f551cd8b4374f3d86d804404bdeb5719a9af113cab928a1e7ce4cc5250b8a52",
+      "download_url": "https://mediafilez.forgecdn.net/files/8887/640/Ad Astra Asteroid Belt 1.21.1.jar",
+      "project_page": "https://www.curseforge.com/minecraft/mc-mods/ad-astra-asteroid-belt",
+      "license": "MIT",
+      "distribution": "curseforge_cdn",
+      "dependencies": [],
+      "notes": "CurseForge-only; jar neoforge.mods.toml: modid pv_ad_asterobelt, version 1.0, license MIT (CF page license field empty). High-risk mining dimension; miss-landing/rocket-loss mechanic kept."
+    },
+    {
+      "key": "simple_structures_ad_astra",
+      "name": "Simple Structures: Ad Astra",
+      "enabled": true,
+      "role": "content",
+      "side": "both",
+      "version": "1.3",
+      "filename": "Simple Structures Ad Astra 1.21.1 1.3.jar",
+      "size": 318926,
+      "sha1": "cee22293858f9df01fb8ce2c7c59c13bad51fc00",
+      "sha256": "c94cb1ba6e5f181564019ba53ff95b5f448a358837859052d9a3337999805102",
+      "sha512": "173e66376389fea43007a78a15f6a89e024e3c0fd8e26f1f321429ecb4e83730a607f39910ff8f11973b1126fe0131a9aa362e9b4f468c58e6d54cca158e26c5",
+      "download_url": "https://cdn.modrinth.com/data/pHMBwRFe/versions/R5nG6gOI/Simple%20Structures%20Ad%20Astra%201.21.1%201.3.jar",
+      "project_page": "https://modrinth.com/mod/simple-structure-ad-astra",
+      "license": "MIT",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "Datapack-style structure mod (MIT); upstream declares client optional. Must coexist with Ad Astra: More Structures — audit density/loot overlap."
     },
     {
       "key": "the_hordes",
@@ -532,11 +608,11 @@
       "dependencies": [
         {
           "source": "modrinth",
-          "slug": "geckolib"
+          "slug": "resourceful-config"
         },
         {
           "source": "modrinth",
-          "slug": "resourceful-config"
+          "slug": "geckolib"
         },
         {
           "source": "modrinth",
@@ -693,11 +769,11 @@
       "dependencies": [
         {
           "source": "modrinth",
-          "slug": "guard-villagers"
+          "slug": "tacz-1.21.1"
         },
         {
           "source": "modrinth",
-          "slug": "tacz-1.21.1"
+          "slug": "guard-villagers"
         }
       ],
       "notes": "Metadata declares server/integrated only; verify before shipping client copy."

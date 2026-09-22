@@ -16,7 +16,15 @@
       "bc_pipe_fluid_wood", "bc_pipe_fluid_iron", "bc_tank",
       "ie_light_engineering", "ie_basic_engineering", "ie_iron_component", "ie_steel_component",
       "ie_wirecoil_copper", "ie_conveyor", "ie_jerrycan", "ie_revolver",
-      "ev_farmer", "ev_trader", "ev_breeder"
+      "ev_farmer", "ev_trader", "ev_breeder",
+      "rc_strap_iron_track", "rc_track_parts", "rc_locomotive_track_kit",
+      "rc_detector_track_kit", "rc_signal_lamp", "rc_iron_crowbar", "rc_steel_crowbar",
+      "rc_steam_locomotive", "rc_cargo_minecart", "rc_tank_minecart", "rc_void_chest_minecart",
+      "rc_item_loader", "rc_item_unloader", "rc_fluid_loader", "rc_fluid_unloader",
+      "rc_cart_dispenser", "rc_train_dispenser", "rc_feed_station", "rc_void_chest",
+      "rc_manual_rolling_machine", "rc_coke_oven_bricks", "rc_blast_furnace_bricks",
+      "rc_solid_firebox", "rc_low_pressure_boiler", "rc_steam_oven",
+      "rc_steel_ingot", "rc_steel_plate", "rc_steel_gear", "rc_steel_block", "rc_coal_coke"
     ],
     "blocks": [],
     "dimensions": []
@@ -30,7 +38,19 @@
       "ie_electronic", "ie_chemthrower", "ie_railgun",
       "dt_base", "dt_barrel", "dt_forged_alloy", "dt_machine_gun", "dt_searchlight",
       "tacz_gun_table", "tacz_ammo_box", "tacz_workbench_a",
-      "bg_building_gadget", "sd_drawer_controller", "ss_controller"
+      "bg_building_gadget", "sd_drawer_controller", "ss_controller",
+      "rc_electric_track", "rc_electric_locomotive", "rc_energy_minecart",
+      "rc_powered_rolling_machine", "rc_crusher",
+      "rc_fluid_firebox", "rc_high_pressure_boiler", "rc_steam_turbine",
+      "rc_charge_motor", "rc_charge_coil", "rc_charge_terminal", "rc_charge_meter",
+      "rc_charge_spool_small", "rc_charge_spool_medium", "rc_charge_spool_large",
+      "rc_zinc_carbon_battery", "rc_zinc_silver_battery", "rc_nickel_iron_battery", "rc_nickel_zinc_battery",
+      "rc_block_signal", "rc_distant_signal", "rc_token_signal",
+      "rc_dual_block_signal", "rc_dual_distant_signal", "rc_dual_token_signal",
+      "rc_signal_controller_box", "rc_signal_receiver_box", "rc_signal_capacitor_box",
+      "rc_signal_interlock_box", "rc_signal_block_relay_box", "rc_signal_sequencer_box",
+      "rc_analog_signal_controller_box", "rc_token_signal_box", "rc_signal_circuit", "rc_signal_tuner",
+      "rc_switch_track_lever", "rc_switch_track_motor", "rc_switch_track_router"
     ],
     "blocks": [],
     "dimensions": []
@@ -49,7 +69,11 @@
     "items": [
       "bc_quarry", "bc_assembly_table", "bc_laser", "bc_engine_iron",
       "ie_heavy_engineering", "ie_arc_furnace", "ie_capacitor_hv",
-      "dt_grenade", "bg_exchanging_gadget", "bg_copy_paste_gadget"
+      "dt_grenade", "bg_exchanging_gadget", "bg_copy_paste_gadget",
+      "rc_reinforced_track", "rc_high_speed_track", "rc_high_speed_electric_track",
+      "rc_tunnel_bore", "rc_iron_bore_head", "rc_bronze_bore_head", "rc_steel_bore_head", "rc_diamond_bore_head",
+      "rc_advanced_item_loader", "rc_advanced_item_unloader",
+      "rc_world_spike", "rc_personal_world_spike", "rc_world_spike_minecart"
     ],
     "blocks": [],
     "dimensions": []
@@ -76,10 +100,12 @@
       "aa_steel_tank", "aa_desh_tank", "aa_ostrum_tank", "aa_calorite_tank",
       "aa_space_suit_helmet", "aa_space_suit_chest", "aa_space_suit_pants", "aa_space_suit_boots",
       "aa_tier1_rocket", "aa_tier2_rocket", "aa_tier3_rocket", "aa_tier4_rocket", "aa_tier1_rover",
+      "gz_fuel_loader", "gz_rocket_sensor", "gz_gravity_normalizer",
+      "gz_automation_nasa_workbench", "gz_oxygen_can", "gz_netherite_oxygen_can",
       "colony_maintenance"
     ],
     "blocks": [],
-    "dimensions": ["moon", "mars", "venus", "mercury", "glacio", "moon_orbit", "mars_orbit", "venus_orbit", "mercury_orbit", "glacio_orbit", "earth_orbit"]
+    "dimensions": ["moon", "mars", "venus", "mercury", "glacio", "moon_orbit", "mars_orbit", "venus_orbit", "mercury_orbit", "glacio_orbit", "earth_orbit", "asteroid_belt", "asteroid_belt_orbit"]
   },
   "quantum_age": {
     "items": [
