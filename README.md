@@ -12,13 +12,16 @@ Minecraft 1.21.1 / NeoForge 的工业科幻整合包设计基线，版本 0.1，
 | --- | --- |
 | 科技树、七条专业路线、配方与资源经济 | [总体设计](docs/design.md) |
 | 怪潮、星球生态、多人规则与性能预算 | [攻防与殖民](docs/defense-and-colonies.md) |
+| 殖民人口、驻军、单兵军工与弹药后勤 | [殖民人口与驻军](docs/colonies.md) |
+| 村民工业岗位、维护与后勤管理 | [殖民岗位与维护](docs/colony-workforce.md) |
+| 标准战斗基准与 TTK 验收清单 | [战斗基准](docs/combat-benchmark.md) |
 | 模组版本证据、能力边界与适配事项 | [兼容性核查](docs/compatibility.md) |
 | 性能模组分侧、真实热点与验收原则 | [性能层](docs/performance.md) |
 | i18n、任务导出、实施顺序和验收 | [实施与验收](docs/implementation.md) |
 | 阶段、路线、任务和提示的语言键引用 | [内容目录](design/content.json) |
 | 自定义中文 / 英文文本 | [简体中文](localization/zh_cn.json) / [English](localization/en_us.json) |
 
-科技编号表示能力等级，不意味着所有玩家必须按 T0–T7 逐一体验：共同工业底座到达 T5 后，T6 航天殖民与 T7 地球量子工业分别发展；星际工业需要两者汇合。探索、农业与建筑始终有独立价值。
+科技编号表示能力等级，不意味着所有玩家必须按 T0–T7 逐一体验：共同工业底座到达 T5 后，T6 航天殖民与 T7 地球量子工业分别发展；星际工业需要两者汇合。探索、农业与建筑始终有独立价值。Starforge 使用 Easy Villagers、Guard Villagers 与 TaCZ 构成轻量殖民人口及驻军体系，以工业生产和后勤支撑殖民防御，同时避免大型 NPC 城镇模拟成为服务器主要性能负担。
 
 校验设计内容与中英文键是否一致：
 

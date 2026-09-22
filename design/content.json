@@ -524,6 +524,88 @@
       "id": "anomaly_analysis",
       "name_key": "modpack.item.anomaly_analysis",
       "tooltip_key": "modpack.item.anomaly_analysis.tooltip"
+    },
+    {
+      "id": "industrial_console",
+      "name_key": "modpack.item.industrial_console",
+      "tooltip_key": "modpack.item.industrial_console.tooltip"
+    },
+    {
+      "id": "armory_workbench",
+      "name_key": "modpack.item.armory_workbench",
+      "tooltip_key": "modpack.item.armory_workbench.tooltip"
+    },
+    {
+      "id": "logistics_console",
+      "name_key": "modpack.item.logistics_console",
+      "tooltip_key": "modpack.item.logistics_console.tooltip"
+    },
+    {
+      "id": "life_support_console",
+      "name_key": "modpack.item.life_support_console",
+      "tooltip_key": "modpack.item.life_support_console.tooltip"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "farmhand",
+      "name_key": "modpack.job.farmhand",
+      "description_key": "modpack.job.farmhand.description",
+      "suggested_stage": "survival_age"
+    },
+    {
+      "id": "kitchen_hand",
+      "name_key": "modpack.job.kitchen_hand",
+      "description_key": "modpack.job.kitchen_hand.description",
+      "suggested_stage": "survival_age"
+    },
+    {
+      "id": "storekeeper",
+      "name_key": "modpack.job.storekeeper",
+      "description_key": "modpack.job.storekeeper.description",
+      "suggested_stage": "survival_age"
+    },
+    {
+      "id": "mechanic",
+      "name_key": "modpack.job.mechanic",
+      "description_key": "modpack.job.mechanic.description",
+      "suggested_stage": "mechanical_age"
+    },
+    {
+      "id": "electrician",
+      "name_key": "modpack.job.electrician",
+      "description_key": "modpack.job.electrician.description",
+      "suggested_stage": "electric_age"
+    },
+    {
+      "id": "armorer",
+      "name_key": "modpack.job.armorer",
+      "description_key": "modpack.job.armorer.description",
+      "suggested_stage": "electric_age"
+    },
+    {
+      "id": "network_operator",
+      "name_key": "modpack.job.network_operator",
+      "description_key": "modpack.job.network_operator.description",
+      "suggested_stage": "information_age"
+    },
+    {
+      "id": "heavy_technician",
+      "name_key": "modpack.job.heavy_technician",
+      "description_key": "modpack.job.heavy_technician.description",
+      "suggested_stage": "heavy_industry_age"
+    },
+    {
+      "id": "life_support_technician",
+      "name_key": "modpack.job.life_support_technician",
+      "description_key": "modpack.job.life_support_technician.description",
+      "suggested_stage": "space_age"
+    },
+    {
+      "id": "aerospace_mechanic",
+      "name_key": "modpack.job.aerospace_mechanic",
+      "description_key": "modpack.job.aerospace_mechanic.description",
+      "suggested_stage": "space_age"
     }
   ],
   "planets": [
@@ -643,6 +725,18 @@
     {
       "id": "return_reserve",
       "text_key": "modpack.message.return_reserve"
+    },
+    {
+      "id": "food_low",
+      "text_key": "modpack.message.food_low"
+    },
+    {
+      "id": "stock_low",
+      "text_key": "modpack.message.stock_low"
+    },
+    {
+      "id": "maintenance_due",
+      "text_key": "modpack.message.maintenance_due"
     }
   ],
   "gui": [
@@ -709,6 +803,50 @@
     {
       "id": "recipe_locked",
       "text_key": "modpack.gui.recipe_locked"
+    },
+    {
+      "id": "colony_population",
+      "text_key": "modpack.gui.colony_population"
+    },
+    {
+      "id": "colony_workers",
+      "text_key": "modpack.gui.colony_workers"
+    },
+    {
+      "id": "colony_guards",
+      "text_key": "modpack.gui.colony_guards"
+    },
+    {
+      "id": "idle_residents",
+      "text_key": "modpack.gui.idle_residents"
+    },
+    {
+      "id": "job_distribution",
+      "text_key": "modpack.gui.job_distribution"
+    },
+    {
+      "id": "maintenance_status",
+      "text_key": "modpack.gui.maintenance_status"
+    },
+    {
+      "id": "food_stock",
+      "text_key": "modpack.gui.food_stock"
+    },
+    {
+      "id": "status_good",
+      "text_key": "modpack.gui.status_good"
+    },
+    {
+      "id": "status_attention",
+      "text_key": "modpack.gui.status_attention"
+    },
+    {
+      "id": "status_low",
+      "text_key": "modpack.gui.status_low"
+    },
+    {
+      "id": "status_critical",
+      "text_key": "modpack.gui.status_critical"
     }
   ],
   "tutorials": [
@@ -751,6 +889,54 @@
     {
       "id": "unified_oil",
       "text_key": "modpack.tutorial.unified_oil"
+    },
+    {
+      "id": "lightweight_colony",
+      "text_key": "modpack.tutorial.lightweight_colony"
+    },
+    {
+      "id": "colony_residents",
+      "text_key": "modpack.tutorial.colony_residents"
+    },
+    {
+      "id": "colony_guard",
+      "text_key": "modpack.tutorial.colony_guard"
+    },
+    {
+      "id": "colony_armory",
+      "text_key": "modpack.tutorial.colony_armory"
+    },
+    {
+      "id": "colony_ammunition",
+      "text_key": "modpack.tutorial.colony_ammunition"
+    },
+    {
+      "id": "colony_supply",
+      "text_key": "modpack.tutorial.colony_supply"
+    },
+    {
+      "id": "colony_security",
+      "text_key": "modpack.tutorial.colony_security"
+    },
+    {
+      "id": "colony_defense",
+      "text_key": "modpack.tutorial.colony_defense"
+    },
+    {
+      "id": "planetary_garrison",
+      "text_key": "modpack.tutorial.planetary_garrison"
+    },
+    {
+      "id": "colony_workforce",
+      "text_key": "modpack.tutorial.colony_workforce"
+    },
+    {
+      "id": "job_assignment",
+      "text_key": "modpack.tutorial.job_assignment"
+    },
+    {
+      "id": "maintenance_rewards",
+      "text_key": "modpack.tutorial.maintenance_rewards"
     }
   ],
   "bosses": [

@@ -80,7 +80,7 @@ function validate() {
   const stageIds = uniqueIds(content.stages, 'stages');
   const routeIds = uniqueIds(content.routes, 'routes');
   const questIds = uniqueIds(content.quests, 'quests');
-  for (const category of ['items', 'planets', 'messages', 'gui', 'tutorials', 'bosses']) {
+  for (const category of ['items', 'jobs', 'planets', 'messages', 'gui', 'tutorials', 'bosses']) {
     uniqueIds(content[category], category);
   }
   assert.equal(stageIds.size, 8, 'Expected T0 through T7');

@@ -32,6 +32,10 @@
 | Enderman Overhaul | 2.0.3 | [版本记录](https://modrinth.com/mod/enderman-overhaul/version/TH9YXp9r) | 真空环境、瞬移目标、主动敌对性与炮塔识别 |
 | Mutant Monsters | v21.1.1-1.21.1-NeoForge | [版本记录](https://modrinth.com/mod/mutant-monsters/version/dauEcrnZ) | 爆炸、实体体型、环境伤害、掉落 |
 | Phenominae | 1.3.3-neoforge-1.21.1 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/phenominae) | 可配置维度、实体创建来源、世界观和可控事件 |
+| Easy Villagers | neoforge-1.21.1-1.1.42 | [Modrinth](https://modrinth.com/mod/easy-villagers) | 许可证为保留所有权利，分发方式需确认；自动输入输出、漏斗/BC 管道/AE2 对接、村民 NBT 保留、多人、大量设施性能 |
+| Guard Villagers | 2.4.12 | [Modrinth](https://modrinth.com/mod/guard-villagers) | 自定义许可证；护甲/武器槽、巡逻 AI、团队与炮塔友军识别、怪潮互动、外星环境、大量守卫性能 |
+| TaCZ（非官方 NeoForge 移植） | 1.1.8-hotfix-r6 | [Modrinth](https://modrinth.com/mod/tacz-1.21.1) | GPL-3.0-only；非官方移植质量基线、枪包格式、武器数据配置、弹药/附件、爆头与护甲计算、服务端 MSPT 与客户端 FPS |
+| Guard Villagers TACZ Support | 1.0.1 | [Modrinth](https://modrinth.com/mod/guard-villagers-tacz-support) | MIT；元数据声明客户端不支持（服务端/单人）；索敌、射击、耗弹、Ammo Box、找弹药/食物、射界、友军识别、Zombie/Pillager 持枪能力逐项实测 |
 
 ## 体验辅助候选
 
@@ -48,6 +52,8 @@
 | Carry On（可选候选） | 2.2.6.13 | 双端 | 搬运方块；启用则必须配置黑名单 | 核反应堆、大型储罐、ME 存储核心、带能源/库存的关键工业设备、特殊 Ad Astra 设施、可绕阶段设备一律禁止搬运 |
 
 性能与运维层候选的分侧记录见[性能层](performance.md)。
+
+TaCZ Pack Upgrader 2.1.3（LGPL-3.0-or-later）仅在确实使用旧版 1.20.1 TaCZ 枪包时加入，不默认安装。Guard Villagers TACZ Support 的必需前置为 Guard Villagers 与上述 TaCZ 移植版；Easy Villagers 的 The One Probe / JEI / Jade 为可选前置。
 
 Modrinth 数据使用官方 `/v2/project/{slug}/version` 接口并同时筛选 `game_versions=["1.21.1"]` 与 `loaders=["neoforge"]`，不是只看文件名。IC2CRE 的发现过程使用百科定位作者仓库，最终版本判断依据作者发布说明。BuildCraft CE 在不同托管页存在进度差异，本设计引用 BCCE-team，实施时必须确认发行来源与资产身份。
 
@@ -68,6 +74,13 @@ Modrinth 数据使用官方 `/v2/project/{slug}/version` 接口并同时筛选 `
 | A11 | 统一石油经济 | 导出 BC 与 IP 流体、流体标签和配方比对，优先原生标签互通 | 两套各自产油互不认可即未达标；必须桥接时用 KubeJS/数据包，不猜 fluid ID |
 | A12 | 实体仓储接入 AE2 | 各仓储控制器 + AE2 存储总线实测 | 不假定单一控制器统管两套仓储；总线读不到的内容另列适配 |
 | A13 | Carry On 黑名单（若启用） | 配置黑名单 + 复现测试 | 无黑名单不进默认配置；搬运不得复制库存/能源或绕过阶段限制 |
+| A14 | 守卫外星环境保护 | 实测 Ad Astra 航天服对 NPC 生效；不生效则小型兼容层（完整航天服 + 有效供氧 → 对应环境保护） | 无法可靠实现时外星守卫限定已供氧/已密封区域；不因能穿上就宣称能在真空生存 |
+| A15 | 枪械伤害与护甲计算 | 实测 TaCZ 爆头/护甲/穿透与 IE/IC2/Ad Astra 护甲互动 | 不正确则记兼容问题，必要时 Starforge Combat Compatibility 小适配层；不批量改装备基础护甲值 |
+| A16 | 守卫弹药与食物补给 | 实测 TACZ Support 原生箱子/木桶找弹药、Ammo Box、低血量找食物 | 优先用原生机制，不重复开发 NPC 补弹 AI；原生缺失再列适配 |
+| A17 | 敌方持枪单位配额 | 事件池配置 + In Control!/适配层限制枪手比例与枪械参数 | 禁止自然怪随机配枪；超过预算上限即未达标 |
+| A18 | 岗位工作站与基地绑定 | 工作站注册基地 UUID + 低频摘要读取 | 不逐 tick 扫描机器；岗位效果不跨基地生效 |
+| A19 | 岗位效率增益 | 原生 API/配置 → KubeJS/数据包 → 小型适配层 | 机器速度不可安全修改时转为维护/副产物/提示收益；不为小增益 Mixin 整个机器系统 |
+| A20 | 村民岗位数据完整性 | Easy Villagers 打包/放回岗位保留、Guard Villagers 换岗、NBT 与多人同步实测 | 岗位丢失、战斗 AI 残留或数据错配均记为未达标 |
 
 优先减少适配范围，能以原生配置与配方实现的不再造系统。但用户要求的“真实工业规模驱动怪潮”“可靠安全空间站”“完整阶段 i18n”如果超出现成接口，就必须把附属开发作为实施工作，不能宣称仅靠 KubeJS 已全部解决。
 
