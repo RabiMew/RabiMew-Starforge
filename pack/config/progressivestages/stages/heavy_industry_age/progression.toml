@@ -1,5 +1,11 @@
-[[grants]]
-id = "modpack:grant_heavy_industry_age"
-repeat = "once"
-scope = "player"
-condition = { type = "craft", id = "modpack:heavy_industry_control", count = 1 }
+[[triggers]]
+mode = "any_of"
+description = "Craft the stage evidence item"
+[[triggers.conditions]]
+type = "craft"
+item = "modpack:heavy_industry_control"
+count = 1
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:craft_heavy_industry_control"
+count = 1

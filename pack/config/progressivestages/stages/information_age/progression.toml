@@ -1,5 +1,11 @@
-[[grants]]
-id = "modpack:grant_information_age"
-repeat = "once"
-scope = "player"
-condition = { type = "craft", id = "modpack:information_interface", count = 1 }
+[[triggers]]
+mode = "any_of"
+description = "Craft the stage evidence item"
+[[triggers.conditions]]
+type = "craft"
+item = "modpack:information_interface"
+count = 1
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:craft_information_interface"
+count = 1

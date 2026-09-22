@@ -1,5 +1,11 @@
-[[grants]]
-id = "modpack:grant_space_age"
-repeat = "once"
-scope = "player"
-condition = { type = "craft", id = "modpack:space_control_core", count = 1 }
+[[triggers]]
+mode = "any_of"
+description = "Craft the stage evidence item"
+[[triggers.conditions]]
+type = "craft"
+item = "modpack:space_control_core"
+count = 1
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:craft_space_control_core"
+count = 1

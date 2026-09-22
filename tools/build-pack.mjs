@@ -173,17 +173,26 @@ frame = ${st.tier >= 6 ? '"challenge"' : '"task"'}
 reveal = "dependencies"
 `);
 
-  // progression.toml — craft-grant from unlock_evidence
+  // progression.toml — trigger rules granting this stage from unlock_evidence.
+  // PS schema-4 format: [[triggers]] rules each with a conditions list.
+  // mode=any_of so EITHER the native craft stat OR the KubeJS-driven
+  // custom_counter (starforge_triggers.js on ItemEvents.crafted) grants it.
   const ev = st.unlock_evidence;
   let prog = '';
   if (ev && ev.type === 'server_verified_production' && ev.component) {
     const itemId = sm.items[ev.component];
     if (!itemId) throw new Error(`stage ${st.id}: unlock_evidence component ${ev.component} not in semantic map`);
-    prog = `[[grants]]
-id = "${NS}:grant_${st.id}"
-repeat = "once"
-scope = "player"
-condition = { type = "craft", id = "${itemId}", count = 1 }
+    prog = `[[triggers]]
+mode = "any_of"
+description = "Craft the stage evidence item"
+[[triggers.conditions]]
+type = "craft"
+item = "${itemId}"
+count = 1
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "${NS}:craft_${ev.component}"
+count = 1
 `;
   }
   out(`${dir}/progression.toml`, prog);

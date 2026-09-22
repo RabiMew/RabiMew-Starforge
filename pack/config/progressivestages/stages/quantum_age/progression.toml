@@ -1,5 +1,11 @@
-[[grants]]
-id = "modpack:grant_quantum_age"
-repeat = "once"
-scope = "player"
-condition = { type = "craft", id = "modpack:quantum_control", count = 1 }
+[[triggers]]
+mode = "any_of"
+description = "Craft the stage evidence item"
+[[triggers.conditions]]
+type = "craft"
+item = "modpack:quantum_control"
+count = 1
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:craft_quantum_control"
+count = 1

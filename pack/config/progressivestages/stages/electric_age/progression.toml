@@ -1,5 +1,11 @@
-[[grants]]
-id = "modpack:grant_electric_age"
-repeat = "once"
-scope = "player"
-condition = { type = "craft", id = "ic2cre:generator", count = 1 }
+[[triggers]]
+mode = "any_of"
+description = "Craft the stage evidence item"
+[[triggers.conditions]]
+type = "craft"
+item = "ic2cre:generator"
+count = 1
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:craft_ic2_generator"
+count = 1
