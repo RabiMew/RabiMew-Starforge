@@ -1,0 +1,6 @@
+#List of slots to create or modify.
+#See documentation for syntax: https://docs.illusivesoulworks.com/curios/configuration#slot-configuration
+#
+#Starforge: no custom slots. Artifacts registers head/necklace/belt/hands/feet;
+#Sophisticated Backpacks registers its own `back` slot when Curios is present.
+slots = []

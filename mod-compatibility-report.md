@@ -120,7 +120,8 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 | FastSuite | 1.21.1-6.0.7 | release:6.0.7 | both | placebo req [9.9.0,) ✓9.9.2 |
 | Let Me Despawn | 1.5.0 | 1.5.0 (Modrinth `lmd` latest release) | server | almanac req [1.0.2,) ✓1.5.2 |
 | Clumps | 19.0.0.1 | release:19.0.0.1 | both | — |
-| Sodium (NeoForge) | 0.8.13 | release:0.8.13 | client | incompatible: embeddium (not installed ✓) |
+| Sodium (NeoForge) | 0.8.13 | release:0.8.13 | client | incompatible: embeddium (not installed ✓); Supplementaries 3.9.9 requires ≥0.8.12-beta.1 ✓ |
+| Iris | 1.8.14-beta.1 | beta:1.8.14-beta.1 — **no stable Iris supports Sodium 0.8 on 1.21.1** (stable 1.8.12 pins Sodium 0.6.13, blocked by Supplementaries) | client | sodium pair (installed 0.8.13); incompatible: embeddium (not installed ✓) |
 | ImmediatelyFast | 1.6.14 | release:1.6.14 | client | — |
 | Entity Culling | 1.11.2 | release:1.11.2 | client | — |
 | Dynamic FPS | 3.11.4 | release:3.11.4 | client | — |
@@ -204,3 +205,34 @@ Known non-blocking warnings (pre-existing, not regressions):
 - NeoForge Maven: `maven.neoforged.net/releases/net/neoforged/neoforge/maven-metadata.xml`
 - Jar metadata: `manifest/jar-deps.json` (extracted `neoforge.mods.toml` dependencies)
 - KubeJS: installed jar class inspection (`dev.latvian.mods.kubejs.event.EventGroups`, `ModifyItemTooltipsKubeEvent`)
+
+## Addendum — 2026-09-22 curio layer (100 enabled)
+
+Two mods added; both resolved via `tools/fetch-mods.mjs --only`, hash-locked, and boot-verified on the dedicated server.
+
+| Mod | Locked | Source / license | Side | External deps (from jar) |
+|---|---|---|---|---|
+| Curios API | 9.5.1+1.21.1 | Modrinth `curios`; LGPL-3.0-or-later | both | neoforge [21.1.72,) ✓ · minecraft [1.21,1.22) ✓ |
+| Artifacts | 13.2.5 | Modrinth `artifacts`; MIT | both | neoforge [21.0.133-beta,) ✓ · minecraft 1.21.1 ✓ · **expandability 12.0.0 bundled** via `META-INF/jars/` (jarJar, MIT — Modrinth `X5dUUm4k`) |
+| Sophisticated Backpacks | 1.21.1-3.26.3.2158 (existing) | — | both | native Curios `back` slot integration in jar — no ACL needed |
+
+Findings:
+- `tools/audit-deps.mjs` bug fixed: NeoForge 21 stores jarJar jars under `META-INF/jars/` (not only `jarjar/`); expandability now correctly recorded in `manifest/mod-ids.json` + `jar-deps.json`.
+- Curios: `slots = []` pinned — the 11 default slots (incl. `back`) come from the mod itself. Artifacts adds head/necklace/belt/hands/feet curio types; no chest-slot usage → zero conflict with chest armor, Ad Astra space suits, or jet equipment. `enableAccessoriesCompat`/`enableTrinketsCompat` pinned `false` (mods absent).
+- Keybind: Curios menu default `G` collides with TaCZ fire-select → unbound in `defaultoptions/keybindings.txt` (inventory button remains). Sophisticated Backpacks open key `B` has no conflict.
+- Loot redistribution is a datapack-level `neoforge:add_table` GLM (`starforge:artifacts_tiers`) driven by `loot_table_id` conditions — no coordinate hardcoding, no tick listeners. 24 gated artifacts re-injected into planet-tier chest/boss tables; `eternal_steak` fully disabled (infinite food). Live-verified via RCON `loot insert`: `moon_boss` → `artifacts:warp_drive`, `rare_glacio` → `artifacts:crystal_heart`/`chorus_totem`.
+- Note: ProgressiveStages' built-in Curios compat scans curio slots every tick (upstream behavior, pre-existing module) — flagged for the perf baseline; this layer adds no tick work itself.
+- Server: `Done (1.725s)`, no new parse errors; client GUI slot/keybind interaction still pending a manual session.
+
+## Addendum — 2026-09-22 default shader layer (101 enabled)
+
+| Entry | Locked | Source / license | Kind | Notes |
+|---|---|---|---|---|
+| Iris | 1.8.14-beta.1+1.21.1-neoforge | Modrinth `iris`; LGPL-3.0-only | client mod | Beta exception justified below |
+| MakeUp - Ultra Fast | 9.5e | Modrinth `izsIPI7a`; LGPL-3.0-or-later | client resource (`shaderpacks/`) | Default-on via `config/iris.properties` |
+
+- **Why Iris beta**: Sodium 0.8.13 needs Iris ≥1.8.13; the only 1.21.1+NeoForge build is `1.8.14-beta.1`. Stable Iris 1.8.12 pairs with Sodium 0.6.13, which Supplementaries 3.9.9 declares `incompatible [0,0.8.12-beta.1)` — NeoForge blocks that combo at load, so no all-stable pair exists here.
+- Shader pack is **not** a jar: it enters `modrinth.index.json` as a `shaderpacks/` file with `env server=unsupported` and its official CDN URL + sha1/sha512 — no third-party zip is committed to git. `sync-pack.mjs` skips `shaderpacks/` on the server.
+- First-run profile: official `profile=low` + `REFLECTION_SLIDER=1` via `pack/shaderpacks/MakeUp-UltraFast-9.5e.zip.txt` (OptiFine/Iris per-pack options file).
+- Iris jar metadata checked: `neoforge.mods.toml` declares only `embeddium` as incompatible; no hard Sodium dep (runtime pairing).
+- Client GUI shader-on boot, shader compile log, TaCZ/Ad Astra dimension rendering: **pending real client verification** (see docs/performance.md).

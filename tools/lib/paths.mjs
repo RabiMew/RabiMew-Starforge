@@ -9,6 +9,8 @@ export const p = (...segs) => path.join(ROOT, ...segs);
 export const DIRS = {
   manifest: p('manifest'),
   mods: p('mods'),
+  // Non-mod locked downloads (shaderpacks etc.) — gitignored via build/.
+  resources: p('build', 'resources'),
   pack: p('pack'),
   runClient: p('run', 'client'),
   runServer: p('run', 'server'),

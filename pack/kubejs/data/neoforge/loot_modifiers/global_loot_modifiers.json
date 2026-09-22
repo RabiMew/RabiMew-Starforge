@@ -1,0 +1,7 @@
+{
+  "comment": "Starforge loot modifiers. Appended after mod-provided registrations (replace:false keeps Artifacts' own inject modifiers active; gated items are pruned upstream via items.toml generateAsLoot=false).",
+  "replace": false,
+  "entries": [
+    "starforge:artifacts_tiers"
+  ]
+}

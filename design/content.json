@@ -462,6 +462,17 @@
       "reward_policy": "optional_non_progression"
     },
     {
+      "id": "alien_relics",
+      "route": "exploration",
+      "title_key": "modpack.quest.alien_relics.title",
+      "description_key": "modpack.quest.alien_relics.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
       "id": "base_kitchen",
       "route": "agriculture",
       "title_key": "modpack.quest.base_kitchen.title",

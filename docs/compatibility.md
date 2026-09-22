@@ -122,3 +122,42 @@ FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Com
 - **已知风险（如实记录）**：在 Venus/Glacio 用 `/place feature` 强制放置 Immersive Petroleum 油藏特征时，`FeatureReservoir.scanChunkForNewReservoirs` 在异步区块生成中持锁自递归请求区块，单 tick 超 120 秒触发 watchdog 终止（crash-report 栈见 `run/server/crash-reports/`）。自然世界生成与正常游玩未触发该路径；`immersivepetroleum-server.toml` 的 `regenerate_missing_reservoirs` 已是 `false`。该问题判定为 IP 世界生成实现缺陷，与 Fast Noise / Structure Layout Optimizer 无关（栈上无二者帧）。禁止在联机服务器上强制 place IP 油藏特征；是否换用修复版本待上游 1.21.1 构建确认。
 
 发行前从作者渠道锁定下载地址、版本、文件大小、SHA-512/SHA-256、游戏范围、加载器范围、依赖、装载侧及分发方式。当前表是设计候选表，不能直接改名成安装 manifest。先做最小 IC2/BC/IE 验证，再逐组加入其余内容。
+
+## 饰品层 Addendum（2026-09-22，Curios + Artifacts + Sophisticated Backpacks Back 槽）
+
+新增：**Curios API 9.5.1+1.21.1**（Modrinth，LGPL-3.0-or-later）、**Artifacts 13.2.5**（Modrinth，MIT；jarJar 内嵌 **Expandability 12.0.0**，MIT）。当前启用模组 **100**。`manifest/locked-mods.json`、`mod-ids.json`、`jar-deps.json` 已更新；`tools/audit-deps.mjs` 已修正为同时识别 `META-INF/jars/`（NeoForge 21 的 jarJar 实际路径）与旧 `META-INF/jarjar/`。
+
+### 槽位与装备兼容
+
+- `pack/config/curios-common.toml`：`slots = []`——不加自定义槽。Curios 自带默认槽（含 `back`），运行日志确认 11 槽 / 12 实体分配。
+- Artifacts 注册 head/necklace/belt/hands/feet 五类 curio；**不占胸甲槽**，不与 Ad Astra 宇航服（胸甲槽）、喷气背包冲突。
+- Sophisticated Backpacks jar 内含原生 Curios 集成（`back` 槽）；无需 Accessories Compatibility Layer。胸甲/宇航服仍走 `chest` 槽。
+- `pack/config/artifacts/general.toml`：`enableCuriosCompat=true`，`enableAccessoriesCompat=false`、`enableTrinketsCompat=false`（对应模组未安装，消除歧义）。
+- 键位：Curios 默认 G 与 TaCZ 开火模式切换冲突 → `keybindings.txt` 默认解绑（物品栏按钮仍可打开 curio 页）；Sophisticated Backpacks 开包键（B）无冲突。
+- **性能注意**：ProgressiveStages 自带 Curios compat 会逐 tick 扫描 curio 槽（上游行为，非本层新增）；本次未新增任何 tick 扫描或事件监听。GLM 只在战利品生成时触发。
+
+### Artifacts 掉落重分布（KubeJS 数据包）
+
+机制：Artifacts 每个物品的 `generateAsLoot` 控制其能否进入上游全部掉落源（结构注入 GLM、考古、营地、拟态怪、怪物装备）。`pack/config/artifacts/items.toml` 关闭 25 件高风险/需分层的物品，保留 23 件低风险物品走上游默认注入。关闭物品经由 `kubejs/data/neoforge/loot_modifiers/global_loot_modifiers.json` → `starforge:artifacts_tiers`（`neoforge:add_table`）+ `kubejs/data/starforge/loot_table/artifacts_tiers.json`（12 池，按 `neoforge:loot_table_id` 条件匹配目标表）重新投放到星球分层。
+
+| 层级 | 目标表（节选） | 概率 | 饰品 |
+| --- | --- | --- | --- |
+| 地球遗迹（23 件，上游注入同时生效） | vanilla simple_dungeon / mineshaft / buried_treasure / 沙漠神殿 / 丛林神庙 / 掠夺者前哨 / 沉船 / 要塞 / 海底废墟(大) / 林地府邸 / 雪屋 / 远古城市×2 / 废弃传送门 / 村庄铁匠等 5 种 | 10% | running_shoes、digging_claws、aqua_dashers、bunny_hoppers、charm_of_shrinking/sinking、onion_ring、umbrella、lucky_scarf、panic_necklace、anglers/villager/cowboy/superstitious_hat、kitty_slippers、snowshoes、snorkel、flippers、golden_hook、pickaxe_heater、plastic/novelty_drinking_hat、whoopee_cushion |
+| 月球/火星普通箱 | ad_astra moon dungeon×2、moon village blacksmith/house、mars temple、aams common_moon/mars | 22% | night_vision_goggles、cloud_in_a_bottle、antidote_vessel、flame_pendant、rooted_boots、steadfast_spikes、pocket_piston、everlasting_beef、universal_attractor、helium_flamingo、warp_drive |
+| 月球/火星稀有箱 | aams rare_moon/rare_mars | 45% | 同上 |
+| 金星普通/稀有箱 | aams common_venus / rare_venus | 22% / 45% | obsidian_skull、strider_shoes、fire_gauntlet、shock_pendant、thorn_pendant、cross_necklace、vampiric_glove、feral_claws、power_glove、withered_bracelet |
+| 水星普通/稀有箱 | aams common_mercury + `pv:mercury_loot_simple` / rare_mercury | 22% / 45% | 同上（权重偏攻击向） |
+| Glacio/小行星带/轨道遗迹 | `pv:glacio_loot_simple`、aams common_glacio + **common_other**（轨道/小行星带等非行星维度）/ rare_glacio + **rare_other** | 30% / 55% | **crystal_heart、chorus_totem、scarf_of_invisibility**（稀有 3 件），warp_drive/universal_attractor/everlasting_beef 低权重兜底（w2） |
+| 星球 Boss（aams entities/*_boss） | moon/mars→中期池 100%；venus/mercury→战斗池 100%；glacio→稀有 3 件 100% | 100% | 见各池 |
+
+### 平衡裁定
+
+- **eternal_steak 完全禁用**（无限食物绕过农业线）；everlasting_beef 同为再生食物但延迟到 T6 太空时代（农业已成熟，列为边界项）。
+- warp_drive（受击随机传送）延迟到月/火；cloud_in_a_bottle、helium_flamingo（位移/缓降）T6；scarf_of_invisibility、chorus_totem、crystal_heart 仅 Glacio/小行星带层。
+- 无任何饰品绕过氧气/宇航服/火箭等级：snorkel/flippers/aqua_dashers 只作用于水；obsidian_skull 只免疫火焰不减氧气消耗。
+- 实机验证：`loot insert ad_astra_more_structures:entities/moon_boss` → `artifacts:warp_drive`；`rare_glacio` 三次掷骰产出 `crystal_heart`、`chorus_totem`——GLM 端到端生效。服务端 `Done (1.725s)`，无新增 loot 解析错误。
+
+### 待验证
+
+- 客户端交互：Curios 界面放入/取出 Sophisticated Backpack、快捷键实际手感（服务端日志已确认槽注册，交互测试待 GUI 会话）。
+- Artifacts 营地（campsite）世界生成在星球维度的分布合理性（默认 40 次/区块尝试、Y -60~40，地球外基本不生成，待目检）。

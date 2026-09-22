@@ -87,7 +87,7 @@ function readTomlFromJar(jarPath) {
 // Mod ids provided by embedded jarJar jars (e.g. xaerolib inside Xaero's jars).
 function embeddedModIds(jarPath) {
   const out = [];
-  for (const e of readZipEntries(readFileSync(jarPath), (n) => /^META-INF\/jarjar\/.+\.jar$/i.test(n))) {
+  for (const e of readZipEntries(readFileSync(jarPath), (n) => /^META-INF\/(?:jarjar|jars)\/.+\.jar$/i.test(n))) {
     if (!e.buf) continue;
     const inner = readZipEntries(e.buf, (n) => n === 'META-INF/neoforge.mods.toml' || n === 'META-INF/mods.toml')[0];
     if (!inner?.buf) continue;

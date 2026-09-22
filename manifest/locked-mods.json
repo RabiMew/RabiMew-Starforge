@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-22T11:16:08.319Z",
+  "generated_at": "2026-09-22T12:37:18.349Z",
   "minecraft": "1.21.1",
   "loader": "neoforge",
   "neoforge_version": "21.1.251",
@@ -779,6 +779,25 @@
       "notes": "Metadata declares server/integrated only; verify before shipping client copy."
     },
     {
+      "key": "artifacts",
+      "name": "Artifacts",
+      "enabled": true,
+      "role": "content",
+      "side": "both",
+      "version": "13.2.5",
+      "filename": "artifacts-neoforge-13.2.5.jar",
+      "size": 1086922,
+      "sha1": "fb6cd3be2d034dde369ffd7558c95c6daa44189e",
+      "sha256": "e36a929420a0a616abdb28f5bbbdb866a426aa3bb78d1b39bc1183927c101ce6",
+      "sha512": "9079bc8a22c237881b22b38027bbab2a8a2e685a1f49c1e1e0e5796f3e0a5509a130d73753c7b2980f12e4f00845f8e8c967ee969f1eadcd52139c2780afe09d",
+      "download_url": "https://cdn.modrinth.com/data/P0Mu4wcQ/versions/lMfuK0o7/artifacts-neoforge-13.2.5.jar",
+      "project_page": "https://modrinth.com/mod/artifacts",
+      "license": "MIT",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "Curios-backed curio items (13.x: curios/cloth/architectury optional upstream, we ship curios). Default chest/mimic injection kept but re-tiered via Starforge GLM pools; natural-drop balance audited in docs."
+    },
+    {
       "key": "jei",
       "name": "JEI",
       "enabled": true,
@@ -1356,6 +1375,25 @@
       "distribution": "modrinth_cdn",
       "dependencies": [],
       "notes": null
+    },
+    {
+      "key": "iris",
+      "name": "Iris",
+      "enabled": true,
+      "role": "perf",
+      "side": "client",
+      "version": "1.8.14-beta.1+1.21.1-neoforge",
+      "filename": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+      "size": 2540723,
+      "sha1": "1bd129cf7bce65d6b1c0543045f0620c98a0f885",
+      "sha256": "60d5f8bf52f25e9986440f4a4270a6bd986d9cff994510e1108ac1547063b314",
+      "sha512": "33fddb430e16222902eac75b8b3d57c381b0f3cc729f3b56c4628df12ca108f23a0b11e2feb167923d6d14d1fc7e8ee1a977ec421b19d1951bdca74c4092b9c5",
+      "download_url": "https://cdn.modrinth.com/data/YL57xq9U/versions/KduFYu4t/iris-neoforge-1.8.14-beta.1%2Bmc1.21.1.jar",
+      "project_page": "https://modrinth.com/mod/iris",
+      "license": "LGPL-3.0-only",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "Shader loader for the default shader pack. Sodium 0.8 line requires Iris >=1.8.13; on 1.21.1 NeoForge only the 1.8.14 beta satisfies that (latest stable Iris 1.8.12 pins Sodium 0.6.13, which Supplementaries 3.9.9 declares incompatible [0,0.8.12-beta.1) — a hard mod-loading block, so no all-stable combo exists in this pack). Pin prefix 1.8.14 so a future stable 1.8.14+ release is picked automatically."
     },
     {
       "key": "immediatelyfast",
@@ -2039,6 +2077,46 @@
       "distribution": "modrinth_cdn",
       "dependencies": [],
       "notes": "Required by BetterF3; optional for Chat Heads."
+    },
+    {
+      "key": "curios",
+      "name": "Curios API",
+      "enabled": true,
+      "role": "library",
+      "side": "both",
+      "version": "9.5.1+1.21.1",
+      "filename": "curios-neoforge-9.5.1+1.21.1.jar",
+      "size": 410690,
+      "sha1": "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4",
+      "sha256": "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde",
+      "sha512": "5981a267686b744e7e3c227f78cbcd5267c14ac6979a28e814695f4589273998563147207fef4a5cdb7cdbdc39797cd95d9e4abadb55869f18e02a38d0654ae5",
+      "download_url": "https://cdn.modrinth.com/data/vvuO3ImH/versions/yohfFbgD/curios-neoforge-9.5.1%2B1.21.1.jar",
+      "project_page": "https://modrinth.com/mod/curios",
+      "license": "LGPL-3.0-or-later",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "Curio slot framework (LGPL-3.0-or-later). Hosts Artifacts items and Sophisticated Backpacks' native back slot; no extra slot-framework mods."
+    }
+  ],
+  "resources": [
+    {
+      "key": "makeup_ultra_fast",
+      "name": "MakeUp - Ultra Fast",
+      "enabled": true,
+      "type": "shaderpack",
+      "side": "client",
+      "version": "9.5e",
+      "filename": "MakeUp-UltraFast-9.5e.zip",
+      "path": "shaderpacks/MakeUp-UltraFast-9.5e.zip",
+      "size": 400417,
+      "sha1": "84f7f6ddf81f602ff241fb9c576411cdda309f9e",
+      "sha256": "8eae9f4b46c8c0fd98968d9ff58d9d25903cf11c79926d8d08c7ae0029d09f97",
+      "sha512": "2deb6bfdb9191e36adaba607b4a873cb7405e93068903ede45458a30c28a4587fec4edba1f8772e6e13dc21596f7748929b63dc33a24cfd198dff09acd7209b6",
+      "download_url": "https://cdn.modrinth.com/data/izsIPI7a/versions/T3EhqZo1/MakeUp-UltraFast-9.5e.zip",
+      "project_page": "https://modrinth.com/shader/makeup-ultra-fast-shaders",
+      "license": "LGPL-3.0-or-later",
+      "distribution": "modrinth_cdn",
+      "notes": "Default shader (LGPL-3.0-or-later). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. Default-on via pack/config/iris.properties + official profile=low preset (pack/shaderpacks/<file>.txt)."
     }
   ]
 }

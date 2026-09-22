@@ -81,6 +81,8 @@
   "modpack.quest.anomaly_research.description": "Observe anomaly warnings before choosing to sample or withdraw. Process recovered materials through industrial and research facilities; keep unknown samples out of living quarters.",
   "modpack.quest.alien_ruins.title": "Survey Alien Structures",
   "modpack.quest.alien_ruins.description": "Ruins and towers on the planets hold supplies — and spawners for native creatures. Loot scales with the planet, but no find replaces industrial manufacturing.",
+  "modpack.quest.alien_relics.title": "Recover Alien Relic Curios",
+  "modpack.quest.alien_relics.description": "Artifacts are exploration-only rewards. Earth's ruins and campsites hold basic utility curios; Moon/Mars ruins hold survival and exploration aids; Venus/Mercury ruins hold combat and defensive curios; Glacio ruins and the Asteroid Belt hold the rarest relics. No curio replaces oxygen, space suits, or rocket tiers.",
   "modpack.quest.base_kitchen.title": "A Kitchen That Feeds the Base",
   "modpack.quest.base_kitchen.description": "Build fields, a cooking pot, and a shared kitchen with bowls and basic fuel. Make food easy for teammates to collect without repeatedly searching for ingredients.",
   "modpack.quest.food_buffers.title": "Deliver the Harvest",

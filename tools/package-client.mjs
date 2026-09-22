@@ -19,6 +19,7 @@ import {
   sideMods, sideCounts, CLIENT_ACCEPTS, EXPECTED,
 } from './lib/manifest.mjs';
 import { ensureLockedJars, backfillSha1 } from './lib/jars.mjs';
+import { ensureLockedResources, backfillResourceSha1, enabledResources } from './lib/resources.mjs';
 import { hashes } from './lib/hash.mjs';
 import { createZip } from './lib/zip.mjs';
 import { resolveDownloads, hostKind } from './lib/mrpack-sources.mjs';
@@ -32,11 +33,15 @@ mkdirSync(DIRS.dist, { recursive: true });
 
 // ---- 1. jars: present + hash-verified against the lockfile -----------------
 const { jars, errors } = await ensureLockedJars(lock);
-if (errors.length) {
-  for (const e of errors) console.error(`FAIL ${e}`);
+const { files: resFiles, errors: resErrors } = await ensureLockedResources(lock);
+const fetchErrors = [...errors, ...resErrors];
+if (fetchErrors.length) {
+  for (const e of fetchErrors) console.error(`FAIL ${e}`);
   process.exit(1);
 }
 backfillSha1(lock); // persists real sha1s so future builds are reproducible
+backfillResourceSha1(lock, resFiles);
+const clientResources = enabledResources(lock).filter((r) => r.side === 'client');
 
 const clientMods = sideMods(lock, CLIENT_ACCEPTS);
 const serverMods = sideMods(lock, ['server']);
@@ -60,6 +65,9 @@ if (localOnly) {
   }
   for (const mod of clientMods) {
     entries.push({ name: `mods/${mod.filename}`, data: jars.get(mod.key).buf, compress: false });
+  }
+  for (const res of clientResources) {
+    entries.push({ name: res.path, data: resFiles.get(res.key).buf, compress: false });
   }
   const marker =
 `RabiMew's Starforge / 星铸 — LOCAL TEST ONLY
@@ -88,7 +96,7 @@ This zip contains third-party jars for local testing only — see LOCAL_TEST_ONL
 
   const out = p('dist', `${stem}-local.zip`);
   writeFileSync(out, createZip(entries));
-  console.log(`wrote ${out} (${clientMods.length} jars embedded — LOCAL TEST ONLY)`);
+  console.log(`wrote ${out} (${clientMods.length} jars + ${clientResources.length} resources embedded — LOCAL TEST ONLY)`);
   process.exit(0);
 }
 
@@ -121,6 +129,22 @@ for (const mod of clientMods) {
   reportRows.push({ mod, res });
   if (res.kind === 'curseforge_cdn' && !res.modrinthMirror) needsAttention.push({ mod, res });
   if (res.kind === 'other') needsAttention.push({ mod, res });
+}
+
+// Non-mod resources (shaderpacks etc.) — declared at their real instance path
+// with env client=required/server=unsupported so launchers download them from
+// the official URL instead of us embedding the archive.
+for (const res of clientResources) {
+  const buf = resFiles.get(res.key).buf;
+  const h = hashes(buf);
+  files.push({
+    path: res.path,
+    hashes: { sha1: h.sha1, sha512: h.sha512 },
+    env: { client: 'required', server: 'unsupported' },
+    downloads: [res.download_url],
+    fileSize: h.size,
+  });
+  reportRows.push({ mod: res, res: { downloads: [res.download_url], primary: res.download_url, kind: res.distribution ?? hostKind(res.download_url), modrinthMirror: null, note: null } });
 }
 
 // server-only mods are never declared in the client index.

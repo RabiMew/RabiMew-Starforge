@@ -50,3 +50,7 @@ key_key.immersiveengineering.magnetEquip:key.keyboard.equal
 key_key.immersivepetroleum.projector.flip:key.keyboard.minus
 // World-Map settings key (]) duplicates minimap settings on Y; unbound.
 key_gui.xaero_open_settings:key.keyboard.unknown
+
+// Curios: upstream default G collides with TaCZ fire-select; unbound by default
+// (inventory button still opens the curio page; bind manually if wanted).
+key_key.curios.open.desc:key.keyboard.unknown

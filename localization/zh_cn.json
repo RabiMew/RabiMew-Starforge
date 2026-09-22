@@ -81,6 +81,8 @@
   "modpack.quest.anomaly_research.description": "先观察异常预警，再决定采样或撤离。把回收成果交给工业与科研设施处理，不将未知样本直接带入生活舱。",
   "modpack.quest.alien_ruins.title": "勘察外星结构",
   "modpack.quest.alien_ruins.description": "行星表面的废墟与高塔藏有补给，也有原生个体的刷怪笼。战利品按星球强度分级，但任何发现都不能替代工业制造。",
+  "modpack.quest.alien_relics.title": "搜集外星遗物饰品",
+  "modpack.quest.alien_relics.description": "Artifacts 饰品只可通过探索获得。地球遗迹与营地出产基础便利饰品；月球/火星遗迹藏有生存与探索辅助；金星/水星遗迹藏有战斗与防御饰品；Glacio 遗迹与小行星带藏有最稀有遗物。强力饰品不替代氧气、宇航服与火箭等级。",
   "modpack.quest.base_kitchen.title": "一座能供餐的厨房",
   "modpack.quest.base_kitchen.description": "建立农田、烹饪锅和集中厨房，准备碗与基础燃料。让队友方便取得食物，而不是各自反复寻找原料。",
   "modpack.quest.food_buffers.title": "把收成送到需要的地方",

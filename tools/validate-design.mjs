@@ -86,7 +86,7 @@ function validate() {
   assert.equal(stageIds.size, 8, 'Expected T0 through T7');
   assert.deepEqual(content.stages.map((stage) => stage.tier).sort((a, b) => a - b), [0, 1, 2, 3, 4, 5, 6, 7]);
   assert.equal(routeIds.size, 7);
-  assert.equal(questIds.size, 34);
+  assert.equal(questIds.size, 35);
   assert.equal(content.planets.length, 8);
   const stages = new Map(content.stages.map((stage) => [stage.id, stage]));
 

@@ -114,3 +114,14 @@
 
 - `node tools/setup-server.mjs`：Java21 检查 → NeoForge 21.1.251 安装 → 按 lock 从官方源下载模组 → 同步 pack → eula/server.properties，一条命令出可跑服务端。
 - `node tools/package.mjs`：产出 `dist/starforge-alpha-mc1.21.1-nf21.1.251.zip`（166 文件、7.5 MB，不含第三方 jar，符合分发许可）。
+
+## 2026-09-22 饰品层增量（已运行时验证）
+
+- 新增模组：**Curios API 9.5.1+1.21.1**（LGPL-3.0-or-later）、**Artifacts 13.2.5**（MIT，内嵌 Expandability 12.0.0/MIT 经 jarJar）。启用模组 98 → **100**。锁定清单/哈希经 `tools/fetch-mods.mjs --only` 落盘，`audit-deps` 全量通过。
+- 槽位：`curios-common.toml` 保持 `slots=[]`；运行时确认 Curios 11 槽/12 实体分配（含 `back`）。Sophisticated Backpacks 原生 Curios 集成（jar 内验证）；Artifacts 仅注册 head/necklace/belt/hands/feet，不占胸甲槽——与 Ad Astra 宇航服、喷气装备零冲突。未引入 Accessories Compatibility Layer。
+- 掉落重分布（KubeJS 数据包，非脚本）：`pack/config/artifacts/items.toml` 关 25 留 23；`starforge:artifacts_tiers` GLM（`neoforge:add_table` + `loot_table_id` 条件）把 24 件被关物品按 地球→月/火→金/水→Glacio+小行星带+轨道 四层重投，Boss 表 100% 保底一件，`eternal_steak` 完全禁用。RCON 实测 `loot insert` 命中 warp_drive（moon_boss）与 crystal_heart/chorus_totem（rare_glacio）。
+- 键位：Curios G 键与 TaCZ 冲突 → defaultoptions 默认解绑（GUI 按钮不受影响）。
+- i18n：新增 `alien_relics` 探索任务（design/content.json，35/35 校验通过）+ `starforge.curio.tier.*` 双语 tooltip（client script 按物品标注来源层级）。
+- 服务端：`Done (1.725s)`，KubeJS 0 错，无新增 loot/GLM 解析错误；仅存的 4 条 `Couldn't parse` 为 Creature Feature 姊妹模组缺表的既有告警。
+- **性能边界（如实记录）**：ProgressiveStages 自带 Curios compat 每 tick 扫描 curio 槽（上游既有行为）；本层不新增 tick 逻辑。
+- **仍待验证**：客户端 GUI 会话内 Back 槽放入/取出背包实测；Artifacts 营地生成频率在星球维度的目检。

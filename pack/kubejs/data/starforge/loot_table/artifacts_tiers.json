@@ -1,0 +1,987 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "name": "starforge_earth",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/simple_dungeon"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/buried_treasure"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/desert_pyramid"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/jungle_temple"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/pillager_outpost"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/shipwreck_treasure"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/stronghold_corridor"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/underwater_ruin_big"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/woodland_mansion"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/igloo_chest"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/ancient_city"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/ancient_city_ice_box"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/ruined_portal"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/village/village_weaponsmith"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/village/village_toolsmith"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/village/village_armorer"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/village/village_tannery"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "minecraft:chests/village/village_temple"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.1
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:running_shoes",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:digging_claws",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:aqua_dashers",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:bunny_hoppers",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:charm_of_shrinking",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:onion_ring",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:umbrella",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:lucky_scarf",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:panic_necklace",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:anglers_hat",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:villager_hat",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cowboy_hat",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:superstitious_hat",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:kitty_slippers",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:snowshoes",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:snorkel",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:flippers",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:charm_of_sinking",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:golden_hook",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:pickaxe_heater",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:plastic_drinking_hat",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:novelty_drinking_hat",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:whoopee_cushion",
+          "weight": 4
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_moon_mars",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra:chests/dungeon/moon/dungeon_chest"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra:chests/dungeon/moon/large_dungeon_chest"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra:chests/village/moon/blacksmith"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra:chests/village/moon/house"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra:chests/temple/mars/temple"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_moon"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_mars"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.22
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:night_vision_goggles",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cloud_in_a_bottle",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:antidote_vessel",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:flame_pendant",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:rooted_boots",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:steadfast_spikes",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:pocket_piston",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:everlasting_beef",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:universal_attractor",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:helium_flamingo",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:warp_drive",
+          "weight": 5
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_moon_mars_rare",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_moon"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_mars"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.45
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:night_vision_goggles",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cloud_in_a_bottle",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:antidote_vessel",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:flame_pendant",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:rooted_boots",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:steadfast_spikes",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:pocket_piston",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:everlasting_beef",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:universal_attractor",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:helium_flamingo",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:warp_drive",
+          "weight": 5
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_venus",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_venus"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.22
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:obsidian_skull",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:strider_shoes",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:fire_gauntlet",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:shock_pendant",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:thorn_pendant",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cross_necklace",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:vampiric_glove",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:feral_claws",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:power_glove",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:withered_bracelet",
+          "weight": 4
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_venus_rare",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_venus"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.45
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:obsidian_skull",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:strider_shoes",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:fire_gauntlet",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:shock_pendant",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:thorn_pendant",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cross_necklace",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:vampiric_glove",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:feral_claws",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:power_glove",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:withered_bracelet",
+          "weight": 4
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_mercury",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_mercury"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "pv:mercury_loot_simple"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.22
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:power_glove",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:feral_claws",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:withered_bracelet",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:vampiric_glove",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cross_necklace",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:shock_pendant",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:thorn_pendant",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:obsidian_skull",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:strider_shoes",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:fire_gauntlet",
+          "weight": 4
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_mercury_rare",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_mercury"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.45
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:power_glove",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:feral_claws",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:withered_bracelet",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:vampiric_glove",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cross_necklace",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:shock_pendant",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:thorn_pendant",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:obsidian_skull",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:strider_shoes",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:fire_gauntlet",
+          "weight": 4
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_glacio",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "pv:glacio_loot_simple"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_glacio"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/common_other"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.3
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:crystal_heart",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:chorus_totem",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:scarf_of_invisibility",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:warp_drive",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:universal_attractor",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:everlasting_beef",
+          "weight": 2
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_glacio_rare",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_glacio"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:chests/rare_other"
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.55
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:crystal_heart",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:chorus_totem",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:scarf_of_invisibility",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:warp_drive",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:universal_attractor",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:everlasting_beef",
+          "weight": 2
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_moon_mars_boss",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:entities/moon_boss"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:entities/mars_boss"
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:night_vision_goggles",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cloud_in_a_bottle",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:antidote_vessel",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:flame_pendant",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:rooted_boots",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:steadfast_spikes",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:pocket_piston",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:everlasting_beef",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:universal_attractor",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:helium_flamingo",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:warp_drive",
+          "weight": 5
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_venus_mercury_boss",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:entities/venus_boss"
+            },
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:entities/mercury_boss"
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:power_glove",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:feral_claws",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:withered_bracelet",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:vampiric_glove",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:cross_necklace",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:obsidian_skull",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:strider_shoes",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:fire_gauntlet",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:shock_pendant",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:thorn_pendant",
+          "weight": 6
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "name": "starforge_glacio_boss",
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:any_of",
+          "terms": [
+            {
+              "condition": "neoforge:loot_table_id",
+              "loot_table_id": "ad_astra_more_structures:entities/glacio_boss"
+            }
+          ]
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:crystal_heart",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:chorus_totem",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "artifacts:scarf_of_invisibility",
+          "weight": 8
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "starforge:artifacts_tiers"
+}

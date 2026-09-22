@@ -339,6 +339,31 @@
     ]
   },
   {
+    "file": "artifacts-neoforge-13.2.5.jar",
+    "modIds": [
+      "artifacts"
+    ],
+    "embeddedModIds": [
+      "expandability"
+    ],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.0.133-beta,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "1.21.1",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "Atlas-Lib-1.21.0-1.1.14.jar",
     "modIds": [
       "atlaslib"
@@ -874,7 +899,11 @@
     "modIds": [
       "common_storage_lib"
     ],
-    "embeddedModIds": [],
+    "embeddedModIds": [
+      "common_storage_lib_data",
+      "common_storage_lib_lookup",
+      "common_storage_lib_resources"
+    ],
     "deps": [
       {
         "modId": "neoforge",
@@ -998,6 +1027,30 @@
         "versionRange": "[1.21.1]",
         "ordering": "NONE",
         "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "curios-neoforge-9.5.1+1.21.1.jar",
+    "modIds": [
+      "curios"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1.60,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21, 1.22)",
+        "ordering": "NONE",
+        "side": "BOTH",
+        "catalogueImageIcon": "curios_icon.png"
       }
     ]
   },
@@ -1183,7 +1236,10 @@
     "modIds": [
       "entityculling"
     ],
-    "embeddedModIds": [],
+    "embeddedModIds": [
+      "transition",
+      "trender"
+    ],
     "deps": [
       {
         "modId": "minecraft",
@@ -1894,6 +1950,35 @@
     ]
   },
   {
+    "file": "iris-neoforge-1.8.14-beta.1+mc1.21.1.jar",
+    "modIds": [
+      "iris"
+    ],
+    "embeddedModIds": [
+      "fabric_api_base",
+      "fabric_block_view_api_v2",
+      "fabric_renderer_api_v1",
+      "fabric_rendering_data_attachment_v1"
+    ],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21,1.21.1)",
+        "ordering": "NONE",
+        "side": "CLIENT"
+      },
+      {
+        "modId": "embeddium",
+        "type": "incompatible",
+        "reason": "Iris and Embeddium cannot be used together. Please use Sodium 0.8 instead.",
+        "versionRange": "[0.0.1,)",
+        "ordering": "NONE",
+        "side": "CLIENT"
+      }
+    ]
+  },
+  {
     "file": "Jade-1.21.1-NeoForge-15.10.6.jar",
     "modIds": [
       "jade"
@@ -2495,7 +2580,10 @@
     "modIds": [
       "skinlayers3d"
     ],
-    "embeddedModIds": [],
+    "embeddedModIds": [
+      "transition",
+      "trender"
+    ],
     "deps": [
       {
         "modId": "minecraft",

@@ -12,6 +12,7 @@ const target = process.argv[2] ?? 'all';
 // Entries that are client-only (render/UI); skipped on dedicated server.
 const CLIENT_ONLY = new Set([
   'kubejs/client_scripts',
+  'shaderpacks', // shader option files are client-only config; the zips never ship via pack/
 ]);
 
 function copyTree(src, dest, skipPrefixes) {

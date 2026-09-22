@@ -83,6 +83,9 @@
     { "key": "guard_villagers_tacz", "name": "Guard Villagers TACZ Support", "role": "content", "side": "server",
       "source": { "type": "modrinth", "slug": "guard-villagers-tacz-support" },
       "notes": "Metadata declares server/integrated only; verify before shipping client copy." },
+    { "key": "artifacts", "name": "Artifacts", "role": "content", "side": "both",
+      "source": { "type": "modrinth", "slug": "artifacts" },
+      "notes": "Curios-backed curio items (13.x: curios/cloth/architectury optional upstream, we ship curios). Default chest/mimic injection kept but re-tiered via Starforge GLM pools; natural-drop balance audited in docs." },
 
     { "key": "jei", "name": "JEI", "role": "qol", "side": "both",
       "source": { "type": "modrinth", "slug": "jei", "version_prefix": "19.57" },
@@ -156,6 +159,9 @@
       "source": { "type": "modrinth", "slug": "clumps" } },
     { "key": "sodium", "name": "Sodium", "role": "perf", "side": "client",
       "source": { "type": "modrinth", "slug": "sodium" } },
+    { "key": "iris", "name": "Iris", "role": "perf", "side": "client",
+      "source": { "type": "modrinth", "slug": "iris", "version_prefix": "1.8.14" },
+      "notes": "Shader loader for the default shader pack. Sodium 0.8 line requires Iris >=1.8.13; on 1.21.1 NeoForge only the 1.8.14 beta satisfies that (latest stable Iris 1.8.12 pins Sodium 0.6.13, which Supplementaries 3.9.9 declares incompatible [0,0.8.12-beta.1) — a hard mod-loading block, so no all-stable combo exists in this pack). Pin prefix 1.8.14 so a future stable 1.8.14+ release is picked automatically." },
     { "key": "immediatelyfast", "name": "ImmediatelyFast", "role": "perf", "side": "client",
       "source": { "type": "modrinth", "slug": "immediatelyfast" } },
     { "key": "entityculling", "name": "Entity Culling", "role": "perf", "side": "client",
@@ -236,6 +242,15 @@
       "notes": "Required by Inventory Profiles Next / libIPN (client-side only)." },
     { "key": "clothconfig", "name": "Cloth Config API", "role": "library", "side": "client",
       "source": { "type": "modrinth", "slug": "cloth-config" },
-      "notes": "Required by BetterF3; optional for Chat Heads." }
+      "notes": "Required by BetterF3; optional for Chat Heads." },
+    { "key": "curios", "name": "Curios API", "role": "library", "side": "both",
+      "source": { "type": "modrinth", "slug": "curios" },
+      "notes": "Curio slot framework (LGPL-3.0-or-later). Hosts Artifacts items and Sophisticated Backpacks' native back slot; no extra slot-framework mods." }
+  ],
+  "resources": [
+    { "key": "makeup_ultra_fast", "name": "MakeUp - Ultra Fast", "type": "shaderpack", "side": "client",
+      "dir": "shaderpacks",
+      "source": { "type": "modrinth", "slug": "makeup-ultra-fast-shaders", "loaders": ["iris"] },
+      "notes": "Default shader (LGPL-3.0-or-later). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. Default-on via pack/config/iris.properties + official profile=low preset (pack/shaderpacks/<file>.txt)." }
   ]
 }

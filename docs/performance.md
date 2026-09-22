@@ -33,6 +33,31 @@
 | Entity Culling | 1.11.2 | 不可见实体的渲染剔除 |
 | Dynamic FPS | 3.11.4 | 后台与失焦时的帧率限制；默认聚焦不限帧、失焦 30、最小化 10（`pack/config/dynamic_fps.json`） |
 | Mem Leak Fix GPU | 1.8+1.21.1（modid `gpumemleakfix`，MIT） | 客户端 RenderTarget/VRAM 泄漏清理；延迟队列释放，无强制 GC。与 Sodium+ImmediatelyFast 同实例实测加载无渲染错误日志；VRAM 长期表现仍需游玩观察 |
+| Iris | 1.8.14-beta.1+1.21.1-neoforge（LGPL-3.0-only） | 光影加载器，默认光影的运行时依赖 |
+| MakeUp - Ultra Fast | 9.5e（LGPL-3.0-or-later，Modrinth `izsIPI7a`） | 默认光影包本体；非模组，`shaderpacks/` 资源经 .mrpack 官方 URL + hash 下发 |
+
+## 默认光影方案（MakeUp - Ultra Fast）
+
+Starforge 默认启用 **MakeUp - Ultra Fast 9.5e** 作为轻量光影。选型目标是工业基地、怪潮和多星球探索场景下的画质/性能比，而不是电影级画质展示；优先级为**稳定性 > FPS > 模组兼容性 > 视觉效果**。
+
+| 组件 | 锁定版本 | 侧 | 角色 |
+| --- | --- | --- | --- |
+| Sodium | `mc1.21.1-0.8.13-neoforge`（release，2026-08-28） | client | 渲染管线重写 |
+| Iris | `1.8.14-beta.1+1.21.1-neoforge`（beta，2026-06-13） | client | OptiFine 格式光影加载 |
+| MakeUp - Ultra Fast | `9.5e`（release，2026-09-05） | client（`shaderpacks/`） | 光影包 |
+
+**为什么是 Iris beta**：Sodium 0.8.x 系列要求 Iris ≥1.8.13；1.21.1+NeoForge 上满足这一点的只有 1.8.14-beta.1（"Updates to Sodium 0.8"）。最新稳定 Iris 1.8.12 锁定 Sodium 0.6.13，而 Supplementaries 3.9.9 的 `neoforge.mods.toml` 声明 `sodium [0,0.8.12-beta.1)` 为 **incompatible**（其 `CompatSodiumFluidRendererMixin` 依赖 Sodium 0.8 API）——NeoForge 对 `incompatible` 的处理是阻止加载，不是警告。因此本包不存在"全稳定"的 Iris+Sodium 组合，按既定规则采用唯一可行方案：Sodium 0.8.13 + Iris 1.8.14-beta.1。不安装 Oculus/Embeddium 等重复或冲突加载器（Iris 自身声明与 Embeddium 不兼容）。Iris 若发布 1.8.14+ 正式版，重新解析时会自动升级（`version_prefix: "1.8.14"`）。
+
+**默认启用与配置**：`pack/config/iris.properties` 随 .mrpack overrides 下发 `enableShaders=true` + `shaderPack=MakeUp-UltraFast-9.5e.zip`；`pack/shaderpacks/MakeUp-UltraFast-9.5e.zip.txt` 锁定官方 `profile=low`（阴影开：Low 质量/Short 距离、AO、TAA、Bloom、体积云、深度 godrays、折射、太阳反射、植物摆动全部保留）并把 `REFLECTION_SLIDER` 降到 `1`（flipped image，代替耗时的 raymarching SSR）。彩色阴影、DoF、动态模糊、色差、材质高光在该 preset 下均关闭。
+
+**玩家可自行**：视频设置 → Shader Packs 中整体关闭光影（关闭后走纯 Sodium 渲染，不影响内容与存档）、切换 MakeUp 内置 `no_effects`/`shadowless_low~high`/`low`/`medium`/`high`/`extremeplus` 官方档位或逐项微调。
+
+**待实机验证**（未在本轮执行，发现问题先降级处理）：
+- IC2CRE / BuildCraft / Immersive Engineering 动态机器模型、AE2 网络方块在光影下的渲染
+- TaCZ 枪械模型与瞄具（光影下手持/第一人称渲染常见偏差）
+- Ad Astra 各维度天空盒（地球/月球/火星/小行星带）与行星渲染
+- Defense Turrets 弹幕与 The Hordes 怪潮下的粒子表现、夜间工业基地观感
+- 方块半透明/发光渲染、shader compile error、Iris compatibility warning、黑白屏
 
 ## 测试后决定
 

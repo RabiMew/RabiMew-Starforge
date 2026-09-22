@@ -1,0 +1,52 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/simple_dungeon" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/abandoned_mineshaft" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/buried_treasure" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/desert_pyramid" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/jungle_temple" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/pillager_outpost" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/shipwreck_treasure" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/stronghold_corridor" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/underwater_ruin_big" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/woodland_mansion" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/igloo_chest" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/ancient_city" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/ancient_city_ice_box" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/ruined_portal" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/village/village_weaponsmith" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/village/village_toolsmith" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/village/village_armorer" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/village/village_tannery" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "minecraft:chests/village/village_temple" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra:chests/dungeon/moon/dungeon_chest" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra:chests/dungeon/moon/large_dungeon_chest" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra:chests/village/moon/blacksmith" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra:chests/village/moon/house" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra:chests/temple/mars/temple" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/common_moon" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/common_mars" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/common_venus" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/common_mercury" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/common_glacio" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/rare_moon" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/rare_mars" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/rare_venus" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/rare_mercury" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:chests/rare_glacio" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "pv:glacio_loot_simple" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "pv:mercury_loot_simple" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:entities/moon_boss" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:entities/mars_boss" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:entities/venus_boss" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:entities/mercury_boss" },
+        { "condition": "neoforge:loot_table_id", "loot_table_id": "ad_astra_more_structures:entities/glacio_boss" }
+      ]
+    }
+  ],
+  "table": "starforge:artifacts_tiers"
+}

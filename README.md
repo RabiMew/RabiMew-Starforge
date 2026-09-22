@@ -43,6 +43,8 @@ node tools/validate-design.mjs
 
 > 第三方模组 jar 不随 `.mrpack` 分发；导入时由启动器从 Modrinth / CurseForge CDN / GitHub Releases / FTB Maven 等官方地址下载。个别仅有 CurseForge CDN 地址的模组在 `dist/client-package-report.md` 中逐条记录。
 
+默认启用轻量光影 **MakeUp - Ultra Fast**（经 Iris 加载，导入时自动下载）：首次进游戏即生效，可在 视频设置 → Shader Packs 中随时关闭或切换画质档位；关闭后回退到纯 Sodium 渲染，不影响存档。细节见 [性能层](docs/performance.md)。
+
 ## 开发者客户端
 
 要求：Node.js ≥ 20、**Java 21**（Temurin 21 推荐；脚本会依次尝试 `STARFORGE_JAVA` → PATH → 常见 JDK 安装目录自动定位 21）。
