@@ -55,6 +55,7 @@
 - **怪潮组成表**重写（`config/hordes/data/.../tables/default.json`，已实测加载）：剔除下界单位（zoglin/僵尸猪灵/三叉戟骑手），按事件天数分档——0d 僵尸群 → 10d 尸壳/溺尸 → 15d 骷髅 → 25d 苦力怕 → 30d 流髑/沼骸 → 35d 女巫 → 40d 稀有突变僵尸精英（weight 1）→ 45d 僵尸马骑手。
 - **Zombies Break & Build**：`affectedEntityIdList` 从 `@monster` 收窄到僵尸系（zombie/husk/drowned/zombie_villager + hordes 僵尸玩家）；`maximumBreakableBlockHardness=2.0`（只能拆软障碍，硬度≥3 的机器/仓储/反应堆安全）；`breakCooldown=5s`（T2 工程兵速率）；`builtBlocksDisappearing=true/60s`（事件搭建物自动清理不可收割）。
 - **Guard Villagers TaCZ Support**：`zombie_tacz_weapon_spawn_chance=0.0`、`pillager_tacz_weapon_spawn_chance=0.0`——自然怪永不随机持枪（设计硬性禁令）；守卫弹药/食物箱搜索等原生机制保留（radius 64，冷却 100t）。
+- **Guard Villagers 交战规则**（`pack/config/guardvillagers-common.toml`）：`All mobs attack guards = true`（怪潮必须攻击守卫——守卫是防御层，不是免费 DPS）；黑名单移除 creeper（远程守卫须在爬行者贴墙前击杀），保留 enderman（瞬移使远程交战无意义）。
 - **In Control!** `spawn.json`：全部 6 个 `ad_astra:*_orbit` 维度拒绝敌对生物生成（空间站/轨道安全基线）。
 - TaCZ 服务端：保留 `EnableDefaultGunSmithTableFilter` 与 `AmmoBoxStackSize=3` 默认。
 
