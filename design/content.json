@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "status": "design_only",
+  "game_version": "1.21.1",
+  "loader": "neoforge",
+  "namespace": "modpack",
+  "stages": [
+    {
+      "id": "survival_age",
+      "tier": 0,
+      "name_key": "modpack.stage.survival_age",
+      "description_key": "modpack.stage.survival_age.description",
+      "depends_on": [],
+      "unlock_evidence": {
+        "type": "automatic"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    },
+    {
+      "id": "mechanical_age",
+      "tier": 1,
+      "name_key": "modpack.stage.mechanical_age",
+      "description_key": "modpack.stage.mechanical_age.description",
+      "depends_on": [
+        "survival_age"
+      ],
+      "unlock_evidence": {
+        "type": "server_verified_production",
+        "component": "engineering_assembly",
+        "available_in": "survival_age"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    },
+    {
+      "id": "electric_age",
+      "tier": 2,
+      "name_key": "modpack.stage.electric_age",
+      "description_key": "modpack.stage.electric_age.description",
+      "depends_on": [
+        "mechanical_age"
+      ],
+      "unlock_evidence": {
+        "type": "server_verified_production",
+        "component": "ic2_generator",
+        "available_in": "mechanical_age"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    },
+    {
+      "id": "information_age",
+      "tier": 3,
+      "name_key": "modpack.stage.information_age",
+      "description_key": "modpack.stage.information_age.description",
+      "depends_on": [
+        "electric_age"
+      ],
+      "unlock_evidence": {
+        "type": "server_verified_production",
+        "component": "information_interface",
+        "available_in": "electric_age"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    },
+    {
+      "id": "heavy_industry_age",
+      "tier": 4,
+      "name_key": "modpack.stage.heavy_industry_age",
+      "description_key": "modpack.stage.heavy_industry_age.description",
+      "depends_on": [
+        "information_age"
+      ],
+      "unlock_evidence": {
+        "type": "server_verified_production",
+        "component": "heavy_industry_control",
+        "available_in": "information_age"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    },
+    {
+      "id": "atomic_age",
+      "tier": 5,
+      "name_key": "modpack.stage.atomic_age",
+      "description_key": "modpack.stage.atomic_age.description",
+      "depends_on": [
+        "heavy_industry_age"
+      ],
+      "unlock_evidence": {
+        "type": "server_verified_production",
+        "component": "reactor_control",
+        "available_in": "heavy_industry_age"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    },
+    {
+      "id": "space_age",
+      "tier": 6,
+      "name_key": "modpack.stage.space_age",
+      "description_key": "modpack.stage.space_age.description",
+      "depends_on": [
+        "atomic_age"
+      ],
+      "unlock_evidence": {
+        "type": "server_verified_production",
+        "component": "space_control_core",
+        "available_in": "atomic_age"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    },
+    {
+      "id": "quantum_age",
+      "tier": 7,
+      "name_key": "modpack.stage.quantum_age",
+      "description_key": "modpack.stage.quantum_age.description",
+      "depends_on": [
+        "atomic_age"
+      ],
+      "unlock_evidence": {
+        "type": "server_verified_production",
+        "component": "quantum_control",
+        "available_in": "atomic_age"
+      },
+      "requires_space": false,
+      "requires_boss": false
+    }
+  ],
+  "routes": [
+    {
+      "id": "industry",
+      "title_key": "modpack.route.industry.title",
+      "description_key": "modpack.route.industry.description",
+      "always_visible": true
+    },
+    {
+      "id": "automation",
+      "title_key": "modpack.route.automation.title",
+      "description_key": "modpack.route.automation.description",
+      "always_visible": true
+    },
+    {
+      "id": "military",
+      "title_key": "modpack.route.military.title",
+      "description_key": "modpack.route.military.description",
+      "always_visible": true
+    },
+    {
+      "id": "space",
+      "title_key": "modpack.route.space.title",
+      "description_key": "modpack.route.space.description",
+      "always_visible": true
+    },
+    {
+      "id": "exploration",
+      "title_key": "modpack.route.exploration.title",
+      "description_key": "modpack.route.exploration.description",
+      "always_visible": true
+    },
+    {
+      "id": "agriculture",
+      "title_key": "modpack.route.agriculture.title",
+      "description_key": "modpack.route.agriculture.description",
+      "always_visible": true
+    },
+    {
+      "id": "building",
+      "title_key": "modpack.route.building.title",
+      "description_key": "modpack.route.building.description",
+      "always_visible": true
+    }
+  ],
+  "quests": [
+    {
+      "id": "ic2_generator",
+      "route": "industry",
+      "title_key": "modpack.quest.ic2_generator.title",
+      "description_key": "modpack.quest.ic2_generator.description",
+      "suggested_stage": "mechanical_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "ore_processing",
+      "route": "industry",
+      "title_key": "modpack.quest.ore_processing.title",
+      "description_key": "modpack.quest.ore_processing.description",
+      "suggested_stage": "electric_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "nuclear_grid",
+      "route": "industry",
+      "title_key": "modpack.quest.nuclear_grid.title",
+      "description_key": "modpack.quest.nuclear_grid.description",
+      "suggested_stage": "atomic_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "earth_quantum",
+      "route": "industry",
+      "title_key": "modpack.quest.earth_quantum.title",
+      "description_key": "modpack.quest.earth_quantum.description",
+      "suggested_stage": "quantum_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "physical_logistics",
+      "route": "automation",
+      "title_key": "modpack.quest.physical_logistics.title",
+      "description_key": "modpack.quest.physical_logistics.description",
+      "suggested_stage": "mechanical_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "ae2_bootstrap",
+      "route": "automation",
+      "title_key": "modpack.quest.ae2_bootstrap.title",
+      "description_key": "modpack.quest.ae2_bootstrap.description",
+      "suggested_stage": "information_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "stock_control",
+      "route": "automation",
+      "title_key": "modpack.quest.stock_control.title",
+      "description_key": "modpack.quest.stock_control.description",
+      "suggested_stage": "information_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "remote_supply",
+      "route": "automation",
+      "title_key": "modpack.quest.remote_supply.title",
+      "description_key": "modpack.quest.remote_supply.description",
+      "suggested_stage": "quantum_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "layered_defense",
+      "route": "military",
+      "title_key": "modpack.quest.layered_defense.title",
+      "description_key": "modpack.quest.layered_defense.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "first_turret",
+      "route": "military",
+      "title_key": "modpack.quest.first_turret.title",
+      "description_key": "modpack.quest.first_turret.description",
+      "suggested_stage": "electric_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "combined_fire",
+      "route": "military",
+      "title_key": "modpack.quest.combined_fire.title",
+      "description_key": "modpack.quest.combined_fire.description",
+      "suggested_stage": "heavy_industry_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "defense_drill",
+      "route": "military",
+      "title_key": "modpack.quest.defense_drill.title",
+      "description_key": "modpack.quest.defense_drill.description",
+      "suggested_stage": "atomic_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "launch_preparation",
+      "route": "space",
+      "title_key": "modpack.quest.launch_preparation.title",
+      "description_key": "modpack.quest.launch_preparation.description",
+      "suggested_stage": "atomic_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "first_launch",
+      "route": "space",
+      "title_key": "modpack.quest.first_launch.title",
+      "description_key": "modpack.quest.first_launch.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "orbital_station",
+      "route": "space",
+      "title_key": "modpack.quest.orbital_station.title",
+      "description_key": "modpack.quest.orbital_station.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "colony_network",
+      "route": "space",
+      "title_key": "modpack.quest.colony_network.title",
+      "description_key": "modpack.quest.colony_network.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "survey",
+      "route": "exploration",
+      "title_key": "modpack.quest.survey.title",
+      "description_key": "modpack.quest.survey.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "ruin_salvage",
+      "route": "exploration",
+      "title_key": "modpack.quest.ruin_salvage.title",
+      "description_key": "modpack.quest.ruin_salvage.description",
+      "suggested_stage": "information_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "optional_boss",
+      "route": "exploration",
+      "title_key": "modpack.quest.optional_boss.title",
+      "description_key": "modpack.quest.optional_boss.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "anomaly_research",
+      "route": "exploration",
+      "title_key": "modpack.quest.anomaly_research.title",
+      "description_key": "modpack.quest.anomaly_research.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "base_kitchen",
+      "route": "agriculture",
+      "title_key": "modpack.quest.base_kitchen.title",
+      "description_key": "modpack.quest.base_kitchen.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "food_buffers",
+      "route": "agriculture",
+      "title_key": "modpack.quest.food_buffers.title",
+      "description_key": "modpack.quest.food_buffers.description",
+      "suggested_stage": "mechanical_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "fuel_crops",
+      "route": "agriculture",
+      "title_key": "modpack.quest.fuel_crops.title",
+      "description_key": "modpack.quest.fuel_crops.description",
+      "suggested_stage": "heavy_industry_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "planetary_greenhouse",
+      "route": "agriculture",
+      "title_key": "modpack.quest.planetary_greenhouse.title",
+      "description_key": "modpack.quest.planetary_greenhouse.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "factory_layout",
+      "route": "building",
+      "title_key": "modpack.quest.factory_layout.title",
+      "description_key": "modpack.quest.factory_layout.description",
+      "suggested_stage": "survival_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "building_gadget",
+      "route": "building",
+      "title_key": "modpack.quest.building_gadget.title",
+      "description_key": "modpack.quest.building_gadget.description",
+      "suggested_stage": "electric_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "industrial_district",
+      "route": "building",
+      "title_key": "modpack.quest.industrial_district.title",
+      "description_key": "modpack.quest.industrial_district.description",
+      "suggested_stage": "heavy_industry_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    },
+    {
+      "id": "colony_architecture",
+      "route": "building",
+      "title_key": "modpack.quest.colony_architecture.title",
+      "description_key": "modpack.quest.colony_architecture.description",
+      "suggested_stage": "space_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression"
+    }
+  ],
+  "items": [
+    {
+      "id": "engineering_assembly",
+      "name_key": "modpack.item.engineering_assembly",
+      "tooltip_key": "modpack.item.engineering_assembly.tooltip"
+    },
+    {
+      "id": "information_interface",
+      "name_key": "modpack.item.information_interface",
+      "tooltip_key": "modpack.item.information_interface.tooltip"
+    },
+    {
+      "id": "heavy_industry_control",
+      "name_key": "modpack.item.heavy_industry_control",
+      "tooltip_key": "modpack.item.heavy_industry_control.tooltip"
+    },
+    {
+      "id": "reactor_control",
+      "name_key": "modpack.item.reactor_control",
+      "tooltip_key": "modpack.item.reactor_control.tooltip"
+    },
+    {
+      "id": "space_control_core",
+      "name_key": "modpack.item.space_control_core",
+      "tooltip_key": "modpack.item.space_control_core.tooltip"
+    },
+    {
+      "id": "colony_maintenance",
+      "name_key": "modpack.item.colony_maintenance",
+      "tooltip_key": "modpack.item.colony_maintenance.tooltip"
+    },
+    {
+      "id": "quantum_control",
+      "name_key": "modpack.item.quantum_control",
+      "tooltip_key": "modpack.item.quantum_control.tooltip"
+    },
+    {
+      "id": "anomaly_analysis",
+      "name_key": "modpack.item.anomaly_analysis",
+      "tooltip_key": "modpack.item.anomaly_analysis.tooltip"
+    }
+  ],
+  "planets": [
+    {
+      "id": "earth",
+      "name_key": "modpack.planet.earth.name",
+      "description_key": "modpack.planet.earth.description"
+    },
+    {
+      "id": "moon",
+      "name_key": "modpack.planet.moon.name",
+      "description_key": "modpack.planet.moon.description"
+    },
+    {
+      "id": "mars",
+      "name_key": "modpack.planet.mars.name",
+      "description_key": "modpack.planet.mars.description"
+    },
+    {
+      "id": "venus",
+      "name_key": "modpack.planet.venus.name",
+      "description_key": "modpack.planet.venus.description"
+    },
+    {
+      "id": "mercury",
+      "name_key": "modpack.planet.mercury.name",
+      "description_key": "modpack.planet.mercury.description"
+    },
+    {
+      "id": "glacio",
+      "name_key": "modpack.planet.glacio.name",
+      "description_key": "modpack.planet.glacio.description"
+    },
+    {
+      "id": "station",
+      "name_key": "modpack.planet.station.name",
+      "description_key": "modpack.planet.station.description"
+    }
+  ],
+  "messages": [
+    {
+      "id": "stage_unlocked",
+      "text_key": "modpack.message.stage_unlocked"
+    },
+    {
+      "id": "stage_required",
+      "text_key": "modpack.message.stage_required"
+    },
+    {
+      "id": "horde_warning",
+      "text_key": "modpack.message.horde_warning"
+    },
+    {
+      "id": "horde_started",
+      "text_key": "modpack.message.horde_started"
+    },
+    {
+      "id": "horde_ended",
+      "text_key": "modpack.message.horde_ended"
+    },
+    {
+      "id": "horde_deferred",
+      "text_key": "modpack.message.horde_deferred"
+    },
+    {
+      "id": "recovery_period",
+      "text_key": "modpack.message.recovery_period"
+    },
+    {
+      "id": "low_ammo",
+      "text_key": "modpack.message.low_ammo"
+    },
+    {
+      "id": "low_power",
+      "text_key": "modpack.message.low_power"
+    },
+    {
+      "id": "low_oxygen",
+      "text_key": "modpack.message.low_oxygen"
+    },
+    {
+      "id": "supply_interrupted",
+      "text_key": "modpack.message.supply_interrupted"
+    },
+    {
+      "id": "supply_restored",
+      "text_key": "modpack.message.supply_restored"
+    },
+    {
+      "id": "station_event_warning",
+      "text_key": "modpack.message.station_event_warning"
+    },
+    {
+      "id": "station_event_ended",
+      "text_key": "modpack.message.station_event_ended"
+    },
+    {
+      "id": "boss_detected",
+      "text_key": "modpack.message.boss_detected"
+    },
+    {
+      "id": "base_registered",
+      "text_key": "modpack.message.base_registered"
+    },
+    {
+      "id": "base_grace",
+      "text_key": "modpack.message.base_grace"
+    },
+    {
+      "id": "threat_changed",
+      "text_key": "modpack.message.threat_changed"
+    },
+    {
+      "id": "manufacturing_denied",
+      "text_key": "modpack.message.manufacturing_denied"
+    },
+    {
+      "id": "return_reserve",
+      "text_key": "modpack.message.return_reserve"
+    }
+  ],
+  "gui": [
+    {
+      "id": "base_status",
+      "text_key": "modpack.gui.base_status"
+    },
+    {
+      "id": "technology",
+      "text_key": "modpack.gui.technology"
+    },
+    {
+      "id": "threat",
+      "text_key": "modpack.gui.threat"
+    },
+    {
+      "id": "next_event",
+      "text_key": "modpack.gui.next_event"
+    },
+    {
+      "id": "supply",
+      "text_key": "modpack.gui.supply"
+    },
+    {
+      "id": "oxygen",
+      "text_key": "modpack.gui.oxygen"
+    },
+    {
+      "id": "power",
+      "text_key": "modpack.gui.power"
+    },
+    {
+      "id": "ammo",
+      "text_key": "modpack.gui.ammo"
+    },
+    {
+      "id": "online_defenders",
+      "text_key": "modpack.gui.online_defenders"
+    },
+    {
+      "id": "register_base",
+      "text_key": "modpack.gui.register_base"
+    },
+    {
+      "id": "confirm",
+      "text_key": "modpack.gui.confirm"
+    },
+    {
+      "id": "cancel",
+      "text_key": "modpack.gui.cancel"
+    },
+    {
+      "id": "safe_station",
+      "text_key": "modpack.gui.safe_station"
+    },
+    {
+      "id": "required_stage",
+      "text_key": "modpack.gui.required_stage"
+    },
+    {
+      "id": "contribution",
+      "text_key": "modpack.gui.contribution"
+    },
+    {
+      "id": "recipe_locked",
+      "text_key": "modpack.gui.recipe_locked"
+    }
+  ],
+  "tutorials": [
+    {
+      "id": "team_progression",
+      "text_key": "modpack.tutorial.team_progression"
+    },
+    {
+      "id": "earth_alternative",
+      "text_key": "modpack.tutorial.earth_alternative"
+    },
+    {
+      "id": "power_priority",
+      "text_key": "modpack.tutorial.power_priority"
+    },
+    {
+      "id": "ae2_bootstrap",
+      "text_key": "modpack.tutorial.ae2_bootstrap"
+    },
+    {
+      "id": "safe_station",
+      "text_key": "modpack.tutorial.safe_station"
+    },
+    {
+      "id": "kitchen_automation",
+      "text_key": "modpack.tutorial.kitchen_automation"
+    },
+    {
+      "id": "horde_engineers",
+      "text_key": "modpack.tutorial.horde_engineers"
+    }
+  ],
+  "bosses": [
+    {
+      "id": "ruin_guardian",
+      "name_key": "modpack.boss.ruin_guardian.name",
+      "warning_key": "modpack.boss.ruin_guardian.warning"
+    },
+    {
+      "id": "mercury_anomaly",
+      "name_key": "modpack.boss.mercury_anomaly.name",
+      "warning_key": "modpack.boss.mercury_anomaly.warning"
+    },
+    {
+      "id": "glacio_colossus",
+      "name_key": "modpack.boss.glacio_colossus.name",
+      "warning_key": "modpack.boss.glacio_colossus.warning"
+    }
+  ]
+}
