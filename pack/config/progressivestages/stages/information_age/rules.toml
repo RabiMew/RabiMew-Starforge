@@ -1,0 +1,16 @@
+[[rules]]
+id = "modpack:information_age/lock_use"
+effect = "lock"
+action = "use"
+priority = 500
+targets.items = ["ae2:inscriber", "ae2:controller", "ae2:charger", "ae2:pattern_provider", "ae2:crafting_unit", "ae2:molecular_assembler", "ae2:interface", "ae2:storage_bus", "ae2:energy_cell", "ae2:dense_energy_cell", "ae2:engineering_processor_press", "ae2:logic_processor_press", "ae2:calculation_processor_press", "ae2:silicon_press"]
+
+[[rules]]
+id = "modpack:information_age/lock_place"
+effect = "lock"
+action = "place"
+priority = 500
+targets.blocks = ["ae2:inscriber", "ae2:controller", "ae2:charger", "ae2:pattern_provider", "ae2:crafting_unit", "ae2:molecular_assembler", "ae2:interface", "ae2:storage_bus", "ae2:energy_cell", "ae2:dense_energy_cell", "ae2:engineering_processor_press", "ae2:logic_processor_press", "ae2:calculation_processor_press", "ae2:silicon_press"]
+
+[recipes]
+locked_items = ["ae2:inscriber", "ae2:controller", "ae2:charger", "ae2:pattern_provider", "ae2:crafting_unit", "ae2:molecular_assembler", "ae2:interface", "ae2:storage_bus", "ae2:energy_cell", "ae2:dense_energy_cell", "ae2:engineering_processor_press", "ae2:logic_processor_press", "ae2:calculation_processor_press", "ae2:silicon_press"]

@@ -1,0 +1,5 @@
+[[grants]]
+id = "modpack:grant_mechanical_age"
+repeat = "once"
+scope = "player"
+condition = { type = "craft", id = "modpack:engineering_assembly", count = 1 }

@@ -1,0 +1,16 @@
+[[rules]]
+id = "modpack:electric_age/lock_use"
+effect = "lock"
+action = "use"
+priority = 500
+targets.items = ["ic2cre:mfe", "ic2cre:cesu", "ic2cre:energy_crystal", "ic2cre:lapotron_crystal", "ic2cre:electric_motor", "ic2cre:drill", "ic2cre:chainsaw", "ic2cre:electric_treetap", "buildcraftfactory:mining_well", "buildcraftfactory:pump", "immersiveengineering:capacitor_lv", "immersiveengineering:capacitor_mv", "immersiveengineering:wirecoil_electrum", "immersiveengineering:fluid_pipe", "immersiveengineering:component_electronic", "immersiveengineering:chemthrower", "immersiveengineering:railgun", "defenseturrets:turret_base", "defenseturrets:turret_barrel", "defenseturrets:forged_alloy_ingot", "defenseturrets:machine_gun_turret", "defenseturrets:uv_searchlight", "tacz:gun_smith_table", "tacz:ammo_box", "tacz:workbench_a", "buildinggadgets2:gadget_building", "storagedrawers:controller", "sophisticatedstorage:controller"]
+
+[[rules]]
+id = "modpack:electric_age/lock_place"
+effect = "lock"
+action = "place"
+priority = 500
+targets.blocks = ["ic2cre:mfe", "ic2cre:cesu", "ic2cre:energy_crystal", "ic2cre:lapotron_crystal", "ic2cre:electric_motor", "ic2cre:drill", "ic2cre:chainsaw", "ic2cre:electric_treetap", "buildcraftfactory:mining_well", "buildcraftfactory:pump", "immersiveengineering:capacitor_lv", "immersiveengineering:capacitor_mv", "immersiveengineering:wirecoil_electrum", "immersiveengineering:fluid_pipe", "immersiveengineering:component_electronic", "immersiveengineering:chemthrower", "immersiveengineering:railgun", "defenseturrets:turret_base", "defenseturrets:turret_barrel", "defenseturrets:forged_alloy_ingot", "defenseturrets:machine_gun_turret", "defenseturrets:uv_searchlight", "tacz:gun_smith_table", "tacz:ammo_box", "tacz:workbench_a", "buildinggadgets2:gadget_building", "storagedrawers:controller", "sophisticatedstorage:controller"]
+
+[recipes]
+locked_items = ["ic2cre:mfe", "ic2cre:cesu", "ic2cre:energy_crystal", "ic2cre:lapotron_crystal", "ic2cre:electric_motor", "ic2cre:drill", "ic2cre:chainsaw", "ic2cre:electric_treetap", "buildcraftfactory:mining_well", "buildcraftfactory:pump", "immersiveengineering:capacitor_lv", "immersiveengineering:capacitor_mv", "immersiveengineering:wirecoil_electrum", "immersiveengineering:fluid_pipe", "immersiveengineering:component_electronic", "immersiveengineering:chemthrower", "immersiveengineering:railgun", "defenseturrets:turret_base", "defenseturrets:turret_barrel", "defenseturrets:forged_alloy_ingot", "defenseturrets:machine_gun_turret", "defenseturrets:uv_searchlight", "tacz:gun_smith_table", "tacz:ammo_box", "tacz:workbench_a", "buildinggadgets2:gadget_building", "storagedrawers:controller", "sophisticatedstorage:controller"]

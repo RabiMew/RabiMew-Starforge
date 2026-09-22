@@ -1,0 +1,5 @@
+[[grants]]
+id = "modpack:grant_information_age"
+repeat = "once"
+scope = "player"
+condition = { type = "craft", id = "modpack:information_interface", count = 1 }

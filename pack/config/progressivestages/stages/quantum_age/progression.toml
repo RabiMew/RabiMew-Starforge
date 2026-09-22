@@ -1,0 +1,5 @@
+[[grants]]
+id = "modpack:grant_quantum_age"
+repeat = "once"
+scope = "player"
+condition = { type = "craft", id = "modpack:quantum_control", count = 1 }

@@ -1,0 +1,5 @@
+[[grants]]
+id = "modpack:grant_atomic_age"
+repeat = "once"
+scope = "player"
+condition = { type = "craft", id = "modpack:reactor_control", count = 1 }

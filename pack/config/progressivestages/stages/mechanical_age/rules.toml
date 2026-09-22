@@ -1,0 +1,16 @@
+[[rules]]
+id = "modpack:mechanical_age/lock_use"
+effect = "lock"
+action = "use"
+priority = 500
+targets.items = ["ic2cre:generator", "ic2cre:iron_furnace", "ic2cre:macerator", "ic2cre:compressor", "ic2cre:extractor", "ic2cre:electric_furnace", "ic2cre:batbox", "ic2cre:chargepad_batbox", "ic2cre:copper_cable", "ic2cre:insulated_copper_cable", "ic2cre:battery", "ic2cre:charging_re_battery", "ic2cre:treetap", "ic2cre:iron_plate", "ic2cre:coil", "buildcraftcore:engine_redstone", "buildcraftenergy:engine_stone", "buildcrafttransport:wood_item", "buildcrafttransport:stone_item", "buildcrafttransport:wood_fluid", "buildcrafttransport:iron_fluid", "buildcraftfactory:tank", "immersiveengineering:light_engineering", "immersiveengineering:basic_engineering", "immersiveengineering:component_iron", "immersiveengineering:component_steel", "immersiveengineering:wirecoil_copper", "immersiveengineering:conveyor_basic", "immersiveengineering:jerrycan", "immersiveengineering:revolver", "easy_villagers:farmer", "easy_villagers:trader", "easy_villagers:breeder"]
+
+[[rules]]
+id = "modpack:mechanical_age/lock_place"
+effect = "lock"
+action = "place"
+priority = 500
+targets.blocks = ["ic2cre:generator", "ic2cre:iron_furnace", "ic2cre:macerator", "ic2cre:compressor", "ic2cre:extractor", "ic2cre:electric_furnace", "ic2cre:batbox", "ic2cre:chargepad_batbox", "ic2cre:copper_cable", "ic2cre:insulated_copper_cable", "ic2cre:battery", "ic2cre:charging_re_battery", "ic2cre:treetap", "ic2cre:iron_plate", "ic2cre:coil", "buildcraftcore:engine_redstone", "buildcraftenergy:engine_stone", "buildcrafttransport:wood_item", "buildcrafttransport:stone_item", "buildcrafttransport:wood_fluid", "buildcrafttransport:iron_fluid", "buildcraftfactory:tank", "immersiveengineering:light_engineering", "immersiveengineering:basic_engineering", "immersiveengineering:component_iron", "immersiveengineering:component_steel", "immersiveengineering:wirecoil_copper", "immersiveengineering:conveyor_basic", "immersiveengineering:jerrycan", "immersiveengineering:revolver", "easy_villagers:farmer", "easy_villagers:trader", "easy_villagers:breeder"]
+
+[recipes]
+locked_items = ["ic2cre:generator", "ic2cre:iron_furnace", "ic2cre:macerator", "ic2cre:compressor", "ic2cre:extractor", "ic2cre:electric_furnace", "ic2cre:batbox", "ic2cre:chargepad_batbox", "ic2cre:copper_cable", "ic2cre:insulated_copper_cable", "ic2cre:battery", "ic2cre:charging_re_battery", "ic2cre:treetap", "ic2cre:iron_plate", "ic2cre:coil", "buildcraftcore:engine_redstone", "buildcraftenergy:engine_stone", "buildcrafttransport:wood_item", "buildcrafttransport:stone_item", "buildcrafttransport:wood_fluid", "buildcrafttransport:iron_fluid", "buildcraftfactory:tank", "immersiveengineering:light_engineering", "immersiveengineering:basic_engineering", "immersiveengineering:component_iron", "immersiveengineering:component_steel", "immersiveengineering:wirecoil_copper", "immersiveengineering:conveyor_basic", "immersiveengineering:jerrycan", "immersiveengineering:revolver", "easy_villagers:farmer", "easy_villagers:trader", "easy_villagers:breeder"]

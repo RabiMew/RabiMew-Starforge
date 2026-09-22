@@ -1,0 +1,19 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:space_age"
+display_name = "太空时代 / Space Age"
+description = "把地球工业延伸到轨道与外星，建设有保障的殖民据点。 / Extend Earth industry into orbit and onto other worlds with reliable colonial outposts."
+icon = "modpack:space_control_core"
+dependencies = ["modpack:atomic_age"]
+dependency_mode = "all"
+category = "Starforge"
+color = "#4f6fd8"
+hidden = false
+scope = "team"
+tags = ["modpack", "tier_6"]
+
+[display]
+frame = "challenge"
+reveal = "dependencies"

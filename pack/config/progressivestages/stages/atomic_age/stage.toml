@@ -1,0 +1,19 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:atomic_age"
+display_name = "原子时代 / Atomic Age"
+description = "掌握核能、铱和纳米材料，为航天与量子工业提供基础。 / Master nuclear power, iridium, and nanomaterials for spaceflight and quantum industry."
+icon = "modpack:reactor_control"
+dependencies = ["modpack:heavy_industry_age"]
+dependency_mode = "all"
+category = "Starforge"
+color = "#4fae5f"
+hidden = false
+scope = "team"
+tags = ["modpack", "tier_5"]
+
+[display]
+frame = "task"
+reveal = "dependencies"

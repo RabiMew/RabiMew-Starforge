@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "comment": "What each stage unlocks. Keys are stage ids from content.json; values are semantic keys resolved via semantic-map.json. Milestone components are never locked (they are the evidence that grants the NEXT stage).",
+  "survival_age": {
+    "items": [],
+    "blocks": [],
+    "dimensions": []
+  },
+  "mechanical_age": {
+    "items": [
+      "ic2_generator", "ic2_iron_furnace", "ic2_macerator", "ic2_compressor",
+      "ic2_extractor", "ic2_electric_furnace", "ic2_batbox", "ic2_chargepad_batbox",
+      "ic2_copper_cable", "ic2_insulated_copper_cable", "ic2_battery", "ic2_re_battery",
+      "ic2_treetap", "ic2_iron_plate", "ic2_coil",
+      "bc_engine_redstone", "bc_engine_stone", "bc_pipe_item_wood", "bc_pipe_item_stone",
+      "bc_pipe_fluid_wood", "bc_pipe_fluid_iron", "bc_tank",
+      "ie_light_engineering", "ie_basic_engineering", "ie_iron_component", "ie_steel_component",
+      "ie_wirecoil_copper", "ie_conveyor", "ie_jerrycan", "ie_revolver",
+      "ev_farmer", "ev_trader", "ev_breeder"
+    ],
+    "blocks": [],
+    "dimensions": []
+  },
+  "electric_age": {
+    "items": [
+      "ic2_mfe", "ic2_cesu", "ic2_energy_crystal", "ic2_lapotron_crystal",
+      "ic2_electric_motor", "ic2_drill", "ic2_chainsaw", "ic2_electric_treetap",
+      "bc_mining_well", "bc_pump",
+      "ie_capacitor_lv", "ie_capacitor_mv", "ie_wirecoil_electrum", "ie_fluid_pipe",
+      "ie_electronic", "ie_chemthrower", "ie_railgun",
+      "dt_base", "dt_barrel", "dt_forged_alloy", "dt_machine_gun", "dt_searchlight",
+      "tacz_gun_table", "tacz_ammo_box", "tacz_workbench_a",
+      "bg_building_gadget", "sd_drawer_controller", "ss_controller"
+    ],
+    "blocks": [],
+    "dimensions": []
+  },
+  "information_age": {
+    "items": [
+      "ae2_inscriber", "ae2_controller", "ae2_charger", "ae2_pattern_provider",
+      "ae2_crafting_unit", "ae2_molecular_assembler", "ae2_interface", "ae2_storage_bus",
+      "ae2_energy_cell", "ae2_dense_energy_cell",
+      "ae2_engineering_press", "ae2_logic_press", "ae2_calculation_press", "ae2_silicon_press"
+    ],
+    "blocks": [],
+    "dimensions": []
+  },
+  "heavy_industry_age": {
+    "items": [
+      "bc_quarry", "bc_assembly_table", "bc_laser", "bc_engine_iron",
+      "ie_heavy_engineering", "ie_arc_furnace", "ie_capacitor_hv",
+      "dt_grenade", "bg_exchanging_gadget", "bg_copy_paste_gadget"
+    ],
+    "blocks": [],
+    "dimensions": []
+  },
+  "atomic_age": {
+    "items": [
+      "ic2_nuclear_reactor", "ic2_reactor_chamber", "ic2_reactor_plating", "ic2_containment_plating",
+      "ic2_matter_generator", "ic2_scanner", "ic2_uu_scanner", "ic2_pattern_storage",
+      "ic2_mfsu", "ic2_mfsu_kit",
+      "ic2_nano_helmet", "ic2_nano_chestplate", "ic2_nano_leggings", "ic2_nano_boots",
+      "dt_laser", "bg_destruction_gadget",
+      "ae2_singularity", "ae2_entangled_singularity"
+    ],
+    "blocks": [],
+    "dimensions": []
+  },
+  "space_age": {
+    "items": [
+      "aa_nasa_workbench", "aa_launch_pad", "aa_oxygen_loader", "aa_oxygen_distributor",
+      "aa_oxygen_gear", "aa_compressor", "aa_energizer", "aa_cryo_freezer", "aa_water_pump",
+      "aa_fuel_refinery", "aa_coal_generator", "aa_solar_panel", "aa_etrionic_blast_furnace",
+      "aa_engine_frame", "aa_steel_engine", "aa_desh_engine", "aa_ostrum_engine", "aa_calorite_engine",
+      "aa_nose_cone", "aa_rocket_fin", "aa_gas_tank",
+      "aa_steel_tank", "aa_desh_tank", "aa_ostrum_tank", "aa_calorite_tank",
+      "aa_space_suit_helmet", "aa_space_suit_chest", "aa_space_suit_pants", "aa_space_suit_boots",
+      "aa_tier1_rocket", "aa_tier2_rocket", "aa_tier3_rocket", "aa_tier4_rocket", "aa_tier1_rover",
+      "colony_maintenance"
+    ],
+    "blocks": [],
+    "dimensions": ["moon", "mars", "venus", "mercury", "glacio", "moon_orbit", "mars_orbit", "venus_orbit", "mercury_orbit", "glacio_orbit", "earth_orbit"]
+  },
+  "quantum_age": {
+    "items": [
+      "ic2_quantum_helmet", "ic2_quantum_chestplate", "ic2_quantum_leggings", "ic2_quantum_boots",
+      "ae2_quantum_ring", "ae2_quantum_link", "ae2_spatial_cell_128", "anomaly_analysis"
+    ],
+    "blocks": [],
+    "dimensions": []
+  }
+}

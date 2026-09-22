@@ -1,0 +1,19 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:electric_age"
+display_name = "电气时代 / Electrical Age"
+description = "以工业电路、电力和矿物处理支撑自动化与基础防御。 / Use industrial circuits, power, and ore processing to support automation and basic defenses."
+icon = "ic2cre:generator"
+dependencies = ["modpack:mechanical_age"]
+dependency_mode = "all"
+category = "Starforge"
+color = "#e0b030"
+hidden = false
+scope = "team"
+tags = ["modpack", "tier_2"]
+
+[display]
+frame = "task"
+reveal = "dependencies"

@@ -1,0 +1,19 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:mechanical_age"
+display_name = "机械时代 / Mechanical Age"
+description = "用管道、传送带和基础冶炼，把手工劳动连接成生产线。 / Connect pipes, conveyors, and basic smelting into your first production lines."
+icon = "modpack:engineering_assembly"
+dependencies = ["modpack:survival_age"]
+dependency_mode = "all"
+category = "Starforge"
+color = "#c07f3f"
+hidden = false
+scope = "team"
+tags = ["modpack", "tier_1"]
+
+[display]
+frame = "task"
+reveal = "dependencies"

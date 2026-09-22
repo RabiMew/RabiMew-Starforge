@@ -1,0 +1,19 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:survival_age"
+display_name = "生存时代 / Survival Age"
+description = "建立居所、农田和厨房，为第一座工厂储备物资。 / Build a home, fields, and a kitchen to supply your first factory."
+icon = "minecraft:crafting_table"
+dependencies = []
+dependency_mode = "all"
+category = "Starforge"
+color = "#8b8b8b"
+hidden = false
+scope = "team"
+tags = ["modpack", "tier_0"]
+
+[display]
+frame = "task"
+reveal = "dependencies"

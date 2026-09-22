@@ -1383,60 +1383,6 @@
 		"result": "ad_astra:calorite_block x1"
 	},
 	{
-		"id": "ad_astra:calorite_engine",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:calorite_plates"
-				},
-				"E": {
-					"item": "ad_astra:ostrum_engine"
-				},
-				"F": {
-					"item": "ad_astra:fan"
-				}
-			},
-			"pattern": [
-				"###",
-				"#E#",
-				" F "
-			],
-			"result": {
-				"id": "ad_astra:calorite_engine",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "ad_astra:calorite_plates"
-			},
-			{
-				"tag": "ad_astra:calorite_plates"
-			},
-			{
-				"tag": "ad_astra:calorite_plates"
-			},
-			{
-				"tag": "ad_astra:calorite_plates"
-			},
-			{
-				"item": "ad_astra:ostrum_engine"
-			},
-			{
-				"tag": "ad_astra:calorite_plates"
-			},
-			[],
-			{
-				"item": "ad_astra:fan"
-			},
-			[]
-		],
-		"result": "ad_astra:calorite_engine x1"
-	},
-	{
 		"id": "ad_astra:calorite_factory_block",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -3358,60 +3304,6 @@
 			}
 		],
 		"result": "ad_astra:desh_cable x16"
-	},
-	{
-		"id": "ad_astra:desh_engine",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:desh_plates"
-				},
-				"E": {
-					"item": "ad_astra:steel_engine"
-				},
-				"F": {
-					"item": "ad_astra:fan"
-				}
-			},
-			"pattern": [
-				"###",
-				"#E#",
-				" F "
-			],
-			"result": {
-				"id": "ad_astra:desh_engine",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "ad_astra:desh_plates"
-			},
-			{
-				"tag": "ad_astra:desh_plates"
-			},
-			{
-				"tag": "ad_astra:desh_plates"
-			},
-			{
-				"tag": "ad_astra:desh_plates"
-			},
-			{
-				"item": "ad_astra:steel_engine"
-			},
-			{
-				"tag": "ad_astra:desh_plates"
-			},
-			[],
-			{
-				"item": "ad_astra:fan"
-			},
-			[]
-		],
-		"result": "ad_astra:desh_engine x1"
 	},
 	{
 		"id": "ad_astra:desh_factory_block",
@@ -6564,61 +6456,6 @@
 		"result": "ad_astra:large_gas_tank x1"
 	},
 	{
-		"id": "ad_astra:launch_pad",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:steel_plates"
-				},
-				"|": {
-					"tag": "ad_astra:steel_rods"
-				}
-			},
-			"pattern": [
-				"#|#",
-				"|#|",
-				"#|#"
-			],
-			"result": {
-				"id": "ad_astra:launch_pad",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_rods"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_rods"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_rods"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_rods"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			}
-		],
-		"result": "ad_astra:launch_pad x1"
-	},
-	{
 		"id": "ad_astra:light_blue_flag",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -8076,70 +7913,6 @@
 		"result": "ad_astra:moon_stone_stairs x4"
 	},
 	{
-		"id": "ad_astra:nasa_workbench",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:steel_plates"
-				},
-				"B": {
-					"tag": "ad_astra:steel_blocks"
-				},
-				"C": {
-					"item": "minecraft:crafting_table"
-				},
-				"T": {
-					"item": "minecraft:redstone_torch"
-				},
-				"|": {
-					"tag": "ad_astra:iron_rods"
-				}
-			},
-			"pattern": [
-				"|#|",
-				"TCT",
-				"#B#"
-			],
-			"result": {
-				"id": "ad_astra:nasa_workbench",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "ad_astra:iron_rods"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:iron_rods"
-			},
-			{
-				"item": "minecraft:redstone_torch"
-			},
-			{
-				"item": "minecraft:crafting_table"
-			},
-			{
-				"item": "minecraft:redstone_torch"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_blocks"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			}
-		],
-		"result": "ad_astra:nasa_workbench x1"
-	},
-	{
 		"id": "ad_astra:nasa_workbench/tier_1_rocket_from_nasa_workbench",
 		"type": "ad_astra:nasa_workbench",
 		"serializer": "ad_astra:nasa_workbench",
@@ -8724,60 +8497,6 @@
 			}
 		],
 		"result": "ad_astra:ostrum_block x1"
-	},
-	{
-		"id": "ad_astra:ostrum_engine",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:ostrum_plates"
-				},
-				"E": {
-					"item": "ad_astra:desh_engine"
-				},
-				"F": {
-					"item": "ad_astra:fan"
-				}
-			},
-			"pattern": [
-				"###",
-				"#E#",
-				" F "
-			],
-			"result": {
-				"id": "ad_astra:ostrum_engine",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "ad_astra:ostrum_plates"
-			},
-			{
-				"tag": "ad_astra:ostrum_plates"
-			},
-			{
-				"tag": "ad_astra:ostrum_plates"
-			},
-			{
-				"tag": "ad_astra:ostrum_plates"
-			},
-			{
-				"item": "ad_astra:desh_engine"
-			},
-			{
-				"tag": "ad_astra:ostrum_plates"
-			},
-			[],
-			{
-				"item": "ad_astra:fan"
-			},
-			[]
-		],
-		"result": "ad_astra:ostrum_engine x1"
 	},
 	{
 		"id": "ad_astra:ostrum_factory_block",
@@ -9484,121 +9203,6 @@
 			}
 		],
 		"result": "ad_astra:oxygen_distributor x1"
-	},
-	{
-		"id": "ad_astra:oxygen_gear",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:steel_plates"
-				},
-				"|": {
-					"item": "ad_astra:steel_rod"
-				}
-			},
-			"pattern": [
-				" | ",
-				"#|#",
-				"#|#"
-			],
-			"result": {
-				"id": "ad_astra:oxygen_gear",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			[],
-			{
-				"item": "ad_astra:steel_rod"
-			},
-			[],
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"item": "ad_astra:steel_rod"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"item": "ad_astra:steel_rod"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			}
-		],
-		"result": "ad_astra:oxygen_gear x1"
-	},
-	{
-		"id": "ad_astra:oxygen_loader",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:steel_plates"
-				},
-				"F": {
-					"item": "ad_astra:fan"
-				},
-				"G": {
-					"item": "ad_astra:gas_tank"
-				},
-				"R": {
-					"item": "minecraft:redstone_block"
-				},
-				"|": {
-					"item": "minecraft:lightning_rod"
-				}
-			},
-			"pattern": [
-				"#F#",
-				"G|G",
-				"#R#"
-			],
-			"result": {
-				"id": "ad_astra:oxygen_loader",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"item": "ad_astra:fan"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"item": "ad_astra:gas_tank"
-			},
-			{
-				"item": "minecraft:lightning_rod"
-			},
-			{
-				"item": "ad_astra:gas_tank"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"item": "minecraft:redstone_block"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			}
-		],
-		"result": "ad_astra:oxygen_loader x1"
 	},
 	{
 		"id": "ad_astra:oxygen_loading/oxygen_from_oxygen_loading_oxygen",
@@ -13651,60 +13255,6 @@
 			}
 		],
 		"result": "ad_astra:steel_door x3"
-	},
-	{
-		"id": "ad_astra:steel_engine",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"tag": "ad_astra:steel_plates"
-				},
-				"E": {
-					"item": "ad_astra:engine_frame"
-				},
-				"F": {
-					"item": "ad_astra:fan"
-				}
-			},
-			"pattern": [
-				"###",
-				"#E#",
-				" F "
-			],
-			"result": {
-				"id": "ad_astra:steel_engine",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			{
-				"item": "ad_astra:engine_frame"
-			},
-			{
-				"tag": "ad_astra:steel_plates"
-			},
-			[],
-			{
-				"item": "ad_astra:fan"
-			},
-			[]
-		],
-		"result": "ad_astra:steel_engine x1"
 	},
 	{
 		"id": "ad_astra:steel_factory_block",
@@ -21950,64 +21500,6 @@
 		"result": "ae2:cell_workbench x1"
 	},
 	{
-		"id": "ae2:network/blocks/controller",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"item": "ae2:smooth_sky_stone_block"
-				},
-				"b": {
-					"item": "ae2:fluix_crystal"
-				},
-				"c": {
-					"item": "ae2:engineering_processor"
-				}
-			},
-			"pattern": [
-				"aba",
-				"bcb",
-				"aba"
-			],
-			"result": {
-				"id": "ae2:controller",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "ae2:smooth_sky_stone_block"
-			},
-			{
-				"item": "ae2:fluix_crystal"
-			},
-			{
-				"item": "ae2:smooth_sky_stone_block"
-			},
-			{
-				"item": "ae2:fluix_crystal"
-			},
-			{
-				"item": "ae2:engineering_processor"
-			},
-			{
-				"item": "ae2:fluix_crystal"
-			},
-			{
-				"item": "ae2:smooth_sky_stone_block"
-			},
-			{
-				"item": "ae2:fluix_crystal"
-			},
-			{
-				"item": "ae2:smooth_sky_stone_block"
-			}
-		],
-		"result": "ae2:controller x1"
-	},
-	{
 		"id": "ae2:network/blocks/crank",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -22425,62 +21917,6 @@
 		"result": "ae2:vibration_chamber x1"
 	},
 	{
-		"id": "ae2:network/blocks/inscribers",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:ingots/iron"
-				},
-				"b": {
-					"item": "minecraft:piston"
-				},
-				"c": {
-					"tag": "c:ingots/copper"
-				}
-			},
-			"pattern": [
-				"aba",
-				"c a",
-				"aba"
-			],
-			"result": {
-				"id": "ae2:inscriber",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "minecraft:piston"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:ingots/copper"
-			},
-			[],
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "minecraft:piston"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "ae2:inscriber x1"
-	},
-	{
 		"id": "ae2:network/blocks/interfaces_interface",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -22708,88 +22144,6 @@
 		"result": "ae2:io_port x1"
 	},
 	{
-		"id": "ae2:network/blocks/pattern_providers_interface",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:ingots/iron"
-				},
-				"b": {
-					"item": "minecraft:crafting_table"
-				},
-				"c": {
-					"item": "ae2:annihilation_core"
-				},
-				"d": {
-					"item": "ae2:formation_core"
-				}
-			},
-			"pattern": [
-				"aba",
-				"c d",
-				"aba"
-			],
-			"result": {
-				"id": "ae2:pattern_provider",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "minecraft:crafting_table"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:annihilation_core"
-			},
-			[],
-			{
-				"item": "ae2:formation_core"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "minecraft:crafting_table"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "ae2:pattern_provider x1"
-	},
-	{
-		"id": "ae2:network/blocks/pattern_providers_interface_alt",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shapeless",
-		"json": {
-			"category": "misc",
-			"result": {
-				"id": "ae2:pattern_provider",
-				"count": 1
-			},
-			"ingredients": [
-				{
-					"item": "ae2:cable_pattern_provider"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "ae2:cable_pattern_provider"
-			}
-		],
-		"result": "ae2:pattern_provider x1"
-	},
-	{
 		"id": "ae2:network/blocks/pattern_providers_interface_part",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shapeless",
@@ -22811,123 +22165,6 @@
 			}
 		],
 		"result": "ae2:cable_pattern_provider x1"
-	},
-	{
-		"id": "ae2:network/blocks/quantum_link",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"item": "ae2:quartz_glass"
-				},
-				"b": {
-					"item": "ae2:fluix_pearl"
-				}
-			},
-			"pattern": [
-				"aba",
-				"b b",
-				"aba"
-			],
-			"result": {
-				"id": "ae2:quantum_link",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "ae2:quartz_glass"
-			},
-			{
-				"item": "ae2:fluix_pearl"
-			},
-			{
-				"item": "ae2:quartz_glass"
-			},
-			{
-				"item": "ae2:fluix_pearl"
-			},
-			[],
-			{
-				"item": "ae2:fluix_pearl"
-			},
-			{
-				"item": "ae2:quartz_glass"
-			},
-			{
-				"item": "ae2:fluix_pearl"
-			},
-			{
-				"item": "ae2:quartz_glass"
-			}
-		],
-		"result": "ae2:quantum_link x1"
-	},
-	{
-		"id": "ae2:network/blocks/quantum_ring",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:ingots/iron"
-				},
-				"b": {
-					"item": "ae2:logic_processor"
-				},
-				"c": {
-					"item": "ae2:engineering_processor"
-				},
-				"d": {
-					"item": "ae2:energy_cell"
-				},
-				"e": {
-					"tag": "ae2:smart_dense_cable"
-				}
-			},
-			"pattern": [
-				"aba",
-				"cde",
-				"aba"
-			],
-			"result": {
-				"id": "ae2:quantum_ring",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:logic_processor"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:engineering_processor"
-			},
-			{
-				"item": "ae2:energy_cell"
-			},
-			{
-				"tag": "ae2:smart_dense_cable"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:logic_processor"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "ae2:quantum_ring x1"
 	},
 	{
 		"id": "ae2:network/blocks/spatial_anchor",
@@ -30125,131 +29362,6 @@
 			}
 		],
 		"result": "ae2:crafting_monitor x1"
-	},
-	{
-		"id": "ae2:network/crafting/cpu_crafting_unit",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:ingots/iron"
-				},
-				"b": {
-					"item": "ae2:calculation_processor"
-				},
-				"c": {
-					"item": "ae2:fluix_glass_cable"
-				},
-				"d": {
-					"item": "ae2:logic_processor"
-				}
-			},
-			"pattern": [
-				"aba",
-				"cdc",
-				"aba"
-			],
-			"result": {
-				"id": "ae2:crafting_unit",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:calculation_processor"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:fluix_glass_cable"
-			},
-			{
-				"item": "ae2:logic_processor"
-			},
-			{
-				"item": "ae2:fluix_glass_cable"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:calculation_processor"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "ae2:crafting_unit x1"
-	},
-	{
-		"id": "ae2:network/crafting/molecular_assembler",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:ingots/iron"
-				},
-				"b": {
-					"item": "ae2:quartz_glass"
-				},
-				"c": {
-					"item": "ae2:annihilation_core"
-				},
-				"d": {
-					"item": "minecraft:crafting_table"
-				},
-				"e": {
-					"item": "ae2:formation_core"
-				}
-			},
-			"pattern": [
-				"aba",
-				"cde",
-				"aba"
-			],
-			"result": {
-				"id": "ae2:molecular_assembler",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:quartz_glass"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:annihilation_core"
-			},
-			{
-				"item": "minecraft:crafting_table"
-			},
-			{
-				"item": "ae2:formation_core"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"item": "ae2:quartz_glass"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "ae2:molecular_assembler x1"
 	},
 	{
 		"id": "ae2:network/crafting/patterns_blank",
@@ -37645,70 +36757,6 @@
 		"result": "buildcraftbuilders:marker_construction x1"
 	},
 	{
-		"id": "buildcraftbuilders:quarry",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"i": {
-					"item": "buildcraftcore:gears/gear_iron"
-				},
-				"r": {
-					"item": "minecraft:redstone"
-				},
-				"g": {
-					"item": "buildcraftcore:gears/gear_gold"
-				},
-				"d": {
-					"item": "buildcraftcore:gears/gear_diamond"
-				},
-				"p": {
-					"item": "minecraft:diamond_pickaxe"
-				}
-			},
-			"pattern": [
-				"iri",
-				"gig",
-				"dpd"
-			],
-			"result": {
-				"id": "buildcraftbuilders:quarry",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "buildcraftcore:gears/gear_iron"
-			},
-			{
-				"item": "minecraft:redstone"
-			},
-			{
-				"item": "buildcraftcore:gears/gear_iron"
-			},
-			{
-				"item": "buildcraftcore:gears/gear_gold"
-			},
-			{
-				"item": "buildcraftcore:gears/gear_iron"
-			},
-			{
-				"item": "buildcraftcore:gears/gear_gold"
-			},
-			{
-				"item": "buildcraftcore:gears/gear_diamond"
-			},
-			{
-				"item": "minecraft:diamond_pickaxe"
-			},
-			{
-				"item": "buildcraftcore:gears/gear_diamond"
-			}
-		],
-		"result": "buildcraftbuilders:quarry x1"
-	},
-	{
 		"id": "buildcraftbuilders:replacer",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -40325,23 +39373,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"tag": "c:gems/lapis"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"tag": "c:gems/lapis"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40439,23 +39487,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"tag": "c:gems/lapis"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:gems/lapis"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40477,23 +39525,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40515,23 +39563,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40553,23 +39601,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"tag": "c:gems/lapis"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:gems/lapis"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40591,23 +39639,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40743,23 +39791,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40781,23 +39829,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"tag": "c:gems/lapis"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"tag": "c:gems/lapis"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40857,23 +39905,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40895,23 +39943,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"tag": "c:gems/lapis"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:gems/lapis"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41129,19 +40177,19 @@
 			"group": "buildcraftsilicon:chipsets",
 			"ingredients": [
 				{
-					"tag": "c:ingots/iron"
+					"tag": "c:dusts/redstone"
 				},
 				{
-					"tag": "c:dusts/redstone"
+					"tag": "c:ingots/iron"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:ingots/iron"
+				"tag": "c:dusts/redstone"
 			},
 			{
-				"tag": "c:dusts/redstone"
+				"tag": "c:ingots/iron"
 			}
 		],
 		"result": "buildcraftsilicon:redstone_chipset/iron x1"
@@ -41163,19 +40211,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:black_stained_glass"
 				},
 				{
-					"item": "minecraft:black_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:black_stained_glass"
 			},
 			{
-				"item": "minecraft:black_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41231,19 +40279,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:brown_stained_glass"
 				},
 				{
-					"item": "minecraft:brown_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:brown_stained_glass"
 			},
 			{
-				"item": "minecraft:brown_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41333,19 +40381,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:green_stained_glass"
 				},
 				{
-					"item": "minecraft:green_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:green_stained_glass"
 			},
 			{
-				"item": "minecraft:green_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41469,19 +40517,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:magenta_stained_glass"
 				},
 				{
-					"item": "minecraft:magenta_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:magenta_stained_glass"
 			},
 			{
-				"item": "minecraft:magenta_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41503,19 +40551,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:orange_stained_glass"
 				},
 				{
-					"item": "minecraft:orange_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:orange_stained_glass"
 			},
 			{
-				"item": "minecraft:orange_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41639,19 +40687,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:white_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:white_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:white_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:white_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41707,19 +40755,19 @@
 			"group": "buildcraftsilicon:lens_regulars",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"tag": "c:glass_blocks"
 				},
 				{
-					"tag": "c:glass_blocks"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"tag": "c:glass_blocks"
 			},
 			{
-				"tag": "c:glass_blocks"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42370,19 +41418,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:black_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:black_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:black_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:black_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/black x8"
@@ -42472,19 +41520,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:cyan_dye"
 				},
 				{
-					"item": "minecraft:cyan_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:cyan_dye"
 			},
 			{
-				"item": "minecraft:cyan_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/cyan x8"
@@ -42506,19 +41554,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:gray_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:gray_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:gray_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:gray_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/gray x8"
@@ -42540,19 +41588,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:green_dye"
 				},
 				{
-					"item": "minecraft:green_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:green_dye"
 			},
 			{
-				"item": "minecraft:green_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/green x8"
@@ -42608,19 +41656,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:light_gray_dye"
 				},
 				{
-					"item": "minecraft:light_gray_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:light_gray_dye"
 			},
 			{
-				"item": "minecraft:light_gray_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/light_gray x8"
@@ -42710,19 +41758,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:orange_dye"
 				},
 				{
-					"item": "minecraft:orange_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:orange_dye"
 			},
 			{
-				"item": "minecraft:orange_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/orange x8"
@@ -42744,19 +41792,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:pink_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:pink_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:pink_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:pink_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/pink x8"
@@ -42880,19 +41928,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:yellow_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:yellow_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:yellow_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:yellow_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/yellow x8"
@@ -46956,130 +46004,6 @@
 		"result": "buildcrafttransport:wood_item x1"
 	},
 	{
-		"id": "buildinggadgets2:gadget_building",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"d": {
-					"tag": "c:gems/diamond"
-				},
-				"i": {
-					"tag": "c:ingots/iron"
-				},
-				"l": {
-					"tag": "c:gems/lapis"
-				},
-				"r": {
-					"tag": "c:dusts/redstone"
-				}
-			},
-			"pattern": [
-				"iri",
-				"drd",
-				"ili"
-			],
-			"result": {
-				"id": "buildinggadgets2:gadget_building",
-				"count": 1
-			},
-			"group": "buildinggadgets2",
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:dusts/redstone"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:gems/diamond"
-			},
-			{
-				"tag": "c:dusts/redstone"
-			},
-			{
-				"tag": "c:gems/diamond"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:gems/lapis"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "buildinggadgets2:gadget_building x1"
-	},
-	{
-		"id": "buildinggadgets2:gadget_copy_paste",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"e": {
-					"tag": "c:gems/emerald"
-				},
-				"i": {
-					"tag": "c:ingots/iron"
-				},
-				"l": {
-					"tag": "c:gems/lapis"
-				},
-				"r": {
-					"tag": "c:dusts/redstone"
-				}
-			},
-			"pattern": [
-				"iri",
-				"ere",
-				"ili"
-			],
-			"result": {
-				"id": "buildinggadgets2:gadget_copy_paste",
-				"count": 1
-			},
-			"group": "buildinggadgets2",
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:dusts/redstone"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:gems/emerald"
-			},
-			{
-				"tag": "c:dusts/redstone"
-			},
-			{
-				"tag": "c:gems/emerald"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:gems/lapis"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "buildinggadgets2:gadget_copy_paste x1"
-	},
-	{
 		"id": "buildinggadgets2:gadget_cut_paste",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -47202,68 +46126,6 @@
 			}
 		],
 		"result": "buildinggadgets2:gadget_destruction x1"
-	},
-	{
-		"id": "buildinggadgets2:gadget_exchanging",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"d": {
-					"tag": "c:gems/diamond"
-				},
-				"i": {
-					"tag": "c:ingots/iron"
-				},
-				"l": {
-					"tag": "c:gems/lapis"
-				},
-				"r": {
-					"tag": "c:dusts/redstone"
-				}
-			},
-			"pattern": [
-				"iri",
-				"dld",
-				"ili"
-			],
-			"result": {
-				"id": "buildinggadgets2:gadget_exchanging",
-				"count": 1
-			},
-			"group": "buildinggadgets2",
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:dusts/redstone"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:gems/diamond"
-			},
-			{
-				"tag": "c:gems/lapis"
-			},
-			{
-				"tag": "c:gems/diamond"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:gems/lapis"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "buildinggadgets2:gadget_exchanging x1"
 	},
 	{
 		"id": "buildinggadgets2:template_manager",
@@ -52588,126 +51450,6 @@
 			}
 		],
 		"result": "defenseturrets:forged_alloy_nugget x1"
-	},
-	{
-		"id": "defenseturrets:grenade_turret",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"item": "defenseturrets:turret_barrel"
-				},
-				"B": {
-					"item": "defenseturrets:turret_base"
-				},
-				"F": {
-					"item": "minecraft:blaze_powder"
-				}
-			},
-			"pattern": [
-				"#F",
-				"B "
-			],
-			"result": {
-				"id": "defenseturrets:grenade_turret",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "defenseturrets:turret_barrel"
-			},
-			{
-				"item": "minecraft:blaze_powder"
-			},
-			{
-				"item": "defenseturrets:turret_base"
-			},
-			[]
-		],
-		"result": "defenseturrets:grenade_turret x1"
-	},
-	{
-		"id": "defenseturrets:laser_turret",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"item": "defenseturrets:turret_barrel"
-				},
-				"B": {
-					"item": "defenseturrets:turret_base"
-				},
-				"R": {
-					"item": "minecraft:redstone"
-				}
-			},
-			"pattern": [
-				"#R",
-				"B "
-			],
-			"result": {
-				"id": "defenseturrets:laser_turret",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "defenseturrets:turret_barrel"
-			},
-			{
-				"item": "minecraft:redstone"
-			},
-			{
-				"item": "defenseturrets:turret_base"
-			},
-			[]
-		],
-		"result": "defenseturrets:laser_turret x1"
-	},
-	{
-		"id": "defenseturrets:machine_gun_turret",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"item": "defenseturrets:turret_barrel"
-				},
-				"B": {
-					"item": "defenseturrets:turret_base"
-				},
-				"G": {
-					"item": "minecraft:gold_ingot"
-				}
-			},
-			"pattern": [
-				"#G",
-				"B "
-			],
-			"result": {
-				"id": "defenseturrets:machine_gun_turret",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "defenseturrets:turret_barrel"
-			},
-			{
-				"item": "minecraft:gold_ingot"
-			},
-			{
-				"item": "defenseturrets:turret_base"
-			},
-			[]
-		],
-		"result": "defenseturrets:machine_gun_turret x1"
 	},
 	{
 		"id": "defenseturrets:turret_barrel",
@@ -82596,16 +81338,13 @@
 		"serializer": "minecraft:crafting_shaped",
 		"json": {
 			"key": {
-				"C": {
-					"tag": "minecraft:wooden_chests"
-				},
 				"I": {
 					"item": "ic2cre:lead_casing"
 				}
 			},
 			"pattern": [
 				"III",
-				"ICI",
+				"I I",
 				"III"
 			],
 			"result": {
@@ -82627,9 +81366,7 @@
 			{
 				"item": "ic2cre:lead_casing"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:lead_casing"
 			},
@@ -86012,96 +84749,6 @@
 		"result": "ic2cre:frequency_transmitter x1"
 	},
 	{
-		"id": "ic2cre:generator",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"B": {
-					"item": "ic2cre:battery"
-				},
-				"F": {
-					"item": "ic2cre:iron_furnace"
-				},
-				"I": {
-					"tag": "c:plates/iron"
-				}
-			},
-			"pattern": [
-				" B ",
-				"III",
-				" F "
-			],
-			"result": {
-				"id": "ic2cre:generator",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			[],
-			{
-				"item": "ic2cre:battery"
-			},
-			[],
-			{
-				"tag": "c:plates/iron"
-			},
-			{
-				"tag": "c:plates/iron"
-			},
-			{
-				"tag": "c:plates/iron"
-			},
-			[],
-			{
-				"item": "ic2cre:iron_furnace"
-			},
-			[]
-		],
-		"result": "ic2cre:generator x1"
-	},
-	{
-		"id": "ic2cre:generator_from_furnace",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"B": {
-					"item": "ic2cre:battery"
-				},
-				"F": {
-					"item": "minecraft:furnace"
-				},
-				"M": {
-					"item": "ic2cre:machine"
-				}
-			},
-			"pattern": [
-				"B",
-				"M",
-				"F"
-			],
-			"result": {
-				"id": "ic2cre:generator",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "ic2cre:battery"
-			},
-			{
-				"item": "ic2cre:machine"
-			},
-			{
-				"item": "minecraft:furnace"
-			}
-		],
-		"result": "ic2cre:generator x1"
-	},
-	{
 		"id": "ic2cre:geo_generator",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -88146,9 +86793,6 @@
 		"serializer": "minecraft:crafting_shaped",
 		"json": {
 			"key": {
-				"C": {
-					"tag": "minecraft:wooden_chests"
-				},
 				"I": {
 					"item": "ic2cre:iron_casing"
 				},
@@ -88158,7 +86802,7 @@
 			},
 			"pattern": [
 				"III",
-				"CMC",
+				" M ",
 				"III"
 			],
 			"result": {
@@ -88177,15 +86821,11 @@
 			{
 				"item": "ic2cre:iron_casing"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:machine"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:iron_casing"
 			},
@@ -98501,9 +97141,6 @@
 		"serializer": "minecraft:crafting_shaped",
 		"json": {
 			"key": {
-				"C": {
-					"tag": "minecraft:wooden_chests"
-				},
 				"M": {
 					"item": "ic2cre:machine"
 				},
@@ -98514,7 +97151,7 @@
 			"pattern": [
 				"c",
 				"M",
-				"C"
+				" "
 			],
 			"result": {
 				"id": "ic2cre:personal_chest",
@@ -98528,9 +97165,6 @@
 			},
 			{
 				"item": "ic2cre:machine"
-			},
-			{
-				"tag": "minecraft:wooden_chests"
 			}
 		],
 		"result": "ic2cre:personal_chest x1"
@@ -99861,251 +98495,6 @@
 			}
 		],
 		"result": "ic2cre:reactor_quad_uranium_rod x1"
-	},
-	{
-		"id": "ic2cre:quantum_boots",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"I": {
-					"item": "ic2cre:iridium"
-				},
-				"L": {
-					"item": "ic2cre:lapotron_crystal"
-				},
-				"N": {
-					"item": "ic2cre:nano_boots"
-				},
-				"R": {
-					"item": "ic2cre:rubber_boots"
-				}
-			},
-			"pattern": [
-				"   ",
-				"INI",
-				"RLR"
-			],
-			"result": {
-				"id": "ic2cre:quantum_boots",
-				"count": 1
-			},
-			"category": "equipment"
-		},
-		"ingredients": [
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "ic2cre:nano_boots"
-			},
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "ic2cre:rubber_boots"
-			},
-			{
-				"item": "ic2cre:lapotron_crystal"
-			},
-			{
-				"item": "ic2cre:rubber_boots"
-			}
-		],
-		"result": "ic2cre:quantum_boots x1"
-	},
-	{
-		"id": "ic2cre:quantum_chestplate",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"A": {
-					"item": "ic2cre:alloy"
-				},
-				"I": {
-					"item": "ic2cre:iridium"
-				},
-				"J": {
-					"item": "ic2cre:electric_jetpack"
-				},
-				"L": {
-					"item": "ic2cre:lapotron_crystal"
-				},
-				"N": {
-					"item": "ic2cre:nano_chestplate"
-				}
-			},
-			"pattern": [
-				"ANA",
-				"ILI",
-				"IJI"
-			],
-			"result": {
-				"id": "ic2cre:quantum_chestplate",
-				"count": 1
-			},
-			"category": "equipment"
-		},
-		"ingredients": [
-			{
-				"item": "ic2cre:alloy"
-			},
-			{
-				"item": "ic2cre:nano_chestplate"
-			},
-			{
-				"item": "ic2cre:alloy"
-			},
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "ic2cre:lapotron_crystal"
-			},
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "ic2cre:electric_jetpack"
-			},
-			{
-				"item": "ic2cre:iridium"
-			}
-		],
-		"result": "ic2cre:quantum_chestplate x1"
-	},
-	{
-		"id": "ic2cre:quantum_helmet",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"A": {
-					"item": "ic2cre:iridium"
-				},
-				"G": {
-					"item": "ic2cre:reinforced_glass"
-				},
-				"H": {
-					"item": "ic2cre:hazmat_helmet"
-				},
-				"L": {
-					"item": "ic2cre:lapotron_crystal"
-				},
-				"N": {
-					"item": "ic2cre:nano_helmet"
-				},
-				"R": {
-					"tag": "c:circuits/advanced"
-				}
-			},
-			"pattern": [
-				"GNG",
-				"RLR",
-				"AHA"
-			],
-			"result": {
-				"id": "ic2cre:quantum_helmet",
-				"count": 1
-			},
-			"category": "equipment"
-		},
-		"ingredients": [
-			{
-				"item": "ic2cre:reinforced_glass"
-			},
-			{
-				"item": "ic2cre:nano_helmet"
-			},
-			{
-				"item": "ic2cre:reinforced_glass"
-			},
-			{
-				"tag": "c:circuits/advanced"
-			},
-			{
-				"item": "ic2cre:lapotron_crystal"
-			},
-			{
-				"tag": "c:circuits/advanced"
-			},
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "ic2cre:hazmat_helmet"
-			},
-			{
-				"item": "ic2cre:iridium"
-			}
-		],
-		"result": "ic2cre:quantum_helmet x1"
-	},
-	{
-		"id": "ic2cre:quantum_leggings",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"G": {
-					"item": "minecraft:glowstone_dust"
-				},
-				"I": {
-					"item": "ic2cre:iridium"
-				},
-				"L": {
-					"item": "ic2cre:lapotron_crystal"
-				},
-				"M": {
-					"item": "ic2cre:machine"
-				},
-				"N": {
-					"item": "ic2cre:nano_leggings"
-				}
-			},
-			"pattern": [
-				"MLM",
-				"INI",
-				"G G"
-			],
-			"result": {
-				"id": "ic2cre:quantum_leggings",
-				"count": 1
-			},
-			"category": "equipment"
-		},
-		"ingredients": [
-			{
-				"item": "ic2cre:machine"
-			},
-			{
-				"item": "ic2cre:lapotron_crystal"
-			},
-			{
-				"item": "ic2cre:machine"
-			},
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "ic2cre:nano_leggings"
-			},
-			{
-				"item": "ic2cre:iridium"
-			},
-			{
-				"item": "minecraft:glowstone_dust"
-			},
-			[],
-			{
-				"item": "minecraft:glowstone_dust"
-			}
-		],
-		"result": "ic2cre:quantum_leggings x1"
 	},
 	{
 		"id": "ic2cre:raw_crystal_memory",
@@ -103741,23 +102130,20 @@
 		"serializer": "minecraft:crafting_shaped",
 		"json": {
 			"key": {
-				"B": {
-					"tag": "c:circuits/basic"
-				},
-				"C": {
-					"tag": "minecraft:wooden_chests"
-				},
 				"M": {
 					"item": "ic2cre:machine"
 				},
 				"U": {
 					"item": "ic2cre:upgrade_ejector"
+				},
+				"B": {
+					"tag": "c:circuits/basic"
 				}
 			},
 			"pattern": [
 				"UBU",
 				"UMU",
-				"UCU"
+				"U U"
 			],
 			"result": {
 				"id": "ic2cre:sorting_machine",
@@ -103787,9 +102173,7 @@
 			{
 				"item": "ic2cre:upgrade_ejector"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:upgrade_ejector"
 			}
@@ -106352,15 +104736,12 @@
 				},
 				"G": {
 					"item": "ic2cre:heat_conductor"
-				},
-				"I": {
-					"tag": "c:casings/iron"
 				}
 			},
 			"pattern": [
-				"III",
-				"IBI",
-				"IGI"
+				"   ",
+				" B ",
+				" G "
 			],
 			"result": {
 				"id": "ic2cre:steam_generator",
@@ -106370,31 +104751,10 @@
 		},
 		"ingredients": [
 			{
-				"tag": "c:casings/iron"
-			},
-			{
-				"tag": "c:casings/iron"
-			},
-			{
-				"tag": "c:casings/iron"
-			},
-			{
-				"tag": "c:casings/iron"
-			},
-			{
 				"item": "ic2cre:copper_boiler"
 			},
 			{
-				"tag": "c:casings/iron"
-			},
-			{
-				"tag": "c:casings/iron"
-			},
-			{
 				"item": "ic2cre:heat_conductor"
-			},
-			{
-				"tag": "c:casings/iron"
 			}
 		],
 		"result": "ic2cre:steam_generator x1"
@@ -108619,9 +106979,6 @@
 		"serializer": "minecraft:crafting_shaped",
 		"json": {
 			"key": {
-				"C": {
-					"tag": "minecraft:wooden_chests"
-				},
 				"M": {
 					"item": "ic2cre:machine"
 				},
@@ -108631,7 +106988,7 @@
 			},
 			"pattern": [
 				"RRR",
-				"CMC"
+				" M "
 			],
 			"result": {
 				"id": "ic2cre:energy_o_mat",
@@ -108649,15 +107006,11 @@
 			{
 				"item": "minecraft:redstone"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:machine"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			}
+			[]
 		],
 		"result": "ic2cre:energy_o_mat x1"
 	},
@@ -109904,9 +108257,6 @@
 		"serializer": "minecraft:crafting_shaped",
 		"json": {
 			"key": {
-				"C": {
-					"tag": "minecraft:wooden_chests"
-				},
 				"I": {
 					"item": "ic2cre:pulling_upgrade"
 				},
@@ -109918,9 +108268,9 @@
 				}
 			},
 			"pattern": [
-				"CUC",
+				" U ",
 				"UMU",
-				"CIC"
+				" I "
 			],
 			"result": {
 				"id": "ic2cre:weighted_item_distributor",
@@ -109929,15 +108279,11 @@
 			"category": "misc"
 		},
 		"ingredients": [
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:upgrade_ejector"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:upgrade_ejector"
 			},
@@ -109947,15 +108293,11 @@
 			{
 				"item": "ic2cre:upgrade_ejector"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			},
+			[],
 			{
 				"item": "ic2cre:pulling_upgrade"
 			},
-			{
-				"tag": "minecraft:wooden_chests"
-			}
+			[]
 		],
 		"result": "ic2cre:weighted_item_distributor x1"
 	},
@@ -117227,177 +115569,6 @@
 			}
 		],
 		"result": "immersiveengineering:cagelamp x1"
-	},
-	{
-		"id": "immersiveengineering:crafting/capacitor_hv",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:plates/aluminum"
-				},
-				"c": {
-					"tag": "c:plates/hop_graphite"
-				},
-				"e": {
-					"tag": "c:ingots/aluminum"
-				},
-				"r": {
-					"tag": "c:redstone_acid",
-					"amount": 1000,
-					"type": "immersiveengineering:fluid_stack"
-				},
-				"w": {
-					"item": "immersiveengineering:basic_engineering"
-				}
-			},
-			"pattern": [
-				"ere",
-				"awc"
-			],
-			"result": {
-				"id": "immersiveengineering:capacitor_hv",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/aluminum"
-			},
-			{
-				"tag": "c:redstone_acid",
-				"amount": 1000,
-				"type": "immersiveengineering:fluid_stack"
-			},
-			{
-				"tag": "c:ingots/aluminum"
-			},
-			{
-				"tag": "c:plates/aluminum"
-			},
-			{
-				"item": "immersiveengineering:basic_engineering"
-			},
-			{
-				"tag": "c:plates/hop_graphite"
-			}
-		],
-		"result": "immersiveengineering:capacitor_hv x1"
-	},
-	{
-		"id": "immersiveengineering:crafting/capacitor_lv",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:plates/lead"
-				},
-				"e": {
-					"tag": "c:ingots/copper"
-				},
-				"r": {
-					"tag": "c:redstone_acid",
-					"amount": 1000,
-					"type": "immersiveengineering:fluid_stack"
-				},
-				"w": {
-					"item": "immersiveengineering:basic_engineering"
-				}
-			},
-			"pattern": [
-				"ere",
-				"awa"
-			],
-			"result": {
-				"id": "immersiveengineering:capacitor_lv",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/copper"
-			},
-			{
-				"tag": "c:redstone_acid",
-				"amount": 1000,
-				"type": "immersiveengineering:fluid_stack"
-			},
-			{
-				"tag": "c:ingots/copper"
-			},
-			{
-				"tag": "c:plates/lead"
-			},
-			{
-				"item": "immersiveengineering:basic_engineering"
-			},
-			{
-				"tag": "c:plates/lead"
-			}
-		],
-		"result": "immersiveengineering:capacitor_lv x1"
-	},
-	{
-		"id": "immersiveengineering:crafting/capacitor_mv",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"a": {
-					"tag": "c:plates/nickel"
-				},
-				"c": {
-					"tag": "c:plates/iron"
-				},
-				"e": {
-					"tag": "c:ingots/electrum"
-				},
-				"r": {
-					"tag": "c:redstone_acid",
-					"amount": 1000,
-					"type": "immersiveengineering:fluid_stack"
-				},
-				"w": {
-					"item": "immersiveengineering:basic_engineering"
-				}
-			},
-			"pattern": [
-				"ere",
-				"awc"
-			],
-			"result": {
-				"id": "immersiveengineering:capacitor_mv",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/electrum"
-			},
-			{
-				"tag": "c:redstone_acid",
-				"amount": 1000,
-				"type": "immersiveengineering:fluid_stack"
-			},
-			{
-				"tag": "c:ingots/electrum"
-			},
-			{
-				"tag": "c:plates/nickel"
-			},
-			{
-				"item": "immersiveengineering:basic_engineering"
-			},
-			{
-				"tag": "c:plates/iron"
-			}
-		],
-		"result": "immersiveengineering:capacitor_mv x1"
 	},
 	{
 		"id": "immersiveengineering:crafting/charging_station",
@@ -132173,64 +130344,6 @@
 			}
 		],
 		"result": "immersiveengineering:hatch x1"
-	},
-	{
-		"id": "immersiveengineering:crafting/heavy_engineering",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"e": {
-					"tag": "c:ingots/electrum"
-				},
-				"g": {
-					"item": "immersiveengineering:component_steel"
-				},
-				"i": {
-					"tag": "c:sheetmetals/steel"
-				}
-			},
-			"pattern": [
-				"igi",
-				"geg",
-				"igi"
-			],
-			"result": {
-				"id": "immersiveengineering:heavy_engineering",
-				"count": 4
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:sheetmetals/steel"
-			},
-			{
-				"item": "immersiveengineering:component_steel"
-			},
-			{
-				"tag": "c:sheetmetals/steel"
-			},
-			{
-				"item": "immersiveengineering:component_steel"
-			},
-			{
-				"tag": "c:ingots/electrum"
-			},
-			{
-				"item": "immersiveengineering:component_steel"
-			},
-			{
-				"tag": "c:sheetmetals/steel"
-			},
-			{
-				"item": "immersiveengineering:component_steel"
-			},
-			{
-				"tag": "c:sheetmetals/steel"
-			}
-		],
-		"result": "immersiveengineering:heavy_engineering x4"
 	},
 	{
 		"id": "immersiveengineering:crafting/hemp_fabric",
@@ -157688,6 +155801,2558 @@
 		"result": "minecraft:waxed_weathered_cut_copper_stairs x1"
 	},
 	{
+		"id": "kubejs:kjs/ad_astra_calorite_engine",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"tag": "ad_astra:calorite_plates"
+				},
+				"M": {
+					"item": "ic2cre:electric_motor"
+				},
+				"E": {
+					"item": "ad_astra:ostrum_engine"
+				},
+				"F": {
+					"item": "ad_astra:fan"
+				},
+				"W": {
+					"item": "immersiveengineering:component_steel"
+				}
+			},
+			"pattern": [
+				"PPP",
+				"MEM",
+				"WFW"
+			],
+			"result": {
+				"id": "ad_astra:calorite_engine",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "ad_astra:calorite_plates"
+			},
+			{
+				"tag": "ad_astra:calorite_plates"
+			},
+			{
+				"tag": "ad_astra:calorite_plates"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "ad_astra:ostrum_engine"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ad_astra:fan"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "ad_astra:calorite_engine x1"
+	},
+	{
+		"id": "kubejs:kjs/ad_astra_desh_engine",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"tag": "ad_astra:desh_plates"
+				},
+				"M": {
+					"item": "ic2cre:electric_motor"
+				},
+				"E": {
+					"item": "ad_astra:steel_engine"
+				},
+				"F": {
+					"item": "ad_astra:fan"
+				},
+				"W": {
+					"item": "immersiveengineering:component_steel"
+				}
+			},
+			"pattern": [
+				"PPP",
+				"MEM",
+				"WFW"
+			],
+			"result": {
+				"id": "ad_astra:desh_engine",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "ad_astra:desh_plates"
+			},
+			{
+				"tag": "ad_astra:desh_plates"
+			},
+			{
+				"tag": "ad_astra:desh_plates"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "ad_astra:steel_engine"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ad_astra:fan"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "ad_astra:desh_engine x1"
+	},
+	{
+		"id": "kubejs:kjs/ad_astra_launch_pad",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"#": {
+					"tag": "ad_astra:steel_plates"
+				},
+				"C": {
+					"item": "ic2cre:energy_crystal"
+				},
+				"|": {
+					"tag": "ad_astra:steel_rods"
+				},
+				"L": {
+					"item": "ae2:logic_processor"
+				}
+			},
+			"pattern": [
+				"#|#",
+				"CLC",
+				"#|#"
+			],
+			"result": {
+				"id": "ad_astra:launch_pad",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"tag": "ad_astra:steel_rods"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"item": "ic2cre:energy_crystal"
+			},
+			{
+				"item": "ae2:logic_processor"
+			},
+			{
+				"item": "ic2cre:energy_crystal"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"tag": "ad_astra:steel_rods"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			}
+		],
+		"result": "ad_astra:launch_pad x1"
+	},
+	{
+		"id": "kubejs:kjs/ad_astra_nasa_workbench",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"B": {
+					"tag": "ad_astra:steel_blocks"
+				},
+				"#": {
+					"tag": "ad_astra:steel_plates"
+				},
+				"C": {
+					"item": "modpack:space_control_core"
+				},
+				"|": {
+					"tag": "ad_astra:iron_rods"
+				},
+				"T": {
+					"item": "minecraft:redstone_torch"
+				}
+			},
+			"pattern": [
+				"|#|",
+				"TCT",
+				"#B#"
+			],
+			"result": {
+				"id": "ad_astra:nasa_workbench",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "ad_astra:iron_rods"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"tag": "ad_astra:iron_rods"
+			},
+			{
+				"item": "minecraft:redstone_torch"
+			},
+			{
+				"item": "modpack:space_control_core"
+			},
+			{
+				"item": "minecraft:redstone_torch"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"tag": "ad_astra:steel_blocks"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			}
+		],
+		"result": "ad_astra:nasa_workbench x1"
+	},
+	{
+		"id": "kubejs:kjs/ad_astra_ostrum_engine",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"tag": "ad_astra:ostrum_plates"
+				},
+				"M": {
+					"item": "ic2cre:electric_motor"
+				},
+				"E": {
+					"item": "ad_astra:desh_engine"
+				},
+				"F": {
+					"item": "ad_astra:fan"
+				},
+				"W": {
+					"item": "immersiveengineering:component_steel"
+				}
+			},
+			"pattern": [
+				"PPP",
+				"MEM",
+				"WFW"
+			],
+			"result": {
+				"id": "ad_astra:ostrum_engine",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "ad_astra:ostrum_plates"
+			},
+			{
+				"tag": "ad_astra:ostrum_plates"
+			},
+			{
+				"tag": "ad_astra:ostrum_plates"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "ad_astra:desh_engine"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ad_astra:fan"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "ad_astra:ostrum_engine x1"
+	},
+	{
+		"id": "kubejs:kjs/ad_astra_oxygen_gear",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"item": "immersiveengineering:fluid_pipe"
+				},
+				"#": {
+					"tag": "ad_astra:steel_plates"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"|": {
+					"item": "ad_astra:steel_rod"
+				}
+			},
+			"pattern": [
+				" C ",
+				"#|#",
+				"#P#"
+			],
+			"result": {
+				"id": "ad_astra:oxygen_gear",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			[],
+			{
+				"item": "ic2cre:circuit"
+			},
+			[],
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"item": "ad_astra:steel_rod"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"item": "immersiveengineering:fluid_pipe"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			}
+		],
+		"result": "ad_astra:oxygen_gear x1"
+	},
+	{
+		"id": "kubejs:kjs/ad_astra_oxygen_loader",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"R": {
+					"item": "minecraft:redstone_block"
+				},
+				"#": {
+					"tag": "ad_astra:steel_plates"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"F": {
+					"item": "ad_astra:fan"
+				},
+				"G": {
+					"item": "ad_astra:gas_tank"
+				}
+			},
+			"pattern": [
+				"#F#",
+				"GCG",
+				"#R#"
+			],
+			"result": {
+				"id": "ad_astra:oxygen_loader",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"item": "ad_astra:fan"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"item": "ad_astra:gas_tank"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"item": "ad_astra:gas_tank"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"item": "minecraft:redstone_block"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			}
+		],
+		"result": "ad_astra:oxygen_loader x1"
+	},
+	{
+		"id": "kubejs:kjs/ad_astra_steel_engine",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"tag": "ad_astra:steel_plates"
+				},
+				"M": {
+					"item": "ic2cre:electric_motor"
+				},
+				"E": {
+					"item": "ad_astra:engine_frame"
+				},
+				"F": {
+					"item": "ad_astra:fan"
+				},
+				"W": {
+					"item": "immersiveengineering:component_steel"
+				}
+			},
+			"pattern": [
+				"PPP",
+				"MEM",
+				"WFW"
+			],
+			"result": {
+				"id": "ad_astra:steel_engine",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"tag": "ad_astra:steel_plates"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "ad_astra:engine_frame"
+			},
+			{
+				"item": "ic2cre:electric_motor"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ad_astra:fan"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "ad_astra:steel_engine x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_calculation_processor_press",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "ae2:calculation_processor_press",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "ae2:certus_quartz_crystal"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"item": "ic2cre:circuit"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "ae2:certus_quartz_crystal"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "ic2cre:circuit"
+			}
+		],
+		"result": "ae2:calculation_processor_press x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_controller",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"A": {
+					"item": "ae2:fluix_crystal"
+				},
+				"B": {
+					"item": "ae2:engineering_processor"
+				},
+				"S": {
+					"item": "ae2:smooth_sky_stone_block"
+				},
+				"C": {
+					"item": "ic2cre:advanced_circuit"
+				},
+				"E": {
+					"item": "immersiveengineering:component_electronic"
+				}
+			},
+			"pattern": [
+				"SCS",
+				"BEB",
+				"SAS"
+			],
+			"result": {
+				"id": "ae2:controller",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ae2:smooth_sky_stone_block"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ae2:smooth_sky_stone_block"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "immersiveengineering:component_electronic"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "ae2:smooth_sky_stone_block"
+			},
+			{
+				"item": "ae2:fluix_crystal"
+			},
+			{
+				"item": "ae2:smooth_sky_stone_block"
+			}
+		],
+		"result": "ae2:controller x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_crafting_unit",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"I": {
+					"item": "minecraft:iron_ingot"
+				},
+				"K": {
+					"item": "ae2:calculation_processor"
+				},
+				"L": {
+					"item": "ae2:logic_processor"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				}
+			},
+			"pattern": [
+				"IMI",
+				"KLK",
+				"IMI"
+			],
+			"result": {
+				"id": "ae2:crafting_unit",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "ae2:calculation_processor"
+			},
+			{
+				"item": "ae2:logic_processor"
+			},
+			{
+				"item": "ae2:calculation_processor"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"result": "ae2:crafting_unit x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_engineering_processor_press",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "ae2:engineering_processor_press",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "minecraft:diamond"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"item": "ic2cre:circuit"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:diamond"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "ic2cre:circuit"
+			}
+		],
+		"result": "ae2:engineering_processor_press x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_inscriber",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"item": "minecraft:piston"
+				},
+				"I": {
+					"item": "minecraft:iron_ingot"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				}
+			},
+			"pattern": [
+				"IMI",
+				"CPC",
+				"IMI"
+			],
+			"result": {
+				"id": "ae2:inscriber",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"item": "minecraft:piston"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"result": "ae2:inscriber x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_logic_processor_press",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "ae2:logic_processor_press",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "minecraft:gold_ingot"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"item": "ic2cre:circuit"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:gold_ingot"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "ic2cre:circuit"
+			}
+		],
+		"result": "ae2:logic_processor_press x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_molecular_assembler",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"I": {
+					"item": "minecraft:iron_ingot"
+				},
+				"A": {
+					"item": "ae2:annihilation_core"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				},
+				"F": {
+					"item": "ae2:formation_core"
+				},
+				"W": {
+					"item": "minecraft:crafting_table"
+				}
+			},
+			"pattern": [
+				"IMI",
+				"AWF",
+				"IMI"
+			],
+			"result": {
+				"id": "ae2:molecular_assembler",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "ae2:annihilation_core"
+			},
+			{
+				"item": "minecraft:crafting_table"
+			},
+			{
+				"item": "ae2:formation_core"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"result": "ae2:molecular_assembler x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_pattern_provider",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"I": {
+					"item": "minecraft:iron_ingot"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				},
+				"F": {
+					"item": "ae2:interface"
+				}
+			},
+			"pattern": [
+				"IMI",
+				"CFC",
+				"IMI"
+			],
+			"result": {
+				"id": "ae2:pattern_provider",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"item": "ae2:interface"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"result": "ae2:pattern_provider x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_quantum_link",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"Q": {
+					"item": "ae2:fluix_pearl"
+				},
+				"G": {
+					"item": "ae2:quartz_glass"
+				},
+				"S": {
+					"item": "ic2cre:iridium"
+				}
+			},
+			"pattern": [
+				"GQG",
+				"QSQ",
+				"GQG"
+			],
+			"result": {
+				"id": "ae2:quantum_link",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ae2:quartz_glass"
+			},
+			{
+				"item": "ae2:fluix_pearl"
+			},
+			{
+				"item": "ae2:quartz_glass"
+			},
+			{
+				"item": "ae2:fluix_pearl"
+			},
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "ae2:fluix_pearl"
+			},
+			{
+				"item": "ae2:quartz_glass"
+			},
+			{
+				"item": "ae2:fluix_pearl"
+			},
+			{
+				"item": "ae2:quartz_glass"
+			}
+		],
+		"result": "ae2:quantum_link x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_quantum_ring",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"I": {
+					"item": "ic2cre:iridium"
+				},
+				"a": {
+					"item": "ae2:engineering_processor"
+				},
+				"E": {
+					"item": "immersiveengineering:heavy_engineering"
+				},
+				"e": {
+					"item": "ae2:energy_cell"
+				}
+			},
+			"pattern": [
+				"IEI",
+				"a e",
+				"IEI"
+			],
+			"result": {
+				"id": "ae2:quantum_ring",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "immersiveengineering:heavy_engineering"
+			},
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			[],
+			{
+				"item": "ae2:energy_cell"
+			},
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "immersiveengineering:heavy_engineering"
+			},
+			{
+				"item": "ic2cre:iridium"
+			}
+		],
+		"result": "ae2:quantum_ring x1"
+	},
+	{
+		"id": "kubejs:kjs/ae2_silicon_press",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "ae2:silicon_press",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "ae2:silicon"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"tag": "c:plates/steel"
+				},
+				{
+					"item": "ic2cre:circuit"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "ae2:silicon"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "ic2cre:circuit"
+			}
+		],
+		"result": "ae2:silicon_press x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcraftbuilders_quarry",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"item": "minecraft:diamond_pickaxe"
+				},
+				"S": {
+					"item": "immersiveengineering:component_steel"
+				},
+				"C": {
+					"item": "ic2cre:advanced_circuit"
+				},
+				"D": {
+					"item": "buildcraftcore:gears/gear_diamond"
+				},
+				"G": {
+					"item": "buildcraftcore:gears/gear_gold"
+				}
+			},
+			"pattern": [
+				"SCS",
+				"DGD",
+				"SPS"
+			],
+			"result": {
+				"id": "buildcraftbuilders:quarry",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "buildcraftcore:gears/gear_diamond"
+			},
+			{
+				"item": "buildcraftcore:gears/gear_gold"
+			},
+			{
+				"item": "buildcraftcore:gears/gear_diamond"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "minecraft:diamond_pickaxe"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "buildcraftbuilders:quarry x1"
+	},
+	{
+		"id": "kubejs:kjs/buildinggadgets2_gadget_building",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"B": {
+					"item": "ic2cre:battery"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"D": {
+					"tag": "c:gems/lapis"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				}
+			},
+			"pattern": [
+				"IMI",
+				"DBD",
+				"ICI"
+			],
+			"result": {
+				"id": "buildinggadgets2:gadget_building",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:gems/lapis"
+			},
+			{
+				"item": "ic2cre:battery"
+			},
+			{
+				"tag": "c:gems/lapis"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "buildinggadgets2:gadget_building x1"
+	},
+	{
+		"id": "kubejs:kjs/buildinggadgets2_gadget_copy_paste",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"item": "ae2:engineering_processor"
+				},
+				"i": {
+					"tag": "c:ingots/iron"
+				},
+				"C": {
+					"item": "ic2cre:lapotron_crystal"
+				},
+				"d": {
+					"tag": "c:gems/diamond"
+				},
+				"e": {
+					"tag": "c:gems/emerald"
+				}
+			},
+			"pattern": [
+				"iei",
+				"dPd",
+				"iCi"
+			],
+			"result": {
+				"id": "buildinggadgets2:gadget_copy_paste",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "ic2cre:lapotron_crystal"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "buildinggadgets2:gadget_copy_paste x1"
+	},
+	{
+		"id": "kubejs:kjs/buildinggadgets2_gadget_exchanging",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"i": {
+					"tag": "c:ingots/iron"
+				},
+				"a": {
+					"tag": "c:dusts/redstone"
+				},
+				"A": {
+					"item": "ic2cre:alloy"
+				},
+				"C": {
+					"item": "ic2cre:advanced_circuit"
+				},
+				"d": {
+					"tag": "c:gems/diamond"
+				}
+			},
+			"pattern": [
+				"iai",
+				"dAd",
+				"iCi"
+			],
+			"result": {
+				"id": "buildinggadgets2:gadget_exchanging",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:dusts/redstone"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "buildinggadgets2:gadget_exchanging x1"
+	},
+	{
+		"id": "kubejs:kjs/defenseturrets_grenade_turret",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"A": {
+					"item": "ic2cre:alloy"
+				},
+				"B": {
+					"item": "defenseturrets:turret_base"
+				},
+				"S": {
+					"item": "immersiveengineering:component_steel"
+				},
+				"E": {
+					"item": "ae2:engineering_processor"
+				},
+				"M": {
+					"item": "defenseturrets:turret_barrel"
+				}
+			},
+			"pattern": [
+				"ASA",
+				"EBE",
+				"SMS"
+			],
+			"result": {
+				"id": "defenseturrets:grenade_turret",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "defenseturrets:turret_base"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "defenseturrets:turret_barrel"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "defenseturrets:grenade_turret x1"
+	},
+	{
+		"id": "kubejs:kjs/defenseturrets_laser_turret",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"A": {
+					"item": "ic2cre:alloy"
+				},
+				"B": {
+					"item": "ic2cre:lapotron_crystal"
+				},
+				"S": {
+					"item": "ae2:engineering_processor"
+				},
+				"E": {
+					"item": "immersiveengineering:component_electronic"
+				},
+				"M": {
+					"item": "defenseturrets:turret_barrel"
+				}
+			},
+			"pattern": [
+				"AEA",
+				"EBE",
+				"SMS"
+			],
+			"result": {
+				"id": "defenseturrets:laser_turret",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "immersiveengineering:component_electronic"
+			},
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "immersiveengineering:component_electronic"
+			},
+			{
+				"item": "ic2cre:lapotron_crystal"
+			},
+			{
+				"item": "immersiveengineering:component_electronic"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "defenseturrets:turret_barrel"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			}
+		],
+		"result": "defenseturrets:laser_turret x1"
+	},
+	{
+		"id": "kubejs:kjs/defenseturrets_machine_gun_turret",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"B": {
+					"item": "ic2cre:battery"
+				},
+				"S": {
+					"tag": "c:plates/steel"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				}
+			},
+			"pattern": [
+				"SSS",
+				"CBC",
+				"SMS"
+			],
+			"result": {
+				"id": "defenseturrets:machine_gun_turret",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"item": "ic2cre:battery"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"tag": "c:plates/steel"
+			}
+		],
+		"result": "defenseturrets:machine_gun_turret x1"
+	},
+	{
+		"id": "kubejs:kjs/ic2cre_generator",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"tag": "c:plates/iron"
+				},
+				"B": {
+					"item": "ic2cre:battery"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				},
+				"F": {
+					"item": "ic2cre:iron_furnace"
+				}
+			},
+			"pattern": [
+				" M ",
+				"PFP",
+				"PBP"
+			],
+			"result": {
+				"id": "ic2cre:generator",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			[],
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			[],
+			{
+				"tag": "c:plates/iron"
+			},
+			{
+				"item": "ic2cre:iron_furnace"
+			},
+			{
+				"tag": "c:plates/iron"
+			},
+			{
+				"tag": "c:plates/iron"
+			},
+			{
+				"item": "ic2cre:battery"
+			},
+			{
+				"tag": "c:plates/iron"
+			}
+		],
+		"result": "ic2cre:generator x1"
+	},
+	{
+		"id": "kubejs:kjs/ic2cre_quantum_boots",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"Q": {
+					"item": "modpack:quantum_control"
+				},
+				"R": {
+					"item": "ic2cre:rubber_boots"
+				},
+				"L": {
+					"item": "ic2cre:lapotron_crystal"
+				},
+				"N": {
+					"item": "ic2cre:nano_boots"
+				}
+			},
+			"pattern": [
+				"   ",
+				"QNQ",
+				"RLR"
+			],
+			"result": {
+				"id": "ic2cre:quantum_boots",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "modpack:quantum_control"
+			},
+			{
+				"item": "ic2cre:nano_boots"
+			},
+			{
+				"item": "modpack:quantum_control"
+			},
+			{
+				"item": "ic2cre:rubber_boots"
+			},
+			{
+				"item": "ic2cre:lapotron_crystal"
+			},
+			{
+				"item": "ic2cre:rubber_boots"
+			}
+		],
+		"result": "ic2cre:quantum_boots x1"
+	},
+	{
+		"id": "kubejs:kjs/ic2cre_quantum_chestplate",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"A": {
+					"item": "ic2cre:alloy"
+				},
+				"I": {
+					"item": "ic2cre:iridium"
+				},
+				"Q": {
+					"item": "modpack:quantum_control"
+				},
+				"J": {
+					"item": "ic2cre:electric_jetpack"
+				},
+				"L": {
+					"item": "ic2cre:lapotron_crystal"
+				},
+				"N": {
+					"item": "ic2cre:nano_chestplate"
+				}
+			},
+			"pattern": [
+				"ANA",
+				"ILI",
+				"JQJ"
+			],
+			"result": {
+				"id": "ic2cre:quantum_chestplate",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "ic2cre:nano_chestplate"
+			},
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "ic2cre:lapotron_crystal"
+			},
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "ic2cre:electric_jetpack"
+			},
+			{
+				"item": "modpack:quantum_control"
+			},
+			{
+				"item": "ic2cre:electric_jetpack"
+			}
+		],
+		"result": "ic2cre:quantum_chestplate x1"
+	},
+	{
+		"id": "kubejs:kjs/ic2cre_quantum_helmet",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"A": {
+					"item": "ic2cre:alloy"
+				},
+				"Q": {
+					"item": "modpack:quantum_control"
+				},
+				"R": {
+					"tag": "c:circuits/advanced"
+				},
+				"L": {
+					"item": "ic2cre:lapotron_crystal"
+				},
+				"N": {
+					"item": "ic2cre:nano_helmet"
+				},
+				"G": {
+					"item": "ic2cre:reinforced_glass"
+				}
+			},
+			"pattern": [
+				"GNG",
+				"RLR",
+				"AQA"
+			],
+			"result": {
+				"id": "ic2cre:quantum_helmet",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:reinforced_glass"
+			},
+			{
+				"item": "ic2cre:nano_helmet"
+			},
+			{
+				"item": "ic2cre:reinforced_glass"
+			},
+			{
+				"tag": "c:circuits/advanced"
+			},
+			{
+				"item": "ic2cre:lapotron_crystal"
+			},
+			{
+				"tag": "c:circuits/advanced"
+			},
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "modpack:quantum_control"
+			},
+			{
+				"item": "ic2cre:alloy"
+			}
+		],
+		"result": "ic2cre:quantum_helmet x1"
+	},
+	{
+		"id": "kubejs:kjs/ic2cre_quantum_leggings",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"Q": {
+					"item": "modpack:quantum_control"
+				},
+				"L": {
+					"item": "ic2cre:lapotron_crystal"
+				},
+				"M": {
+					"item": "ic2cre:machine"
+				},
+				"N": {
+					"item": "ic2cre:nano_leggings"
+				},
+				"G": {
+					"item": "minecraft:glowstone_dust"
+				}
+			},
+			"pattern": [
+				"MLM",
+				"QNQ",
+				"G G"
+			],
+			"result": {
+				"id": "ic2cre:quantum_leggings",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:machine"
+			},
+			{
+				"item": "ic2cre:lapotron_crystal"
+			},
+			{
+				"item": "ic2cre:machine"
+			},
+			{
+				"item": "modpack:quantum_control"
+			},
+			{
+				"item": "ic2cre:nano_leggings"
+			},
+			{
+				"item": "modpack:quantum_control"
+			},
+			{
+				"item": "minecraft:glowstone_dust"
+			},
+			[],
+			{
+				"item": "minecraft:glowstone_dust"
+			}
+		],
+		"result": "ic2cre:quantum_leggings x1"
+	},
+	{
+		"id": "kubejs:kjs/immersiveengineering_heavy_engineering",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"A": {
+					"item": "ic2cre:alloy"
+				},
+				"S": {
+					"item": "immersiveengineering:component_steel"
+				},
+				"C": {
+					"item": "immersiveengineering:sheetmetal_steel"
+				},
+				"G": {
+					"item": "ic2cre:advanced_circuit"
+				}
+			},
+			"pattern": [
+				"SAS",
+				"GCG",
+				"SAS"
+			],
+			"result": {
+				"id": "immersiveengineering:heavy_engineering",
+				"count": 4
+			}
+		},
+		"ingredients": [
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "immersiveengineering:sheetmetal_steel"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ic2cre:alloy"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "immersiveengineering:heavy_engineering x4"
+	},
+	{
+		"id": "kubejs:kjs/modpack_anomaly_analysis",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "modpack:anomaly_analysis",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "ic2cre:advanced_circuit"
+				},
+				{
+					"item": "ic2cre:advanced_circuit"
+				},
+				{
+					"item": "ae2:calculation_processor"
+				},
+				{
+					"item": "ae2:calculation_processor"
+				},
+				{
+					"item": "ae2:fluix_crystal"
+				},
+				{
+					"item": "ae2:fluix_crystal"
+				},
+				{
+					"item": "ae2:fluix_crystal"
+				},
+				{
+					"item": "ae2:fluix_crystal"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ae2:calculation_processor"
+			},
+			{
+				"item": "ae2:calculation_processor"
+			},
+			{
+				"item": "ae2:fluix_crystal"
+			},
+			{
+				"item": "ae2:fluix_crystal"
+			},
+			{
+				"item": "ae2:fluix_crystal"
+			},
+			{
+				"item": "ae2:fluix_crystal"
+			}
+		],
+		"result": "modpack:anomaly_analysis x1"
+	},
+	{
+		"id": "kubejs:kjs/modpack_colony_maintenance",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"item": "immersiveengineering:plate_steel"
+				},
+				"R": {
+					"item": "ic2cre:rubber"
+				},
+				"S": {
+					"item": "immersiveengineering:component_iron"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				}
+			},
+			"pattern": [
+				"RPR",
+				"SCS",
+				"RPR"
+			],
+			"result": {
+				"id": "modpack:colony_maintenance",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:rubber"
+			},
+			{
+				"item": "immersiveengineering:plate_steel"
+			},
+			{
+				"item": "ic2cre:rubber"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"item": "ic2cre:rubber"
+			},
+			{
+				"item": "immersiveengineering:plate_steel"
+			},
+			{
+				"item": "ic2cre:rubber"
+			}
+		],
+		"result": "modpack:colony_maintenance x1"
+	},
+	{
+		"id": "kubejs:kjs/modpack_engineering_assembly",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"item": "minecraft:piston"
+				},
+				"I": {
+					"item": "minecraft:iron_ingot"
+				},
+				"R": {
+					"item": "minecraft:redstone"
+				},
+				"C": {
+					"item": "minecraft:copper_ingot"
+				}
+			},
+			"pattern": [
+				"ICI",
+				"RPR",
+				"ICI"
+			],
+			"result": {
+				"id": "modpack:engineering_assembly",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "minecraft:copper_ingot"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "minecraft:redstone"
+			},
+			{
+				"item": "minecraft:piston"
+			},
+			{
+				"item": "minecraft:redstone"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			},
+			{
+				"item": "minecraft:copper_ingot"
+			},
+			{
+				"item": "minecraft:iron_ingot"
+			}
+		],
+		"result": "modpack:engineering_assembly x1"
+	},
+	{
+		"id": "kubejs:kjs/modpack_heavy_industry_control",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "modpack:heavy_industry_control",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "ic2cre:advanced_circuit"
+				},
+				{
+					"item": "ic2cre:advanced_circuit"
+				},
+				{
+					"item": "ae2:logic_processor"
+				},
+				{
+					"item": "ae2:logic_processor"
+				},
+				{
+					"item": "immersiveengineering:component_steel"
+				},
+				{
+					"item": "immersiveengineering:component_steel"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ae2:logic_processor"
+			},
+			{
+				"item": "ae2:logic_processor"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			}
+		],
+		"result": "modpack:heavy_industry_control x1"
+	},
+	{
+		"id": "kubejs:kjs/modpack_information_interface",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "modpack:information_interface",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "ic2cre:advanced_circuit"
+				},
+				{
+					"item": "immersiveengineering:component_electronic"
+				},
+				{
+					"item": "immersiveengineering:component_electronic"
+				},
+				{
+					"item": "ae2:quartz_glass"
+				},
+				{
+					"item": "ae2:quartz_glass"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "immersiveengineering:component_electronic"
+			},
+			{
+				"item": "immersiveengineering:component_electronic"
+			},
+			{
+				"item": "ae2:quartz_glass"
+			},
+			{
+				"item": "ae2:quartz_glass"
+			}
+		],
+		"result": "modpack:information_interface x1"
+	},
+	{
+		"id": "kubejs:kjs/modpack_quantum_control",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"H": {
+					"item": "immersiveengineering:heavy_engineering"
+				},
+				"I": {
+					"item": "ic2cre:iridium"
+				},
+				"A": {
+					"item": "ic2cre:advanced_circuit"
+				},
+				"E": {
+					"item": "ae2:engineering_processor"
+				}
+			},
+			"pattern": [
+				"IAI",
+				"EHE",
+				"IAI"
+			],
+			"result": {
+				"id": "modpack:quantum_control",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "immersiveengineering:heavy_engineering"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "ic2cre:iridium"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ic2cre:iridium"
+			}
+		],
+		"result": "modpack:quantum_control x1"
+	},
+	{
+		"id": "kubejs:kjs/modpack_reactor_control",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"L": {
+					"item": "ic2cre:lead_plate"
+				},
+				"A": {
+					"item": "ic2cre:advanced_circuit"
+				},
+				"S": {
+					"item": "immersiveengineering:component_steel"
+				}
+			},
+			"pattern": [
+				"LLL",
+				"SAS",
+				"LLL"
+			],
+			"result": {
+				"id": "modpack:reactor_control",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ic2cre:lead_plate"
+			},
+			{
+				"item": "ic2cre:lead_plate"
+			},
+			{
+				"item": "ic2cre:lead_plate"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ic2cre:lead_plate"
+			},
+			{
+				"item": "ic2cre:lead_plate"
+			},
+			{
+				"item": "ic2cre:lead_plate"
+			}
+		],
+		"result": "modpack:reactor_control x1"
+	},
+	{
+		"id": "kubejs:kjs/modpack_space_control_core",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"B": {
+					"item": "immersiveengineering:component_steel"
+				},
+				"S": {
+					"item": "ad_astra:steel_plate"
+				},
+				"C": {
+					"item": "ic2cre:advanced_circuit"
+				},
+				"E": {
+					"item": "ae2:engineering_processor"
+				}
+			},
+			"pattern": [
+				"SCS",
+				"EBE",
+				"SCS"
+			],
+			"result": {
+				"id": "modpack:space_control_core",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"item": "ad_astra:steel_plate"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ad_astra:steel_plate"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "ad_astra:steel_plate"
+			},
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			{
+				"item": "ad_astra:steel_plate"
+			}
+		],
+		"result": "modpack:space_control_core x1"
+	},
+	{
+		"id": "kubejs:kjs/sophisticatedbackpacks_upgrade_base",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"S": {
+					"tag": "c:strings"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"L": {
+					"tag": "c:leathers"
+				}
+			},
+			"pattern": [
+				"SIS",
+				"CLC",
+				"SIS"
+			],
+			"result": {
+				"id": "sophisticatedbackpacks:upgrade_base",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "c:strings"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:strings"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"tag": "c:leathers"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"tag": "c:strings"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:strings"
+			}
+		],
+		"result": "sophisticatedbackpacks:upgrade_base x1"
+	},
+	{
+		"id": "kubejs:kjs/sophisticatedstorage_upgrade_base",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"tag": "minecraft:planks"
+				},
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				}
+			},
+			"pattern": [
+				"PIP",
+				"ICI",
+				"PIP"
+			],
+			"result": {
+				"id": "sophisticatedstorage:upgrade_base",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "minecraft:planks"
+			}
+		],
+		"result": "sophisticatedstorage:upgrade_base x1"
+	},
+	{
+		"id": "kubejs:kjs/sophisticatedstorage_upgrade_base_2",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"tag": "minecraft:planks"
+				},
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"C": {
+					"item": "ic2cre:circuit"
+				},
+				"M": {
+					"item": "immersiveengineering:component_iron"
+				}
+			},
+			"pattern": [
+				"PMP",
+				"ICI",
+				"PMP"
+			],
+			"result": {
+				"id": "sophisticatedstorage:upgrade_base",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "ic2cre:circuit"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"item": "immersiveengineering:component_iron"
+			},
+			{
+				"tag": "minecraft:planks"
+			}
+		],
+		"result": "sophisticatedstorage:upgrade_base x1"
+	},
+	{
 		"id": "minecraft:acacia_boat",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -183032,6 +183697,204 @@
 			}
 		],
 		"result": "minecraft:jungle_wood x3"
+	},
+	{
+		"id": "minecraft:kjs/immersiveengineering_capacitor_hv",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"a": {
+					"tag": "c:plates/aluminum"
+				},
+				"c": {
+					"tag": "c:plates/hop_graphite"
+				},
+				"e": {
+					"tag": "c:ingots/aluminum"
+				},
+				"r": {
+					"tag": "c:redstone_acid",
+					"amount": 1000,
+					"type": "immersiveengineering:fluid_stack"
+				},
+				"w": {
+					"item": "immersiveengineering:basic_engineering"
+				},
+				"x": {
+					"item": "ic2cre:advanced_circuit"
+				}
+			},
+			"pattern": [
+				"ere",
+				"awc",
+				" x "
+			],
+			"result": {
+				"id": "immersiveengineering:capacitor_hv",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/aluminum"
+			},
+			{
+				"tag": "c:redstone_acid",
+				"amount": 1000,
+				"type": "immersiveengineering:fluid_stack"
+			},
+			{
+				"tag": "c:ingots/aluminum"
+			},
+			{
+				"tag": "c:plates/aluminum"
+			},
+			{
+				"item": "immersiveengineering:basic_engineering"
+			},
+			{
+				"tag": "c:plates/hop_graphite"
+			},
+			[],
+			{
+				"item": "ic2cre:advanced_circuit"
+			},
+			[]
+		],
+		"result": "immersiveengineering:capacitor_hv x1"
+	},
+	{
+		"id": "minecraft:kjs/immersiveengineering_capacitor_lv",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"a": {
+					"tag": "c:plates/lead"
+				},
+				"e": {
+					"tag": "c:ingots/copper"
+				},
+				"r": {
+					"tag": "c:redstone_acid",
+					"amount": 1000,
+					"type": "immersiveengineering:fluid_stack"
+				},
+				"w": {
+					"item": "immersiveengineering:basic_engineering"
+				},
+				"c": {
+					"item": "ic2cre:circuit"
+				}
+			},
+			"pattern": [
+				"ere",
+				"awa",
+				" c "
+			],
+			"result": {
+				"id": "immersiveengineering:capacitor_lv",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:redstone_acid",
+				"amount": 1000,
+				"type": "immersiveengineering:fluid_stack"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:plates/lead"
+			},
+			{
+				"item": "immersiveengineering:basic_engineering"
+			},
+			{
+				"tag": "c:plates/lead"
+			},
+			[],
+			{
+				"item": "ic2cre:circuit"
+			},
+			[]
+		],
+		"result": "immersiveengineering:capacitor_lv x1"
+	},
+	{
+		"id": "minecraft:kjs/immersiveengineering_capacitor_mv",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"a": {
+					"tag": "c:plates/nickel"
+				},
+				"c": {
+					"tag": "c:plates/iron"
+				},
+				"e": {
+					"tag": "c:ingots/electrum"
+				},
+				"r": {
+					"tag": "c:redstone_acid",
+					"amount": 1000,
+					"type": "immersiveengineering:fluid_stack"
+				},
+				"w": {
+					"item": "immersiveengineering:basic_engineering"
+				},
+				"x": {
+					"item": "ic2cre:circuit"
+				}
+			},
+			"pattern": [
+				"ere",
+				"awc",
+				" x "
+			],
+			"result": {
+				"id": "immersiveengineering:capacitor_mv",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/electrum"
+			},
+			{
+				"tag": "c:redstone_acid",
+				"amount": 1000,
+				"type": "immersiveengineering:fluid_stack"
+			},
+			{
+				"tag": "c:ingots/electrum"
+			},
+			{
+				"tag": "c:plates/nickel"
+			},
+			{
+				"item": "immersiveengineering:basic_engineering"
+			},
+			{
+				"tag": "c:plates/iron"
+			},
+			[],
+			{
+				"item": "ic2cre:circuit"
+			},
+			[]
+		],
+		"result": "immersiveengineering:capacitor_mv x1"
 	},
 	{
 		"id": "minecraft:ladder",
@@ -211680,64 +212543,6 @@
 		"result": "sophisticatedbackpacks:tool_swapper_upgrade x1"
 	},
 	{
-		"id": "sophisticatedbackpacks:upgrade_base",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"I": {
-					"tag": "c:ingots/iron"
-				},
-				"L": {
-					"tag": "c:leathers"
-				},
-				"S": {
-					"tag": "c:strings"
-				}
-			},
-			"pattern": [
-				"SIS",
-				"ILI",
-				"SIS"
-			],
-			"result": {
-				"id": "sophisticatedbackpacks:upgrade_base",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:strings"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:strings"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:leathers"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:strings"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:strings"
-			}
-		],
-		"result": "sophisticatedbackpacks:upgrade_base x1"
-	},
-	{
 		"id": "sophisticatedbackpacks:void_upgrade",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -227659,61 +228464,6 @@
 			}
 		],
 		"result": "sophisticatedstorage:super_packing_tape x1"
-	},
-	{
-		"id": "sophisticatedstorage:upgrade_base",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"I": {
-					"tag": "c:ingots/iron"
-				},
-				"P": {
-					"tag": "minecraft:planks"
-				}
-			},
-			"pattern": [
-				"PIP",
-				"IPI",
-				"PIP"
-			],
-			"result": {
-				"id": "sophisticatedstorage:upgrade_base",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "minecraft:planks"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "minecraft:planks"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "minecraft:planks"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "minecraft:planks"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "minecraft:planks"
-			}
-		],
-		"result": "sophisticatedstorage:upgrade_base x1"
 	},
 	{
 		"id": "sophisticatedstorage:void_upgrade",

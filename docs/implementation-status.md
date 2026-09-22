@@ -28,8 +28,24 @@
 
 ## 正在实现
 
-- 语义映射层 `design/semantic-map.json` + `tools/check-mapping.mjs`（构建期校验，缺失即失败）。
-- P1 T0–T3 配方与阶段。
+- P1 阶段系统已由 ProgressiveStages 承载，服务器端验证通过；待客户端实机验证锁定行为（见下）。
+- P2 防御原型（TaCZ 弹药经济、In Control、Hordes、ZBB 配置）。
+
+## P1 已实现并验证（服务端）
+
+- `design/semantic-map.json` + `tools/check-mapping.mjs`：264 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`）。
+- `tools/build-pack.mjs`：从 `design/content.json`/`semantic-map.json`/`stage-locks.json`/`localization/*.json` 生成 KubeJS 物品注册、语义映射脚本、双语 lang、物品模型与占位贴图、ProgressiveStages 全局配置与 8 个 stage 定义。`localization/` 仍是唯一文案源。
+- `design/stage-locks.json` + 生成器：每阶段 `stage.toml/progression.toml/rules.toml`。`/progressivestages validate` 8/8 通过；`/stage tree` 显示 T0→T5 链与 T6/T7 分叉（T7 不依赖 T6）。
+- 阶段授予 = `craft` 条件 + 服务端验证生产凭证（content.json `unlock_evidence`）：T1 造 `modpack:engineering_assembly`、T2 造 `ic2cre:generator`、T3 造 `information_interface`、T4 造 `heavy_industry_control`、T5 造 `reactor_control`、T6 造 `space_control_core`、T7 造 `quantum_control`；T0 为 `starting_stages` 自动授予。FTB Teams 团队共享（`team_mode=ftb_teams`）。
+- 锁实现：`[recipes].locked_items` 封制造 + `action=use/place` 锁使用/放置 + `action=enter` 锁维度（space_age 锁全部 Ad Astra 维度与轨道）。示例计数：electric_age 28 锁、space_age 35 锁。
+- KubeJS 配方层 `starforge_recipes.js`：SF-01..SF-30 中除 TaCZ（SF-31..33，走枪包数据）外全部落地。实测导出 6606 配方：46 条 `kubejs:`/`minecraft:kjs/` 新配方生效，32 条被替换的原配方全部移除（含 `ic2cre:generator`/`generator_from_furnace` 双路径）。流体原料配方（IE capacitor 三级）用 `e.custom` 原样保留 `immersiveengineering:fluid_stack` 成分。
+- 石油经济：原生 tag 已部分统一（`ad_astra:oil` 含 BC oil + IP crudeoil；`ad_astra:tier_*_rocket_fuel` 含 IP diesel + IE biodiesel）。缺口：`c:oil` 不含 `immersivepetroleum:crudeoil`，待 datapack 桥接补齐。
+- 铱的地球路径确认：`ic2cre:iridium` 由 `iridium_shard→iridium_ore→iridium` 链产出（无铱矿 worldgen），UU/scanner 链为地球路线基础。
+
+## 待验证
+
+- `craft` 触发器与锁 enforcement 需要真实玩家进世界验证（RCON 只能验证 stage 文件本身）。
+- stage display_name 目前为生成器输出的双语字面量（PS 是否支持 translatable key 未验证；若支持再切回 key）。
 
 ## 实测失败 / 技术降级记录
 

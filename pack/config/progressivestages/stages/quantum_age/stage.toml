@@ -1,0 +1,19 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:quantum_age"
+display_name = "量子时代 / Quantum Age"
+description = "建设量子装备与大型工业网络；留在地球也能达到这一阶段。 / Build quantum equipment and large industrial networks. This stage can be reached entirely on Earth."
+icon = "modpack:quantum_control"
+dependencies = ["modpack:atomic_age"]
+dependency_mode = "all"
+category = "Starforge"
+color = "#a05fd0"
+hidden = false
+scope = "team"
+tags = ["modpack", "tier_7"]
+
+[display]
+frame = "challenge"
+reveal = "dependencies"

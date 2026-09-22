@@ -1,0 +1,5 @@
+[[grants]]
+id = "modpack:grant_electric_age"
+repeat = "once"
+scope = "player"
+condition = { type = "craft", id = "ic2cre:generator", count = 1 }

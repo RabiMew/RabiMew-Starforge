@@ -1,0 +1,5 @@
+[[grants]]
+id = "modpack:grant_space_age"
+repeat = "once"
+scope = "player"
+condition = { type = "craft", id = "modpack:space_control_core", count = 1 }

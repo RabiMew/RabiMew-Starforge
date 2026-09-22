@@ -1,0 +1,19 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:information_age"
+display_name = "信息时代 / Information Age"
+description = "建立数字仓储和自动合成，让复杂物流变得可管理。 / Build digital storage and autocrafting to keep complex logistics manageable."
+icon = "modpack:information_interface"
+dependencies = ["modpack:electric_age"]
+dependency_mode = "all"
+category = "Starforge"
+color = "#3fa8c8"
+hidden = false
+scope = "team"
+tags = ["modpack", "tier_3"]
+
+[display]
+frame = "task"
+reveal = "dependencies"

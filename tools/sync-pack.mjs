@@ -25,9 +25,17 @@ function copyTree(src, dest, skipPrefixes) {
   }
 }
 
+// Directories the pack fully owns — wipe stale contents before copying
+// (e.g. ProgressiveStages auto-generates showcase stages we must remove).
+const OWNED_DIRS = ['config/progressivestages/stages'];
+
 function sync(side) {
   const dest = path.join(root, 'run', side);
   if (!existsSync(dest)) mkdirSync(dest, { recursive: true });
+  for (const owned of OWNED_DIRS) {
+    const p = path.join(dest, ...owned.split('/'));
+    if (existsSync(p)) rmSync(p, { recursive: true, force: true });
+  }
   const skip = side === 'server' ? CLIENT_ONLY : new Set();
   copyTree(packDir, dest, skip);
   console.log(`synced pack/ -> run/${side}`);
