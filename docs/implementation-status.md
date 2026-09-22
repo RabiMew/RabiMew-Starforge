@@ -52,7 +52,7 @@
 
 - 锁 enforcement（配方封锁/使用锁/维度锁）需要真实玩家进世界验证；FakePlayer 已验证授阶链路，真实客户端合成事件路径相同。
 - stage display_name 目前为生成器输出的双语字面量（PS 是否支持 translatable key 未验证；若支持再切回 key）。
-- 服务端仍有 `HumanoidModel`/`PoseStack` wrong-dist 加载报错（疑为 Moonlight/Supplementaries 在服务端触碰渲染类，启动不阻断）；需定位并隔离。
+- ~~服务端 `HumanoidModel`/`PoseStack` wrong-dist 报错~~ 已修复：根因是 `starforge_dump.js` 用 `ITEM.getKey(ri.getItem())` 取配方产出，Rhino 会反射扫描 Item 实例类（Supplementaries/Ad Astra 的物品带客户端渲染方法签名）。改用 `getItemHolder().unwrapKey()` 后专用服务器日志 0 条 wrong-dist 报错，6605 配方导出中 6336 条含 result。
 
 ## 实测失败 / 技术降级记录
 

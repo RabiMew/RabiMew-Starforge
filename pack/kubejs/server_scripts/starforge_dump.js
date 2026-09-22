@@ -85,7 +85,13 @@ ServerEvents.loaded((event) => {
       } catch (e) { entry.ingredients_error = String(e).slice(0, 120); }
       try {
         var ri = rec.getResultItem(ra);
-        if (ri && !ri.isEmpty()) entry.result = String(SF_BI.ITEM.getKey(ri.getItem())) + ' x' + ri.getCount();
+        // getItemHolder().unwrapKey() reads the id without wrapping the Item
+        // instance — keeps Rhino from introspecting client-annotated item
+        // classes (SlingshotItem/JetSuitItem etc) on a dedicated server.
+        if (ri && !ri.isEmpty()) {
+          var hk = ri.getItemHolder().unwrapKey();
+          if (hk.isPresent()) entry.result = String(hk.get().location()) + ' x' + ri.getCount();
+        }
       } catch (e) { /* some recipe types have no static result */ }
       recipes.push(entry);
     });
