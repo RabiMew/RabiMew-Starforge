@@ -11,3 +11,4 @@ docs/test-results/raw/
 Thumbs.db
 installer.log
 *.log
+dist/

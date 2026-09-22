@@ -1,12 +1,12 @@
 # RabiMew's Starforge · 星铸
 
-Minecraft 1.21.1 / NeoForge 的工业科幻整合包设计基线，版本 0.1，核查日期 2026-09-22。
+Minecraft 1.21.1 / NeoForge 21.1.x 的工业科幻整合包，**Alpha（服务端可运行）**。
 
 **制作者：RabiMew** · 原创内容采用 [MIT 许可证](LICENSE)。
 
 **工业的目标，是维持不断扩大的生产、防御和殖民网络。** IC2CRE 提供核心科技，BuildCraft CE 承担工程物流，沉浸工程承担重工业，应用能源 2 在中后期接管复杂调度。
 
-本仓库当前交付的是设计、双语内容源和静态校验工具，**不是可启动的客户端或服务端整合包**。模组候选版本已初步核查；尚未下载模组、锁定依赖、实现联动适配或进行游戏内测试。`客户端/` 与 `服务端/` 留作后续发行目录。
+当前状态：**dedicated server 可在 Java 21 + NeoForge 21.1.251 上启动到 `Done`，71 个锁定模组零错误加载**；T0–T7 八阶段 ProgressiveStages 推进链（真实合成触发 + 计数器后备）已在运行时验证；SF-01..30 联动配方、统一石油流体桥（原油 8 种/燃料 22 种互通）、P2 防御配置层（Hordes/In Control/ZBB/TaCZ 守卫）已就位；T1 火箭地球闭环经配方图验证。客户端实机验证尚未进行。实测明细见 [实施状态](docs/implementation-status.md)。
 
 | 内容 | 入口 |
 | --- | --- |
@@ -29,7 +29,27 @@ Minecraft 1.21.1 / NeoForge 的工业科幻整合包设计基线，版本 0.1，
 node tools/validate-design.mjs
 ```
 
-该校验仅检查内容数据和阶段依赖，不代表配方、模组接口或服务器性能已经通过测试。
+## 安装与启动（Alpha）
+
+要求：Node.js ≥ 20、**Java 21**（Temurin 21 推荐；非默认 java 时设 `STARFORGE_JAVA` 指向 `java` 可执行文件）。
+
+```sh
+git clone <repo> && cd "RabiMew's Starforge"
+node tools/setup-server.mjs
+```
+
+setup 会校验 Java 21、下载并安装 NeoForge 21.1.251 专用服务端到 `run/server/`、按 `manifest/locked-mods.json` 从官方来源（Modrinth CDN / CurseForge CDN / GitHub Releases / FTB Maven）下载全部锁定模组并校验哈希、同步 `pack/` 配置与 KubeJS 脚本、写入 eula 与基线 `server.properties`。第三方 jar 不入库，全部经 manifest 合法解析。
+
+启动：
+
+```sh
+cd run/server
+java @user_jvm_args.txt @libraries/net/neoforged/neoforge/21.1.251/win_args.txt nogui
+```
+
+无参验证：`node tools/check-mapping.mjs`（语义映射+阶段锁）、`node tools/check-closure.mjs <id...>`（地球生产闭环）、RCON 运行时阶段自测 `node tools/rcon.mjs stagetest`。
+
+打包分发：`node tools/package.mjs` → `dist/starforge-alpha-*.zip`（不含第三方 jar）。
 
 ## 署名与许可
 
