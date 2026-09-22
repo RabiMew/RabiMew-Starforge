@@ -9,6 +9,10 @@
 | IC2CRE | Dev-0.4，开发版 | [作者发布页](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4) | 电压、mEU API、核电、UU、物品/流体注册名与配方可覆盖性 |
 | BuildCraft CE | 8.0.19 | [BCCE-team 发布页](https://github.com/BCCE-team/BuildCraft/releases/tag/8.0.19) | 对应 1.21.1 资产、MJ/FE、机器接口、采石场加载与管道可靠性 |
 | Immersive Engineering | 12.4.2-194 | [版本记录](https://modrinth.com/mod/immersiveengineering/version/uNRARSH2) | 配方序列化、重型成形、原油链需要的新增工序 |
+| Immersive Petroleum | 1.21.1-4.5.0-39（CurseForge，NeoForge） | [文件列表](https://www.curseforge.com/minecraft/mc-mods/immersive-petroleum/files/all?version=1.21.1&gameVersionTypeId=6) | 依赖 IE 的版本范围；与 BC 原油/燃料/炼油设备和流体标签的重叠、重复配方归并 |
+| Storage Drawers | 13.11.4 | [Modrinth](https://modrinth.com/mod/storagedrawers) | 声明游戏范围 [1.21,1.21.1]；抽屉控制器与 AE2 存储总线对接、压缩抽屉配方 |
+| Sophisticated Storage | 1.5.91（依赖 Sophisticated Core ≥1.4.88） | [Modrinth](https://modrinth.com/mod/sophisticated-storage) | 仓储控制器与总线对接、升级配方可覆盖性、容器替换的数据保留 |
+| Sophisticated Backpacks | 3.26.3（依赖 Sophisticated Core ≥1.5.1） | [Modrinth](https://modrinth.com/mod/sophisticated-backpacks) | 升级分阶、自动拾取/补给边界、背包内加工能力的限制方式 |
 | Applied Energistics 2 | 19.2.17 | [版本记录](https://modrinth.com/mod/ae2/version/kfyIqgJ6) | 处理器冷启动、跨维度桥、升级和自动合成绕锁 |
 | Ad Astra | NeoForge 1.16.26 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/ad-astra) | 火箭等级、氧气、环境伤害、站点维度与依赖 |
 | Ad Astra: More Structures | 1.21.1-neoforge | [文件记录](https://www.curseforge.com/minecraft/mc-mods/ad-astra-more-structures/files/all) | 与上述 Ad Astra 组合、Boss 名单、结构战利品 |
@@ -29,6 +33,22 @@
 | Mutant Monsters | v21.1.1-1.21.1-NeoForge | [版本记录](https://modrinth.com/mod/mutant-monsters/version/dauEcrnZ) | 爆炸、实体体型、环境伤害、掉落 |
 | Phenominae | 1.3.3-neoforge-1.21.1 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/phenominae) | 可配置维度、实体创建来源、世界观和可控事件 |
 
+## 体验辅助候选
+
+下列模组不进入科技树、不产生新路线，仅降低操作负担。装载侧依据各文件 `neoforge.mods.toml` 依赖声明记录。
+
+| 模组 | 本轮找到的候选 | 装载侧 | 职责与边界 | 仍须验证 |
+| --- | --- | --- | --- | --- |
+| Polymorph | 1.1.0+1.21.1 | 双端 | 仅作配方冲突的最后安全网；KubeJS 能修的冲突仍须主动修复，不用它掩盖整合问题 | 与工作台及机器配方选择界面的共存 |
+| Controlling | 19.0.5（依赖 Searchables） | 客户端 | 大型整合包按键冲突检索 | 与各模组自带键位界面共存 |
+| Mouse Tweaks | 2.26.1 | 客户端 | 物品拖拽交互 | 自定义容器界面兼容 |
+| Crafting Tweaks | 21.1.11（依赖 Balm） | 双端 | 合成台交互优化 | 与自定义合成界面共存 |
+| AppleSkin | 3.0.9 | 客户端 | 食物饱食度与效果展示，配合农业后勤路线 | 与农夫乐事数值一致 |
+| Jade Addons | 6.1.1（依赖 Jade ≥15.10） | 双端 | 补充工业机器、仓储与能源信息展示 | 各模组方块信息提供器的覆盖范围 |
+| Carry On（可选候选） | 2.2.6.13 | 双端 | 搬运方块；启用则必须配置黑名单 | 核反应堆、大型储罐、ME 存储核心、带能源/库存的关键工业设备、特殊 Ad Astra 设施、可绕阶段设备一律禁止搬运 |
+
+性能与运维层候选的分侧记录见[性能层](performance.md)。
+
 Modrinth 数据使用官方 `/v2/project/{slug}/version` 接口并同时筛选 `game_versions=["1.21.1"]` 与 `loaders=["neoforge"]`，不是只看文件名。IC2CRE 的发现过程使用百科定位作者仓库，最终版本判断依据作者发布说明。BuildCraft CE 在不同托管页存在进度差异，本设计引用 BCCE-team，实施时必须确认发行来源与资产身份。
 
 ## 需要单独交付的适配
@@ -45,6 +65,9 @@ Modrinth 数据使用官方 `/v2/project/{slug}/version` 接口并同时筛选 `
 | A08 | 火星虫群/霜原大型生物 | 先筛核心模组实体，再确定窄范围内容适配 | 贴名和加血不能替代体型、模型、AI 和战术；不引入完整新 RPG 模组 |
 | A09 | 火箭、站点建造、地球航天材料 | 可覆写配方/建造规则与燃料绑定 | 不保证航行、自动货运、空间站耗材都是普通配方 |
 | A10 | 厨房、锅具、AE2 自动补给 | 对真实库存面逐项测试并连接缓冲箱 | 不承诺懒人厨房自动完成切菜板和锅具的全部工序 |
+| A11 | 统一石油经济 | 导出 BC 与 IP 流体、流体标签和配方比对，优先原生标签互通 | 两套各自产油互不认可即未达标；必须桥接时用 KubeJS/数据包，不猜 fluid ID |
+| A12 | 实体仓储接入 AE2 | 各仓储控制器 + AE2 存储总线实测 | 不假定单一控制器统管两套仓储；总线读不到的内容另列适配 |
+| A13 | Carry On 黑名单（若启用） | 配置黑名单 + 复现测试 | 无黑名单不进默认配置；搬运不得复制库存/能源或绕过阶段限制 |
 
 优先减少适配范围，能以原生配置与配方实现的不再造系统。但用户要求的“真实工业规模驱动怪潮”“可靠安全空间站”“完整阶段 i18n”如果超出现成接口，就必须把附属开发作为实施工作，不能宣称仅靠 KubeJS 已全部解决。
 
@@ -52,7 +75,7 @@ Modrinth 数据使用官方 `/v2/project/{slug}/version` 接口并同时筛选 `
 
 FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Compat；版本锁定时同时解析 FTB Library、FTB Teams 等实际依赖，不能仅凭核心模组名单装包。[FTB Quests 说明](https://www.curseforge.com/minecraft/mc-mods/ftb-quests-forge)
 
-其余库以选定文件元数据为准递归解析，不从其他 Minecraft 版本抄前置。IC2CRE 已把 Energy Core 合入主体，API JAR 仅用于编译，不能当运行模组；1.21.1 的 Energy Control 子附属状态不能按 26.1.2 推断。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases)
+其余库以选定文件元数据为准递归解析，不从其他 Minecraft 版本抄前置。本轮新增候选已从文件元数据解析出前置：Sophisticated Core（Sophisticated Storage/Backpacks）、Balm（Crafting Tweaks）、Searchables（Controlling）、Jade（Jade Addons）、Placebo（FastSuite）、Almanac（Let Me Despawn）；锁定时递归复核完整闭包。IC2CRE 已把 Energy Core 合入主体，API JAR 仅用于编译，不能当运行模组；1.21.1 的 Energy Control 子附属状态不能按 26.1.2 推断。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases)
 
 默认配方查看器选 JEI，EMI 作为单独验证的替代配置，不强制双装。客户端放渲染与 UI 模组；公共内容、KubeJS 逻辑/资源、任务定义由同一构建源生成。服务端不加载纯客户端渲染依赖，客户端与服务器逻辑内容哈希必须一致。
 
