@@ -1,0 +1,171 @@
+# -----------------------------------------------------------------------------------
+# Zombies Break & Build config
+#
+# This config can be reloaded with /zbb config reload,
+# and can be changed with `/zbb config ...` commands.
+# You do NOT need to restart the server for changes.
+#
+# Pattern lists support the following special prefixes/wildcards:
+#   !  Excludes a matching entry. Exclusions always take priority over inclusions.
+#      Example: !minecraft:creeper
+#
+#   *  Wildcard for an entire namespace or path part.
+#      minecraft:*  = every ID from the minecraft namespace
+#      *:zombie     = any ID whose path is exactly 'zombie'
+#      *:*          = every ID
+#
+#   @  Matches a mob category instead of a specific entity ID.
+#      Example: @monster
+#      Prefix it with ! to exclude a category, e.g. !@monster
+#
+# Examples can be combined in the same list:
+#   ["*:*", "!minecraft:creeper", "!@monster"]
+# -----------------------------------------------------------------------------------
+
+[blocks]
+	# Build block by mob: entity ID = block ID. Overrides dimension and fallback settings
+	mobPlaceBlockIdOverrideMap = {}
+
+	# Build block used when no mob or dimension-specific block is configured
+	fallbackPlaceBlockId = "minecraft:stone"
+
+	# Blocks that zombies will consider dangerous and attempt to cover or break. Supports wildcards and ! exclusions
+	dangerousBlockIdList = ["minecraft:fire", "minecraft:soul_fire", "minecraft:campfire", "minecraft:soul_campfire", "minecraft:cactus", "minecraft:magma_block", "minecraft:sweet_berry_bush", "minecraft:wither_rose", "minecraft:powder_snow", "minecraft:lava", "minecraft:cobweb"]
+
+	# Build block by dimension: dimension ID = block ID
+	[blocks.dimensionPlaceBlockIdMap]
+		"minecraft:the_nether" = "minecraft:netherrack"
+		"minecraft:overworld" = "minecraft:dirt"
+		"minecraft:the_end" = "minecraft:end_stone"
+
+[ai]
+	# Affected mobs can see the nearest player regardless of distance or line of sight.
+	alwaysSeeNearestPlayer = false
+
+	# Affected mobs can find a new target through blocks
+	canNoticeTargetsThroughBlocks = true
+
+	# (only if canNoticeTargetsThroughBlocks is true) Maximum solid blocks between a mob and a new target; 0 = unlimited
+	noticeTargetsThroughBlocksLimit = 3
+
+	# Zombies can keep chasing an already found target through blocks
+	canContinueSeeingTargetsThroughBlocks = true
+
+	# (only if canContinueSeeingTargetsThroughBlocks is true) Maximum solid blocks between a mob and its current target; 0 = unlimited
+	continueSeeingTargetsThroughBlocksLimit = 6
+
+	# Mob IDs that get ZBB behavior. Supports wildcards, ! exclusions and @categories. (only Pathfinder mobs)
+	# Starforge: only zombie-family units act as engineers. Not @monster —
+	# skeletons/creepers/spiders never break or build.
+	affectedEntityIdList = ["minecraft:zombie", "minecraft:husk", "minecraft:drowned", "minecraft:zombie_villager", "hordes:zombie_player", "hordes:husk_player", "hordes:drowned_player"]
+
+	# Affected mob types that cannot place blocks. Supports wildcards, ! exclusions and @categories
+	ignoreBuildEntityIdList = ["minecraft:ender_dragon", "minecraft:ghast", "minecraft:phantom", "minecraft:blaze", "minecraft:vex", "minecraft:elder_guardian", "minecraft:guardian", "minecraft:shulker", "minecraft:wither"]
+
+	# Affected mob types that cannot break blocks. Supports wildcards, ! exclusions and @categories
+	ignoreBreakEntityIdList = []
+
+	[ai.tactics]
+		# Allow mobs to climb toward higher targets by placing blocks beneath themselves
+		adjustHeightToTarget = true
+
+		# Allow mobs to build across gaps while moving toward a target
+		bridgeToTarget = true
+
+		# Allow mobs to break obstacles directly blocking their movement toward a target
+		clearObstaclesToTarget = true
+
+		# Allow mobs to cover or break dangerous blocks
+		mitigateDangerousBlocks = true
+
+[balance]
+	# How long newly placed blocks are protected from being broken by ZBB mobs (seconds)
+	builtBlocksProtectionTime = 0.75
+
+	# How far around a mob to search for dangerous blocks (blocks). Higher values may significantly impact performance.
+	dangerousBlocksSearchRadius = 1
+
+	# Distance threshold used to switch break/build behavior to high priority when target is unreachable through normal path (blocks)
+	breakBuildActivationDistance = 6
+
+	# How long block damage data is stored (seconds)
+	damageStoreTime = 60.0
+
+	[balance.blockDamage]
+		# Maximum breakable block hardness; 0 = no limit.
+		# Starforge: 2.0 caps breaches at soft obstacles (dirt/wood/plain stone).
+		# Machines, storage, reactors and industrial walls (hardness >=3) are safe.
+		maximumBreakableBlockHardness = 2.0
+
+		# Base block damage, before tool and mob-size multipliers
+		damageToBlocks = 2
+
+		# Hardness exponent for block health: 1 = linear, <1 reduces differences, >1 increases them
+		blockHardnessExponent = 0.85
+
+		# Multiplier applied to block health after the hardness exponent.
+		blockHardnessMultiplier = 4.0
+
+		# Per-block health overrides: block ID = health. Overrides the hardness-based calculation (min 1)
+		blockHealthOverrideMap = {}
+
+		# Strength of held-tool damage scaling: 0 = ignore tools, 1 = full destroy-speed multiplier
+		itemDamageMultiplierExponent = 0.5
+
+		# Strength of mob-size damage scaling relative to a zombie: 0 = ignore size, 1 = full volume ratio
+		hitboxSizeMultiplierExponent = 0.5
+
+	[balance.cooldowns]
+		# Delay between block-damaging/breaking actions (seconds)
+		# Starforge: 5s per block action — the T2 engineer rate from
+		# docs/defense-and-colonies.md. Hard walls delay, never insta-break.
+		breakCooldown = 5.0
+
+		# Delay between block-placing actions (seconds)
+		buildCooldown = 2.0
+
+		# Delay between searches for dangerous blocks (seconds)
+		searchDangerousBlocksCooldown = 1.0
+
+[blockRestoration]
+	# Enable disappearing for blocks placed by zombies
+	# Starforge: event-placed blocks are temporary scaffolding and must be
+	# cleaned up so bridges cannot be harvested as free materials.
+	builtBlocksDisappearing = true
+
+	# (only if builtBlocksDisappearing is true) Time before blocks placed by zombies disappear (seconds)
+	builtBlocksDisappearTime = 60.0
+
+	# Enable restoration of blocks broken by zombies
+	brokenBlocksRestoring = false
+
+	# (only if brokenBlocksRestoring is true) Time before blocks broken by zombies are restored (seconds)
+	brokenBlocksRestoreTime = 30.0
+
+[visualEffects]
+	# [Break] Play the mob's swing animation when damaging or breaking a block
+	breakMobSwing = true
+
+	# [Build] Play the block's placement sound when a mob places it
+	buildBlockSound = true
+
+	# [BrokenReappear]Show assembling block particles shortly before restoration
+	brokenReappearParticles = true
+
+	# [BrokenReappear]Show a periodic marker where a broken block is waiting to be restored
+	brokenReappearMarkerParticle = true
+
+	# [BrokenReappear] Play a charge-up sound shortly before restoration
+	brokenReappearChargeSound = true
+
+	# [BrokenReappear] Play a sound when the broken block is restored
+	brokenReappearSound = true
+
+	# [BuiltDisappear] Show a shrinking block animation when a mob-placed block disappears
+	builtDisappearShrinkAnimation = true
+
+	# [BuiltDisappear] Play the shrink sound when a mob-placed block starts disappearing
+	builtDisappearShrinkSound = true
+
+	# [BuiltDisappear] Play the final sound after a mob-placed block disappears
+	builtDisappearFinalSound = true

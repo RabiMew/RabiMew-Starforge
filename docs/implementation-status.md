@@ -29,7 +29,7 @@
 ## 正在实现
 
 - P1 阶段推进链路已实测通过（见下「阶段推进实测」）；锁 enforcement 待真实玩家进世界验证。
-- P2 防御原型（TaCZ 弹药经济、In Control、Hordes、ZBB 配置）。
+- P2 防御原型：配置层已落地并加载验证（见下「P2 已实现」）；炮塔弹药消耗与怪潮阶段化需要 compat 模组，见降级记录。
 
 ## P1 已实现并验证（服务端）
 
@@ -48,6 +48,15 @@
 - 石油经济已统一（实测 tag 导出）：`starforge_fluids.js` 在 `ServerEvents.tags('fluid')` 桥接两层——原油层 `c:oil`/`c:crude_oil`/`ic2cre:fluid_heat/oil` 现含全部 8 种原油等价物（BC oil/dense/heavy + flowing、ad_astra:oil、IP crudeoil）；燃料层 `c:fuel`/`ic2cre:fluid_heat/fuel` 现含 22 种精炼燃料（IP diesel/diesel_sulfur/gasoline、IE biodiesel/high_power_biodiesel、BC 五种燃料 + flowing、ad_astra fuel/cryo_fuel）。原生 `ad_astra:oil` 与 `ad_astra:tier_*_rocket_fuel` 本已互通，桥接补齐了剩余缺口。
 - 铱的地球路径确认：`ic2cre:iridium` 由 `iridium_shard→iridium_ore→iridium` 链产出（无铱矿 worldgen），UU/scanner 链为地球路线基础。
 
+### P2 已实现并验证（服务端配置层）
+
+- **The Hordes**：感染机制全关（`enableMobInfection=false`/`infectPlayers=false`，设计要求的可控可治愈降级为关闭）；怪潮按玩家在线时长每 4–6 天（≈80–120 分钟）触发、首夜不触发、单事件同时上限 48、波次 12/批、事件期间禁睡、无人在线暂停。
+- **怪潮组成表**重写（`config/hordes/data/.../tables/default.json`，已实测加载）：剔除下界单位（zoglin/僵尸猪灵/三叉戟骑手），按事件天数分档——0d 僵尸群 → 10d 尸壳/溺尸 → 15d 骷髅 → 25d 苦力怕 → 30d 流髑/沼骸 → 35d 女巫 → 40d 稀有突变僵尸精英（weight 1）→ 45d 僵尸马骑手。
+- **Zombies Break & Build**：`affectedEntityIdList` 从 `@monster` 收窄到僵尸系（zombie/husk/drowned/zombie_villager + hordes 僵尸玩家）；`maximumBreakableBlockHardness=2.0`（只能拆软障碍，硬度≥3 的机器/仓储/反应堆安全）；`breakCooldown=5s`（T2 工程兵速率）；`builtBlocksDisappearing=true/60s`（事件搭建物自动清理不可收割）。
+- **Guard Villagers TaCZ Support**：`zombie_tacz_weapon_spawn_chance=0.0`、`pillager_tacz_weapon_spawn_chance=0.0`——自然怪永不随机持枪（设计硬性禁令）；守卫弹药/食物箱搜索等原生机制保留（radius 64，冷却 100t）。
+- **In Control!** `spawn.json`：全部 6 个 `ad_astra:*_orbit` 维度拒绝敌对生物生成（空间站/轨道安全基线）。
+- TaCZ 服务端：保留 `EnableDefaultGunSmithTableFilter` 与 `AmmoBoxStackSize=3` 默认。
+
 ## 待验证
 
 - 锁 enforcement（配方封锁/使用锁/维度锁）需要真实玩家进世界验证；FakePlayer 已验证授阶链路，真实客户端合成事件路径相同。
@@ -55,6 +64,12 @@
 - ~~服务端 `HumanoidModel`/`PoseStack` wrong-dist 报错~~ 已修复：根因是 `starforge_dump.js` 用 `ITEM.getKey(ri.getItem())` 取配方产出，Rhino 会反射扫描 Item 实例类（Supplementaries/Ad Astra 的物品带客户端渲染方法签名）。改用 `getItemHolder().unwrapKey()` 后专用服务器日志 0 条 wrong-dist 报错，6605 配方导出中 6336 条含 result。
 
 ## 实测失败 / 技术降级记录
+
+- **DefenseTurrets 炮塔无弹药/能量消耗**：反编译确认三个炮塔 BE（MachineGun/Grenade/Laser）的 `shoot` 不消耗任何物品或能量，也无 capability 接口——原生就是无限射击。设计禁止免费弹药；原生配置/datapack/KubeJS 都无法拦截方块实体 tick。需要 `starforge-compat` 小型附属 Mixin 注入消耗检查（容器弹药或 FE），列为明确的后续适配项；当前仅靠 T2+ 阶段锁与配方门槛缓解，**不算已实现弹药经济**。
+- **The Hordes 阶段化组成受限**：其 `gamestages:gamestage` 条件依赖 darkhax GameStages API（未安装；与 ProgressiveStages 是两套体系）。降级：组成表用 `first_day/last_day` 天数窗口做固定档位升级；真正的「按团队科技阶段换表」需要 compat 层或事件驱动调度（设计文档已预留该适配路径）。
+- **怪潮预算 B=12+0.8H 未实现**：基地威胁值 H 需要基地登记/设备摘要等适配层，当前用固定 spawnAmount/days 近似；文档允许 MVP 固定档位，不宣称动态威胁已实现。
+- **下界/末地怪潮未单独关闭**：Hordes 无维度条件，In Control 无法区分怪潮来源；记为已知缺口（玩家在对应维度被追潮属于边缘情况）。
+- 其余历史记录见 git 历史与上文「正在实现/待验证」。
 
 - `incontrol` 首次启动写默认 `areas.json` 报错一次（`Error writing areas.json!`）；其余规则文件正常生成。影响：无（areas.json 为可选规则文件，发行版由我们提供显式配置）。
 - KubeJS 2101.7.2-build.377 服务端脚本注意点：无 `ServerEvents.started`（用 `ServerEvents.loaded`）；Rhino 下 `String` 不能直接当 Java `Function` 用；局部变量名避免与 KubeJS 全局冲突（`dims`/`recipes` 等会报 redeclaration）；`Registry.get(tagKey)` 重载会被 KubeJS ID 解析拦截，改用 `getTag(TagKey)`；`RecipeSerializer.codec()` 返回 MapCodec，需再 `.codec()` 得到 Codec 才能 `encodeStart`。
@@ -65,8 +80,9 @@
 
 ## 尚未实现（按批次）
 
-- P1：SF 配方、阶段锁、石油经济互通、AE2 冷启动链路验证。
-- P2–P6：防御、怪潮、殖民、航天、任务、发行打包、性能实测。
+- P1 收尾：锁 enforcement 实机验证、AE2 冷启动链路实玩验证（新玩家从 T0 合成链是否全程可通）。
+- P2 收尾：starforge-compat 附属（炮塔弹药/能耗消耗、基地威胁 H、事件预算、怪潮阶段化、空间站临时事件白名单）；真实怪潮实机验收。
+- P3–P6：T4–T7 高级链条实测、Ad Astra 首航闭环验证、殖民岗位、任务、发行打包、性能实测。
 - 客户端启动：需要本地正版账号与图形环境；当前无法在本环境完成客户端实机验证（服务端可完整验证逻辑内容）。
 
 ## 性能结果

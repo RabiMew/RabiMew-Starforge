@@ -1,0 +1,19 @@
+[
+	"minecraft:zombie-55-0-0",
+	"minecraft:zombie_villager-5-0-0",
+	"minecraft:husk-15-10-0",
+	"minecraft:skeleton-10-15-0",
+	"minecraft:drowned-8-10-0",
+	"minecraft:creeper-4-25-0",
+	"minecraft:stray-5-30-0",
+	"minecraft:bogged-5-30-0",
+	"minecraft:witch-3-35-0",
+	"mutantmonsters:mutant_zombie-1-40-0",
+	{
+		"entity": "minecraft:zombie_horse",
+		"weight": 2,
+		"first_day": 45,
+		"last_day": 0,
+		"nbt": "{Passengers:[{id:'minecraft:zombie'}]}"
+	}
+]

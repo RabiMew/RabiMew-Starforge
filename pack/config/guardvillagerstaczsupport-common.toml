@@ -1,0 +1,83 @@
+#Block radius TACZ guards search for vanilla containers containing compatible ammo.
+# Default: 64
+# Range: 1 ~ 1024
+ammo_search_radius = 64
+#Block radius TACZ guards search for vanilla containers containing food.
+# Default: 64
+# Range: 1 ~ 1024
+food_search_radius = 64
+#Ticks between failed ammo container searches.
+# Default: 100
+# Range: 20 ~ 6000
+ammo_search_cooldown_ticks = 100
+#Ticks between failed food container searches.
+# Default: 100
+# Range: 20 ~ 6000
+food_search_cooldown_ticks = 100
+#Ticks a TACZ guard will try to reach a selected food/ammo container before temporarily skipping it.
+# Default: 400
+# Range: 20 ~ 6000
+container_reach_timeout_ticks = 400
+#Health threshold below which TACZ guards search containers for food.
+# Default: 18.0
+# Range: 1.0 ~ 19.0
+low_food_health_threshold = 18.0
+#Width, in blocks, used for passive-entity line-of-fire checks.
+# Default: 2.0
+# Range: 0.0 ~ 5.0
+friendly_fire_width = 2.0
+#Default TACZ guard attack range in blocks.
+# Default: 32.0
+# Range: 1.0 ~ 128.0
+default_attack_range = 32.0
+#Number of successful TACZ shots hostile mobs fire before simulating a reload.
+# Default: 8
+# Range: 1 ~ 256
+hostile_tacz_magazine_size = 8
+#Ticks hostile TACZ mobs wait when simulating a reload.
+# Default: 60
+# Range: 1 ~ 6000
+hostile_tacz_reload_ticks = 60
+#Chance for a newly spawned vanilla zombie to receive a TACZ weapon from zombie_tacz_weapon_ids.
+# Default: 0.05
+# Range: 0.0 ~ 1.0
+# Starforge: 0.0 — naturally spawned mobs must never roll a free modern
+# firearm. Armed hostiles only come from the horde event budget.
+zombie_tacz_weapon_spawn_chance = 0.0
+#TACZ gun IDs vanilla zombies may spawn with. Invalid IDs are ignored.
+zombie_tacz_weapon_ids = ["tacz:ak47", "tacz:m4a1", "tacz:m16a1"]
+#Chance for a TACZ-armed zombie to drop its TACZ weapon on death.
+# Default: 0.25
+# Range: 0.0 ~ 1.0
+zombie_tacz_weapon_drop_chance = 0.25
+#Minimum compatible TACZ ammo items dropped when a TACZ-armed zombie drops ammo.
+# Default: 3
+# Range: 0 ~ 256
+zombie_tacz_ammo_drop_min = 3
+#Maximum compatible TACZ ammo items dropped when a TACZ-armed zombie drops ammo.
+# Default: 12
+# Range: 0 ~ 256
+zombie_tacz_ammo_drop_max = 12
+#Maximum random yaw/pitch offset in degrees applied when TACZ-armed zombies fire.
+# Default: 8.0
+# Range: 0.0 ~ 45.0
+zombie_tacz_inaccuracy_degrees = 8.0
+#Chance for a newly spawned vanilla pillager to receive a TACZ weapon from pillager_tacz_weapon_ids.
+# Default: 0.05
+# Range: 0.0 ~ 1.0
+# Starforge: 0.0 — same rule as zombies; event-budgeted shooters only.
+pillager_tacz_weapon_spawn_chance = 0.0
+#TACZ gun IDs vanilla pillagers may spawn with. Invalid IDs are ignored.
+pillager_tacz_weapon_ids = ["tacz:ak47", "tacz:rpg7", "tacz:glock_7"]
+#Chance for a TACZ-armed pillager to drop its TACZ weapon on death.
+# Default: 0.25
+# Range: 0.0 ~ 1.0
+pillager_tacz_weapon_drop_chance = 0.25
+#Minimum compatible TACZ ammo items dropped when a TACZ-armed pillager drops ammo.
+# Default: 3
+# Range: 0 ~ 256
+pillager_tacz_ammo_drop_min = 3
+#Maximum compatible TACZ ammo items dropped when a TACZ-armed pillager drops ammo.
+# Default: 12
+# Range: 0 ~ 256
+pillager_tacz_ammo_drop_max = 12

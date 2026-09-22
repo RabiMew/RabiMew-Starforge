@@ -1,0 +1,32 @@
+[
+  {
+    "dimension": "ad_astra:earth_orbit",
+    "hostile": true,
+    "result": "deny"
+  },
+  {
+    "dimension": "ad_astra:moon_orbit",
+    "hostile": true,
+    "result": "deny"
+  },
+  {
+    "dimension": "ad_astra:mars_orbit",
+    "hostile": true,
+    "result": "deny"
+  },
+  {
+    "dimension": "ad_astra:venus_orbit",
+    "hostile": true,
+    "result": "deny"
+  },
+  {
+    "dimension": "ad_astra:mercury_orbit",
+    "hostile": true,
+    "result": "deny"
+  },
+  {
+    "dimension": "ad_astra:glacio_orbit",
+    "hostile": true,
+    "result": "deny"
+  }
+]
