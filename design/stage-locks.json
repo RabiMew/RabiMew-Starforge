@@ -36,7 +36,7 @@
       "bc_mining_well", "bc_pump",
       "ie_capacitor_lv", "ie_capacitor_mv", "ie_wirecoil_electrum", "ie_fluid_pipe",
       "ie_electronic", "ie_chemthrower", "ie_railgun",
-      "dt_base", "dt_barrel", "dt_forged_alloy", "dt_machine_gun", "dt_searchlight",
+      "ie_turret_gun", "ie_turret_chem",
       "tacz_gun_table", "tacz_ammo_box", "tacz_workbench_a",
       "bg_building_gadget", "sd_drawer_controller", "ss_controller",
       "rc_electric_track", "rc_electric_locomotive", "rc_energy_minecart",
@@ -69,7 +69,7 @@
     "items": [
       "bc_quarry", "bc_assembly_table", "bc_laser", "bc_engine_iron",
       "ie_heavy_engineering", "ie_arc_furnace", "ie_capacitor_hv",
-      "dt_grenade", "bg_exchanging_gadget", "bg_copy_paste_gadget",
+      "tt_turret", "bg_exchanging_gadget", "bg_copy_paste_gadget",
       "rc_reinforced_track", "rc_high_speed_track", "rc_high_speed_electric_track",
       "rc_tunnel_bore", "rc_iron_bore_head", "rc_bronze_bore_head", "rc_steel_bore_head", "rc_diamond_bore_head",
       "rc_advanced_item_loader", "rc_advanced_item_unloader",
@@ -84,7 +84,7 @@
       "ic2_matter_generator", "ic2_scanner", "ic2_uu_scanner", "ic2_pattern_storage",
       "ic2_mfsu", "ic2_mfsu_kit",
       "ic2_nano_helmet", "ic2_nano_chestplate", "ic2_nano_leggings", "ic2_nano_boots",
-      "dt_laser", "bg_destruction_gadget",
+      "bg_destruction_gadget",
       "ae2_singularity", "ae2_entangled_singularity",
       "anomaly_analysis"
     ],

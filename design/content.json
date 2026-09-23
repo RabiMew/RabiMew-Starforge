@@ -200,7 +200,7 @@
       "id": "military",
       "title_key": "modpack.route.military.title",
       "description_key": "modpack.route.military.description",
-      "icon": "dt_machine_gun",
+      "icon": "tt_turret",
       "order": 3
     },
     {
@@ -1041,6 +1041,34 @@
       ]
     },
     {
+      "id": "munitions_supply",
+      "route": "automation",
+      "title_key": "modpack.quest.munitions_supply.title",
+      "description_key": "modpack.quest.munitions_supply.description",
+      "suggested_stage": "information_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "tacz_ammo_box",
+      "manual_refs": [
+        "turret_resupply"
+      ],
+      "rewards": [
+        {
+          "item": "lead_ingot",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "stock_control"
+      ]
+    },
+    {
       "id": "remote_supply",
       "route": "automation",
       "title_key": "modpack.quest.remote_supply.title",
@@ -1322,9 +1350,10 @@
       "task": {
         "type": "checkmark"
       },
-      "icon": "dt_base",
+      "icon": "ie_turret_gun",
       "manual_refs": [
-        "horde_engineers"
+        "horde_engineers",
+        "defense_layers"
       ],
       "rewards": [
         {
@@ -1341,115 +1370,6 @@
       "deps": []
     },
     {
-      "id": "first_turret",
-      "route": "military",
-      "title_key": "modpack.quest.first_turret.title",
-      "description_key": "modpack.quest.first_turret.description",
-      "suggested_stage": "electric_age",
-      "depends_on": [],
-      "grants_stage": false,
-      "consumes_items": false,
-      "reward_policy": "optional_non_progression",
-      "task": {
-        "type": "item",
-        "target": "dt_machine_gun",
-        "count": 1
-      },
-      "icon": "dt_machine_gun",
-      "manual_refs": [
-        "horde_engineers"
-      ],
-      "rewards": [
-        {
-          "item": "copper_ingot",
-          "count": 16,
-          "scope": "player"
-        },
-        {
-          "item": "lead_ingot",
-          "count": 8,
-          "scope": "player"
-        }
-      ],
-      "deps": [
-        "gunsmith"
-      ]
-    },
-    {
-      "id": "combined_fire",
-      "route": "military",
-      "title_key": "modpack.quest.combined_fire.title",
-      "description_key": "modpack.quest.combined_fire.description",
-      "suggested_stage": "heavy_industry_age",
-      "depends_on": [],
-      "grants_stage": false,
-      "consumes_items": false,
-      "reward_policy": "optional_non_progression",
-      "task": {
-        "type": "item",
-        "target": "dt_grenade",
-        "count": 1
-      },
-      "icon": "dt_grenade",
-      "manual_refs": [],
-      "rewards": [
-        {
-          "item": "dt_forged_alloy",
-          "count": 4,
-          "scope": "player"
-        },
-        {
-          "item": "minecraft:gunpowder",
-          "count": 16,
-          "scope": "player"
-        }
-      ],
-      "deps": [
-        "turret_net"
-      ]
-    },
-    {
-      "id": "defense_drill",
-      "route": "military",
-      "title_key": "modpack.quest.defense_drill.title",
-      "description_key": "modpack.quest.defense_drill.description",
-      "suggested_stage": "atomic_age",
-      "depends_on": [],
-      "grants_stage": false,
-      "consumes_items": false,
-      "reward_policy": "optional_non_progression",
-      "icon": "tacz_ammo_box",
-      "manual_refs": [
-        "colony_supply"
-      ],
-      "rewards": [
-        {
-          "item": "ie_steel_component",
-          "count": 4,
-          "scope": "player"
-        },
-        {
-          "item": "service_medal",
-          "count": 1,
-          "scope": "team"
-        }
-      ],
-      "deps": [
-        "ammo_line",
-        "laser_grid"
-      ],
-      "tasks": [
-        {
-          "type": "checkmark"
-        },
-        {
-          "type": "item",
-          "target": "ie_steel_component",
-          "count": 4
-        }
-      ]
-    },
-    {
       "id": "gunsmith",
       "route": "military",
       "title_key": "modpack.quest.gunsmith.title",
@@ -1459,7 +1379,8 @@
       "consumes_items": false,
       "reward_policy": "optional_non_progression",
       "manual_refs": [
-        "colony_armory"
+        "colony_armory",
+        "tacz_addon_basics"
       ],
       "rewards": [
         {
@@ -1485,6 +1406,75 @@
         }
       ],
       "icon": "tacz_workbench_a"
+    },
+    {
+      "id": "armed_guards",
+      "route": "military",
+      "title_key": "modpack.quest.armed_guards.title",
+      "description_key": "modpack.quest.armed_guards.description",
+      "suggested_stage": "electric_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "gv_guard_egg",
+      "manual_refs": [
+        "guard_weapons",
+        "colony_guard"
+      ],
+      "rewards": [
+        {
+          "item": "iron_ingot",
+          "count": 8,
+          "scope": "player"
+        },
+        {
+          "item": "lead_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "gunsmith"
+      ]
+    },
+    {
+      "id": "ie_turret",
+      "route": "military",
+      "title_key": "modpack.quest.ie_turret.title",
+      "description_key": "modpack.quest.ie_turret.description",
+      "suggested_stage": "electric_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "ie_turret_gun",
+        "count": 1
+      },
+      "icon": "ie_turret_gun",
+      "manual_refs": [
+        "colony_security"
+      ],
+      "rewards": [
+        {
+          "item": "copper_ingot",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "lead_ingot",
+          "count": 8,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "gunsmith"
+      ]
     },
     {
       "id": "ammo_line",
@@ -1524,69 +1514,199 @@
       "icon": "tacz_ammo_box"
     },
     {
-      "id": "turret_net",
+      "id": "ammo_logistics",
       "route": "military",
-      "title_key": "modpack.quest.turret_net.title",
-      "description_key": "modpack.quest.turret_net.description",
+      "title_key": "modpack.quest.ammo_logistics.title",
+      "description_key": "modpack.quest.ammo_logistics.description",
+      "suggested_stage": "information_age",
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
       "reward_policy": "optional_non_progression",
-      "manual_refs": [],
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "tacz_ammo_box",
+      "manual_refs": [
+        "turret_resupply"
+      ],
       "rewards": [
         {
-          "item": "dt_barrel",
+          "item": "iron_ingot",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ammo_line"
+      ]
+    },
+    {
+      "id": "tacz_turret",
+      "route": "military",
+      "title_key": "modpack.quest.tacz_turret.title",
+      "description_key": "modpack.quest.tacz_turret.description",
+      "suggested_stage": "heavy_industry_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "item",
+        "target": "tt_turret",
+        "count": 1
+      },
+      "icon": "tt_turret",
+      "manual_refs": [
+        "turret_resupply"
+      ],
+      "rewards": [
+        {
+          "item": "ic2_alloy",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:gunpowder",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "ie_turret",
+        "ammo_logistics"
+      ]
+    },
+    {
+      "id": "drg_arsenal",
+      "route": "military",
+      "title_key": "modpack.quest.drg_arsenal.title",
+      "description_key": "modpack.quest.drg_arsenal.description",
+      "suggested_stage": "atomic_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "tacz_gun",
+      "manual_refs": [
+        "drg_arsenal"
+      ],
+      "rewards": [
+        {
+          "item": "lead_ingot",
+          "count": 16,
+          "scope": "player"
+        },
+        {
+          "item": "minecraft:gunpowder",
+          "count": 16,
+          "scope": "player"
+        }
+      ],
+      "deps": [
+        "tacz_turret"
+      ]
+    },
+    {
+      "id": "swarm_suppression",
+      "route": "military",
+      "title_key": "modpack.quest.swarm_suppression.title",
+      "description_key": "modpack.quest.swarm_suppression.description",
+      "suggested_stage": "atomic_age",
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "tacz_gun",
+      "manual_refs": [
+        "drg_arsenal"
+      ],
+      "rewards": [
+        {
+          "item": "ie_steel_component",
           "count": 4,
           "scope": "player"
         }
       ],
       "deps": [
-        "first_turret"
-      ],
-      "suggested_stage": "electric_age",
-      "tasks": [
-        {
-          "type": "item",
-          "target": "dt_base",
-          "count": 2
-        },
-        {
-          "type": "item",
-          "target": "dt_searchlight",
-          "count": 1
-        }
-      ],
-      "icon": "dt_searchlight"
+        "drg_arsenal"
+      ]
     },
     {
-      "id": "laser_grid",
+      "id": "expedition_firepower",
       "route": "military",
-      "title_key": "modpack.quest.laser_grid.title",
-      "description_key": "modpack.quest.laser_grid.description",
+      "title_key": "modpack.quest.expedition_firepower.title",
+      "description_key": "modpack.quest.expedition_firepower.description",
+      "suggested_stage": "space_age",
       "depends_on": [],
       "grants_stage": false,
       "consumes_items": false,
       "reward_policy": "optional_non_progression",
-      "manual_refs": [],
+      "task": {
+        "type": "checkmark"
+      },
+      "icon": "tacz_gun",
+      "manual_refs": [
+        "expedition_ammo"
+      ],
       "rewards": [
         {
-          "item": "dt_forged_alloy",
-          "count": 8,
-          "scope": "player"
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
         }
       ],
       "deps": [
-        "combined_fire"
-      ],
+        "swarm_suppression"
+      ]
+    },
+    {
+      "id": "defense_drill",
+      "route": "military",
+      "title_key": "modpack.quest.defense_drill.title",
+      "description_key": "modpack.quest.defense_drill.description",
       "suggested_stage": "atomic_age",
-      "tasks": [
+      "depends_on": [],
+      "grants_stage": false,
+      "consumes_items": false,
+      "reward_policy": "optional_non_progression",
+      "icon": "tacz_ammo_box",
+      "manual_refs": [
+        "colony_supply",
+        "defense_layers"
+      ],
+      "rewards": [
         {
-          "type": "item",
-          "target": "dt_laser",
-          "count": 2
+          "item": "ie_steel_component",
+          "count": 4,
+          "scope": "player"
+        },
+        {
+          "item": "service_medal",
+          "count": 1,
+          "scope": "team"
         }
       ],
-      "icon": "dt_laser"
+      "deps": [
+        "ammo_logistics",
+        "expedition_firepower"
+      ],
+      "tasks": [
+        {
+          "type": "checkmark"
+        },
+        {
+          "type": "item",
+          "target": "ie_steel_component",
+          "count": 4
+        }
+      ]
     },
     {
       "id": "launch_preparation",
@@ -3044,6 +3164,14 @@
     {
       "id": "maintenance_due",
       "text_key": "modpack.message.maintenance_due"
+    },
+    {
+      "id": "tacz_turret_tip",
+      "text_key": "modpack.message.tacz_turret_tip"
+    },
+    {
+      "id": "drg_gun_tip",
+      "text_key": "modpack.message.drg_gun_tip"
     }
   ],
   "gui": [
@@ -3264,6 +3392,42 @@
       "text_key": "modpack.tutorial.colony_defense",
       "title_key": "modpack.tutorial.colony_defense.title",
       "group": "defense"
+    },
+    {
+      "id": "defense_layers",
+      "text_key": "modpack.tutorial.defense_layers",
+      "title_key": "modpack.tutorial.defense_layers.title",
+      "group": "defense"
+    },
+    {
+      "id": "turret_resupply",
+      "text_key": "modpack.tutorial.turret_resupply",
+      "title_key": "modpack.tutorial.turret_resupply.title",
+      "group": "defense"
+    },
+    {
+      "id": "drg_arsenal",
+      "text_key": "modpack.tutorial.drg_arsenal",
+      "title_key": "modpack.tutorial.drg_arsenal.title",
+      "group": "defense"
+    },
+    {
+      "id": "guard_weapons",
+      "text_key": "modpack.tutorial.guard_weapons",
+      "title_key": "modpack.tutorial.guard_weapons.title",
+      "group": "defense"
+    },
+    {
+      "id": "tacz_addon_basics",
+      "text_key": "modpack.tutorial.tacz_addon_basics",
+      "title_key": "modpack.tutorial.tacz_addon_basics.title",
+      "group": "defense"
+    },
+    {
+      "id": "expedition_ammo",
+      "text_key": "modpack.tutorial.expedition_ammo",
+      "title_key": "modpack.tutorial.expedition_ammo.title",
+      "group": "space"
     },
     {
       "id": "planetary_garrison",

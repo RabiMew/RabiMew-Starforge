@@ -92,7 +92,7 @@ function validate() {
   assert.deepEqual(content.stages.map((stage) => stage.tier).sort((a, b) => a - b), [0, 1, 2, 3, 4, 5, 6, 7]);
   assert.equal(routeIds.size, 7);
   assert.equal(chapterIds.size, 9, 'Expected onboarding + 7 routes + manual');
-  assert.equal(questIds.size, 72);
+  assert.equal(questIds.size, 76);
   assert.equal(content.planets.length, 8);
   const stages = new Map(content.stages.map((stage) => [stage.id, stage]));
   const tierOf = (id) => stages.get(id).tier;

@@ -139,6 +139,13 @@
 		"用仓储控制器汇总实体库存，再为电路、弹药和食物设置补货阈值。优先补充关键物资，并为满仓、断电和缺料留下处理方法。"
 	]
 	quest.401D4EAB9AB4A6E1.quest_subtitle: "推荐阶段：信息时代"
+	quest.4B11C059543966A4.title: "弹药补给链"
+	quest.4B11C059543966A4.quest_desc: [
+		"军工厂 → 弹药仓库 → 物流干线 → 前线弹药箱。用库存阈值让物流系统自动补箱，炮塔与守卫只管开火。"
+		""
+		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
+	]
+	quest.4B11C059543966A4.quest_subtitle: "推荐阶段：信息时代"
 	quest.4B4C77575CC4219A.title: "连接远端基地"
 	quest.4B4C77575CC4219A.quest_desc: [
 		"用量子桥连接两端已供电、已加载的网络，并保留当地缓冲库存。链路断开时，基地应能继续维持基本运转。"
@@ -193,34 +200,32 @@
 		"从照明、地形和安全通道开始，设置可以撤退的内外防线。为巡逻、补给和维修保留通道。"
 		""
 		"{\"text\":\"» 详见手册：怪潮工程兵\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"怪潮工程兵\"}}"
+		"{\"text\":\"» 详见手册：基地防御分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6D57B198ED6623C4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"基地防御分层\"}}"
 	]
 	quest.1752DF1046FD05B2.quest_subtitle: "推荐阶段：生存时代"
-	quest.499CCB0E42738DC1.title: "让炮塔得到补给"
-	quest.499CCB0E42738DC1.quest_desc: [
-		"部署基础炮塔，检查供电、弹药和友军名单。用小规模演练确认火力范围，避免把所有储备集中在一个位置。"
-		""
-		"{\"text\":\"» 详见手册：怪潮工程兵\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"怪潮工程兵\"}}"
-	]
-	quest.499CCB0E42738DC1.quest_subtitle: "推荐阶段：电气时代"
-	quest.37A21158241ACBD3.title: "为不同敌人配置火力"
-	quest.37A21158241ACBD3.quest_desc: [
-		"机枪对付普通目标，范围火力压制密集群体，重火力应对装甲单位。用射界与补给配合，避免只堆同一种炮塔。"
-	]
-	quest.37A21158241ACBD3.quest_subtitle: "推荐阶段：重工业时代"
-	quest.31583156C2BDAC96.title: "在断供中守住基地"
-	quest.31583156C2BDAC96.quest_desc: [
-		"演练主电网或运输线路中断。确认氧气、基础火力和食物储备仍能使用，并记录每场防御的实际消耗。"
-		""
-		"{\"text\":\"» 详见手册：殖民地补给链\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"744853EABC0E1648\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民地补给链\"}}"
-	]
-	quest.31583156C2BDAC96.quest_subtitle: "推荐阶段：原子时代"
 	quest.6A40076FB5A60443.title: "枪械工坊"
 	quest.6A40076FB5A60443.quest_desc: [
 		"枪械工作台与弹药台落地——守卫与玩家的武器从此走工业化产线，不再靠缴获。"
 		""
 		"{\"text\":\"» 详见手册：殖民军械\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"15C288AF8333C644\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民军械\"}}"
+		"{\"text\":\"» 详见手册：TaCZ Addon：枪匠助手\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"009B2C59FE3D645E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"TaCZ Addon：枪匠助手\"}}"
 	]
 	quest.6A40076FB5A60443.quest_subtitle: "推荐阶段：电气时代"
+	quest.1AEA18147C0DBE26.title: "武装警卫"
+	quest.1AEA18147C0DBE26.quest_desc: [
+		"给村庄警卫配发常规枪械（步枪/冲锋枪/霰弹枪），他们是最灵活的机动步兵。高爆与特殊武器留在玩家手里——别让守卫把基地一起炸了。"
+		""
+		"{\"text\":\"» 详见手册：警卫武器选择\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"725FD622502D6892\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"警卫武器选择\"}}"
+		"{\"text\":\"» 详见手册：殖民警卫\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C0A7C642219B0D2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民警卫\"}}"
+	]
+	quest.1AEA18147C0DBE26.quest_subtitle: "推荐阶段：电气时代"
+	quest.2F8112B376410105.title: "工业哨戒炮"
+	quest.2F8112B376410105.quest_desc: [
+		"部署 IE 哨戒炮（枪械炮塔/化学炮塔）：工业时代的中前期固定防御。检查弹药、射界与友军名单，别把所有弹药储备集中在一个炮位。"
+		""
+		"{\"text\":\"» 详见手册：三层防御\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"482CA592DE6BAB84\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"三层防御\"}}"
+	]
+	quest.2F8112B376410105.quest_subtitle: "推荐阶段：电气时代"
 	quest.605556FAD18F13D3.title: "弹药线"
 	quest.605556FAD18F13D3.quest_desc: [
 		"弹药箱与制式弹批量下线。枪塔再贵也只是铁疙瘩，弹药才是防线的真正口粮。"
@@ -228,16 +233,49 @@
 		"{\"text\":\"» 详见手册：弹药后勤\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C15617E8C8DA7F9\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"弹药后勤\"}}"
 	]
 	quest.605556FAD18F13D3.quest_subtitle: "推荐阶段：电气时代"
-	quest.60865655142D99C6.title: "哨戒网络"
-	quest.60865655142D99C6.quest_desc: [
-		"炮塔基座与探照灯成网部署：哨戒位有了骨架，夜间防线不再靠人盯。"
+	quest.0578B3D427AD63A7.title: "前线弹药箱"
+	quest.0578B3D427AD63A7.quest_desc: [
+		"炮塔只吃“最后一公里”：把弹药箱放在炮塔下方或贴邻，再由 AE2 / Pipez / BuildCraft 持续填满它。炮塔不会从管道里直接接弹。"
+		""
+		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
 	]
-	quest.60865655142D99C6.quest_subtitle: "推荐阶段：电气时代"
-	quest.0E69EBCEBE72E13A.title: "激光火网"
-	quest.0E69EBCEBE72E13A.quest_desc: [
-		"激光防御塔并网：对集群与高价值目标的最后拦截层，接入防线演练一起验收。"
+	quest.0578B3D427AD63A7.quest_subtitle: "推荐阶段：信息时代"
+	quest.13E59D0117879820.title: "自动炮塔"
+	quest.13E59D0117879820.quest_desc: [
+		"TACZ 自动炮塔装入任意 TaCZ 枪械即获其火力。部署后装枪、确认索敌模式与友军识别，再接上弹药补给箱。"
+		""
+		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
 	]
-	quest.0E69EBCEBE72E13A.quest_subtitle: "推荐阶段：原子时代"
+	quest.13E59D0117879820.quest_subtitle: "推荐阶段：重工业时代"
+	quest.123A25BDCDB14B3F.title: "深岩军械库"
+	quest.123A25BDCDB14B3F.quest_desc: [
+		"深岩银河系列武器开放：面向高强度作战的重型科幻军械。火力更高，弹药后勤也更贵——先确认产线跟得上消耗。"
+		""
+		"{\"text\":\"» 详见手册：深岩银河武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"深岩银河武器定位\"}}"
+	]
+	quest.123A25BDCDB14B3F.quest_subtitle: "推荐阶段：原子时代"
+	quest.43727C69AA43A83C.title: "虫群压制"
+	quest.43727C69AA43A83C.quest_desc: [
+		"高射速与面杀伤 DRG 武器针对 Arachnids 虫群与大型怪潮。压制力强，但持续开火会快速烧穿弹药库存。"
+		""
+		"{\"text\":\"» 详见手册：深岩银河武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"深岩银河武器定位\"}}"
+	]
+	quest.43727C69AA43A83C.quest_subtitle: "推荐阶段：原子时代"
+	quest.09D27335218273DA.title: "远征火力"
+	quest.09D27335218273DA.quest_desc: [
+		"为外星探索准备重型火力与足量弹药储备：外星高危目标与返程断供都靠这一层兜底。"
+		""
+		"{\"text\":\"» 详见手册：外星远征弹药准备\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"76E5B544AD6A0494\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"外星远征弹药准备\"}}"
+	]
+	quest.09D27335218273DA.quest_subtitle: "推荐阶段：太空时代"
+	quest.31583156C2BDAC96.title: "在断供中守住基地"
+	quest.31583156C2BDAC96.quest_desc: [
+		"演练主电网或运输线路中断。确认氧气、基础火力和食物储备仍能使用，并记录每场防御的实际消耗。"
+		""
+		"{\"text\":\"» 详见手册：殖民地补给链\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"744853EABC0E1648\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民地补给链\"}}"
+		"{\"text\":\"» 详见手册：基地防御分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6D57B198ED6623C4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"基地防御分层\"}}"
+	]
+	quest.31583156C2BDAC96.quest_subtitle: "推荐阶段：原子时代"
 	chapter.23F04414D2AFEB65.title: "军事防御"
 	chapter.23F04414D2AFEB65.chapter_subtitle: [
 		"规划防线与火力，用充足补给守住生产和生活空间。"
@@ -555,6 +593,36 @@
 		"殖民地的怪潮靠战术、数量和特殊单位施压，而不是给普通怪堆血量。保持弹药、电力、食物与维修储备。"
 	]
 	quest.1630974DE79170F7.quest_subtitle: "怪潮与防御"
+	quest.6D57B198ED6623C4.title: "基地防御分层"
+	quest.6D57B198ED6623C4.quest_desc: [
+		"防线按火力分层：IE 哨戒炮承担中前期固定防御；TACZ 自动炮塔承担中后期军用自动防御（装枪+弹药箱）；武装警卫是机动步兵；玩家处理高价值目标、工程抢修与防线崩溃。不要把鸡蛋放在同一个炮塔里。"
+	]
+	quest.6D57B198ED6623C4.quest_subtitle: "怪潮与防御"
+	quest.2E55B63F9D911701.title: "自动炮塔：装枪与补给"
+	quest.2E55B63F9D911701.quest_desc: [
+		"TACZ 炮塔对玩家点击或掉落物装入一把 TaCZ 枪。弹药从它下方/相邻的箱子取用——这是“最后一公里物流”：管道与 AE2 负责把弹药箱填满，炮塔自己取弹。红黄绿状态灯分别提示换弹/缺弹/就绪。"
+	]
+	quest.2E55B63F9D911701.quest_subtitle: "怪潮与防御"
+	quest.559BD25A382ABD43.title: "深岩银河武器定位"
+	quest.559BD25A382ABD43.quest_desc: [
+		"DRG 武器库是重型科幻层：常规步枪（GK2、Subata）到虫群压制（CRSPR、Drak-25）再到 AoE 重火力（火箭、40mm、雷霆）。它们通过工业中间件分阶段解锁，弹药成本明显高于常规枪械。"
+	]
+	quest.559BD25A382ABD43.quest_subtitle: "怪潮与防御"
+	quest.725FD622502D6892.title: "警卫武器选择"
+	quest.725FD622502D6892.quest_desc: [
+		"Guard Villagers 可装备 TaCZ 枪械作战。只发可靠的常规武器：步枪、冲锋枪、霰弹枪。不要发爆炸物、AoE 或特殊机制武器——殖民地经不起误伤。"
+	]
+	quest.725FD622502D6892.quest_subtitle: "怪潮与防御"
+	quest.009B2C59FE3D645E.title: "TaCZ Addon：枪匠助手"
+	quest.009B2C59FE3D645E.quest_desc: [
+		"TaCZ Addon 优化枪匠台体验：按枪过滤附件与弹药、查看材料清单、跳转 JEI 配方、批量合成，并可从邻近容器与背包取用材料。它只减少操作负担，不降低制造成本。"
+	]
+	quest.009B2C59FE3D645E.quest_subtitle: "怪潮与防御"
+	quest.76E5B544AD6A0494.title: "外星远征弹药准备"
+	quest.76E5B544AD6A0494.quest_desc: [
+		"远征前按消耗率备货：常规武器按战斗时长×射速估算，DRG 武器额外准备重装弹药。量子桥接通主库存前，背包与弹药箱就是你的全部后勤。"
+	]
+	quest.76E5B544AD6A0494.quest_subtitle: "航天与风险"
 	quest.4D5475C44C18F8A3.title: "各星球驻军"
 	quest.4D5475C44C18F8A3.quest_desc: [
 		"各星球驻军风格不同：火星靠炮塔扛高压虫群，霜原星需要穿甲火力，水星只留少量精锐。未加载的殖民地不消耗运算。"

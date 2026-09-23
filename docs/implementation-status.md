@@ -24,8 +24,8 @@
 - IE：`immersiveengineering:component_iron|component_steel|component_electronic|component_electronic_adv`、`plate_*`、`wirecoil_*`、`heavy_engineering` 等。
 - AE2：`ae2:inscriber`、`ae2:*_processor_press`、`ae2:*_processor`、`ae2:controller`、`ae2:pattern_provider`、`ae2:quantum_entangled_singularity` 等。
 - BC CE：`buildcraftcore:gears/gear_iron`、`buildcraftbuilders:quarry`、`buildcraftfactory:pump|mining_well`、`buildcraftenergy:engine_*`、`buildcrafttransport:*`、`buildcraftsilicon:assembly_table|laser`。
-- Defense Turrets：`defenseturrets:machine_gun_turret|grenade_turret|laser_turret|turret_base|turret_barrel|forged_alloy_ingot|uv_searchlight`。
-- TaCZ：通用物品型（`tacz:modern_kinetic_gun`、`tacz:ammo`、`tacz:attachment`、`tacz:gun_smith_table`）；具体枪/弹在 `tacz_default_gun` 数据包内定义。
+- 炮塔体系：`immersiveengineering:turret_gun|turret_chem`（IE 原生，T2）+ `taczturrets:turret`（物品与实体同 id，T4）。Defense Turrets 已整体移除。
+- TaCZ：通用物品型（`tacz:modern_kinetic_gun`、`tacz:ammo`、`tacz:attachment`、`tacz:gun_smith_table`）；具体枪/弹在 `tacz_default_gun` 与 `deep_rock_galactic` 枪包内定义（`GunId`/`AmmoId` 存于 `minecraft:custom_data`）。
 - Ad Astra 维度：`ad_astra:moon|mars|venus|mercury|glacio` 及各自 `_orbit`，含 `ad_astra:earth_orbit`（空间站候选维度集合）。
 - Asteroid Belt（modid `pv_ad_asterobelt`，维度命名空间独立为 `pv_asteroid_belt`）：`pv_asteroid_belt:asteroid_belt`（planet tier 2、0.5g、无氧、-50℃、自然刷怪关）与 `pv_asteroid_belt:asteroid_belt_orbit`（0g、-170℃）；`neoforge tps` 运行时两维度均注册在列。
 - Railcraft：基础轨 `railcraft:strap_iron_track`（**不存在** `railcraft:iron_track`）；轨道族 `electric_track`/`reinforced_track`/`high_speed_track`/`high_speed_electric_track`/`elevator_track`；实体 `cargo_minecart`/`tank_minecart`/`steam_locomotive`/`electric_locomotive`/`world_spike_minecart`（已在小行星带维度实测生成并在 tick）；标签 `c:ingots|plates|gears|nuggets|storage_blocks/steel`、`c:coal_coke`、`c:dusts/saltpeter`、`c:fluids/steam`→`railcraft:steam`；数据图类型 `railcraft:fluid_heat`（fluid 注册表）与 `railcraft:tunnel_bore_head`（item 注册表）。
@@ -35,7 +35,7 @@
 ## 正在实现
 
 - P1 阶段推进链路已实测通过（见下「阶段推进实测」）；锁 enforcement 待真实玩家进世界验证。
-- P2 防御原型：配置层已落地并加载验证（见下「P2 已实现」）；炮塔弹药消耗与怪潮阶段化需要 compat 模组，见降级记录。
+- P2 防御原型：配置层已落地并加载验证（见下「P2 已实现」）；炮塔弹药消耗已由 TACZ Turrets 原生解决（见降级记录）；怪潮阶段化仍需 compat 模组。
 
 ## P1 已实现并验证（服务端）
 
@@ -84,7 +84,7 @@
 
 ## 实测失败 / 技术降级记录
 
-- **DefenseTurrets 炮塔无弹药/能量消耗**：反编译确认三个炮塔 BE（MachineGun/Grenade/Laser）的 `shoot` 不消耗任何物品或能量，也无 capability 接口——原生就是无限射击。设计禁止免费弹药；原生配置/datapack/KubeJS 都无法拦截方块实体 tick。需要 `starforge-compat` 小型附属 Mixin 注入消耗检查（容器弹药或 FE），列为明确的后续适配项；当前仅靠 T2+ 阶段锁与配方门槛缓解，**不算已实现弹药经济**。
+- ~~**DefenseTurrets 炮塔无弹药/能量消耗**~~ **已随模组移除而关闭**：原炮塔 BE `shoot` 不消耗任何物品（原生无限射击），Mixin 注入方案不再需要。继任者 TACZ Turrets 原生消耗弹药：装入 TaCZ 枪后从脚下/相邻容器取弹（服务端实测：AK47 与 DRG gk2 均从下方箱子取弹并击杀目标），“弹药经济”由继任模组原生实现，无需附属。
 - **The Hordes 阶段化组成受限**：其 `gamestages:gamestage` 条件依赖 darkhax GameStages API（未安装；与 ProgressiveStages 是两套体系）。降级：组成表用 `first_day/last_day` 天数窗口做固定档位升级；真正的「按团队科技阶段换表」需要 compat 层或事件驱动调度（设计文档已预留该适配路径）。
 - **怪潮预算 B=12+0.8H 未实现**：基地威胁值 H 需要基地登记/设备摘要等适配层，当前用固定 spawnAmount/days 近似；文档允许 MVP 固定档位，不宣称动态威胁已实现。
 - **下界/末地怪潮未单独关闭**：Hordes 无维度条件，In Control 无法区分怪潮来源；记为已知缺口（玩家在对应维度被追潮属于边缘情况）。
@@ -100,7 +100,7 @@
 ## 尚未实现（按批次）
 
 - P1 收尾：锁 enforcement 实机验证、AE2 冷启动链路实玩验证（新玩家从 T0 合成链是否全程可通）。
-- P2 收尾：starforge-compat 附属已首轮交付（红石怪潮警报 + 厨房动态热源，服务端实测通过，见末节）；剩余项：炮塔弹药/能耗消耗（Mixin）、基地威胁 H、事件预算、怪潮阶段化、空间站临时事件白名单；真实怪潮多人实机验收。
+- P2 收尾：starforge-compat 附属已首轮交付（红石怪潮警报 + 厨房动态热源，服务端实测通过，见末节）；剩余项：基地威胁 H、事件预算、怪潮阶段化、空间站临时事件白名单；真实怪潮多人实机验收。（炮塔弹药消耗已由 TACZ Turrets 原生解决，不再是 Mixin 缺口。）
 - P3–P6：T4–T7 高级链条实测、Ad Astra 首航**实机**验证（配方图闭环已验证，见「地球闭环实测」）、殖民岗位、任务、发行打包、性能实测。
 - 客户端实机验证已补（Prism 离线账号 `RabiTest`，Starforge-DOtest 实例）：主菜单 → `--quickPlayMultiplayer` 直连专用服务器 → 进世界 → EMI/JEMI 80 个 JEI 分类 + 原生插件共 63630 配方 → Default Options 22 条键位全量生效 0 错误。皮肤拉取/3D 层渲染/小地图雷达实测关闭画面仍待人工目检。
 
@@ -203,7 +203,19 @@
 
 ### TaCZ / 军事链审计结果
 
-- 全部 24 条 TaCZ 弹药配方**原生即用 `c:` 标签**（`c:ingots/copper`、`c:gunpowders`、`c:ingots/iron` 等）——统一铜/铁自动流入弹药经济，无需重写。Defense Turrets 不消耗弹药（既有记录：无消耗接口），仅共享上游材料链。
+- 全部 24 条 TaCZ 弹药配方**原生即用 `c:` 标签**（`c:ingots/copper`、`c:gunpowders`、`c:ingots/iron` 等）——统一铜/铁自动流入弹药经济，无需重写。Defense Turrets 已移除；炮塔弹药经济由 TACZ Turrets 原生承担（容器取弹，已实测）。
+
+### 军事层扩展（2026-09-23，已服务端实测）
+
+- **加入**：TACZ Turrets 2.0.0（MIT）、TaCZ Addon 1.1.8-fix2（许可证字段不一致，见兼容性表）、TaCZ Pack Upgrader 2.1.3（同上）、DRG Gun Pack 1.2.6.1（ARR，仅 manifest URL 分发）。
+- **移除**：Defense Turrets 全部内容——manifest/lockfile 条目、5 条 KubeJS 配方、`dt_*` 语义键 7 个、三个阶段锁组、4 个任务节点（first_turret/turret_net/combined_fire/laser_grid）与对应文案。
+- **枪包升级实测**：Pack Upgrader 启动时把 `tacz/drg_gun_pack_1.2.6.1.zip` 升级为 `+1.21.1` 版（`forge:`→`c:` 标签转换确认）；TaCZ 识别 `deep_rock_galactic` 命名空间，22 把枪 + 8 种弹药经 KubeJS 重写为工业材料配方后全部注册（`tacz:kjs/*`，30 条）。
+- **炮塔实测**：`taczturrets:turret` 召唤、装入 `tacz:ak47` 与 `deep_rock_galactic:gk2`，对召唤僵尸自动开火击杀，弹药从**脚下箱子**扣取（内置 Inventory 缓冲 10 格）——“最后一公里物流”设计成立。
+- **DRG 不可用内容**：`ani_pro`（弹药依赖未装的 `pixel_gun`）、`pickaxe` 近战与 `supply` 方块（依赖未装的 `lrtactical`）——配方已移除/加载报错属预期噪音，其余特殊机制（cross/short/thunder 的 lua 脚本）待客户端实机验收。
+- **DRG 阶段门槛**（经配方材料而非物品锁——枪/弹共用 `tacz:` 物品 id，PS 无法按 id 锁）：T3 `ae2:engineering_processor` 常规枪械；T4 `ie:heavy_engineering` 支援/霰弹/重型副武器+钩爪；T5 `ic2cre:containment_reactor_plating`+奇点/异常分析 AoE/虫群武器。
+- **任务书**：军事章 11 任务（含新增 armed_guards/ie_turret/ammo_logistics/tacz_turret/drg_arsenal/swarm_suppression/expedition_firepower），自动化章新增 `munitions_supply`；手册新增 6 页（分层防御/炮塔补给/DRG 定位/警卫武器/TaCZ Addon/远征弹药）；运行时首次造炮塔与首次获得 DRG 枪各一条一次性提示。
+- **服务端战斗基准**（RCON 实测，4 炮塔 [2×gk2+minigun+btr7] + ~35 怪潮 [30 僵尸+5 Arachnids]）：空载 1.0 → 战斗中 3.0–3.9 ms/tick，TPS 稳定 20；同时在场 `tacz:bullet` 弹丸峰值 36；约 2 分钟内全灭该波次；弹药链实测为 箱→炮塔内仓（10格）→枪膛（gk2 打完 18 发弹匣后自动从库存补弹到 15）。DRG minigun 走 `HeatAmount` 热量机制而非弹匣计数，机制在 1.21.1 端原生生效。
+- **Guard Villagers TACZ Support 部分验证**：goal 经 Mixin 无条件挂到全部 Guard（`TaczGunAttackGoal`+`TaczTargetAssistGoal`）；弹药判定走 TaCZ 原生 `IAmmo.isAmmoOfGun`，消耗守卫自身 `guardInventory` 弹药并支持 ammo_box；实测守卫吞掉了塞入库存的 `drg_generic_ammo` 并把 DRG subata 装填到 8 发——供弹链路成立。但无头环境无法复现真实索敌开火（需玩家互动/村庄上下文/拾取路径），多人与实机行为列为待人工验收。
 
 ### 已知残留 / 未做
 
@@ -236,4 +248,4 @@ KubeJS 无法表达的行为型兼容，现由自有附属 `starforge-compat-0.1
 
 ### 仍未实现的 compat 项
 
-- Defense Turrets 炮塔弹药/能耗消耗（需 Mixin 注入 `shoot`，版本敏感，未做）；基地威胁值 H、怪潮阶段化调度、空间站事件白名单（P2 原列项）。
+- 基地威胁值 H、怪潮阶段化调度、空间站事件白名单（P2 原列项）；DRG 枪包客户端表现（模型/动画/音效/lua 特殊机制）与 TACZ 炮塔多人/区块卸载实机验收（P2 尾项）。

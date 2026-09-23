@@ -30,11 +30,11 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 | --- | --- |
 | 进度与生存 `progression` | team_progression · earth_alternative · storage_progression · backpack_kit · kitchen_automation |
 | 能源·石油·网络 `energy` | power_priority · unified_oil · ae2_bootstrap |
-| 怪潮与防御 `defense` | horde_engineers · colony_security · colony_defense |
+| 怪潮与防御 `defense` | horde_engineers · colony_security · colony_defense · defense_layers · turret_resupply · drg_arsenal · guard_weapons · tacz_addon_basics |
 | 殖民人口与驻军 `colony` | lightweight_colony · colony_residents · colony_guard · colony_armory · colony_ammunition · colony_supply · planetary_garrison |
 | 岗位与维护 `workforce` | colony_workforce · job_assignment · maintenance_rewards |
 | 铁路物流 `rail` | rail_logistics · starport_rail |
-| 航天与风险 `space` | safe_station · giselle_equipment · asteroid_belt_risk |
+| 航天与风险 `space` | safe_station · giselle_equipment · asteroid_belt_risk · expedition_ammo |
 
 ## 2. 任务描述格式
 
@@ -50,7 +50,7 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 
 ## 3. 检测类型映射
 
-72 个任务节点中约半数自动检测（item/dimension/advancement/kill）、半数 checkmark，另有 26 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。下表为原 35 个主线任务的检测映射（新增中间节点均为 item 或 checkmark 子步骤，详见 content.json）：
+76 个任务节点中约半数自动检测（item/dimension/advancement/kill）、半数 checkmark，另有 32 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。下表为原 35 个主线任务的检测映射（新增中间节点均为 item 或 checkmark 子步骤，详见 content.json）：
 
 | 任务 | 阶段 | task | 目标（语义键/字面量） |
 | --- | --- | --- | --- |
@@ -65,9 +65,17 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 | rail_freight | T1 | item ×1 + item ×2 | rc_cargo_minecart + rc_item_loader |
 | spaceport_rail | T6 | checkmark | — |
 | layered_defense | T0 | checkmark | — |
-| first_turret | T2 | item ×1 | dt_machine_gun |
-| combined_fire | T4 | item ×1 | dt_grenade |
-| defense_drill | T5 | checkmark | — |
+| gunsmith | T2 | item ×2 | tacz_workbench_a + tacz_gun_table |
+| armed_guards | T2 | checkmark | — |
+| ie_turret | T2 | item ×1 | ie_turret_gun |
+| ammo_line | T2 | item ×2 + item ×32 | tacz_ammo_box + ie_bullet_casull |
+| ammo_logistics | T3 | checkmark | — |
+| tacz_turret | T4 | item ×1 | tt_turret |
+| drg_arsenal | T5 | checkmark | — |
+| swarm_suppression | T5 | checkmark | — |
+| expedition_firepower | T6 | checkmark | — |
+| munitions_supply | T3 | checkmark | —（自动化章） |
+| defense_drill | T5 | checkmark + item ×4 | ie_steel_component |
 | launch_preparation | T5 | item ×1 | space_control_core |
 | first_launch | T6 | advancement | `starforge:first_launch` |
 | orbital_station | T6 | dimension | earth_orbit |

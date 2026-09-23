@@ -71,18 +71,24 @@ for (const [side, accepts, banned] of [
   for (const f of want) if (!have.includes(f)) fail(s, `missing jar: ${f}`);
 }
 
-// ---- run/client locked resources (shaderpacks etc.) --------------------------
+// ---- run dirs: locked resources present at their declared path --------------
+// side=client -> run/client only; side=server -> run/server only; side=both ->
+// both (e.g. tacz/ gun packs the dedicated server also needs). Shaderpacks
+// remain banned on the server regardless.
 {
-  const s = section('run/client resources');
-  const clientRes = enabledResources(lock).filter((r) => r.side === 'client');
-  for (const r of clientRes) {
-    const fp = path.join(ROOT, 'run', 'client', ...r.path.split('/'));
-    if (!existsSync(fp)) { fail(s, `missing ${r.path} — run sync-mods client`); continue; }
-    for (const e of verifyLocked(r, readFileSync(fp))) fail(s, `${r.path}: ${e}`);
+  const s = section('run resources');
+  for (const r of enabledResources(lock)) {
+    for (const sideName of ['client', 'server']) {
+      const accepted = (r.side === 'both') || (r.side === sideName);
+      const fp = path.join(ROOT, 'run', sideName, ...r.path.split('/'));
+      if (!accepted) {
+        if (existsSync(fp)) fail(s, `${r.key}: side=${r.side} but present in run/${sideName}/${r.path}`);
+        continue;
+      }
+      if (!existsSync(fp)) { fail(s, `missing run/${sideName}/${r.path} — run sync-mods ${sideName}`); continue; }
+      for (const e of verifyLocked(r, readFileSync(fp))) fail(s, `run/${sideName}/${r.path}: ${e}`);
+    }
   }
-  // servers must never receive shaderpacks or other client resources
-  const serverRes = enabledResources(lock).filter((r) => r.side !== 'client');
-  for (const r of serverRes) fail(s, `${r.key}: non-client resource would reach the server`);
   const serverShaderDir = path.join(ROOT, 'run', 'server', 'shaderpacks');
   if (existsSync(serverShaderDir) && readdirSync(serverShaderDir).some((f) => f.endsWith('.zip')))
     fail(s, 'run/server/shaderpacks contains a shader archive');
@@ -121,7 +127,7 @@ for (const [side, accepts, banned] of [
         if (idx.dependencies?.neoforge !== EXPECTED.neoforge) fail(s, 'dependencies.neoforge wrong');
         const wantMods = new Map(sideMods(lock, CLIENT_ACCEPTS).map((m) => [`mods/${m.filename}`, m]));
         const wantResources = new Map(
-          enabledResources(lock).filter((r) => r.side === 'client').map((r) => [r.path, r]));
+          enabledResources(lock).filter((r) => r.side === 'client' || r.side === 'both').map((r) => [r.path, r]));
         const seen = new Set();
         for (const f of idx.files ?? []) {
           const res = wantResources.get(f.path);
@@ -146,8 +152,9 @@ for (const [side, accepts, banned] of [
               if (f.hashes?.sha512 !== res.sha512) fail(s, `${f.path}: sha512 != lockfile`);
               if (f.hashes?.sha1 !== sha1(rbuf)) fail(s, `${f.path}: sha1 != file`);
             }
-            if (f.env?.client !== 'required' || f.env?.server !== 'unsupported')
-              fail(s, `${f.path}: resource env must be client=required/server=unsupported, got ${JSON.stringify(f.env)}`);
+            const resEnvServer = res.side === 'both' ? 'required' : 'unsupported';
+            if (f.env?.client !== 'required' || f.env?.server !== resEnvServer)
+              fail(s, `${f.path}: resource env must be client=required/server=${resEnvServer}, got ${JSON.stringify(f.env)}`);
           } else {
             const buf = jarBufs.get(m.key);
             if (buf) {
@@ -210,10 +217,12 @@ for (const [side, accepts, banned] of [
     for (const n of names) if (n.endsWith('.jar')) fail(s, `third-party jar embedded: ${n}`);
     // locked resource archives (shaderpack zips) are client-only — the server
     // zip must never carry one, inside pack/ or anywhere else.
+    // Locked resource archives (shaderpack zips, gun pack zips) are never
+    // embedded in the server zip — setup-server fetches them via the lockfile.
     for (const n of names) {
       const base = n.split('/').pop();
       if (enabledResources(lock).some((r) => r.filename === base))
-        fail(s, `locked client resource embedded in server zip: ${n}`);
+        fail(s, `locked resource embedded in server zip: ${n}`);
     }
   }
 }
@@ -230,8 +239,8 @@ for (const [side, accepts, banned] of [
     const want = sideMods(lock, CLIENT_ACCEPTS).length;
     const got = [...names].filter((n) => n.startsWith('mods/') && n.endsWith('.jar')).length;
     if (got !== want) fail(s, `mods/ has ${got} jars, expected ${want}`);
-    for (const r of enabledResources(lock).filter((r) => r.side === 'client')) {
-      if (!names.has(r.path)) fail(s, `locked client resource missing: ${r.path}`);
+    for (const r of enabledResources(lock).filter((r) => r.side === 'client' || r.side === 'both')) {
+      if (!names.has(r.path)) fail(s, `locked resource missing: ${r.path}`);
     }
   }
 }

@@ -36989,14 +36989,13 @@
 		"ingredients": []
 	},
 	{
-		"id": "almostunified:defenseturrets",
+		"id": "almostunified:deep_rock_galactic",
 		"type": "almostunified:client_recipe_tracker",
 		"serializer": "almostunified:client_recipe_tracker",
 		"json": {
-			"namespace": "defenseturrets",
+			"namespace": "deep_rock_galactic",
 			"recipes": [
-				"1$machine_gun_turret",
-				"1$forged_alloy_nugget_from_smelting"
+				"1$supply"
 			]
 		},
 		"ingredients": []
@@ -40814,21 +40813,21 @@
 			"group": "buildcraftsilicon:gate_and",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/iron",
-					"type": "buildcraftlib:strict_nbt"
+					"item": "minecraft:nether_bricks"
 				},
 				{
-					"item": "minecraft:nether_bricks"
+					"item": "buildcraftsilicon:redstone_chipset/iron",
+					"type": "buildcraftlib:strict_nbt"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/iron",
-				"type": "buildcraftlib:strict_nbt"
+				"item": "minecraft:nether_bricks"
 			},
 			{
-				"item": "minecraft:nether_bricks"
+				"item": "buildcraftsilicon:redstone_chipset/iron",
+				"type": "buildcraftlib:strict_nbt"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40850,23 +40849,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40926,23 +40925,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -40964,23 +40963,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41002,23 +41001,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"tag": "c:gems/lapis"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"tag": "c:gems/lapis"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41078,23 +41077,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41154,23 +41153,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41230,23 +41229,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"tag": "c:gems/lapis"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"tag": "c:gems/lapis"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41458,23 +41457,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"tag": "c:gems/lapis"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:gems/lapis"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41496,23 +41495,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41626,19 +41625,19 @@
 			"MJ": 250000000,
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/iron"
+					"item": "buildcraftcore:wrench"
 				},
 				{
-					"item": "buildcraftcore:wrench"
+					"item": "buildcraftsilicon:redstone_chipset/iron"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/iron"
+				"item": "buildcraftcore:wrench"
 			},
 			{
-				"item": "buildcraftcore:wrench"
+				"item": "buildcraftsilicon:redstone_chipset/iron"
 			}
 		],
 		"result": "buildcraftsilicon:gate_copier x1"
@@ -41659,19 +41658,19 @@
 			"group": "buildcraftsilicon:chipsets",
 			"ingredients": [
 				{
-					"tag": "c:dusts/redstone"
+					"tag": "c:ingots/gold"
 				},
 				{
-					"tag": "c:ingots/gold"
+					"tag": "c:dusts/redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:dusts/redstone"
+				"tag": "c:ingots/gold"
 			},
 			{
-				"tag": "c:ingots/gold"
+				"tag": "c:dusts/redstone"
 			}
 		],
 		"result": "buildcraftsilicon:redstone_chipset/gold x1"
@@ -41692,19 +41691,19 @@
 			"group": "buildcraftsilicon:chipsets",
 			"ingredients": [
 				{
-					"tag": "c:dusts/redstone"
+					"tag": "c:ingots/iron"
 				},
 				{
-					"tag": "c:ingots/iron"
+					"tag": "c:dusts/redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:dusts/redstone"
+				"tag": "c:ingots/iron"
 			},
 			{
-				"tag": "c:ingots/iron"
+				"tag": "c:dusts/redstone"
 			}
 		],
 		"result": "buildcraftsilicon:redstone_chipset/iron x1"
@@ -41760,19 +41759,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:blue_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:blue_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:blue_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:blue_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41794,19 +41793,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:brown_stained_glass"
 				},
 				{
-					"item": "minecraft:brown_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:brown_stained_glass"
 			},
 			{
-				"item": "minecraft:brown_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41998,19 +41997,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:lime_stained_glass"
 				},
 				{
-					"item": "minecraft:lime_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:lime_stained_glass"
 			},
 			{
-				"item": "minecraft:lime_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42168,19 +42167,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:red_stained_glass"
 				},
 				{
-					"item": "minecraft:red_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:red_stained_glass"
 			},
 			{
-				"item": "minecraft:red_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42202,19 +42201,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:white_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:white_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:white_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:white_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42270,19 +42269,19 @@
 			"group": "buildcraftsilicon:lens_regulars",
 			"ingredients": [
 				{
-					"tag": "c:glass_blocks"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"tag": "c:glass_blocks"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:glass_blocks"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"tag": "c:glass_blocks"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42777,8 +42776,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				2.0
+				2.0,
+				1.0
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/pulsar"
@@ -42786,22 +42785,22 @@
 			"MJ": 500000000,
 			"ingredients": [
 				{
-					"item": "buildcraftcore:engine_redstone"
+					"tag": "c:ingots/iron"
 				},
 				{
-					"tag": "c:ingots/iron"
+					"item": "buildcraftcore:engine_redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
 				"item": "buildcraftcore:engine_redstone"
-			},
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:ingots/iron"
 			}
 		],
 		"result": "buildcraftsilicon:plug/pulsar x1"
@@ -42847,19 +42846,19 @@
 			"group": "buildcraftsilicon:chipsets",
 			"ingredients": [
 				{
-					"tag": "c:gems/quartz"
+					"tag": "c:dusts/redstone"
 				},
 				{
-					"tag": "c:dusts/redstone"
+					"tag": "c:gems/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:gems/quartz"
+				"tag": "c:dusts/redstone"
 			},
 			{
-				"tag": "c:dusts/redstone"
+				"tag": "c:gems/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:redstone_chipset/quartz x1"
@@ -42933,19 +42932,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:black_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:black_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:black_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:black_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/black x8"
@@ -42967,19 +42966,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:blue_dye"
 				},
 				{
-					"item": "minecraft:blue_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:blue_dye"
 			},
 			{
-				"item": "minecraft:blue_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/blue x8"
@@ -43171,19 +43170,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:light_gray_dye"
 				},
 				{
-					"item": "minecraft:light_gray_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:light_gray_dye"
 			},
 			{
-				"item": "minecraft:light_gray_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/light_gray x8"
@@ -43205,19 +43204,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:lime_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:lime_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:lime_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:lime_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/lime x8"
@@ -43273,19 +43272,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:orange_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:orange_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:orange_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:orange_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/orange x8"
@@ -43341,19 +43340,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:purple_dye"
 				},
 				{
-					"item": "minecraft:purple_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:purple_dye"
 			},
 			{
-				"item": "minecraft:purple_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/purple x8"
@@ -43409,19 +43408,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:white_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:white_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:white_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:white_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/white x8"
@@ -43443,19 +43442,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:yellow_dye"
 				},
 				{
-					"item": "minecraft:yellow_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:yellow_dye"
 			},
 			{
-				"item": "minecraft:yellow_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/yellow x8"
@@ -54570,193 +54569,276 @@
 		"result": "creaturefeature:wallpaper x6"
 	},
 	{
-		"id": "defenseturrets:forged_alloy_ingot",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"item": "defenseturrets:forged_alloy_nugget"
-				}
-			},
-			"pattern": [
-				"###",
-				"###",
-				"###"
-			],
-			"result": {
-				"id": "defenseturrets:forged_alloy_ingot",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_nugget"
-			}
-		],
-		"result": "defenseturrets:forged_alloy_ingot x1"
+		"id": "deep_rock_galactic:attachments/ammo_mod_double",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
 	},
 	{
-		"id": "defenseturrets:forged_alloy_nugget_from_smelting",
-		"type": "minecraft:smelting",
-		"serializer": "minecraft:smelting",
-		"json": {
-			"result": {
-				"id": "defenseturrets:forged_alloy_nugget",
-				"count": 1
-			},
-			"experience": 0.7,
-			"cookingtime": 200,
-			"category": "misc",
-			"ingredient": {
-				"tag": "c:storage_blocks/iron"
-			}
-		},
-		"ingredients": [
-			{
-				"tag": "c:storage_blocks/iron"
-			}
-		],
-		"result": "defenseturrets:forged_alloy_nugget x1"
+		"id": "deep_rock_galactic:attachments/ammo_mod_explo",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
 	},
 	{
-		"id": "defenseturrets:turret_barrel",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"item": "defenseturrets:forged_alloy_ingot"
-				}
-			},
-			"pattern": [
-				"###",
-				"#  ",
-				"###"
-			],
-			"result": {
-				"id": "defenseturrets:turret_barrel",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			[],
-			[],
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			}
-		],
-		"result": "defenseturrets:turret_barrel x1"
+		"id": "deep_rock_galactic:attachments/ammo_mod_explo_a",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
 	},
 	{
-		"id": "defenseturrets:turret_base",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"#": {
-					"item": "defenseturrets:forged_alloy_ingot"
-				}
-			},
-			"pattern": [
-				"##"
-			],
-			"result": {
-				"id": "defenseturrets:turret_base",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			}
-		],
-		"result": "defenseturrets:turret_base x1"
+		"id": "deep_rock_galactic:attachments/ammo_mod_fire",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
 	},
 	{
-		"id": "defenseturrets:uv_searchlight",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"F": {
-					"item": "defenseturrets:forged_alloy_ingot"
-				},
-				"L": {
-					"item": "minecraft:lantern"
-				}
-			},
-			"pattern": [
-				"F",
-				"L",
-				"F"
-			],
-			"result": {
-				"id": "defenseturrets:uv_searchlight",
-				"count": 1
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			},
-			{
-				"item": "minecraft:lantern"
-			},
-			{
-				"item": "defenseturrets:forged_alloy_ingot"
-			}
-		],
-		"result": "defenseturrets:uv_searchlight x1"
+		"id": "deep_rock_galactic:attachments/ammo_mod_six",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/ammo_mod_special",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/ammo_mod_three",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/ammo_mod_three_a",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/extended_mag_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/extended_mag_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/extended_mag_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/muzzle_aim",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/muzzle_break",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/muzzle_dmg",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/muzzle_pickaxe",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_barrage",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_carpet",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_cold",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_conductor",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_cryo",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_fatboy",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_fir",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_gas",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_heat",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_hip",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_lead_storm",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_magnetic",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_mobility",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_mortar",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_overcharge",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_plasma",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_push",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_rj250",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "deep_rock_galactic:attachments/stock_toxin",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
 	},
 	{
 		"id": "easy_villagers:auto_trader",
@@ -158828,195 +158910,6 @@
 		"result": "buildinggadgets2:gadget_exchanging x1"
 	},
 	{
-		"id": "kubejs:kjs/defenseturrets_grenade_turret",
-		"type": "minecraft:crafting",
-		"serializer": "kubejs:shaped",
-		"json": {
-			"category": "misc",
-			"key": {
-				"A": {
-					"item": "ic2cre:alloy"
-				},
-				"B": {
-					"item": "defenseturrets:turret_base"
-				},
-				"S": {
-					"item": "immersiveengineering:component_steel"
-				},
-				"E": {
-					"item": "ae2:engineering_processor"
-				},
-				"M": {
-					"item": "defenseturrets:turret_barrel"
-				}
-			},
-			"pattern": [
-				"ASA",
-				"EBE",
-				"SMS"
-			],
-			"result": {
-				"id": "defenseturrets:grenade_turret",
-				"count": 1
-			}
-		},
-		"ingredients": [
-			{
-				"item": "ic2cre:alloy"
-			},
-			{
-				"item": "immersiveengineering:component_steel"
-			},
-			{
-				"item": "ic2cre:alloy"
-			},
-			{
-				"item": "ae2:engineering_processor"
-			},
-			{
-				"item": "defenseturrets:turret_base"
-			},
-			{
-				"item": "ae2:engineering_processor"
-			},
-			{
-				"item": "immersiveengineering:component_steel"
-			},
-			{
-				"item": "defenseturrets:turret_barrel"
-			},
-			{
-				"item": "immersiveengineering:component_steel"
-			}
-		],
-		"result": "defenseturrets:grenade_turret x1"
-	},
-	{
-		"id": "kubejs:kjs/defenseturrets_laser_turret",
-		"type": "minecraft:crafting",
-		"serializer": "kubejs:shaped",
-		"json": {
-			"category": "misc",
-			"key": {
-				"A": {
-					"item": "ic2cre:alloy"
-				},
-				"B": {
-					"item": "ic2cre:lapotron_crystal"
-				},
-				"S": {
-					"item": "ae2:engineering_processor"
-				},
-				"E": {
-					"item": "immersiveengineering:component_electronic"
-				},
-				"M": {
-					"item": "defenseturrets:turret_barrel"
-				}
-			},
-			"pattern": [
-				"AEA",
-				"EBE",
-				"SMS"
-			],
-			"result": {
-				"id": "defenseturrets:laser_turret",
-				"count": 1
-			}
-		},
-		"ingredients": [
-			{
-				"item": "ic2cre:alloy"
-			},
-			{
-				"item": "immersiveengineering:component_electronic"
-			},
-			{
-				"item": "ic2cre:alloy"
-			},
-			{
-				"item": "immersiveengineering:component_electronic"
-			},
-			{
-				"item": "ic2cre:lapotron_crystal"
-			},
-			{
-				"item": "immersiveengineering:component_electronic"
-			},
-			{
-				"item": "ae2:engineering_processor"
-			},
-			{
-				"item": "defenseturrets:turret_barrel"
-			},
-			{
-				"item": "ae2:engineering_processor"
-			}
-		],
-		"result": "defenseturrets:laser_turret x1"
-	},
-	{
-		"id": "kubejs:kjs/defenseturrets_machine_gun_turret",
-		"type": "minecraft:crafting",
-		"serializer": "kubejs:shaped",
-		"json": {
-			"category": "misc",
-			"key": {
-				"B": {
-					"item": "ic2cre:battery"
-				},
-				"S": {
-					"tag": "c:plates/steel"
-				},
-				"C": {
-					"item": "ic2cre:circuit"
-				},
-				"M": {
-					"item": "immersiveengineering:component_iron"
-				}
-			},
-			"pattern": [
-				"SSS",
-				"CBC",
-				"SMS"
-			],
-			"result": {
-				"id": "defenseturrets:machine_gun_turret",
-				"count": 1
-			}
-		},
-		"ingredients": [
-			{
-				"tag": "c:plates/steel"
-			},
-			{
-				"tag": "c:plates/steel"
-			},
-			{
-				"tag": "c:plates/steel"
-			},
-			{
-				"item": "ic2cre:circuit"
-			},
-			{
-				"item": "ic2cre:battery"
-			},
-			{
-				"item": "ic2cre:circuit"
-			},
-			{
-				"tag": "c:plates/steel"
-			},
-			{
-				"item": "immersiveengineering:component_iron"
-			},
-			{
-				"tag": "c:plates/steel"
-			}
-		],
-		"result": "defenseturrets:machine_gun_turret x1"
-	},
-	{
 		"id": "kubejs:kjs/ic2cre_generator",
 		"type": "minecraft:crafting",
 		"serializer": "kubejs:shaped",
@@ -160012,6 +159905,67 @@
 			}
 		],
 		"result": "sophisticatedstorage:upgrade_base x1"
+	},
+	{
+		"id": "kubejs:kjs/taczturrets_turret",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shaped",
+		"json": {
+			"category": "misc",
+			"key": {
+				"P": {
+					"item": "ae2:engineering_processor"
+				},
+				"H": {
+					"item": "immersiveengineering:heavy_engineering"
+				},
+				"S": {
+					"tag": "c:plates/steel"
+				},
+				"C": {
+					"item": "immersiveengineering:component_steel"
+				}
+			},
+			"pattern": [
+				"SCS",
+				"PHP",
+				"SCS"
+			],
+			"result": {
+				"id": "taczturrets:turret",
+				"count": 1
+			}
+		},
+		"ingredients": [
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"item": "immersiveengineering:heavy_engineering"
+			},
+			{
+				"item": "ae2:engineering_processor"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"item": "immersiveengineering:component_steel"
+			},
+			{
+				"tag": "c:plates/steel"
+			}
+		],
+		"result": "taczturrets:turret x1"
 	},
 	{
 		"id": "mcwfurnitures:acacia_bookshelf",
@@ -293686,6 +293640,118 @@
 		"result": "sophisticatedstorage:shulker_box x1"
 	},
 	{
+		"id": "starforge_compat:electric_burner",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"S": {
+					"tag": "c:plates/steel"
+				},
+				"C": {
+					"tag": "c:ingots/copper"
+				},
+				"I": {
+					"tag": "c:plates/iron"
+				},
+				"R": {
+					"item": "minecraft:redstone"
+				}
+			},
+			"pattern": [
+				" S ",
+				"SCS",
+				"IRI"
+			],
+			"result": {
+				"id": "starforge_compat:electric_burner",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:plates/steel"
+			},
+			[],
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:plates/steel"
+			},
+			{
+				"tag": "c:plates/iron"
+			},
+			{
+				"item": "minecraft:redstone"
+			},
+			{
+				"tag": "c:plates/iron"
+			}
+		],
+		"result": "starforge_compat:electric_burner x1"
+	},
+	{
+		"id": "starforge_compat:horde_alarm",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"R": {
+					"item": "minecraft:redstone_lamp"
+				}
+			},
+			"pattern": [
+				"III",
+				"IRI",
+				"III"
+			],
+			"result": {
+				"id": "starforge_compat:horde_alarm",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "minecraft:redstone_lamp"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "starforge_compat:horde_alarm x1"
+	},
+	{
 		"id": "storagedrawers:acacia_full_drawers_1",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -312618,6 +312684,246 @@
 			}
 		],
 		"result": "tacz:ammo_box x1"
+	},
+	{
+		"id": "tacz:kjs/181qmejvv61dckw9nd8k02md4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x4"
+	},
+	{
+		"id": "tacz:kjs/1aimqcqg1g1r7v2kc4i8imfyn",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/1gk6cjuofaimj77ws93ti8ub8",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x8"
+	},
+	{
+		"id": "tacz:kjs/1sh1c71wp4ghxvriwjgg9va5o",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/1svmauapel2n58guu5ptd7r9d",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/218uvtphnwoz9m29ugtdgkt1f",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/2iztzbab0i2bypotbqy2he6cb",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/30ov6ytylcg201en6u809yt7v",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/49q809jm1idxr9ivwdd6ymuym",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/4yovxr3i66z74y7qya2ydoelz",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/5hkr2s2vgnjk5ve3hzphhj908",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/5nnkpt0jvid60ttje5mxi2xkx",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x8"
+	},
+	{
+		"id": "tacz:kjs/5t7qn6rthsxhd402bdgxcj2pa",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x1"
+	},
+	{
+		"id": "tacz:kjs/64vis06o65zex9hbcsv3etodo",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/7tyj1mvsq6nxlys44sz7zfgfj",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/8cygm2uxnr797sqgi6ah62q68",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/8hhth3zk9oznf9qk5ihcgho2q",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x24"
+	},
+	{
+		"id": "tacz:kjs/8j1h7un3emd6juo6tfkdy02ny",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x4"
+	},
+	{
+		"id": "tacz:kjs/95ik1ju05ob220oouyspe20cy",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/98o8s4p1k70hsdjt129dj8lax",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/9lth9412ujs3e6kwxvtxfpmkd",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/9qsnq6cykin13drmfmn42b5jq",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/ae7msris7aei3y526rs7td39n",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/bup9up95i3r647n1swcns7p7v",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x48"
+	},
+	{
+		"id": "tacz:kjs/by9gty3hadn7la3013gbrqk6y",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/cupepczjl78tym0uowofbsjzq",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/cyrhvn1tvxwaih6jfplveyayh",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/dt7feqxyi3l3wi2v9ayufxvvi",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/efvgyw3bnx80bsho9ow3n64vr",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "tacz:kjs/eqiudrjv6242b7fra44btoqqw",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x96"
 	},
 	{
 		"id": "tacz:misc/blood_strike_1",

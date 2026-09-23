@@ -50,7 +50,7 @@ Known limitation (verified, not hidden): JEI 19.57 stores `overlayEnabled` only 
 ## Method
 
 - Queried Modrinth API per project with `loaders=["neoforge"]`, `game_versions=["1.21.1"]`; selected the newest version **per release channel** and compared against `manifest/locked-mods.json`.
-- Non-Modrinth sources checked at their origin: GitHub Releases (IC2CRE, BuildCraft CE), FTB Maven metadata (`maven.ftb.dev`), and Modrinth mirrors for the CurseForge-sourced files (Immersive Petroleum, Defense Turrets, Jade Addons, Let Me Despawn; Building Gadgets 2 has no Modrinth project — CurseForge page checked).
+- Non-Modrinth sources checked at their origin: GitHub Releases (IC2CRE, BuildCraft CE), FTB Maven metadata (`maven.ftb.dev`), and Modrinth mirrors for the CurseForge-sourced files (Immersive Petroleum, Defense Turrets — 已于 2026-09-23 移除, Jade Addons, Let Me Despawn; Building Gadgets 2 has no Modrinth project — CurseForge page checked).
 - NeoForge 21.1.x line checked against `maven.neoforged.net` metadata.
 - Every jar's `neoforge.mods.toml` dependency table is extracted into `manifest/jar-deps.json`; all `required` ranges were verified against the locked set.
 - KubeJS API surface verified by inspecting the installed jar `kubejs-neoforge-2101.7.2-build.377.jar` (event-group registry classes and `ModifyItemTooltipsKubeEvent` method descriptors), not from memory or old tutorials.
@@ -85,7 +85,7 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 | Ad Astra: More Structures | 1.0.2 | release:1.0.2 | both | ad_astra req |
 | The Hordes | 1.21.1-1.6.3f | release:1.6.3f | both | atlaslib req 1.1.14 ✓ |
 | Zombies Break & Build | 1.7.0-neoforge | release:1.7.0-neoforge | both | — |
-| Defense Turrets | 1.2.0 | 1.2.0 (Modrinth mirror latest release) | both | — |
+| ~~Defense Turrets~~ | 1.2.0 | **已移除（2026-09-23）**：原生炮塔不消耗弹药且无拦截接口；由 IE 原生炮塔 + TACZ Turrets 2.0.0 替代 | — | — |
 | In Control! | 1.21-10.3.0 | beta:1.21-10.3.0 — **no release channel exists for 1.21.1** | both | lostcities opt, kubejs opt |
 | ProgressiveStages | 3.0.5 | release:3.0.5 | both | emi/jei opt, ftbteams/ftbquests opt |
 | KubeJS | 2101.7.2-build.377 | release:2101.7.2-build.377 | both | rhino req [2101.2.7-build.81,) ✓build.85; jei opt [19.25.0.322,) |
@@ -281,7 +281,7 @@ Three compat mods added (Modrinth-locked, deps resolved to existing mods only):
 
 **Canonical outputs (server-verified, 0 non-canonical producers remain)**: IE for steel/lead/nickel/silver/uranium + all plates/rods + coke; IC2CRE for tin/bronze; AE2 for ender dust. Worldgen dedup via datapack `neoforge:add_features` overrides: IC2CRE lead off, RC lead/tin/nickel/silver off, IE uranium off — every material keeps ≥1 earth source (closure check: 0 dead chains for the 7 audited ingots).
 
-**TaCZ ammo**: all 24 `gun_smith_table_crafting` recipes already consume `c:` tags natively — unified copper/iron flow through without edits. Defense Turrets still has no ammo-consumption interface (see 实测失败 record); nothing fabricated.
+**TaCZ ammo**: all 24 `gun_smith_table_crafting` recipes already consume `c:` tags natively — unified copper/iron flow through without edits. (Defense Turrets 已移除；弹药消耗由 TACZ Turrets 原生承担。)
 
 **KubeJS↔AU boundary**: AU owns output unification at recipe-load; `starforge_unify.js` owns input-side `replaceInput` widening + 5 datapack recipe overrides for serializers neither can rewrite. No overlapping edits to the same recipe by both systems.
 

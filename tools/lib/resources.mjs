@@ -1,8 +1,9 @@
-// Locked non-mod resources (e.g. shaderpacks) — same guarantees as jars.mjs:
-// the exact locked file lives under build/resources/ and must pass
+// Locked non-mod resources (e.g. shaderpacks, TaCZ gun packs) — same guarantees
+// as jars.mjs: the exact locked file lives under build/resources/ and must pass
 // size+sha256+sha512(+sha1 when declared). Missing files are fetched from the
 // lockfile's pinned download_url — never re-resolved to a newer upstream
-// version. Resources are client-side by contract (side must be 'client').
+// version. side is client|server|both: shaderpacks stay client-only, gun packs
+// (dir=tacz) are required on dedicated servers too.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { DIRS } from './paths.mjs';
@@ -20,8 +21,12 @@ export async function ensureLockedResources(lock, { downloadMissing = true } = {
   if (!list.length) return { files, errors };
   mkdirSync(DIRS.resources, { recursive: true });
   for (const res of list) {
-    if (res.side !== 'client') {
-      errors.push(`${res.key}: resource side must be "client" (got "${res.side}") — servers never carry shaders`);
+    if (!['client', 'server', 'both'].includes(res.side)) {
+      errors.push(`${res.key}: unknown resource side "${res.side}" (want client|server|both)`);
+      continue;
+    }
+    if (res.type === 'shaderpack' && res.side !== 'client') {
+      errors.push(`${res.key}: shaderpacks are client-only (got "${res.side}")`);
       continue;
     }
     if (!res.path || !res.filename || !res.path.endsWith(`/${res.filename}`)) {

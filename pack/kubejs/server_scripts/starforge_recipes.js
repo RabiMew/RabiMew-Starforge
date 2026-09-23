@@ -107,11 +107,13 @@ ServerEvents.recipes((e) => {
     A: i('ae2_annihilation_core'), F: i('ae2_formation_core'), W: 'minecraft:crafting_table'
   });
 
-  // ---------- SF-10 T2: machine gun turret ----------
-  e.remove({ output: 'defenseturrets:machine_gun_turret' });
-  e.shaped('defenseturrets:machine_gun_turret', ['SSS', 'CBC', 'SMS'], {
-    S: '#c:plates/steel', C: i('ic2_circuit'),
-    B: i('ic2_battery'), M: i('ie_iron_component')
+  // ---------- SF-10 T4: TACZ auto-turret (replaces Defense Turrets) ----------
+  // Gun-carrying turret; feeds from the container it stands on. Default recipe
+  // was plain iron — far below its mid-late military role.
+  e.remove({ output: 'taczturrets:turret' });
+  e.shaped('taczturrets:turret', ['SCS', 'PHP', 'SCS'], {
+    S: '#c:plates/steel', C: i('ie_steel_component'),
+    P: i('ae2_engineering_processor'), H: i('ie_heavy_engineering')
   });
 
   // ---------- SF-11 T3: heavy_industry_control (T4 evidence) ----------
@@ -133,24 +135,118 @@ ServerEvents.recipes((e) => {
     G: i('ic2_advanced_circuit'), C: 'immersiveengineering:sheetmetal_steel'
   });
 
-  // ---------- SF-14 T4: grenade turret ----------
-  e.remove({ output: 'defenseturrets:grenade_turret' });
-  e.shaped('defenseturrets:grenade_turret', ['ASA', 'EBE', 'SMS'], {
-    A: i('ic2_alloy'), S: 'immersiveengineering:component_steel',
-    E: i('ae2_engineering_processor'), B: i('dt_base'), M: i('dt_barrel')
-  });
-
   // ---------- SF-15 T4: reactor_control (T5 evidence) ----------
   e.shaped(i('reactor_control'), ['LLL', 'SAS', 'LLL'], {
     L: i('ic2_lead_plate'), S: 'immersiveengineering:component_steel', A: i('ic2_advanced_circuit')
   });
 
-  // ---------- SF-16 T5: laser turret ----------
-  e.remove({ output: 'defenseturrets:laser_turret' });
-  e.shaped('defenseturrets:laser_turret', ['AEA', 'EBE', 'SMS'], {
-    A: i('ic2_alloy'), E: i('ie_electronic'), B: i('ic2_lapotron_crystal'),
-    S: i('ae2_engineering_processor'), M: i('dt_barrel')
-  });
+  // ---------- SF-16: Deep Rock Galactic gun pack — industrial re-costing ----------
+  // The upgraded 1.21.1 pack ships flat vanilla-ish recipes (gold/diamond
+  // blocks + redstone). Guns and ammo all share tacz:* item ids, so
+  // ProgressiveStages cannot lock them — the gate is the stage-locked
+  // industrial material inside each recipe instead:
+  //   T3 (information_age): ae2:engineering_processor  — DRG rifles/SMGs
+  //   T4 (heavy_industry_age): immersiveengineering:heavy_engineering — shotguns/specials
+  //   T5 (atomic_age): ic2cre:containment_reactor_plating + singularity/anomaly — AoE/heavy
+  // Dropped upstream content (unavailable deps — see docs/compatibility.md):
+  //   ani_pro: ammo pixel_gun:pixel_ammo_sniper (mod not shipped)
+  //   pickaxe: melee weapon built on lrtactical (mod not shipped)
+  //   deep_rock_galactic:supply block (its block data requires lrtactical)
+  for (const rid of [
+    'gun/gk2', 'gun/m1000', 'gun/cross', 'gun/zkf', 'gun/subata', 'gun/voltaic',
+    'gun/smart', 'gun/smart_1', 'gun/bulldog', 'gun/btr7', 'gun/drak_25',
+    'gun/pump', 'gun/short', 'gun/impact', 'gun/lover', 'gun/doreda',
+    'gun/minigun', 'gun/crspr', 'gun/rocket', 'gun/40mm', 'gun/thunder',
+    'gun/hook', 'gun/pickaxe',
+    'ammo/drg_generic_ammo', 'ammo/drg_big_ammo', 'ammo/drg_grenade_ammo',
+    'ammo/drg_shortgun_ammo', 'ammo/impact_ammo', 'ammo/lover_ammo',
+    'ammo/arrow', 'ammo/hook', 'melee/pickaxe', 'supply'
+  ]) e.remove({ id: 'deep_rock_galactic:' + rid });
+
+  function drgMat(item, count) {
+    return { item: item.startsWith('#') ? { tag: item.slice(1) } : { item: item }, count: count };
+  }
+  function drgGun(id, group, mats) {
+    e.custom({
+      type: 'tacz:gun_smith_table_crafting',
+      materials: mats.map((m) => drgMat(m[0], m[1])),
+      result: { type: 'gun', group: group, id: id }
+    });
+  }
+  function drgAmmo(id, mats, count) {
+    e.custom({
+      type: 'tacz:gun_smith_table_crafting',
+      materials: mats.map((m) => drgMat(m[0], m[1])),
+      result: { type: 'ammo', id: id, count: count }
+    });
+  }
+
+  // T3: conventional DRG rifles / SMGs / marksman (generic ammo family)
+  const DRG_T3 = [['#c:plates/steel', 4], ['ae2:engineering_processor', 1],
+    ['immersiveengineering:component_steel', 2], ['#c:dusts/redstone', 16]];
+  const DRG_T4 = [['#c:plates/steel', 6], ['immersiveengineering:heavy_engineering', 1],
+    ['immersiveengineering:component_steel', 2], ['ic2cre:circuit', 2], ['#c:dusts/redstone', 24]];
+  const DRG_GUNS = [
+    // T3 — conventional rifles / SMGs / marksman (generic ammo family)
+    ['deep_rock_galactic:gk2', 'drg:scout', DRG_T3],
+    ['deep_rock_galactic:m1000', 'drg:scout', DRG_T3],
+    ['deep_rock_galactic:cross', 'drg:scout', DRG_T3],
+    ['deep_rock_galactic:zkf', 'drg:scout', DRG_T3],
+    ['deep_rock_galactic:subata', 'drg:driller', DRG_T3],
+    ['deep_rock_galactic:voltaic', 'drg:engineer', DRG_T3],
+    ['deep_rock_galactic:smart', 'drg:engineer', DRG_T3],
+    ['deep_rock_galactic:smart_1', 'drg:engineer', DRG_T3],
+    ['deep_rock_galactic:bulldog', 'drg:gunner', DRG_T3],
+    // T4 — squad support / shotguns / heavy sidearms
+    ['deep_rock_galactic:btr7', 'drg:gunner', DRG_T4],
+    ['deep_rock_galactic:drak_25', 'drg:scout', DRG_T4],
+    ['deep_rock_galactic:pump', 'drg:engineer', DRG_T4],
+    ['deep_rock_galactic:short', 'drg:scout', DRG_T4],
+    ['deep_rock_galactic:impact', 'drg:driller', DRG_T4.concat([['#c:storage_blocks/iron', 1]])],
+    ['deep_rock_galactic:lover', 'drg:else', DRG_T4],
+    ['deep_rock_galactic:doreda', 'drg:else', DRG_T4],
+    // grappling hook — traversal utility, T4
+    ['deep_rock_galactic:hook', 'drg:scout', [['#c:plates/steel', 2],
+      ['immersiveengineering:component_steel', 1], ['ic2cre:circuit', 1], ['#c:dusts/redstone', 8]]],
+    // T5 — swarm annihilation / AoE: containment plating + singularity / anomaly core
+    ['deep_rock_galactic:minigun', 'drg:gunner', [['#c:plates/steel', 8],
+      ['ic2cre:containment_reactor_plating', 2], ['modpack:anomaly_analysis', 1],
+      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
+    ['deep_rock_galactic:crspr', 'drg:driller', [['#c:plates/steel', 8],
+      ['ic2cre:containment_reactor_plating', 2], ['ae2:singularity', 1],
+      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
+    ['deep_rock_galactic:rocket', 'drg:gunner', [['#c:plates/steel', 8],
+      ['ic2cre:containment_reactor_plating', 2], ['ae2:singularity', 1],
+      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
+    ['deep_rock_galactic:40mm', 'drg:engineer', [['#c:plates/steel', 8],
+      ['ic2cre:containment_reactor_plating', 2], ['ae2:singularity', 1],
+      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
+    ['deep_rock_galactic:thunder', 'drg:gunner', [['#c:plates/steel', 8],
+      ['ic2cre:containment_reactor_plating', 2], ['modpack:anomaly_analysis', 1],
+      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]]
+  ];
+  for (let gi = 0; gi < DRG_GUNS.length; gi++) {
+    drgGun(DRG_GUNS[gi][0], DRG_GUNS[gi][1], DRG_GUNS[gi][2]);
+  }
+
+  // DRG ammunition — same industrial material families as vanilla TaCZ ammo
+  // (copper/lead + gunpowder baseline), scaled to each weapon's throughput.
+  drgAmmo('deep_rock_galactic:drg_generic_ammo',
+    [['#c:ingots/lead', 8], ['#c:gunpowders', 6], ['#c:dusts/redstone', 8]], 48);
+  drgAmmo('deep_rock_galactic:drg_big_ammo',
+    [['#c:ingots/steel', 4], ['#c:gunpowders', 10], ['#c:dusts/redstone', 16]], 96);
+  drgAmmo('deep_rock_galactic:drg_grenade_ammo',
+    [['#c:ingots/steel', 2], ['minecraft:tnt', 1], ['#c:dusts/redstone', 8]], 8);
+  drgAmmo('deep_rock_galactic:drg_shortgun_ammo',
+    [['#c:ingots/lead', 6], ['#c:gunpowders', 8], ['#c:ingots/copper', 4]], 24);
+  drgAmmo('deep_rock_galactic:impact_ammo',
+    [['#c:storage_blocks/iron', 1], ['#c:gunpowders', 8], ['#c:ingots/steel', 2]], 4);
+  drgAmmo('deep_rock_galactic:lover_ammo',
+    [['#c:ingots/steel', 2], ['#c:gunpowders', 6], ['#c:gems/diamond', 1]], 4);
+  drgAmmo('deep_rock_galactic:arrow',
+    [['minecraft:iron_ingot', 2], ['minecraft:stick', 2], ['minecraft:feather', 2]], 8);
+  drgAmmo('deep_rock_galactic:hook',
+    [['#c:ingots/iron', 4], ['#c:strings', 8]], 1);
 
   // ---------- SF-17 T5: space_control_core (T6 evidence) ----------
   // "aerospace alloy" maps to ad_astra:steel_plate (Earth-producible via compressor).

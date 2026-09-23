@@ -140,6 +140,26 @@ async function resolveModrinthResource(src) {
     license: project.license?.id ?? 'unknown', distribution: 'modrinth_cdn' };
 }
 
+// CurseForge resources (e.g. TaCZ gun packs under "customization") resolve via
+// the key-free cfwidget mirror. src.project_type selects the widget section
+// (default mc-mods); src.file_id pins an exact file (recommended — widget
+// ordering is newest-first but filenames are not versioned consistently);
+// src.filename renames the stored file when upstream ships non-ASCII names.
+async function resolveCurseForgeResource(src) {
+  const ptype = src.project_type ?? 'mc-mods';
+  const j = await jget(`https://api.cfwidget.com/minecraft/${ptype}/${src.slug}`);
+  const files = j.files ?? [];
+  const file = src.file_id ? files.find((f) => f.id === src.file_id) : files[0];
+  if (!file) throw new Error(`curseforge:${ptype}/${src.slug}: file ${src.file_id ?? '(latest)'} not in widget list`);
+  const url = `https://mediafilez.forgecdn.net/files/${Math.floor(file.id / 1000)}/${file.id % 1000}/${encodeURIComponent(file.name)}`;
+  return {
+    version: (file.name.match(/(\d+\.\d+(?:\.\d+)*)/) ?? [null, String(file.id)])[1],
+    filename: src.filename ?? file.name, url,
+    page: `https://www.curseforge.com/minecraft/${ptype}/${src.slug}`,
+    license: j.license || 'unknown-cf', distribution: 'curseforge_cdn', cfFileId: file.id,
+  };
+}
+
 // Local source-built mods (starforge_compat): run their build script, then pin
 // the deterministic artifact exactly like a downloaded jar. download_url is a
 // `local:` marker so --locked rebuilds instead of fetching.
@@ -233,8 +253,10 @@ for (const res of list.resources ?? []) {
     lock.resources.push(prev);
     continue;
   }
-  if (res.source.type !== 'modrinth') throw new Error(`${res.key}: resource sources only support modrinth`);
-  const r = await resolveModrinthResource(res.source);
+  const resourceResolvers = { modrinth: resolveModrinthResource, curseforge: resolveCurseForgeResource };
+  const resResolver = resourceResolvers[res.source.type];
+  if (!resResolver) throw new Error(`${res.key}: unsupported resource source type ${res.source.type}`);
+  const r = await resResolver(res.source);
   const target = path.join(resDir, r.filename);
   let buf;
   if (existsSync(target)) {

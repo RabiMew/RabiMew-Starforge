@@ -56,7 +56,7 @@ Starforge 默认启用 **MakeUp - Ultra Fast 9.5e** 作为轻量光影。选型�
 - IC2CRE / BuildCraft / Immersive Engineering 动态机器模型、AE2 网络方块在光影下的渲染
 - TaCZ 枪械模型与瞄具（光影下手持/第一人称渲染常见偏差）
 - Ad Astra 各维度天空盒（地球/月球/火星/小行星带）与行星渲染
-- Defense Turrets 弹幕与 The Hordes 怪潮下的粒子表现、夜间工业基地观感
+- TACZ Turrets 弹幕/索敌、DRG 高射速与 AoE 武器（minigun、drak_25、rocket、thunder、crspr 等）与 The Hordes 怪潮下的粒子表现、夜间工业基地观感
 - 方块半透明/发光渲染、shader compile error、Iris compatibility warning、黑白屏
 
 ## 测试后决定
@@ -75,7 +75,7 @@ Starforge 默认启用 **MakeUp - Ultra Fast 9.5e** 作为轻量光影。选型�
 ## Starforge 真实热点
 
 - 怪潮实体数量与 Zombie Break & Build 的寻路/拆搭检查
-- Defense Turrets 的索敌与弹药 tick
+- TACZ Turrets 的索敌、容器取弹与弹道 tick；DRG 高射速武器的弹丸/粒子生成速率
 - 殖民 NPC：居民/守卫寻路、索敌、找弹药/找食物、TaCZ 弹道与投射物、岗位工作站的基地摘要更新
 - AE2 大型网络与自动合成
 - BC 管道实体运输

@@ -41,7 +41,9 @@ if (fetchErrors.length) {
 }
 backfillSha1(lock); // persists real sha1s so future builds are reproducible
 backfillResourceSha1(lock, resFiles);
-const clientResources = enabledResources(lock).filter((r) => r.side === 'client');
+// Client-side resource set: side=client plus side=both (gun packs are needed
+// client-side for assets AND server-side for data/recipes).
+const clientResources = enabledResources(lock).filter((r) => r.side === 'client' || r.side === 'both');
 
 const clientMods = sideMods(lock, CLIENT_ACCEPTS);
 const serverMods = sideMods(lock, ['server']);
@@ -140,16 +142,17 @@ for (const mod of clientMods) {
   if (res.kind === 'other') needsAttention.push({ mod, res });
 }
 
-// Non-mod resources (shaderpacks etc.) — declared at their real instance path
-// with env client=required/server=unsupported so launchers download them from
-// the official URL instead of us embedding the archive.
+// Non-mod resources (shaderpacks, gun packs) — declared at their real instance
+// path so launchers download them from the official URL instead of us embedding
+// the archive. env marks server=required for side=both (tacz/ gun packs belong
+// on the dedicated server too), unsupported for client-only shaderpacks.
 for (const res of clientResources) {
   const buf = resFiles.get(res.key).buf;
   const h = hashes(buf);
   files.push({
     path: res.path,
     hashes: { sha1: h.sha1, sha512: h.sha512 },
-    env: { client: 'required', server: 'unsupported' },
+    env: { client: 'required', server: res.side === 'both' ? 'required' : 'unsupported' },
     downloads: [res.download_url],
     fileSize: h.size,
   });

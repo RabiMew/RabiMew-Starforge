@@ -42,7 +42,7 @@ if (installed.length !== expected) {
 }
 // Locked client resources (shaderpacks etc.) must have landed at their
 // declared instance path — synced by sync-mods.mjs from build/resources/.
-for (const res of (lock.resources ?? []).filter((r) => r.enabled !== false && r.side === 'client')) {
+for (const res of (lock.resources ?? []).filter((r) => r.enabled !== false && (r.side === 'client' || r.side === 'both'))) {
   if (!existsSync(path.join(DIRS.runClient, ...res.path.split('/')))) {
     console.error(`missing client resource: ${res.path} (run fetch-mods --locked then sync-mods client)`);
     process.exit(1);

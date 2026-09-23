@@ -1251,29 +1251,6 @@
     ]
   },
   {
-    "file": "defenseturrets-neoforge-1.21.1-1.2.0.jar",
-    "modIds": [
-      "defenseturrets"
-    ],
-    "embeddedModIds": [],
-    "deps": [
-      {
-        "modId": "neoforge",
-        "type": "required",
-        "versionRange": "[21.1.230,)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      },
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21.1,)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      }
-    ]
-  },
-  {
     "file": "dynamic-fps-3.11.4+minecraft-1.21.0-neoforge.jar",
     "modIds": [
       "dynamic_fps"
@@ -3070,6 +3047,115 @@
         "modId": "minecraft",
         "type": "REQUIRED",
         "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "tacz-pack-upgrader-2.1.3.jar",
+    "modIds": [
+      "taczpackupgrader"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "REQUIRED",
+        "versionRange": "[21,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "REQUIRED",
+        "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "taczaddon-1.1.8-fix2-1.21.1-neoforge.jar",
+    "modIds": [
+      "taczaddon"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1.238,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "tacz",
+        "type": "required",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "jei",
+        "type": "optional",
+        "ordering": "AFTER",
+        "side": "CLIENT"
+      },
+      {
+        "modId": "shouldersurfing",
+        "type": "optional",
+        "ordering": "AFTER",
+        "side": "CLIENT"
+      },
+      {
+        "modId": "sophisticatedbackpacks",
+        "type": "optional",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "sophisticatedcore",
+        "type": "optional",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "curios",
+        "type": "optional",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "taczturrets-2.0.0-all.jar",
+    "modIds": [
+      "taczturrets",
+      "neoforge"
+    ],
+    "embeddedModIds": [
+      "geckolib",
+      "smartbrainlib"
+    ],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "tacz",
+        "type": "required",
+        "versionRange": "[1.1.8-hotfix-r6,)",
         "ordering": "NONE",
         "side": "BOTH"
       }

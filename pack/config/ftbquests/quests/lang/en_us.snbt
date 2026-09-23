@@ -139,6 +139,13 @@
 		"Aggregate physical inventory through a storage controller, then set restocking thresholds for circuits, ammunition, and food. Prioritize essential supplies and plan for full storage, power loss, and missing ingredients."
 	]
 	quest.401D4EAB9AB4A6E1.quest_subtitle: "Suggested stage: Information Age"
+	quest.4B11C059543966A4.title: "The Munitions Supply Chain"
+	quest.4B11C059543966A4.quest_desc: [
+		"Factory → ammo depot → logistics trunk → frontline ammo box. Use stock thresholds so the logistics system refills boxes automatically; turrets and guards just keep firing."
+		""
+		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
+	]
+	quest.4B11C059543966A4.quest_subtitle: "Suggested stage: Information Age"
 	quest.4B4C77575CC4219A.title: "Connect Remote Bases"
 	quest.4B4C77575CC4219A.quest_desc: [
 		"Link powered, loaded networks with a quantum bridge and keep local supply buffers. A disconnected base should still sustain essential operations."
@@ -193,34 +200,32 @@
 		"Start with lighting, terrain, and safe paths. Build outer and inner lines with room to retreat, patrol, resupply, and repair."
 		""
 		"{\"text\":\"» See the manual: Horde Sappers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Horde Sappers\"}}"
+		"{\"text\":\"» See the manual: Layered Base Defense\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6D57B198ED6623C4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Layered Base Defense\"}}"
 	]
 	quest.1752DF1046FD05B2.quest_subtitle: "Suggested stage: Survival Age"
-	quest.499CCB0E42738DC1.title: "Keep Your Turret Supplied"
-	quest.499CCB0E42738DC1.quest_desc: [
-		"Deploy a basic turret and check power, ammunition, and friendly targets. Test its coverage in a small drill and spread out your reserves."
-		""
-		"{\"text\":\"» See the manual: Horde Sappers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6AD45769D44A5F98\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Horde Sappers\"}}"
-	]
-	quest.499CCB0E42738DC1.quest_subtitle: "Suggested stage: Electrical Age"
-	quest.37A21158241ACBD3.title: "Match Firepower to the Enemy"
-	quest.37A21158241ACBD3.quest_desc: [
-		"Use machine guns against ordinary targets, area fire against crowds, and heavy firepower against armored units. Coordinate firing lanes and supplies across weapon types."
-	]
-	quest.37A21158241ACBD3.quest_subtitle: "Suggested stage: Heavy Industry Age"
-	quest.31583156C2BDAC96.title: "Hold the Base During a Supply Failure"
-	quest.31583156C2BDAC96.quest_desc: [
-		"Drill a power-grid or transport failure. Check that oxygen, basic firepower, and food reserves remain available, and record actual consumption during each defense."
-		""
-		"{\"text\":\"» See the manual: Colony Supply Chains\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"744853EABC0E1648\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Colony Supply Chains\"}}"
-	]
-	quest.31583156C2BDAC96.quest_subtitle: "Suggested stage: Atomic Age"
 	quest.6A40076FB5A60443.title: "Gunsmithing"
 	quest.6A40076FB5A60443.quest_desc: [
 		"The gun workbench and ammo table stand up — guard and player weapons go industrial instead of being scavenged."
 		""
 		"{\"text\":\"» See the manual: The Colony Armory\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"15C288AF8333C644\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Colony Armory\"}}"
+		"{\"text\":\"» See the manual: TaCZ Addon: Gunsmith Assistant\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"009B2C59FE3D645E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"TaCZ Addon: Gunsmith Assistant\"}}"
 	]
 	quest.6A40076FB5A60443.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.1AEA18147C0DBE26.title: "Armed Guards"
+	quest.1AEA18147C0DBE26.quest_desc: [
+		"Issue conventional guns (rifles, SMGs, shotguns) to village guards — they are your most flexible mobile infantry. Keep explosives and exotic weapons in player hands; guards must not level the base."
+		""
+		"{\"text\":\"» See the manual: Choosing Guard Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"725FD622502D6892\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Choosing Guard Weapons\"}}"
+		"{\"text\":\"» See the manual: Colony Guards\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C0A7C642219B0D2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Colony Guards\"}}"
+	]
+	quest.1AEA18147C0DBE26.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.2F8112B376410105.title: "Industrial Sentry Guns"
+	quest.2F8112B376410105.quest_desc: [
+		"Deploy IE sentry turrets (gun turret / chem turret): the industrial age’s early fixed defense. Check ammo, firing lanes, and friend lists — never concentrate all reserves at one post."
+		""
+		"{\"text\":\"» See the manual: Three-Layer Defense\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"482CA592DE6BAB84\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Three-Layer Defense\"}}"
+	]
+	quest.2F8112B376410105.quest_subtitle: "Suggested stage: Electrical Age"
 	quest.605556FAD18F13D3.title: "The Ammo Line"
 	quest.605556FAD18F13D3.quest_desc: [
 		"Ammo boxes and casull rounds roll off the line. A turret is just furniture without ammunition — the magazines are the real rations."
@@ -228,16 +233,49 @@
 		"{\"text\":\"» See the manual: Ammunition Logistics\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C15617E8C8DA7F9\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Ammunition Logistics\"}}"
 	]
 	quest.605556FAD18F13D3.quest_subtitle: "Suggested stage: Electrical Age"
-	quest.60865655142D99C6.title: "Sentry Network"
-	quest.60865655142D99C6.quest_desc: [
-		"Turret bases and searchlights deployed as a net: the perimeter gets a skeleton and nights stop needing human watch."
+	quest.0578B3D427AD63A7.title: "Frontline Ammo Boxes"
+	quest.0578B3D427AD63A7.quest_desc: [
+		"Turrets only eat last-mile logistics: place an ammo box beneath or beside the turret and let AE2 / Pipez / BuildCraft keep it filled. Turrets do not take ammo straight from pipes."
+		""
+		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
 	]
-	quest.60865655142D99C6.quest_subtitle: "Suggested stage: Electrical Age"
-	quest.0E69EBCEBE72E13A.title: "Laser Grid"
-	quest.0E69EBCEBE72E13A.quest_desc: [
-		"Laser defense towers linked into the grid — the final interception layer for swarms and high-value targets. Verify it in the defense drill."
+	quest.0578B3D427AD63A7.quest_subtitle: "Suggested stage: Information Age"
+	quest.13E59D0117879820.title: "Automatic Turret"
+	quest.13E59D0117879820.quest_desc: [
+		"The TACZ turret takes on whatever TaCZ gun you load into it. Install the gun, verify targeting mode and friend recognition, then hook up its ammo box."
+		""
+		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
 	]
-	quest.0E69EBCEBE72E13A.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.13E59D0117879820.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.123A25BDCDB14B3F.title: "Deep Rock Arsenal"
+	quest.123A25BDCDB14B3F.quest_desc: [
+		"Deep Rock Galactic weapons unlocked: heavy sci-fi ordnance for high-intensity combat. More firepower, much pricier ammo logistics — make sure production can keep up first."
+		""
+		"{\"text\":\"» See the manual: Deep Rock Galactic Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Deep Rock Galactic Weapons\"}}"
+	]
+	quest.123A25BDCDB14B3F.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.43727C69AA43A83C.title: "Swarm Suppression"
+	quest.43727C69AA43A83C.quest_desc: [
+		"High-RPM and area-effect DRG weapons are built for Arachnids swarms and major hordes. Suppression is strong, but sustained fire burns through ammo stockpiles fast."
+		""
+		"{\"text\":\"» See the manual: Deep Rock Galactic Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Deep Rock Galactic Weapons\"}}"
+	]
+	quest.43727C69AA43A83C.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.09D27335218273DA.title: "Expedition Firepower"
+	quest.09D27335218273DA.quest_desc: [
+		"Prepare heavy firepower and deep ammo reserves for off-world expeditions: high-threat alien targets and cut-off supply lines both lean on this layer."
+		""
+		"{\"text\":\"» See the manual: Expedition Ammunition Prep\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"76E5B544AD6A0494\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Expedition Ammunition Prep\"}}"
+	]
+	quest.09D27335218273DA.quest_subtitle: "Suggested stage: Space Age"
+	quest.31583156C2BDAC96.title: "Hold the Base During a Supply Failure"
+	quest.31583156C2BDAC96.quest_desc: [
+		"Drill a power-grid or transport failure. Check that oxygen, basic firepower, and food reserves remain available, and record actual consumption during each defense."
+		""
+		"{\"text\":\"» See the manual: Colony Supply Chains\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"744853EABC0E1648\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Colony Supply Chains\"}}"
+		"{\"text\":\"» See the manual: Layered Base Defense\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6D57B198ED6623C4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Layered Base Defense\"}}"
+	]
+	quest.31583156C2BDAC96.quest_subtitle: "Suggested stage: Atomic Age"
 	chapter.23F04414D2AFEB65.title: "Base Defense"
 	chapter.23F04414D2AFEB65.chapter_subtitle: [
 		"Plan defenses and firepower, then keep them supplied to protect industry and homes."
@@ -555,6 +593,36 @@
 		"Colony hordes apply pressure through tactics, numbers, and specialist units rather than inflated health pools. Keep reserves of ammunition, power, food, and repairs."
 	]
 	quest.1630974DE79170F7.quest_subtitle: "Hordes and Defense"
+	quest.6D57B198ED6623C4.title: "Layered Base Defense"
+	quest.6D57B198ED6623C4.quest_desc: [
+		"Defense is layered by firepower: IE sentries cover early industrial fixed defense; TACZ auto-turrets cover late military automation (gun + ammo box); armed guards are mobile infantry; players handle high-value targets, emergency repairs, and collapse response. Never bet the base on one turret type."
+	]
+	quest.6D57B198ED6623C4.quest_subtitle: "Hordes and Defense"
+	quest.2E55B63F9D911701.title: "Auto-Turrets: Loading & Resupply"
+	quest.2E55B63F9D911701.quest_desc: [
+		"A TACZ turret takes a TaCZ gun by click or dropped item. It draws ammunition from the chest beneath or beside it — the last mile: pipes and AE2 keep the box filled, the turret draws from it. Its lamp shows reloading / empty / ready states."
+	]
+	quest.2E55B63F9D911701.quest_subtitle: "Hordes and Defense"
+	quest.559BD25A382ABD43.title: "Deep Rock Galactic Weapons"
+	quest.559BD25A382ABD43.quest_desc: [
+		"The DRG arsenal is the heavy sci-fi layer: conventional rifles (GK2, Subata), swarm suppression (CRSPR, Drak-25), and AoE heavy fire (Rocket, 40mm, Thunder). They unlock via staged industrial materials and cost far more ammunition than conventional guns."
+	]
+	quest.559BD25A382ABD43.quest_subtitle: "Hordes and Defense"
+	quest.725FD622502D6892.title: "Choosing Guard Weapons"
+	quest.725FD622502D6892.quest_desc: [
+		"Guard Villagers can wield TaCZ guns. Issue only dependable conventional weapons — rifles, SMGs, shotguns. Never hand out explosives, AoE, or exotic-mechanic weapons; the colony cannot afford friendly fire."
+	]
+	quest.725FD622502D6892.quest_subtitle: "Hordes and Defense"
+	quest.009B2C59FE3D645E.title: "TaCZ Addon: Gunsmith Assistant"
+	quest.009B2C59FE3D645E.quest_desc: [
+		"TaCZ Addon streamlines the gun smith table: per-gun attachment and ammo filtering, material lists, JEI recipe lookups, batch crafting, and pulling materials from nearby containers and backpacks. It reduces busywork — never crafting cost."
+	]
+	quest.009B2C59FE3D645E.quest_subtitle: "Hordes and Defense"
+	quest.76E5B544AD6A0494.title: "Expedition Ammunition Prep"
+	quest.76E5B544AD6A0494.quest_desc: [
+		"Stock up by consumption rate before departing: estimate conventional guns by combat time × fire rate, and pack extra heavy ammo for DRG weapons. Until a quantum bridge links your main stockpile, backpacks and ammo boxes are your entire supply line."
+	]
+	quest.76E5B544AD6A0494.quest_subtitle: "Spaceflight and Hazards"
 	quest.4D5475C44C18F8A3.title: "Garrisons per Planet"
 	quest.4D5475C44C18F8A3.quest_desc: [
 		"Each planet needs a different garrison: Mars relies on turrets against swarms, Glacio needs armor-piercing firepower, Mercury keeps only a few elites. Unloaded colonies consume no processing."

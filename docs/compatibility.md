@@ -22,7 +22,7 @@
 | Simple Structures: Ad Astra | 1.3（2026-09-16 release，Modrinth） | [Modrinth](https://modrinth.com/mod/simple-structures-ad-astra) | MIT；modid `pv_ad_astra_structures`；服务端必需/客户端可选；Patchouli 为可选依赖（未装）；与 More Structures 命名空间/结构集互不重叠，共存已实测加载 |
 | The Hordes | 1.21.1-1.6.3f | [文件记录](https://www.curseforge.com/minecraft/mc-mods/the-hordes/files/all?page=1&pageSize=20&version=1.21.1) | 时间控制、按基地波次参数、感染、维度排除 |
 | Zombies Break & Build | 1.21.1-1.7.0-neoforge | [版本记录](https://modrinth.com/mod/zombies-break-and-build/version/OyzwivCD) | 单位标记/阶段支持、领地权限、破坏和搭建限额 |
-| Defense Turrets | NeoForge 1.21.1-1.2.0 | [文件记录](https://www.curseforge.com/minecraft/mc-mods/defenseturrets/files/all) | 弹药输入、能源、红石、友军、AoE 地形损坏 |
+| TACZ Turrets | 2.0.0（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/tacz-turrets) | MIT；硬依赖 `tacz≥1.1.8-hotfix-r6`（本包移植版满足）；jarJar 内嵌 GeckoLib/SmartBrainLib/Registrate；**已实测**：实体注册、装枪（手持位）、对敌对生物开火、**从脚下箱子取弹**（原版 TaCZ 枪与 DRG gk2 均验证）、服务端无崩溃；友军 trust 列表、红石模式、区块卸载、多人掉线与 DRG 特殊武器兼容性列入实机验收 |
 | In Control! | 1.21-10.3.0，Beta，文件标记 1.21.1 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/in-control) | 当前 schema、召唤/转移绕过、规则优先级 |
 | ProgressiveStages | 3.0.5 候选 | [版本列表](https://modrinth.com/mod/progressivestages/versions) | 阶段本地化、团队同步、机器配方与自动合成覆盖 |
 | KubeJS | 2101.7.2-build.377 | [版本记录](https://modrinth.com/mod/kubejs/version/THIGFPwf) | 7.2 API、数据组件、各模组配方插件 |
@@ -42,6 +42,9 @@
 | Guard Villagers | 2.4.12 | [Modrinth](https://modrinth.com/mod/guard-villagers) | 自定义许可证；护甲/武器槽、巡逻 AI、团队与炮塔友军识别、怪潮互动、外星环境、大量守卫性能 |
 | TaCZ（非官方 NeoForge 移植） | 1.1.8-hotfix-r6 | [Modrinth](https://modrinth.com/mod/tacz-1.21.1) | GPL-3.0-only；非官方移植质量基线、枪包格式、武器数据配置、弹药/附件、爆头与护甲计算、服务端 MSPT 与客户端 FPS |
 | Guard Villagers TACZ Support | 1.0.1 | [Modrinth](https://modrinth.com/mod/guard-villagers-tacz-support) | MIT；元数据声明客户端不支持（服务端/单人）；索敌、射击、耗弹、Ammo Box、找弹药/食物、射界、友军识别、Zombie/Pillager 持枪能力逐项实测 |
+| TaCZ Addon | 1.1.8-fix2（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/taczaddon) | 许可不一致待核：Modrinth API 记 GPL-3.0-only，jar 内 `neoforge.mods.toml` 记 ARR；枪匠台 QoL（附件/弹药按枪过滤、材料清单、JEI 跳转、批量合成、邻近容器与 Sophisticated Backpacks 取料）；**只降操作负担，不改配方成本**；服务端已加载，客户端 GUI 交互列入实机验收 |
+| TaCZ Pack Upgrader | 2.1.3（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/tacz-pack-upgrader) | 许可不一致待核：API 记 LGPL-3.0-or-later，jar 记 ARR；启动时把 `tacz/` 目录旧格式枪包升级为 1.21.1 移植版可读格式（`forge:`→`c:` 标签转换已确认）；只能升级枪包，不能升级 Java addon，也不授予枪包再分发权 |
+| [TaCZ] Deep Rock Galactic Gun Pack | 1.2.6.1（CF file 8538684，面向 1.20.1） | [CurseForge](https://www.curseforge.com/minecraft/customization/deep-rock-galactic-gun-pack) | **All Rights Reserved（SicarioFG）**——zip 只经 CurseForge CDN manifest 链接分发，绝不入库或嵌入包体；由 Pack Upgrader 在启动时升级为 `drg_gun_pack_1.2.6.1+1.21.1.zip`（已实测 22 把枪 + 8 种弹药配方经 KubeJS 重挂工业材料后加载）；已知缺口：`ani_pro` 依赖未装的 `pixel_gun` 弹药（无配方，视同禁用）、`pickaxe`/`melee` 与 `supply` 方块依赖未装的 `lrtactical`（配方/方块数据加载报错，已移除对应配方）；模型/动画/音效/特殊射击 lua 的客户端实机表现待验收 |
 
 ## 体验辅助候选
 
@@ -198,4 +201,4 @@ FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Com
 - 定位：KubeJS/标签无法表达的**行为型**兼容的最小载体。源码 `compat/`，构建 `tools/build-compat.mjs`（无 Gradle：javac + NeoForge AT 变换编译 jar + 确定性打包），`manifest` `local` 源入锁，sha256 以 `manifest/locked-mods.json` 为准。
 - `horde_alarm`：The Hordes `HordeStart/EndEvent` → 登记位点 `setBlock` + 15 强度红石信号。用 `getSignal`/`getDirectSignal` 原生红石接口 + `SavedData` 登记坐标，无 Mixin、无轮询。服务端实测信号 0→15→0、红石灯亮灭随怪潮起止、破坏注销、重启持久化。
 - `electric_burner`：FD 热源。进 `farmersdelight:heat_sources` 且带 `LIT` blockstate，复用 FD 原生 `isHeated`（LIT 语义），无 Mixin。`Capabilities.EnergyStorage.BLOCK` 收 FE，40 FE/tick。实测：IE 创造电容可供电维持满电、断电 CookTime 恒 0、供电后产出 bone_broth。
-- **边界**：不碰 FD/The Hordes 内部行为；turret 弹药经济需 Mixin 尚未做；方块模型/战利品/配方为占位（无纹理资源），客户端目检待补。
+- **边界**：不碰 FD/The Hordes 内部行为；方块模型/战利品/配方为占位（无纹理资源），客户端目检待补。原“turret 弹药经济需 Mixin”事项随 Defense Turrets 移除而关闭——继任的 TACZ Turrets 原生消耗容器弹药，不再需要附属注入。

@@ -3,14 +3,14 @@ id = "modpack:atomic_age/lock_use"
 effect = "lock"
 action = "use"
 priority = 500
-targets.items = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "defenseturrets:laser_turret", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis"]
+targets.items = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis"]
 
 [[rules]]
 id = "modpack:atomic_age/lock_place"
 effect = "lock"
 action = "place"
 priority = 500
-targets.blocks = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "defenseturrets:laser_turret", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis"]
+targets.blocks = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis"]
 
 [recipes]
-locked_items = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "defenseturrets:laser_turret", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis"]
+locked_items = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis"]

@@ -4,7 +4,7 @@
 	filename: "military"
 	group: ""
 	icon: {
-		id: "defenseturrets:machine_gun_turret"
+		id: "taczturrets:turret"
 	}
 	id: "23F04414D2AFEB65"
 	images: [ ]
@@ -14,7 +14,7 @@
 	quests: [
 		{
 			icon: {
-				id: "defenseturrets:turret_base"
+				id: "immersiveengineering:turret_gun"
 			}
 			id: "1752DF1046FD05B2"
 			x: 0d
@@ -43,140 +43,6 @@
 				{
 					id: "6FE3337B7CE29D77"
 					type: "checkmark"
-				}
-			]
-		}
-		{
-			icon: {
-				id: "defenseturrets:machine_gun_turret"
-			}
-			id: "499CCB0E42738DC1"
-			x: 6.4d
-			y: 3d
-			dependencies: [
-				"6A40076FB5A60443"
-			]
-			rewards: [
-				{
-					id: "408FA98B4E2F90FD"
-					type: "item"
-					item: {
-						count: 16
-						id: "minecraft:copper_ingot"
-					}
-					team_reward: false
-				}
-				{
-					id: "490AAA7ED762EC0C"
-					type: "item"
-					item: {
-						count: 8
-						id: "immersiveengineering:ingot_lead"
-					}
-					team_reward: false
-				}
-			]
-			tasks: [
-				{
-					id: "0B58C67AD8738CAD"
-					type: "item"
-					item: {
-						count: 1
-						id: "defenseturrets:machine_gun_turret"
-					}
-					count: 1
-					consume_items: false
-				}
-			]
-		}
-		{
-			icon: {
-				id: "defenseturrets:grenade_turret"
-			}
-			id: "37A21158241ACBD3"
-			x: 12.8d
-			y: 6d
-			dependencies: [
-				"60865655142D99C6"
-			]
-			rewards: [
-				{
-					id: "66354B458C07A51E"
-					type: "item"
-					item: {
-						count: 4
-						id: "defenseturrets:forged_alloy_ingot"
-					}
-					team_reward: false
-				}
-				{
-					id: "726EE26C55AEFA07"
-					type: "item"
-					item: {
-						count: 16
-						id: "minecraft:gunpowder"
-					}
-					team_reward: false
-				}
-			]
-			tasks: [
-				{
-					id: "04926DE72B84EDFF"
-					type: "item"
-					item: {
-						count: 1
-						id: "defenseturrets:grenade_turret"
-					}
-					count: 1
-					consume_items: false
-				}
-			]
-		}
-		{
-			icon: {
-				id: "tacz:ammo_box"
-			}
-			id: "31583156C2BDAC96"
-			x: 19.2d
-			y: 9d
-			dependencies: [
-				"605556FAD18F13D3"
-				"0E69EBCEBE72E13A"
-			]
-			rewards: [
-				{
-					id: "2FC4B20CEA91B97C"
-					type: "item"
-					item: {
-						count: 4
-						id: "immersiveengineering:component_steel"
-					}
-					team_reward: false
-				}
-				{
-					id: "75AE78DAF0A97ADC"
-					type: "item"
-					item: {
-						count: 1
-						id: "modpack:service_medal"
-					}
-					team_reward: true
-				}
-			]
-			tasks: [
-				{
-					id: "3B934512025FC7EA"
-					type: "checkmark"
-				}
-				{
-					id: "0920C4F38E3944F0"
-					type: "item"
-					item: {
-						count: 1
-						id: "immersiveengineering:component_steel"
-					}
-					count: 4
-					consume_items: false
 				}
 			]
 		}
@@ -226,11 +92,91 @@
 		}
 		{
 			icon: {
+				id: "guardvillagers:guard_spawn_egg"
+			}
+			id: "1AEA18147C0DBE26"
+			x: 6.4d
+			y: 15d
+			dependencies: [
+				"6A40076FB5A60443"
+			]
+			rewards: [
+				{
+					id: "1E7DF0B06031F504"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:iron_ingot"
+					}
+					team_reward: false
+				}
+				{
+					id: "6F7F4CED91FF96A9"
+					type: "item"
+					item: {
+						count: 8
+						id: "immersiveengineering:ingot_lead"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "14477DC7B58F3681"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "immersiveengineering:turret_gun"
+			}
+			id: "2F8112B376410105"
+			x: 6.4d
+			y: 13.5d
+			dependencies: [
+				"6A40076FB5A60443"
+			]
+			rewards: [
+				{
+					id: "1ECE988CDE7121EF"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:copper_ingot"
+					}
+					team_reward: false
+				}
+				{
+					id: "1350D670FE11B1CD"
+					type: "item"
+					item: {
+						count: 8
+						id: "immersiveengineering:ingot_lead"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "141BD0645B82AF64"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:turret_gun"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
 				id: "tacz:ammo_box"
 			}
 			id: "605556FAD18F13D3"
 			x: 6.4d
-			y: 10.5d
+			y: 3d
 			dependencies: [
 				"6A40076FB5A60443"
 			]
@@ -270,42 +216,70 @@
 		}
 		{
 			icon: {
-				id: "defenseturrets:uv_searchlight"
+				id: "tacz:ammo_box"
 			}
-			id: "60865655142D99C6"
+			id: "0578B3D427AD63A7"
 			x: 9.6d
 			y: 4.5d
 			dependencies: [
-				"499CCB0E42738DC1"
+				"605556FAD18F13D3"
 			]
 			rewards: [
 				{
-					id: "79765854883DDFAE"
+					id: "1AD76EC3E40641CB"
 					type: "item"
 					item: {
-						count: 4
-						id: "defenseturrets:turret_barrel"
+						count: 16
+						id: "minecraft:iron_ingot"
 					}
 					team_reward: false
 				}
 			]
 			tasks: [
 				{
-					id: "00E228587584CB10"
+					id: "69ACE35CB457E199"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "taczturrets:turret"
+			}
+			id: "13E59D0117879820"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"2F8112B376410105"
+				"0578B3D427AD63A7"
+			]
+			rewards: [
+				{
+					id: "33CA3593EAD53D8C"
 					type: "item"
 					item: {
-						count: 1
-						id: "defenseturrets:turret_base"
+						count: 4
+						id: "ic2cre:alloy"
 					}
-					count: 2
-					consume_items: false
+					team_reward: false
 				}
 				{
-					id: "6369CDE8267E6E1C"
+					id: "7DEBA603687F00E8"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:gunpowder"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5C2AFB54D698932E"
 					type: "item"
 					item: {
 						count: 1
-						id: "defenseturrets:uv_searchlight"
+						id: "taczturrets:turret"
 					}
 					count: 1
 					consume_items: false
@@ -314,34 +288,141 @@
 		}
 		{
 			icon: {
-				id: "defenseturrets:laser_turret"
+				id: "tacz:modern_kinetic_gun"
 			}
-			id: "0E69EBCEBE72E13A"
+			id: "123A25BDCDB14B3F"
 			x: 16d
 			y: 7.5d
 			dependencies: [
-				"37A21158241ACBD3"
+				"13E59D0117879820"
 			]
 			rewards: [
 				{
-					id: "51586089800A4DAD"
+					id: "63986C32CF983E3F"
 					type: "item"
 					item: {
-						count: 8
-						id: "defenseturrets:forged_alloy_ingot"
+						count: 16
+						id: "immersiveengineering:ingot_lead"
+					}
+					team_reward: false
+				}
+				{
+					id: "5F3D1FE4E413D147"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:gunpowder"
 					}
 					team_reward: false
 				}
 			]
 			tasks: [
 				{
-					id: "604764CE84C50B00"
+					id: "22F875424AC95991"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:modern_kinetic_gun"
+			}
+			id: "43727C69AA43A83C"
+			x: 19.2d
+			y: 9d
+			dependencies: [
+				"123A25BDCDB14B3F"
+			]
+			rewards: [
+				{
+					id: "72408F934AE0721F"
+					type: "item"
+					item: {
+						count: 4
+						id: "immersiveengineering:component_steel"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "18C9BB3F3535D119"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:modern_kinetic_gun"
+			}
+			id: "09D27335218273DA"
+			x: 22.4d
+			y: 10.5d
+			dependencies: [
+				"43727C69AA43A83C"
+			]
+			rewards: [
+				{
+					id: "517F0D18EF0A753E"
 					type: "item"
 					item: {
 						count: 1
-						id: "defenseturrets:laser_turret"
+						id: "modpack:service_medal"
 					}
-					count: 2
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "57DCFDB3FB059AA7"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:ammo_box"
+			}
+			id: "31583156C2BDAC96"
+			x: 25.6d
+			y: 12d
+			dependencies: [
+				"0578B3D427AD63A7"
+				"09D27335218273DA"
+			]
+			rewards: [
+				{
+					id: "2FC4B20CEA91B97C"
+					type: "item"
+					item: {
+						count: 4
+						id: "immersiveengineering:component_steel"
+					}
+					team_reward: false
+				}
+				{
+					id: "75AE78DAF0A97ADC"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "3B934512025FC7EA"
+					type: "checkmark"
+				}
+				{
+					id: "0920C4F38E3944F0"
+					type: "item"
+					item: {
+						count: 1
+						id: "immersiveengineering:component_steel"
+					}
+					count: 4
 					consume_items: false
 				}
 			]

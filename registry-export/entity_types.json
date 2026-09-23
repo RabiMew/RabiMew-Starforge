@@ -61,8 +61,6 @@
 	"creaturefeature:star",
 	"creaturefeature:vertigo",
 	"creaturefeature:vitric_arrow",
-	"defenseturrets:bullet",
-	"defenseturrets:grenade_projectile",
 	"endermanoverhaul:ancient_pearl",
 	"endermanoverhaul:axolotl_pet_enderman",
 	"endermanoverhaul:badlands_enderman",
@@ -305,5 +303,6 @@
 	"supplementaries:slimeball_projectile",
 	"supplementaries:slingshot_projectile",
 	"tacz:bullet",
-	"tacz:target_minecart"
+	"tacz:target_minecart",
+	"taczturrets:turret"
 ]

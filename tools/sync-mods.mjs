@@ -1,6 +1,8 @@
 // Copies locked mod jars into run/server/mods and run/client/mods by side.
-// Client runs also receive locked non-mod resources (shaderpacks/...) from
-// build/resources/ at their declared instance path. Servers get neither.
+// Locked non-mod resources land at their declared instance path per side:
+//   side=client -> run/client only, side=server -> run/server only,
+//   side=both   -> both (e.g. TaCZ gun packs in tacz/ — the dedicated server
+//   needs the gun data just as much as the client needs the assets).
 // Usage: node tools/sync-mods.mjs [server|client|all]
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -28,25 +30,33 @@ function sync(sideName, accepts) {
   console.log(`${sideName}: ${n} mods`);
 }
 
-function syncClientResources() {
-  const list = (lock.resources ?? []).filter((r) => r.enabled !== false && r.side === 'client');
+function syncResources(sideName, accepts) {
+  const list = (lock.resources ?? []).filter((r) => r.enabled !== false && accepts.includes(r.side));
+  const keepByTopDir = new Map(); // e.g. 'tacz' -> Set(filenames)
   for (const res of list) {
     const src = path.join(resDir, res.filename);
     if (!existsSync(src)) throw new Error(`missing resource ${res.filename} — run tools/fetch-mods.mjs`);
-    const dest = path.join(root, 'run', 'client', ...res.path.split('/'));
+    const dest = path.join(root, 'run', sideName, ...res.path.split('/'));
     mkdirSync(path.dirname(dest), { recursive: true });
     copyFileSync(src, dest);
+    const top = res.path.split('/')[0];
+    if (!keepByTopDir.has(top)) keepByTopDir.set(top, new Set());
+    keepByTopDir.get(top).add(res.filename);
   }
-  // drop stale resources no longer locked (wipe dirs we own)
-  const shaderDir = path.join(root, 'run', 'client', 'shaderpacks');
-  if (existsSync(shaderDir)) {
-    const keep = new Set(list.filter((r) => r.path.startsWith('shaderpacks/')).map((r) => r.filename));
-    for (const f of readdirSync(shaderDir)) {
-      if (f.endsWith('.zip') && !keep.has(f)) rmSync(path.join(shaderDir, f));
+  // Drop stale archives no longer locked (only *.zip we could have placed —
+  // extracted pack dirs like tacz/tacz_default_gun are the game's own).
+  for (const [top, keep] of keepByTopDir) {
+    const dir = path.join(root, 'run', sideName, top);
+    if (!existsSync(dir)) continue;
+    for (const f of readdirSync(dir)) {
+      if (!f.endsWith('.zip') || keep.has(f)) continue;
+      // TaCZ Pack Upgrader rewrites packs in place as <stem>+1.21.1.zip — keep it.
+      const upgraded = [...keep].some((k) => f.startsWith(k.replace(/\.zip$/i, '') + '+'));
+      if (!upgraded) rmSync(path.join(dir, f));
     }
   }
-  if (list.length) console.log(`client: ${list.length} locked resources synced`);
+  if (list.length) console.log(`${sideName}: ${list.length} locked resources synced`);
 }
 
-if (target === 'server' || target === 'all') sync('server', ['both', 'server']);
-if (target === 'client' || target === 'all') { sync('client', ['both', 'client']); syncClientResources(); }
+if (target === 'server' || target === 'all') { sync('server', ['both', 'server']); syncResources('server', ['both', 'server']); }
+if (target === 'client' || target === 'all') { sync('client', ['both', 'client']); syncResources('client', ['both', 'client']); }

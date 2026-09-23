@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T04:12:03.651Z",
+  "generated_at": "2026-09-23T07:50:55.732Z",
   "minecraft": "1.21.1",
   "loader": "neoforge",
   "neoforge_version": "21.1.251",
@@ -349,23 +349,66 @@
       "notes": null
     },
     {
-      "key": "defenseturrets",
-      "name": "Defense Turrets",
+      "key": "tacz_turrets",
+      "name": "TACZ Turrets",
       "enabled": true,
       "role": "content",
       "side": "both",
-      "version": "1.21.1-1.2.0.jar",
-      "filename": "defenseturrets-neoforge-1.21.1-1.2.0.jar",
-      "size": 214873,
-      "sha1": "51202e650502ddf3940f630660f41550e5cfed90",
-      "sha256": "3d29a2b099072fde2f1353e8da5a1c8e7ff964028d1aaee04099f3a73e6c0f17",
-      "sha512": "371bce6b30d152c68f2d5dd517a981d893b56c6a8bef0cf31ee19ae688cb5ddd5f279aa43a20ca963c0a999da0b7f8778ab7f0b4e4a8fc19e58461065df7994d",
-      "download_url": "https://mediafilez.forgecdn.net/files/8519/436/defenseturrets-neoforge-1.21.1-1.2.0.jar",
-      "project_page": "https://www.curseforge.com/minecraft/mc-mods/defenseturrets",
-      "license": "unknown-cf",
-      "distribution": "curseforge_cdn",
+      "version": "2.0.0",
+      "filename": "taczturrets-2.0.0-all.jar",
+      "size": 1401998,
+      "sha1": "e250c980b711a9c56873848a931aef5740f19551",
+      "sha256": "89cbcfd798559a477b0677d4ecbfd4b3b0b54c2f9fd5d47e5d2102b3da5d188d",
+      "sha512": "45fd91631a4c5dcedae393c9e9e3f358a4390367e6ddb814102ec0100857c5ab7dde12ab20caa0e625f5a6bd083eb8988f1e5181817f0c78fb85ef3e9e4fb92d",
+      "download_url": "https://cdn.modrinth.com/data/8k8SjeJB/versions/GubHe16c/taczturrets-2.0.0-all.jar",
+      "project_page": "https://modrinth.com/mod/tacz-turrets",
+      "license": "MIT",
+      "distribution": "modrinth_cdn",
+      "dependencies": [
+        {
+          "source": "modrinth",
+          "slug": "tacz-1.21.1"
+        }
+      ],
+      "notes": "中后期军用自动防御：炮塔实体装入任意 TaCZ 枪，从相邻/下方容器取弹（最后一公里由物流填箱）。MIT。内置 Registrate/GeckoLib/SmartBrainLib jarJar。需要 tacz >=1.1.8-hotfix-r6（即本包的非官方移植版）。"
+    },
+    {
+      "key": "taczaddon",
+      "name": "TaCZ Addon",
+      "enabled": true,
+      "role": "qol",
+      "side": "both",
+      "version": "1.1.8",
+      "filename": "taczaddon-1.1.8-fix2-1.21.1-neoforge.jar",
+      "size": 166630,
+      "sha1": "6de6a623714b1155bc75a233b307002a49e41a2b",
+      "sha256": "96c4ef3744dd6285b945d3a08b9370abd72ec9767f921084b2cca2917dd71f63",
+      "sha512": "e26e7f2a526da7691b3ad58a0a590e45e2811f63085e019aef725083741f7cb4d4541661fac35762aa5d89c2acabf0e5edb3e5dd69ec5908d3a1a566293eab35",
+      "download_url": "https://cdn.modrinth.com/data/3Ihyt5WL/versions/mo66IMw3/taczaddon-1.1.8-fix2-1.21.1-neoforge.jar",
+      "project_page": "https://modrinth.com/mod/taczaddon",
+      "license": "GPL-3.0-only",
+      "distribution": "modrinth_cdn",
       "dependencies": [],
-      "notes": null
+      "notes": "枪匠台/附件管理 QoL（GPL-3.0-only, Mafuyu404）：按枪过滤附件与弹药、材料跳转 JEI、批量合成、邻近容器取料（含 Sophisticated Backpacks）。只降操作负担，不降制造成本——不得用它绕过阶段或材料。"
+    },
+    {
+      "key": "tacz_pack_upgrader",
+      "name": "TaCZ Pack Upgrader",
+      "enabled": true,
+      "role": "library",
+      "side": "both",
+      "version": "2.1.3",
+      "filename": "tacz-pack-upgrader-2.1.3.jar",
+      "size": 1704774,
+      "sha1": "7b3f519278a7778cc82142023376c62b089c97b4",
+      "sha256": "58d326d6c4924f4a1e8e16341b0973c9d361276adb4f2ca522d87c0b0a0f5473",
+      "sha512": "a89c832c729b415aa1033744c4477f4149777e46b181cf3bfbbbfb13b15bc943059fd178997fd16bbfb43271335d815fb26569ad6d53c712a84c3ce9c030f642",
+      "download_url": "https://cdn.modrinth.com/data/fx5N8Hgd/versions/KBxw9pI3/tacz-pack-upgrader-2.1.3.jar",
+      "project_page": "https://modrinth.com/mod/tacz-pack-upgrader",
+      "license": "LGPL-3.0-or-later",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "MUKSC (LGPL-3.0-or-later)。仅服务于非官方 TaCZ 1.21.1 移植：启动时自动把 tacz/ 目录下的旧格式枪包（如 DRG 枪包的 forge: 标签配方）升级为移植版可读格式。只负责格式兼容，不授予枪包素材再分发权。"
     },
     {
       "key": "incontrol",
@@ -859,11 +902,10 @@
       "name": "Guard Villagers TACZ Support",
       "enabled": true,
       "role": "content",
-      "side": "server",
+      "side": "both",
       "version": "1.0.1",
       "filename": "guardvillagerstaczsupport-1.0.1.jar",
       "size": 45208,
-      "sha1": "32f57f77596546a5232adeebd0deb43931010bfe",
       "sha256": "81fa99b64332e8aeefd26586700cab1e90f93d795e492d62f880c709e9ce4241",
       "sha512": "e0012cb82943b7691125562d73834000a09208939d2adce954dd35a3e6f0ece0c6473a0c180d10038c6e793cdd245889be7475a5aadfa957582fe337363c6b24",
       "download_url": "https://cdn.modrinth.com/data/QZMNYwRv/versions/F2kUNVTx/guardvillagerstaczsupport-1.0.1.jar",
@@ -880,7 +922,8 @@
           "slug": "tacz-1.21.1"
         }
       ],
-      "notes": "Metadata declares server/integrated only; verify before shipping client copy."
+      "notes": "Jar ships GuardVillagersTACZSupportClient + IllagerModelMixin — client copy required for gun-in-hands rendering of armed guards/illagers.",
+      "sha1": "32f57f77596546a5232adeebd0deb43931010bfe"
     },
     {
       "key": "artifacts",
@@ -2183,6 +2226,25 @@
       "license": "LGPL-3.0-or-later",
       "distribution": "modrinth_cdn",
       "notes": "Default shader (LGPL-3.0-or-later). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. Default-on via pack/config/iris.properties + official profile=low preset (pack/shaderpacks/<file>.txt)."
+    },
+    {
+      "key": "drg_gun_pack",
+      "name": "[TaCZ] Deep Rock Galactic Gun Pack",
+      "enabled": true,
+      "type": "gunpack",
+      "side": "both",
+      "version": "1.2.6.1",
+      "filename": "drg_gun_pack_1.2.6.1.zip",
+      "path": "tacz/drg_gun_pack_1.2.6.1.zip",
+      "size": 17143882,
+      "sha256": "07cfe50ae7eb8477e392a7d8ba28e84742e35e87da97eac833b4adf28df7eabf",
+      "sha512": "ce7e3cd059d2a723529b3efaa11ba44aaa0e0e4b2357977bd4f944048394c85d6e9ee9a02f262d53be2f608430f3052106945916e23adba37dcc231483c3aed6",
+      "download_url": "https://mediafilez.forgecdn.net/files/8538/684/%5B%E6%B7%B1%E5%B2%A9%E9%93%B6%E6%B2%B3%5DDeep%20Rock%20Galactic%20GunPack1.2.6.1.zip",
+      "project_page": "https://www.curseforge.com/minecraft/customization/deep-rock-galactic-gun-pack",
+      "license": "All Rights Reserved",
+      "distribution": "curseforge_cdn",
+      "notes": "SicarioFG，All Rights Reserved — 只经 CurseForge CDN manifest URL 分发，zip 永不入库或嵌入包内。中后期重型/科幻武器层：落入 tacz/ 目录（双端），由 tacz_pack_upgrader 在启动时升级为 1.21.1 移植版格式。含 24 把枪、8 种弹药与 lua 特殊机制；ani_pro 依赖外部 pixel_gun 弹药，默认不提供。",
+      "sha1": "e9da3837eebb836042f2c33928889652efbfe4e0"
     }
   ]
 }

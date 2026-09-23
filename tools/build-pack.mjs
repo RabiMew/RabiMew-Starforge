@@ -66,7 +66,7 @@ for (const [loc, dict] of [['en_us', en], ['zh_cn', zh]]) {
     if (dict[i.tooltip_key]) lang[`item.${NS}.${i.id}.tooltip`] = dict[i.tooltip_key];
   }
   for (const [k, v] of Object.entries(dict)) {
-    if (k.startsWith('modpack.advancement.')) lang[k] = v;
+    if (k.startsWith('modpack.advancement.') || k.startsWith('modpack.message.')) lang[k] = v;
   }
   out(`kubejs/assets/${NS}/lang/${loc}.json`, JSON.stringify(lang, null, 1) + '\n');
 }
