@@ -1,0 +1,14 @@
+{
+  "type": "ic2cre:macerating",
+  "energy_per_tick_meu": 2000,
+  "ingredient": {
+    "item": "minecraft:ender_pearl"
+  },
+  "processing_ticks": 300,
+  "results": [
+    {
+      "id": "ae2:ender_dust"
+    }
+  ],
+  "total_energy_meu": 600000
+}

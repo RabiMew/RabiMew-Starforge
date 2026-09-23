@@ -266,3 +266,23 @@ Incremental change: removed 4 mods, added 2. Lockfile, `mod-ids.json`, `jar-deps
 **i18n**: `tools/gen-mod-lang-zh.mjs` extended — MDM ships `en_us` only → full 274-key zh_cn generated; Macaw's bundled zh_cn misses the 3.4.x kitchen-sink/stripped-sink lines and the couch/chaise color set → 56 missing keys filled (wood prefixes read back from bundled zh so naming stays consistent). Output: `pack/kubejs/assets/{mdm,mcwfurnitures}/lang/zh_cn.json`. The `rechiseled` zh fallback + generator section removed with the mod.
 
 **Runtime-verified 2026-09-23**: dedicated server booted to `Done (1.653s)` on Java 21 / NeoForge 21.1.251 — both mods loaded (`mcwfurnitures` 3.4.1, `mdm` 26.9, version check UP_TO_DATE), KubeJS 5/5 server scripts 0 errors/0 warnings, no `rechiseled`/`supermartijn642`/`fusion` mod IDs in the loaded mod list. The only ERROR lines are the 4 pre-existing Creature-Feature sister-mod loot-table misses and the pre-existing `modid:example` DataMapLoader noise (identical in the prior boot log). `registry-export/` refreshed from this boot: 8302 recipes, `mdm:` 265 items/264 blocks, `mcwfurnitures:` 654 items/652 blocks, zero stale IDs of the removed mods.
+
+## Addendum — 2026-09-23 unification & cross-mod layer (103 enabled)
+
+Three compat mods added (Modrinth-locked, deps resolved to existing mods only):
+
+| Mod | Locked | Source / license | Side | Deps |
+|---|---|---|---|---|
+| Almost Unified | 1.21.1-1.4.2+neoforge | Modrinth `sdaSaQEz`; LicenseRef-ARR | both | none |
+| Applied Cooking | 6.2.1 | Modrinth `BmMjyidG`; MIT | both | ae2, cooking-for-blockheads, balm |
+| Applied Delight | 1.1.0 | Modrinth `GKLhL3bQ`; MIT | both | ae2, farmers-delight |
+
+**Duplicate-material audit result**: steel ×4 (ad_astra/ic2cre/IE/RC), lead/tin/uranium/nickel/silver/bronze ingots ×2–3 each, plates ×3–4, rods ×2–3, dusts (sulfur/saltpeter/obsidian/ender/coal) ×2–3, coke ×2, raw materials and storage blocks mirrored. All `c:` tags already populated by the mods themselves; the gap was *output* divergence + untagged IC2CRE blocks + missing bucket subtags.
+
+**Canonical outputs (server-verified, 0 non-canonical producers remain)**: IE for steel/lead/nickel/silver/uranium + all plates/rods + coke; IC2CRE for tin/bronze; AE2 for ender dust. Worldgen dedup via datapack `neoforge:add_features` overrides: IC2CRE lead off, RC lead/tin/nickel/silver off, IE uranium off — every material keeps ≥1 earth source (closure check: 0 dead chains for the 7 audited ingots).
+
+**TaCZ ammo**: all 24 `gun_smith_table_crafting` recipes already consume `c:` tags natively — unified copper/iron flow through without edits. Defense Turrets still has no ammo-consumption interface (see 实测失败 record); nothing fabricated.
+
+**KubeJS↔AU boundary**: AU owns output unification at recipe-load; `starforge_unify.js` owns input-side `replaceInput` widening + 5 datapack recipe overrides for serializers neither can rewrite. No overlapping edits to the same recipe by both systems.
+
+**Pending client verification**: EMI hidden-item dedup, CFB furniture inventory reads, Ad Astra flood fill through furniture, Applied Cooking/Delight behaviour, horde alert UX.

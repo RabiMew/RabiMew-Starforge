@@ -28,13 +28,15 @@ const EARTH_RAW = /^minecraft:/; // vanilla ids are world-obtainable on earth
 // #minecraft:is_overworld; IE bauxite/nickel/lead/silver/uranium/mineral_veins
 // do the same). Worldgen drops have no crafting recipe by nature.
 const WORLDGEN_EARTH = new RegExp([
-  'ic2cre:(rubber_log|rubber_wood|stripped_rubber_log|stripped_rubber_wood|rubber_leaves|rubber_sapling|sticky_resin)',
-  'ic2cre:((deepslate_)?(tin|lead|uranium)_ore|raw_(tin|lead|uranium)(_block)?)',
-  'immersiveengineering:((deepslate_)?ore_(aluminum|lead|nickel|silver|uranium)|raw_(aluminum|lead|nickel|silver|uranium)|raw_block_(aluminum|lead|nickel|silver|uranium))',
-  // Railcraft earth deposits — jar biome modifiers verified: tin/lead/silver/
-  // nickel/sulfur/zinc/saltpeter/quarried target #minecraft:is_overworld
-  // (firestone targets is_nether, intentionally not whitelisted).
-  'railcraft:((deepslate_)?(tin|lead|silver|nickel|sulfur|zinc)_ore|saltpeter_ore|quarried_stone)',
+  'ic2cre:(rubber_log|rubber_wood|stripped_rubber_log|rubber_leaves|rubber_sapling|sticky_resin)',
+  // Starforge worldgen dedup: IC2CRE lead veins disabled (kubejs/data override),
+  // tin + uranium kept as the canonical IC2CRE deposits.
+  'ic2cre:((deepslate_)?(tin|uranium)_ore|raw_(tin|uranium)(_block)?)',
+  // IE keeps lead/nickel/silver/aluminum veins; IE uranium veins disabled.
+  'immersiveengineering:((deepslate_)?ore_(aluminum|lead|nickel|silver)|raw_(aluminum|lead|nickel|silver)|raw_block_(aluminum|lead|nickel|silver))',
+  // Railcraft earth deposits — lead/tin/silver/nickel veins disabled; sulfur,
+  // zinc, saltpeter and quarried stone remain the sole Railcraft deposits.
+  'railcraft:((deepslate_)?(sulfur|zinc)_ore|saltpeter_ore|quarried_stone)',
 ].join('|') + '$');
 
 // Bucket items for fluids produced on earth by machines (no crafting recipe by

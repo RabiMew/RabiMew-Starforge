@@ -18,7 +18,7 @@ import {
   loadLock, loadVersion, artifactStem, packVersionId,
   enabledMods, sideMods, CLIENT_ACCEPTS, SERVER_ACCEPTS, EXPECTED, checkLockMeta,
 } from './lib/manifest.mjs';
-import { verifyLocked, sha1 } from './lib/hash.mjs';
+import { verifyLocked, sha1, sha512 } from './lib/hash.mjs';
 import { enabledResources } from './lib/resources.mjs';
 import { listZip, readEntry } from './lib/zip.mjs';
 
@@ -99,6 +99,11 @@ for (const [side, accepts, banned] of [
     try { ents = listZip(zbuf); } catch (e) { fail(s, `unreadable zip: ${e.message}`); ents = null; }
     if (ents) {
       const byName = new Map(ents.map((e) => [e.name, e]));
+      // local:-sourced mods (self-built addons) have no download URL — they are
+      // embedded under overrides/mods/ instead of declared in files[].
+      const embeddedMods = sideMods(lock, CLIENT_ACCEPTS)
+        .filter((m) => m.download_url?.startsWith('local:'));
+      const embeddedPaths = new Set(embeddedMods.map((m) => `mods/${m.filename}`));
       const idxEnt = byName.get('modrinth.index.json');
       if (!idxEnt) fail(s, 'modrinth.index.json missing at zip root');
       let idx = null;
@@ -157,16 +162,32 @@ for (const [side, accepts, banned] of [
               fail(s, `${f.path}: env ${JSON.stringify(f.env)} != ${JSON.stringify(envWant)}`);
           }
         }
-        for (const fp of wantMods.keys()) if (!seen.has(fp)) fail(s, `locked mod absent from files[]: ${fp}`);
+        for (const fp of wantMods.keys()) {
+          if (embeddedPaths.has(fp)) continue;
+          if (!seen.has(fp)) fail(s, `locked mod absent from files[]: ${fp}`);
+        }
         for (const fp of wantResources.keys()) if (!seen.has(fp)) fail(s, `locked resource absent from files[]: ${fp}`);
       }
       if (!ents.some((e) => e.name.startsWith('overrides/'))) fail(s, 'overrides/ absent');
-      // every override must correspond to a committed pack/ file
+      // every override must correspond to a committed pack/ file — except
+      // embedded local: mod jars, which are verified against the lockfile.
       for (const e of ents) {
         if (!e.name.startsWith('overrides/') || e.name.endsWith('/')) continue;
         const rel = e.name.slice('overrides/'.length);
         if (rel === '.keep') continue;
+        const embedded = embeddedMods.find((m) => `mods/${m.filename}` === rel);
+        if (embedded) {
+          const data = readEntry(zbuf, e);
+          if (embedded.sha512 && sha512(data) !== embedded.sha512)
+            fail(s, `embedded ${rel}: sha512 != lockfile`);
+          const jbuf = jarBufs.get(embedded.key);
+          if (jbuf && sha1(data) !== sha1(jbuf)) fail(s, `embedded ${rel}: sha1 != built jar`);
+          continue;
+        }
         if (!existsSync(path.join(DIRS.pack, rel))) fail(s, `override ${rel} has no pack/ source`);
+      }
+      for (const rel of embeddedPaths) {
+        if (!byName.has(`overrides/${rel}`)) fail(s, `local mod not embedded in overrides/: ${rel}`);
       }
     }
   }

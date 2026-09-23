@@ -66,7 +66,10 @@
 	#How much should the size of each horde scale down by when multiple players are near each other?
 	hordeMultiplayerScaling = 0.8
 	#Do the daylight cycle (and active horde events get paused while there are no players online.).
-	pauseEventServer = true
+	#Starforge: set to false. The Mixin cancels the ENTIRE ServerLevel.tick when the
+	#server is empty - machines, farms, AE2, block entities all freeze, which breaks
+	#unattended automation. Horde pacing is already covered by hordeEventByPlayerTime.
+	pauseEventServer = false
 	#Are horde events tracked by player play time instead of world time.
 	hordeEventByPlayerTime = true
 	#How many ticks after a hordes scheduled time can it start?

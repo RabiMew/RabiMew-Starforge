@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "starforge_compat:block/horde_alarm"
+    },
+    "active=true": {
+      "model": "starforge_compat:block/horde_alarm_on"
+    }
+  }
+}

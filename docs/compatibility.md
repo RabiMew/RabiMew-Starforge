@@ -162,3 +162,40 @@ FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Com
 
 - 客户端交互：Curios 界面放入/取出 Sophisticated Backpack、快捷键实际手感（服务端日志已确认槽注册，交互测试待 GUI 会话）。
 - Artifacts 营地（campsite）世界生成在星球维度的分布合理性（默认 40 次/区块尝试、Y -60~40，地球外基本不生成，待目检）。
+
+## 材料/厨房统合兼容层（2026-09-23，已锁定 + 服务端验证）
+
+### Almost Unified 1.21.1-1.4.2+neoforge
+
+- 来源：Modrinth `sdaSaQEz`（CDN URL 分发，jar 不入库）。许可证：`LicenseRef-All-Rights-Reserved`——公开发行的 modpack 惯例允许经 manifest URL 分发；若发布渠道另有要求需复核。
+- 依赖：无（自带 KubeJS 插件绑定）。
+- 替代了哪些自定义逻辑：原本计划用 KubeJS 逐条重写"同一材料多种锭/板/粉输出"——现全部由 AU 在配方加载期统一，零运行时扫描。
+- 实际验证能力：服务端启动后 `registry-export` 全量扫描 0 个非标准产出（钢/铅/镍/银/铀→IE，锡/青铜→IC2CRE，焦煤→IE，末影粉→AE2 via `priority_overrides`）。
+- 配置：`pack/config/almostunified/unify.json`（优先级 `minecraft,kubejs,immersiveengineering,ic2cre,ad_astra,railcraft` + `c:dusts/ender_pearl` 覆盖）、`placeholders.json`（补 `coal_coke/ender_pearl/saltpeter/coal` 占位材料）、`debug.json`（导出开关）。
+- 已知边界：`railcraft:rolling`/`railcraft:coking`/`ic2cre:macerating` 输出不能被 AU 或 KubeJS `replaceOutput` 改写，已用同路径数据包 JSON 覆盖兜底（5 条）；`unification/materials.json` 是 AU 自动生成的默认副配置，实测不影响主配置。
+
+### Applied Cooking 6.2.1（MIT）
+
+- 来源：Modrinth `BmMjyidG`。依赖：ae2 + cooking-for-blockheads + balm（均已装）。
+- 能力声明：Kitchen Station 方块让 Cooking for Blockheads 厨房读取 ME 网络库存。
+- 服务端验证：加载零报错（`appliedcooking:guide_book` 配方因 Patchouli 未装优雅降级）。
+- **待实机验证**：Kitchen Station 实际读取 ME、流体食材行为、多人并发取料。
+
+### Applied Delight 1.1.0（MIT）
+
+- 来源：Modrinth `GKLhL3bQ`。依赖：ae2 + farmers-delight（均已装）。
+- 能力声明：ME Cooking Pot 执行真实 Farmer's Delight 锅配方，仍需真实热源在锅底——不绕过 FD 供热玩法。
+- 服务端验证：加载零报错。
+- **待实机验证**：断电/无热源时是否确实停止烹饪、容器返还、AE2 能量消耗。
+
+### 未引入的候选（结论）
+
+- **CFB Drawer Compat**：未找到 1.21.1 NeoForge 稳定版；CFB 已原生把 Storage Drawers 列入 `kitchen_connectors`（导出可见 drawer/controller 成员），抽屉→厨房的直连已存在，不需要额外桥。
+- **MoreJS / LootJS / Paxi**：本轮功能均由 KubeJS 原生事件 + 数据包完成，无明确缺口，不引入。
+
+### Starforge Compatibility 0.1.0（自有附属，`local` 源）
+
+- 定位：KubeJS/标签无法表达的**行为型**兼容的最小载体。源码 `compat/`，构建 `tools/build-compat.mjs`（无 Gradle：javac + NeoForge AT 变换编译 jar + 确定性打包），`manifest` `local` 源入锁，sha256 以 `manifest/locked-mods.json` 为准。
+- `horde_alarm`：The Hordes `HordeStart/EndEvent` → 登记位点 `setBlock` + 15 强度红石信号。用 `getSignal`/`getDirectSignal` 原生红石接口 + `SavedData` 登记坐标，无 Mixin、无轮询。服务端实测信号 0→15→0、红石灯亮灭随怪潮起止、破坏注销、重启持久化。
+- `electric_burner`：FD 热源。进 `farmersdelight:heat_sources` 且带 `LIT` blockstate，复用 FD 原生 `isHeated`（LIT 语义），无 Mixin。`Capabilities.EnergyStorage.BLOCK` 收 FE，40 FE/tick。实测：IE 创造电容可供电维持满电、断电 CookTime 恒 0、供电后产出 bone_broth。
+- **边界**：不碰 FD/The Hordes 内部行为；turret 弹药经济需 Mixin 尚未做；方块模型/战利品/配方为占位（无纹理资源），客户端目检待补。

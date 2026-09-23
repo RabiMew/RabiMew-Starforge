@@ -216,6 +216,38 @@
     ]
   },
   {
+    "file": "almostunified-neoforge-1.21.1-1.4.2.jar",
+    "modIds": [
+      "almostunified"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "versionRange": "[21.1.37,)"
+      },
+      {
+        "modId": "minecraft",
+        "versionRange": "[1.21.1,)"
+      },
+      {
+        "modId": "jei",
+        "type": "optional",
+        "versionRange": "[19.10.0.126,)"
+      },
+      {
+        "modId": "roughlyenoughitems",
+        "type": "optional",
+        "versionRange": "[16.0.762,)"
+      },
+      {
+        "modId": "emi",
+        "type": "optional",
+        "versionRange": "[1.1.13,)"
+      }
+    ]
+  },
+  {
     "file": "appleskin-neoforge-mc1.21-3.0.9.jar",
     "modIds": [
       "appleskin"
@@ -228,6 +260,136 @@
         "versionRange": "[21.0.0-beta,)",
         "ordering": "NONE",
         "side": "CLIENT"
+      }
+    ]
+  },
+  {
+    "file": "appliedcooking-6.2.1.jar",
+    "modIds": [
+      "appliedcooking"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "ae2",
+        "type": "required",
+        "versionRange": "[19,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "cookingforblockheads",
+        "type": "required",
+        "versionRange": "[21.1.7,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "balm",
+        "type": "required",
+        "versionRange": "[21,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "patchouli",
+        "type": "optional",
+        "versionRange": "*",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "jade",
+        "type": "optional",
+        "versionRange": "*",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "theoneprobe",
+        "type": "optional",
+        "versionRange": "*",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "jei",
+        "type": "optional",
+        "versionRange": "*",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "roughlyenoughitems",
+        "type": "optional",
+        "versionRange": "*",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "emi",
+        "type": "optional",
+        "versionRange": "*",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "applieddelight-1.1.0.jar",
+    "modIds": [
+      "applieddelight"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "ae2",
+        "type": "required",
+        "versionRange": "[19,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "farmersdelight",
+        "type": "required",
+        "versionRange": "[1.3,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "aeinfinitybooster",
+        "type": "optional",
+        "versionRange": "*",
+        "ordering": "AFTER",
+        "side": "BOTH"
       }
     ]
   },
@@ -2037,6 +2199,46 @@
     ]
   },
   {
+    "file": "jei-1.21.1-neoforge-19.57.0.447.jar",
+    "modIds": [
+      "jei"
+    ],
+    "embeddedModIds": [
+      "mezz_config"
+    ],
+    "deps": [
+      {
+        "modId": "mezz_config",
+        "type": "required",
+        "versionRange": "[0.5.12,1.0.0)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "mezz_config_gui",
+        "type": "optional",
+        "versionRange": "[0.5.1,)",
+        "ordering": "AFTER",
+        "side": "CLIENT"
+      },
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1.238,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21, 1.21.1)",
+        "ordering": "NONE",
+        "side": "BOTH",
+        "catalogueImageIcon": "jei-icon.png"
+      }
+    ]
+  },
+  {
     "file": "kotlinforforge-5.12.0-all.jar",
     "error": "no mods.toml"
   },
@@ -2720,6 +2922,36 @@
         "mandatory": "true",
         "versionRange": "[20,)",
         "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "starforge-compat-0.1.0.jar",
+    "modIds": [
+      "starforge_compat"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,1.22)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "hordes",
+        "type": "optional",
+        "versionRange": "[1.6,)",
+        "ordering": "AFTER",
         "side": "BOTH"
       }
     ]

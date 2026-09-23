@@ -19,6 +19,7 @@
 	"ae2:storage_cell_disassembly",
 	"ae2:storage_cell_upgrade",
 	"ae2:transform",
+	"almostunified:client_recipe_tracker",
 	"buildcraftsilicon:assembly",
 	"buildcraftsilicon:facade",
 	"buildcraftsilicon:facade_swap",

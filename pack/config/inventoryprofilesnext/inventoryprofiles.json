@@ -31,6 +31,12 @@
         },
         "enable_inventory_editor_button": {
             "value": false
+        },
+        "settings_top": {
+            "value": 40
+        },
+        "editor_top": {
+            "value": 56
         }
     },
     "Hotkeys": {

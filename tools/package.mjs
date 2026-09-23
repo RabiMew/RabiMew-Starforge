@@ -19,13 +19,16 @@ const out = path.join(dist, `${name}.zip`);
 if (existsSync(out)) rmSync(out);
 
 const include = ['manifest', 'pack', 'tools', 'docs', 'design', 'localization',
-  'registry-export', 'README.md', 'LICENSE'];
+  'registry-export', 'compat', 'README.md', 'LICENSE'];
+
+const SKIP_DIRS = new Set(['build', 'node_modules']); // gitignored build outputs
 
 function* walk(dir) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, e.name);
-    if (e.isDirectory()) yield* walk(full);
-    else yield full;
+    if (e.isDirectory()) {
+      if (!SKIP_DIRS.has(e.name)) yield* walk(full);
+    } else yield full;
   }
 }
 

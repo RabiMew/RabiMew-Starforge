@@ -1,0 +1,9 @@
+{
+  "dump_duplicates": false,
+  "dump_overview": true,
+  "dump_recipes": false,
+  "dump_tags": true,
+  "dump_unification": true,
+  "log_invalid_tags": true,
+  "cache_recipe_conditions": true
+}

@@ -140,7 +140,20 @@ async function resolveModrinthResource(src) {
     license: project.license?.id ?? 'unknown', distribution: 'modrinth_cdn' };
 }
 
-const resolvers = { modrinth: resolveModrinth, curseforge: resolveCurseForge, github: resolveGithub, ftbmaven: resolveFtbMaven };
+// Local source-built mods (starforge_compat): run their build script, then pin
+// the deterministic artifact exactly like a downloaded jar. download_url is a
+// `local:` marker so --locked rebuilds instead of fetching.
+async function resolveLocal(src) {
+  const { execFileSync } = await import('node:child_process');
+  execFileSync(process.execPath, [path.join(root, src.build ?? 'tools/build-compat.mjs')], { stdio: 'inherit' });
+  const artifact = JSON.parse(readFileSync(
+    path.join(root, src.dir, 'build', 'artifact.json'), 'utf8'));
+  return { version: artifact.version, filename: artifact.filename,
+    url: `local:${src.dir}`, page: 'repo://' + src.dir, license: 'MIT',
+    deps: [], distribution: 'local_build' };
+}
+
+const resolvers = { modrinth: resolveModrinth, curseforge: resolveCurseForge, github: resolveGithub, ftbmaven: resolveFtbMaven, local: resolveLocal };
 
 function sha(buf, algo) { return createHash(algo).update(buf).digest('hex'); }
 

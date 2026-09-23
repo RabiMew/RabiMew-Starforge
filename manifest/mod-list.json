@@ -6,252 +6,1128 @@
   "java": 21,
   "notes": "Desired mod set. tools/fetch-mods.mjs resolves real files, hashes and dependencies into manifest/locked-mods.json. side: both|client|server. enabled:false = candidate recorded but not installed by default.",
   "mods": [
-    { "key": "ic2cre", "name": "IC2CRE", "role": "content", "side": "both",
-      "source": { "type": "github", "repo": "BigFish520/IC2-CRE", "tag": "Dev-0.4", "asset": "^IC2CRE_0\\.4-dev_NeoForge_1\\.21\\.1\\.jar$" } },
-    { "key": "buildcraft", "name": "BuildCraft CE", "role": "content", "side": "both",
-      "source": { "type": "github", "repo": "BCCE-team/BuildCraft", "tag": "8.0.19", "asset": "^BuildCraft-Community-Edition-8\\.0\\.19\\+1\\.21\\.1\\+neoforge\\.jar$" } },
-    { "key": "immersiveengineering", "name": "Immersive Engineering", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "immersiveengineering" } },
-    { "key": "immersivepetroleum", "name": "Immersive Petroleum", "role": "content", "side": "both",
-      "source": { "type": "curseforge", "slug": "immersive-petroleum" } },
-    { "key": "storagedrawers", "name": "Storage Drawers", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "storagedrawers" } },
-    { "key": "sophisticatedstorage", "name": "Sophisticated Storage", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "sophisticated-storage" } },
-    { "key": "sophisticatedbackpacks", "name": "Sophisticated Backpacks", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "sophisticated-backpacks" } },
-    { "key": "ae2", "name": "Applied Energistics 2", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "ae2" } },
-    { "key": "railcraft", "name": "Railcraft Reborn", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "railcraft-reborn" },
-      "notes": "Custom license: public modpacks allowed (no sale, link GitHub, release builds only). Layer: inter-base rail logistics between BC/IE in-base transport and AE2/Ad Astra." },
-    { "key": "ad_astra", "name": "Ad Astra", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "ad-astra" } },
-    { "key": "ad_astra_more_structures", "name": "Ad Astra: More Structures", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "ad-astra-more-structures" } },
-    { "key": "ad_astra_giselle", "name": "Ad-Astra: Giselle Addon", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "ad-astra-giselle-addon" },
-      "notes": "Ad Astra QoL/compat layer (MIT). Audit which automation conveniences fit stage rules; must not bypass oxygen/fuel/rocket tiers." },
-    { "key": "ad_astra_asteroid_belt", "name": "Ad Astra: Asteroid Belt", "role": "content", "side": "both",
-      "source": { "type": "curseforge", "slug": "ad-astra-asteroid-belt" },
-      "notes": "CurseForge-only; brand-new small project (verify jar license). High-risk mining dimension; keep the miss-landing/rocket-loss mechanic." },
-    { "key": "simple_structures_ad_astra", "name": "Simple Structures: Ad Astra", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "simple-structure-ad-astra" },
-      "notes": "Datapack-style structure mod (MIT); upstream declares client optional. Must coexist with Ad Astra: More Structures — audit density/loot overlap." },
-    { "key": "the_hordes", "name": "The Hordes", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "the-hordes" } },
-    { "key": "zombies_break_and_build", "name": "Zombies Break & Build", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "zombies-break-and-build" } },
-    { "key": "defenseturrets", "name": "Defense Turrets", "role": "content", "side": "both",
-      "source": { "type": "curseforge", "slug": "defenseturrets" } },
-    { "key": "incontrol", "name": "In Control!", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "in-control" } },
-    { "key": "progressivestages", "name": "ProgressiveStages", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "progressivestages" } },
-    { "key": "kubejs", "name": "KubeJS", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "kubejs" } },
-    { "key": "ftb_quests", "name": "FTB Quests", "role": "content", "side": "both",
-      "source": { "type": "ftbmaven", "artifact": "ftb-quests-neoforge" } },
-    { "key": "farmersdelight", "name": "Farmer's Delight", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "farmers-delight" } },
-    { "key": "cookingforblockheads", "name": "Cooking for Blockheads", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "cooking-for-blockheads" } },
-    { "key": "framedblocks", "name": "FramedBlocks", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "framedblocks" } },
-    { "key": "supplementaries", "name": "Supplementaries", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "supplementaries" } },
-    { "key": "mcw_furniture", "name": "Macaw's Furniture", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "macaws-furniture" },
-      "notes": "Living/decoration layer for bases, industry, stations, colonies. ARR — distributed via manifest URL like Easy Villagers; recipes audited against unified materials." },
-    { "key": "mdm", "name": "MDM (Modern Decorations Mod)", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "modern-decorations-mod" },
-      "notes": "Modern interior furniture/decor (cookiecraftmods). ARR — manifest-URL distribution only. Overlap with Supplementaries/Macaw's audited; KubeJS merges where needed." },
-    { "key": "buildinggadgets", "name": "Building Gadgets 2", "role": "content", "side": "both",
-      "source": { "type": "curseforge", "slug": "building-gadgets" } },
-    { "key": "endermanoverhaul", "name": "Enderman Overhaul", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "enderman-overhaul" } },
-    { "key": "mutantmonsters", "name": "Mutant Monsters", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "mutant-monsters" } },
-    { "key": "creature_feature", "name": "Creature Feature", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "creature-feature" },
-      "notes": "Replaces Phenominae: rare anomaly/special-mechanic hostile creatures." },
-    { "key": "arachnids", "name": "Arachnids", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "arachnids" },
-      "notes": "Swarm/area-threat bug enemies (Starship Troopers style); gated off early planets via In Control." },
-    { "key": "easy_villagers", "name": "Easy Villagers", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "easy-villagers" } },
-    { "key": "guard_villagers", "name": "Guard Villagers", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "guard-villagers" } },
-    { "key": "tacz", "name": "TaCZ (unofficial NeoForge port)", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "tacz-1.21.1" } },
-    { "key": "guard_villagers_tacz", "name": "Guard Villagers TACZ Support", "role": "content", "side": "server",
-      "source": { "type": "modrinth", "slug": "guard-villagers-tacz-support" },
-      "notes": "Metadata declares server/integrated only; verify before shipping client copy." },
-    { "key": "artifacts", "name": "Artifacts", "role": "content", "side": "both",
-      "source": { "type": "modrinth", "slug": "artifacts" },
-      "notes": "Curios-backed curio items (13.x: curios/cloth/architectury optional upstream, we ship curios). Default chest/mimic injection kept but re-tiered via Starforge GLM pools; natural-drop balance audited in docs." },
-
-    { "key": "jei", "name": "JEI", "role": "qol", "side": "both",
-      "source": { "type": "modrinth", "slug": "jei", "version_prefix": "19.57" },
-      "notes": "ftb-xmod-compat requires jei >= 19.53.0.425; newest release channel was older." },
-    { "key": "guideme", "name": "GuideME", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "guideme" } },
-    { "key": "mezzconfig", "name": "MezzConfig", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "mezzconfig" } },
-    { "key": "polymorph", "name": "Polymorph", "role": "qol", "side": "both",
-      "source": { "type": "modrinth", "slug": "polymorph" } },
-    { "key": "controlling", "name": "Controlling", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "controlling" } },
-    { "key": "mousetweaks", "name": "Mouse Tweaks", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "mouse-tweaks" } },
-    { "key": "craftingtweaks", "name": "Crafting Tweaks", "role": "qol", "side": "both",
-      "source": { "type": "modrinth", "slug": "crafting-tweaks" } },
-    { "key": "appleskin", "name": "AppleSkin", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "appleskin" } },
-    { "key": "jade", "name": "Jade", "role": "qol", "side": "both",
-      "source": { "type": "modrinth", "slug": "jade" } },
-    { "key": "jade_addons", "name": "Jade Addons", "role": "qol", "side": "both",
-      "source": { "type": "curseforge", "slug": "jade-addons" } },
-    { "key": "carry_on", "name": "Carry On", "role": "qol", "side": "both", "enabled": false,
-      "source": { "type": "modrinth", "slug": "carry-on" },
-      "notes": "Optional candidate per docs/compatibility.md; requires blacklist config before enabling." },
-    { "key": "emi", "name": "EMI", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "emi" },
-      "notes": "Default recipe/item viewer. Built-in JEMI layer imports JEI plugins as recipe sources — JEI stays installed for its API/plugin surface (ftb-xmod-compat, BC CE, IC2CRE). JEI 19.57 has no persisted overlay toggle: overlay is hidden per-session via Ctrl+O (key.jei.toggleOverlay); verified by bytecode (ClientToggleState is in-memory only)." },
-    { "key": "inventoryprofilesnext", "name": "Inventory Profiles Next", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "inventory-profiles-next" },
-      "notes": "Requires libIPN + Kotlin for Forge. Inventory sorting/refill; GUI buttons stay, extra hotkeys unbound via pack/config/inventoryprofilesnext/inventoryprofiles.json (libIPN hotkey config, not vanilla keybindings)." },
-    { "key": "xaeros_minimap", "name": "Xaero's Minimap", "role": "qol", "side": "both",
-      "source": { "type": "modrinth", "slug": "xaeros-minimap" },
-      "notes": "ARR; Modrinth CDN redistribution allowed. Server-side install is the official optional feature (world identification + enforced profiles). Fair-play restriction of radar/cave mode via pack/config/xaero/*/server_profiles/default.cfg (default_enforced_profile)." },
-    { "key": "xaeros_world_map", "name": "Xaero's World Map", "role": "qol", "side": "both",
-      "source": { "type": "modrinth", "slug": "xaeros-world-map" },
-      "notes": "ARR; pairs with minimap for per-dimension map data + waypoints." },
-    { "key": "shulkerboxtooltip", "name": "Shulker Box Tooltip", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "shulkerboxtooltip" },
-      "notes": "Compact tooltip by default; full contents behind Shift (config preview mode)." },
-    { "key": "betterf3", "name": "BetterF3", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "betterf3" },
-      "notes": "Requires Cloth Config. Default modules trimmed to FPS/coords/biome/chunk/mem/GPU/Java/dimension." },
-    { "key": "betterpingdisplay", "name": "Better Ping Display", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "better-ping-display" },
-      "notes": "Numeric ping in tab list; client-only, no keybinds." },
-    { "key": "chatheads", "name": "Chat Heads", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "chat-heads" },
-      "notes": "Player heads in chat; client-only, no keybinds." },
-    { "key": "skinlayers3d", "name": "3D Skin Layers", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "3dskinlayers" },
-      "notes": "tr7zw protective license permits modpack redistribution via official mirrors." },
-    { "key": "customskinloader", "name": "CustomSkinLoader", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "customskinloader" },
-      "notes": "GPL-3.0; Universal 15.x bootstrap jar, loaders=[fabric,forge,neoforge,quilt]. Must coexist with 3D Skin Layers — verify skin pipeline on real client." },
-    { "key": "defaultoptions", "name": "Default Options", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "default-options" },
-      "notes": "First-install default keybinds/options delivery (config/defaultoptions/*). Requires Balm. Keeps existing players' options.txt untouched on pack updates." },
-    { "key": "i18nupdatemod", "name": "I18nUpdateMod", "role": "qol", "side": "client",
-      "source": { "type": "modrinth", "slug": "i18nupdatemod" },
-      "notes": "CFPAOrg 自动汉化更新 (AGPL-3.0-only, github.com/xfl03/I18nUpdateMod3). Client-only: downloads the community zh_cn mod-translation resource pack and applies it when the game language is zh_cn — other languages unaffected. Loads via ModLauncher ITransformationService — the -all.jar intentionally has no mods.toml (jar-deps reports 'no mods.toml'; expected). Covers third-party mod translations only; Starforge's own text stays in localization/ + kubejs/assets (different namespaces, no overlap). Distributed via mrpack URL like every mod; no jar shipped." },
-
-    { "key": "modernfix", "name": "ModernFix", "role": "perf", "side": "both",
-      "source": { "type": "modrinth", "slug": "modernfix" } },
-    { "key": "ferritecore", "name": "FerriteCore", "role": "perf", "side": "both",
-      "source": { "type": "modrinth", "slug": "ferrite-core" } },
-    { "key": "servercore", "name": "ServerCore", "role": "perf", "side": "both",
-      "source": { "type": "modrinth", "slug": "servercore" } },
-    { "key": "fastsuite", "name": "FastSuite", "role": "perf", "side": "both",
-      "source": { "type": "modrinth", "slug": "fastsuite" } },
-    { "key": "letmedespawn", "name": "Let Me Despawn", "role": "perf", "side": "server",
-      "source": { "type": "curseforge", "slug": "let-me-despawn" } },
-    { "key": "clumps", "name": "Clumps", "role": "perf", "side": "both",
-      "source": { "type": "modrinth", "slug": "clumps" } },
-    { "key": "sodium", "name": "Sodium", "role": "perf", "side": "client",
-      "source": { "type": "modrinth", "slug": "sodium" } },
-    { "key": "iris", "name": "Iris", "role": "perf", "side": "client",
-      "source": { "type": "modrinth", "slug": "iris", "version_prefix": "1.8.14" },
-      "notes": "Shader loader for the default shader pack. Sodium 0.8 line requires Iris >=1.8.13; on 1.21.1 NeoForge only the 1.8.14 beta satisfies that (latest stable Iris 1.8.12 pins Sodium 0.6.13, which Supplementaries 3.9.9 declares incompatible [0,0.8.12-beta.1) — a hard mod-loading block, so no all-stable combo exists in this pack). Pin prefix 1.8.14 so a future stable 1.8.14+ release is picked automatically." },
-    { "key": "immediatelyfast", "name": "ImmediatelyFast", "role": "perf", "side": "client",
-      "source": { "type": "modrinth", "slug": "immediatelyfast" } },
-    { "key": "entityculling", "name": "Entity Culling", "role": "perf", "side": "client",
-      "source": { "type": "modrinth", "slug": "entityculling" } },
-    { "key": "dynamicfps", "name": "Dynamic FPS", "role": "perf", "side": "client",
-      "source": { "type": "modrinth", "slug": "dynamic-fps" } },
-    { "key": "lithium", "name": "Lithium", "role": "perf", "side": "both", "enabled": false,
-      "source": { "type": "modrinth", "slug": "lithium" },
-      "notes": "Enable only after full-instance compatibility test (docs/performance.md)." },
-    { "key": "fastnoise", "name": "Fast Noise", "role": "perf", "side": "both",
-      "source": { "type": "modrinth", "slug": "zfastnoise" },
-      "notes": "modid zfastnoise (ZenXArch, MPL-2.0). Vanilla worldgen noise optimization; declared incompatible with moonrise/antixray (not installed). Must verify identical worldgen across Ad Astra dimensions (same seed, on/off)." },
-    { "key": "structure_layout_optimizer", "name": "Structure Layout Optimizer", "role": "perf", "side": "both",
-      "source": { "type": "modrinth", "slug": "structure-layout-optimizer" },
-      "notes": "TelepathicGrunt, MIT. Requires resourceful-config (installed). Speeds up structure/jigsaw layout checks incl. Ad Astra planets; verify structure spawning unchanged." },
-    { "key": "alltheleaks", "name": "AllTheLeaks (Memory Leak Fix)", "role": "perf", "side": "both",
-      "source": { "type": "curseforge", "slug": "alltheleaks" },
-      "notes": "CurseForge-only. Fixes known mod/MC/NeoForge memory leaks; respects upstream version guards — do not force-enable guarded fixes. Watch overlap with ModernFix." },
-    { "key": "memleakfixgpu", "name": "Mem Leak Fix GPU", "role": "perf", "side": "client",
-      "source": { "type": "modrinth", "slug": "memleakfixgpu" },
-      "notes": "alchemyyy, MIT (github.com/alchemyyy/MemLeakFixGPU). Client-only; releases stale RenderTarget GL ids on a delayed client-tick queue (no forced GC). Verify no texture loss/black screens alongside Sodium+ImmediatelyFast; demote to candidate on any render anomaly." },
-    { "key": "spark", "name": "spark", "role": "ops", "side": "both",
-      "source": { "type": "modrinth", "slug": "spark" } },
-    { "key": "chunky", "name": "Chunky", "role": "ops", "side": "both",
-      "source": { "type": "modrinth", "slug": "chunky" } },
-
-    { "key": "rhino", "name": "Rhino", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "rhino" } },
-    { "key": "betteradvancedtooltips", "name": "Better Advanced Tooltips", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "better-advanced-tooltips" } },
-    { "key": "architectury", "name": "Architectury API", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "architectury-api" } },
-    { "key": "ftb_library", "name": "FTB Library", "role": "library", "side": "both",
-      "source": { "type": "ftbmaven", "artifact": "ftb-library-neoforge" } },
-    { "key": "ftb_teams", "name": "FTB Teams", "role": "library", "side": "both",
-      "source": { "type": "ftbmaven", "artifact": "ftb-teams-neoforge" } },
-    { "key": "ftb_xmod_compat", "name": "FTB XMod Compat", "role": "library", "side": "both",
-      "source": { "type": "ftbmaven", "artifact": "ftb-xmod-compat-neoforge" } },
-    { "key": "sophisticatedcore", "name": "Sophisticated Core", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "sophisticated-core" } },
-    { "key": "balm", "name": "Balm", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "balm" } },
-    { "key": "searchables", "name": "Searchables", "role": "library", "side": "client",
-      "source": { "type": "modrinth", "slug": "searchables" } },
-    { "key": "moonlight", "name": "Moonlight Lib", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "moonlight" } },
-    { "key": "resourcefullib", "name": "Resourceful Lib", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "resourceful-lib" } },
-    { "key": "resourcefulconfig", "name": "Resourceful Config", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "resourceful-config" } },
-    { "key": "geckolib", "name": "GeckoLib", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "geckolib" } },
-    { "key": "puzzleslib", "name": "Puzzles Lib", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "puzzles-lib" } },
-    { "key": "atlaslib", "name": "Atlas Lib", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "atlas-lib" } },
-    { "key": "commonstoragelib", "name": "Common Storage Lib", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "common-storage-lib" } },
-    { "key": "placebo", "name": "Placebo", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "placebo" } },
-    { "key": "blueprint", "name": "Blueprint", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "blueprint" } },
-    { "key": "azurelib", "name": "AzureLib", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "azurelib" } },
-    { "key": "almanac", "name": "Almanac", "role": "library", "side": "server",
-      "source": { "type": "modrinth", "slug": "almanac" } },
-    { "key": "libipn", "name": "libIPN", "role": "library", "side": "client",
-      "source": { "type": "modrinth", "slug": "libipn" },
-      "notes": "Required by Inventory Profiles Next." },
-    { "key": "kotlinforforge", "name": "Kotlin for Forge", "role": "library", "side": "client",
-      "source": { "type": "modrinth", "slug": "kotlin-for-forge" },
-      "notes": "Required by Inventory Profiles Next / libIPN (client-side only)." },
-    { "key": "clothconfig", "name": "Cloth Config API", "role": "library", "side": "client",
-      "source": { "type": "modrinth", "slug": "cloth-config" },
-      "notes": "Required by BetterF3; optional for Chat Heads." },
-    { "key": "curios", "name": "Curios API", "role": "library", "side": "both",
-      "source": { "type": "modrinth", "slug": "curios" },
-      "notes": "Curio slot framework (LGPL-3.0-or-later). Hosts Artifacts items and Sophisticated Backpacks' native back slot; no extra slot-framework mods." }
+    {
+      "key": "ic2cre",
+      "name": "IC2CRE",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "github",
+        "repo": "BigFish520/IC2-CRE",
+        "tag": "Dev-0.4",
+        "asset": "^IC2CRE_0\\.4-dev_NeoForge_1\\.21\\.1\\.jar$"
+      }
+    },
+    {
+      "key": "buildcraft",
+      "name": "BuildCraft CE",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "github",
+        "repo": "BCCE-team/BuildCraft",
+        "tag": "8.0.19",
+        "asset": "^BuildCraft-Community-Edition-8\\.0\\.19\\+1\\.21\\.1\\+neoforge\\.jar$"
+      }
+    },
+    {
+      "key": "immersiveengineering",
+      "name": "Immersive Engineering",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "immersiveengineering"
+      }
+    },
+    {
+      "key": "immersivepetroleum",
+      "name": "Immersive Petroleum",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "immersive-petroleum"
+      }
+    },
+    {
+      "key": "storagedrawers",
+      "name": "Storage Drawers",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "storagedrawers"
+      }
+    },
+    {
+      "key": "sophisticatedstorage",
+      "name": "Sophisticated Storage",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "sophisticated-storage"
+      }
+    },
+    {
+      "key": "sophisticatedbackpacks",
+      "name": "Sophisticated Backpacks",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "sophisticated-backpacks"
+      }
+    },
+    {
+      "key": "ae2",
+      "name": "Applied Energistics 2",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "ae2"
+      }
+    },
+    {
+      "key": "railcraft",
+      "name": "Railcraft Reborn",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "railcraft-reborn"
+      },
+      "notes": "Custom license: public modpacks allowed (no sale, link GitHub, release builds only). Layer: inter-base rail logistics between BC/IE in-base transport and AE2/Ad Astra."
+    },
+    {
+      "key": "ad_astra",
+      "name": "Ad Astra",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "ad-astra"
+      }
+    },
+    {
+      "key": "ad_astra_more_structures",
+      "name": "Ad Astra: More Structures",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "ad-astra-more-structures"
+      }
+    },
+    {
+      "key": "ad_astra_giselle",
+      "name": "Ad-Astra: Giselle Addon",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "ad-astra-giselle-addon"
+      },
+      "notes": "Ad Astra QoL/compat layer (MIT). Audit which automation conveniences fit stage rules; must not bypass oxygen/fuel/rocket tiers."
+    },
+    {
+      "key": "ad_astra_asteroid_belt",
+      "name": "Ad Astra: Asteroid Belt",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "ad-astra-asteroid-belt"
+      },
+      "notes": "CurseForge-only; brand-new small project (verify jar license). High-risk mining dimension; keep the miss-landing/rocket-loss mechanic."
+    },
+    {
+      "key": "simple_structures_ad_astra",
+      "name": "Simple Structures: Ad Astra",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "simple-structure-ad-astra"
+      },
+      "notes": "Datapack-style structure mod (MIT); upstream declares client optional. Must coexist with Ad Astra: More Structures — audit density/loot overlap."
+    },
+    {
+      "key": "the_hordes",
+      "name": "The Hordes",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "the-hordes"
+      }
+    },
+    {
+      "key": "zombies_break_and_build",
+      "name": "Zombies Break & Build",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "zombies-break-and-build"
+      }
+    },
+    {
+      "key": "defenseturrets",
+      "name": "Defense Turrets",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "defenseturrets"
+      }
+    },
+    {
+      "key": "incontrol",
+      "name": "In Control!",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "in-control"
+      }
+    },
+    {
+      "key": "progressivestages",
+      "name": "ProgressiveStages",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "progressivestages"
+      }
+    },
+    {
+      "key": "kubejs",
+      "name": "KubeJS",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "kubejs"
+      }
+    },
+    {
+      "key": "ftb_quests",
+      "name": "FTB Quests",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "ftbmaven",
+        "artifact": "ftb-quests-neoforge"
+      }
+    },
+    {
+      "key": "farmersdelight",
+      "name": "Farmer's Delight",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "farmers-delight"
+      }
+    },
+    {
+      "key": "cookingforblockheads",
+      "name": "Cooking for Blockheads",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "cooking-for-blockheads"
+      }
+    },
+    {
+      "key": "almostunified",
+      "name": "Almost Unified",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "almostunified"
+      },
+      "notes": "材料统一层（ARR，manifest URL 分发）：把 c: 标签内同名材料的配方输出统一为指定优先 Mod 的物品，减少重复锭/板/粉/块。"
+    },
+    {
+      "key": "appliedcooking",
+      "name": "Applied Cooking",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "applied-cooking"
+      },
+      "notes": "AE2↔Cooking for Blockheads 桥（MIT）：Kitchen Station 让烹饪台直接读 ME 库存。"
+    },
+    {
+      "key": "applieddelight",
+      "name": "Applied Delight",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "applied-delight"
+      },
+      "notes": "AE2↔Farmer's Delight 桥（MIT）：ME Cooking Pot 从 ME 取食材，仍需真实热源。"
+    },
+    {
+      "key": "starforge_compat",
+      "name": "Starforge Compatibility",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "local",
+        "dir": "compat"
+      },
+      "notes": "本仓源码构建的小型行为兼容层（MIT，tools/build-compat.mjs 确定性产出）：electric_burner 电能厨房热源（FE 能力 + FD 原生热源语义）与 horde_alarm 怪潮红石警报（HordeStart/EndEvent 驱动，SavedData 登记）。"
+    },
+    {
+      "key": "framedblocks",
+      "name": "FramedBlocks",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "framedblocks"
+      }
+    },
+    {
+      "key": "supplementaries",
+      "name": "Supplementaries",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "supplementaries"
+      }
+    },
+    {
+      "key": "mcw_furniture",
+      "name": "Macaw's Furniture",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "macaws-furniture"
+      },
+      "notes": "Living/decoration layer for bases, industry, stations, colonies. ARR — distributed via manifest URL like Easy Villagers; recipes audited against unified materials."
+    },
+    {
+      "key": "mdm",
+      "name": "MDM (Modern Decorations Mod)",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "modern-decorations-mod"
+      },
+      "notes": "Modern interior furniture/decor (cookiecraftmods). ARR — manifest-URL distribution only. Overlap with Supplementaries/Macaw's audited; KubeJS merges where needed."
+    },
+    {
+      "key": "buildinggadgets",
+      "name": "Building Gadgets 2",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "building-gadgets"
+      }
+    },
+    {
+      "key": "endermanoverhaul",
+      "name": "Enderman Overhaul",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "enderman-overhaul"
+      }
+    },
+    {
+      "key": "mutantmonsters",
+      "name": "Mutant Monsters",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "mutant-monsters"
+      }
+    },
+    {
+      "key": "creature_feature",
+      "name": "Creature Feature",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "creature-feature"
+      },
+      "notes": "Replaces Phenominae: rare anomaly/special-mechanic hostile creatures."
+    },
+    {
+      "key": "arachnids",
+      "name": "Arachnids",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "arachnids"
+      },
+      "notes": "Swarm/area-threat bug enemies (Starship Troopers style); gated off early planets via In Control."
+    },
+    {
+      "key": "easy_villagers",
+      "name": "Easy Villagers",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "easy-villagers"
+      }
+    },
+    {
+      "key": "guard_villagers",
+      "name": "Guard Villagers",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "guard-villagers"
+      }
+    },
+    {
+      "key": "tacz",
+      "name": "TaCZ (unofficial NeoForge port)",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "tacz-1.21.1"
+      }
+    },
+    {
+      "key": "guard_villagers_tacz",
+      "name": "Guard Villagers TACZ Support",
+      "role": "content",
+      "side": "server",
+      "source": {
+        "type": "modrinth",
+        "slug": "guard-villagers-tacz-support"
+      },
+      "notes": "Metadata declares server/integrated only; verify before shipping client copy."
+    },
+    {
+      "key": "artifacts",
+      "name": "Artifacts",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "artifacts"
+      },
+      "notes": "Curios-backed curio items (13.x: curios/cloth/architectury optional upstream, we ship curios). Default chest/mimic injection kept but re-tiered via Starforge GLM pools; natural-drop balance audited in docs."
+    },
+    {
+      "key": "jei",
+      "name": "JEI",
+      "role": "qol",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "jei",
+        "version_prefix": "19.57"
+      },
+      "notes": "ftb-xmod-compat requires jei >= 19.53.0.425; newest release channel was older."
+    },
+    {
+      "key": "guideme",
+      "name": "GuideME",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "guideme"
+      }
+    },
+    {
+      "key": "mezzconfig",
+      "name": "MezzConfig",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "mezzconfig"
+      }
+    },
+    {
+      "key": "polymorph",
+      "name": "Polymorph",
+      "role": "qol",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "polymorph"
+      }
+    },
+    {
+      "key": "controlling",
+      "name": "Controlling",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "controlling"
+      }
+    },
+    {
+      "key": "mousetweaks",
+      "name": "Mouse Tweaks",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "mouse-tweaks"
+      }
+    },
+    {
+      "key": "craftingtweaks",
+      "name": "Crafting Tweaks",
+      "role": "qol",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "crafting-tweaks"
+      }
+    },
+    {
+      "key": "appleskin",
+      "name": "AppleSkin",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "appleskin"
+      }
+    },
+    {
+      "key": "jade",
+      "name": "Jade",
+      "role": "qol",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "jade"
+      }
+    },
+    {
+      "key": "jade_addons",
+      "name": "Jade Addons",
+      "role": "qol",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "jade-addons"
+      }
+    },
+    {
+      "key": "carry_on",
+      "name": "Carry On",
+      "role": "qol",
+      "side": "both",
+      "enabled": false,
+      "source": {
+        "type": "modrinth",
+        "slug": "carry-on"
+      },
+      "notes": "Optional candidate per docs/compatibility.md; requires blacklist config before enabling."
+    },
+    {
+      "key": "emi",
+      "name": "EMI",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "emi"
+      },
+      "notes": "Default recipe/item viewer. Built-in JEMI layer imports JEI plugins as recipe sources — JEI stays installed for its API/plugin surface (ftb-xmod-compat, BC CE, IC2CRE). JEI 19.57 has no persisted overlay toggle: overlay is hidden per-session via Ctrl+O (key.jei.toggleOverlay); verified by bytecode (ClientToggleState is in-memory only)."
+    },
+    {
+      "key": "inventoryprofilesnext",
+      "name": "Inventory Profiles Next",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "inventory-profiles-next"
+      },
+      "notes": "Requires libIPN + Kotlin for Forge. Inventory sorting/refill; GUI buttons stay, extra hotkeys unbound via pack/config/inventoryprofilesnext/inventoryprofiles.json (libIPN hotkey config, not vanilla keybindings)."
+    },
+    {
+      "key": "xaeros_minimap",
+      "name": "Xaero's Minimap",
+      "role": "qol",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "xaeros-minimap"
+      },
+      "notes": "ARR; Modrinth CDN redistribution allowed. Server-side install is the official optional feature (world identification + enforced profiles). Fair-play restriction of radar/cave mode via pack/config/xaero/*/server_profiles/default.cfg (default_enforced_profile)."
+    },
+    {
+      "key": "xaeros_world_map",
+      "name": "Xaero's World Map",
+      "role": "qol",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "xaeros-world-map"
+      },
+      "notes": "ARR; pairs with minimap for per-dimension map data + waypoints."
+    },
+    {
+      "key": "shulkerboxtooltip",
+      "name": "Shulker Box Tooltip",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "shulkerboxtooltip"
+      },
+      "notes": "Compact tooltip by default; full contents behind Shift (config preview mode)."
+    },
+    {
+      "key": "betterf3",
+      "name": "BetterF3",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "betterf3"
+      },
+      "notes": "Requires Cloth Config. Default modules trimmed to FPS/coords/biome/chunk/mem/GPU/Java/dimension."
+    },
+    {
+      "key": "betterpingdisplay",
+      "name": "Better Ping Display",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "better-ping-display"
+      },
+      "notes": "Numeric ping in tab list; client-only, no keybinds."
+    },
+    {
+      "key": "chatheads",
+      "name": "Chat Heads",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "chat-heads"
+      },
+      "notes": "Player heads in chat; client-only, no keybinds."
+    },
+    {
+      "key": "skinlayers3d",
+      "name": "3D Skin Layers",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "3dskinlayers"
+      },
+      "notes": "tr7zw protective license permits modpack redistribution via official mirrors."
+    },
+    {
+      "key": "customskinloader",
+      "name": "CustomSkinLoader",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "customskinloader"
+      },
+      "notes": "GPL-3.0; Universal 15.x bootstrap jar, loaders=[fabric,forge,neoforge,quilt]. Must coexist with 3D Skin Layers — verify skin pipeline on real client."
+    },
+    {
+      "key": "defaultoptions",
+      "name": "Default Options",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "default-options"
+      },
+      "notes": "First-install default keybinds/options delivery (config/defaultoptions/*). Requires Balm. Keeps existing players' options.txt untouched on pack updates."
+    },
+    {
+      "key": "i18nupdatemod",
+      "name": "I18nUpdateMod",
+      "role": "qol",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "i18nupdatemod"
+      },
+      "notes": "CFPAOrg 自动汉化更新 (AGPL-3.0-only, github.com/xfl03/I18nUpdateMod3). Client-only: downloads the community zh_cn mod-translation resource pack and applies it when the game language is zh_cn — other languages unaffected. Loads via ModLauncher ITransformationService — the -all.jar intentionally has no mods.toml (jar-deps reports 'no mods.toml'; expected). Covers third-party mod translations only; Starforge's own text stays in localization/ + kubejs/assets (different namespaces, no overlap). Distributed via mrpack URL like every mod; no jar shipped."
+    },
+    {
+      "key": "modernfix",
+      "name": "ModernFix",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "modernfix"
+      }
+    },
+    {
+      "key": "ferritecore",
+      "name": "FerriteCore",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "ferrite-core"
+      }
+    },
+    {
+      "key": "servercore",
+      "name": "ServerCore",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "servercore"
+      }
+    },
+    {
+      "key": "fastsuite",
+      "name": "FastSuite",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "fastsuite"
+      }
+    },
+    {
+      "key": "letmedespawn",
+      "name": "Let Me Despawn",
+      "role": "perf",
+      "side": "server",
+      "source": {
+        "type": "curseforge",
+        "slug": "let-me-despawn"
+      }
+    },
+    {
+      "key": "clumps",
+      "name": "Clumps",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "clumps"
+      }
+    },
+    {
+      "key": "sodium",
+      "name": "Sodium",
+      "role": "perf",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "sodium"
+      }
+    },
+    {
+      "key": "iris",
+      "name": "Iris",
+      "role": "perf",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "iris",
+        "version_prefix": "1.8.14"
+      },
+      "notes": "Shader loader for the default shader pack. Sodium 0.8 line requires Iris >=1.8.13; on 1.21.1 NeoForge only the 1.8.14 beta satisfies that (latest stable Iris 1.8.12 pins Sodium 0.6.13, which Supplementaries 3.9.9 declares incompatible [0,0.8.12-beta.1) — a hard mod-loading block, so no all-stable combo exists in this pack). Pin prefix 1.8.14 so a future stable 1.8.14+ release is picked automatically."
+    },
+    {
+      "key": "immediatelyfast",
+      "name": "ImmediatelyFast",
+      "role": "perf",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "immediatelyfast"
+      }
+    },
+    {
+      "key": "entityculling",
+      "name": "Entity Culling",
+      "role": "perf",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "entityculling"
+      }
+    },
+    {
+      "key": "dynamicfps",
+      "name": "Dynamic FPS",
+      "role": "perf",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "dynamic-fps"
+      }
+    },
+    {
+      "key": "lithium",
+      "name": "Lithium",
+      "role": "perf",
+      "side": "both",
+      "enabled": false,
+      "source": {
+        "type": "modrinth",
+        "slug": "lithium"
+      },
+      "notes": "Enable only after full-instance compatibility test (docs/performance.md)."
+    },
+    {
+      "key": "fastnoise",
+      "name": "Fast Noise",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "zfastnoise"
+      },
+      "notes": "modid zfastnoise (ZenXArch, MPL-2.0). Vanilla worldgen noise optimization; declared incompatible with moonrise/antixray (not installed). Must verify identical worldgen across Ad Astra dimensions (same seed, on/off)."
+    },
+    {
+      "key": "structure_layout_optimizer",
+      "name": "Structure Layout Optimizer",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "structure-layout-optimizer"
+      },
+      "notes": "TelepathicGrunt, MIT. Requires resourceful-config (installed). Speeds up structure/jigsaw layout checks incl. Ad Astra planets; verify structure spawning unchanged."
+    },
+    {
+      "key": "alltheleaks",
+      "name": "AllTheLeaks (Memory Leak Fix)",
+      "role": "perf",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "alltheleaks"
+      },
+      "notes": "CurseForge-only. Fixes known mod/MC/NeoForge memory leaks; respects upstream version guards — do not force-enable guarded fixes. Watch overlap with ModernFix."
+    },
+    {
+      "key": "memleakfixgpu",
+      "name": "Mem Leak Fix GPU",
+      "role": "perf",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "memleakfixgpu"
+      },
+      "notes": "alchemyyy, MIT (github.com/alchemyyy/MemLeakFixGPU). Client-only; releases stale RenderTarget GL ids on a delayed client-tick queue (no forced GC). Verify no texture loss/black screens alongside Sodium+ImmediatelyFast; demote to candidate on any render anomaly."
+    },
+    {
+      "key": "spark",
+      "name": "spark",
+      "role": "ops",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "spark"
+      }
+    },
+    {
+      "key": "chunky",
+      "name": "Chunky",
+      "role": "ops",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "chunky"
+      }
+    },
+    {
+      "key": "rhino",
+      "name": "Rhino",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "rhino"
+      }
+    },
+    {
+      "key": "betteradvancedtooltips",
+      "name": "Better Advanced Tooltips",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "better-advanced-tooltips"
+      }
+    },
+    {
+      "key": "architectury",
+      "name": "Architectury API",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "architectury-api"
+      }
+    },
+    {
+      "key": "ftb_library",
+      "name": "FTB Library",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "ftbmaven",
+        "artifact": "ftb-library-neoforge"
+      }
+    },
+    {
+      "key": "ftb_teams",
+      "name": "FTB Teams",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "ftbmaven",
+        "artifact": "ftb-teams-neoforge"
+      }
+    },
+    {
+      "key": "ftb_xmod_compat",
+      "name": "FTB XMod Compat",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "ftbmaven",
+        "artifact": "ftb-xmod-compat-neoforge"
+      }
+    },
+    {
+      "key": "sophisticatedcore",
+      "name": "Sophisticated Core",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "sophisticated-core"
+      }
+    },
+    {
+      "key": "balm",
+      "name": "Balm",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "balm"
+      }
+    },
+    {
+      "key": "searchables",
+      "name": "Searchables",
+      "role": "library",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "searchables"
+      }
+    },
+    {
+      "key": "moonlight",
+      "name": "Moonlight Lib",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "moonlight"
+      }
+    },
+    {
+      "key": "resourcefullib",
+      "name": "Resourceful Lib",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "resourceful-lib"
+      }
+    },
+    {
+      "key": "resourcefulconfig",
+      "name": "Resourceful Config",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "resourceful-config"
+      }
+    },
+    {
+      "key": "geckolib",
+      "name": "GeckoLib",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "geckolib"
+      }
+    },
+    {
+      "key": "puzzleslib",
+      "name": "Puzzles Lib",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "puzzles-lib"
+      }
+    },
+    {
+      "key": "atlaslib",
+      "name": "Atlas Lib",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "atlas-lib"
+      }
+    },
+    {
+      "key": "commonstoragelib",
+      "name": "Common Storage Lib",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "common-storage-lib"
+      }
+    },
+    {
+      "key": "placebo",
+      "name": "Placebo",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "placebo"
+      }
+    },
+    {
+      "key": "blueprint",
+      "name": "Blueprint",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "blueprint"
+      }
+    },
+    {
+      "key": "azurelib",
+      "name": "AzureLib",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "azurelib"
+      }
+    },
+    {
+      "key": "almanac",
+      "name": "Almanac",
+      "role": "library",
+      "side": "server",
+      "source": {
+        "type": "modrinth",
+        "slug": "almanac"
+      }
+    },
+    {
+      "key": "libipn",
+      "name": "libIPN",
+      "role": "library",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "libipn"
+      },
+      "notes": "Required by Inventory Profiles Next."
+    },
+    {
+      "key": "kotlinforforge",
+      "name": "Kotlin for Forge",
+      "role": "library",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "kotlin-for-forge"
+      },
+      "notes": "Required by Inventory Profiles Next / libIPN (client-side only)."
+    },
+    {
+      "key": "clothconfig",
+      "name": "Cloth Config API",
+      "role": "library",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "cloth-config"
+      },
+      "notes": "Required by BetterF3; optional for Chat Heads."
+    },
+    {
+      "key": "curios",
+      "name": "Curios API",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "curios"
+      },
+      "notes": "Curio slot framework (LGPL-3.0-or-later). Hosts Artifacts items and Sophisticated Backpacks' native back slot; no extra slot-framework mods."
+    }
   ],
   "resources": [
-    { "key": "makeup_ultra_fast", "name": "MakeUp - Ultra Fast", "type": "shaderpack", "side": "client",
+    {
+      "key": "makeup_ultra_fast",
+      "name": "MakeUp - Ultra Fast",
+      "type": "shaderpack",
+      "side": "client",
       "dir": "shaderpacks",
-      "source": { "type": "modrinth", "slug": "makeup-ultra-fast-shaders", "loaders": ["iris"] },
-      "notes": "Default shader (LGPL-3.0-or-later). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. Default-on via pack/config/iris.properties + official profile=low preset (pack/shaderpacks/<file>.txt)." }
+      "source": {
+        "type": "modrinth",
+        "slug": "makeup-ultra-fast-shaders",
+        "loaders": [
+          "iris"
+        ]
+      },
+      "notes": "Default shader (LGPL-3.0-or-later). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. Default-on via pack/config/iris.properties + official profile=low preset (pack/shaderpacks/<file>.txt)."
+    }
   ]
 }

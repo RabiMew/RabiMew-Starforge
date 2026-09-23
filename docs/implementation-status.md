@@ -100,7 +100,7 @@
 ## 尚未实现（按批次）
 
 - P1 收尾：锁 enforcement 实机验证、AE2 冷启动链路实玩验证（新玩家从 T0 合成链是否全程可通）。
-- P2 收尾：starforge-compat 附属（炮塔弹药/能耗消耗、基地威胁 H、事件预算、怪潮阶段化、空间站临时事件白名单）；真实怪潮实机验收。
+- P2 收尾：starforge-compat 附属已首轮交付（红石怪潮警报 + 厨房动态热源，服务端实测通过，见末节）；剩余项：炮塔弹药/能耗消耗（Mixin）、基地威胁 H、事件预算、怪潮阶段化、空间站临时事件白名单；真实怪潮多人实机验收。
 - P3–P6：T4–T7 高级链条实测、Ad Astra 首航**实机**验证（配方图闭环已验证，见「地球闭环实测」）、殖民岗位、任务、发行打包、性能实测。
 - 客户端实机验证已补（Prism 离线账号 `RabiTest`，Starforge-DOtest 实例）：主菜单 → `--quickPlayMultiplayer` 直连专用服务器 → 进世界 → EMI/JEMI 80 个 JEI 分类 + 原生插件共 63630 配方 → Default Options 22 条键位全量生效 0 错误。皮肤拉取/3D 层渲染/小地图雷达实测关闭画面仍待人工目检。
 
@@ -138,3 +138,102 @@
 - Supplementaries 3.9.9、FramedBlocks 10.6.1、Building Gadgets 2 1.3.9 保持原锁定版本未动。
 - **运行时验证**：dedicated server `Done (1.653s)`，mdm 26.9 / mcwfurnitures 3.4.1 正常加载，KubeJS 5/5 脚本 0 错 0 警；仅存 ERROR 为既有告警（4 条姊妹模组 loot_table 缺表 + `modid:example` DataMapLoader 噪音，旧日志同款）。`registry-export/` 已用本次启动重导出（8302 配方；mdm 265 物品/264 方块、mcwfurnitures 654/652；被删模组 ID 清零）。
 - 待验证：客户端实机目检家具模型/储物 GUI 与中文显示。
+
+## 2026-09-23 材料统合 + 跨 Mod 联动增量（+3 模组，103 启用）
+
+### 新增兼容模组（已锁定、已启动验证）
+
+| 模组 | 版本 | 许可证 | 必需依赖 | 用途 |
+| --- | --- | --- | --- | --- |
+| Almost Unified | 1.21.1-1.4.2+neoforge | LicenseRef-ARR（manifest URL 分发，不入库 jar） | 无 | 把 `c:` 标签内重复材料的配方输出统一为优先级物品 |
+| Applied Cooking | 6.2.1 | MIT | ae2、cooking-for-blockheads、balm | Kitchen Station 让 CFB 直接读 ME 网络食材 |
+| Applied Delight | 1.1.0 | MIT | ae2、farmers-delight | ME Cooking Pot 从 ME 取食材，仍要求真实热源 |
+
+三者经 `fetch-mods --only` 落锁（`manifest/locked-mods.json`，103 启用）。依赖闭包全部由既有模组满足，未引入新前置。
+
+### 标准材料输出（服务端验证：0 个非标准产出）
+
+优先级 `IE > IC2CRE > Ad Astra > Railcraft`（末影粉单独覆盖为 AE2）：
+
+- 钢/铅/镍/银/铀锭与块、全部板材、铁杆/钢杆 → Immersive Engineering
+- 锡/青铜锭、锡/青铜板 → IC2CRE
+- 焦煤与焦煤块 → IE `coal_coke` / `coke`
+- 末影粉 → AE2 `ender_dust`
+- 硫磺/硝石/黑曜石/煤等粉末 → 标签首优先项（IE/IC2CRE）
+
+验证方式：`registry-export/recipes.json` 全量扫描，产出非标签首选物品的配方数为 **0**（改造前 Ad Astra/IC2CRE/RC 各自输出本家钢锭等）。
+
+### 输入统一（KubeJS `starforge_unify.js`）
+
+- `ServerEvents.recipes` `replaceInput`：65 条显式 物品→`c:` 标签 映射（锭/板/杆/粉/粒/粗矿/块/焦煤）。
+- `replaceOutput` 兜底 AU 无法改写的自定义序列化器（`minecraft:` 命名空间锡熔炼、RC 合金合成等）。
+- 数据包配方覆盖 5 条（AU/KubeJS 均改不动的序列化器）：`ic2cre` 末影珍珠打粉→AE2 粉、`railcraft:coking` 焦煤→IE、`railcraft:coal_coke` 解压、RC 辊压锡板/青铜板→IC2CRE。
+- 删除重复锭↔块↔粒压缩配方 32 条（被删方块的合成改由标准 Mod 配方经标签输入完成，双向链路不断）。
+
+### 标签补齐
+
+- `c:storage_blocks/{steel,lead,tin,silver,bronze,uranium}` ← IC2CRE 六金属块（原先完全无标签）。
+- `c:dusts/ender_pearl` ← `ic2cre:ender_pearl_dust`（现为 3 成员）。
+- `ad_astra:steel_blocks` ← `ic2cre:steel_block`。
+- `c:buckets/oil`（11 桶）/ `c:buckets/fuel`（22 桶）+ `c:buckets` 父标签——只统一"桶装接口"，未改变任何能量密度/机器效率/火箭燃料要求。
+- 以上走 `kubejs/data/**/tags/*.json` 数据包路径（原生加载顺序，保证 AU 输出统一能看到）。
+
+### 矿层去重（数据包 `neoforge:add_features` 空表覆盖，可逆）
+
+| 矿种 | 保留来源 | 禁用来源 |
+| --- | --- | --- |
+| 锡 | IC2CRE（2 矿脉） | Railcraft ×2 |
+| 铅 | Immersive Engineering | IC2CRE ×2 + Railcraft ×1 |
+| 铀 | IC2CRE（3 矿脉） | IE ×1 |
+| 镍 | IE | Railcraft ×3 |
+| 银 | IE | Railcraft ×2 |
+| 硫/硝石/锌/铝 | Railcraft（独家）/ IE（铝独家） | 无 |
+
+`tools/check-closure.mjs` 的地球世界生成白名单已同步收窄；七种材料闭环全部 0 缺链（银多一条 IC2CRE 碎矿死槽告警，主链不受影响）。
+
+### 厨房 / 家具 / 氧气（`starforge_compat.js`）
+
+- `cookingforblockheads:kitchen_item_providers` + `kitchen_connectors`：+491 件 MDM/Macaw 储物类家具（柜、抽屉、台面、冰箱等）。CFB 标签语义是"对该方块查询 IItemHandler"，无能力的方块仅作连接器——不存在伪造库存；**库存读取有效性待客户端实机验证**。
+- `ad_astra:passes_flood_fill`：+916 件 MDM/McW 家具方块（家具不应封死房间氧气）。FramedBlocks 刻意不加——拟态方块应按被模仿方块的气密性处理。**实际氧气传播行为待客户端实机验证**。
+
+### 怪潮警报（`starforge_horde.js` + `starforge_compat` 附属）
+
+- `NativeEvents` 钩子 `HordeStartEvent`/`HordeEndEvent`（零轮询）：怪潮开始播放袭击号角 + 标题 + 聊天警报，结束提示补给。已确认这两个事件在 NeoForge 事件总线上（可取消、含玩家上下文）。
+- 红石警报层已实现：`starforge_compat:horde_alarm` 方块（见下文 compat 附属节）。KubeJS 只保留表现层（标题/号角/聊天），红石信号由附属接管。
+
+### TaCZ / 军事链审计结果
+
+- 全部 24 条 TaCZ 弹药配方**原生即用 `c:` 标签**（`c:ingots/copper`、`c:gunpowders`、`c:ingots/iron` 等）——统一铜/铁自动流入弹药经济，无需重写。Defense Turrets 不消耗弹药（既有记录：无消耗接口），仅共享上游材料链。
+
+### 已知残留 / 未做
+
+- AU 的 `priority_overrides` 与无 `{material}` 占位符的字面标签条目疑似不生效（`c:coal_coke` 平标签需 `c:{material}` 模式覆盖）；RC 辊压/焦化炉输出已用数据包覆盖兜底。
+- `appliedcooking:guide_book` 配方因 Patchouli 未装而优雅降级（仅 WARN，无害）。
+- Almost Unified `unification/materials.json` 为 AU 自动生成的默认副配置（截断优先级），实测不影响主 `unify.json` 生效——保留观察。
+- EMI 重复条目隐藏（AU `recipe_viewer_hiding`）、厨房读取、氧气穿透——均需客户端实机复核。怪潮警报红石层已经服务端实机验证（见下文）。
+
+## 2026-09-23 `starforge_compat` 附属首轮交付（已实现并服务端实测）
+
+KubeJS 无法表达的行为型兼容，现由自有附属 `starforge-compat-0.1.0.jar` 承担。源码 `compat/src/`，确定性构建 `node tools/build-compat.mjs`（javac + AT 变换编译 jar + 固定时间戳打包），经 `manifest` `local` 源入锁（sha256 以 `manifest/locked-mods.json` 为准），同步至 `run/server/mods/`。
+
+### `starforge_compat:horde_alarm`（红石怪潮警报）
+
+- 机制：放置时方块实体把坐标登记进维度级 `SavedData`（`starforge_compat_horde_alarms.dat`），破坏即注销；`NeoForge.EVENT_BUS` 监听 `HordeStartEvent`/`HordeEndEvent` 翻转 `active` 标志并对登记位点 `setBlock`（flag 3 邻居更新）；方块 `getSignal`/`getDirectSignal` 激活期输出 15。零 tick 轮询、零世界扫描；区块未加载的警报在加载时经 `reconcile` 对齐当前怪潮状态。
+- 服务端实测（RCON + FakePlayer 构造真实 `HordeStartEvent`/`HordeEndEvent` 注入 NeoForge 事件总线）：`active` false→true→false；相邻红石粉信号 0→15→0；相邻红石灯 `lit` false→true→false（灯熄灭依赖世界 tick，见下）；破坏后 `alarms` 长数组清空（落盘文件验证）；重启后登记位点仍在 SavedData 中。
+- 可直接驱动：红石灯、Supplementaries Speaker Block/Redstone Illuminator、门禁等任意红石消费者。
+
+### `starforge_compat:electric_burner`（厨房动态热源）
+
+- 机制：带 `LIT` blockstate 并列入 `farmersdelight:heat_sources`——FD 原生 `HeatableBlockEntity.isHeated` 读取 LIT，**断电即停热，无 Mixin**。方块实体挂 `Capabilities.EnergyStorage.BLOCK`（8000 FE 上限、800/tick 上限、仅接收），每 tick 有电时耗 40 FE 并保持 `LIT=true`，耗尽即 `LIT=false`。
+- 服务端实测：`data merge` 充 8000 FE → `lit=true`；以 ~40 FE/tick 耗尽 → `lit=false`。`immersiveengineering:capacitor_creative` 相邻自动供电维持 8000（capability 注入有效）。
+- 端到端烹饪实测：锅（FD Cooking Pot）内放骨汤配方原料——断电时 `CookTime` 恒为 0；供电后 `CookTime` 128/200 → 产出 `farmersdelight:bone_broth`（`RecipesUsed` 记一次）。**断电不煮、供电才煮，符合"不虚构能源"约束**。
+- 能源经济：8000 FE ≈ 200 tick 续航，定位 T2 电气厨房入口；后期可由 Applied Delight ME Cooking Pot + 电网接管（FD 热源判定不变）。
+
+### 重要发现：The Hordes `pauseEventServer`
+
+- `hordes-common.toml` `pauseEventServer = true`（模组默认）会让 `MixinServerLevel` 在 0 玩家时**取消整个 `ServerLevel.tick`**——gametime/daytime、方块实体、漏斗、水流全部冻结，`tick query` 仍报正常（TRM 未冻结，只是 tick 体被跳过，MSPT 因而只有 0.2）。此前误判为"空服暂停"的测试异常全部由此导致。
+- 处置：本包 `hordeEventByPlayerTime=true` 已让怪潮只跟玩家在线时间推进，`pauseEventServer` 的宣称目的本就冗余，而副作用是空服时机器/农场/AE2/burner 全停——与自动化定位冲突。**pack 配置已改为 `pauseEventServer = false`**（注释注明原因）；若未来想让基地在无人时休眠可改回，届时怪潮警报会保持离线前状态（世界冻结即警报冻结，属一致语义）。
+
+### 仍未实现的 compat 项
+
+- Defense Turrets 炮塔弹药/能耗消耗（需 Mixin 注入 `shoot`，版本敏感，未做）；基地威胁值 H、怪潮阶段化调度、空间站事件白名单（P2 原列项）。

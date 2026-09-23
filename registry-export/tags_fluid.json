@@ -1,81 +1,14 @@
 {
-	"c:hot_fuel_light": [
-		"buildcraftenergy:fuel_light_heat_1",
-		"buildcraftenergy:fuel_light_heat_1_flowing"
-	],
-	"ad_astra:tier_1_rover_fuel": [
-		"ad_astra:cryo_fuel",
-		"ad_astra:fuel",
+	"c:fuel_dense": [
 		"buildcraftenergy:fuel_dense",
-		"buildcraftenergy:fuel_dense_flowing",
-		"buildcraftenergy:fuel_gaseous",
-		"buildcraftenergy:fuel_gaseous_flowing",
-		"buildcraftenergy:fuel_light",
-		"buildcraftenergy:fuel_light_flowing",
-		"buildcraftenergy:fuel_mixed_heavy",
-		"buildcraftenergy:fuel_mixed_heavy_flowing",
-		"buildcraftenergy:fuel_mixed_light",
-		"buildcraftenergy:fuel_mixed_light_flowing",
-		"immersiveengineering:biodiesel",
-		"immersiveengineering:biodiesel_flowing",
-		"immersiveengineering:high_power_biodiesel",
-		"immersiveengineering:high_power_biodiesel_flowing",
-		"immersivepetroleum:diesel",
-		"immersivepetroleum:diesel_flowing",
-		"immersivepetroleum:diesel_sulfur",
-		"immersivepetroleum:diesel_sulfur_flowing",
-		"immersivepetroleum:gasoline",
-		"immersivepetroleum:gasoline_flowing"
+		"buildcraftenergy:fuel_dense_flowing"
 	],
-	"c:oil_heavy": [
-		"buildcraftenergy:oil_heavy",
-		"buildcraftenergy:oil_heavy_flowing"
+	"c:redstone_acid": [
+		"immersiveengineering:redstone_acid"
 	],
-	"c:biodiesel": [
-		"immersiveengineering:biodiesel"
-	],
-	"c:gasoline": [
-		"immersivepetroleum:gasoline"
-	],
-	"c:hot_oil_heavy": [
-		"buildcraftenergy:oil_heavy_heat_1",
-		"buildcraftenergy:oil_heavy_heat_1_flowing"
-	],
-	"ad_astra:oil": [
-		"ad_astra:oil",
-		"buildcraftenergy:oil",
-		"buildcraftenergy:oil_dense",
-		"buildcraftenergy:oil_dense_flowing",
-		"buildcraftenergy:oil_flowing",
-		"buildcraftenergy:oil_heavy",
-		"buildcraftenergy:oil_heavy_flowing",
-		"immersivepetroleum:crudeoil"
-	],
-	"c:water": [
-		"minecraft:flowing_water",
-		"minecraft:water"
-	],
-	"ad_astra:oxygen": [
-		"ad_astra:oxygen"
-	],
-	"arachnids:danger_fluids": [
-		"minecraft:flowing_lava",
-		"minecraft:flowing_water",
-		"minecraft:lava",
-		"minecraft:water"
-	],
-	"c:gaseous": [
-		"immersiveengineering:acetaldehyde",
-		"immersivepetroleum:petroleum_gas",
-		"railcraft:steam"
-	],
-	"minecraft:water": [
-		"minecraft:flowing_water",
-		"minecraft:water"
-	],
-	"c:searing_fuel_light": [
-		"buildcraftenergy:fuel_light_heat_2",
-		"buildcraftenergy:fuel_light_heat_2_flowing"
+	"c:hot_oil_residue": [
+		"buildcraftenergy:oil_residue_heat_1",
+		"buildcraftenergy:oil_residue_heat_1_flowing"
 	],
 	"ad_astra:tier_2_rocket_fuel": [
 		"ad_astra:cryo_fuel",
@@ -101,187 +34,46 @@
 		"immersivepetroleum:gasoline",
 		"immersivepetroleum:gasoline_flowing"
 	],
-	"c:benzol": [
-		"immersivepetroleum:benzol"
+	"immersivepetroleum:burnable_in_flarestack": [
+		"ic2cre:creosote",
+		"ic2cre:creosote_flowing",
+		"immersiveengineering:creosote",
+		"immersiveengineering:creosote_flowing",
+		"immersiveengineering:ethanol",
+		"immersiveengineering:plantoil",
+		"immersivepetroleum:benzol",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:gasoline",
+		"immersivepetroleum:kerosene",
+		"immersivepetroleum:lubricant",
+		"immersivepetroleum:naphtha",
+		"immersivepetroleum:petroleum_gas",
+		"railcraft:creosote",
+		"railcraft:flowing_creosote"
 	],
-	"c:hot_oil": [
-		"buildcraftenergy:oil_heat_1",
-		"buildcraftenergy:oil_heat_1_flowing"
+	"c:diesel_sulfur": [
+		"immersivepetroleum:diesel_sulfur"
 	],
-	"c:hot_oil_distilled": [
-		"buildcraftenergy:oil_distilled_heat_1",
-		"buildcraftenergy:oil_distilled_heat_1_flowing"
+	"c:oil_heavy": [
+		"buildcraftenergy:oil_heavy",
+		"buildcraftenergy:oil_heavy_flowing"
 	],
-	"c:beetroot_soup": [],
 	"c:potion": [
 		"immersiveengineering:potion"
 	],
-	"c:fuel_dense": [
-		"buildcraftenergy:fuel_dense",
-		"buildcraftenergy:fuel_dense_flowing"
+	"c:searing_fuel_mixed_heavy": [
+		"buildcraftenergy:fuel_mixed_heavy_heat_2",
+		"buildcraftenergy:fuel_mixed_heavy_heat_2_flowing"
 	],
-	"minecraft:lava": [
-		"minecraft:flowing_lava",
-		"minecraft:lava"
+	"c:ethanol": [
+		"immersiveengineering:ethanol"
 	],
-	"ic2cre:semifluid_generator/biomass": [
-		"ic2cre:biomass"
+	"c:searing_oil_residue": [
+		"buildcraftenergy:oil_residue_heat_2",
+		"buildcraftenergy:oil_residue_heat_2_flowing"
 	],
-	"c:fuel_mixed_light": [
-		"buildcraftenergy:fuel_mixed_light",
-		"buildcraftenergy:fuel_mixed_light_flowing"
-	],
-	"ad_astra:tier_3_rocket_fuel": [
-		"ad_astra:cryo_fuel",
-		"ad_astra:fuel",
-		"buildcraftenergy:fuel_dense",
-		"buildcraftenergy:fuel_dense_flowing",
-		"buildcraftenergy:fuel_gaseous",
-		"buildcraftenergy:fuel_gaseous_flowing",
-		"buildcraftenergy:fuel_light",
-		"buildcraftenergy:fuel_light_flowing",
-		"buildcraftenergy:fuel_mixed_heavy",
-		"buildcraftenergy:fuel_mixed_heavy_flowing",
-		"buildcraftenergy:fuel_mixed_light",
-		"buildcraftenergy:fuel_mixed_light_flowing",
-		"immersiveengineering:biodiesel",
-		"immersiveengineering:biodiesel_flowing",
-		"immersiveengineering:high_power_biodiesel",
-		"immersiveengineering:high_power_biodiesel_flowing",
-		"immersivepetroleum:diesel",
-		"immersivepetroleum:diesel_flowing",
-		"immersivepetroleum:diesel_sulfur",
-		"immersivepetroleum:diesel_sulfur_flowing",
-		"immersivepetroleum:gasoline",
-		"immersivepetroleum:gasoline_flowing"
-	],
-	"c:creosote": [
-		"ic2cre:creosote",
-		"ic2cre:creosote_flowing",
-		"immersiveengineering:creosote",
-		"immersiveengineering:creosote_flowing",
-		"railcraft:creosote",
-		"railcraft:flowing_creosote"
-	],
-	"c:phenolic_resin": [
-		"immersiveengineering:phenolic_resin"
-	],
-	"c:kerosene": [
-		"immersivepetroleum:kerosene"
-	],
-	"c:concrete": [
-		"immersiveengineering:concrete"
-	],
-	"c:experience": [
-		"sophisticatedcore:xp_still"
-	],
-	"c:hot_fuel_dense": [
-		"buildcraftenergy:fuel_dense_heat_1",
-		"buildcraftenergy:fuel_dense_heat_1_flowing"
-	],
-	"ae2:blacklisted/annihilation_plane": [],
-	"c:herbicide": [
-		"immersiveengineering:herbicide"
-	],
-	"c:searing_oil_heavy": [
-		"buildcraftenergy:oil_heavy_heat_2",
-		"buildcraftenergy:oil_heavy_heat_2_flowing"
-	],
-	"c:fuel_mixed_heavy": [
-		"buildcraftenergy:fuel_mixed_heavy",
-		"buildcraftenergy:fuel_mixed_heavy_flowing"
-	],
-	"ic2cre:semifluid_generator/creosote": [
-		"ic2cre:creosote",
-		"ic2cre:creosote_flowing",
-		"immersiveengineering:creosote",
-		"immersiveengineering:creosote_flowing",
-		"railcraft:creosote",
-		"railcraft:flowing_creosote"
-	],
-	"c:acetaldehyde": [
-		"immersiveengineering:acetaldehyde"
-	],
-	"c:fuel": [
-		"ad_astra:cryo_fuel",
-		"ad_astra:fuel",
-		"buildcraftenergy:fuel_dense",
-		"buildcraftenergy:fuel_dense_flowing",
-		"buildcraftenergy:fuel_gaseous",
-		"buildcraftenergy:fuel_gaseous_flowing",
-		"buildcraftenergy:fuel_light",
-		"buildcraftenergy:fuel_light_flowing",
-		"buildcraftenergy:fuel_mixed_heavy",
-		"buildcraftenergy:fuel_mixed_heavy_flowing",
-		"buildcraftenergy:fuel_mixed_light",
-		"buildcraftenergy:fuel_mixed_light_flowing",
-		"immersiveengineering:biodiesel",
-		"immersiveengineering:biodiesel_flowing",
-		"immersiveengineering:high_power_biodiesel",
-		"immersiveengineering:high_power_biodiesel_flowing",
-		"immersivepetroleum:diesel",
-		"immersivepetroleum:diesel_flowing",
-		"immersivepetroleum:diesel_sulfur",
-		"immersivepetroleum:diesel_sulfur_flowing",
-		"immersivepetroleum:gasoline",
-		"immersivepetroleum:gasoline_flowing"
-	],
-	"c:turbofuel": [],
-	"c:hot_oil_dense": [
-		"buildcraftenergy:oil_dense_heat_1",
-		"buildcraftenergy:oil_dense_heat_1_flowing"
-	],
-	"c:naphtha": [
-		"immersivepetroleum:naphtha"
-	],
-	"ic2cre:fluid_heat/fuel": [
-		"ad_astra:cryo_fuel",
-		"ad_astra:fuel",
-		"buildcraftenergy:fuel_dense",
-		"buildcraftenergy:fuel_dense_flowing",
-		"buildcraftenergy:fuel_gaseous",
-		"buildcraftenergy:fuel_gaseous_flowing",
-		"buildcraftenergy:fuel_light",
-		"buildcraftenergy:fuel_light_flowing",
-		"buildcraftenergy:fuel_mixed_heavy",
-		"buildcraftenergy:fuel_mixed_heavy_flowing",
-		"buildcraftenergy:fuel_mixed_light",
-		"buildcraftenergy:fuel_mixed_light_flowing",
-		"immersiveengineering:biodiesel",
-		"immersiveengineering:biodiesel_flowing",
-		"immersiveengineering:high_power_biodiesel",
-		"immersiveengineering:high_power_biodiesel_flowing",
-		"immersivepetroleum:diesel",
-		"immersivepetroleum:diesel_flowing",
-		"immersivepetroleum:diesel_sulfur",
-		"immersivepetroleum:diesel_sulfur_flowing",
-		"immersivepetroleum:gasoline",
-		"immersivepetroleum:gasoline_flowing"
-	],
-	"c:searing_oil_dense": [
-		"buildcraftenergy:oil_dense_heat_2",
-		"buildcraftenergy:oil_dense_heat_2_flowing"
-	],
-	"c:hot_fuel_mixed_heavy": [
-		"buildcraftenergy:fuel_mixed_heavy_heat_1",
-		"buildcraftenergy:fuel_mixed_heavy_heat_1_flowing"
-	],
-	"immersiveengineering:drill_fuel": [
-		"immersiveengineering:biodiesel",
-		"immersiveengineering:high_power_biodiesel",
-		"immersivepetroleum:diesel",
-		"immersivepetroleum:diesel_sulfur",
-		"immersivepetroleum:kerosene"
-	],
-	"ic2cre:fluid_heat/biogas": [],
-	"c:hydrogen": [
-		"ad_astra:hydrogen"
-	],
-	"c:oxygen": [
-		"ad_astra:oxygen"
-	],
-	"ic2cre:semifluid_generator/chlorine": [],
-	"c:oil": [
+	"ic2cre:fluid_heat/oil": [
 		"ad_astra:oil",
 		"buildcraftenergy:oil",
 		"buildcraftenergy:oil_dense",
@@ -291,14 +83,26 @@
 		"buildcraftenergy:oil_heavy_flowing",
 		"immersivepetroleum:crudeoil"
 	],
-	"ic2cre:fluid_heat/gaseous": [
-		"immersiveengineering:acetaldehyde",
-		"immersivepetroleum:petroleum_gas",
-		"railcraft:steam"
+	"c:gasoline": [
+		"immersivepetroleum:gasoline"
 	],
-	"c:searing_fuel_gaseous": [
-		"buildcraftenergy:fuel_gaseous_heat_2",
-		"buildcraftenergy:fuel_gaseous_heat_2_flowing"
+	"c:rabbit_stew": [],
+	"minecraft:water": [
+		"minecraft:flowing_water",
+		"minecraft:water"
+	],
+	"c:mushroom_stew": [],
+	"c:hot_oil_distilled": [
+		"buildcraftenergy:oil_distilled_heat_1",
+		"buildcraftenergy:oil_distilled_heat_1_flowing"
+	],
+	"c:searing_oil_distilled": [
+		"buildcraftenergy:oil_distilled_heat_2",
+		"buildcraftenergy:oil_distilled_heat_2_flowing"
+	],
+	"c:hot_oil": [
+		"buildcraftenergy:oil_heat_1",
+		"buildcraftenergy:oil_heat_1_flowing"
 	],
 	"ad_astra:tier_1_rocket_fuel": [
 		"ad_astra:cryo_fuel",
@@ -324,81 +128,13 @@
 		"immersivepetroleum:gasoline",
 		"immersivepetroleum:gasoline_flowing"
 	],
-	"c:honey": [],
-	"c:searing_oil_distilled": [
-		"buildcraftenergy:oil_distilled_heat_2",
-		"buildcraftenergy:oil_distilled_heat_2_flowing"
+	"c:phenolic_resin": [
+		"immersiveengineering:phenolic_resin"
 	],
-	"c:napalm": [
-		"immersivepetroleum:napalm"
-	],
-	"ic2cre:fluid_heat/residue": [],
-	"c:searing_oil_residue": [
-		"buildcraftenergy:oil_residue_heat_2",
-		"buildcraftenergy:oil_residue_heat_2_flowing"
-	],
-	"ad_astra:zip_gun_propellants": [
-		"ad_astra:hydrogen",
-		"ad_astra:oxygen"
-	],
-	"c:mushroom_stew": [],
-	"c:searing_fuel_mixed_heavy": [
-		"buildcraftenergy:fuel_mixed_heavy_heat_2",
-		"buildcraftenergy:fuel_mixed_heavy_heat_2_flowing"
-	],
-	"c:fuel_light": [
-		"buildcraftenergy:fuel_light",
-		"buildcraftenergy:fuel_light_flowing"
-	],
-	"immersivepetroleum:burnable_in_flarestack": [
-		"ic2cre:creosote",
-		"ic2cre:creosote_flowing",
-		"immersiveengineering:creosote",
-		"immersiveengineering:creosote_flowing",
-		"immersiveengineering:ethanol",
-		"immersiveengineering:plantoil",
-		"immersivepetroleum:benzol",
-		"immersivepetroleum:diesel",
-		"immersivepetroleum:diesel_sulfur",
-		"immersivepetroleum:gasoline",
-		"immersivepetroleum:kerosene",
-		"immersivepetroleum:lubricant",
-		"immersivepetroleum:naphtha",
-		"immersivepetroleum:petroleum_gas",
-		"railcraft:creosote",
-		"railcraft:flowing_creosote"
-	],
-	"c:diesel": [
-		"immersivepetroleum:diesel",
-		"immersivepetroleum:diesel_sulfur"
-	],
-	"c:plantoil": [
-		"immersiveengineering:plantoil"
-	],
-	"c:high_power_biodiesel": [
-		"immersiveengineering:high_power_biodiesel"
-	],
-	"c:hot_fuel_mixed_light": [
-		"buildcraftenergy:fuel_mixed_light_heat_1",
-		"buildcraftenergy:fuel_mixed_light_heat_1_flowing"
-	],
-	"c:lubricant": [
-		"immersivepetroleum:lubricant"
-	],
-	"c:oil_residue": [
-		"buildcraftenergy:oil_residue",
-		"buildcraftenergy:oil_residue_flowing"
-	],
-	"ad_astra:freezes_in_space": [
-		"minecraft:water"
-	],
-	"c:rabbit_stew": [],
-	"c:redstone_acid": [
-		"immersiveengineering:redstone_acid"
-	],
-	"c:hot_oil_residue": [
-		"buildcraftenergy:oil_residue_heat_1",
-		"buildcraftenergy:oil_residue_heat_1_flowing"
+	"c:turbofuel": [],
+	"c:hot_fuel_dense": [
+		"buildcraftenergy:fuel_dense_heat_1",
+		"buildcraftenergy:fuel_dense_heat_1_flowing"
 	],
 	"ad_astra:fuel": [
 		"ad_astra:cryo_fuel",
@@ -424,10 +160,195 @@
 		"immersivepetroleum:gasoline",
 		"immersivepetroleum:gasoline_flowing"
 	],
+	"immersiveengineering:drill_fuel": [
+		"immersiveengineering:biodiesel",
+		"immersiveengineering:high_power_biodiesel",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:kerosene"
+	],
+	"c:diesel": [
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_sulfur"
+	],
+	"c:searing_fuel_light": [
+		"buildcraftenergy:fuel_light_heat_2",
+		"buildcraftenergy:fuel_light_heat_2_flowing"
+	],
+	"ad_astra:oil": [
+		"ad_astra:oil",
+		"buildcraftenergy:oil",
+		"buildcraftenergy:oil_dense",
+		"buildcraftenergy:oil_dense_flowing",
+		"buildcraftenergy:oil_flowing",
+		"buildcraftenergy:oil_heavy",
+		"buildcraftenergy:oil_heavy_flowing",
+		"immersivepetroleum:crudeoil"
+	],
+	"c:plantoil": [
+		"immersiveengineering:plantoil"
+	],
 	"c:lava": [
 		"minecraft:flowing_lava",
 		"minecraft:lava"
 	],
+	"c:water": [
+		"minecraft:flowing_water",
+		"minecraft:water"
+	],
+	"c:fuel_gaseous": [
+		"buildcraftenergy:fuel_gaseous",
+		"buildcraftenergy:fuel_gaseous_flowing"
+	],
+	"c:oil_residue": [
+		"buildcraftenergy:oil_residue",
+		"buildcraftenergy:oil_residue_flowing"
+	],
+	"c:hot_fuel_mixed_light": [
+		"buildcraftenergy:fuel_mixed_light_heat_1",
+		"buildcraftenergy:fuel_mixed_light_heat_1_flowing"
+	],
+	"c:petroleum_gas": [
+		"immersivepetroleum:petroleum_gas"
+	],
+	"ae2:blacklisted/annihilation_plane": [],
+	"c:high_power_biodiesel": [
+		"immersiveengineering:high_power_biodiesel"
+	],
+	"c:searing_fuel_dense": [
+		"buildcraftenergy:fuel_dense_heat_2",
+		"buildcraftenergy:fuel_dense_heat_2_flowing"
+	],
+	"ic2cre:fluid_heat/fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"buildcraftenergy:fuel_dense",
+		"buildcraftenergy:fuel_dense_flowing",
+		"buildcraftenergy:fuel_gaseous",
+		"buildcraftenergy:fuel_gaseous_flowing",
+		"buildcraftenergy:fuel_light",
+		"buildcraftenergy:fuel_light_flowing",
+		"buildcraftenergy:fuel_mixed_heavy",
+		"buildcraftenergy:fuel_mixed_heavy_flowing",
+		"buildcraftenergy:fuel_mixed_light",
+		"buildcraftenergy:fuel_mixed_light_flowing",
+		"immersiveengineering:biodiesel",
+		"immersiveengineering:biodiesel_flowing",
+		"immersiveengineering:high_power_biodiesel",
+		"immersiveengineering:high_power_biodiesel_flowing",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_flowing",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:diesel_sulfur_flowing",
+		"immersivepetroleum:gasoline",
+		"immersivepetroleum:gasoline_flowing"
+	],
+	"ad_astra:tier_1_rover_fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"buildcraftenergy:fuel_dense",
+		"buildcraftenergy:fuel_dense_flowing",
+		"buildcraftenergy:fuel_gaseous",
+		"buildcraftenergy:fuel_gaseous_flowing",
+		"buildcraftenergy:fuel_light",
+		"buildcraftenergy:fuel_light_flowing",
+		"buildcraftenergy:fuel_mixed_heavy",
+		"buildcraftenergy:fuel_mixed_heavy_flowing",
+		"buildcraftenergy:fuel_mixed_light",
+		"buildcraftenergy:fuel_mixed_light_flowing",
+		"immersiveengineering:biodiesel",
+		"immersiveengineering:biodiesel_flowing",
+		"immersiveengineering:high_power_biodiesel",
+		"immersiveengineering:high_power_biodiesel_flowing",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_flowing",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:diesel_sulfur_flowing",
+		"immersivepetroleum:gasoline",
+		"immersivepetroleum:gasoline_flowing"
+	],
+	"c:hot_oil_dense": [
+		"buildcraftenergy:oil_dense_heat_1",
+		"buildcraftenergy:oil_dense_heat_1_flowing"
+	],
+	"ic2cre:fluid_heat/biogas": [],
+	"c:experience": [
+		"sophisticatedcore:xp_still"
+	],
+	"c:hot_oil_heavy": [
+		"buildcraftenergy:oil_heavy_heat_1",
+		"buildcraftenergy:oil_heavy_heat_1_flowing"
+	],
+	"c:steam": [
+		"railcraft:steam"
+	],
+	"c:beetroot_soup": [],
+	"ad_astra:efficient_fuel": [
+		"ad_astra:cryo_fuel"
+	],
+	"c:hidden_from_recipe_viewers": [],
+	"c:lubricant": [
+		"immersivepetroleum:lubricant"
+	],
+	"c:benzol": [
+		"immersivepetroleum:benzol"
+	],
+	"c:oxygen": [
+		"ad_astra:oxygen"
+	],
+	"c:oil": [
+		"ad_astra:oil",
+		"buildcraftenergy:oil",
+		"buildcraftenergy:oil_dense",
+		"buildcraftenergy:oil_dense_flowing",
+		"buildcraftenergy:oil_flowing",
+		"buildcraftenergy:oil_heavy",
+		"buildcraftenergy:oil_heavy_flowing",
+		"immersivepetroleum:crudeoil"
+	],
+	"ic2cre:fluid_heat/residue": [],
+	"c:searing_oil_dense": [
+		"buildcraftenergy:oil_dense_heat_2",
+		"buildcraftenergy:oil_dense_heat_2_flowing"
+	],
+	"c:fuel_mixed_light": [
+		"buildcraftenergy:fuel_mixed_light",
+		"buildcraftenergy:fuel_mixed_light_flowing"
+	],
+	"ic2cre:fluid_heat/gaseous": [
+		"immersiveengineering:acetaldehyde",
+		"immersivepetroleum:petroleum_gas",
+		"railcraft:steam"
+	],
+	"ad_astra:tier_3_rocket_fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"buildcraftenergy:fuel_dense",
+		"buildcraftenergy:fuel_dense_flowing",
+		"buildcraftenergy:fuel_gaseous",
+		"buildcraftenergy:fuel_gaseous_flowing",
+		"buildcraftenergy:fuel_light",
+		"buildcraftenergy:fuel_light_flowing",
+		"buildcraftenergy:fuel_mixed_heavy",
+		"buildcraftenergy:fuel_mixed_heavy_flowing",
+		"buildcraftenergy:fuel_mixed_light",
+		"buildcraftenergy:fuel_mixed_light_flowing",
+		"immersiveengineering:biodiesel",
+		"immersiveengineering:biodiesel_flowing",
+		"immersiveengineering:high_power_biodiesel",
+		"immersiveengineering:high_power_biodiesel_flowing",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_flowing",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:diesel_sulfur_flowing",
+		"immersivepetroleum:gasoline",
+		"immersivepetroleum:gasoline_flowing"
+	],
+	"c:searing_oil": [
+		"buildcraftenergy:oil_heat_2",
+		"buildcraftenergy:oil_heat_2_flowing"
+	],
+	"ic2cre:semifluid_generator/hydrogen": [],
 	"c:crude_oil": [
 		"ad_astra:oil",
 		"buildcraftenergy:oil",
@@ -438,62 +359,108 @@
 		"buildcraftenergy:oil_heavy_flowing",
 		"immersivepetroleum:crudeoil"
 	],
-	"c:searing_fuel_mixed_light": [
-		"buildcraftenergy:fuel_mixed_light_heat_2",
-		"buildcraftenergy:fuel_mixed_light_heat_2_flowing"
+	"c:hot_fuel_light": [
+		"buildcraftenergy:fuel_light_heat_1",
+		"buildcraftenergy:fuel_light_heat_1_flowing"
 	],
-	"c:fuel_gaseous": [
-		"buildcraftenergy:fuel_gaseous",
-		"buildcraftenergy:fuel_gaseous_flowing"
+	"c:hydrogen": [
+		"ad_astra:hydrogen"
 	],
-	"c:hidden_from_recipe_viewers": [],
-	"c:milk": [
-		"minecraft:flowing_milk",
-		"minecraft:milk"
-	],
-	"ic2cre:fluid_heat/biomass": [
-		"ic2cre:biomass"
-	],
-	"ic2cre:fluid_heat/bioethanol": [],
-	"c:petroleum_gas": [
-		"immersivepetroleum:petroleum_gas"
-	],
-	"ic2cre:fluid_heat/oil": [
-		"ad_astra:oil",
-		"buildcraftenergy:oil",
-		"buildcraftenergy:oil_dense",
-		"buildcraftenergy:oil_dense_flowing",
-		"buildcraftenergy:oil_flowing",
-		"buildcraftenergy:oil_heavy",
-		"buildcraftenergy:oil_heavy_flowing",
-		"immersivepetroleum:crudeoil"
+	"c:honey": [],
+	"c:searing_oil_heavy": [
+		"buildcraftenergy:oil_heavy_heat_2",
+		"buildcraftenergy:oil_heavy_heat_2_flowing"
 	],
 	"ad_astra:evaporates_in_space": [
 		"minecraft:water"
 	],
-	"c:hot_fuel_gaseous": [
-		"buildcraftenergy:fuel_gaseous_heat_1",
-		"buildcraftenergy:fuel_gaseous_heat_1_flowing"
+	"c:searing_fuel_gaseous": [
+		"buildcraftenergy:fuel_gaseous_heat_2",
+		"buildcraftenergy:fuel_gaseous_heat_2_flowing"
+	],
+	"ic2cre:semifluid_generator/chlorine": [],
+	"c:creosote": [
+		"ic2cre:creosote",
+		"ic2cre:creosote_flowing",
+		"immersiveengineering:creosote",
+		"immersiveengineering:creosote_flowing",
+		"railcraft:creosote",
+		"railcraft:flowing_creosote"
+	],
+	"c:biodiesel": [
+		"immersiveengineering:biodiesel"
+	],
+	"ic2cre:fluid_heat/bioethanol": [],
+	"c:kerosene": [
+		"immersivepetroleum:kerosene"
+	],
+	"c:milk": [
+		"minecraft:flowing_milk",
+		"minecraft:milk"
 	],
 	"c:oil_dense": [
 		"buildcraftenergy:oil_dense",
 		"buildcraftenergy:oil_dense_flowing"
 	],
-	"c:oil_distilled": [
-		"buildcraftenergy:oil_distilled",
-		"buildcraftenergy:oil_distilled_flowing"
+	"c:acetaldehyde": [
+		"immersiveengineering:acetaldehyde"
 	],
-	"c:steam": [
+	"c:gaseous": [
+		"immersiveengineering:acetaldehyde",
+		"immersivepetroleum:petroleum_gas",
 		"railcraft:steam"
 	],
-	"c:biofuel": [],
-	"c:diesel_sulfur": [
-		"immersivepetroleum:diesel_sulfur"
+	"c:napalm": [
+		"immersivepetroleum:napalm"
+	],
+	"c:fuel_light": [
+		"buildcraftenergy:fuel_light",
+		"buildcraftenergy:fuel_light_flowing"
+	],
+	"ad_astra:zip_gun_propellants": [
+		"ad_astra:hydrogen",
+		"ad_astra:oxygen"
+	],
+	"ic2cre:semifluid_generator/creosote": [
+		"ic2cre:creosote",
+		"ic2cre:creosote_flowing",
+		"immersiveengineering:creosote",
+		"immersiveengineering:creosote_flowing",
+		"railcraft:creosote",
+		"railcraft:flowing_creosote"
+	],
+	"c:naphtha": [
+		"immersivepetroleum:naphtha"
+	],
+	"c:hot_fuel_mixed_heavy": [
+		"buildcraftenergy:fuel_mixed_heavy_heat_1",
+		"buildcraftenergy:fuel_mixed_heavy_heat_1_flowing"
+	],
+	"ic2cre:semifluid_generator/biomass": [
+		"ic2cre:biomass"
+	],
+	"c:concrete": [
+		"immersiveengineering:concrete"
+	],
+	"ad_astra:oxygen": [
+		"ad_astra:oxygen"
+	],
+	"c:herbicide": [
+		"immersiveengineering:herbicide"
+	],
+	"c:fuel_mixed_heavy": [
+		"buildcraftenergy:fuel_mixed_heavy",
+		"buildcraftenergy:fuel_mixed_heavy_flowing"
+	],
+	"minecraft:lava": [
+		"minecraft:flowing_lava",
+		"minecraft:lava"
+	],
+	"c:searing_fuel_mixed_light": [
+		"buildcraftenergy:fuel_mixed_light_heat_2",
+		"buildcraftenergy:fuel_mixed_light_heat_2_flowing"
 	],
 	"c:suspicious_stew": [],
-	"ad_astra:efficient_fuel": [
-		"ad_astra:cryo_fuel"
-	],
 	"ad_astra:tier_4_rocket_fuel": [
 		"ad_astra:cryo_fuel",
 		"ad_astra:fuel",
@@ -518,19 +485,52 @@
 		"immersivepetroleum:gasoline",
 		"immersivepetroleum:gasoline_flowing"
 	],
-	"ic2cre:semifluid_generator/hydrogen": [],
 	"ad_astra:hydrogen": [
 		"ad_astra:hydrogen"
 	],
-	"c:searing_oil": [
-		"buildcraftenergy:oil_heat_2",
-		"buildcraftenergy:oil_heat_2_flowing"
+	"ad_astra:freezes_in_space": [
+		"minecraft:water"
 	],
-	"c:ethanol": [
-		"immersiveengineering:ethanol"
+	"c:hot_fuel_gaseous": [
+		"buildcraftenergy:fuel_gaseous_heat_1",
+		"buildcraftenergy:fuel_gaseous_heat_1_flowing"
 	],
-	"c:searing_fuel_dense": [
-		"buildcraftenergy:fuel_dense_heat_2",
-		"buildcraftenergy:fuel_dense_heat_2_flowing"
+	"arachnids:danger_fluids": [
+		"minecraft:flowing_lava",
+		"minecraft:flowing_water",
+		"minecraft:lava",
+		"minecraft:water"
+	],
+	"c:biofuel": [],
+	"c:fuel": [
+		"ad_astra:cryo_fuel",
+		"ad_astra:fuel",
+		"buildcraftenergy:fuel_dense",
+		"buildcraftenergy:fuel_dense_flowing",
+		"buildcraftenergy:fuel_gaseous",
+		"buildcraftenergy:fuel_gaseous_flowing",
+		"buildcraftenergy:fuel_light",
+		"buildcraftenergy:fuel_light_flowing",
+		"buildcraftenergy:fuel_mixed_heavy",
+		"buildcraftenergy:fuel_mixed_heavy_flowing",
+		"buildcraftenergy:fuel_mixed_light",
+		"buildcraftenergy:fuel_mixed_light_flowing",
+		"immersiveengineering:biodiesel",
+		"immersiveengineering:biodiesel_flowing",
+		"immersiveengineering:high_power_biodiesel",
+		"immersiveengineering:high_power_biodiesel_flowing",
+		"immersivepetroleum:diesel",
+		"immersivepetroleum:diesel_flowing",
+		"immersivepetroleum:diesel_sulfur",
+		"immersivepetroleum:diesel_sulfur_flowing",
+		"immersivepetroleum:gasoline",
+		"immersivepetroleum:gasoline_flowing"
+	],
+	"c:oil_distilled": [
+		"buildcraftenergy:oil_distilled",
+		"buildcraftenergy:oil_distilled_flowing"
+	],
+	"ic2cre:fluid_heat/biomass": [
+		"ic2cre:biomass"
 	]
 }

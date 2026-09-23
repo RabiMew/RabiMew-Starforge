@@ -3,8 +3,9 @@
 // Missing jars are downloaded from the lockfile's pinned download_url — never
 // re-resolved to a newer upstream version. Mismatches are fatal upstream.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { DIRS } from './paths.mjs';
+import { DIRS, ROOT } from './paths.mjs';
 import { enabledMods, saveLock, withSha1Field } from './manifest.mjs';
 import { verifyLocked, sha1 } from './hash.mjs';
 import { fetchBuffer } from './download.mjs';
@@ -17,7 +18,19 @@ export async function ensureLockedJars(lock, { downloadMissing = true } = {}) {
   for (const mod of enabledMods(lock)) {
     const target = path.join(DIRS.mods, mod.filename);
     let buf;
-    if (existsSync(target)) {
+    if (mod.download_url?.startsWith('local:')) {
+      // Source-built addon: rebuild deterministically (fixed-timestamp zip),
+      // then verify against the pinned hashes like any downloaded jar.
+      process.stdout.write(`  building ${mod.filename} ... `);
+      try {
+        execFileSync(process.execPath, [path.join(ROOT, 'tools', 'build-compat.mjs')], { stdio: 'inherit' });
+        buf = readFileSync(target);
+        console.log('ok');
+      } catch (e) {
+        errors.push(`${mod.key}: local build failed ${e.message}`);
+        continue;
+      }
+    } else if (existsSync(target)) {
       buf = readFileSync(target);
     } else if (!downloadMissing) {
       errors.push(`${mod.key}: missing ${mod.filename}`);

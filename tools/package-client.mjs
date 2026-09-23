@@ -110,10 +110,19 @@ const files = [];
 const reportRows = [];
 const needsAttention = [];
 const fatal = [];
+const embeddedMods = [];
 
 for (const mod of clientMods) {
   const jar = jars.get(mod.key);
   const h = hashes(jar.buf);
+  if (mod.download_url?.startsWith('local:')) {
+    // Self-built addon (our own source): no download URL exists. Embed the jar
+    // under overrides/mods/ — mrpack allows files there, and our own mod has no
+    // third-party redistribution constraint.
+    embeddedMods.push({ mod, buf: jar.buf });
+    reportRows.push({ mod, res: { downloads: [], primary: mod.download_url, kind: 'local_build', modrinthMirror: null, note: 'self-built jar embedded under overrides/mods/' } });
+    continue;
+  }
   const res = await resolveDownloads(mod, h);
   if (!res.downloads.length) {
     fatal.push(mod);
@@ -173,7 +182,8 @@ let report = `# Starforge client package report
 - Files in modrinth.index.json: ${files.length} (client set = both ${counts.both} + client ${counts.client}; server-only ${counts.server} excluded)
 - Source of declared downloads: ${Object.entries(srcStats).map(([k, n]) => `${k}:${n}`).join(', ')}
 - Entries whose primary URL was switched to a hash-identical Modrinth mirror: ${mirrors}
-- Overrides shipped: ${packFiles.length} files from pack/ (config, kubejs incl. client scripts)
+- Overrides shipped: ${packFiles.length} files from pack/ (config, kubejs incl. client scripts) + ${embeddedMods.length} embedded self-built jar(s) under overrides/mods/
+${embeddedMods.length ? `- Embedded self-built mods (no download URL by design): ${embeddedMods.map((m) => `${m.mod.name} ${m.mod.version} (\`${m.mod.filename}\`)`).join(', ')}` : ''}
 
 ## Per-mod resolution
 
@@ -210,10 +220,13 @@ if (!packFiles.length) entries.push({ name: 'overrides/.keep', data: Buffer.allo
 for (const f of packFiles) {
   entries.push({ name: `overrides/${path.relative(DIRS.pack, f).replace(/\\/g, '/')}`, data: readFileSync(f) });
 }
+for (const { mod, buf } of embeddedMods) {
+  entries.push({ name: `overrides/mods/${mod.filename}`, data: buf, compress: false });
+}
 const out = p('dist', `${stem}.mrpack`);
 writeFileSync(out, createZip(entries));
 console.log(`wrote ${out}`);
-console.log(`  ${files.length} files declared (${mirrors} mirrored to Modrinth), overrides: ${packFiles.length} files`);
+console.log(`  ${files.length} files declared (${mirrors} mirrored to Modrinth), overrides: ${packFiles.length} files + ${embeddedMods.length} embedded jars`);
 if (needsAttention.length) {
   console.log(`  ${needsAttention.length} mods need manual attention — see dist/client-package-report.md`);
 }
