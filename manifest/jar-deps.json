@@ -1654,23 +1654,6 @@
     ]
   },
   {
-    "file": "fusion-1.3.15b-neoforge-mc1.21.1.jar",
-    "modIds": [
-      "fusion",
-      "neoforge"
-    ],
-    "embeddedModIds": [],
-    "deps": [
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21,1.21.2)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      }
-    ]
-  },
-  {
     "file": "geckolib-neoforge-1.21.1-4.9.3.jar",
     "modIds": [
       "geckolib"
@@ -2160,6 +2143,37 @@
     ]
   },
   {
+    "file": "mcw-furniture-3.4.1-mc1.21.1neoforge.jar",
+    "modIds": [
+      "mcwfurnitures"
+    ],
+    "embeddedModIds": [],
+    "deps": []
+  },
+  {
+    "file": "mdm-26.9-neoforge-1.21.1.jar",
+    "modIds": [
+      "mdm"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1.190,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1]",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "mezz_config-1.21.1-neoforge-0.6.3.jar",
     "modIds": [
       "mezz_config"
@@ -2407,44 +2421,6 @@
         "ordering": "NONE",
         "side": "BOTH",
         "versionRange": "[19.21.0.247,)"
-      }
-    ]
-  },
-  {
-    "file": "rechiseled-1.2.6-neoforge-mc1.21.jar",
-    "modIds": [
-      "rechiseled",
-      "neoforge"
-    ],
-    "embeddedModIds": [],
-    "deps": [
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21,1.21.2)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      },
-      {
-        "modId": "supermartijn642corelib",
-        "type": "required",
-        "versionRange": "[1.1.20,1.2.0)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      },
-      {
-        "modId": "supermartijn642configlib",
-        "type": "required",
-        "versionRange": "[1.1.6,)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      },
-      {
-        "modId": "fusion",
-        "type": "required",
-        "versionRange": "[1.2.12,)",
-        "ordering": "NONE",
-        "side": "CLIENT"
       }
     ]
   },
@@ -2778,40 +2754,6 @@
     ],
     "embeddedModIds": [],
     "deps": []
-  },
-  {
-    "file": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
-    "modIds": [
-      "supermartijn642configlib",
-      "neoforge"
-    ],
-    "embeddedModIds": [],
-    "deps": [
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21,1.22)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      }
-    ]
-  },
-  {
-    "file": "supermartijn642corelib-1.1.24a-neoforge-mc1.21.jar",
-    "modIds": [
-      "supermartijn642corelib",
-      "neoforge"
-    ],
-    "embeddedModIds": [],
-    "deps": [
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21,1.21.2)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      }
-    ]
   },
   {
     "file": "supplementaries-1.21.1-3.9.9-neoforge.jar",

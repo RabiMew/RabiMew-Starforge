@@ -41,6 +41,7 @@
 
 - `design/semantic-map.json` + `tools/check-mapping.mjs`：388 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`），本轮再捕获 `railcraft:iron_track` 臆造 ID（实际为 `railcraft:strap_iron_track`）。
 - `tools/build-pack.mjs`：从 `design/content.json`/`semantic-map.json`/`stage-locks.json`/`localization/*.json` 生成 KubeJS 物品注册、语义映射脚本、双语 lang、物品模型与占位贴图、ProgressiveStages 全局配置与 8 个 stage 定义。`localization/` 仍是唯一文案源。
+- `tools/gen-mod-lang-zh.mjs`：补齐模组自带 `zh_cn` 缺失键（framedblocks 330、mdm 274、mcwfurnitures 56），产物为 `pack/kubejs/assets/<mod>/lang/zh_cn.json`（KubeJS 按键覆盖，不影响 jar 内已有译文）。模组升版后重跑即可。
 - `design/stage-locks.json` + 生成器：每阶段 `stage.toml/progression.toml/rules.toml`。`/progressivestages validate` 8/8 通过；`/stage tree` 显示 T0→T5 链与 T6/T7 分叉（T7 不依赖 T6）。
 - 阶段授予 = 双通道触发（schema-4 `[[triggers]] mode=any_of`）：原生 `craft` 条件 + KubeJS `starforge_triggers.js` 在 `ItemEvents.crafted` 上累加 `custom_counter`。凭证物品：T1 `modpack:engineering_assembly`、T2 `ic2cre:generator`、T3 `information_interface`、T4 `heavy_industry_control`、T5 `reactor_control`、T6 `space_control_core`、T7 `quantum_control`；T0 为 `starting_stages` 自动授予。FTB Teams 团队共享（`team_mode=ftb_teams`）。
 
@@ -125,3 +126,15 @@
 - 服务端：`Done (1.725s)`，KubeJS 0 错，无新增 loot/GLM 解析错误；仅存的 4 条 `Couldn't parse` 为 Creature Feature 姊妹模组缺表的既有告警。
 - **性能边界（如实记录）**：ProgressiveStages 自带 Curios compat 每 tick 扫描 curio 槽（上游既有行为）；本层不新增 tick 逻辑。
 - **仍待验证**：客户端 GUI 会话内 Back 槽放入/取出背包实测；Artifacts 营地生成频率在星球维度的目检。
+
+## 2026-09-23 家具层增量调整（-4 / +2，100 启用模组）
+
+- **移除**：Rechiseled 1.2.6 及其独占依赖 SuperMartijn642 Core Lib 1.1.24a / Config Lib 1.1.8 / Fusion 1.3.15b。删除前经 `manifest/jar-deps.json` 反向查询确认：三个库仅有 rechiseled 一个依赖方，rechiseled 自身无其它依赖方。
+- **新增**（Modrinth 1.21.1+NeoForge 最新 release，URL+SHA 经 `fetch-mods --only` 落锁）：
+  - **MDM（Modern Decorations Mod）26.9**：现代家具/街灯/厨房套组，`furniture_parts` 单件入口 + 切石配方获取全部 264 件家具；
+  - **Macaw's Furniture 3.4.1**：成套厨房/客厅/浴室家具，含储物衣柜/抽屉柜/水槽。
+- **重叠审计**（详见 `mod-compatibility-report.md` 家具层节）：无配方碰撞（MDM 264 条全部为切石型、McW 为香草材料成形配方）；无平行材料体系（双方消费统一木材/铁/石材）；储物家具与抽屉→Sophisticated→AE2 仓储层级不冲突；家具电器为储物/装饰非加工设备（Cooking for Blockheads 保留功能厨房角色）。**KubeJS 无需配方层整合**。
+- **i18n**：`gen-mod-lang-zh.mjs` 移除 rechiseled 覆盖，新增 mdm（274 键，模组仅带 en_us）与 mcwfurnitures（56 键，补齐 3.4.x 厨房水槽系与沙发色组缺失行）。
+- Supplementaries 3.9.9、FramedBlocks 10.6.1、Building Gadgets 2 1.3.9 保持原锁定版本未动。
+- **运行时验证**：dedicated server `Done (1.653s)`，mdm 26.9 / mcwfurnitures 3.4.1 正常加载，KubeJS 5/5 脚本 0 错 0 警；仅存 ERROR 为既有告警（4 条姊妹模组 loot_table 缺表 + `modid:example` DataMapLoader 噪音，旧日志同款）。`registry-export/` 已用本次启动重导出（8302 配方；mdm 265 物品/264 方块、mcwfurnitures 654/652；被删模组 ID 清零）。
+- 待验证：客户端实机目检家具模型/储物 GUI 与中文显示。

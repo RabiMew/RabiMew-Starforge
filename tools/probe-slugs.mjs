@@ -2,14 +2,14 @@ const slugs = [
   'immersiveengineering','immersive-petroleum','storagedrawers','sophisticated-storage',
   'sophisticated-backpacks','sophisticated-core','ae2','ad-astra','ad-astra-more-structures',
   'the-hordes','zombies-break-and-build','defenseturrets','in-control','progressivestages',
-  'kubejs','ftb-quests','farmers-delight','cooking-for-blockheads','rechiseled','framedblocks',
-  'supplementaries','building-gadgets','building-gadgets2','enderman-overhaul','mutant-monsters',
+  'kubejs','ftb-quests','farmers-delight','cooking-for-blockheads','framedblocks',
+  'supplementaries','macaws-furniture','modern-decorations-mod','building-gadgets','building-gadgets2','enderman-overhaul','mutant-monsters',
   'creature-feature','arachnids','easy-villagers','guard-villagers','tacz-1.21.1','guard-villagers-tacz-support',
   'polymorph','controlling','searchables','mouse-tweaks','crafting-tweaks','balm','appleskin',
   'jade-addons','jade','carry-on','jei','modernfix','ferrite-core','servercore','fastsuite',
   'placebo','let-me-despawn','almanac','clumps','sodium','immediatelyfast','entityculling',
   'dynamic-fps','lithium','spark','chunky','ftb-library','ftb-teams','ftb-xmod-compat',
-  'moonlight','selene','fusion','framework','bookshelf','puzzles-lib','moonlight-lib'
+  'moonlight','selene','framework','bookshelf','puzzles-lib','moonlight-lib'
 ];
 const q = encodeURIComponent(JSON.stringify({game_versions:['1.21.1'],loaders:['neoforge']}));
 for (const slug of slugs) {

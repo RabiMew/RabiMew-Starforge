@@ -29,7 +29,8 @@
 | FTB Quests | 2101.1.36 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/ftb-quests-forge) | 对应语言导出格式、团队依赖、XMod Compat |
 | Farmer's Delight | 1.21.1-1.3.4 | [版本记录](https://modrinth.com/mod/farmers-delight/version/XTVZDOol) | 切菜/烹饪锅与厨房识别、自动进出料 |
 | Cooking for Blockheads | 21.1.24+neoforge-1.21.1 | [版本记录](https://modrinth.com/mod/cooking-for-blockheads/version/MQCIy6VF) | 农夫乐事配方桥接、容器与碗回收 |
-| Rechiseled | 1.2.6-neoforge-mc1.21，文件标记含 1.21.1 | [版本记录](https://modrinth.com/mod/rechiseled/version/6muGRqvu) | 前置与服务器共装 |
+| Macaw's Furniture | 3.4.1-mc1.21.1neoforge | [版本记录](https://modrinth.com/mod/macaws-furniture/version/Z5V3Ps7S) | ARR（仅经 manifest URL 分发，同 Easy Villagers）；`neoforge.mods.toml` 无依赖声明；储物家具容量与抽屉/桶仓储层不重叠，见兼容性报告家具层节 |
+| MDM（Modern Decorations Mod） | 26.9-neoforge-1.21.1 | [版本记录](https://modrinth.com/mod/modern-decorations-mod/version/SHiMd2N9) | ARR（同上分发）；硬依赖仅 neoforge≥21.1.190 + mc 1.21.1；全部家具经 `furniture_parts`（圆石+木板+铁粒）切石获得，无平行材料体系；冰箱/烤箱为储物 GUI（非加工设备） |
 | FramedBlocks | 10.6.1 | [版本记录](https://modrinth.com/mod/framedblocks/version/FBXGqSP5) | 氧气密封、伪装材质的硬度/抗爆、施工工具兼容 |
 | Supplementaries | 1.21.1-3.9.9 | [版本记录](https://modrinth.com/mod/supplementaries/version/WrZWfRjP) | 前置、交互功能是否重复、管道/红石边界 |
 | Building Gadgets 2 | 1.3.9 | [作者项目页](https://www.curseforge.com/minecraft/mc-mods/building-gadgets) | 现代文件名是 BuildingGadgets2；库存复制、撤销和权限 |

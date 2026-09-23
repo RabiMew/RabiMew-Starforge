@@ -92,9 +92,10 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 | FTB Quests | 2101.1.36 | 2101.1.36 (FTB Maven latest 2101.x) | both | architectury req [13.0.8,) ✓13.0.11; ftblibrary req [2101.1.36,) ✓; ftbteams req [2101.1.9,) ✓ |
 | Farmer's Delight | 1.21.1-1.3.4 | release:1.3.4 | both | crafttweaker opt (absent) |
 | Cooking for Blockheads | 21.1.24 | release:21.1.24 | both | balm req [21.0.39,) ✓21.0.65 |
-| Rechiseled | 1.2.6 | release:1.2.6 | both | supermartijn642corelib req, supermartijn642configlib req, fusion req — all satisfied |
 | FramedBlocks | 10.6.1 | release:10.6.1 | both | all optional (create/jei/emi/ae2…) |
 | Supplementaries | 1.21.1-3.9.9 | release:3.9.9 | both | moonlight req [1.21-3.6.4,) ✓3.6.8; **incompatible: farmersdelight<1.3.0** (have 1.3.4 ✓), **sodium<0.8.12-beta.1** (have 0.8.13 ✓) |
+| Macaw's Furniture | 3.4.1 | release:3.4.1 | both | no deps declared in `neoforge.mods.toml` |
+| MDM (Modern Decorations Mod) | 26.9 | release:26.9 | both | neoforge req [21.1.190,) ✓21.1.251; minecraft req [1.21.1] ✓ |
 | Building Gadgets 2 | 1.3.9 | 1.3.9 (CF; 1.4.x targets MC 26.1.2 — rejected) | both | — |
 | Enderman Overhaul | 2.0.3 | release:2.0.3 | both | resourcefullib req [3.0.11,) ✓3.0.12; geckolib req [4.7,) ✓4.9.3 |
 | Mutant Monsters | v21.1.1 | release:v21.1.1 | both | puzzleslib req [21.1.10,) ✓21.1.60 |
@@ -137,9 +138,6 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 | Balm | 21.0.65 | release:21.0.65 | both | satisfies cfB [21.0.39,) + ctweaks [21.0.48,) |
 | Searchables | 1.0.2 | release:1.0.2 | client | — |
 | Moonlight Lib | 1.21.1-3.6.8 | release:3.6.8 | both | — |
-| SuperMartijn642 Core | 1.1.24a | release:1.1.24a | both | — |
-| SuperMartijn642 Config | 1.1.8 | release:1.1.8 | both | — |
-| Fusion | 1.3.15b | release:1.3.15b | both | — |
 | Resourceful Lib | 3.0.12 | release:3.0.12 | both | — |
 | Resourceful Config | 3.0.11 | release:3.0.11 | both | — |
 | GeckoLib | 4.9.3 | release:4.9.3 | both | incompatible: geckoanimfix (not installed ✓) |
@@ -236,3 +234,35 @@ Findings:
 - First-run profile: official `profile=low` + `REFLECTION_SLIDER=1` via `pack/shaderpacks/MakeUp-UltraFast-9.5e.zip.txt` (OptiFine/Iris per-pack options file).
 - Iris jar metadata checked: `neoforge.mods.toml` declares only `embeddium` as incompatible; no hard Sodium dep (runtime pairing).
 - Client GUI shader-on boot, shader compile log, TaCZ/Ad Astra dimension rendering: **pending real client verification** (see docs/performance.md).
+
+## Addendum — 2026-09-23 furniture layer (100 enabled)
+
+Incremental change: removed 4 mods, added 2. Lockfile, `mod-ids.json`, `jar-deps.json` regenerated; `audit-deps` closure re-verified over all 100 jars.
+
+**Removed** (dependency check before removal — `manifest/jar-deps.json` showed these 4 had **no remaining dependents**: `fusion`, `supermartijn642corelib`, `supermartijn642configlib` were each required only by `rechiseled`; nothing required `rechiseled`):
+
+| Mod | Was locked | Role |
+|---|---|---|
+| Rechiseled | 1.2.6 | content (chiseled block variants) |
+| SuperMartijn642's Core Lib | 1.1.24a | library (Rechiseled only) |
+| SuperMartijn642's Config Lib | 1.1.8 | library (Rechiseled only) |
+| Fusion (Connected Textures) | 1.3.15b | library (Rechiseled only) |
+
+**Added** — living/decoration layer for bases, industrial sites, stations and colonies; **no new tech tree** (furniture recipes are T0-open craft/decor, consistent with "building materials open from T0"):
+
+| Mod | Locked | Source / license | Side | External deps (from jar) |
+|---|---|---|---|---|
+| Macaw's Furniture | 3.4.1 (`mcw-furniture-3.4.1-mc1.21.1neoforge.jar`, version `Z5V3Ps7S`) | Modrinth `dtWC90iB`; LicenseRef-ARR — manifest-URL distribution (same as Easy Villagers/CFB) | both | none declared in `neoforge.mods.toml` |
+| MDM (Modern Decorations Mod) | 26.9 (`mdm-26.9-neoforge-1.21.1.jar`, version `SHiMd2N9`) | Modrinth `TmUXSYKk`; LicenseRef-ARR | both | neoforge [21.1.190,) ✓21.1.251 · minecraft [1.21.1] ✓ |
+
+**Overlap audit** (MDM × Macaw's × Supplementaries — registry/recipe inspection of the locked jars):
+
+- **No recipe collisions**: MDM is 1 shaped (`furniture_parts`) + 264 `minecraft:stonecutting` recipes (1 furniture part → 1 piece); Macaw's is shaped vanilla-material recipes through its own intermediates (`cabinet_door`/`cabinet_drawer` = sticks + `#c:chests/wooden` + iron nugget; tag populated: chest, trapped_chest). No cross-mod output/ingredient collisions; Polymorph remains the conflict safety net.
+- **No parallel material system**: MDM funnels every furniture recipe through `furniture_parts` (cobblestone + `#minecraft:planks` + iron nugget); Macaw's consumes vanilla logs/planks/slabs/sticks + `#c:chests/wooden`. Both already spend the pack's unified wood/iron/stone materials — no custom ingot/wood tier introduced, nothing to remap.
+- **Storage overlap is cosmetic-tier, documented not merged**: MDM fridge/oven/wardrobe/dresser/nightstand and Macaw's wardrobe/drawer/cabinet/counter expose plain `IItemHandler` storage GUIs (verified in class strings — no smelting/processing logic; `GasStove`/`InductionCooker` are decoration-only `HorizontalFurnitureBlock`). Supplementaries `safe`/`jar`/`present`/`item_shelf` keep their distinct roles (secure/display/gift storage). Neither duplicates the Drawer→Sophisticated→AE2 storage progression; Cooking for Blockheads keeps the *functional* kitchen role (MDM/McW kitchen appliances are storage/decoration, no cooking logic).
+- **Decor overlap accepted as variety**: lamps (Supplementaries stone/deepslate vs MDM modern), clocks, shelves — different material styles; no action.
+- **KubeJS integration**: none required for function — overlap check produced no conflicts worth rewriting; only zh_cn assets were generated (below).
+
+**i18n**: `tools/gen-mod-lang-zh.mjs` extended — MDM ships `en_us` only → full 274-key zh_cn generated; Macaw's bundled zh_cn misses the 3.4.x kitchen-sink/stripped-sink lines and the couch/chaise color set → 56 missing keys filled (wood prefixes read back from bundled zh so naming stays consistent). Output: `pack/kubejs/assets/{mdm,mcwfurnitures}/lang/zh_cn.json`. The `rechiseled` zh fallback + generator section removed with the mod.
+
+**Runtime-verified 2026-09-23**: dedicated server booted to `Done (1.653s)` on Java 21 / NeoForge 21.1.251 — both mods loaded (`mcwfurnitures` 3.4.1, `mdm` 26.9, version check UP_TO_DATE), KubeJS 5/5 server scripts 0 errors/0 warnings, no `rechiseled`/`supermartijn642`/`fusion` mod IDs in the loaded mod list. The only ERROR lines are the 4 pre-existing Creature-Feature sister-mod loot-table misses and the pre-existing `modid:example` DataMapLoader noise (identical in the prior boot log). `registry-export/` refreshed from this boot: 8302 recipes, `mdm:` 265 items/264 blocks, `mcwfurnitures:` 654 items/652 blocks, zero stale IDs of the removed mods.

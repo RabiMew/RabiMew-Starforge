@@ -1,4 +1,5 @@
 [
+	"artifacts:magnetism",
 	"creaturefeature:fiendish",
 	"creaturefeature:sleepy",
 	"farmersdelight:comfort",
@@ -57,5 +58,17 @@
 	"mutantmonsters:chemical_x",
 	"railcraft:creosote",
 	"supplementaries:flammable",
-	"supplementaries:overencumbered"
+	"supplementaries:overencumbered",
+	"xaerominimap:no_cave_maps",
+	"xaerominimap:no_cave_maps_harmful",
+	"xaerominimap:no_entity_radar",
+	"xaerominimap:no_entity_radar_harmful",
+	"xaerominimap:no_minimap",
+	"xaerominimap:no_minimap_harmful",
+	"xaerominimap:no_waypoints",
+	"xaerominimap:no_waypoints_harmful",
+	"xaeroworldmap:no_cave_maps",
+	"xaeroworldmap:no_cave_maps_harmful",
+	"xaeroworldmap:no_world_map",
+	"xaeroworldmap:no_world_map_harmful"
 ]
