@@ -4,11 +4,12 @@
    "id": "tacz:modern_kinetic_gun"
   },
   "title": {
-   "translate": "modpack.advancement.drg_arsenal.title"
+   "translate": "modpack.advancement.eos_arsenal.title"
   },
   "description": {
-   "translate": "modpack.advancement.drg_arsenal.description"
+   "translate": "modpack.advancement.eos_arsenal.description"
   },
+  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "challenge",
   "show_toast": true,
   "announce_to_chat": false,

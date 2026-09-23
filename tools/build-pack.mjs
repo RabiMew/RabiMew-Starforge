@@ -186,11 +186,16 @@ for (const a of design.advancements) {
   } else {
     throw new Error(`advancement ${a.id}: unsupported trigger ${a.trigger}`);
   }
+  // Every generated advancement is a root (no parent in this schema), so each
+  // gets its own tab. A root without display.background renders the missing
+  // texture in 1.21.1 — emit the shared default unless an entry overrides it.
+  const background = a.background ?? design.advancementBackground;
   out(`kubejs/data/starforge/advancement/${a.id}.json`, JSON.stringify({
     display: {
       icon: { id: smItem(a.icon) },
       title: { translate: a.title_key },
       description: { translate: a.description_key },
+      ...(background ? { background } : {}),
       frame: a.frame ?? 'task',
       show_toast: true,
       announce_to_chat: false,

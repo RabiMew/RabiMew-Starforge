@@ -25,7 +25,7 @@
 - AE2：`ae2:inscriber`、`ae2:*_processor_press`、`ae2:*_processor`、`ae2:controller`、`ae2:pattern_provider`、`ae2:quantum_entangled_singularity` 等。
 - BC CE：`buildcraftcore:gears/gear_iron`、`buildcraftbuilders:quarry`、`buildcraftfactory:pump|mining_well`、`buildcraftenergy:engine_*`、`buildcrafttransport:*`、`buildcraftsilicon:assembly_table|laser`。
 - 炮塔体系：`immersiveengineering:turret_gun|turret_chem`（IE 原生，T2）+ `taczturrets:turret`（物品与实体同 id，T4）。Defense Turrets 已整体移除。
-- TaCZ：通用物品型（`tacz:modern_kinetic_gun`、`tacz:ammo`、`tacz:attachment`、`tacz:gun_smith_table`）；具体枪/弹在 `tacz_default_gun` 与 `deep_rock_galactic` 枪包内定义（`GunId`/`AmmoId` 存于 `minecraft:custom_data`）。
+- TaCZ：通用物品型（`tacz:modern_kinetic_gun`、`tacz:ammo`、`tacz:attachment`、`tacz:gun_smith_table`）；具体枪/弹在 `tacz_default_gun` 与 `eos`（EOS – Dawn Goddess Lab）枪包内定义（`GunId`/`AmmoId` 存于 `minecraft:custom_data`）。
 - Ad Astra 维度：`ad_astra:moon|mars|venus|mercury|glacio` 及各自 `_orbit`，含 `ad_astra:earth_orbit`（空间站候选维度集合）。
 - Asteroid Belt（modid `pv_ad_asterobelt`，维度命名空间独立为 `pv_asteroid_belt`）：`pv_asteroid_belt:asteroid_belt`（planet tier 2、0.5g、无氧、-50℃、自然刷怪关）与 `pv_asteroid_belt:asteroid_belt_orbit`（0g、-170℃）；`neoforge tps` 运行时两维度均注册在列。
 - Railcraft：基础轨 `railcraft:strap_iron_track`（**不存在** `railcraft:iron_track`）；轨道族 `electric_track`/`reinforced_track`/`high_speed_track`/`high_speed_electric_track`/`elevator_track`；实体 `cargo_minecart`/`tank_minecart`/`steam_locomotive`/`electric_locomotive`/`world_spike_minecart`（已在小行星带维度实测生成并在 tick）；标签 `c:ingots|plates|gears|nuggets|storage_blocks/steel`、`c:coal_coke`、`c:dusts/saltpeter`、`c:fluids/steam`→`railcraft:steam`；数据图类型 `railcraft:fluid_heat`（fluid 注册表）与 `railcraft:tunnel_bore_head`（item 注册表）。
@@ -207,15 +207,15 @@
 
 ### 军事层扩展（2026-09-23，已服务端实测）
 
-- **加入**：TACZ Turrets 2.0.0（MIT）、TaCZ Addon 1.1.8-fix2（许可证字段不一致，见兼容性表）、TaCZ Pack Upgrader 2.1.3（同上）、DRG Gun Pack 1.2.6.1（ARR，仅 manifest URL 分发）。
+- **加入**：TACZ Turrets 2.0.0（MIT）、TaCZ Addon 1.1.8-fix2（许可证字段不一致，见兼容性表）、TaCZ Pack Upgrader 2.1.3（同上）、~~DRG Gun Pack 1.2.6.1~~ → **EOS – Dawn Goddess Lab 1.1.1-hotfix1**（ARR，仅 manifest URL 分发；2026-09-24 替换，见文末变更记录）。
 - **移除**：Defense Turrets 全部内容——manifest/lockfile 条目、5 条 KubeJS 配方、`dt_*` 语义键 7 个、三个阶段锁组、4 个任务节点（first_turret/turret_net/combined_fire/laser_grid）与对应文案。
-- **枪包升级实测**：Pack Upgrader 启动时把 `tacz/drg_gun_pack_1.2.6.1.zip` 升级为 `+1.21.1` 版（`forge:`→`c:` 标签转换确认）；TaCZ 识别 `deep_rock_galactic` 命名空间，22 把枪 + 8 种弹药经 KubeJS 重写为工业材料配方后全部注册（`tacz:kjs/*`，30 条）。
-- **炮塔实测**：`taczturrets:turret` 召唤、装入 `tacz:ak47` 与 `deep_rock_galactic:gk2`，对召唤僵尸自动开火击杀，弹药从**脚下箱子**扣取（内置 Inventory 缓冲 10 格）——“最后一公里物流”设计成立。
-- **DRG 不可用内容**：`ani_pro`（弹药依赖未装的 `pixel_gun`）、`pickaxe` 近战与 `supply` 方块（依赖未装的 `lrtactical`）——配方已移除/加载报错属预期噪音，其余特殊机制（cross/short/thunder 的 lua 脚本）待客户端实机验收。
-- **DRG 阶段门槛**（经配方材料而非物品锁——枪/弹共用 `tacz:` 物品 id，PS 无法按 id 锁）：T3 `ae2:engineering_processor` 常规枪械；T4 `ie:heavy_engineering` 支援/霰弹/重型副武器+钩爪；T5 `ic2cre:containment_reactor_plating`+奇点/异常分析 AoE/虫群武器。
-- **任务书**：军事章 11 任务（含新增 armed_guards/ie_turret/ammo_logistics/tacz_turret/drg_arsenal/swarm_suppression/expedition_firepower），自动化章新增 `munitions_supply`；手册新增 6 页（分层防御/炮塔补给/DRG 定位/警卫武器/TaCZ Addon/远征弹药）；运行时首次造炮塔与首次获得 DRG 枪各一条一次性提示。
-- **服务端战斗基准**（RCON 实测，4 炮塔 [2×gk2+minigun+btr7] + ~35 怪潮 [30 僵尸+5 Arachnids]）：空载 1.0 → 战斗中 3.0–3.9 ms/tick，TPS 稳定 20；同时在场 `tacz:bullet` 弹丸峰值 36；约 2 分钟内全灭该波次；弹药链实测为 箱→炮塔内仓（10格）→枪膛（gk2 打完 18 发弹匣后自动从库存补弹到 15）。DRG minigun 走 `HeatAmount` 热量机制而非弹匣计数，机制在 1.21.1 端原生生效。
-- **Guard Villagers TACZ Support 部分验证**：goal 经 Mixin 无条件挂到全部 Guard（`TaczGunAttackGoal`+`TaczTargetAssistGoal`）；弹药判定走 TaCZ 原生 `IAmmo.isAmmoOfGun`，消耗守卫自身 `guardInventory` 弹药并支持 ammo_box；实测守卫吞掉了塞入库存的 `drg_generic_ammo` 并把 DRG subata 装填到 8 发——供弹链路成立。但无头环境无法复现真实索敌开火（需玩家互动/村庄上下文/拾取路径），多人与实机行为列为待人工验收。
+- **枪包升级实测**：Pack Upgrader 启动时把旧格式枪包升级为 `+1.21.1` 版（`forge:`→`c:` 标签转换确认——EOS 的配件与 `eos_old` 配方同样依赖此路径）；TaCZ 识别 `eos` 命名空间，25 把枪 + 7 种弹药经 KubeJS 重写为工业材料配方后注册（经 `.id()` 固定回 `eos:*` 命名空间，走 EOS 自带 `eos_printer` 工作台）。
+- **炮塔实测**（DRG 时代，机制不变）：`taczturrets:turret` 召唤、装入 `tacz:ak47` 与枪包武器，对召唤僵尸自动开火击杀，弹药从**脚下箱子**扣取（内置 Inventory 缓冲 10 格）——“最后一公里物流”设计成立；EOS 武器同为 `tacz:modern_kinetic_gun` 物品，链路一致。
+- **枪包不可用内容**：EOS 侧 `eos:eoslab_12g` 有弹药索引但上游无配方（视同禁用，同 DRG 的 `ani_pro`/`pickaxe`/`supply` 先例）。
+- **枪包阶段门槛**（经配方材料而非物品锁——枪/弹共用 `tacz:` 物品 id，PS 无法按 id 锁）：T3 `ae2:engineering_processor` 高斯枪族（HG-57/M-57CW/AR-68/QGZ-86/极速追星/陸弓）；T4 `ie:heavy_engineering` 重型高斯与特种（MG-85/SR-85/猫又/阿喀琉斯/四叶十字/WA2000 双型）；T5 `ic2cre:containment_reactor_plating`+奇点/异常分析 ELP 电浆系与艾莲娜之钉/混沌。
+- **任务书**：军事章 11 任务（含新增 armed_guards/ie_turret/ammo_logistics/tacz_turret/eos_arsenal/swarm_suppression/expedition_firepower），自动化章新增 `munitions_supply`；手册新增 6 页（分层防御/炮塔补给/EOS 定位/警卫武器/TaCZ Addon/远征弹药）；运行时首次造炮塔与首次获得 EOS 枪各一条一次性提示。
+- **服务端战斗基准**（RCON 实测，4 炮塔 + ~35 怪潮 [30 僵尸+5 Arachnids]）：空载 1.0 → 战斗中 3.0–3.9 ms/tick，TPS 稳定 20；同时在场 `tacz:bullet` 弹丸峰值 36；约 2 分钟内全灭该波次；弹药链实测为 箱→炮塔内仓（10格）→枪膛（打完弹匣后自动从库存补弹）。EOS 武器走同一 `tacz:bullet`/装填机制。
+- **Guard Villagers TACZ Support 部分验证**：goal 经 Mixin 无条件挂到全部 Guard（`TaczGunAttackGoal`+`TaczTargetAssistGoal`）；弹药判定走 TaCZ 原生 `IAmmo.isAmmoOfGun`，消耗守卫自身 `guardInventory` 弹药并支持 ammo_box；实测守卫吞掉了塞入库存的枪包弹药并完成装填——供弹链路成立。但无头环境无法复现真实索敌开火（需玩家互动/村庄上下文/拾取路径），多人与实机行为列为待人工验收。
 
 ### 已知残留 / 未做
 
@@ -248,7 +248,7 @@ KubeJS 无法表达的行为型兼容，现由自有附属 `starforge-compat-0.1
 
 ### 仍未实现的 compat 项
 
-- 基地威胁值 H、怪潮阶段化调度、空间站事件白名单（P2 原列项）；DRG 枪包客户端表现（模型/动画/音效/lua 特殊机制）与 TACZ 炮塔多人/区块卸载实机验收（P2 尾项）。
+- 基地威胁值 H、怪潮阶段化调度、空间站事件白名单（P2 原列项）；EOS 枪包客户端表现（模型/动画/音效/脚本特殊机制）与 TACZ 炮塔多人/区块卸载实机验收（P2 尾项）。
 
 ## 2026-09-23 隐藏彩蛋：首次 PvP 击杀奖励（已实现，待实机验证）
 
@@ -278,7 +278,7 @@ KubeJS 无法表达的行为型兼容，现由自有附属 `starforge-compat-0.1
 - **ProgressiveStages**：30 个 stage 目录。schema-4 `dependencies`/`dependency_mode`/`[[triggers]]` + `[display]`（frame/reveal/sort_order/category）+ `[unlock]`（toast/progress_nudges/hud_bar）+ `[advancements].locked`（reveal_at 隐藏）；`scope=team`。能力节点无锁、无时代依赖。
 - **FTB Quests**：10 章 160 节点（43 手册页）148 奖励。新增 `milestones` 章——7 个 `gamestage` 任务（`team_stage: true`），团队持阶即自动完成，与 PS 图谱实时同步；`star_map` 任务指引玩家打开 PS 库存按钮的进度图谱；37 个支线新任务全部 `optional: true`。
 - **成就**：29 个 JSON 生成到 `pack/kubejs/data/starforge/advancement/`（含 8 个 `stage_granted` 时代镜像）。
-- **运行时**：`starforge_guidance.js`（生成）取代手写 `starforge_triggers.js`——七条时代证据计数器 + 14 条引导事件 + `ProgressiveStages.onGranted` 同步（stage_granted 成就 + 下一步提示）。维度/FTB 任务用节流 tick 轮询（无 direct 事件）；DRG 枪用 `GunId` NBT 命名空间 `deep_rock_galactic:*` 区分普通 TaCZ 枪；FTB `quest` 路由严禁投喂时代证据计数器（任务书永远可选）。
+- **运行时**：`starforge_guidance.js`（生成）取代手写 `starforge_triggers.js`——七条时代证据计数器 + 14 条引导事件 + `ProgressiveStages.onGranted` 同步（stage_granted 成就 + 下一步提示）。维度/FTB 任务用节流 tick 轮询（无 direct 事件）；EOS 枪用 `GunId` NBT 命名空间 `eos:*` 区分普通 TaCZ 枪；FTB `quest` 路由严禁投喂时代证据计数器（任务书永远可选）。
 - **语言**：652 个双语键（en_us/zh_cn 全量一致）。
 
 ### 验证结果（静态，本轮）
@@ -300,7 +300,7 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 - `Per-stage triggers active for 29 stage(s), 29 rule(s)`（survival_age 为 starting stage 无触发）。
 - `/stage tree`：8 时代主链 + 22 能力分支形状与设计一致。
 - FTB Quests：`Loaded 1 chapter groups, 10 chapters, 160 quests`，双语翻译表加载，无解析错误。
-- **stagetest（FakePlayer，`kubejs/stagetest.json` 启用）全 OK**：30 节点注册、survival 授予、native craft→mechanical、7 条时代计数器、4 条能力计数器（base_registered/guard_post/horde_survived/drg_gun）、bulk_storage native craft、无时代残留 locked。修复两处：补依赖须 `grantBypass`（`grant` 仍检查依赖）；`locked()` 返回未持有阶段而非锁规则。
+- **stagetest（FakePlayer，`kubejs/stagetest.json` 启用）全 OK**：30 节点注册、survival 授予、native craft→mechanical、7 条时代计数器、4 条能力计数器（base_registered/guard_post/horde_survived/eos_gun）、bulk_storage native craft、无时代残留 locked。修复两处：补依赖须 `grantBypass`（`grant` 仍检查依赖）；`locked()` 返回未持有阶段而非锁规则。
 - **KubJS 顶层 `const` 跨文件共享**：`HordeEndEvent`/`EVIDENCE` 与 horde.js/旧 triggers.js 冲突报错——生成脚本全部改 `SF_` 前缀（沿用 starforge_dump.js 既有约定）；`global.*` 只能 startup_scripts 用（sfGuidance 导出已移除，无消费者）。
 - `sync-pack.mjs` 新增 `kubejs/{server_scripts,startup_scripts,client_scripts,data,assets}` 为 OWNED_DIRS——旧 `starforge_triggers.js` 在 run/ 残留的问题已根治（runtime 的 export/、config/、stagetest.json 不属 OWNED）。
 - `deep_space`/`highrisk_survey` 的 `any_of`→`all_of`（描述为"抵达 X 与 Y"）。
@@ -310,6 +310,34 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 - `ProgressiveStages.onGranted` → `stage_granted` 成就颁发给真实玩家（FakePlayer 路径无错但无法观测授予结果）。
 - 14 条引导事件的真实触发（拾取/方块交互/维度轮询/gun_ns/horde/quest/advancement_earned）。
 - FTB `gamestage` 任务的客户端显示与 `team_stage` 同步；milestones 章视觉。
-- `[unlock]` toast/title/hud_bar 实机表现；`[advancements].locked` 隐藏效果。
+- `[unlock]` toast/title 实机表现（常驻 hud_bar 已按设计关闭，见文末变更）；`[advancements].locked` 隐藏效果。
 - 锁 enforcement（制造/使用/维度进入）真实玩家进世界抽查。
 - 双人 PvP 彩蛋（见上节）。
+
+## 2026-09-24 变更：EOS 枪包替换 DRG + 模型/成就页修复 + 时代 HUD 收敛（已实现，静态验证通过）
+
+### EOS – Dawn Goddess Lab 取代 Deep Rock Galactic Gun Pack
+
+- **资源层**：`manifest/mod-list.json`/`locked-mods.json` 的 `drg_gun_pack` 条目替换为 `eos_gun_pack`——CurseForge `tacz-eoslab-gunpack` file 7182834（`EOS_Dawn Goddess Lab ver1.1.1-hotfix1.zip`，15,677,704 B，sha256 `0b490c48…71bb3`），ARR 许可、仅 manifest URL 分发；`fetch-mods --locked` 106+2 全量校验通过。
+- **包内结构**：`eos` 命名空间，25 把枪（高斯 HG-57/M-57CW/AR-68/QGZ-86/MG-85/SR-85、特种猫又/阿喀琉斯/四叶十字/极速追星/陸弓/WA2000/蛇吻、ELP-13~72 电浆系、艾莲娜之钉、混沌）+ 7 种弹药 + 57 种配件；自带工作台 `eos:eos_printer`（`tacz:workbench_b` + `BlockId`）与 `eos_old` 换肤转换台；`recipe_filters` 让 `eos:*` 配方全部落在打印台（默认枪匠台黑名单 eos）。
+- **配方层（SF-16 重写）**：移除上游 `eos:gun/*`（25）、`eos:ammo/*`（7）、`eos:blocks/*`（2）后按工业中间件重挂——T3 `ae2:engineering_processor`、T4 `ie:heavy_engineering`、T5 `ic2cre:containment_reactor_plating`+奇点/异常分析；弹药产率沿上游（57x24×50/68x57×45/85x76×60/28x300×6/battery×2/arrow×60/alloy×10），battery 改用 `ic2cre:energy_crystal`。重挂配方经 `KubeRecipe.id()` 固定回 `eos:*`，使包内 `recipe_filters` 白名单 `^eos:.*$` 把它们路由到 EOS 打印台（默认台黑名单 eos ——`.id()` 不可用时回退 `kubejs:*`，改在默认台显示，功能等价）。`eos:attachments/*`（57）与 `eos_old:gun/*`（2 条极速追星换肤）保持上游不动；`eos:eoslab_12g` 上游无配方维持禁用。
+- **工作台配方修正**：上游 `eos_printer`/`old_conversion` 是带 `forge:` 标签 + 1.20 `nbt` 结果语法的原版合成表，升级器未必覆盖——已用 `c:` 标签 + `components`（`minecraft:custom_data` 写 `BlockId`）重写为 1.21.1 形式（打印台 = 磨制深板岩+铁+铜+黄色玻璃；换肤台 = 铁+铜）。
+- **联动层**：`design/guidance.json` 事件 `eos_gun`（`GunId` 前缀 `eos:`，计数器 `modpack:eos_gun`，成就 `eos_arsenal`，提示 `modpack.message.eos_gun_tip`）；`heavy_firepower` 能力触发改为 `modpack:eos_gun`；任务 `eos_arsenal`/`eos_challenge`、手册页 `eos_arsenal`、stage_test 计数器同步改名；EMI 自动随配方管理器呈现新配方，无额外配置。
+- **文案**：en/zh 全部 `drg_*` 键更名 `eos_*`，描述更新为 EOS 武器族（高斯/ELP 电浆/特种）与打印台引导；FTB Quests 双语 snbt 重新生成（`eos_arsenal` 等任务 hex id 随更名更新，export-quests 全量重建无残留）。
+- **registry-export**：`recipes.json` 中 DRG 条目（34 配件 + 30 条 `tacz:kjs/*` + AU tracker）替换为 EOS 对应快照（25 枪 + 7 弹 + 57 配件 + 2 换肤 + 2 工作台 + `almostunified:eos` tracker）；待下次实机 dump 复核。
+
+### MDM `electric_guitar_with_stand` 模型修复
+
+- 根因：上游 `mdm:models/custom/electric_guitar_black_standing` 的 120 个 element 中 117 个旋转非法（104×`x:25`、1×`x:2.5`、6×Blockbench euler `{x:47.5}`、2×三轴 euler 站腿）——1.21.1 原版烘焙只接受单轴 ±45/±22.5/0，整模型加载失败（方块状态 `facing` 与贴图均正常，上游 26.9 无修复）。
+- 处置：转换脚本将所有旋转收敛到合法值（25→22.5、2.5→0、euler 取主轴就近；站腿三轴→`x:-45`），输出到 `pack/kubejs/assets/mdm/models/custom/electric_guitar_black_standing.json`（KubeJS 资源覆盖上游，方块/物品模型与 `facing` 旋转不变）。
+
+### 遗物猎人（first_artifact）成就页背景修复
+
+- 根因：29 个生成成就全是 root（无 parent → 各自成页），`display` 无 `background`——1.21.1 `AdvancementTab` 用 `INTENTIONAL_MISSING_TEXTURE` 兜底 → 页面背景显示缺图紫黑格。
+- 处置：`design/advancements.json` 新增顶层 `default_background`（`minecraft:textures/block/smooth_basalt.png`，单条可 `background` 覆盖）；`tools/lib/design.mjs` 透出 `advancementBackground`，`build-pack.mjs` 对每个 root 成就输出 `display.background`——29/29 成就页现在有平铺背景。
+
+### 时代阶段常驻 hud_bar 关闭
+
+- 按单一数据源执行：`design/progression.json` 7 处 era `unlock.hud_bar` 全部 `true`→`false`（`toast`/`progress_nudges`/`title`/`sound` 不动），`node tools/build-pack.mjs` 重新生成——7 个时代 `progression.toml` 均无 `hud_bar` 行（生成器只在真值时输出）；能力节点本就不带 hud_bar。进度反馈保留：toast、progress_nudges、PS 阶段图谱、FTB Quests、成就页。
+- **验证**：`grep hud_bar pack/config/progressivestages/` 零命中；`validate-design`/`check-mapping` PASS；`node --check` 三个脚本通过；`export-quests` 10 章 160 节点重建。
+- **待实机复核**：EOS 打印台实际配方路由与 `.id()` 生效情况、电浆武器/换肤台表现、吉他模型渲染外观、成就页背景渲染。

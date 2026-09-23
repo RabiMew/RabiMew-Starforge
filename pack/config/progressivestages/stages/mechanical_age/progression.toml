@@ -12,4 +12,3 @@ count = 1
 [unlock]
 toast = "机械时代 / Mechanical Age"
 progress_nudges = true
-hud_bar = true

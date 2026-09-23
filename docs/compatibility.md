@@ -22,7 +22,7 @@
 | Simple Structures: Ad Astra | 1.3（2026-09-16 release，Modrinth） | [Modrinth](https://modrinth.com/mod/simple-structures-ad-astra) | MIT；modid `pv_ad_astra_structures`；服务端必需/客户端可选；Patchouli 为可选依赖（未装）；与 More Structures 命名空间/结构集互不重叠，共存已实测加载 |
 | The Hordes | 1.21.1-1.6.3f | [文件记录](https://www.curseforge.com/minecraft/mc-mods/the-hordes/files/all?page=1&pageSize=20&version=1.21.1) | 时间控制、按基地波次参数、感染、维度排除 |
 | Zombies Break & Build | 1.21.1-1.7.0-neoforge | [版本记录](https://modrinth.com/mod/zombies-break-and-build/version/OyzwivCD) | 单位标记/阶段支持、领地权限、破坏和搭建限额 |
-| TACZ Turrets | 2.0.0（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/tacz-turrets) | MIT；硬依赖 `tacz≥1.1.8-hotfix-r6`（本包移植版满足）；jarJar 内嵌 GeckoLib/SmartBrainLib/Registrate；**已实测**：实体注册、装枪（手持位）、对敌对生物开火、**从脚下箱子取弹**（原版 TaCZ 枪与 DRG gk2 均验证）、服务端无崩溃；友军 trust 列表、红石模式、区块卸载、多人掉线与 DRG 特殊武器兼容性列入实机验收 |
+| TACZ Turrets | 2.0.0（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/tacz-turrets) | MIT；硬依赖 `tacz≥1.1.8-hotfix-r6`（本包移植版满足）；jarJar 内嵌 GeckoLib/SmartBrainLib/Registrate；**已实测**：实体注册、装枪（手持位）、对敌对生物开火、**从脚下箱子取弹**（原版 TaCZ 枪与枪包武器验证）、服务端无崩溃；友军 trust 列表、红石模式、区块卸载、多人掉线与 EOS 特殊武器兼容性列入实机验收 |
 | In Control! | 1.21-10.3.0，Beta，文件标记 1.21.1 | [项目发布记录](https://www.curseforge.com/minecraft/mc-mods/in-control) | 当前 schema、召唤/转移绕过、规则优先级 |
 | ProgressiveStages | 3.0.5 候选 | [版本列表](https://modrinth.com/mod/progressivestages/versions) | 阶段本地化、团队同步、机器配方与自动合成覆盖 |
 | KubeJS | 2101.7.2-build.377 | [版本记录](https://modrinth.com/mod/kubejs/version/THIGFPwf) | 7.2 API、数据组件、各模组配方插件 |
@@ -44,7 +44,7 @@
 | Guard Villagers TACZ Support | 1.0.1 | [Modrinth](https://modrinth.com/mod/guard-villagers-tacz-support) | MIT；元数据声明客户端不支持（服务端/单人）；索敌、射击、耗弹、Ammo Box、找弹药/食物、射界、友军识别、Zombie/Pillager 持枪能力逐项实测 |
 | TaCZ Addon | 1.1.8-fix2（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/taczaddon) | 许可不一致待核：Modrinth API 记 GPL-3.0-only，jar 内 `neoforge.mods.toml` 记 ARR；枪匠台 QoL（附件/弹药按枪过滤、材料清单、JEI 跳转、批量合成、邻近容器与 Sophisticated Backpacks 取料）；**只降操作负担，不改配方成本**；服务端已加载，客户端 GUI 交互列入实机验收 |
 | TaCZ Pack Upgrader | 2.1.3（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/tacz-pack-upgrader) | 许可不一致待核：API 记 LGPL-3.0-or-later，jar 记 ARR；启动时把 `tacz/` 目录旧格式枪包升级为 1.21.1 移植版可读格式（`forge:`→`c:` 标签转换已确认）；只能升级枪包，不能升级 Java addon，也不授予枪包再分发权 |
-| [TaCZ] Deep Rock Galactic Gun Pack | 1.2.6.1（CF file 8538684，面向 1.20.1） | [CurseForge](https://www.curseforge.com/minecraft/customization/deep-rock-galactic-gun-pack) | **All Rights Reserved（SicarioFG）**——zip 只经 CurseForge CDN manifest 链接分发，绝不入库或嵌入包体；由 Pack Upgrader 在启动时升级为 `drg_gun_pack_1.2.6.1+1.21.1.zip`（已实测 22 把枪 + 8 种弹药配方经 KubeJS 重挂工业材料后加载）；已知缺口：`ani_pro` 依赖未装的 `pixel_gun` 弹药（无配方，视同禁用）、`pickaxe`/`melee` 与 `supply` 方块依赖未装的 `lrtactical`（配方/方块数据加载报错，已移除对应配方）；模型/动画/音效/特殊射击 lua 的客户端实机表现待验收 |
+| EOS – Dawn Goddess Lab（TaCZ 枪包） | 1.1.1-hotfix1（CF file 7182834，面向 1.21.1/TaCZ≥1.1.5） | [CurseForge](https://www.curseforge.com/minecraft/customization/tacz-eoslab-gunpack) | **All Rights Reserved**——zip 只经 CurseForge CDN manifest 链接分发，绝不入库或嵌入包体；`eos` 命名空间，25 把枪 + 7 种弹药 + 57 种配件，另含 `eos_old` 换肤转换体系；EOS 配方经包内 `recipe_filters` 路由到自带工作台 `eos:eos_printer`（`tacz:workbench_b`+`BlockId`，合成配方已由 KubeJS 以 `c:` 标签+`components` 重写为 1.21.1 形式）；枪/弹配方经 KubeJS 重挂工业材料后以 `.id()` 固定回 `eos:*` 命名空间；已知缺口：`eos:eoslab_12g` 有弹药索引但无上游配方（视同禁用）；模型/动画/音效/脚本特殊机制的客户端实机表现待验收 |
 
 ## 体验辅助候选
 

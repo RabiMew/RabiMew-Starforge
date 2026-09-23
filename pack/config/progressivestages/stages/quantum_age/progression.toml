@@ -16,4 +16,3 @@ subtitle = "距离已不再是物流的限制。 / Distance no longer limits log
 sound = "minecraft:ui.toast.challenge_complete"
 particle = "minecraft:totem_of_undying"
 progress_nudges = true
-hud_bar = true

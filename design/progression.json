@@ -59,7 +59,7 @@
    ],
    "recommended_routes": ["industry", "automation"],
    "next_steps_key": "modpack.stage.mechanical_age.next",
-   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": false }
   },
   {
    "id": "electric_age",
@@ -90,7 +90,7 @@
    ],
    "recommended_routes": ["industry", "military", "automation"],
    "next_steps_key": "modpack.stage.electric_age.next",
-   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": false }
   },
   {
    "id": "information_age",
@@ -119,7 +119,7 @@
    ],
    "recommended_routes": ["automation", "military"],
    "next_steps_key": "modpack.stage.information_age.next",
-   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": false }
   },
   {
    "id": "heavy_industry_age",
@@ -149,7 +149,7 @@
    ],
    "recommended_routes": ["industry", "military", "automation"],
    "next_steps_key": "modpack.stage.heavy_industry_age.next",
-   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": false }
   },
   {
    "id": "atomic_age",
@@ -182,7 +182,7 @@
    "unlock": {
     "toast": true, "show_title": true, "subtitle_key": "modpack.stage.atomic_age.subtitle",
     "sound": "minecraft:ui.toast.challenge_complete", "particle": "minecraft:totem_of_undying",
-    "progress_nudges": true, "hud_bar": true
+    "progress_nudges": true, "hud_bar": false
    }
   },
   {
@@ -217,7 +217,7 @@
    "unlock": {
     "toast": true, "show_title": true, "subtitle_key": "modpack.stage.space_age.subtitle",
     "sound": "minecraft:ui.toast.challenge_complete", "particle": "minecraft:totem_of_undying",
-    "progress_nudges": true, "hud_bar": true
+    "progress_nudges": true, "hud_bar": false
    }
   },
   {
@@ -249,7 +249,7 @@
    "unlock": {
     "toast": true, "show_title": true, "subtitle_key": "modpack.stage.quantum_age.subtitle",
     "sound": "minecraft:ui.toast.challenge_complete", "particle": "minecraft:totem_of_undying",
-    "progress_nudges": true, "hud_bar": true
+    "progress_nudges": true, "hud_bar": false
    }
   }
  ],
@@ -304,7 +304,7 @@
    "frame": "goal",
    "reveal": "dependencies",
    "sort_order": 40,
-   "trigger": { "conditions": [{ "type": "custom_counter", "counter": "modpack:drg_gun", "count": 1 }] }
+   "trigger": { "conditions": [{ "type": "custom_counter", "counter": "modpack:eos_gun", "count": 1 }] }
   },
   {
    "id": "expedition_armament",

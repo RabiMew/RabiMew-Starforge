@@ -75,12 +75,12 @@ for (const entId of Object.keys(SF_SPAWNS)) {
 }
 
 // ---- TaCZ gun-namespace detection via GunId NBT ----
-const SF_GUN_EV = [{"counter":"modpack:drg_gun","advancement":"drg_arsenal","hint":"modpack.message.drg_gun_tip","once":true,"flag":"sf_ev_drg_gun"}];
+const SF_GUN_EV = [{"counter":"modpack:eos_gun","advancement":"eos_arsenal","hint":"modpack.message.eos_gun_tip","once":true,"flag":"sf_ev_eos_gun"}];
 PlayerEvents.inventoryChanged('tacz:modern_kinetic_gun', (e) => {
   try {
     const nbt = e.item.nbt;
     if (!nbt || !nbt.GunId) return;
-    if (!String(nbt.GunId).startsWith("deep_rock_galactic:")) return;
+    if (!String(nbt.GunId).startsWith("eos:")) return;
     sfEmit(e.player, SF_GUN_EV);
   } catch (err) {}
 });

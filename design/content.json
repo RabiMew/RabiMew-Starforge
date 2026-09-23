@@ -1460,10 +1460,10 @@
    ]
   },
   {
-   "id": "drg_arsenal",
+   "id": "eos_arsenal",
    "route": "military",
-   "title_key": "modpack.quest.drg_arsenal.title",
-   "description_key": "modpack.quest.drg_arsenal.description",
+   "title_key": "modpack.quest.eos_arsenal.title",
+   "description_key": "modpack.quest.eos_arsenal.description",
    "suggested_stage": "atomic_age",
    "depends_on": [],
    "grants_stage": false,
@@ -1474,7 +1474,7 @@
    },
    "icon": "tacz_gun",
    "manual_refs": [
-    "drg_arsenal"
+    "eos_arsenal"
    ],
    "rewards": [
     {
@@ -1508,7 +1508,7 @@
    },
    "icon": "tacz_gun",
    "manual_refs": [
-    "drg_arsenal"
+    "eos_arsenal"
    ],
    "rewards": [
     {
@@ -1518,7 +1518,7 @@
     }
    ],
    "deps": [
-    "drg_arsenal"
+    "eos_arsenal"
    ],
    "optional": true
   },
@@ -3099,10 +3099,10 @@
    "grants_stage": false,
    "consumes_items": false,
    "reward_policy": "optional_non_progression",
-   "id": "drg_challenge",
+   "id": "eos_challenge",
    "route": "military",
-   "title_key": "modpack.quest.drg_challenge.title",
-   "description_key": "modpack.quest.drg_challenge.description",
+   "title_key": "modpack.quest.eos_challenge.title",
+   "description_key": "modpack.quest.eos_challenge.description",
    "suggested_stage": "atomic_age",
    "optional": true,
    "icon": "tacz_gun",
@@ -3110,7 +3110,7 @@
     "type": "checkmark"
    },
    "manual_refs": [
-    "drg_arsenal"
+    "eos_arsenal"
    ],
    "rewards": [
     {
@@ -3120,7 +3120,7 @@
     }
    ],
    "deps": [
-    "drg_arsenal"
+    "eos_arsenal"
    ]
   },
   {
@@ -4370,8 +4370,8 @@
    "text_key": "modpack.message.tacz_turret_tip"
   },
   {
-   "id": "drg_gun_tip",
-   "text_key": "modpack.message.drg_gun_tip"
+   "id": "eos_gun_tip",
+   "text_key": "modpack.message.eos_gun_tip"
   }
  ],
  "gui": [
@@ -4606,9 +4606,9 @@
    "group": "defense"
   },
   {
-   "id": "drg_arsenal",
-   "text_key": "modpack.tutorial.drg_arsenal",
-   "title_key": "modpack.tutorial.drg_arsenal.title",
+   "id": "eos_arsenal",
+   "text_key": "modpack.tutorial.eos_arsenal",
+   "title_key": "modpack.tutorial.eos_arsenal.title",
    "group": "defense"
   },
   {

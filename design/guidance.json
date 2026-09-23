@@ -37,12 +37,12 @@
    "via": { "block_tag": "cookingforblockheads:kitchen_connectors" }
   },
   {
-   "id": "drg_gun",
+   "id": "eos_gun",
    "once": true,
-   "hint_key": "modpack.message.drg_gun_tip",
-   "counter": "modpack:drg_gun",
-   "advancement": "drg_arsenal",
-   "via": { "inventory_item": "tacz_gun", "gun_ns": "deep_rock_galactic" }
+   "hint_key": "modpack.message.eos_gun_tip",
+   "counter": "modpack:eos_gun",
+   "advancement": "eos_arsenal",
+   "via": { "inventory_item": "tacz_gun", "gun_ns": "eos" }
   },
   {
    "id": "tacz_turret",

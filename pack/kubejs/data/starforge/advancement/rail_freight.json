@@ -9,6 +9,7 @@
   "description": {
    "translate": "modpack.advancement.rail_freight.description"
   },
+  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "task",
   "show_toast": true,
   "announce_to_chat": false,

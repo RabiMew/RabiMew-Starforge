@@ -47,7 +47,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 | --- | --- |
 | 进度与生存 `progression` | team_progression · earth_alternative · storage_progression · backpack_kit · kitchen_automation · advanced_storage · expedition_backpack · cfb_kitchen · applied_kitchen · client_qol |
 | 能源·石油·网络 `energy` | power_priority · unified_oil · ae2_bootstrap |
-| 怪潮与防御 `defense` | horde_engineers · colony_security · colony_defense · defense_layers · turret_resupply · drg_arsenal · guard_weapons · tacz_addon_basics · low_gravity_combat |
+| 怪潮与防御 `defense` | horde_engineers · colony_security · colony_defense · defense_layers · turret_resupply · eos_arsenal · guard_weapons · tacz_addon_basics · low_gravity_combat |
 | 殖民人口与驻军 `colony` | lightweight_colony · colony_residents · colony_guard · colony_armory · colony_ammunition · colony_supply · planetary_garrison · livable_base |
 | 岗位与维护 `workforce` | colony_workforce · job_assignment · maintenance_rewards |
 | 铁路物流 `rail` | rail_logistics · starport_rail · railcraft_advanced |
@@ -89,7 +89,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 | ammo_line | T2 | item ×2 + item ×32 | tacz_ammo_box + ie_bullet_casull |
 | ammo_logistics | T3 | checkmark | — |
 | tacz_turret | T4 | item ×1 | tt_turret |
-| drg_arsenal | T5 | checkmark | — |
+| eos_arsenal | T5 | checkmark | — |
 | swarm_suppression | T5 | checkmark | — |
 | expedition_firepower | T6 | checkmark | — |
 | munitions_supply | T3 | checkmark | —（自动化章） |

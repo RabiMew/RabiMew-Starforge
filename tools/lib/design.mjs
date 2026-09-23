@@ -25,6 +25,7 @@ export function loadDesign(root) {
     abilities: progression.abilities ?? [],
     categories: progression.categories ?? [],
     advancements: advancements.advancements ?? [],
+    advancementBackground: advancements.default_background ?? null,
     guidance: guidance ?? { events: [] },
     sm,
     locks,

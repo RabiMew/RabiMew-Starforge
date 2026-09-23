@@ -4,7 +4,7 @@ version = 4
 [stage]
 id = "modpack:heavy_firepower"
 display_name = "重型火力 / Heavy Firepower"
-description = "深岩银河级重火力武器投入使用。 / Deep Rock Galactic-class heavy weapons are fielded."
+description = "EOS 实验室级重火力武器投入使用。 / EOS lab-class heavy weapons are fielded."
 icon = "tacz:modern_kinetic_gun"
 dependencies = ["modpack:horde_defense", "modpack:atomic_age"]
 dependency_mode = "all"

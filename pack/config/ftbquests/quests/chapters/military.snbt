@@ -301,7 +301,7 @@
 			icon: {
 				id: "tacz:modern_kinetic_gun"
 			}
-			id: "123A25BDCDB14B3F"
+			id: "39599EDCD459B7B2"
 			x: 16d
 			y: 7.5d
 			dependencies: [
@@ -310,7 +310,7 @@
 			optional: true
 			rewards: [
 				{
-					id: "63986C32CF983E3F"
+					id: "648C4BD30D49FF11"
 					type: "item"
 					item: {
 						count: 16
@@ -319,7 +319,7 @@
 					team_reward: false
 				}
 				{
-					id: "5F3D1FE4E413D147"
+					id: "668600841BA3FE0F"
 					type: "item"
 					item: {
 						count: 16
@@ -330,7 +330,7 @@
 			]
 			tasks: [
 				{
-					id: "22F875424AC95991"
+					id: "69DC5E577D71B633"
 					type: "checkmark"
 				}
 			]
@@ -343,7 +343,7 @@
 			x: 19.2d
 			y: 9d
 			dependencies: [
-				"123A25BDCDB14B3F"
+				"39599EDCD459B7B2"
 			]
 			optional: true
 			rewards: [
@@ -533,16 +533,16 @@
 			icon: {
 				id: "tacz:modern_kinetic_gun"
 			}
-			id: "7E0B5A7A51829406"
+			id: "6DD56A7E6F10A880"
 			x: 19.2d
 			y: 13.5d
 			dependencies: [
-				"123A25BDCDB14B3F"
+				"39599EDCD459B7B2"
 			]
 			optional: true
 			rewards: [
 				{
-					id: "54E25271DF184455"
+					id: "147D051DF3DD5A2C"
 					type: "item"
 					item: {
 						count: 1
@@ -553,7 +553,7 @@
 			]
 			tasks: [
 				{
-					id: "2CB91E44E9A616B8"
+					id: "3ED6AEDB8205BFD3"
 					type: "checkmark"
 				}
 			]

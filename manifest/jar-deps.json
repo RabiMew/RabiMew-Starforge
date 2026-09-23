@@ -2930,6 +2930,34 @@
         "versionRange": "[1.6,)",
         "ordering": "AFTER",
         "side": "BOTH"
+      },
+      {
+        "modId": "taczturrets",
+        "type": "optional",
+        "versionRange": "[2.0,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "guardvillagerstaczsupport",
+        "type": "optional",
+        "versionRange": "[1.0,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "guardvillagers",
+        "type": "optional",
+        "versionRange": "[2.4,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "progressivestages",
+        "type": "optional",
+        "versionRange": "[3.0,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
       }
     ]
   },

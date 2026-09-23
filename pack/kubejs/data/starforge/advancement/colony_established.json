@@ -9,6 +9,7 @@
   "description": {
    "translate": "modpack.advancement.colony_established.description"
   },
+  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "goal",
   "show_toast": true,
   "announce_to_chat": false,

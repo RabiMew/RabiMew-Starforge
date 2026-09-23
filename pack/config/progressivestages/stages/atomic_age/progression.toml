@@ -16,4 +16,3 @@ subtitle = "地球工业的顶峰，下一步是离开摇篮。 / The peak of Ea
 sound = "minecraft:ui.toast.challenge_complete"
 particle = "minecraft:totem_of_undying"
 progress_nudges = true
-hud_bar = true

@@ -9,6 +9,7 @@
   "description": {
    "translate": "modpack.advancement.quantum_age.description"
   },
+  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "challenge",
   "show_toast": true,
   "announce_to_chat": false,

@@ -1,6 +1,6 @@
 // Starforge recipe layer — implements SF-01..SF-30 against real registry ids.
 // Semantic names resolve via global.SM (generated from design/semantic-map.json).
-// TaCZ gun/ammo changes (SF-31..33) live in the TaCZ gun pack override, not here.
+// TaCZ gun-pack re-costing lives below as SF-16 (EOS – Dawn Goddess Lab).
 ServerEvents.recipes((e) => {
   const M = global.SM.items;
   const missing = (k) => { throw new Error(`semantic id missing: ${k}`) };
@@ -140,113 +140,141 @@ ServerEvents.recipes((e) => {
     L: i('ic2_lead_plate'), S: 'immersiveengineering:component_steel', A: i('ic2_advanced_circuit')
   });
 
-  // ---------- SF-16: Deep Rock Galactic gun pack — industrial re-costing ----------
-  // The upgraded 1.21.1 pack ships flat vanilla-ish recipes (gold/diamond
-  // blocks + redstone). Guns and ammo all share tacz:* item ids, so
+  // ---------- SF-16: EOS – Dawn Goddess Lab gun pack — industrial re-costing ----------
+  // The pack ships flat vanilla-ish recipes (iron/copper + coals + netherite)
+  // behind legacy forge: tags. Guns and ammo all share tacz:* item ids, so
   // ProgressiveStages cannot lock them — the gate is the stage-locked
   // industrial material inside each recipe instead:
-  //   T3 (information_age): ae2:engineering_processor  — DRG rifles/SMGs
-  //   T4 (heavy_industry_age): immersiveengineering:heavy_engineering — shotguns/specials
-  //   T5 (atomic_age): ic2cre:containment_reactor_plating + singularity/anomaly — AoE/heavy
-  // Dropped upstream content (unavailable deps — see docs/compatibility.md):
-  //   ani_pro: ammo pixel_gun:pixel_ammo_sniper (mod not shipped)
-  //   pickaxe: melee weapon built on lrtactical (mod not shipped)
-  //   deep_rock_galactic:supply block (its block data requires lrtactical)
+  //   T3 (information_age): ae2:engineering_processor — gauss firearms (57x24/68x57/arrow)
+  //   T4 (heavy_industry_age): immersiveengineering:heavy_engineering — heavy gauss / 85x76 / 308
+  //   T5 (atomic_age): ic2cre:containment_reactor_plating + singularity/anomaly — ELP plasma / exotic
+  // Recipe ids stay in the eos:* namespace so the pack's own recipe_filters
+  // route them to the eos:eos_printer workbench (its whitelist is ^eos:.*$;
+  // the default smith table blacklist excludes eos: recipes).
+  // eos:attachments/* stays upstream (loads via pack upgrader), as do the two
+  // eos_old: chasing_light display-variant conversions. eos:eoslab_12g has an
+  // ammo index but no upstream recipe — left uncraftable.
   for (const rid of [
-    'gun/gk2', 'gun/m1000', 'gun/cross', 'gun/zkf', 'gun/subata', 'gun/voltaic',
-    'gun/smart', 'gun/smart_1', 'gun/bulldog', 'gun/btr7', 'gun/drak_25',
-    'gun/pump', 'gun/short', 'gun/impact', 'gun/lover', 'gun/doreda',
-    'gun/minigun', 'gun/crspr', 'gun/rocket', 'gun/40mm', 'gun/thunder',
-    'gun/hook', 'gun/pickaxe',
-    'ammo/drg_generic_ammo', 'ammo/drg_big_ammo', 'ammo/drg_grenade_ammo',
-    'ammo/drg_shortgun_ammo', 'ammo/impact_ammo', 'ammo/lover_ammo',
-    'ammo/arrow', 'ammo/hook', 'melee/pickaxe', 'supply'
-  ]) e.remove({ id: 'deep_rock_galactic:' + rid });
+    'gun/chasing_light', 'gun/clover_cross', 'gun/elp_13_t3', 'gun/elp_13_t3x2',
+    'gun/elp_34_t3', 'gun/elp_34c_t3', 'gun/elp_45_t3', 'gun/elp_47_t3',
+    'gun/elp_52_t3', 'gun/elp_72_t3', 'gun/eos_achilles', 'gun/eos_ar68_t2',
+    'gun/eos_chaos', 'gun/eos_helenas_nail', 'gun/eos_hg57_t2',
+    'gun/eos_hg57_t2_smgmod', 'gun/eos_m_57cw_t2', 'gun/eos_m_57cw_t2x2',
+    'gun/eos_mg85_t2', 'gun/eos_nekomata', 'gun/eos_qgz_86_t2',
+    'gun/eos_riku_t2', 'gun/eos_sr85_t2', 'gun/wa2000', 'gun/wa2000_snake_kiss',
+    'ammo/28x300', 'ammo/57x24', 'ammo/68x57', 'ammo/85x76', 'ammo/alloy',
+    'ammo/arrow', 'ammo/battery',
+    'blocks/eos_printer', 'blocks/old_conversion'
+  ]) e.remove({ id: 'eos:' + rid });
 
-  function drgMat(item, count) {
+  function eosMat(item, count) {
     return { item: item.startsWith('#') ? { tag: item.slice(1) } : { item: item }, count: count };
   }
-  function drgGun(id, group, mats) {
-    e.custom({
-      type: 'tacz:gun_smith_table_crafting',
-      materials: mats.map((m) => drgMat(m[0], m[1])),
-      result: { type: 'gun', group: group, id: id }
-    });
+  // .id() pins the recipe into the eos: namespace — required for the pack's
+  // recipe_filters to route it to the EOS printer. If the id wrapper is ever
+  // unavailable the recipe still registers (kubejs:* id, shown on the default
+  // smith table instead of the printer).
+  function withId(recipe, id) {
+    try { recipe.id(id); } catch (err) { /* fall back to kubejs:* ids */ }
+    return recipe;
   }
-  function drgAmmo(id, mats, count) {
-    e.custom({
+  function eosGun(id, mats) {
+    return withId(e.custom({
       type: 'tacz:gun_smith_table_crafting',
-      materials: mats.map((m) => drgMat(m[0], m[1])),
+      materials: mats.map((m) => eosMat(m[0], m[1])),
+      result: { type: 'gun', id: id }
+    }), 'eos:gun/' + id.split(':')[1]);
+  }
+  function eosAmmo(id, mats, count) {
+    return withId(e.custom({
+      type: 'tacz:gun_smith_table_crafting',
+      materials: mats.map((m) => eosMat(m[0], m[1])),
       result: { type: 'ammo', id: id, count: count }
-    });
+    }), 'eos:ammo/' + id.split(':')[1]);
   }
 
-  // T3: conventional DRG rifles / SMGs / marksman (generic ammo family)
-  const DRG_T3 = [['#c:plates/steel', 4], ['ae2:engineering_processor', 1],
+  // T3: conventional gauss firearms (57x24 pistols/SMGs, 68x57 rifles, arrows)
+  const EOS_T3 = [['#c:plates/steel', 4], ['ae2:engineering_processor', 1],
     ['immersiveengineering:component_steel', 2], ['#c:dusts/redstone', 16]];
-  const DRG_T4 = [['#c:plates/steel', 6], ['immersiveengineering:heavy_engineering', 1],
+  const EOS_T4 = [['#c:plates/steel', 6], ['immersiveengineering:heavy_engineering', 1],
     ['immersiveengineering:component_steel', 2], ['ic2cre:circuit', 2], ['#c:dusts/redstone', 24]];
-  const DRG_GUNS = [
-    // T3 — conventional rifles / SMGs / marksman (generic ammo family)
-    ['deep_rock_galactic:gk2', 'drg:scout', DRG_T3],
-    ['deep_rock_galactic:m1000', 'drg:scout', DRG_T3],
-    ['deep_rock_galactic:cross', 'drg:scout', DRG_T3],
-    ['deep_rock_galactic:zkf', 'drg:scout', DRG_T3],
-    ['deep_rock_galactic:subata', 'drg:driller', DRG_T3],
-    ['deep_rock_galactic:voltaic', 'drg:engineer', DRG_T3],
-    ['deep_rock_galactic:smart', 'drg:engineer', DRG_T3],
-    ['deep_rock_galactic:smart_1', 'drg:engineer', DRG_T3],
-    ['deep_rock_galactic:bulldog', 'drg:gunner', DRG_T3],
-    // T4 — squad support / shotguns / heavy sidearms
-    ['deep_rock_galactic:btr7', 'drg:gunner', DRG_T4],
-    ['deep_rock_galactic:drak_25', 'drg:scout', DRG_T4],
-    ['deep_rock_galactic:pump', 'drg:engineer', DRG_T4],
-    ['deep_rock_galactic:short', 'drg:scout', DRG_T4],
-    ['deep_rock_galactic:impact', 'drg:driller', DRG_T4.concat([['#c:storage_blocks/iron', 1]])],
-    ['deep_rock_galactic:lover', 'drg:else', DRG_T4],
-    ['deep_rock_galactic:doreda', 'drg:else', DRG_T4],
-    // grappling hook — traversal utility, T4
-    ['deep_rock_galactic:hook', 'drg:scout', [['#c:plates/steel', 2],
-      ['immersiveengineering:component_steel', 1], ['ic2cre:circuit', 1], ['#c:dusts/redstone', 8]]],
-    // T5 — swarm annihilation / AoE: containment plating + singularity / anomaly core
-    ['deep_rock_galactic:minigun', 'drg:gunner', [['#c:plates/steel', 8],
-      ['ic2cre:containment_reactor_plating', 2], ['modpack:anomaly_analysis', 1],
-      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
-    ['deep_rock_galactic:crspr', 'drg:driller', [['#c:plates/steel', 8],
-      ['ic2cre:containment_reactor_plating', 2], ['ae2:singularity', 1],
-      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
-    ['deep_rock_galactic:rocket', 'drg:gunner', [['#c:plates/steel', 8],
-      ['ic2cre:containment_reactor_plating', 2], ['ae2:singularity', 1],
-      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
-    ['deep_rock_galactic:40mm', 'drg:engineer', [['#c:plates/steel', 8],
-      ['ic2cre:containment_reactor_plating', 2], ['ae2:singularity', 1],
-      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]],
-    ['deep_rock_galactic:thunder', 'drg:gunner', [['#c:plates/steel', 8],
-      ['ic2cre:containment_reactor_plating', 2], ['modpack:anomaly_analysis', 1],
-      ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]]]
+  const EOS_T5 = (rare) => [['#c:plates/steel', 8],
+    ['ic2cre:containment_reactor_plating', 2], [rare, 1],
+    ['immersiveengineering:component_electronic', 2], ['#c:dusts/redstone', 32]];
+  const EOS_GUNS = [
+    // T3 — gauss firearms + crossbow (57x24 / 68x57 / arrow)
+    ['eos:eos_hg57_t2', EOS_T3],
+    ['eos:eos_hg57_t2_smgmod', EOS_T3],
+    ['eos:eos_m_57cw_t2', EOS_T3],
+    ['eos:eos_m_57cw_t2x2', EOS_T3],
+    ['eos:eos_ar68_t2', EOS_T3],
+    ['eos:eos_qgz_86_t2', EOS_T3],
+    ['eos:chasing_light', EOS_T3],
+    ['eos:eos_riku_t2', EOS_T3],
+    // T4 — heavy gauss / marksman / specials (85x76 / tacz:308)
+    ['eos:eos_mg85_t2', EOS_T4],
+    ['eos:eos_sr85_t2', EOS_T4],
+    ['eos:eos_nekomata', EOS_T4],
+    ['eos:eos_achilles', EOS_T4],
+    ['eos:clover_cross', EOS_T4],
+    ['eos:wa2000', EOS_T4],
+    ['eos:wa2000_snake_kiss', EOS_T4],
+    // T5 — ELP plasma family + exotic ordnance (battery / 28x300)
+    ['eos:elp_13_t3', EOS_T5('ae2:singularity')],
+    ['eos:elp_13_t3x2', EOS_T5('ae2:singularity')],
+    ['eos:elp_34_t3', EOS_T5('ae2:singularity')],
+    ['eos:elp_34c_t3', EOS_T5('ae2:singularity')],
+    ['eos:elp_45_t3', EOS_T5('ae2:singularity')],
+    ['eos:elp_47_t3', EOS_T5('ae2:singularity')],
+    ['eos:elp_52_t3', EOS_T5('modpack:anomaly_analysis')],
+    ['eos:elp_72_t3', EOS_T5('modpack:anomaly_analysis')],
+    ['eos:eos_chaos', EOS_T5('ae2:singularity')],
+    ['eos:eos_helenas_nail', EOS_T5('modpack:anomaly_analysis')]
   ];
-  for (let gi = 0; gi < DRG_GUNS.length; gi++) {
-    drgGun(DRG_GUNS[gi][0], DRG_GUNS[gi][1], DRG_GUNS[gi][2]);
+  for (let gi = 0; gi < EOS_GUNS.length; gi++) {
+    eosGun(EOS_GUNS[gi][0], EOS_GUNS[gi][1]);
   }
 
-  // DRG ammunition — same industrial material families as vanilla TaCZ ammo
+  // EOS ammunition — same industrial material families as vanilla TaCZ ammo
   // (copper/lead + gunpowder baseline), scaled to each weapon's throughput.
-  drgAmmo('deep_rock_galactic:drg_generic_ammo',
-    [['#c:ingots/lead', 8], ['#c:gunpowders', 6], ['#c:dusts/redstone', 8]], 48);
-  drgAmmo('deep_rock_galactic:drg_big_ammo',
-    [['#c:ingots/steel', 4], ['#c:gunpowders', 10], ['#c:dusts/redstone', 16]], 96);
-  drgAmmo('deep_rock_galactic:drg_grenade_ammo',
-    [['#c:ingots/steel', 2], ['minecraft:tnt', 1], ['#c:dusts/redstone', 8]], 8);
-  drgAmmo('deep_rock_galactic:drg_shortgun_ammo',
-    [['#c:ingots/lead', 6], ['#c:gunpowders', 8], ['#c:ingots/copper', 4]], 24);
-  drgAmmo('deep_rock_galactic:impact_ammo',
-    [['#c:storage_blocks/iron', 1], ['#c:gunpowders', 8], ['#c:ingots/steel', 2]], 4);
-  drgAmmo('deep_rock_galactic:lover_ammo',
-    [['#c:ingots/steel', 2], ['#c:gunpowders', 6], ['#c:gems/diamond', 1]], 4);
-  drgAmmo('deep_rock_galactic:arrow',
-    [['minecraft:iron_ingot', 2], ['minecraft:stick', 2], ['minecraft:feather', 2]], 8);
-  drgAmmo('deep_rock_galactic:hook',
-    [['#c:ingots/iron', 4], ['#c:strings', 8]], 1);
+  // Yield counts follow the upstream pack (57x24×50, 68x57×45, 85x76×60, …).
+  eosAmmo('eos:57x24',
+    [['#c:ingots/lead', 8], ['#c:gunpowders', 6], ['#c:dusts/redstone', 8]], 50);
+  eosAmmo('eos:68x57',
+    [['#c:ingots/lead', 10], ['#c:gunpowders', 8], ['#c:dusts/redstone', 12]], 45);
+  eosAmmo('eos:85x76',
+    [['#c:ingots/steel', 4], ['#c:gunpowders', 10], ['#c:dusts/redstone', 16]], 60);
+  eosAmmo('eos:28x300',
+    [['#c:plates/steel', 4], ['#c:ingots/lead', 16], ['#c:dusts/redstone', 16]], 6);
+  eosAmmo('eos:battery',
+    [['#c:ingots/copper', 8], ['#c:dusts/redstone', 24], ['ic2cre:energy_crystal', 1]], 2);
+  eosAmmo('eos:arrow',
+    [['#c:ingots/iron', 4], ['minecraft:stick', 2], ['minecraft:feather', 2]], 60);
+  eosAmmo('eos:alloy',
+    [['#c:ingots/netherite', 2], ['minecraft:nether_star', 1]], 10);
+
+  // EOS workbenches — upstream recipes use forge: tags + the pre-1.21 'nbt'
+  // result syntax; re-added here in current form (c: tags + components).
+  withId(e.custom({
+    type: 'minecraft:crafting_shaped',
+    pattern: ['ACA', 'DBD'],
+    key: {
+      A: { item: 'minecraft:polished_deepslate' },
+      B: { tag: 'c:ingots/iron' },
+      C: { item: 'minecraft:yellow_stained_glass' },
+      D: { tag: 'c:ingots/copper' }
+    },
+    result: { id: 'tacz:workbench_b', components: { 'minecraft:custom_data': { BlockId: 'eos:eos_printer' } } }
+  }), 'eos:blocks/eos_printer');
+  withId(e.custom({
+    type: 'minecraft:crafting_shaped',
+    pattern: ['BD', 'DB'],
+    key: {
+      B: { tag: 'c:ingots/iron' },
+      D: { tag: 'c:ingots/copper' }
+    },
+    result: { id: 'tacz:workbench_a', components: { 'minecraft:custom_data': { BlockId: 'eos_old:old_conversion' } } }
+  }), 'eos:blocks/old_conversion');
 
   // ---------- SF-17 T5: space_control_core (T6 evidence) ----------
   // "aerospace alloy" maps to ad_astra:steel_plate (Earth-producible via compressor).

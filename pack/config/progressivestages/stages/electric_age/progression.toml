@@ -12,4 +12,3 @@ count = 1
 [unlock]
 toast = "电气时代 / Electrical Age"
 progress_nudges = true
-hud_bar = true

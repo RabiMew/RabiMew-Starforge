@@ -12,4 +12,3 @@ count = 1
 [unlock]
 toast = "信息时代 / Information Age"
 progress_nudges = true
-hud_bar = true

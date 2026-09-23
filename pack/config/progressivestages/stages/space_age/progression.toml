@@ -16,4 +16,3 @@ subtitle = "工业文明的边界不再是地球。 / The bounds of industry no 
 sound = "minecraft:ui.toast.challenge_complete"
 particle = "minecraft:totem_of_undying"
 progress_nudges = true
-hud_bar = true

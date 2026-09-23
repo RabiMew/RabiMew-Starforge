@@ -36989,18 +36989,6 @@
 		"ingredients": []
 	},
 	{
-		"id": "almostunified:deep_rock_galactic",
-		"type": "almostunified:client_recipe_tracker",
-		"serializer": "almostunified:client_recipe_tracker",
-		"json": {
-			"namespace": "deep_rock_galactic",
-			"recipes": [
-				"1$supply"
-			]
-		},
-		"ingredients": []
-	},
-	{
 		"id": "almostunified:endermanoverhaul",
 		"type": "almostunified:client_recipe_tracker",
 		"serializer": "almostunified:client_recipe_tracker",
@@ -40711,8 +40699,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/diamond"
@@ -40744,7 +40732,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40773,7 +40761,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40802,8 +40790,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40838,8 +40826,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40876,8 +40864,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40914,8 +40902,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40952,8 +40940,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -40990,8 +40978,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41028,8 +41016,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41066,8 +41054,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41104,8 +41092,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41142,8 +41130,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41180,8 +41168,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41218,8 +41206,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41256,8 +41244,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41294,8 +41282,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41332,8 +41320,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41370,8 +41358,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41408,8 +41396,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41446,8 +41434,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41484,8 +41472,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41522,7 +41510,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41551,7 +41539,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41580,8 +41568,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/gate",
@@ -41616,8 +41604,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:gate_copier"
@@ -41648,8 +41636,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/gold"
@@ -41681,8 +41669,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/iron"
@@ -41714,8 +41702,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41748,8 +41736,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41782,8 +41770,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41816,8 +41804,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41850,8 +41838,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41884,8 +41872,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41918,8 +41906,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41952,8 +41940,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -41986,8 +41974,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42020,8 +42008,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42054,8 +42042,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42088,8 +42076,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42122,8 +42110,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42156,8 +42144,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42190,8 +42178,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42224,8 +42212,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42258,8 +42246,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42292,7 +42280,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42319,7 +42307,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42346,7 +42334,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42373,7 +42361,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42400,7 +42388,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42427,7 +42415,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42454,7 +42442,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42481,7 +42469,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42508,7 +42496,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42535,7 +42523,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42562,7 +42550,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42589,7 +42577,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42616,7 +42604,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42643,7 +42631,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42670,7 +42658,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42697,7 +42685,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42724,7 +42712,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/lens",
@@ -42751,7 +42739,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/light_sensor"
@@ -42776,8 +42764,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				2.0,
-				1.0
+				2,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/pulsar"
@@ -42811,7 +42799,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:plug/timer"
@@ -42836,8 +42824,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/quartz"
@@ -42869,7 +42857,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_chipset/red"
@@ -42895,7 +42883,7 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0
+				1
 			],
 			"result": {
 				"item": "buildcraftsilicon:redstone_crystal"
@@ -42921,8 +42909,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/black",
@@ -42955,8 +42943,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/blue",
@@ -42989,8 +42977,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/brown",
@@ -43023,8 +43011,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/cyan",
@@ -43057,8 +43045,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/gray",
@@ -43091,8 +43079,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/green",
@@ -43125,8 +43113,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/light_blue",
@@ -43159,8 +43147,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/light_gray",
@@ -43193,8 +43181,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/lime",
@@ -43227,8 +43215,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/magenta",
@@ -43261,8 +43249,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/orange",
@@ -43295,8 +43283,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/pink",
@@ -43329,8 +43317,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/purple",
@@ -43363,8 +43351,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/red",
@@ -43397,8 +43385,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/white",
@@ -43431,8 +43419,8 @@
 		"serializer": "buildcraftsilicon:assembly",
 		"json": {
 			"ingredient_counts": [
-				1.0,
-				1.0
+				1,
+				1
 			],
 			"result": {
 				"item": "buildcrafttransport:wire/yellow",
@@ -54567,278 +54555,6 @@
 			}
 		],
 		"result": "creaturefeature:wallpaper x6"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_double",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_explo",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_explo_a",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_fire",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_six",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_special",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_three",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/ammo_mod_three_a",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/extended_mag_1",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/extended_mag_2",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/extended_mag_3",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/muzzle_aim",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/muzzle_break",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/muzzle_dmg",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/muzzle_pickaxe",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_barrage",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_carpet",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_cold",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_conductor",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_cryo",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_fatboy",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_fir",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_gas",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_heat",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_hip",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_lead_storm",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_magnetic",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_mobility",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_mortar",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_overcharge",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_plasma",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_push",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_rj250",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
-	},
-	{
-		"id": "deep_rock_galactic:attachments/stock_toxin",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:attachment x1"
 	},
 	{
 		"id": "easy_villagers:auto_trader",
@@ -117550,7 +117266,7 @@
 		"serializer": "immersiveengineering:turn_and_copy",
 		"json": {
 			"copyNBT": [
-				0.0
+				0
 			],
 			"key": {
 				"c": {
@@ -136421,7 +136137,7 @@
 		"serializer": "immersiveengineering:turn_and_copy",
 		"json": {
 			"copyNBT": [
-				4.0
+				4
 			],
 			"quarter_turn": true,
 			"key": {
@@ -136629,9 +136345,9 @@
 			},
 			"category": "misc",
 			"copyNBT": [
-				1.0,
-				4.0,
-				6.0
+				1,
+				4,
+				6
 			]
 		},
 		"ingredients": [
@@ -251640,7 +251356,7 @@
 					"result": {
 						"item": "minecraft:diamond"
 					},
-					"probability": 5.0E-5
+					"probability": 0.00005
 				}
 			]
 		},
@@ -312686,246 +312402,6 @@
 		"result": "tacz:ammo_box x1"
 	},
 	{
-		"id": "tacz:kjs/181qmejvv61dckw9nd8k02md4",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x4"
-	},
-	{
-		"id": "tacz:kjs/1aimqcqg1g1r7v2kc4i8imfyn",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/1gk6cjuofaimj77ws93ti8ub8",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x8"
-	},
-	{
-		"id": "tacz:kjs/1sh1c71wp4ghxvriwjgg9va5o",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/1svmauapel2n58guu5ptd7r9d",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/218uvtphnwoz9m29ugtdgkt1f",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/2iztzbab0i2bypotbqy2he6cb",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/30ov6ytylcg201en6u809yt7v",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/49q809jm1idxr9ivwdd6ymuym",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/4yovxr3i66z74y7qya2ydoelz",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/5hkr2s2vgnjk5ve3hzphhj908",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/5nnkpt0jvid60ttje5mxi2xkx",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x8"
-	},
-	{
-		"id": "tacz:kjs/5t7qn6rthsxhd402bdgxcj2pa",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x1"
-	},
-	{
-		"id": "tacz:kjs/64vis06o65zex9hbcsv3etodo",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/7tyj1mvsq6nxlys44sz7zfgfj",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/8cygm2uxnr797sqgi6ah62q68",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/8hhth3zk9oznf9qk5ihcgho2q",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x24"
-	},
-	{
-		"id": "tacz:kjs/8j1h7un3emd6juo6tfkdy02ny",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x4"
-	},
-	{
-		"id": "tacz:kjs/95ik1ju05ob220oouyspe20cy",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/98o8s4p1k70hsdjt129dj8lax",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/9lth9412ujs3e6kwxvtxfpmkd",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/9qsnq6cykin13drmfmn42b5jq",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/ae7msris7aei3y526rs7td39n",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/bup9up95i3r647n1swcns7p7v",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x48"
-	},
-	{
-		"id": "tacz:kjs/by9gty3hadn7la3013gbrqk6y",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/cupepczjl78tym0uowofbsjzq",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/cyrhvn1tvxwaih6jfplveyayh",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/dt7feqxyi3l3wi2v9ayufxvvi",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/efvgyw3bnx80bsho9ow3n64vr",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:modern_kinetic_gun x1"
-	},
-	{
-		"id": "tacz:kjs/eqiudrjv6242b7fra44btoqqw",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x96"
-	},
-	{
 		"id": "tacz:misc/blood_strike_1",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
@@ -313069,5 +312545,857 @@
 			}
 		],
 		"result": "tacz:target_minecart x1"
+	},
+	{
+		"id": "eos:gun/chasing_light",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/clover_cross",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_13_t3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_13_t3x2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_34_t3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_34c_t3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_45_t3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_47_t3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_52_t3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/elp_72_t3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_achilles",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_ar68_t2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_chaos",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_helenas_nail",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_hg57_t2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_hg57_t2_smgmod",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_m_57cw_t2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_m_57cw_t2x2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_mg85_t2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_nekomata",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_qgz_86_t2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_riku_t2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/eos_sr85_t2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/wa2000",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:gun/wa2000_snake_kiss",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:ammo/28x300",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x6"
+	},
+	{
+		"id": "eos:ammo/57x24",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x50"
+	},
+	{
+		"id": "eos:ammo/68x57",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x45"
+	},
+	{
+		"id": "eos:ammo/85x76",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x60"
+	},
+	{
+		"id": "eos:ammo/alloy",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x10"
+	},
+	{
+		"id": "eos:ammo/arrow",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x60"
+	},
+	{
+		"id": "eos:ammo/battery",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:ammo x2"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_aa",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_ba",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_da",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_dea",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/bayonet_eternity",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/bayonet_katana",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/bayonet_rebellion_of_kronus",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_bipod_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_bipod_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_5",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_6",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/laser_t2_laser_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/laser_t2_laser_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/laser_t3_laser_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_brake_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_brake_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_brake_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_pistol_brake_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_pistol_silencer_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_silencer_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_silencer_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_elp_52_t3_default",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_eh_72_hud_sight",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_nvk_nxt",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ps18",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_pvq31",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_pvq31_hs04",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts14",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts15",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts16",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts17",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_schmidt_bender_10x56mm",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_css04",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_hs02",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_hs04",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_huds05",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_nvk",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_nxt",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_rs02",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_su_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_uh87",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/stock_eos_tactical",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/stock_t3_core_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos_old:gun/chasing_light_magazine",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos_old:gun/chasing_light_voice",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos:blocks/eos_printer",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"type": "minecraft:crafting_shaped",
+			"pattern": [
+				"ACA",
+				"DBD"
+			],
+			"key": {
+				"A": {
+					"item": "minecraft:polished_deepslate"
+				},
+				"B": {
+					"tag": "c:ingots/iron"
+				},
+				"C": {
+					"item": "minecraft:yellow_stained_glass"
+				},
+				"D": {
+					"tag": "c:ingots/copper"
+				}
+			},
+			"result": {
+				"id": "tacz:workbench_b",
+				"count": 1,
+				"components": {
+					"minecraft:custom_data": {
+						"BlockId": "eos:eos_printer"
+					}
+				}
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:polished_deepslate"
+			},
+			{
+				"item": "minecraft:yellow_stained_glass"
+			},
+			{
+				"item": "minecraft:polished_deepslate"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/copper"
+			}
+		],
+		"result": "tacz:workbench_b x1"
+	},
+	{
+		"id": "eos:blocks/old_conversion",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"type": "minecraft:crafting_shaped",
+			"pattern": [
+				"BD",
+				"DB"
+			],
+			"key": {
+				"B": {
+					"tag": "c:ingots/iron"
+				},
+				"D": {
+					"tag": "c:ingots/copper"
+				}
+			},
+			"result": {
+				"id": "tacz:workbench_a",
+				"count": 1,
+				"components": {
+					"minecraft:custom_data": {
+						"BlockId": "eos_old:old_conversion"
+					}
+				}
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "tacz:workbench_a x1"
+	},
+	{
+		"id": "almostunified:eos",
+		"type": "almostunified:client_recipe_tracker",
+		"serializer": "almostunified:client_recipe_tracker",
+		"json": {
+			"namespace": "eos",
+			"recipes": [
+				"1/eos_printer",
+				"1/old_conversion"
+			]
+		},
+		"ingredients": [],
+		"result": ""
 	}
 ]

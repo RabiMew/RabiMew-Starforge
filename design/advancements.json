@@ -1,6 +1,7 @@
 {
  "schema_version": 1,
  "comment": "Custom Starforge advancements. They RECORD milestones only - they never grant T0-T7 stages. stage_granted advancements are awarded by the generated KubeJS bridge when ProgressiveStages actually grants the stage (never by re-detecting items). inventory_item/kill_entity/changed_dimension use vanilla triggers. custom_event advancements are awarded by the generated guidance script or starforge_compat. reveal_at hides the advancement behind a ProgressiveStages stage via [advancements].locked.",
+ "default_background": "minecraft:textures/block/smooth_basalt.png",
  "advancements": [
   {
    "id": "first_launch",
@@ -133,12 +134,12 @@
    "frame": "goal"
   },
   {
-   "id": "drg_arsenal",
-   "title_key": "modpack.advancement.drg_arsenal.title",
-   "description_key": "modpack.advancement.drg_arsenal.description",
+   "id": "eos_arsenal",
+   "title_key": "modpack.advancement.eos_arsenal.title",
+   "description_key": "modpack.advancement.eos_arsenal.description",
    "icon": "tacz_gun",
    "trigger": "custom_event",
-   "event": "modpack:drg_gun",
+   "event": "modpack:eos_gun",
    "frame": "challenge",
    "reveal_at": "atomic_age"
   },

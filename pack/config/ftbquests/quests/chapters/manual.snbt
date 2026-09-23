@@ -356,7 +356,7 @@
 			icon: {
 				id: "ftbquests:book"
 			}
-			id: "559BD25A382ABD43"
+			id: "60BD0CCFC3034959"
 			x: 12d
 			y: 7.5d
 			shape: "rsquare"
@@ -364,7 +364,7 @@
 			min_width: 360
 			tasks: [
 				{
-					id: "15E64221EB6DCBB4"
+					id: "61F6DF61E73D8C3A"
 					type: "checkmark"
 				}
 			]

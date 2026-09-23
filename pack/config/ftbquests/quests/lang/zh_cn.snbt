@@ -356,18 +356,18 @@
 		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
 	]
 	quest.13E59D0117879820.quest_subtitle: "推荐阶段：重工业时代"
-	quest.123A25BDCDB14B3F.title: "深岩军械库"
-	quest.123A25BDCDB14B3F.quest_desc: [
-		"深岩银河系列武器开放：面向高强度作战的重型科幻军械。火力更高，弹药后勤也更贵——先确认产线跟得上消耗。"
+	quest.39599EDCD459B7B2.title: "EOS 军械库"
+	quest.39599EDCD459B7B2.quest_desc: [
+		"晨曦女神实验室系列武器开放：高斯枪械、ELP 电浆系列与特种军械，面向高强度作战。火力更高，弹药后勤也更贵——先确认产线跟得上消耗。"
 		""
-		"{\"text\":\"» 详见手册：深岩银河武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"深岩银河武器定位\"}}"
+		"{\"text\":\"» 详见手册：晨曦女神实验室武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"60BD0CCFC3034959\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"晨曦女神实验室武器定位\"}}"
 	]
-	quest.123A25BDCDB14B3F.quest_subtitle: "推荐阶段：原子时代"
+	quest.39599EDCD459B7B2.quest_subtitle: "推荐阶段：原子时代"
 	quest.43727C69AA43A83C.title: "虫群压制"
 	quest.43727C69AA43A83C.quest_desc: [
-		"高射速与面杀伤 DRG 武器针对 Arachnids 虫群与大型怪潮。压制力强，但持续开火会快速烧穿弹药库存。"
+		"高射速与面杀伤 EOS 武器针对 Arachnids 虫群与大型怪潮。压制力强，但持续开火会快速烧穿弹药库存。"
 		""
-		"{\"text\":\"» 详见手册：深岩银河武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"深岩银河武器定位\"}}"
+		"{\"text\":\"» 详见手册：晨曦女神实验室武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"60BD0CCFC3034959\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"晨曦女神实验室武器定位\"}}"
 	]
 	quest.43727C69AA43A83C.quest_subtitle: "推荐阶段：原子时代"
 	quest.09D27335218273DA.title: "远征火力"
@@ -406,13 +406,13 @@
 		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
 	]
 	quest.771A802F55780549.quest_subtitle: "推荐阶段：重工业时代"
-	quest.7E0B5A7A51829406.title: "深岩武器挑战"
-	quest.7E0B5A7A51829406.quest_desc: [
-		"以 DRG 重型武器完成一次高危目标猎杀，验证弹药后勤能否跟上火力节奏。"
+	quest.6DD56A7E6F10A880.title: "EOS 武器挑战"
+	quest.6DD56A7E6F10A880.quest_desc: [
+		"以 EOS 重型武器完成一次高危目标猎杀，验证弹药后勤能否跟上火力节奏。"
 		""
-		"{\"text\":\"» 详见手册：深岩银河武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"深岩银河武器定位\"}}"
+		"{\"text\":\"» 详见手册：晨曦女神实验室武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"60BD0CCFC3034959\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"晨曦女神实验室武器定位\"}}"
 	]
-	quest.7E0B5A7A51829406.quest_subtitle: "推荐阶段：原子时代"
+	quest.6DD56A7E6F10A880.quest_subtitle: "推荐阶段：原子时代"
 	chapter.23F04414D2AFEB65.title: "军事防御"
 	chapter.23F04414D2AFEB65.chapter_subtitle: [
 		"规划防线与火力，用充足补给守住生产和生活空间。"
@@ -887,11 +887,11 @@
 		"TACZ 炮塔对玩家点击或掉落物装入一把 TaCZ 枪。弹药从它下方/相邻的箱子取用——这是“最后一公里物流”：管道与 AE2 负责把弹药箱填满，炮塔自己取弹。红黄绿状态灯分别提示换弹/缺弹/就绪。"
 	]
 	quest.2E55B63F9D911701.quest_subtitle: "怪潮与防御"
-	quest.559BD25A382ABD43.title: "深岩银河武器定位"
-	quest.559BD25A382ABD43.quest_desc: [
-		"DRG 武器库是重型科幻层：常规步枪（GK2、Subata）到虫群压制（CRSPR、Drak-25）再到 AoE 重火力（火箭、40mm、雷霆）。它们通过工业中间件分阶段解锁，弹药成本明显高于常规枪械。"
+	quest.60BD0CCFC3034959.title: "晨曦女神实验室武器定位"
+	quest.60BD0CCFC3034959.quest_desc: [
+		"EOS 武器库是重型科幻层：高斯枪族（HG-57、AR-68、MG-85）、ELP 电浆系列（ELP-13 到 ELP-72）与特种军械（艾莲娜之钉、四叶十字、阿喀琉斯）。它们通过工业中间件分阶段解锁，弹药成本明显高于常规枪械。EOS 配方在 EOS 打印台上执行——用磨制深板岩、铁、铜与黄色玻璃合成该工作台。"
 	]
-	quest.559BD25A382ABD43.quest_subtitle: "怪潮与防御"
+	quest.60BD0CCFC3034959.quest_subtitle: "怪潮与防御"
 	quest.725FD622502D6892.title: "警卫武器选择"
 	quest.725FD622502D6892.quest_desc: [
 		"Guard Villagers 可装备 TaCZ 枪械作战。只发可靠的常规武器：步枪、冲锋枪、霰弹枪。不要发爆炸物、AoE 或特殊机制武器——殖民地经不起误伤。"
@@ -904,7 +904,7 @@
 	quest.009B2C59FE3D645E.quest_subtitle: "怪潮与防御"
 	quest.76E5B544AD6A0494.title: "外星远征弹药准备"
 	quest.76E5B544AD6A0494.quest_desc: [
-		"远征前按消耗率备货：常规武器按战斗时长×射速估算，DRG 武器额外准备重装弹药。量子桥接通主库存前，背包与弹药箱就是你的全部后勤。"
+		"远征前按消耗率备货：常规武器按战斗时长×射速估算，EOS 武器额外准备重装弹药。量子桥接通主库存前，背包与弹药箱就是你的全部后勤。"
 	]
 	quest.76E5B544AD6A0494.quest_subtitle: "航天与风险"
 	quest.4D5475C44C18F8A3.title: "各星球驻军"

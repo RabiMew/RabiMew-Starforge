@@ -12,4 +12,3 @@ count = 1
 [unlock]
 toast = "重工业时代 / Heavy Industry Age"
 progress_nudges = true
-hud_bar = true

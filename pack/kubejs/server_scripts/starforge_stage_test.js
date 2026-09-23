@@ -64,7 +64,7 @@ ServerEvents.loaded((e) => {
       ['base_registered', 'base_registered'],
       ['guard_post', 'armed_garrison'],
       ['horde_survived', 'horde_defense'],
-      ['drg_gun', 'heavy_firepower']
+      ['eos_gun', 'heavy_firepower']
     ];
     ProgressiveStages.grantBypass(player, 'modpack:crew_posts');
     ProgressiveStages.grantBypass(player, 'modpack:auto_defense');

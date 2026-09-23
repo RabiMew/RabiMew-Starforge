@@ -356,18 +356,18 @@
 		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
 	]
 	quest.13E59D0117879820.quest_subtitle: "Suggested stage: Heavy Industry Age"
-	quest.123A25BDCDB14B3F.title: "Deep Rock Arsenal"
-	quest.123A25BDCDB14B3F.quest_desc: [
-		"Deep Rock Galactic weapons unlocked: heavy sci-fi ordnance for high-intensity combat. More firepower, much pricier ammo logistics — make sure production can keep up first."
+	quest.39599EDCD459B7B2.title: "EOS Arsenal"
+	quest.39599EDCD459B7B2.quest_desc: [
+		"EOS Dawn Goddess Lab weapons unlocked: gauss rifles, ELP plasma guns and exotic ordnance for high-intensity combat. More firepower, much pricier ammo logistics — make sure production can keep up first."
 		""
-		"{\"text\":\"» See the manual: Deep Rock Galactic Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Deep Rock Galactic Weapons\"}}"
+		"{\"text\":\"» See the manual: EOS Dawn Goddess Lab Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"60BD0CCFC3034959\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"EOS Dawn Goddess Lab Weapons\"}}"
 	]
-	quest.123A25BDCDB14B3F.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.39599EDCD459B7B2.quest_subtitle: "Suggested stage: Atomic Age"
 	quest.43727C69AA43A83C.title: "Swarm Suppression"
 	quest.43727C69AA43A83C.quest_desc: [
-		"High-RPM and area-effect DRG weapons are built for Arachnids swarms and major hordes. Suppression is strong, but sustained fire burns through ammo stockpiles fast."
+		"High-RPM and area-effect EOS weapons are built for Arachnids swarms and major hordes. Suppression is strong, but sustained fire burns through ammo stockpiles fast."
 		""
-		"{\"text\":\"» See the manual: Deep Rock Galactic Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Deep Rock Galactic Weapons\"}}"
+		"{\"text\":\"» See the manual: EOS Dawn Goddess Lab Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"60BD0CCFC3034959\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"EOS Dawn Goddess Lab Weapons\"}}"
 	]
 	quest.43727C69AA43A83C.quest_subtitle: "Suggested stage: Atomic Age"
 	quest.09D27335218273DA.title: "Expedition Firepower"
@@ -406,13 +406,13 @@
 		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
 	]
 	quest.771A802F55780549.quest_subtitle: "Suggested stage: Heavy Industry Age"
-	quest.7E0B5A7A51829406.title: "DRG Weapon Challenge"
-	quest.7E0B5A7A51829406.quest_desc: [
-		"Take a high-risk target down with DRG heavy weapons and prove the ammo line keeps pace."
+	quest.6DD56A7E6F10A880.title: "EOS Weapon Challenge"
+	quest.6DD56A7E6F10A880.quest_desc: [
+		"Take a high-risk target down with EOS heavy weapons and prove the ammo line keeps pace."
 		""
-		"{\"text\":\"» See the manual: Deep Rock Galactic Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Deep Rock Galactic Weapons\"}}"
+		"{\"text\":\"» See the manual: EOS Dawn Goddess Lab Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"60BD0CCFC3034959\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"EOS Dawn Goddess Lab Weapons\"}}"
 	]
-	quest.7E0B5A7A51829406.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.6DD56A7E6F10A880.quest_subtitle: "Suggested stage: Atomic Age"
 	chapter.23F04414D2AFEB65.title: "Base Defense"
 	chapter.23F04414D2AFEB65.chapter_subtitle: [
 		"Plan defenses and firepower, then keep them supplied to protect industry and homes."
@@ -887,11 +887,11 @@
 		"A TACZ turret takes a TaCZ gun by click or dropped item. It draws ammunition from the chest beneath or beside it — the last mile: pipes and AE2 keep the box filled, the turret draws from it. Its lamp shows reloading / empty / ready states."
 	]
 	quest.2E55B63F9D911701.quest_subtitle: "Hordes and Defense"
-	quest.559BD25A382ABD43.title: "Deep Rock Galactic Weapons"
-	quest.559BD25A382ABD43.quest_desc: [
-		"The DRG arsenal is the heavy sci-fi layer: conventional rifles (GK2, Subata), swarm suppression (CRSPR, Drak-25), and AoE heavy fire (Rocket, 40mm, Thunder). They unlock via staged industrial materials and cost far more ammunition than conventional guns."
+	quest.60BD0CCFC3034959.title: "EOS Dawn Goddess Lab Weapons"
+	quest.60BD0CCFC3034959.quest_desc: [
+		"The EOS arsenal is the heavy sci-fi layer: gauss firearms (HG-57, AR-68, MG-85), ELP plasma weapons (ELP-13 to ELP-72), and exotic ordnance (Helena's Nail, Clover Cross, Achilles). They unlock via staged industrial materials and cost far more ammunition than conventional guns. EOS recipes run on the EOS Printer workbench — craft it from polished deepslate, iron, copper and yellow glass."
 	]
-	quest.559BD25A382ABD43.quest_subtitle: "Hordes and Defense"
+	quest.60BD0CCFC3034959.quest_subtitle: "Hordes and Defense"
 	quest.725FD622502D6892.title: "Choosing Guard Weapons"
 	quest.725FD622502D6892.quest_desc: [
 		"Guard Villagers can wield TaCZ guns. Issue only dependable conventional weapons — rifles, SMGs, shotguns. Never hand out explosives, AoE, or exotic-mechanic weapons; the colony cannot afford friendly fire."
@@ -904,7 +904,7 @@
 	quest.009B2C59FE3D645E.quest_subtitle: "Hordes and Defense"
 	quest.76E5B544AD6A0494.title: "Expedition Ammunition Prep"
 	quest.76E5B544AD6A0494.quest_desc: [
-		"Stock up by consumption rate before departing: estimate conventional guns by combat time × fire rate, and pack extra heavy ammo for DRG weapons. Until a quantum bridge links your main stockpile, backpacks and ammo boxes are your entire supply line."
+		"Stock up by consumption rate before departing: estimate conventional guns by combat time × fire rate, and pack extra heavy ammo for EOS weapons. Until a quantum bridge links your main stockpile, backpacks and ammo boxes are your entire supply line."
 	]
 	quest.76E5B544AD6A0494.quest_subtitle: "Spaceflight and Hazards"
 	quest.4D5475C44C18F8A3.title: "Garrisons per Planet"

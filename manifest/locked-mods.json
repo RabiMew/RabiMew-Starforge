@@ -408,7 +408,7 @@
       "license": "LGPL-3.0-or-later",
       "distribution": "modrinth_cdn",
       "dependencies": [],
-      "notes": "MUKSC (LGPL-3.0-or-later)。仅服务于非官方 TaCZ 1.21.1 移植：启动时自动把 tacz/ 目录下的旧格式枪包（如 DRG 枪包的 forge: 标签配方）升级为移植版可读格式。只负责格式兼容，不授予枪包素材再分发权。"
+      "notes": "MUKSC (LGPL-3.0-or-later)。仅服务于非官方 TaCZ 1.21.1 移植：启动时自动把 tacz/ 目录下的旧格式枪包（如 EOS 枪包的 forge: 标签配方）升级为移植版可读格式。只负责格式兼容，不授予枪包素材再分发权。"
     },
     {
       "key": "incontrol",
@@ -2268,23 +2268,23 @@
       "notes": "Default shader (LGPL-3.0-or-later). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. Default-on via pack/config/iris.properties + official profile=low preset (pack/shaderpacks/<file>.txt)."
     },
     {
-      "key": "drg_gun_pack",
-      "name": "[TaCZ] Deep Rock Galactic Gun Pack",
+      "key": "eos_gun_pack",
+      "name": "EOS – Dawn Goddess Lab (TaCZ Gun Pack)",
       "enabled": true,
       "type": "gunpack",
       "side": "both",
-      "version": "1.2.6.1",
-      "filename": "drg_gun_pack_1.2.6.1.zip",
-      "path": "tacz/drg_gun_pack_1.2.6.1.zip",
-      "size": 17143882,
-      "sha256": "07cfe50ae7eb8477e392a7d8ba28e84742e35e87da97eac833b4adf28df7eabf",
-      "sha512": "ce7e3cd059d2a723529b3efaa11ba44aaa0e0e4b2357977bd4f944048394c85d6e9ee9a02f262d53be2f608430f3052106945916e23adba37dcc231483c3aed6",
-      "download_url": "https://mediafilez.forgecdn.net/files/8538/684/%5B%E6%B7%B1%E5%B2%A9%E9%93%B6%E6%B2%B3%5DDeep%20Rock%20Galactic%20GunPack1.2.6.1.zip",
-      "project_page": "https://www.curseforge.com/minecraft/customization/deep-rock-galactic-gun-pack",
+      "version": "1.1.1-hotfix1",
+      "filename": "eos_gun_pack_1.1.1-hotfix1.zip",
+      "path": "tacz/eos_gun_pack_1.1.1-hotfix1.zip",
+      "size": 15677704,
+      "sha256": "0b490c48b3ce16c2dc15f8822fd488901bd04f46c7d647d91cffca758ec71bb3",
+      "sha512": "c8cccec17a0b8158b975634290faca3096f90dcccaa24d9b4f395f2acb1535d08f64e2acf329e7922e833a446bb2a2d00db0bbe8623857410634677c3671acd4",
+      "download_url": "https://mediafilez.forgecdn.net/files/7182/834/%5BTacz1.1.5%2B%5D%20EOS_Dawn%20Goddess%20Lab%20ver1.1.1-hotfix1.zip",
+      "project_page": "https://www.curseforge.com/minecraft/customization/tacz-eoslab-gunpack",
       "license": "All Rights Reserved",
       "distribution": "curseforge_cdn",
-      "notes": "SicarioFG，All Rights Reserved — 只经 CurseForge CDN manifest URL 分发，zip 永不入库或嵌入包内。中后期重型/科幻武器层：落入 tacz/ 目录（双端），由 tacz_pack_upgrader 在启动时升级为 1.21.1 移植版格式。含 24 把枪、8 种弹药与 lua 特殊机制；ani_pro 依赖外部 pixel_gun 弹药，默认不提供。",
-      "sha1": "e9da3837eebb836042f2c33928889652efbfe4e0"
+      "notes": "EOS – Dawn Goddess Lab，All Rights Reserved — 只经 CurseForge CDN manifest URL 分发，zip 永不入库或嵌入包内。中后期重型/科幻武器层：落入 tacz/ 目录（双端），由 tacz_pack_upgrader 在启动时升级为 1.21.1 移植版格式（forge:→c: 标签转换）。含 26 把高斯/电浆/特种枪械（eos 命名空间）、8 种弹药与约 50 种配件；EOS 配方经 recipe_filters 路由到自带工作台 eos:eos_printer（tacz:workbench_b + BlockId），另有 eos_old 换肤转换台。",
+      "sha1": "a2eed264a649841fd559c5dfcbcb83aedd5032ba"
     }
   ]
 }
