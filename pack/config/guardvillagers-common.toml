@@ -87,7 +87,10 @@
 	#This is the range in which the guards will be aggroed to mobs that are attacking villagers. Higher values are more resource intensive, and setting this to zero will disable the goal.
 	# Default: 50.0
 	# Range: -500.0 ~ 500.0
-	Range = 50.0
+	# Starforge: 32 — 50-block villager-protection scans are the second-largest
+	# guard-side CPU cost. Guards are posted defenders (fixed posts + few patrol
+	# points), 32 still covers a full colony courtyard.
+	Range = 32.0
 	#How much health a guard regenerates.
 	# Default: 1.0
 	# Range: -500.0 ~ 500.0
@@ -103,4 +106,6 @@
 	# Range: -9999 ~ 9999
 	"How low of a reputation of a player should have to be instantly aggroed upon by guards and golems?" = -100
 	"Allow guards to naturally patrol villages? This feature can cause lag if a lot of guards are spawned" = false
-	"Allow guards to patrol around villager workstations like golems?" = true
+	# Starforge: false — workstation-wander makes every guard run a village-wide
+	# POI search + path recalc loop. Posted guards use explicit patrol points only.
+	"Allow guards to patrol around villager workstations like golems?" = false

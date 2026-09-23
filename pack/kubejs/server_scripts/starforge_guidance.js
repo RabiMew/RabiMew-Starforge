@@ -89,9 +89,19 @@ PlayerEvents.inventoryChanged('tacz:modern_kinetic_gun', (e) => {
 const SF_ALIEN_SET = new Set(["artifacts:anglers_hat","artifacts:antidote_vessel","artifacts:aqua_dashers","artifacts:bunny_hoppers","artifacts:charm_of_shrinking","artifacts:charm_of_sinking","artifacts:chorus_totem","artifacts:cloud_in_a_bottle","artifacts:cowboy_hat","artifacts:cross_necklace","artifacts:crystal_heart","artifacts:digging_claws","artifacts:eternal_steak","artifacts:everlasting_beef","artifacts:feral_claws","artifacts:fire_gauntlet","artifacts:flame_pendant","artifacts:flippers","artifacts:golden_hook","artifacts:helium_flamingo","artifacts:kitty_slippers","artifacts:lucky_scarf","artifacts:night_vision_goggles","artifacts:novelty_drinking_hat","artifacts:obsidian_skull","artifacts:onion_ring","artifacts:panic_necklace","artifacts:pickaxe_heater","artifacts:plastic_drinking_hat","artifacts:pocket_piston","artifacts:power_glove","artifacts:rooted_boots","artifacts:running_shoes","artifacts:scarf_of_invisibility","artifacts:shock_pendant","artifacts:snorkel","artifacts:snowshoes","artifacts:steadfast_spikes","artifacts:strider_shoes","artifacts:superstitious_hat","artifacts:thorn_pendant","artifacts:umbrella","artifacts:universal_attractor","artifacts:vampiric_glove","artifacts:villager_hat","artifacts:warp_drive","artifacts:whoopee_cushion","artifacts:withered_bracelet"]);
 const SF_ALIEN_EV = [{"advancement":"alien_artifact","hint":"modpack.hint.alien_artifact","once":true,"flag":"sf_ev_alien_artifact"}];
 const SF_ALIEN_DIMS = new Set(["ad_astra:moon","ad_astra:mars","ad_astra:venus","ad_astra:mercury","ad_astra:glacio","pv_asteroid_belt:asteroid_belt"]);
+// event-driven primary path: picking an artifact up inside an alien dimension
+for (const itemId of SF_ALIEN_SET) {
+  PlayerEvents.inventoryChanged(itemId, (e) => {
+    try {
+      if (SF_ALIEN_DIMS.has(String(e.player.level.dimension().location()))) sfEmit(e.player, SF_ALIEN_EV);
+    } catch (err) {}
+  });
+}
+// throttled fallback: covers carrying an artifact into the dimension and any
+// inventory mutations inventoryChanged cannot see (curio equips etc.)
 PlayerEvents.tick((e) => {
   const p = e.player;
-  if (!p || p.server.getTickCount() % 40 !== 0) return;
+  if (!p || (p.server.getTickCount() + p.getId()) % 40 !== 0) return;
   if (SF_ALIEN_EV.every((ev) => p.persistentData.getBoolean(ev.flag))) return;
   try {
     if (!SF_ALIEN_DIMS.has(String(p.level.dimension().location()))) return;
@@ -128,9 +138,12 @@ function sfPollQuests(p) {
   } catch (err) {}
 }
 PlayerEvents.loggedIn((e) => sfPollQuests(e.player));
+// 200-tick fallback poll, staggered per player: FTB Quests' completion event
+// lives on its own architectury bus, not the NeoForge event bus, so KubeJS
+// cannot subscribe to it directly - polling stays, just never in lockstep.
 PlayerEvents.tick((e) => {
   const p = e.player;
-  if (!p || p.server.getTickCount() % 200 !== 0) return;
+  if (!p || (p.server.getTickCount() + p.getId()) % 200 !== 0) return;
   sfPollQuests(p);
 });
 

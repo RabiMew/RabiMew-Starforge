@@ -24,7 +24,10 @@ const VERSION = '0.1.0';
 const JAR_NAME = `starforge-compat-${VERSION}.jar`;
 
 // compile-only mod deps resolved by filename prefix under mods/
-const COMPILE_DEPS = ['The-Hordes'];
+const COMPILE_DEPS = ['The-Hordes', 'tacz-neoforge', 'taczturrets', 'guardvillagerstaczsupport', 'guardvillagers', 'progressivestages', 'geckolib'];
+// nested jarJar deps to extract into compat/build/deps for javac (e.g. SBL is
+// shaded inside the taczturrets jar, so it is never a top-level mods/ file)
+const JARJAR_DEPS = [{ jarPrefix: 'taczturrets', memberPrefix: 'META-INF/jarjar/smartbrainlib-' }];
 
 function* walk(dir) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
@@ -66,10 +69,21 @@ if (!existsSync(patchedMc)) {
 }
 
 const cp = [patchedMc, ...libs.filter((f) => f !== srgJar)];
-for (const prefix of COMPILE_DEPS) {
+const modJar = (prefix) => {
   const hit = readdirSync(modsDir).find((f) => f.startsWith(prefix) && f.endsWith('.jar'));
   if (!hit) throw new Error(`compile dep not found in mods/: ${prefix}`);
-  cp.push(path.join(modsDir, hit));
+  return path.join(modsDir, hit);
+};
+for (const prefix of COMPILE_DEPS) cp.push(modJar(prefix));
+
+// jarJar-embedded compile deps (SBL inside taczturrets): extract then add all
+const depsDir = path.join(outDir, 'deps');
+mkdirSync(depsDir, { recursive: true });
+for (const dep of JARJAR_DEPS) {
+  execFileSync('unzip', ['-o', '-j', '-q', modJar(dep.jarPrefix), `${dep.memberPrefix}*.jar`, '-d', depsDir]);
+}
+for (const f of readdirSync(depsDir)) {
+  if (f.endsWith('.jar')) cp.push(path.join(depsDir, f));
 }
 
 // ---- javac ------------------------------------------------------------------

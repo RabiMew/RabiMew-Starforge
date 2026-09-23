@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.starforge.compat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "HordePathingMixin",
+    "HordeWavePauseMixin",
+    "TaczBlockIdMixin",
+    "TaczGunAttackGoalMixin",
+    "TurretEntityMixin",
+    "ProgressiveStagesTextUtilMixin",
+    "TranslatableContentsMixin"
+  ],
+  "client": [
+    "ProgressiveStagesClientCacheMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

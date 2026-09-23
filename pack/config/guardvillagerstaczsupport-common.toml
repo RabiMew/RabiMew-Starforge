@@ -1,27 +1,37 @@
 #Block radius TACZ guards search for vanilla containers containing compatible ammo.
 # Default: 64
 # Range: 1 ~ 1024
-ammo_search_radius = 64
+# Starforge: 20 — a 64-block Manhattan scan walks ~2.1M positions per guard per
+# search, the largest known per-entity CPU cost in a big colony. 20 keeps the
+# fixed-post + local-supply design intact; starforge_compat additionally feeds a
+# registered-supply-point cache so rediscovery is cheap.
+ammo_search_radius = 20
 #Block radius TACZ guards search for vanilla containers containing food.
 # Default: 64
 # Range: 1 ~ 1024
-food_search_radius = 64
+# Starforge: 20 — same scan-cost argument as ammo_search_radius.
+food_search_radius = 20
 #Ticks between failed ammo container searches.
 # Default: 100
 # Range: 20 ~ 6000
-ammo_search_cooldown_ticks = 100
+# Starforge: 300 — a failed scan is pure loss; triple the backoff.
+ammo_search_cooldown_ticks = 300
 #Ticks between failed food container searches.
 # Default: 100
 # Range: 20 ~ 6000
-food_search_cooldown_ticks = 100
+# Starforge: 400 — food runs are rarer than ammo runs; largest backoff.
+food_search_cooldown_ticks = 400
 #Ticks a TACZ guard will try to reach a selected food/ammo container before temporarily skipping it.
 # Default: 400
 # Range: 20 ~ 6000
-container_reach_timeout_ticks = 400
+# Starforge: 200 — unreachable containers get parked sooner instead of keeping
+# a guard in a long path-retry loop.
+container_reach_timeout_ticks = 200
 #Health threshold below which TACZ guards search containers for food.
 # Default: 18.0
 # Range: 1.0 ~ 19.0
-low_food_health_threshold = 18.0
+# Starforge: 10 — guards only forage when actually hurt, not after a scratch.
+low_food_health_threshold = 10.0
 #Width, in blocks, used for passive-entity line-of-fire checks.
 # Default: 2.0
 # Range: 0.0 ~ 5.0

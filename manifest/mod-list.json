@@ -825,7 +825,67 @@
         "type": "modrinth",
         "slug": "lithium"
       },
-      "notes": "Enable only after full-instance compatibility test (docs/performance.md)."
+      "notes": "Official CaffeineMC NeoForge build exists for 1.21.1 (0.15.4+mc1.21.1, neoforge jar). Enable only after the full-instance A/B in docs/performance.md passes: IC2CRE/BC/IE/AE2 machine ticks, Railcraft trains, Ad Astra chunkgen, Guard Villagers + TACZ combat, horde events."
+    },
+    {
+      "key": "async_locator_refined",
+      "name": "Async Locator Refined",
+      "role": "perf",
+      "side": "both",
+      "enabled": false,
+      "source": {
+        "type": "modrinth",
+        "slug": "async-locator-refined"
+      },
+      "notes": "MIT; maintained port of bright_spark's AsyncLocator (Alvaro842DEV) for 1.21.1 NeoForge. Moves /locate, treasure-map and dolphin structure searches off the main thread. First new-perf candidate to test: no gameplay-logic change; verify locate correctness vs Structure Layout Optimizer + Ad Astra structures before enabling."
+    },
+    {
+      "key": "badoptimizations",
+      "name": "BadOptimizations",
+      "role": "perf",
+      "side": "client",
+      "enabled": false,
+      "source": {
+        "type": "modrinth",
+        "slug": "badoptimizations"
+      },
+      "notes": "MIT; 2.2.2 exists for 1.21.1 NeoForge. Client-only tick overhead: lightmap-update caching, sky-color sampling, idle debug renderers. Test alongside Sodium+Iris+ImmediatelyFast for visual glitches before enabling."
+    },
+    {
+      "key": "alternate_current",
+      "name": "Alternate Current",
+      "role": "perf",
+      "side": "both",
+      "enabled": false,
+      "source": {
+        "type": "modrinth",
+        "slug": "alternate-current"
+      },
+      "notes": "Rewrites redstone dust update order (non-locational) — a REAL BEHAVIOR CHANGE, not a pure optimization. Only consider if spark shows redstone dust as a top hotspot in large IE/BC bases; must re-verify AE2/IE/BC/Railcraft wiring, Horde Alarm signalling and all redstone contraptions. Skip entirely otherwise."
+    },
+    {
+      "key": "scalablelux",
+      "name": "ScalableLux",
+      "role": "perf",
+      "side": "both",
+      "enabled": false,
+      "source": {
+        "type": "modrinth",
+        "slug": "scalablelux"
+      },
+      "notes": "Starlight-based light-engine replacement with optional parallel light updates. 1.21.1 NeoForge exists only as alpha/devbuilds — no stable release. Candidate solely for a proven chunk-gen/light hotspot; do not stack with other lighting rewrites."
+    },
+    {
+      "key": "noisiumed",
+      "name": "Noisiumed",
+      "role": "perf",
+      "side": "both",
+      "enabled": false,
+      "source": {
+        "type": "modrinth",
+        "slug": "noisiumed"
+      },
+      "notes": "GPL-3.0-only; Noisium fork (imbavirus) with a 1.21.1 NeoForge build (3.0.2). Chunk-generation fast paths claiming identical world output. Overlaps Fast Noise in purpose — do not stack blindly; A/B both, and verify same-seed worldgen parity incl. Ad Astra dimensions before any adoption."
     },
     {
       "key": "fastnoise",

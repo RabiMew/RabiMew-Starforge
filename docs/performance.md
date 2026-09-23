@@ -61,9 +61,83 @@ Starforge 默认启用 **MakeUp - Ultra Fast 9.5e** 作为轻量光影。选型�
 
 ## 测试后决定
 
-| 模组 | 本轮找到的候选 | 启用条件 |
+| 模组 | 本轮找到的候选 | 状态与启用条件 |
 | --- | --- | --- |
-| Lithium | 0.15.4+mc1.21.1 | 只有在完整 Starforge 实例上确认与 IC2CRE、BuildCraft CE、IE、AE2、Ad Astra、怪潮与炮塔系统兼容后才默认启用 |
+| Lithium | 官方 NeoForge 0.15.4+mc1.21.1（CaffeineMC，2026-06） | **保持 `enabled: false`——实测不兼容**。2026-09-23 全量实例 A/B：启动通过（与 ModernFix 重叠 patch 自动跳过、无 FATAL），但首个 `getEntitiesOfClass` 实体查询即崩——Lithium `EntityClassGroup` 反射分析类层次时触到 TaCZ 客户端类 `com.tacz.guns.client.resource.GunDisplayInstance`，`RuntimeDistCleaner` 在 `Guard.tick` 内抛异常崩服（`run/smoketest` 崩溃报告 21.59.53）。可在 `lithium.properties` 关 `mixin.chunk.entity_class_groups` 规避，但未经完整矩阵验证前不默认启用 |
+| Async Locator Refined | `async-locator-refined`（Alvaro842DEV 维护，MIT，1.21.1 NeoForge） | 新增候选。把 `/locate`、藏宝图与海豚寻路结构搜索移出主线程；无游戏逻辑变化。首个待测项：与 Structure Layout Optimizer + Ad Astra 结构共存验证定位结果正确性 |
+| BadOptimizations | 2.2.2（MIT，1.21.1 NeoForge） | 新增候选（client）。lightmap 更新缓存、天空色采样、空闲 debug renderer 跳过；与 Sodium+Iris+ImmediatelyFast 同实例验证无视觉异常后可启用 |
+| Alternate Current | 1.9.0（1.21.1 NeoForge） | 新增候选。重写红石粉更新顺序为**非位置序**——这是行为变化而非纯优化。仅当 spark 证明大型基地红石为主热点时才测试；启用前必须重测 AE2/IE/BC/Railcraft 布线、horde_alarm 信号与全部红石装置 |
+| ScalableLux | 1.21.1 NeoForge 仅有 alpha/devbuild（无稳定版） | 新增候选。Starlight 系光照引擎替换 + 并行光照更新；仅在区块生成/光照被证明是瓶颈且 Fast Noise 收益不足时单独特测，不叠加 |
+| Noisiumed | 3.0.2（GPL-3.0-only，1.21.1 NeoForge） | 新增候选。区块生成 fast path，宣称输出与原版逐块一致。与 Fast Noise 目的重叠——只做 A/B 比较不盲叠，启用前做同种子四维世界生成一致性检查 |
+
+## CPU 主线程专项（2026-09-23）
+
+本轮按“减少无意义的工作，不削减玩法”原则落地。上游源码事实经 jar 反编译核实，不以印象写结论。
+
+### 已落地的配置与基线
+
+| 位置 | 修改 | 理由 |
+| --- | --- | --- |
+| `config/guardvillagerstaczsupport-common.toml` | `ammo/food_search_radius` 64→20；`ammo_search_cooldown` 100→300；`food_search_cooldown` 100→400；`container_reach_timeout` 400→200；`low_food_health_threshold` 18→10 | 上游每次补给搜索以 `BlockPos.withinManhattan` 遍历 `(2r+1)³` 并逐格 `getBlockEntity`：半径 64 ≈ 每次搜索约 140 万次方块实体查询，是殖民地最大已知单实体热点；半径 20 ≈ 4.6 万次（约 30×）。失败冷却加长，超时容器更快放弃 |
+| `config/guardvillagers-common.toml` | `Range` 50→32；工作站巡逻 `false`（自然巡逻本就关闭） | 50 格村民受击保护扫描是守卫侧第二大开销；哨兵制下 32 格覆盖整个哨位庭院。工作站游荡让每名守卫持续跑村庄级 POI 搜索+寻路重算 |
+| `config/servercore/config.yml` + `optimizations.yml` | 新增完整基线 | 见下 |
+| `tools/setup-server.mjs` | `server.properties` 写入 `view-distance=10`、`simulation-distance=8`、`sync-chunk-writes=false`、`max-tick-time=-1` | 不再依赖原版默认值；worldgen 挂死类问题用 spark 调试而非 watchdog 崩服 |
+| 同文件 `user_jvm_args.txt` 基线 | `STARFORGE_HEAP`（默认 6G）+ G1GC + `ParallelRefProcEnabled` + `DisableExplicitGC` | 见“JVM 与内存”一节 |
+
+### ServerCore 基线
+
+`dynamic.enabled=true`，`target-mspt=40`（p95 预算 45ms 之前开始降级）。降级顺序：`CHUNK_TICK_DISTANCE 10→6` → `MOBCAP_PERCENTAGE 100→50` → `SIMULATION_DISTANCE 8→6` → `CHUNK_TICK_DISTANCE 6→3` → `MOBCAP 50→30` → `VIEW_DISTANCE 10→6`。先砍纯 CPU（区块 tick），再砍自然刷怪，最后才动玩家可见的视距。
+`activation-range` 保持 `enabled:false`——守卫、炮塔、列车、Boss、事件怪、投射物都需要豁免清单后才敢开；`lobotomize-villagers`、`breeding-cap` 同因关闭，留作后续杠杆。`optimizations.yml` 仅启用上游默认已开的 `reduce-sync-loads` 与 `cache-ticking-chunks`（后者与 Moonrise 不兼容，本包未装 Moonrise）。
+
+### starforge_compat 性能层（mixin，随本仓构建）
+
+| 目标 | 上游实测行为（反编译） | 本层改动 |
+| --- | --- | --- |
+| TACZ Turrets `TurretEntity` | 两个 Nearby* 传感器按 20t 平铺扫描（首次 tick 对齐 → 同区块加载的炮塔永久同相扫描）；`spreadTargets` 每 10t 两次 `getEntitiesOfClass`（范围≤射程） | `getSensors` RETURN 注入：无目标时按 `5+id%10` tick 获取目标（文档要求约 5t），已有目标时 `60+id%10` 复用；`spreadTargets` 改为 `(tickCount+id)%20`，批加载炮塔按实体 id 错峰且频率减半 |
+| Guard Villagers TACZ `TaczGunAttackGoal` | 每守卫容器缓存未命中 → 全半径 Manhattan 扫描 | HEAD 注入先查 `SupplyPointData`（SavedData，逐维登记已证实含弹/食的香草容器；命中前逐一活体验证）；RETURN 注入把上游扫描成果回写注册表。不走假物流：登记只省“找”的开销，不省“有”的验证 |
+| The Hordes `HordeTrackPlayerGoal` | 每怪随机初始化重算倒计时（上游已错峰），固定重置为 `hordePathingInterval`（25） | 重定向 `ConfigValue.get`：MSPT≤40→25，>40→≥40，>45→≥60（`ServerLoad` 读 `getCurrentSmoothedTickTime`） |
+| The Hordes `HordeEvent.spawnWave` | 事件期间按间隔生成新波次 | HEAD 注入：平均 MSPT>45 时跳过本波次——只停新波，绝不动场上怪/Boss |
+
+### KubeJS tick 审计结论
+
+全脚本中只有 `starforge_guidance.js`（生成文件）含周期任务：维度到达 20t、外星神器 40t、任务完成 200t——原来全部按 `server.getTickCount() % N` 同相对齐，多人同 tick 集体执行。已改为 `(tickCount + entityId) % N` 错峰；外星神器检测新增 `inventoryChanged` 事件驱动主路径（40t 轮询降为兜底）；FTB Quests 完成事件在 architectury 内部事件总线而非 NeoForge bus，KubeJS 无法订阅——保留错峰轮询。其余脚本（horde/compat/dump/stagetest/recipes/unify/fluids）均为事件驱动或启动一次性，无每 tick 扫描。
+
+### spark 压力测试矩阵（验收协议）
+
+每场景跑 `/spark profiler --timeout 120` + `/spark health --memory` + `/tps`，记录 TPS、MSPT p50/p95/p99、entity tick、AI/pathfinding、block entity、chunk tick、worldgen、GC、活跃实体数、加载区块数。目标：20 TPS、MSPT p95 < 45。
+
+| # | 场景 | 构造 |
+| --- | --- | --- |
+| A | 空基地基线 | 已加载区块，无工业/驻军 |
+| B | 大型工业基地 | IC2/IE 机器阵列 + BC 管道 + AE2 网络运行 |
+| C | 32 名 Guard Villagers | 持 TaCZ 枪在岗哨+巡逻点，含弹药/食物补给容器 |
+| D | 16–32 座 TACZ Turrets | 有弹有目标可打 |
+| E | 48 怪怪潮 | `hordeSpawnMax=48` 完整事件 |
+| F | C+D+E 同时 | 守卫+炮塔+怪潮并发 |
+| G | AE2 自动合成 + BC 管道 + IC2/IE | 持续合成与物流 |
+| H | Railcraft 长编组 | 长列车 + 装卸站运行 |
+| I | 两殖民基地同载 | 双殖民地强加载 |
+| J | 高速新区块探索 / Chunky 预生成 | 主世界、月球、火星、小行星带分别测 |
+
+基线参照（2026-09-22）：独立服务器 17 维度全部 20 TPS、总 8.0 ms/tick（一玩家在线）。
+
+### 已采集数据（2026-09-23，smoketest 实例，83 模组，Java 21）
+
+| 场景 | 结果 |
+| --- | --- |
+| A 空基线（fresh world，无玩家） | TPS 20.0；tick min/med/p95/max = 0.3/0.5/0.8/59.2 ms（59ms 为启动残留尖峰） |
+| C+D 守卫+炮塔 | 29 持枪守卫（TaCZ AK47、无弹药→补给搜索路径激活）+ 16→8 炮塔 + 20 husk 目标：TPS 20.0；tick 2.5/3.2/5.0/15.1 ms；守卫击杀全部 husk（战斗链路完整）；弹药箱 2 个在位供注册表命中 |
+| J Chunky 预生成（半径 400，~2601 chunks/维） | 主世界 2:24（18.1 cps）；月球 1:43（25.2 cps）；火星 1:35（27.4 cps）；小行星带 0:32（81.3 cps）。生成期 1min 窗 p95 25.6–42.6ms、max 116ms，TPS 全程 20.0——世界生成走 worker 线程，主线程尖峰在区块装载 |
+| Lithium A/B | 见上表结论：启动 OK、空转 OK、首个实体范围查询崩（TaCZ client-class 泄漏），**禁用维持** |
+
+无头限制：怪潮事件需在线玩家目标（`/hordes start`/`spawnWave` 静默拒绝），工业/列车/殖民场景需要真实基地与玩家操作——B、E、F、G、H、I 留给玩家侧测试，协议照上表执行。
+
+## JVM 与内存
+
+- Java 21，保留默认 **G1GC**；不堆叠来源不明的“神奇参数”。
+- 基线 `-Xms6G -Xmx6G`（`setup-server.mjs` 生成，`STARFORGE_HEAP` 覆盖）。**升 8G 的条件**：≥4–6 名常驻玩家、两个殖民基地同时加载、AE2 大网络+长列车组合常驻，或 spark `health --memory` 显示老年代占用持续 >70%/GC 频率明显升高。12–16G 不是优化——大堆拉长 G1 remark/mixed GC 尾部，反而恶化 p99。
+- 附带参数及理由：`-XX:+UseG1GC`（钉死默认值防 vendor 差异）；`-XX:+ParallelRefProcEnabled`（引用处理并行化，削 block-entity 密集存档的 remark 尾部）；`-XX:+DisableExplicitGC`（个别模组仍调 `System.gc()`，一次 Full GC 就是 >200ms 尖刺）。
+- 不启用 ZGC/Shenandoah：模组生态对非分代式低延迟 GC 的兼容性证据不足，且无对应热点。
 
 ## 服务器运维工具
 

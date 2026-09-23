@@ -8,7 +8,13 @@ issueTrackerURL="https://github.com/RabiMew/RabiMew-Starforge/issues"
     version="0.1.0"
     displayName="Starforge Compatibility"
     authors="RabiMew"
-    description="Behavior-level glue for Starforge: FE-powered kitchen heat source, horde redstone alarms and a hidden first-PvP-kill keepsake. Content-level integration stays in KubeJS/datapacks."
+    description="Behavior-level glue for Starforge: FE-powered kitchen heat source, horde redstone alarms, registered-supply-point caching for TACZ guards, turret/horde CPU staggering and a hidden first-PvP-kill keepsake. Content-level integration stays in KubeJS/datapacks."
+
+# Stage-string i18n mixins (see com.starforge.compat.mixin + StageI18n):
+# ProgressiveStages renders bilingual "zh / en" literals; the mixins swap in
+# the client locale's half via config/starforge/stage_i18n.json lang keys.
+[[mixins]]
+config="starforge_compat.mixins.json"
 
 [[dependencies.starforge_compat]]
     modId="neoforge"
@@ -28,5 +34,33 @@ issueTrackerURL="https://github.com/RabiMew/RabiMew-Starforge/issues"
     modId="hordes"
     type="optional"
     versionRange="[1.6,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.starforge_compat]]
+    modId="taczturrets"
+    type="optional"
+    versionRange="[2.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.starforge_compat]]
+    modId="guardvillagerstaczsupport"
+    type="optional"
+    versionRange="[1.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.starforge_compat]]
+    modId="guardvillagers"
+    type="optional"
+    versionRange="[2.4,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.starforge_compat]]
+    modId="progressivestages"
+    type="optional"
+    versionRange="[3.0,)"
     ordering="AFTER"
     side="BOTH"

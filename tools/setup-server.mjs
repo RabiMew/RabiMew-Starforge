@@ -60,10 +60,34 @@ set('online-mode', 'false'); // dev alpha; set true for public deployment
 set('enable-rcon', 'true');
 set('rcon.password', 'starforge');
 set('rcon.port', '25575');
+// Deterministic performance baseline (see docs/performance.md). ServerCore's
+// dynamic settings may lower these under load; these are the healthy ceilings.
+set('view-distance', '10');
+set('simulation-distance', '8');
+set('max-tick-time', '-1'); // watchdog off: a stalled gen/machine must be debuggable, not crash-looped
+set('sync-chunk-writes', 'false'); // region files are not crash-critical; saves main-thread flush time
 writeFileSync(propsPath, props.trimStart());
 
+// JVM baseline (Java 21, stock G1GC). Deliberately minimal — no cargo-cult flag
+// lists. Heap sizing guidance lives in docs/performance.md; override per-box via
+// STARFORGE_HEAP (e.g. STARFORGE_HEAP=8G for >4 players / two loaded colonies).
+const heap = (process.env.STARFORGE_HEAP || '6G').trim() || '6G';
 const jvmArgs = path.join(serverDir, 'user_jvm_args.txt');
-if (!existsSync(jvmArgs)) writeFileSync(jvmArgs, '-Xmx6G\n-Xms6G\n');
+if (!existsSync(jvmArgs)) {
+  writeFileSync(jvmArgs, [
+    `-Xms${heap}`,
+    `-Xmx${heap}`,
+    // G1 is the Java 21 default; pinned so a vendor JDK cannot silently differ.
+    '-XX:+UseG1GC',
+    // Reference processing in parallel — cuts remark/weak-ref pause tails that
+    // show up as MSPT p99 spikes with this many block entities.
+    '-XX:+ParallelRefProcEnabled',
+    // Some mods still call System.gc(); a forced full GC is a guaranteed >200ms
+    // hitch. Explicit GC calls are never required for correctness here.
+    '-XX:+DisableExplicitGC',
+    '',
+  ].join('\n'));
+}
 
 console.log('\nDone. Start the server with:');
 console.log(`  cd run/server`);
