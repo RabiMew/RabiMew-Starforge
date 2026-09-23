@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:armed_garrison"
+display_name = "武装驻军 / Armed Garrison"
+description = "基地有常驻武装力量负责警戒。 / Armed guards keep permanent watch over the base."
+icon = "guardvillagers:guard_spawn_egg"
+dependencies = ["modpack:crew_posts"]
+dependency_mode = "all"
+category = "殖民建设 / Colony"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_2"]
+unlock_message = "武装驻军 / Armed Garrison"
+
+[display]
+frame = "goal"
+reveal = "dependencies"
+sort_order = 40

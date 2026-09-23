@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "团队已具备枪械制造能力，可以武装守卫与自卫。 / The team can manufacture firearms for guards and self-defense."
+[[triggers.conditions]]
+type = "craft"
+item = "id:tacz:gun_smith_table"
+count = 1

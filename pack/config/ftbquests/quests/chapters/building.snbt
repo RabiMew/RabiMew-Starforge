@@ -8,7 +8,7 @@
 	}
 	id: "56F4CC5F9343242B"
 	images: [ ]
-	order_index: 7
+	order_index: 8
 	progression_mode: "flexible"
 	quest_links: [ ]
 	quests: [
@@ -273,6 +273,122 @@
 					}
 					count: 1
 					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:red_bed"
+			}
+			id: "33137A5834F5A967"
+			x: 3.2d
+			y: 10.5d
+			dependencies: [
+				"67D80191074CCF3A"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "34F0958333F36A1D"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:torch"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3273A7F2B977FC68"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "farmersdelight:cooking_pot"
+			}
+			id: "7DE5C11A0F9E6A2B"
+			x: 6.4d
+			y: 15d
+			dependencies: [
+				"33137A5834F5A967"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "53A19B9AE98BCB1C"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bowl"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "54D34B60901635D5"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "mdm:furniture_parts"
+			}
+			id: "3A9395C0631B98F1"
+			x: 6.4d
+			y: 12d
+			dependencies: [
+				"33137A5834F5A967"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "3176F7901ADFF3DC"
+					type: "item"
+					item: {
+						count: 2
+						id: "mcwfurnitures:oak_kitchen_cabinet"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "7187649EA0507746"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:steel_plate"
+			}
+			id: "18BFCE7EDAE35FD1"
+			x: 9.6d
+			y: 13.5d
+			dependencies: [
+				"3A9395C0631B98F1"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "05175EE2F81F1CD1"
+					type: "item"
+					item: {
+						count: 8
+						id: "ad_astra:steel_plate"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3B9FB9215B7859C7"
+					type: "checkmark"
 				}
 			]
 		}

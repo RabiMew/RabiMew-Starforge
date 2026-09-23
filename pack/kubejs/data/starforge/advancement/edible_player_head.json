@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "minecraft:player_head"
+  },
+  "title": {
+   "translate": "modpack.advancement.edible_player_head.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.edible_player_head.description"
+  },
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": true
+ },
+ "criteria": {
+  "triggered": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "requirements": [
+  [
+   "triggered"
+  ]
+ ]
+}

@@ -9,3 +9,11 @@ count = 1
 type = "custom_counter"
 counter = "modpack:craft_quantum_control"
 count = 1
+[unlock]
+toast = "量子时代 / Quantum Age"
+title = "&l量子时代 / Quantum Age"
+subtitle = "距离已不再是物流的限制。 / Distance no longer limits logistics."
+sound = "minecraft:ui.toast.challenge_complete"
+particle = "minecraft:totem_of_undying"
+progress_nudges = true
+hud_bar = true

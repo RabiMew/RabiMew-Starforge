@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "村民与雇员开始在基地内担任岗位。 / Villagers and staff hold posts inside the base."
+[[triggers.conditions]]
+type = "craft"
+item = "id:easy_villagers:trader"
+count = 1

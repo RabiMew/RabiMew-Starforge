@@ -9,3 +9,7 @@ count = 1
 type = "custom_counter"
 counter = "modpack:craft_heavy_industry_control"
 count = 1
+[unlock]
+toast = "重工业时代 / Heavy Industry Age"
+progress_nudges = true
+hud_bar = true

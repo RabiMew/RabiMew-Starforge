@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "弹药与武器产能可支撑跨行星远征作战。 / Munitions output sustains interplanetary campaigns."
+[[triggers.conditions]]
+type = "craft"
+item = "id:tacz:ammo"
+count = 128

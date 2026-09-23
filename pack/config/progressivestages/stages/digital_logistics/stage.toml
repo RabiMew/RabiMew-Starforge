@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:digital_logistics"
+display_name = "数字物流 / Digital Logistics"
+description = "ME 网络把仓储与自动合成接入统一索引。 / The ME network indexes storage and autocrafting."
+icon = "ae2:controller"
+dependencies = ["modpack:rail_logistics", "modpack:information_age"]
+dependency_mode = "all"
+category = "物流仓储 / Logistics"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_3"]
+unlock_message = "数字物流 / Digital Logistics"
+
+[display]
+frame = "goal"
+reveal = "dependencies"
+sort_order = 40

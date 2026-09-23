@@ -8,7 +8,7 @@
 	}
 	id: "23F04414D2AFEB65"
 	images: [ ]
-	order_index: 3
+	order_index: 4
 	progression_mode: "flexible"
 	quest_links: [ ]
 	quests: [
@@ -96,10 +96,11 @@
 			}
 			id: "1AEA18147C0DBE26"
 			x: 6.4d
-			y: 15d
+			y: 19.5d
 			dependencies: [
 				"6A40076FB5A60443"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "1E7DF0B06031F504"
@@ -133,7 +134,7 @@
 			}
 			id: "2F8112B376410105"
 			x: 6.4d
-			y: 13.5d
+			y: 18d
 			dependencies: [
 				"6A40076FB5A60443"
 			]
@@ -296,6 +297,7 @@
 			dependencies: [
 				"13E59D0117879820"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "63986C32CF983E3F"
@@ -333,6 +335,7 @@
 			dependencies: [
 				"123A25BDCDB14B3F"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "72408F934AE0721F"
@@ -361,6 +364,7 @@
 			dependencies: [
 				"43727C69AA43A83C"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "517F0D18EF0A753E"
@@ -384,12 +388,13 @@
 				id: "tacz:ammo_box"
 			}
 			id: "31583156C2BDAC96"
-			x: 25.6d
+			x: 22.4d
 			y: 12d
 			dependencies: [
 				"0578B3D427AD63A7"
-				"09D27335218273DA"
+				"43727C69AA43A83C"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "2FC4B20CEA91B97C"
@@ -424,6 +429,122 @@
 					}
 					count: 4
 					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "guardvillagers:guard_spawn_egg"
+			}
+			id: "5CF44E6653A66A00"
+			x: 9.6d
+			y: 21d
+			dependencies: [
+				"1AEA18147C0DBE26"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "6CC5301702EC8DCE"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:iron_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "22095EBFEFA4931B"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:ammo_box"
+			}
+			id: "5F36C6B42FD75BA9"
+			x: 12.8d
+			y: 16.5d
+			dependencies: [
+				"0578B3D427AD63A7"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "45E20582CCF40B09"
+					type: "item"
+					item: {
+						count: 16
+						id: "immersiveengineering:ingot_lead"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "41D9325FB88A33DD"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "taczturrets:turret"
+			}
+			id: "771A802F55780549"
+			x: 16d
+			y: 15d
+			dependencies: [
+				"13E59D0117879820"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "761F0089A231A299"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "10AD3B5861950C2F"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "tacz:modern_kinetic_gun"
+			}
+			id: "7E0B5A7A51829406"
+			x: 19.2d
+			y: 13.5d
+			dependencies: [
+				"123A25BDCDB14B3F"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "54E25271DF184455"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "2CB91E44E9A616B8"
+					type: "checkmark"
 				}
 			]
 		}

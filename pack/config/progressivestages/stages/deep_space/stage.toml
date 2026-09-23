@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:deep_space"
+display_name = "深空探索 / Deep Space"
+description = "团队足迹抵达冰巨星与小行星带。 / The team has reached Glacio and the belt."
+icon = "ad_astra:calorite_ingot"
+dependencies = ["modpack:highrisk_survey"]
+dependency_mode = "all"
+category = "探索发现 / Exploration"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_6"]
+unlock_message = "深空探索 / Deep Space"
+
+[display]
+frame = "challenge"
+reveal = "unlocked"
+sort_order = 50

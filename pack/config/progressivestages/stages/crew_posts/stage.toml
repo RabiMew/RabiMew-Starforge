@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:crew_posts"
+display_name = "居民岗位 / Crew Posts"
+description = "村民与雇员开始在基地内担任岗位。 / Villagers and staff hold posts inside the base."
+icon = "easy_villagers:trader"
+dependencies = ["modpack:stable_logistics"]
+dependency_mode = "all"
+category = "殖民建设 / Colony"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_2"]
+unlock_message = "居民岗位 / Crew Posts"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 30

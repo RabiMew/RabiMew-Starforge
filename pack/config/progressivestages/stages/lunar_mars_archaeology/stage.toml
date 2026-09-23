@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:lunar_mars_archaeology"
+display_name = "月火考古 / Lunar & Mars Archaeology"
+description = "月球与火星遗迹进入定期考察范围。 / Moon and Mars ruins are under regular survey."
+icon = "ad_astra:white_flag"
+dependencies = ["modpack:relic_research", "modpack:space_age"]
+dependency_mode = "all"
+category = "探索发现 / Exploration"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_6"]
+unlock_message = "月火考古 / Lunar & Mars Archaeology"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 30

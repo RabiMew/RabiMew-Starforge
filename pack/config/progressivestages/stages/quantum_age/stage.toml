@@ -8,12 +8,14 @@ description = "建设量子装备与大型工业网络；留在地球也能达�
 icon = "modpack:quantum_control"
 dependencies = ["modpack:atomic_age"]
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#a05fd0"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_7"]
+tags = ["modpack", "era", "tier_7"]
+unlock_message = "量子时代 / Quantum Age"
 
 [display]
 frame = "challenge"
 reveal = "dependencies"
+sort_order = 700

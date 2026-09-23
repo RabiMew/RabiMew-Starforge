@@ -1,0 +1,223 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "milestones"
+	group: ""
+	icon: {
+		id: "modpack:service_medal"
+	}
+	id: "3417920818FE4D66"
+	images: [ ]
+	order_index: 0
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "modpack:engineering_assembly"
+			}
+			id: "57CE687B27C482B3"
+			x: 0d
+			y: 0d
+			rewards: [
+				{
+					id: "2BCFD70020F48E1D"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "397DEC5C42BEA574"
+					type: "gamestage"
+					stage: "modpack:mechanical_age"
+					team_stage: true
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ic2cre:generator"
+			}
+			id: "30B185E865902CFB"
+			x: 3.2d
+			y: 1.5d
+			dependencies: [
+				"57CE687B27C482B3"
+			]
+			rewards: [
+				{
+					id: "38DE4BED055A11AD"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "07C557C44B34015B"
+					type: "gamestage"
+					stage: "modpack:electric_age"
+					team_stage: true
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:information_interface"
+			}
+			id: "5CBFEC3F42242B50"
+			x: 6.4d
+			y: 3d
+			dependencies: [
+				"30B185E865902CFB"
+			]
+			rewards: [
+				{
+					id: "1E891AFD33E17377"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "0386E90241184FD5"
+					type: "gamestage"
+					stage: "modpack:information_age"
+					team_stage: true
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:heavy_industry_control"
+			}
+			id: "016079F40895BC4A"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"5CBFEC3F42242B50"
+			]
+			rewards: [
+				{
+					id: "4F05CA1EA6315898"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "3FF75FF9A918EECB"
+					type: "gamestage"
+					stage: "modpack:heavy_industry_age"
+					team_stage: true
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:reactor_control"
+			}
+			id: "245AA3038DD177F7"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"016079F40895BC4A"
+			]
+			rewards: [
+				{
+					id: "146C76304FD2E78C"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "6F91FE2B870A5CE7"
+					type: "gamestage"
+					stage: "modpack:atomic_age"
+					team_stage: true
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:space_control_core"
+			}
+			id: "3B95DA0212939412"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"245AA3038DD177F7"
+			]
+			rewards: [
+				{
+					id: "607B4C26B1640873"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "012254D0B10A6CD3"
+					type: "gamestage"
+					stage: "modpack:space_age"
+					team_stage: true
+				}
+			]
+		}
+		{
+			icon: {
+				id: "modpack:quantum_control"
+			}
+			id: "27746B580BF2533A"
+			x: 16d
+			y: 9d
+			dependencies: [
+				"245AA3038DD177F7"
+			]
+			rewards: [
+				{
+					id: "1C901197ED3EC727"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "17D01EB7288F8B86"
+					type: "gamestage"
+					stage: "modpack:quantum_age"
+					team_stage: true
+				}
+			]
+		}
+	]
+}

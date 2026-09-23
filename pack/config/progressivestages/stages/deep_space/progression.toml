@@ -1,0 +1,9 @@
+[[triggers]]
+mode = "all_of"
+description = "团队足迹抵达冰巨星与小行星带。 / The team has reached Glacio and the belt."
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:glacio"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "pv_asteroid_belt:asteroid_belt"

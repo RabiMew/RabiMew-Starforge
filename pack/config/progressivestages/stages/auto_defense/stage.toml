@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:auto_defense"
+display_name = "自动防御 / Automated Defense"
+description = "炮塔网络可在无人值守时压制来袭目标。 / A turret network suppresses attackers without crews."
+icon = "taczturrets:turret"
+dependencies = ["modpack:armed_defense", "modpack:heavy_industry_age"]
+dependency_mode = "all"
+category = "军事能力 / Military"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_4"]
+unlock_message = "自动防御 / Automated Defense"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 20

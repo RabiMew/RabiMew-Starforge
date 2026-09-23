@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:highrisk_survey"
+display_name = "高危行星调查 / High-risk Survey"
+description = "金星与水星环境可承受短时考察。 / Venus and Mercury tolerate short expeditions."
+icon = "ad_astra:ostrum_ingot"
+dependencies = ["modpack:lunar_mars_archaeology"]
+dependency_mode = "all"
+category = "探索发现 / Exploration"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_6"]
+unlock_message = "高危行星调查 / High-risk Survey"
+
+[display]
+frame = "goal"
+reveal = "unlocked"
+sort_order = 40

@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:horde_defense"
+display_name = "怪潮防御 / Horde Defense"
+description = "团队已经受住怪潮袭击并保持防线完整。 / The team has weathered a horde assault with the line intact."
+icon = "starforge_compat:horde_alarm"
+dependencies = ["modpack:auto_defense"]
+dependency_mode = "all"
+category = "军事能力 / Military"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_4"]
+unlock_message = "怪潮防御 / Horde Defense"
+
+[display]
+frame = "goal"
+reveal = "dependencies"
+sort_order = 30

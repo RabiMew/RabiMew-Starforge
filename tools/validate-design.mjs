@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { hexId } from './lib/hexid.mjs';
+import { loadDesign, allNodes } from './lib/design.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const read = (name) => readFileSync(path.join(root, name), 'utf8');
@@ -29,7 +30,8 @@ function placeholders(text) {
 }
 
 function validate() {
-  const content = parse('design/content.json');
+  const design = loadDesign(root);
+  const content = design;
   assert.equal(content.schema_version, 1);
   assert.equal(content.status, 'design_only');
   assert.equal(content.game_version, '1.21.1');
@@ -75,27 +77,35 @@ function validate() {
       } else collect(item, `${location}.${field}`);
     }
   }
-  collect(content);
+  collect(design);
   assert.deepEqual([...referenced].sort(), keys, 'Unused or unreferenced translation keys');
 
-  const stageIds = uniqueIds(content.stages, 'stages');
+  const stageIds = uniqueIds(design.stages, 'stages');
+  const abilityIds = uniqueIds(design.abilities, 'abilities');
+  const categoryIds = uniqueIds(design.categories, 'categories');
   const routeIds = uniqueIds(content.routes, 'routes');
   const chapterIds = uniqueIds(content.chapters, 'chapters');
   const questIds = uniqueIds(content.quests, 'quests');
   const tutorialIds = uniqueIds(content.tutorials, 'tutorials');
   const groupIds = uniqueIds(content.tutorial_groups, 'tutorial_groups');
-  const advancementIds = uniqueIds(content.advancements, 'advancements');
+  const advancementIds = uniqueIds(design.advancements, 'advancements');
   for (const category of ['items', 'jobs', 'planets', 'messages', 'gui', 'bosses']) {
     uniqueIds(content[category], category);
   }
   assert.equal(stageIds.size, 8, 'Expected T0 through T7');
-  assert.deepEqual(content.stages.map((stage) => stage.tier).sort((a, b) => a - b), [0, 1, 2, 3, 4, 5, 6, 7]);
+  assert.deepEqual(design.stages.map((stage) => stage.tier).sort((a, b) => a - b), [0, 1, 2, 3, 4, 5, 6, 7]);
   assert.equal(routeIds.size, 7);
-  assert.equal(chapterIds.size, 9, 'Expected onboarding + 7 routes + manual');
-  assert.equal(questIds.size, 76);
+  assert.equal(chapterIds.size, 10, 'Expected milestones + onboarding + 7 routes + manual');
+  assert.equal(questIds.size, 117);
   assert.equal(content.planets.length, 8);
-  const stages = new Map(content.stages.map((stage) => [stage.id, stage]));
+  const stages = new Map(design.stages.map((stage) => [stage.id, stage]));
   const tierOf = (id) => stages.get(id).tier;
+  // Every node on the progression map (eras + abilities). Eras are the only
+  // tech gates; abilities may depend on anything, eras on eras only.
+  const nodeIds = new Set([...stageIds, ...abilityIds]);
+  const nodes = new Map(allNodes(design).map((n) => [n.id, n]));
+  for (const ab of design.abilities) assert(!stageIds.has(ab.id), `${ab.id}: ability id collides with an era stage`);
+  assert.equal(nodeIds.size, 30, 'Expected 8 era + 22 ability nodes');
 
   // ---------- chapters ----------
   const sm = parse('design/semantic-map.json');
@@ -150,11 +160,23 @@ function validate() {
     }
     return result;
   }
-  for (const stage of content.stages) {
+  for (const stage of design.stages) {
     const prior = ancestors(stage.id);
     assert.equal(stage.requires_space, false, `${stage.id}: space gate is not permitted`);
     assert.equal(stage.requires_boss, false, `${stage.id}: boss gate is not permitted`);
     assert.equal(new Set(stage.depends_on).size, stage.depends_on.length);
+    for (const d of stage.depends_on) {
+      assert(stageIds.has(d), `${stage.id}: era dep ${d} must be an era stage, not an ability`);
+    }
+    assert(categoryIds.has(stage.category), `${stage.id}: unknown map category ${stage.category}`);
+    for (const r of stage.recommended_routes ?? []) {
+      assert(routeIds.has(r), `${stage.id}: unknown recommended route ${r}`);
+    }
+    for (const p of stage.unlock_preview ?? []) {
+      for (const v of p.verify ?? []) {
+        assert(itemRef(v) || dimRef(v), `${stage.id}: unverifiable unlock-preview ref ${v}`);
+      }
+    }
     if (stage.tier === 0) {
       assert.equal(stage.depends_on.length, 0);
       assert.equal(stage.unlock_evidence.type, 'automatic');
@@ -168,6 +190,52 @@ function validate() {
   }
   assert(!ancestors('quantum_age').has('space_age'), 'Earth quantum route depends on space');
   assert(!ancestors('space_age').has('quantum_age'), 'Space bootstrap depends on quantum technology');
+  // Locks only ever attach to era stages — abilities must never gate content.
+  for (const k of Object.keys(locks)) {
+    if (k === 'schema_version' || k === 'comment') continue;
+    assert(stageIds.has(k), `stage-locks: ${k} is not an era stage`);
+  }
+
+  // ---------- ability nodes (capability branches of the same map) ----------
+  // Full-graph acyclic check (abilities may depend on eras and abilities).
+  const nodeAncestors = (id, visiting = new Set()) => {
+    assert(nodeIds.has(id), `Unknown progression node ${id}`);
+    assert(!visiting.has(id), `Progression dependency cycle at ${id}`);
+    const next = new Set([...visiting, id]);
+    const out = new Set();
+    for (const d of nodes.get(id).depends_on ?? []) {
+      out.add(d);
+      for (const a of nodeAncestors(d, next)) out.add(a);
+    }
+    return out;
+  };
+  const COND_TYPES = new Set(['craft', 'pickup', 'dimension', 'custom_counter', 'has_item']);
+  const FRAMES = new Set(['task', 'goal', 'challenge']);
+  const REVEALS = new Set(['always', 'dependencies', 'unlocked']);
+  const regItemTags = new Set(Object.keys(parse('registry-export/tags_item.json')));
+  const regBlockTags = new Set(Object.keys(parse('registry-export/tags_block.json')));
+  for (const ab of design.abilities) {
+    assert(categoryIds.has(ab.category), `${ab.id}: unknown map category ${ab.category}`);
+    nodeAncestors(ab.id);
+    for (const d of ab.depends_on) assert(nodeIds.has(d), `${ab.id}: unknown dep ${d}`);
+    assert(FRAMES.has(ab.frame ?? 'task'), `${ab.id}: bad frame`);
+    assert(REVEALS.has(ab.reveal ?? 'dependencies'), `${ab.id}: bad reveal`);
+    const t = ab.trigger;
+    assert(t?.conditions?.length >= 1, `${ab.id}: ability needs >=1 trigger condition`);
+    if (t.mode) assert(['any_of', 'all_of'].includes(t.mode), `${ab.id}: bad trigger mode ${t.mode}`);
+    for (const c of t.conditions) {
+      assert(COND_TYPES.has(c.type), `${ab.id}: unsupported trigger condition ${c.type}`);
+      if (c.count !== undefined) assert(Number.isInteger(c.count) && c.count >= 1, `${ab.id}: bad count`);
+      if (c.type === 'craft' || c.type === 'pickup' || c.type === 'has_item') {
+        if (c.item.startsWith('#')) assert(regItemTags.has(c.item.slice(1)), `${ab.id}: unknown item tag ${c.item}`);
+        else assert(itemRef(c.item), `${ab.id}: unresolvable trigger item ${c.item}`);
+      } else if (c.type === 'dimension') {
+        assert(dimRef(c.dimension), `${ab.id}: unresolvable trigger dimension ${c.dimension}`);
+      } else if (c.type === 'custom_counter') {
+        assert(/^modpack:[a-z0-9_]+$/.test(c.counter), `${ab.id}: counter must be modpack:*`);
+      }
+    }
+  }
 
   for (const route of content.routes) {
     assert.equal(route.always_visible, true);
@@ -176,8 +244,8 @@ function validate() {
   }
 
   // ---------- questbook: tasks, rewards, layout, manual refs ----------
-  const TASK_TYPES = new Set(['item', 'checkmark', 'advancement', 'dimension', 'kill', 'biome', 'structure']);
-  const advTargets = new Set(content.advancements.map((a) => `starforge:${a.id}`));
+  const TASK_TYPES = new Set(['item', 'checkmark', 'advancement', 'dimension', 'kill', 'biome', 'structure', 'stage']);
+  const advTargets = new Set(design.advancements.map((a) => `starforge:${a.id}`));
   const chapterOf = (q) => q.chapter ?? q.route;
   const generatedIds = new Set([hexId('file', 'starforge')]);
   const claim = (id, ctx) => { assert(!generatedIds.has(id), `${ctx}: generated id collision ${id}`); generatedIds.add(id); };
@@ -211,6 +279,9 @@ function validate() {
         case 'checkmark':
           assert(t.target === undefined, `${quest.id}: checkmark must not have a target`);
           break;
+        case 'stage':
+          assert(nodeIds.has(t.stage), `${quest.id}: unknown progression node ${t.stage}`);
+          break;
         case 'dimension':
           assert(dimRef(t.target), `${quest.id}: unresolvable dimension ${t.target}`);
           break;
@@ -240,7 +311,13 @@ function validate() {
       assert.notEqual(ref, quest.id, `${quest.id}: dep self-reference`);
       const other = content.quests.find((q) => q.id === ref);
       assert.equal(chapterOf(other), chId, `${quest.id}: dep ${ref} crosses chapters`);
+      // Pacing rules: a required quest must never wait on optional content, and
+      // a dependency must not sit at a later suggested stage than the quest itself.
+      if (!quest.optional) assert(!other.optional, `${quest.id}: required quest depends on optional ${ref}`);
+      assert(tierOf(other.suggested_stage) <= tierOf(quest.suggested_stage),
+        `${quest.id}: dep ${ref} (${other.suggested_stage}) sits later than the quest's own stage`);
     }
+    if (quest.required_stage) assert(nodeIds.has(quest.required_stage), `${quest.id}: unknown required_stage`);
     (quest.rewards ?? []).forEach((r, i) => {
       claim(hexId('reward', `${chId}/${quest.id}/${i}`), `reward ${quest.id}[${i}]`);
       assert(itemRef(r.item), `${quest.id}: unresolvable reward item ${r.item}`);
@@ -273,16 +350,85 @@ function validate() {
     claim(hexId('quest', `manual/${t.id}`), `manual page ${t.id}`);
   }
 
-  // ---------- custom advancements ----------
-  for (const a of content.advancements) {
+  // ---------- custom advancements (record only; never grant stages) ----------
+  for (const a of design.advancements) {
     assert(itemRef(a.icon), `advancement ${a.id}: unresolvable icon ${a.icon}`);
-    assert.equal(a.trigger, 'changed_dimension', `advancement ${a.id}: unsupported trigger ${a.trigger}`);
-    assert(a.dimensions.length >= 1, `advancement ${a.id}: no dimensions`);
-    for (const d of a.dimensions) assert(dimRef(d), `advancement ${a.id}: unresolvable dimension ${d}`);
+    if (a.reveal_at) assert(nodeIds.has(a.reveal_at), `advancement ${a.id}: unknown reveal_at node`);
+    switch (a.trigger) {
+      case 'changed_dimension':
+        assert(a.dimensions.length >= 1, `advancement ${a.id}: no dimensions`);
+        for (const d of a.dimensions) assert(dimRef(d), `advancement ${a.id}: unresolvable dimension ${d}`);
+        break;
+      case 'custom_event':
+        // Granted explicitly by the generated guidance script or starforge_compat.
+        assert(ID_RE.test(a.event ?? ''), `advancement ${a.id}: custom_event needs a namespaced event id`);
+        break;
+      case 'stage_granted':
+        // Mirrored award fired by the guidance script when PS grants the stage.
+        assert(nodeIds.has(a.stage), `advancement ${a.id}: unknown stage ${a.stage}`);
+        break;
+      case 'inventory_item':
+        assert(a.items?.length >= 1, `advancement ${a.id}: no items`);
+        for (const r of a.items) {
+          if (r.startsWith('#')) assert(regItemTags.has(r.slice(1)), `advancement ${a.id}: unknown item tag ${r}`);
+          else assert(itemRef(r), `advancement ${a.id}: unresolvable item ${r}`);
+        }
+        break;
+      case 'kill_entity':
+        assert(a.entities?.length >= 1, `advancement ${a.id}: no entities`);
+        for (const e of a.entities) {
+          if (e.startsWith('#')) assert(regEntTags.has(e.slice(1)), `advancement ${a.id}: unknown entity tag ${e}`);
+          else assert(regEnts.has(sm.entities?.[e] ?? e), `advancement ${a.id}: unknown entity ${e}`);
+        }
+        break;
+      default:
+        assert.fail(`advancement ${a.id}: unsupported trigger ${a.trigger}`);
+    }
   }
 
-  console.log(`PASS: ${stageIds.size} stages, ${routeIds.size} routes, ${chapterIds.size} chapters, ${questIds.size} quests, ${tutorialIds.size} manual pages, ${keys.length} bilingual keys.`);
-  console.log('PASS: stage graph, unlock availability, task/reward/icon refs, layout cycles, generated-id uniqueness.');
+  // ---------- guidance events (one detection route per real signal) ----------
+  // Every event degrades to a no-op when its signal is unavailable — so no
+  // guidance path may feed the era evidence counters (that would make FTB
+  // Quests a progression gate).
+  const guidIds = uniqueIds(design.guidance.events, 'guidance events');
+  const seenCounters = new Set();
+  for (const ev of design.guidance.events) {
+    const v = ev.via ?? {};
+    const routes = ['inventory_tag', 'inventory_item', 'inventory_items', 'inventory_tag_multi',
+      'block_use', 'block_tag', 'entity_spawned', 'quest', 'dimension',
+      'advancement_earned', 'horde_start', 'horde_end', 'gun_ns', 'craft_item']
+      .filter((k) => v[k] !== undefined && v[k] !== false);
+    assert(routes.length >= 1, `guidance ${ev.id}: no detection route`);
+    if (ev.counter) {
+      assert(/^modpack:[a-z0-9_]+$/.test(ev.counter), `guidance ${ev.id}: counter must be modpack:*`);
+      assert(!seenCounters.has(ev.counter), `guidance ${ev.id}: duplicate counter ${ev.counter}`);
+      seenCounters.add(ev.counter);
+      assert(!ev.counter.startsWith('modpack:craft_'), `guidance ${ev.id}: events must not feed era evidence counters`);
+    }
+    if (ev.advancement) assert(advancementIds.has(ev.advancement), `guidance ${ev.id}: unknown advancement ${ev.advancement}`);
+    if (v.quest) {
+      assert(questIds.has(v.quest), `guidance ${ev.id}: unknown quest ${v.quest}`);
+      assert(!ev.counter?.startsWith('modpack:craft_'), `guidance ${ev.id}: quest path must not gate progression`);
+    }
+    if (v.entity_spawned) assert(regEnts.has(sm.entities?.[v.entity_spawned] ?? v.entity_spawned), `guidance ${ev.id}: unknown entity`);
+    if (v.inventory_item) assert(itemRef(v.inventory_item), `guidance ${ev.id}: unresolvable item ${v.inventory_item}`);
+    for (const r of v.inventory_items ?? []) assert(itemRef(r), `guidance ${ev.id}: unresolvable item ${r}`);
+    if (v.inventory_tag) assert(regItemTags.has(v.inventory_tag), `guidance ${ev.id}: unknown item tag ${v.inventory_tag}`);
+    for (const t of v.inventory_tag_multi ?? []) assert(regItemTags.has(t), `guidance ${ev.id}: unknown item tag ${t}`);
+    for (const r of v.block_use ?? []) assert(itemRef(r), `guidance ${ev.id}: unresolvable block ${r}`);
+    if (v.block_tag) assert(regBlockTags.has(v.block_tag), `guidance ${ev.id}: unknown block tag ${v.block_tag}`);
+    if (v.dimension) assert(dimRef(v.dimension), `guidance ${ev.id}: unresolvable dimension ${v.dimension}`);
+    if (v.craft_item) assert(itemRef(v.craft_item), `guidance ${ev.id}: unresolvable item ${v.craft_item}`);
+    if (v.advancement_earned) {
+      assert(v.advancement_earned.startsWith('starforge:'), `guidance ${ev.id}: advancement_earned must be starforge:*`);
+      assert(advancementIds.has(v.advancement_earned.slice(10)), `guidance ${ev.id}: unknown advancement ${v.advancement_earned}`);
+    }
+    if (v.requires_alien_dim) assert(v.inventory_tag, `guidance ${ev.id}: requires_alien_dim needs an inventory_tag`);
+  }
+  for (const d of design.guidance.alien_dimensions ?? []) assert(dimRef(d), `guidance: unknown alien dimension ${d}`);
+
+  console.log(`PASS: ${nodeIds.size} progression nodes (${stageIds.size} era + ${abilityIds.size} ability), ${routeIds.size} routes, ${chapterIds.size} chapters, ${questIds.size} quests, ${tutorialIds.size} manual pages, ${guidIds.size} guidance events, ${keys.length} bilingual keys.`);
+  console.log('PASS: stage/ability graphs, dep-stage inversion, optional rules, unlock availability, task/reward/icon refs, advancement/guidance refs, layout cycles, generated-id uniqueness.');
   console.log('Scope: static design validation only; no Minecraft runtime or real recipe graph was tested.');
 }
 

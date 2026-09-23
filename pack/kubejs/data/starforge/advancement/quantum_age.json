@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "modpack:quantum_control"
+  },
+  "title": {
+   "translate": "modpack.advancement.quantum_age.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.quantum_age.description"
+  },
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "triggered": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "requirements": [
+  [
+   "triggered"
+  ]
+ ]
+}

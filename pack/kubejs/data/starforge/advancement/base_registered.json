@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "modpack:industrial_console"
+  },
+  "title": {
+   "translate": "modpack.advancement.base_registered.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.base_registered.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "triggered": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "requirements": [
+  [
+   "triggered"
+  ]
+ ]
+}

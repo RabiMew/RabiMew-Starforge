@@ -1,4 +1,11 @@
 {
   "block.starforge_compat.electric_burner": "电磁炉",
-  "block.starforge_compat.horde_alarm": "怪潮警报器"
+  "block.starforge_compat.horde_alarm": "怪潮警报器",
+  "item.starforge_compat.edible_player_head": "%s的头颅",
+  "tooltip.starforge_compat.edible_player_head.effects": "食用效果：",
+  "tooltip.starforge_compat.edible_player_head.line1": "##########",
+  "tooltip.starforge_compat.edible_player_head.line2": "++++++++++++++",
+  "tooltip.starforge_compat.edible_player_head.line3": "********",
+  "tooltip.starforge_compat.edible_player_head.line4": "~~~~~~~~~~~~~~~~",
+  "tooltip.starforge_compat.edible_player_head.line5": "?????????"
 }

@@ -228,7 +228,11 @@ for (const mod of list.mods) {
     distribution: r.distribution, dependencies: r.deps,
     notes: mod.notes ?? null
   };
-  if (onlySet && oldByKey.get(mod.key)?.sha1) entry.sha1 = oldByKey.get(mod.key).sha1;
+  // Carry sha1 forward only when it still matches the bytes (a rebuilt local:
+  // jar gets a fresh sha1 from the post-merge backfillSha1 pass instead).
+  if (onlySet && oldByKey.get(mod.key)?.sha1 === sha(buf, 'sha1')) {
+    entry.sha1 = oldByKey.get(mod.key).sha1;
+  }
   lock.mods.push(entry);
   console.log(`OK   ${mod.key} = ${r.version} (${r.filename})`);
 }

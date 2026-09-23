@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:bulk_storage"
+display_name = "大宗仓储 / Bulk Storage"
+description = "抽屉网络按压缩级别管理大宗物资。 / Drawer networks manage bulk goods by compression tier."
+icon = "storagedrawers:controller"
+dependencies = ["modpack:basic_storage", "modpack:electric_age"]
+dependency_mode = "all"
+category = "物流仓储 / Logistics"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_2"]
+unlock_message = "大宗仓储 / Bulk Storage"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 20

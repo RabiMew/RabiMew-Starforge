@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "modpack:reactor_control"
+  },
+  "title": {
+   "translate": "modpack.advancement.atomic_age.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.atomic_age.description"
+  },
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "triggered": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "requirements": [
+  [
+   "triggered"
+  ]
+ ]
+}

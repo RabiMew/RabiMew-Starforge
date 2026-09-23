@@ -1,19 +1,22 @@
 // Generates pack/config/ftbquests/quests/** from design + localization sources.
-// Sources: design/content.json, design/semantic-map.json, localization/*.json
+// Sources: design/content.json (+ progression via tools/lib/design.mjs),
+//          design/semantic-map.json, localization/*.json
 // Format contract: docs/questbook.md (FTB Quests 2101.1.36 SNBT + lang/<locale>.snbt).
 // Usage: node tools/export-quests.mjs
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { hexId } from './lib/hexid.mjs';
+import { loadDesign } from './lib/design.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const j = (p) => JSON.parse(readFileSync(path.join(root, p), 'utf8'));
 
-const content = j('design/content.json');
-const sm = j('design/semantic-map.json');
+const design = loadDesign(root);
+const content = design;
+const sm = design.sm;
 const locales = { zh_cn: j('localization/zh_cn.json'), en_us: j('localization/en_us.json') };
-const stages = new Map(content.stages.map((s) => [s.id, s]));
+const stages = new Map(design.stages.map((s) => [s.id, s]));
 
 const outDir = path.join(root, 'pack', 'config', 'ftbquests', 'quests');
 if (existsSync(outDir)) rmSync(outDir, { recursive: true, force: true });
@@ -84,6 +87,11 @@ function taskObj(q, t, idx, pathBase) {
       return { id, type: 'item', item: { count: 1, id: itemId(t.target, q.id) }, count: t.count ?? 1, consume_items: false };
     case 'checkmark':
       return { id, type: 'checkmark' };
+    case 'stage':
+      // ProgressiveStages supplies the stage provider; the task auto-completes
+      // when the team owns the stage. The questbook records the milestone —
+      // it never grants it (team_stage = the FTB-team scope PS uses).
+      return { id, type: 'gamestage', stage: `${content.namespace}:${t.stage}`, team_stage: true };
     case 'dimension':
       return { id, type: 'dimension', dimension: dimId(t.target, q.id) };
     case 'advancement':
@@ -196,6 +204,8 @@ function questObj(q, chapterId, pos) {
   if (q.size !== undefined) obj.size = D(q.size);
   if (q.optional) obj.optional = true;
   if (q.min_width) obj.min_width = q.min_width;
+  if (q.tags) obj.tags = q.tags;
+  if (q.required_stage) obj.required_stage = `${content.namespace}:${q.required_stage}`;
   if (rewards.length) obj.rewards = rewards;
   obj.tasks = tasks;
   return obj;

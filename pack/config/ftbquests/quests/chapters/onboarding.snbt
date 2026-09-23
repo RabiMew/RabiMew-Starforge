@@ -8,7 +8,7 @@
 	}
 	id: "55C7495156B62A20"
 	images: [ ]
-	order_index: 0
+	order_index: 1
 	progression_mode: "flexible"
 	quest_links: [ ]
 	quests: [
@@ -251,7 +251,7 @@
 			}
 			id: "04678E0F669135E0"
 			x: 9.6d
-			y: 10.5d
+			y: 12d
 			dependencies: [
 				"13CFB46ABD3B5830"
 			]
@@ -296,6 +296,34 @@
 					}
 					count: 1
 					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:filled_map"
+			}
+			id: "13C6FDBBC0A6A1F8"
+			x: 22.4d
+			y: 10.5d
+			dependencies: [
+				"4A5C4FDCC304869D"
+			]
+			rewards: [
+				{
+					id: "2F47CE79358D937C"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:torch"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "4B8FAA33EFF4EC98"
+					type: "checkmark"
 				}
 			]
 		}

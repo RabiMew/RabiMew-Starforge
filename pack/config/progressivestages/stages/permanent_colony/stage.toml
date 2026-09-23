@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:permanent_colony"
+display_name = "永久殖民地 / Permanent Colony"
+description = "殖民地后勤组件可本地产出并循环维护。 / Colony logistics modules are produced and recycled locally."
+icon = "modpack:colony_maintenance"
+dependencies = ["modpack:alien_outpost"]
+dependency_mode = "all"
+category = "殖民建设 / Colony"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_6"]
+unlock_message = "永久殖民地 / Permanent Colony"
+
+[display]
+frame = "challenge"
+reveal = "dependencies"
+sort_order = 60

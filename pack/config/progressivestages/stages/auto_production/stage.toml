@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:auto_production"
+display_name = "自动生产 / Auto Production"
+description = "样例供应器让关键部件按需自动产出。 / Pattern providers auto-produce key components."
+icon = "ae2:pattern_provider"
+dependencies = ["modpack:digital_logistics"]
+dependency_mode = "all"
+category = "物流仓储 / Logistics"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_3"]
+unlock_message = "自动生产 / Auto Production"
+
+[display]
+frame = "goal"
+reveal = "dependencies"
+sort_order = 50

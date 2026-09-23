@@ -1,0 +1,30 @@
+{
+ "display": {
+  "icon": {
+   "id": "ad_astra:white_flag"
+  },
+  "title": {
+   "translate": "modpack.advancement.mars_landing.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.mars_landing.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "mars": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:mars"
+   }
+  }
+ },
+ "requirements": [
+  [
+   "mars"
+  ]
+ ]
+}

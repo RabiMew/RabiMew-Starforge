@@ -8,12 +8,14 @@ description = "把地球工业延伸到轨道与外星，建设有保障的殖�
 icon = "modpack:space_control_core"
 dependencies = ["modpack:atomic_age"]
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#4f6fd8"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_6"]
+tags = ["modpack", "era", "tier_6"]
+unlock_message = "太空时代 / Space Age"
 
 [display]
 frame = "challenge"
 reveal = "dependencies"
+sort_order = 600

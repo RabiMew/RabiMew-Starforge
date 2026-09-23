@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:basic_storage"
+display_name = "基础仓储 / Basic Storage"
+description = "大宗散料有了可检索的集中存放。 / Bulk materials have indexed, centralized storage."
+icon = "storagedrawers:oak_full_drawers_2"
+dependencies = ["modpack:survival_age"]
+dependency_mode = "all"
+category = "物流仓储 / Logistics"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_0"]
+unlock_message = "基础仓储 / Basic Storage"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 10

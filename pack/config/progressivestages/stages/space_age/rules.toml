@@ -21,3 +21,5 @@ effect = "lock"
 action = "enter"
 priority = 500
 targets.dimensions = ["ad_astra:moon", "ad_astra:mars", "ad_astra:venus", "ad_astra:mercury", "ad_astra:glacio", "ad_astra:moon_orbit", "ad_astra:mars_orbit", "ad_astra:venus_orbit", "ad_astra:mercury_orbit", "ad_astra:glacio_orbit", "ad_astra:earth_orbit", "pv_asteroid_belt:asteroid_belt", "pv_asteroid_belt:asteroid_belt_orbit"]
+[advancements]
+locked = ["id:starforge:first_launch", "id:starforge:moon_landing", "id:starforge:mars_landing", "id:starforge:belt_arrival", "id:starforge:alien_artifact", "id:starforge:alien_ruins", "id:starforge:colony_established"]

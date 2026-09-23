@@ -1,5 +1,44 @@
 {
 	file.3CA1F6C961E490AE.title: "Starforge · Quest Book"
+	quest.57CE687B27C482B3.title: "Mechanical Age"
+	quest.57CE687B27C482B3.quest_desc: [
+		"The team masters engineering assembly and basic machines. Synced with the progression map - no manual completion needed."
+	]
+	quest.57CE687B27C482B3.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.30B185E865902CFB.title: "Electric Age"
+	quest.30B185E865902CFB.quest_desc: [
+		"Power and circuits enter the production system. Synced with the progression map - no manual completion needed."
+	]
+	quest.30B185E865902CFB.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.5CBFEC3F42242B50.title: "Information Age"
+	quest.5CBFEC3F42242B50.quest_desc: [
+		"Digital networks unify storage and crafting. Synced with the progression map - no manual completion needed."
+	]
+	quest.5CBFEC3F42242B50.quest_subtitle: "Suggested stage: Information Age"
+	quest.016079F40895BC4A.title: "Heavy Industry Age"
+	quest.016079F40895BC4A.quest_desc: [
+		"Heavy industry and auto-turrets come online. Synced with the progression map - no manual completion needed."
+	]
+	quest.016079F40895BC4A.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.245AA3038DD177F7.title: "Atomic Age"
+	quest.245AA3038DD177F7.quest_desc: [
+		"Nuclear power joins the grid - technology peaks. Synced with the progression map - no manual completion needed."
+	]
+	quest.245AA3038DD177F7.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.3B95DA0212939412.title: "Space Age"
+	quest.3B95DA0212939412.quest_desc: [
+		"Rockets leave orbit - civilization leaves Earth. Synced with the progression map - no manual completion needed."
+	]
+	quest.3B95DA0212939412.quest_subtitle: "Suggested stage: Space Age"
+	quest.27746B580BF2533A.title: "Quantum Age"
+	quest.27746B580BF2533A.quest_desc: [
+		"Quantum tech breaks the distance limit. Synced with the progression map - no manual completion needed."
+	]
+	quest.27746B580BF2533A.quest_subtitle: "Suggested stage: Quantum Age"
+	chapter.3417920818FE4D66.title: "Era Milestones"
+	chapter.3417920818FE4D66.chapter_subtitle: [
+		"A live record of the seven technology eras - synced with the ProgressiveStages map, no manual completion needed."
+	]
 	quest.0E79A6A14CA31F91.title: "Welcome to Starforge"
 	quest.0E79A6A14CA31F91.quest_desc: [
 		"This quest book is a manual and milestone map: stages advance by crafting evidence components, never by turning in quests. Every chapter stays available."
@@ -49,6 +88,13 @@
 		"An iron pickaxe, sword, and bucket: mining, defense, and water hauling in one kit."
 	]
 	quest.04678E0F669135E0.quest_subtitle: "Suggested stage: Survival Age"
+	quest.13C6FDBBC0A6A1F8.title: "Open the Progression Map"
+	quest.13C6FDBBC0A6A1F8.quest_desc: [
+		"The button left of the inventory GUI opens the ProgressiveStages map: the era spine, capability branches and every unlock condition live there. The questbook only explains routes."
+		""
+		"{\"text\":\"» See the manual: Team Progression and Specialization\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Team Progression and Specialization\"}}"
+	]
+	quest.13C6FDBBC0A6A1F8.quest_subtitle: "Suggested stage: Survival Age"
 	chapter.55C7495156B62A20.title: "Getting Started"
 	chapter.55C7495156B62A20.chapter_subtitle: [
 		"Your first steps from campsite to first machine: the quest book, team progression, the kitchen, milestone components, and base registration."
@@ -191,6 +237,69 @@
 		"Crafting units, molecular assemblers, and pattern providers: the network can now build things, not just store them."
 	]
 	quest.0456D2DC6A3C47D0.quest_subtitle: "Suggested stage: Information Age"
+	quest.7D9816358D597DD3.title: "Drawer Wall"
+	quest.7D9816358D597DD3.quest_desc: [
+		"A wall of drawers layered by compression: normal drawers for bulk, compacting drawers auto-collapse ingot/block/nugget tiers."
+		""
+		"{\"text\":\"» See the manual: Storage Tiers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Storage Tiers\"}}"
+	]
+	quest.7D9816358D597DD3.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.17E40D93D5F53AAE.title: "General Storage Network"
+	quest.17E40D93D5F53AAE.quest_desc: [
+		"A Sophisticated Storage controller links barrels into a searchable warehouse for everything drawers don't hold."
+		""
+		"{\"text\":\"» See the manual: Storage Tiers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Storage Tiers\"}}"
+	]
+	quest.17E40D93D5F53AAE.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.284763ACA7D3BC91.title: "Field Backpack"
+	quest.284763ACA7D3BC91.quest_desc: [
+		"Sophisticated Backpacks are field logistics: pickup upgrade auto-loads drops; magnet, furnace and stack upgrades fit the mission."
+		""
+		"{\"text\":\"» See the manual: Expedition Loadouts\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D8C96A7B6F83F18\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Expedition Loadouts\"}}"
+	]
+	quest.284763ACA7D3BC91.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.49FEF6A934F5A795.title: "Steam Power"
+	quest.49FEF6A934F5A795.quest_desc: [
+		"Railcraft boilers and turbines are dependable early power: fluid fireboxes burn fuel oil, HP boilers raise steam."
+		""
+		"{\"text\":\"» See the manual: Advanced Railcraft\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Advanced Railcraft\"}}"
+	]
+	quest.49FEF6A934F5A795.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.1736F25A60869410.title: "Automated (Un)loading"
+	quest.1736F25A60869410.quest_desc: [
+		"Advanced loaders match manifests by filter, fluid loaders take tank cars - no one babysits the platform."
+		""
+		"{\"text\":\"» See the manual: Advanced Railcraft\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Advanced Railcraft\"}}"
+	]
+	quest.1736F25A60869410.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.45FDF56BACC668EF.title: "Signal Interlock"
+	quest.45FDF56BACC668EF.quest_desc: [
+		"Controller, receiver and token boxes wire block sections into interlocking: no token, no entry."
+		""
+		"{\"text\":\"» See the manual: Advanced Railcraft\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Advanced Railcraft\"}}"
+	]
+	quest.45FDF56BACC668EF.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.37063572DC618E0A.title: "Tunnel Bore"
+	quest.37063572DC618E0A.quest_desc: [
+		"A tunnel bore with a steel head and track packs cuts and lays line on its own. Keep a supply cart attached."
+		""
+		"{\"text\":\"» See the manual: Advanced Railcraft\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Advanced Railcraft\"}}"
+	]
+	quest.37063572DC618E0A.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.449D3297E192B8CE.title: "High-speed Rail"
+	quest.449D3297E192B8CE.quest_desc: [
+		"High-speed track demands signals and buffers - slow for corners. Powered HSR lets locomotives self-charge."
+		""
+		"{\"text\":\"» See the manual: Advanced Railcraft\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Advanced Railcraft\"}}"
+	]
+	quest.449D3297E192B8CE.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.1A9D2B725EB00DDE.title: "Starport Hub"
+	quest.1A9D2B725EB00DDE.quest_desc: [
+		"Tie the launch pad, warehouses and loading bays into one trunk line: fuel, oxygen and cargo ride through."
+		""
+		"{\"text\":\"» See the manual: Spaceport Rail\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4BD992661353F0B8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Spaceport Rail\"}}"
+	]
+	quest.1A9D2B725EB00DDE.quest_subtitle: "Suggested stage: Space Age"
 	chapter.17B3058067D055B5.title: "Automation and Logistics"
 	chapter.17B3058067D055B5.chapter_subtitle: [
 		"Connect resources, machines, and demand so supplies arrive when needed."
@@ -276,6 +385,34 @@
 		"{\"text\":\"» See the manual: Layered Base Defense\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6D57B198ED6623C4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Layered Base Defense\"}}"
 	]
 	quest.31583156C2BDAC96.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.5CF44E6653A66A00.title: "Armed Guard Drill"
+	quest.5CF44E6653A66A00.quest_desc: [
+		"Audit every guard's weapon, ammo and post, then run a full watch rotation."
+		""
+		"{\"text\":\"» See the manual: Choosing Guard Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"725FD622502D6892\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Choosing Guard Weapons\"}}"
+	]
+	quest.5CF44E6653A66A00.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.5F36C6B42FD75BA9.title: "Munitions Stress Test"
+	quest.5F36C6B42FD75BA9.quest_desc: [
+		"Simulate supply loss: halt auto-resupply for 30 minutes and confirm local ammo boxes last one horde."
+		""
+		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
+	]
+	quest.5F36C6B42FD75BA9.quest_subtitle: "Suggested stage: Information Age"
+	quest.771A802F55780549.title: "Live Turret Trial"
+	quest.771A802F55780549.quest_desc: [
+		"Let the turret net repel a raid uncrewed; log ammo burn and coverage gaps."
+		""
+		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
+	]
+	quest.771A802F55780549.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	quest.7E0B5A7A51829406.title: "DRG Weapon Challenge"
+	quest.7E0B5A7A51829406.quest_desc: [
+		"Take a high-risk target down with DRG heavy weapons and prove the ammo line keeps pace."
+		""
+		"{\"text\":\"» See the manual: Deep Rock Galactic Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Deep Rock Galactic Weapons\"}}"
+	]
+	quest.7E0B5A7A51829406.quest_subtitle: "Suggested stage: Atomic Age"
 	chapter.23F04414D2AFEB65.title: "Base Defense"
 	chapter.23F04414D2AFEB65.chapter_subtitle: [
 		"Plan defenses and firepower, then keep them supplied to protect industry and homes."
@@ -360,6 +497,29 @@
 		"{\"text\":\"» See the manual: The Safe Station\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Safe Station\"}}"
 	]
 	quest.04089907F6DAA567.quest_subtitle: "Suggested stage: Space Age"
+	quest.7EFD6B90AAB0B745.title: "Low-gravity Combat"
+	quest.7EFD6B90AAB0B745.quest_desc: [
+		"Low gravity changes recoil, jumps and falls. Fire live on a planet surface and note the difference."
+		""
+		"{\"text\":\"» See the manual: Low-g & Alien Combat\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"46C8EE9AF7A2DC7E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Low-g & Alien Combat\"}}"
+	]
+	quest.7EFD6B90AAB0B745.quest_subtitle: "Suggested stage: Space Age"
+	quest.01A8A31E7CBB6ACA.title: "Return Resupply"
+	quest.01A8A31E7CBB6ACA.quest_desc: [
+		"Every expedition keeps return fuel, oxygen and food untouched. Return reserve is hard payload, never spent."
+		""
+		"{\"text\":\"» See the manual: Expedition Loadouts\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D8C96A7B6F83F18\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Expedition Loadouts\"}}"
+		"{\"text\":\"» See the manual: Space Utility Gear\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Space Utility Gear\"}}"
+	]
+	quest.01A8A31E7CBB6ACA.quest_subtitle: "Suggested stage: Space Age"
+	quest.2297FE3FCEB77ECA.title: "Planetary Recon"
+	quest.2297FE3FCEB77ECA.quest_desc: [
+		"Every body differs in gravity, heat, radiation and loot. Run the recon checklist before unloading."
+		""
+		"{\"text\":\"» See the manual: Alien Structures & Archaeology\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Alien Structures & Archaeology\"}}"
+		"{\"text\":\"» See the manual: Ecological Survey\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Ecological Survey\"}}"
+	]
+	quest.2297FE3FCEB77ECA.quest_subtitle: "Suggested stage: Space Age"
 	chapter.7A1F8F3DD46D426E.title: "Spaceflight and Colonization"
 	chapter.7A1F8F3DD46D426E.chapter_subtitle: [
 		"Plan flights, oxygen, and supplies to turn distant outposts into reliable production bases."
@@ -411,6 +571,58 @@
 		"The charger wakes sky stone into fluix crystals — the raw lifeline of the digital network."
 	]
 	quest.76B7ECD689453090.quest_subtitle: "Suggested stage: Information Age"
+	quest.3337DD355D021D68.title: "First Artifact"
+	quest.3337DD355D021D68.quest_desc: [
+		"Ruins and loot chests yield Artifacts. Claim any one and slot it into Curios - each slot fits a different body part."
+		""
+		"{\"text\":\"» See the manual: Artifacts & Curios Slots\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts & Curios Slots\"}}"
+	]
+	quest.3337DD355D021D68.quest_subtitle: "Suggested stage: Survival Age"
+	quest.44DA18379651CDA7.title: "Lunar & Martian Relics"
+	quest.44DA18379651CDA7.quest_desc: [
+		"Moon and Mars ruins hold tier-two relics. Bring back any one of them."
+		""
+		"{\"text\":\"» See the manual: Artifacts & Curios Slots\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts & Curios Slots\"}}"
+		"{\"text\":\"» See the manual: Alien Structures & Archaeology\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Alien Structures & Archaeology\"}}"
+	]
+	quest.44DA18379651CDA7.quest_subtitle: "Suggested stage: Space Age"
+	quest.6032F578C5F37DB7.title: "High-risk Relics"
+	quest.6032F578C5F37DB7.quest_desc: [
+		"Venus and Mercury hide tier-three relics in brutal conditions. Prepare, dive in, return with any one."
+		""
+		"{\"text\":\"» See the manual: Artifacts & Curios Slots\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts & Curios Slots\"}}"
+		"{\"text\":\"» See the manual: Alien Structures & Archaeology\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Alien Structures & Archaeology\"}}"
+	]
+	quest.6032F578C5F37DB7.quest_subtitle: "Suggested stage: Space Age"
+	quest.0CB50C41FBCD2682.title: "Frontier Relics"
+	quest.0CB50C41FBCD2682.quest_desc: [
+		"Glacio and the belt are the relic hunter's edge: the rarest finds live furthest out. Any one counts - no full set required."
+		""
+		"{\"text\":\"» See the manual: Artifacts & Curios Slots\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts & Curios Slots\"}}"
+		"{\"text\":\"» See the manual: Alien Structures & Archaeology\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Alien Structures & Archaeology\"}}"
+	]
+	quest.0CB50C41FBCD2682.quest_subtitle: "Suggested stage: Space Age"
+	quest.14C1933433AE2931.title: "Ecological Survey"
+	quest.14C1933433AE2931.quest_desc: [
+		"Log the anomalous fauna on the surface and below: enderman variants, arachnid broods, cave endemics. Notes suffice - no cull needed."
+		""
+		"{\"text\":\"» See the manual: Ecological Survey\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Ecological Survey\"}}"
+	]
+	quest.14C1933433AE2931.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.754414537A314DA3.title: "Arachnid Threat"
+	quest.754414537A314DA3.quest_desc: [
+		"Arachnid warriors tear at the perimeter. Kill 3 and mark their brood site."
+		""
+		"{\"text\":\"» See the manual: Ecological Survey\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Ecological Survey\"}}"
+	]
+	quest.754414537A314DA3.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.12E6FEFAE5AD67A7.title: "Alien Ecology"
+	quest.12E6FEFAE5AD67A7.quest_desc: [
+		"Native species on the Moon and Mars play by different rules. Document at least one alien habitat."
+		""
+		"{\"text\":\"» See the manual: Ecological Survey\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Ecological Survey\"}}"
+	]
+	quest.12E6FEFAE5AD67A7.quest_subtitle: "Suggested stage: Space Age"
 	chapter.637830D327841CC8.title: "Exploration"
 	chapter.637830D327841CC8.chapter_subtitle: [
 		"Investigate ruins and anomalies for resources, blueprints, and industrial shortcuts."
@@ -458,6 +670,49 @@
 		"Set aside a dedicated rations store for expeditions and horde seasons: preserved food and backup seeds, untouched until needed."
 	]
 	quest.76B18E56A2AF597A.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.5C08D931A3082653.title: "Bulk Pantry"
+	quest.5C08D931A3082653.quest_desc: [
+		"Bulk food and ingredients go to drawers; the kitchen keeps only hot stock. Drawers for bulk, barrels for mixed goods."
+		""
+		"{\"text\":\"» See the manual: Storage Tiers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Storage Tiers\"}}"
+	]
+	quest.5C08D931A3082653.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.46642DBD06A70ABC.title: "CFB Kitchen Network"
+	quest.46642DBD06A70ABC.quest_desc: [
+		"Table, sink and counters form a kitchen network: the cooking table reads every connected container. Wire fridge and counters into the same net."
+		""
+		"{\"text\":\"» See the manual: CFB Kitchen Networks\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"73E35DDDFAD2E809\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"CFB Kitchen Networks\"}}"
+	]
+	quest.46642DBD06A70ABC.quest_subtitle: "Suggested stage: Survival Age"
+	quest.69AE0F6EE8647B0F.title: "Industrial Heat"
+	quest.69AE0F6EE8647B0F.quest_desc: [
+		"The electric burner gives kitchens and food lines steady heat instead of intermittent solid fuel."
+		""
+		"{\"text\":\"» See the manual: CFB Kitchen Networks\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"73E35DDDFAD2E809\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"CFB Kitchen Networks\"}}"
+	]
+	quest.69AE0F6EE8647B0F.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.3909E0CC792F88C2.title: "Automated Food Resupply"
+	quest.3909E0CC792F88C2.quest_desc: [
+		"Let logistics or the ME network restock kitchen ingredients by stock level - cooks just plate."
+		""
+		"{\"text\":\"» See the manual: Applied Cooking & the Digital Kitchen\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0A70E891FF739F21\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Applied Cooking & the Digital Kitchen\"}}"
+	]
+	quest.3909E0CC792F88C2.quest_subtitle: "Suggested stage: Information Age"
+	quest.404A138A10525F39.title: "ME Food Network"
+	quest.404A138A10525F39.quest_desc: [
+		"Applied Cooking's kitchen station and Applied Delight's ME cookware hook food production into the digital network."
+		""
+		"{\"text\":\"» See the manual: Applied Cooking & the Digital Kitchen\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0A70E891FF739F21\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Applied Cooking & the Digital Kitchen\"}}"
+	]
+	quest.404A138A10525F39.quest_subtitle: "Suggested stage: Information Age"
+	quest.72AC6BB895B11A07.title: "Colony Catering"
+	quest.72AC6BB895B11A07.quest_desc: [
+		"Once habitats and greenhouses join the food network, colony meals are dispatched by the system, not carried by hand."
+		""
+		"{\"text\":\"» See the manual: Applied Cooking & the Digital Kitchen\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0A70E891FF739F21\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Applied Cooking & the Digital Kitchen\"}}"
+		"{\"text\":\"» See the manual: Lightweight Colonies\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5D67189820FB07DC\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Lightweight Colonies\"}}"
+	]
+	quest.72AC6BB895B11A07.quest_subtitle: "Suggested stage: Space Age"
 	chapter.4274BFE7FD246AAF.title: "Agriculture and Provisioning"
 	chapter.4274BFE7FD246AAF.chapter_subtitle: [
 		"Supply food, crops, and biofuel to factories, defenses, and colonies."
@@ -499,6 +754,35 @@
 		"The destruction gadget clears ground safely: district rebuilds, accident cleanup, and terrain fixes no longer mean hand-picking."
 	]
 	quest.13129660D86A5A69.quest_subtitle: "Suggested stage: Atomic Age"
+	quest.33137A5834F5A967.title: "Rest Quarters"
+	quest.33137A5834F5A967.quest_desc: [
+		"Zone a quiet rest area away from machines: beds, light, simple furniture. Keep living and industrial districts apart."
+		""
+		"{\"text\":\"» See the manual: Livable Base\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Livable Base\"}}"
+	]
+	quest.33137A5834F5A967.quest_subtitle: "Suggested stage: Survival Age"
+	quest.7DE5C11A0F9E6A2B.title: "Mess Hall"
+	quest.7DE5C11A0F9E6A2B.quest_desc: [
+		"A mess hall next to the kitchen network: tables, seats, a serving counter. Food's last stop should be nearest the crew."
+		""
+		"{\"text\":\"» See the manual: Livable Base\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Livable Base\"}}"
+		"{\"text\":\"» See the manual: CFB Kitchen Networks\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"73E35DDDFAD2E809\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"CFB Kitchen Networks\"}}"
+	]
+	quest.7DE5C11A0F9E6A2B.quest_subtitle: "Suggested stage: Survival Age"
+	quest.3A9395C0631B98F1.title: "Crew Quarters"
+	quest.3A9395C0631B98F1.quest_desc: [
+		"Residents need real living units: beds, storage, work nooks, lit blocks. Macaw's and MDM furniture carry the livable feel."
+		""
+		"{\"text\":\"» See the manual: Livable Base\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Livable Base\"}}"
+	]
+	quest.3A9395C0631B98F1.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.18BFCE7EDAE35FD1.title: "Habitat Module"
+	quest.18BFCE7EDAE35FD1.quest_desc: [
+		"Off-world habitats need sealing, oxygen and standalone power - build pod, work bay, airlock."
+		""
+		"{\"text\":\"» See the manual: Livable Base\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Livable Base\"}}"
+	]
+	quest.18BFCE7EDAE35FD1.quest_subtitle: "Suggested stage: Space Age"
 	chapter.56F4CC5F9343242B.title: "Construction"
 	chapter.56F4CC5F9343242B.chapter_subtitle: [
 		"Build factories, bases, and stations that are easy to expand, maintain, and defend."
@@ -663,6 +947,61 @@
 		"The Asteroid Belt is a vacuum mining zone: near-zero gravity, no oxygen, no natural footing. A failed landing can permanently cost the rocket — always carry a return plan and a spare launch option."
 	]
 	quest.2BFD78A0764A92FF.quest_subtitle: "Spaceflight and Hazards"
+	quest.215A050EB8A4CB9C.title: "Artifacts & Curios Slots"
+	quest.215A050EB8A4CB9C.quest_desc: [
+		"Artifacts slot into Curios, not armor: necklace, belt, gloves and head each have a place. Hover a relic to see its tier (Earth > Moon/Mars > Venus/Mercury > Glacio/Belt). Rare relics name their home - check the questbook slot before equipping."
+	]
+	quest.215A050EB8A4CB9C.quest_subtitle: "Field & Ruins"
+	quest.706640814E58980D.title: "Alien Structures & Archaeology"
+	quest.706640814E58980D.quest_desc: [
+		"Moon and Mars surfaces hold explorable structures: derelict bases, crashed ships, colony ruins. Venus and Mercury sites are harsher and richer. Before entering any alien structure, confirm oxygen and return fuel - take loot and block data, no need to clear."
+	]
+	quest.706640814E58980D.quest_subtitle: "Field & Ruins"
+	quest.6BE0F716B792B7F8.title: "Ecological Survey"
+	quest.6BE0F716B792B7F8.quest_desc: [
+		"Mobs here occupy niches: Enderman Overhaul variants split by biome, Creature Feature holds caves and water, Arachnids swarm, and each planet has natives. Log habitat and behavior; rares are optional - the logbook is no exam."
+	]
+	quest.6BE0F716B792B7F8.quest_subtitle: "Field & Ruins"
+	quest.5FBDC2FE9BA6964E.title: "Storage Tiers"
+	quest.5FBDC2FE9BA6964E.quest_desc: [
+		"Storage tiers by role: Storage Drawers hold bulk single materials (ingots, food, stone) with compacting drawers auto-merging tiers; Sophisticated Storage runs mixed warehouses and limited barrels; Sophisticated Backpacks own field carry; AE2 handles digital indexing and autocrafting while BuildCraft/Railcraft move the freight. Bulk to drawers, mixed to barrels, field to packs, index to ME."
+	]
+	quest.5FBDC2FE9BA6964E.quest_subtitle: "Progression and Survival"
+	quest.0D8C96A7B6F83F18.title: "Expedition Loadouts"
+	quest.0D8C96A7B6F83F18.quest_desc: [
+		"Kit backpacks per mission: field survey takes pickup+magnet; combat runs stack+supplies; planetary trips add oxygen tanks and rations. Backpacks coexist with Curios - check keybinds and keep spare mags in a mag pouch."
+	]
+	quest.0D8C96A7B6F83F18.quest_subtitle: "Progression and Survival"
+	quest.0D4CAFB9EC9E6AC2.title: "Livable Base"
+	quest.0D4CAFB9EC9E6AC2.quest_desc: [
+		"Split the base into industry and living: machines cluster under one management, living quarters get beds, mess, rest zones and light. Macaw's, MDM, Supplementaries and FramedBlocks carry comfort - framed blocks take any texture. Off-world pods build airlock-habitat-workbay and carry their own oxygen."
+	]
+	quest.0D4CAFB9EC9E6AC2.quest_subtitle: "Residents and Garrisons"
+	quest.73E35DDDFAD2E809.title: "CFB Kitchen Networks"
+	quest.73E35DDDFAD2E809.quest_desc: [
+		"The CFB cooking table is the kitchen terminal: it reads every connected container and plates meals directly. The sink supplies water, fridge and counters extend stock, the oven batch-cooks. Link containers with kitchen connectors or one shared network, then serve from the terminal."
+	]
+	quest.73E35DDDFAD2E809.quest_subtitle: "Progression and Survival"
+	quest.0A70E891FF739F21.title: "Applied Cooking & the Digital Kitchen"
+	quest.0A70E891FF739F21.quest_desc: [
+		"Applied Cooking hooks kitchens into ME: the kitchen station lets the network pull ingredients directly, and Applied Delight's ME cookware turns the cooking pot into a network device. With stock levels and autocrafting, food shifts from hand-made to on-demand."
+	]
+	quest.0A70E891FF739F21.quest_subtitle: "Progression and Survival"
+	quest.46C8EE9AF7A2DC7E.title: "Low-g & Alien Combat"
+	quest.46C8EE9AF7A2DC7E.quest_desc: [
+		"Planetary gravity runs low: higher jumps, slower falls, recoil pushes harder and thrown arcs change. Test handling before contact; against fast natives, slows and control win. Oxygen margin is always the first stat."
+	]
+	quest.46C8EE9AF7A2DC7E.quest_subtitle: "Hordes and Defense"
+	quest.5FB73CF25E88351B.title: "Advanced Railcraft"
+	quest.5FB73CF25E88351B.quest_desc: [
+		"Advanced rail rests on four things: block signals cut the line into sections, interlock boxes keep one train per block; electric locomotives draw from the grid; high-speed track wants buffers and speed corners; the tunnel bore cuts and lays on its own. Plan trunk lines section first, signal second, rail last."
+	]
+	quest.5FB73CF25E88351B.quest_subtitle: "Rail Logistics"
+	quest.2CE7350DEA19BCD0.title: "Client Utilities"
+	quest.2CE7350DEA19BCD0.quest_desc: [
+		"These mods only touch your client, never progression: EMI for recipes, Jade for block info, Xaero maps for waypoints, Inventory Profiles for sorting, Mouse Tweaks for drags, AppleSkin for hunger, Better F3 for coords, ShulkerBoxTooltip for box previews, Controlling for keybinds. Configure to taste - none of them gates anything."
+	]
+	quest.2CE7350DEA19BCD0.quest_subtitle: "Progression and Survival"
 	chapter.13F04EAD5AD7B827.title: "Reference Manual"
 	chapter.13F04EAD5AD7B827.chapter_subtitle: [
 		"Long-form guides by topic: progression rules, power, defense, colonies, jobs, rail, and spaceflight risks. Links inside quest descriptions jump here."

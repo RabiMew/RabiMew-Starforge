@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "货运列车承担跨区段批量运输。 / Freight trains carry bulk cargo between districts."
+[[triggers.conditions]]
+type = "craft"
+item = "id:railcraft:cargo_minecart"
+count = 1

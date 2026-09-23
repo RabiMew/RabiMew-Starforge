@@ -9,3 +9,7 @@ count = 1
 type = "custom_counter"
 counter = "modpack:craft_engineering_assembly"
 count = 1
+[unlock]
+toast = "机械时代 / Mechanical Age"
+progress_nudges = true
+hud_bar = true

@@ -8,7 +8,7 @@
 	}
 	id: "7A1F8F3DD46D426E"
 	images: [ ]
-	order_index: 4
+	order_index: 5
 	progression_mode: "flexible"
 	quest_links: [ ]
 	quests: [
@@ -102,7 +102,7 @@
 			}
 			id: "7FD9F6B5176631DF"
 			x: 12.8d
-			y: 12d
+			y: 15d
 			dependencies: [
 				"7FA3F49803108CD1"
 			]
@@ -144,7 +144,7 @@
 			}
 			id: "0E6767E1E6DA1ED6"
 			x: 19.2d
-			y: 15d
+			y: 18d
 			dependencies: [
 				"7FD9F6B5176631DF"
 				"04089907F6DAA567"
@@ -173,7 +173,7 @@
 			}
 			id: "0AF6F16EA4174410"
 			x: 3.2d
-			y: 16.5d
+			y: 21d
 			dependencies: [
 				"061F44AAFD6FFC83"
 			]
@@ -300,6 +300,7 @@
 			dependencies: [
 				"16E992F88F58E687"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "074B00540ABC4A1D"
@@ -508,7 +509,7 @@
 			}
 			id: "04089907F6DAA567"
 			x: 16d
-			y: 13.5d
+			y: 16.5d
 			dependencies: [
 				"7FD9F6B5176631DF"
 			]
@@ -553,6 +554,93 @@
 					}
 					count: 1
 					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:space_boots"
+			}
+			id: "7EFD6B90AAB0B745"
+			x: 16d
+			y: 12d
+			dependencies: [
+				"56FE663A93DD6F1A"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "39FA8B60CE696D1C"
+					type: "item"
+					item: {
+						count: 1
+						id: "ad_astra:gas_tank"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3E8C07CE1406EECE"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra_giselle_addon:oxygen_can"
+			}
+			id: "01A8A31E7CBB6ACA"
+			x: 16d
+			y: 19.5d
+			dependencies: [
+				"7FD9F6B5176631DF"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "2417FEC10A7D63C3"
+					type: "item"
+					item: {
+						count: 2
+						id: "ad_astra:gas_tank"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "314A53A4971AA940"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:spyglass"
+			}
+			id: "2297FE3FCEB77ECA"
+			x: 16d
+			y: 13.5d
+			dependencies: [
+				"56FE663A93DD6F1A"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "732424655553FF55"
+					type: "item"
+					item: {
+						count: 4
+						id: "ad_astra:desh_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "6357638085F072A3"
+					type: "checkmark"
 				}
 			]
 		}

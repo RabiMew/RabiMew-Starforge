@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "地图与补给让野外行动有据可依。 / Maps and supplies put field work on a plan."
+[[triggers.conditions]]
+type = "craft"
+item = "id:minecraft:map"
+count = 1

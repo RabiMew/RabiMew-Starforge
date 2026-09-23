@@ -1,5 +1,6 @@
-// Generates runtime pack files from design/ + localization/ sources.
-// Sources: design/content.json, design/semantic-map.json, design/stage-locks.json,
+// Generates runtime pack files from the unified design sources.
+// Sources: design/content.json, design/progression.json, design/advancements.json,
+//          design/guidance.json, design/semantic-map.json, design/stage-locks.json,
 //          localization/en_us.json, localization/zh_cn.json
 // Outputs: pack/kubejs/**, pack/config/progressivestages/**
 // Usage: node tools/build-pack.mjs
@@ -7,6 +8,8 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node
 import { deflateSync } from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { loadDesign, allNodes } from './lib/design.mjs';
+import { hexId } from './lib/hexid.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const j = (p) => JSON.parse(readFileSync(path.join(root, p), 'utf8'));
@@ -16,9 +19,10 @@ const out = (p, data) => {
   writeFileSync(f, data);
 };
 
-const content = j('design/content.json');
-const sm = j('design/semantic-map.json');
-const locks = j('design/stage-locks.json');
+const design = loadDesign(root);
+const content = design;
+const sm = design.sm;
+const locks = design.locks;
 const en = j('localization/en_us.json');
 const zh = j('localization/zh_cn.json');
 const NS = content.namespace; // modpack
@@ -58,15 +62,16 @@ out('kubejs/startup_scripts/starforge_semantic_map.js',
 global.SM = ${JSON.stringify(sm, null, 1)};
 `);
 
-// ---------- 3. Lang files (item names/tooltips via keys) ----------
+// ---------- 3. Lang files (item names/tooltips via keys + runtime hint keys) ----------
 for (const [loc, dict] of [['en_us', en], ['zh_cn', zh]]) {
   const lang = {};
   for (const i of content.items) {
     lang[`item.${NS}.${i.id}`] = dict[i.name_key] ?? i.id;
     if (dict[i.tooltip_key]) lang[`item.${NS}.${i.id}.tooltip`] = dict[i.tooltip_key];
   }
+  // Runtime-translated strings (guidance hints, messages, advancement titles).
   for (const [k, v] of Object.entries(dict)) {
-    if (k.startsWith('modpack.advancement.') || k.startsWith('modpack.message.')) lang[k] = v;
+    if (k.startsWith('modpack.')) lang[k] = v;
   }
   out(`kubejs/assets/${NS}/lang/${loc}.json`, JSON.stringify(lang, null, 1) + '\n');
 }
@@ -140,34 +145,56 @@ ${tipEntries}
 });
 `);
 
-// ---------- 4c. Custom advancements (quest/task triggers) ----------
-for (const a of content.advancements ?? []) {
-  assertSupportedAdvancement(a);
+// ---------- 4c. Custom advancements (design/advancements.json) ----------
+// They RECORD milestones only — never grant stages. stage_granted/custom_event
+// rows carry an impossible criterion that the generated guidance script (or
+// starforge_compat) awards via PlayerAdvancements.award(). Vanilla triggers use
+// OR semantics across criteria like the original generator.
+const smItem = (ref) => (ref.startsWith('#') ? ref : (sm.items[ref] ?? ref));
+const smDim = (ref) => sm.dimensions[ref] ?? ref;
+const smEnt = (ref) => sm.entities?.[ref] ?? ref;
+for (const a of design.advancements) {
   const criteria = {};
   const reqRow = [];
-  for (const d of a.dimensions) {
-    const dimId = sm.dimensions[d] ?? d;
-    criteria[d] = { trigger: 'minecraft:changed_dimension', conditions: { to: dimId } };
-    reqRow.push(d);
+  if (a.trigger === 'custom_event' || a.trigger === 'stage_granted') {
+    criteria.triggered = { trigger: 'minecraft:impossible' };
+    reqRow.push('triggered');
+  } else if (a.trigger === 'changed_dimension') {
+    for (const d of a.dimensions) {
+      criteria[d] = { trigger: 'minecraft:changed_dimension', conditions: { to: smDim(d) } };
+      reqRow.push(d);
+    }
+  } else if (a.trigger === 'inventory_item') {
+    a.items.forEach((ref, i) => {
+      const id = `i${i}`;
+      criteria[id] = {
+        trigger: 'minecraft:inventory_changed',
+        conditions: { items: [ref.startsWith('#') ? { items: ref.slice(1) } : { items: smItem(ref) }] },
+      };
+      reqRow.push(id);
+    });
+  } else if (a.trigger === 'kill_entity') {
+    a.entities.forEach((ent, i) => {
+      const id = `e${i}`;
+      criteria[id] = { trigger: 'minecraft:player_killed_entity', conditions: { entity: { type: smEnt(ent) } } };
+      reqRow.push(id);
+    });
+  } else {
+    throw new Error(`advancement ${a.id}: unsupported trigger ${a.trigger}`);
   }
   out(`kubejs/data/starforge/advancement/${a.id}.json`, JSON.stringify({
     display: {
-      icon: { id: sm.items[a.icon] ?? a.icon },
+      icon: { id: smItem(a.icon) },
       title: { translate: a.title_key },
       description: { translate: a.description_key },
-      frame: 'challenge',
+      frame: a.frame ?? 'task',
       show_toast: true,
       announce_to_chat: false,
-      hidden: true
+      hidden: a.hidden ?? false
     },
     criteria,
     requirements: [reqRow]
   }, null, 1) + '\n');
-}
-function assertSupportedAdvancement(a) {
-  if (a.trigger !== 'changed_dimension' || !a.dimensions?.length) {
-    throw new Error(`advancement ${a.id}: only trigger=changed_dimension with dimensions is supported`);
-  }
 }
 
 // ---------- 5. ProgressiveStages global config ----------
@@ -198,22 +225,17 @@ out('config/progressivestages/progressivestages.toml',
 	inventory_button_icon_size = 14
 `);
 
-// ---------- 6. Stage definitions ----------
-const stageIcons = {
-  survival_age: 'minecraft:crafting_table',
-  mechanical_age: `${NS}:engineering_assembly`,
-  electric_age: 'ic2cre:generator',
-  information_age: `${NS}:information_interface`,
-  heavy_industry_age: `${NS}:heavy_industry_control`,
-  atomic_age: `${NS}:reactor_control`,
-  space_age: `${NS}:space_control_core`,
-  quantum_age: `${NS}:quantum_control`
-};
-const stageColors = {
-  survival_age: '#8b8b8b', mechanical_age: '#c07f3f', electric_age: '#e0b030',
-  information_age: '#3fa8c8', heavy_industry_age: '#a05050', atomic_age: '#4fae5f',
-  space_age: '#4f6fd8', quantum_age: '#a05fd0'
-};
+// ---------- 6. Stage definitions (era gates + ability nodes, one graph) ----------
+// Eras are the only tech gates — they carry lock rules from stage-locks.json.
+// Ability nodes are capability badges on the same map: they have triggers and
+// dependencies (which may mix eras and abilities) but NEVER lock anything.
+const catNames = {};
+for (const c of design.categories) catNames[c.id] = `${zh[c.name_key] ?? c.id} / ${en[c.name_key] ?? c.id}`;
+const advLocks = {};
+for (const a of design.advancements) {
+  if (a.reveal_at) (advLocks[a.reveal_at] ??= []).push(`id:starforge:${a.id}`);
+}
+const eraIds = new Set(design.stages.map((s) => s.id));
 const stageRoot = `config/progressivestages/stages`;
 const stageDir = path.join(root, 'pack', stageRoot);
 if (existsSync(stageDir)) rmSync(stageDir, { recursive: true, force: true });
@@ -221,13 +243,24 @@ if (existsSync(stageDir)) rmSync(stageDir, { recursive: true, force: true });
 const tomlStr = (s) => `"${s.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 const tomlList = (arr) => `[${arr.map(tomlStr).join(', ')}]`;
 
-for (const st of content.stages) {
+for (const st of allNodes(design)) {
+  const era = eraIds.has(st.id);
+  const tier = st.tier ?? 0;
   const deps = st.depends_on.map((d) => `${NS}:${d}`);
   const zhName = zh[st.name_key] ?? st.id;
   const enName = en[st.name_key] ?? st.id;
   const zhDesc = zh[st.description_key] ?? '';
   const enDesc = en[st.description_key] ?? '';
   const dir = `${stageRoot}/${st.id}`;
+  const category = catNames[st.category] ?? 'Starforge';
+  const iconId = sm.items[st.icon] ?? st.icon;
+  const unlockMsg = st.unlock_message_key
+    ? `${zh[st.unlock_message_key] ?? ''} / ${en[st.unlock_message_key] ?? ''}`
+    : `${zhName} / ${enName}`;
+  const frame = st.frame ?? (tier >= 6 ? 'challenge' : 'task');
+  const reveal = st.reveal ?? 'dependencies';
+  const sortOrder = st.sort_order ?? (era ? tier * 100 : tier * 100 + 50);
+
   out(`${dir}/stage.toml`,
 `[schema]
 version = 4
@@ -236,30 +269,34 @@ version = 4
 id = "${NS}:${st.id}"
 display_name = ${tomlStr(`${zhName} / ${enName}`)}
 description = ${tomlStr(`${zhDesc} / ${enDesc}`)}
-icon = "${stageIcons[st.id] ?? 'minecraft:stone'}"
+icon = "${iconId}"
 dependencies = ${tomlList(deps)}
 dependency_mode = "all"
-category = "Starforge"
-color = "${stageColors[st.id] ?? '#888888'}"
+category = ${tomlStr(category)}
+color = "${st.color ?? '#888888'}"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_${st.tier}"]
+tags = ["modpack", ${era ? '"era"' : '"ability"'}, "tier_${tier}"]
+unlock_message = ${tomlStr(unlockMsg)}
 
 [display]
-frame = ${st.tier >= 6 ? '"challenge"' : '"task"'}
-reveal = "dependencies"
-`);
+frame = ${JSON.stringify(frame)}
+reveal = ${JSON.stringify(reveal)}
+sort_order = ${sortOrder}
+${st.x != null ? `x = ${st.x}\ny = ${st.y ?? 0}\n` : ''}${st.background ? `background = "${st.background}"\n` : ''}`);
 
-  // progression.toml — trigger rules granting this stage from unlock_evidence.
-  // PS schema-4 format: [[triggers]] rules each with a conditions list.
-  // mode=any_of so EITHER the native craft stat OR the KubeJS-driven
-  // custom_counter (starforge_triggers.js on ItemEvents.crafted) grants it.
-  const ev = st.unlock_evidence;
+  // progression.toml — trigger rules granting this stage. [unlock] juice is a
+  // progression section in the folder format (PS validator rejects it in
+  // stage.toml); strings per PS schema, absent keys mean "off".
   let prog = '';
-  if (ev && ev.type === 'server_verified_production' && ev.component) {
-    const itemId = sm.items[ev.component];
-    if (!itemId) throw new Error(`stage ${st.id}: unlock_evidence component ${ev.component} not in semantic map`);
-    prog = `[[triggers]]
+  if (era) {
+    const ev = st.unlock_evidence;
+    if (ev && ev.type === 'server_verified_production' && ev.component) {
+      const itemId = sm.items[ev.component];
+      if (!itemId) throw new Error(`stage ${st.id}: unlock_evidence component ${ev.component} not in semantic map`);
+      // mode=any_of so EITHER the native craft stat OR the KubeJS-driven
+      // custom_counter (starforge_guidance.js on ItemEvents.crafted) grants it.
+      prog = `[[triggers]]
 mode = "any_of"
 description = "Craft the stage evidence item"
 [[triggers.conditions]]
@@ -271,24 +308,73 @@ type = "custom_counter"
 counter = "${NS}:craft_${ev.component}"
 count = 1
 `;
+    }
+  } else if (st.trigger?.conditions?.length) {
+    prog = `[[triggers]]
+mode = "${st.trigger.mode ?? 'any_of'}"
+description = ${tomlStr(`${zhDesc} / ${enDesc}`)}
+`;
+    for (const cond of st.trigger.conditions) {
+      if (cond.type === 'craft' || cond.type === 'pickup') {
+        const item = cond.item.startsWith('#') ? `tag:${cond.item.slice(1)}` : `id:${sm.items[cond.item] ?? cond.item}`;
+        prog += `[[triggers.conditions]]
+type = "${cond.type}"
+item = "${item}"
+count = ${cond.count ?? 1}
+`;
+      } else if (cond.type === 'dimension') {
+        prog += `[[triggers.conditions]]
+type = "dimension"
+dimension = "${smDim(cond.dimension)}"
+`;
+      } else if (cond.type === 'custom_counter') {
+        prog += `[[triggers.conditions]]
+type = "custom_counter"
+counter = "${cond.counter}"
+count = ${cond.count ?? 1}
+`;
+      } else if (cond.type === 'has_item') {
+        const item = cond.item.startsWith('#') ? `tag:${cond.item.slice(1)}` : `id:${sm.items[cond.item] ?? cond.item}`;
+        prog += `[[triggers.conditions]]
+type = "has_item"
+item = "${item}"
+`;
+      } else {
+        throw new Error(`ability ${st.id}: unsupported trigger condition ${cond.type}`);
+      }
+    }
+  }
+  const u = st.unlock;
+  if (u && Object.keys(u).length) {
+    const lines = [];
+    if (u.toast) lines.push(`toast = ${tomlStr(typeof u.toast === 'string' ? u.toast : unlockMsg)}`);
+    if (u.show_title) lines.push(`title = ${tomlStr(typeof u.show_title === 'string' ? u.show_title : `&l${zhName} / ${enName}`)}`);
+    if (u.subtitle_key) lines.push(`subtitle = ${tomlStr(`${zh[u.subtitle_key] ?? ''} / ${en[u.subtitle_key] ?? ''}`)}`);
+    if (u.sound) lines.push(`sound = "${u.sound}"`);
+    if (u.particle) lines.push(`particle = "${u.particle}"`);
+    if (u.progress_nudges) lines.push(`progress_nudges = true`);
+    if (u.hud_bar) lines.push(`hud_bar = true`);
+    if (lines.length) prog += `${prog.endsWith('\n') ? '' : '\n'}[unlock]\n${lines.join('\n')}\n`;
   }
   out(`${dir}/progression.toml`, prog);
 
-  // rules.toml — item use-lock, block place-lock, recipe output lock, dimension enter-lock
-  const lock = locks[st.id] ?? { items: [], blocks: [], dimensions: [] };
-  const itemIds = (lock.items ?? []).map((k) => {
-    const id = sm.items[k];
-    if (!id) throw new Error(`stage ${st.id}: unmapped lock item ${k}`);
-    return id;
-  });
-  const dimIds = (lock.dimensions ?? []).map((k) => {
-    const id = sm.dimensions[k];
-    if (!id) throw new Error(`stage ${st.id}: unmapped lock dimension ${k}`);
-    return id;
-  });
+  // rules.toml — lock rules only on era stages (abilities never lock).
+  // [advancements].locked is a rule section (hides entries until owned).
   let rules = '';
-  if (itemIds.length) {
-    rules += `[[rules]]
+  if (era) {
+    const lock = locks[st.id] ?? { items: [], blocks: [], dimensions: [] };
+    const itemIds = (lock.items ?? []).map((k) => {
+      const id = sm.items[k];
+      if (!id) throw new Error(`stage ${st.id}: unmapped lock item ${k}`);
+      return id;
+    });
+    const dimIds = (lock.dimensions ?? []).map((k) => {
+      const id = sm.dimensions[k];
+      if (!id) throw new Error(`stage ${st.id}: unmapped lock dimension ${k}`);
+      return id;
+    });
+    if (itemIds.length) {
+      rules += `[[rules]]
 id = "${NS}:${st.id}/lock_use"
 effect = "lock"
 action = "use"
@@ -305,9 +391,9 @@ targets.blocks = ${tomlList(itemIds)}
 [recipes]
 locked_items = ${tomlList(itemIds)}
 `;
-  }
-  if (dimIds.length) {
-    rules += `
+    }
+    if (dimIds.length) {
+      rules += `
 [[rules]]
 id = "${NS}:${st.id}/lock_dim_enter"
 effect = "lock"
@@ -315,8 +401,304 @@ action = "enter"
 priority = 500
 targets.dimensions = ${tomlList(dimIds)}
 `;
+    }
+    if (advLocks[st.id]?.length) {
+      rules += `${rules.endsWith('\n') ? '' : '\n'}[advancements]\nlocked = ${tomlList(advLocks[st.id])}\n`;
+    }
   }
   out(`${dir}/rules.toml`, rules);
 }
 
-console.log(`build-pack: generated ${content.items.length} items, ${content.stages.length} stages, 2 lang files`);
+// ---------- 6b. Generated runtime guidance ----------
+// starforge_guidance.js is fully generated from design/guidance.json +
+// progression.json + advancements.json. It owns: era evidence counters, one
+// detection route per real gameplay signal, custom-event advancement awards,
+// quest-completion counter polling (optional FTB path), and stage hooks
+// (advancement sync + next-step hints). Absent optional mods -> events simply
+// never fire; counters stay at 0 and abilities wait — nothing gates T0-T7.
+{
+  const itemTag = j('registry-export/tags_item.json');
+  const blockTag = j('registry-export/tags_block.json');
+  const expandTag = (ref, table) => (table[ref.replace(/^#/, '')] ?? []);
+
+  const questChapter = {};
+  for (const q of content.quests) questChapter[q.id] = q.chapter ?? q.route;
+
+  const invItems = new Map();  // itemId -> [{event id, payload}]
+  const blockIds = new Map();
+  const spawnIds = new Map();  // entityId -> [{...}]
+  const questEv = new Map();   // questIdHex -> [{...}]
+  const advEv = new Map();     // advancementId -> [{...}]
+  const dimEv = new Map();     // dimensionId -> [{...}]
+  const craftEv = new Map();   // itemId -> [{...}]
+  const hordeStart = [];
+  const hordeEnd = [];
+  let gunNs = null;
+  const alienScan = [];        // {id, items:[ids], payload}
+  const payloadOf = (ev) => {
+    const p = {};
+    if (ev.counter) p.counter = ev.counter;
+    if (ev.advancement) p.advancement = ev.advancement;
+    if (ev.hint_key) p.hint = ev.hint_key;
+    if (ev.once) p.once = true;
+    p.flag = `sf_ev_${ev.id}`;
+    return p;
+  };
+  const push = (map, key, val) => (map.get(key) ?? map.set(key, []).get(key)).push(val);
+
+  const alienDimIds = new Set((design.guidance.alien_dimensions ?? []).map((d) => smDim(d)));
+
+  for (const ev of design.guidance.events ?? []) {
+    const v = ev.via;
+    const p = payloadOf(ev);
+    if (v.inventory_tag) {
+      const members = expandTag(v.inventory_tag, itemTag);
+      if (v.requires_alien_dim) alienScan.push({ items: members, p });
+      else for (const m of members) push(invItems, m, p);
+    }
+    // gun_ns declares its watched item via inventory_item but detects on NBT,
+    // so it must not also wire the plain inventory route (any gun would fire).
+    if (!v.gun_ns && v.inventory_item) push(invItems, smItem(v.inventory_item), p);
+    if (v.inventory_items) for (const r of v.inventory_items) push(invItems, smItem(r), p);
+    if (v.block_use) for (const r of v.block_use) push(blockIds, smItem(r), p);
+    if (v.block_tag) for (const m of expandTag(v.block_tag, blockTag)) push(blockIds, m, p);
+    if (v.entity_spawned) push(spawnIds, smEnt(v.entity_spawned), p);
+    if (v.dimension) push(dimEv, smDim(v.dimension), p);
+    if (v.quest) {
+      const ch = questChapter[v.quest];
+      if (!ch) throw new Error(`guidance event ${ev.id}: unknown quest ${v.quest}`);
+      push(questEv, hexId('quest', `${ch}/${v.quest}`).toString(), p);
+    }
+    if (v.advancement_earned) push(advEv, v.advancement_earned, p);
+    if (v.horde_start) hordeStart.push(p);
+    if (v.horde_end) hordeEnd.push(p);
+    if (v.gun_ns) gunNs = { ns: v.gun_ns, p };
+    if (v.craft_item) push(craftEv, smItem(v.craft_item), p);
+  }
+
+  const stageAdv = {};
+  const stageNext = {};
+  for (const st of allNodes(design)) {
+    const a = design.advancements.find((x) => x.trigger === 'stage_granted' && x.stage === st.id);
+    if (a) stageAdv[`${NS}:${st.id}`] = a.id;
+    if (st.next_steps_key) stageNext[`${NS}:${st.id}`] = st.next_steps_key;
+  }
+  const evidence = {};
+  for (const st of design.stages) {
+    const ev = st.unlock_evidence;
+    if (ev?.type === 'server_verified_production' && ev.component) {
+      const id = sm.items[ev.component];
+      if (!id) throw new Error(`stage ${st.id}: unlock_evidence component ${ev.component} not in semantic map`);
+      evidence[id] = `${NS}:craft_${ev.component}`;
+    }
+  }
+
+  const obj = (m) => JSON.stringify(Object.fromEntries(m));
+
+  let g = `// GENERATED by tools/build-pack.mjs from design/guidance.json + progression.json.
+// Detection routes live in the design sources - do not edit this file by hand.
+// Every branch degrades gracefully: if an optional mod or FTB Quests is absent
+// the event simply never fires; T0-T7 progression never depends on it.
+const SF_RL = Java.loadClass('net.minecraft.resources.ResourceLocation');
+const SF_Long = Java.loadClass('java.lang.Long');
+const SF_SQF = Java.loadClass('dev.ftb.mods.ftbquests.quest.ServerQuestFile');
+const SF_HordeStartEvent = 'net.smileycorp.hordes.common.event.HordeStartEvent';
+const SF_HordeEndEvent = 'net.smileycorp.hordes.common.event.HordeEndEvent';
+
+function sfAward(p, advId) {
+  try {
+    const holder = p.server.getAdvancements().get(SF_RL.parse('starforge:' + advId));
+    if (!holder) return false;
+    const pa = p.getAdvancements();
+    if (pa.getOrStartProgress(holder).isDone()) return false;
+    pa.award(holder, 'triggered');
+    return true;
+  } catch (err) { console.log('[starforge] award ' + advId + ' failed: ' + err); return false; }
+}
+function sfOnce(p, flag) {
+  if (p.persistentData.getBoolean(flag)) return false;
+  p.persistentData.putBoolean(flag, true);
+  return true;
+}
+function sfFire(p, ev) {
+  if (!p) return;
+  try {
+    if (ev.counter) { try { ProgressiveStages.addCounter(p, ev.counter, 1); } catch (e1) {} }
+    if (ev.advancement) sfAward(p, ev.advancement);
+    if (ev.hint) p.tell(Text.translate(ev.hint));
+  } catch (err) { console.log('[starforge] guidance event failed: ' + err); }
+}
+function sfEmit(p, list) {
+  for (const ev of list) {
+    if (ev.once && !sfOnce(p, ev.flag)) continue;
+    sfFire(p, ev);
+  }
+}
+// NOTE: global assignment is startup-scripts-only; server scripts keep all
+// helpers file-local. starforge_horde.js owns its own presentation events.
+
+// ---- era evidence: crafting the milestone component bumps the stage counter ----
+const SF_EVIDENCE = ${JSON.stringify(evidence)};
+ItemEvents.crafted((e) => {
+  const key = SF_EVIDENCE[String(e.item.id)];
+  if (!key) return;
+  const p = e.player || e.entity;
+  try { ProgressiveStages.addCounter(p, key, 1); } catch (err) {
+    console.log('[starforge] counter bump failed: ' + err);
+  }
+});
+`;
+
+  if (craftEv.size) {
+    g += `
+// ---- craft-signal detections ----
+const SF_CRAFT = ${obj(craftEv)};
+for (const itemId of Object.keys(SF_CRAFT)) {
+  ItemEvents.crafted(itemId, (e) => sfEmit(e.player || e.entity, SF_CRAFT[itemId]));
+}
+`;
+  }
+  if (invItems.size) {
+    g += `
+// ---- inventory-signal detections ----
+const SF_INV = ${obj(invItems)};
+for (const itemId of Object.keys(SF_INV)) {
+  PlayerEvents.inventoryChanged(itemId, (e) => sfEmit(e.player, SF_INV[itemId]));
+}
+`;
+  }
+  if (blockIds.size) {
+    g += `
+// ---- block-interaction detections ----
+const SF_BLK = ${obj(blockIds)};
+for (const blockId of Object.keys(SF_BLK)) {
+  BlockEvents.rightClicked(blockId, (e) => sfEmit(e.player, SF_BLK[blockId]));
+}
+`;
+  }
+  if (dimEv.size) {
+    g += `
+// ---- dimension-arrival detections (throttled poll; KubeJS has no dim-change event) ----
+const SF_DIMS = ${obj(dimEv)};
+PlayerEvents.tick((e) => {
+  const p = e.player;
+  if (!p || p.server.getTickCount() % 20 !== 0) return;
+  try {
+    const dim = String(p.level.dimension().location());
+    if (String(p.persistentData.getString('sf_last_dim')) === dim) return;
+    p.persistentData.putString('sf_last_dim', dim);
+    const list = SF_DIMS[dim];
+    if (list) sfEmit(p, list);
+  } catch (err) {}
+});
+`;
+  }
+  if (spawnIds.size) {
+    g += `
+// ---- entity-spawn detections (nearest player owns the event) ----
+const SF_SPAWNS = ${obj(spawnIds)};
+for (const entId of Object.keys(SF_SPAWNS)) {
+  EntityEvents.spawned(entId, (e) => {
+    try {
+      const p = e.level.getNearestPlayer(e.entity, 64);
+      if (p) sfEmit(p, SF_SPAWNS[entId]);
+    } catch (err) {}
+  });
+}
+`;
+  }
+  if (gunNs) {
+    g += `
+// ---- TaCZ gun-namespace detection via GunId NBT ----
+const SF_GUN_EV = ${JSON.stringify([gunNs.p])};
+PlayerEvents.inventoryChanged('tacz:modern_kinetic_gun', (e) => {
+  try {
+    const nbt = e.item.nbt;
+    if (!nbt || !nbt.GunId) return;
+    if (!String(nbt.GunId).startsWith(${JSON.stringify(gunNs.ns + ':')})) return;
+    sfEmit(e.player, SF_GUN_EV);
+  } catch (err) {}
+});
+`;
+  }
+  if (alienScan.length) {
+    const allItems = [...new Set(alienScan.flatMap((a) => a.items))];
+    g += `
+// ---- alien-dimension artifact scan (throttled; nothing per-tick) ----
+const SF_ALIEN_SET = new Set(${JSON.stringify(allItems)});
+const SF_ALIEN_EV = ${JSON.stringify(alienScan.map((a) => a.p))};
+const SF_ALIEN_DIMS = new Set(${JSON.stringify([...alienDimIds])});
+PlayerEvents.tick((e) => {
+  const p = e.player;
+  if (!p || p.server.getTickCount() % 40 !== 0) return;
+  if (SF_ALIEN_EV.every((ev) => p.persistentData.getBoolean(ev.flag))) return;
+  try {
+    if (!SF_ALIEN_DIMS.has(String(p.level.dimension().location()))) return;
+    for (const stack of p.inventory.allItems) {
+      if (SF_ALIEN_SET.has(String(stack.id))) { sfEmit(p, SF_ALIEN_EV); break; }
+    }
+  } catch (err) {}
+});
+`;
+  }
+  if (advEv.size) {
+    for (const [advId, list] of advEv) {
+      g += `
+PlayerEvents.advancement('${advId}', (e) => sfEmit(e.player, ${JSON.stringify(list)}));
+`;
+    }
+  }
+  if (hordeStart.length || hordeEnd.length) {
+    g += `
+// ---- horde events (NativeEvents; data layer only - presentation stays in starforge_horde.js) ----
+const SF_HORDE_START = ${JSON.stringify(hordeStart)};
+const SF_HORDE_END = ${JSON.stringify(hordeEnd)};
+NativeEvents.onEvent(SF_HordeStartEvent, (e) => { const p = e.getPlayer(); if (p) sfEmit(p, SF_HORDE_START); });
+NativeEvents.onEvent(SF_HordeEndEvent, (e) => { const p = e.getPlayer(); if (p) sfEmit(p, SF_HORDE_END); });
+`;
+  }
+  if (questEv.size) {
+    g += `
+// ---- quest-completion counters (optional FTB path; absent file -> no-op) ----
+const SF_QUEST_EV = ${obj(questEv)};
+function sfPollQuests(p) {
+  try {
+    const f = SF_SQF.getInstance ? SF_SQF.getInstance() : SF_SQF.INSTANCE;
+    const file = f && f.orElse ? f.orElse(null) : f;
+    if (!file || !file.getTeamData) return;
+    const td = file.getTeamData(p);
+    if (!td || !td.isPresent || !td.isPresent()) return;
+    const data = td.get();
+    for (const hex of Object.keys(SF_QUEST_EV)) {
+      const q = file.getQuest(SF_Long.parseLong(hex, 16));
+      if (q && data.isCompleted(q)) sfEmit(p, SF_QUEST_EV[hex]);
+    }
+  } catch (err) {}
+}
+PlayerEvents.loggedIn((e) => sfPollQuests(e.player));
+PlayerEvents.tick((e) => {
+  const p = e.player;
+  if (!p || p.server.getTickCount() % 200 !== 0) return;
+  sfPollQuests(p);
+});
+`;
+  }
+  g += `
+// ---- stage hooks: advancement sync + next-step hint ----
+const SF_STAGE_ADV = ${JSON.stringify(stageAdv)};
+const SF_STAGE_NEXT = ${JSON.stringify(stageNext)};
+ProgressiveStages.onGranted((p, stage) => {
+  try {
+    const adv = SF_STAGE_ADV[String(stage)];
+    if (adv) sfAward(p, adv);
+    const key = SF_STAGE_NEXT[String(stage)];
+    if (key && sfOnce(p, 'sf_next_' + stage)) p.tell(Text.translate(key));
+  } catch (err) {}
+});
+`;
+  out('kubejs/server_scripts/starforge_guidance.js', g);
+}
+// starforge_triggers.js was absorbed into the generated guidance script.
+rmSync(path.join(root, 'pack', 'kubejs', 'server_scripts', 'starforge_triggers.js'), { force: true });
+
+console.log(`build-pack: generated ${content.items.length} items, ${allNodes(design).length} stages (${design.stages.length} era + ${design.abilities.length} ability), ${design.advancements.length} advancements, guidance script, 2 lang files`);

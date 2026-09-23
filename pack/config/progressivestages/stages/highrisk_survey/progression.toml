@@ -1,0 +1,9 @@
+[[triggers]]
+mode = "all_of"
+description = "金星与水星环境可承受短时考察。 / Venus and Mercury tolerate short expeditions."
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:venus"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:mercury"

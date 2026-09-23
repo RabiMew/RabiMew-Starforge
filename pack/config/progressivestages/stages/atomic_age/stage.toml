@@ -8,12 +8,14 @@ description = "掌握核能、铱和纳米材料，为航天与量子工业提�
 icon = "modpack:reactor_control"
 dependencies = ["modpack:heavy_industry_age"]
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#4fae5f"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_5"]
+tags = ["modpack", "era", "tier_5"]
+unlock_message = "原子时代 / Atomic Age"
 
 [display]
-frame = "task"
+frame = "goal"
 reveal = "dependencies"
+sort_order = 500

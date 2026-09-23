@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "工业基地已登记，后续活动按本地设施统计。 / The industrial base is registered; activity counts toward local facilities."
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:base_registered"
+count = 1

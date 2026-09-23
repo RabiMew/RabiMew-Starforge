@@ -1,7 +1,7 @@
 // Unified release pipeline — one command builds and verifies everything:
 //   node tools/release.mjs [--local]
 //
-//   validate-design -> build-pack -> fetch-mods --locked -> hash validation
+//   validate-design -> check-mapping -> build-pack -> export-quests -> fetch-mods --locked -> hash validation
 //   -> audit-deps -> client sync -> server sync validation
 //   -> package-client (.mrpack) -> package-server -> verify-release
 //   -> dist/release-report.md
@@ -42,6 +42,7 @@ async function stage(name, fn) {
 let lock, version, stem, mrpackOk = false, serverOk = false, localOk = false;
 
 await stage('validate-design', async () => runNode('tools/validate-design.mjs'));
+await stage('check-mapping', async () => runNode('tools/check-mapping.mjs'));
 await stage('build-pack', async () => runNode('tools/build-pack.mjs'));
 await stage('export-quests', async () => runNode('tools/export-quests.mjs'));
 await stage('fetch-mods (locked)', async () => runNode('tools/fetch-mods.mjs', ['--locked']));

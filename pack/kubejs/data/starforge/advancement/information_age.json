@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "modpack:information_interface"
+  },
+  "title": {
+   "translate": "modpack.advancement.information_age.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.information_age.description"
+  },
+  "frame": "goal",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "triggered": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "requirements": [
+  [
+   "triggered"
+  ]
+ ]
+}

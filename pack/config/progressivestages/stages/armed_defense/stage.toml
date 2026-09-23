@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:armed_defense"
+display_name = "武装防卫 / Armed Defense"
+description = "团队已具备枪械制造能力，可以武装守卫与自卫。 / The team can manufacture firearms for guards and self-defense."
+icon = "tacz:gun_smith_table"
+dependencies = ["modpack:electric_age"]
+dependency_mode = "all"
+category = "军事能力 / Military"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_2"]
+unlock_message = "武装防卫 / Armed Defense"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 10

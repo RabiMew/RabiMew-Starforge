@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:relic_research"
+display_name = "遗物研究 / Relic Research"
+description = "团队开始收集并利用遗迹遗物。 / The team collects and fields artifacts."
+icon = "artifacts:umbrella"
+dependencies = ["modpack:earth_scouting"]
+dependency_mode = "all"
+category = "探索发现 / Exploration"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_0"]
+unlock_message = "遗物研究 / Relic Research"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 20

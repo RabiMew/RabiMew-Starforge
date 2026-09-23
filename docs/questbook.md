@@ -2,13 +2,29 @@
 
 FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明书与里程碑地图，不是进度闸门**：科技阶段一律由 ProgressiveStages 的服务端制造验证授予，任务不授予阶段、不消耗物品。任务之间用 `deps` 连成**树状依赖**（见 §5）：章节为 `progression_mode: "flexible"`，子任务进度随时可以推进（物品预积累），但完成/领奖按树序进行——这只约束任务书内部的完成顺序，不影响科技阶段。
 
-## 1. 章节结构（9 章）
+引导体系的职责分层（V2）：
 
 ```text
-启程（onboarding）   进图即见的前十分钟引导，8 个任务（链式小树）
-七章路线            工业 / 自动化物流 / 军事 / 航天 / 探索 / 农业后勤 / 建筑，与 content.json routes 一一对应，每章一棵 7–12 节点的树
-参考手册（manual）   26 条教程正文页，7 个分组（无依赖，自由翻阅）
+ProgressiveStages  唯一状态源：8 个时代闸门 + 22 个能力节点（同一张依赖图）
+Progression Map    总导航：PS 库存按钮打开，时代主线 + 能力分支 + 解锁条件
+FTB Quests         说明书/路线：主线说明、支线推荐、手册页——完全可选
+Advancements       成就记录：时代镜像 + 一次性玩法成就（只记录，不授权）
+Manual             手册章：43 页分组知识库
+Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一次性提示
 ```
+
+## 1. 章节结构（10 章）
+
+```text
+时代里程碑（milestones）  7 个 gamestage 任务，与 PS 时代阶段实时同步（无需手动完成）
+启程（onboarding）        进图即见的前十分钟引导，9 个任务（链式小树，含"打开阶段图谱"）
+七章路线                  工业 / 自动化物流 / 军事 / 航天 / 探索 / 农业后勤 / 建筑，与 content.json routes 一一对应
+参考手册（manual）         43 条教程正文页，8 个分组（无依赖，自由翻阅）
+```
+
+### 时代里程碑章
+
+每章任务为一个 `gamestage` 任务（`team_stage: true`），团队拥有对应时代阶段即自动完成——与 ProgressiveStages 图谱完全同步，玩家不需要也无法手动点掉。按 T1→T7 线序排列，奖励 `service_medal`（team 一次）。这是"任务书记录进度"而非"任务书授予进度"的直接体现。
 
 ### 启程章
 
@@ -21,6 +37,7 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 | `milestone_assembly` | item：工程装配件 | **制成 T1 晋级证据**，讲清"做部件晋级"规则 |
 | `register_base` | checkmark | 登记基地、认识基地状态 GUI |
 | `routes_overview` | checkmark | 七章导览，之后自由选路 |
+| `star_map` | checkmark | 指引玩家用 PS 库存按钮打开进度图谱（主线+能力分支+解锁条件） |
 
 ### 参考手册章
 
@@ -28,13 +45,14 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 
 | 组 | 教程页 |
 | --- | --- |
-| 进度与生存 `progression` | team_progression · earth_alternative · storage_progression · backpack_kit · kitchen_automation |
+| 进度与生存 `progression` | team_progression · earth_alternative · storage_progression · backpack_kit · kitchen_automation · advanced_storage · expedition_backpack · cfb_kitchen · applied_kitchen · client_qol |
 | 能源·石油·网络 `energy` | power_priority · unified_oil · ae2_bootstrap |
-| 怪潮与防御 `defense` | horde_engineers · colony_security · colony_defense · defense_layers · turret_resupply · drg_arsenal · guard_weapons · tacz_addon_basics |
-| 殖民人口与驻军 `colony` | lightweight_colony · colony_residents · colony_guard · colony_armory · colony_ammunition · colony_supply · planetary_garrison |
+| 怪潮与防御 `defense` | horde_engineers · colony_security · colony_defense · defense_layers · turret_resupply · drg_arsenal · guard_weapons · tacz_addon_basics · low_gravity_combat |
+| 殖民人口与驻军 `colony` | lightweight_colony · colony_residents · colony_guard · colony_armory · colony_ammunition · colony_supply · planetary_garrison · livable_base |
 | 岗位与维护 `workforce` | colony_workforce · job_assignment · maintenance_rewards |
-| 铁路物流 `rail` | rail_logistics · starport_rail |
+| 铁路物流 `rail` | rail_logistics · starport_rail · railcraft_advanced |
 | 航天与风险 `space` | safe_station · giselle_equipment · asteroid_belt_risk · expedition_ammo |
+| 野外与遗迹 `field` | artifacts_curios · alien_archaeology · ecology_survey |
 
 ## 2. 任务描述格式
 
@@ -50,7 +68,7 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 
 ## 3. 检测类型映射
 
-76 个任务节点中约半数自动检测（item/dimension/advancement/kill）、半数 checkmark，另有 32 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。下表为原 35 个主线任务的检测映射（新增中间节点均为 item 或 checkmark 子步骤，详见 content.json）：
+117 个任务节点中约半数自动检测（item/dimension/advancement/kill/gamestage）、半数 checkmark，另有 43 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。支线（optional）只承载推荐与演练，不影响章节完成度与任何阶段授予。下表为原 35 个主线任务的检测映射（新增中间节点均为 item/checkmark/stage 子步骤，详见 content.json）：
 
 | 任务 | 阶段 | task | 目标（语义键/字面量） |
 | --- | --- | --- | --- |
@@ -75,7 +93,7 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 | swarm_suppression | T5 | checkmark | — |
 | expedition_firepower | T6 | checkmark | — |
 | munitions_supply | T3 | checkmark | —（自动化章） |
-| defense_drill | T5 | checkmark + item ×4 | ie_steel_component |
+| defense_drill | T5 | checkmark + item ×4 | ie_steel_component（支线 optional） |
 | launch_preparation | T5 | item ×1 | space_control_core |
 | first_launch | T6 | advancement | `starforge:first_launch` |
 | orbital_station | T6 | dimension | earth_orbit |
@@ -131,15 +149,19 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 ],
 
 "quests[i]": {
-  "chapter": "onboarding | <route id> | manual",   // 路线任务省略时取 route
-  "task":   { "type": "item|checkmark|kill|dimension|advancement|biome|structure",
+  "chapter": "onboarding | milestones | <route id> | manual",   // 路线任务省略时取 route
+  "task":   { "type": "item|checkmark|kill|dimension|advancement|biome|structure|stage",
               "target": "<语义键|ns:path|advancement id|#实体标签>",
+              "stage": "<progression 节点 id>",                  // type=stage 时
               "count": 1 },
   "tasks":  [ ... ],                               // 子步骤清单：多目标任务用 tasks 数组（全部完成）
   "icon": "<语义键|ns:path>",
   "deps": ["quest_id"],                            // 树形父依赖 → FTB dependencies（flexible：进度自由、完成按序）
   "manual_refs": ["tutorial_id"],                  // 描述尾部生成 change_page 链接
   "rewards": [{ "item": "<语义键|ns:path>", "count": 8, "scope": "player|team" }],
+  "optional": true,                                // 支线：不计章节完成度
+  "tags": ["side_quest"],                          // 可选 FTB 标签
+  "required_stage": "<progression 节点 id>",       // 可选：PS 混入强制（本包未用）
   "shape": "pentagon", "size": 1.5                 // 可选，默认 circle / 1.0
 },
 
@@ -164,7 +186,7 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 
 ```text
 tools/export-quests.mjs:
-  design/content.json + design/semantic-map.json + design/stage-locks.json + localization/*.json
+  tools/lib/design.mjs（design/content.json + progression.json + semantic-map.json + stage-locks.json）+ localization/*.json
     → pack/config/ftbquests/quests/data.snbt              （任务书根对象 + file 标题）
     → pack/config/ftbquests/quests/chapter_groups.snbt    （空组列表）
     → pack/config/ftbquests/quests/chapters/<id>.snbt     （结构：任务/坐标/图标/任务项/奖励）
@@ -177,7 +199,7 @@ tools/export-quests.mjs:
 - FTB Quests 2100+ 把全部文本放在 `lang/<locale>.snbt`，键形如 `chapter.<HEX>.title`、`quest.<HEX>.title` / `.quest_subtitle` / `.quest_desc`（列表）、`chapter.<HEX>.chapter_subtitle`（列表）、`file.<HEX>.title`；客户端按各自 MC 语言渲染，天然满足双语同服。
 - **确定性 63-bit hex ID**（`tools/lib/hexid.mjs`，导出器与校验器共用）：`sha256("ftbquests/<type>:<path>")` 取高 63 bit 转 16 位大写 hex。路径带类型与层级命名空间，如 `chapter:industry`、`quest:industry/ic2_generator`、`task:space/first_launch/0`、`reward:industry/ic2_generator/0`、`manual:unified_oil`、`file:starforge`——同名对象在不同章节/类型下不冲突，`change_page` 链接可预先算得。
 - 章文件字段（2101 实测格式）：`filename/group/icon{id}/id/order_index/progression_mode:"flexible"/default_quest_shape/default_hide_dependency_lines/images/quest_links/quests[]`；任务 `{id,x,y,shape,size,icon{id},min_width,tasks[],rewards[]}`。
-- 任务 SNBT（按 2101 源码字段）：item `{type:"item", item:{id,count:1}, count:N, consume_items:false}`；checkmark `{type:"checkmark"}`；dimension `{type:"dimension", dimension:"ns:dim"}`；advancement `{type:"advancement", advancement:"ns:path", criterion:""}`；kill `{type:"kill", entity:"ns:e" 或 entityTypeTag:"ns:tag", value:1}`；biome/structure 同名字段。
+- 任务 SNBT（按 2101 源码字段）：item `{type:"item", item:{id,count:1}, count:N, consume_items:false}`；checkmark `{type:"checkmark"}`；dimension `{type:"dimension", dimension:"ns:dim"}`；advancement `{type:"advancement", advancement:"ns:path", criterion:""}`；kill `{type:"kill", entity:"ns:e" 或 entityTypeTag:"ns:tag", value:1}`；biome/structure 同名字段；**gamestage `{type:"gamestage", stage:"modpack:<id>", team_stage:true}`**（ProgressiveStages 提供 stage provider，团队持有时自动完成）。
 - 奖励 SNBT：`{type:"item", item:{id,count:N}, team_reward:<bool>}`（数量在物品栈内，与 ItemTask 的顶层 `count` 不同）。
 - item 任务写 `consume_items: false`（显式覆盖，章节默认也是 false 但不依赖默认）。
 - `pack/config/ftbquests/` 经 `sync-pack.mjs` 同时下发到客户端与服务端（任务书数据在服务端持有、客户端同步显示，lang 文件两端都需要）；该目录加入 `OWNED_DIRS` 清 stale。
@@ -185,14 +207,19 @@ tools/export-quests.mjs:
 
 ## 8. 校验器新增检查（validate-design.mjs）
 
-- 章节：id 唯一、`title_key`/`description_key`/icon 存在且可解析，9 章。
-- 任务：`chapter` 合法（route 任务缺省取 `route`）；`task.type` ∈ 允许集合；`task.target` 可解析并对照 `registry-export/`——item/图标/奖励解析后须在 `items.json` 或为本包 `modpack:*` 自定义物品（对照 `content.items`），dimension 须在 `dimensions.json`，kill 实体/标签须在 `entity_types.json`/`tags_entity.json`，advancement 须是 `advancements[]` 中声明的 `starforge:<id>`；biome/structure 仅校验 `ns:path` 格式（注册表导出不含这两类）。
+- 章节：id 唯一、`title_key`/`description_key`/icon 存在且可解析，10 章。
+- **进度图**：8 时代 + 22 能力节点全局无环；时代依赖只能是时代（能力永不反向授权）；能力触发条件（craft/pickup/dimension/custom_counter/has_item）逐条解析校验；`reveal ∈ {always,dependencies,unlocked}`、`frame ∈ {task,goal,challenge}`、category 有效；`stage-locks.json` 只允许挂在时代上。
+- 任务：`chapter` 合法（route 任务缺省取 `route`）；`task.type` ∈ 允许集合（含 `stage`）；`task.target`/`task.stage` 可解析并对照 `registry-export/`——item/图标/奖励解析后须在 `items.json` 或为本包 `modpack:*` 自定义物品（对照 `content.items`），dimension 须在 `dimensions.json`，kill 实体/标签须在 `entity_types.json`/`tags_entity.json`，advancement 须是 `advancements.json` 中声明的 `starforge:<id>`，stage 须是进度图节点；biome/structure 仅校验 `ns:path` 格式（注册表导出不含这两类）。
+- **依赖阶段不倒挂**：`deps` 指向的 `suggested_stage` 不得高于本任务（支线排程与主线一致）。
+- **optional 规则**：非 optional 任务不得依赖 optional 任务（required 不等待 side quest）。
 - **任务阶段一致性**：item 类任务目标的解锁阶段 ≤ `suggested_stage`（同奖励规则；据此把 `anomaly_analysis` 的解锁从 quantum_age 修正为 atomic_age——SF-28 设计为 T5 地球制造，原 stage-locks 条目与设计文档冲突）。
 - 奖励：`scope ∈ {player,team}`、物品解锁阶段 ≤ `suggested_stage`、count ≥ 1；全部奖励非阶段凭证物品本身以外的禁令项。
 - `manual_refs` 指向存在的 tutorial；`deps` 指向同章任务、无环、非自引用，每章至少一个根节点。
 - 教程：`title_key`、`group` 必填，`modpack.tutorial.group.<group>` 双语键存在。
+- 成就：`advancements.json` 的 icon/reveal_at/dimensions/items/entities/stage 引用全部可解析；`stage_granted` 只能镜像已有进度节点。
+- **guidance 事件**：每条至少一条检测路由；计数器 `modpack:*` 且唯一；`via.quest` 事件严禁投喂 `modpack:craft_*` 时代证据计数器（FTB Quests 永远可选）；advancement/hint/quest/entity/dimension 引用可解析。
 - **ID 冲突**：按导出器同一算法重算所有对象的 63-bit ID，断言全局唯一。
-- 双语键集合一致性沿用现有校验。
+- 双语键集合一致性沿用现有校验（含 progression/advancements/guidance 中全部 `*_key` 字段的回收检查）。
 
 ## 9. 验收
 

@@ -8,7 +8,7 @@
 	}
 	id: "17B3058067D055B5"
 	images: [ ]
-	order_index: 2
+	order_index: 3
 	progression_mode: "flexible"
 	quest_links: [ ]
 	quests: [
@@ -68,7 +68,7 @@
 			}
 			id: "4F47C604F5D375CC"
 			x: 6.4d
-			y: 3d
+			y: 16.5d
 			dependencies: [
 				"55D5885078439343"
 			]
@@ -111,7 +111,7 @@
 			}
 			id: "401D4EAB9AB4A6E1"
 			x: 12.8d
-			y: 6d
+			y: 19.5d
 			dependencies: [
 				"3FDA41ACF6A75A22"
 			]
@@ -139,10 +139,11 @@
 			}
 			id: "4B11C059543966A4"
 			x: 16d
-			y: 10.5d
+			y: 24d
 			dependencies: [
 				"401D4EAB9AB4A6E1"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "79810587BC910066"
@@ -167,7 +168,7 @@
 			}
 			id: "4B4C77575CC4219A"
 			x: 19.2d
-			y: 9d
+			y: 22.5d
 			dependencies: [
 				"0456D2DC6A3C47D0"
 			]
@@ -212,7 +213,7 @@
 			}
 			id: "1E674A8A5C906BBF"
 			x: 3.2d
-			y: 12d
+			y: 1.5d
 			dependencies: [
 				"1E6E9ECA6921E56E"
 			]
@@ -265,7 +266,7 @@
 			}
 			id: "3991787934E071A4"
 			x: 9.6d
-			y: 15d
+			y: 4.5d
 			dependencies: [
 				"0DB724B7A030812E"
 			]
@@ -302,7 +303,7 @@
 			}
 			id: "55D5885078439343"
 			x: 3.2d
-			y: 1.5d
+			y: 15d
 			dependencies: [
 				"1E6E9ECA6921E56E"
 			]
@@ -350,7 +351,7 @@
 			}
 			id: "0DB724B7A030812E"
 			x: 6.4d
-			y: 13.5d
+			y: 3d
 			dependencies: [
 				"1E674A8A5C906BBF"
 			]
@@ -394,7 +395,7 @@
 			}
 			id: "3FDA41ACF6A75A22"
 			x: 9.6d
-			y: 4.5d
+			y: 18d
 			dependencies: [
 				"4F47C604F5D375CC"
 			]
@@ -448,7 +449,7 @@
 			}
 			id: "0456D2DC6A3C47D0"
 			x: 16d
-			y: 7.5d
+			y: 21d
 			dependencies: [
 				"401D4EAB9AB4A6E1"
 			]
@@ -493,6 +494,425 @@
 					}
 					count: 2
 					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "storagedrawers:compacting_drawers_3"
+			}
+			id: "7D9816358D597DD3"
+			x: 3.2d
+			y: 25.5d
+			dependencies: [
+				"1E6E9ECA6921E56E"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "0E1DFF6C321691DA"
+					type: "item"
+					item: {
+						count: 4
+						id: "minecraft:piston"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "51FC68B410F12067"
+					type: "item"
+					item: {
+						count: 1
+						id: "storagedrawers:oak_full_drawers_2"
+					}
+					count: 4
+					consume_items: false
+				}
+				{
+					id: "08761122F3BF8598"
+					type: "item"
+					item: {
+						count: 1
+						id: "storagedrawers:compacting_drawers_3"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "sophisticatedstorage:controller"
+			}
+			id: "17E40D93D5F53AAE"
+			x: 6.4d
+			y: 27d
+			dependencies: [
+				"7D9816358D597DD3"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "26C274DF541F6A28"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:copper_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "4C0EAC93F0EFF475"
+					type: "item"
+					item: {
+						count: 1
+						id: "sophisticatedstorage:controller"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "1BE3108BA42AD53A"
+					type: "item"
+					item: {
+						count: 1
+						id: "sophisticatedstorage:limited_barrel_2"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "sophisticatedbackpacks:backpack"
+			}
+			id: "284763ACA7D3BC91"
+			x: 3.2d
+			y: 28.5d
+			dependencies: [
+				"1E6E9ECA6921E56E"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "0B52466916ABA58E"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:leather"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "28E0EE6991FDFF65"
+					type: "item"
+					item: {
+						count: 1
+						id: "sophisticatedbackpacks:backpack"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "467C16670255C455"
+					type: "item"
+					item: {
+						count: 1
+						id: "sophisticatedbackpacks:pickup_upgrade"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:steam_turbine"
+			}
+			id: "49FEF6A934F5A795"
+			x: 6.4d
+			y: 13.5d
+			dependencies: [
+				"1E674A8A5C906BBF"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "02E3D869047FEE48"
+					type: "item"
+					item: {
+						count: 8
+						id: "railcraft:steel_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "31A24FCB6CCACCC4"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:fluid_fueled_firebox"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "74B90F6A77B9E533"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:high_pressure_steam_boiler_tank"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "4583B6DCA264AE8B"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:steam_turbine"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:advanced_item_loader"
+			}
+			id: "1736F25A60869410"
+			x: 6.4d
+			y: 10.5d
+			dependencies: [
+				"1E674A8A5C906BBF"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "0BDD1007DCE7B118"
+					type: "item"
+					item: {
+						count: 8
+						id: "railcraft:steel_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "7C2CA08999D117E8"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:advanced_item_loader"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "007F40E7E47525F7"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:advanced_item_unloader"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "4FD5E56159CB7F3A"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:fluid_loader"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:signal_controller_box"
+			}
+			id: "45FDF56BACC668EF"
+			x: 9.6d
+			y: 7.5d
+			dependencies: [
+				"0DB724B7A030812E"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "2B84C3F4DB71F110"
+					type: "item"
+					item: {
+						count: 4
+						id: "railcraft:signal_circuit"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "7C59192CA6B49957"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:signal_controller_box"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "6B76E2ABF1C52E84"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:signal_receiver_box"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "690745CD523755E5"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:token_signal_box"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:tunnel_bore"
+			}
+			id: "37063572DC618E0A"
+			x: 9.6d
+			y: 12d
+			dependencies: [
+				"1736F25A60869410"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "6A32ADA709A5DAB9"
+					type: "item"
+					item: {
+						count: 16
+						id: "railcraft:steel_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "418DDD751F70DA58"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:tunnel_bore"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "19F407479DC0A621"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:steel_tunnel_bore_head"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:high_speed_electric_track"
+			}
+			id: "449D3297E192B8CE"
+			x: 12.8d
+			y: 9d
+			dependencies: [
+				"45FDF56BACC668EF"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "609DB4800C5EDA26"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "7B75E48B5F5F8F47"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:high_speed_track"
+					}
+					count: 16
+					consume_items: false
+				}
+				{
+					id: "1BE971FE64656B4F"
+					type: "item"
+					item: {
+						count: 1
+						id: "railcraft:high_speed_electric_track"
+					}
+					count: 8
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "railcraft:train_dispenser"
+			}
+			id: "1A9D2B725EB00DDE"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"3991787934E071A4"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "1D048DA96B2885A6"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "417E5FB58B6A9991"
+					type: "checkmark"
 				}
 			]
 		}

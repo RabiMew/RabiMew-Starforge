@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:alien_outpost"
+display_name = "外星前哨 / Alien Outpost"
+description = "团队在其他天体建立了落脚点。 / The team holds an off-world foothold."
+icon = "ad_astra:space_helmet"
+dependencies = ["modpack:armed_garrison", "modpack:space_age"]
+dependency_mode = "all"
+category = "殖民建设 / Colony"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_6"]
+unlock_message = "外星前哨 / Alien Outpost"
+
+[display]
+frame = "goal"
+reveal = "dependencies"
+sort_order = 50

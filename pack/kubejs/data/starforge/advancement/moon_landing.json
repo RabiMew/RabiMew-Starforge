@@ -1,0 +1,30 @@
+{
+ "display": {
+  "icon": {
+   "id": "ad_astra:white_flag"
+  },
+  "title": {
+   "translate": "modpack.advancement.moon_landing.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.moon_landing.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "moon": {
+   "trigger": "minecraft:changed_dimension",
+   "conditions": {
+    "to": "ad_astra:moon"
+   }
+  }
+ },
+ "requirements": [
+  [
+   "moon"
+  ]
+ ]
+}

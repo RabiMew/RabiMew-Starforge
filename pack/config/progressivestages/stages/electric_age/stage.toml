@@ -8,12 +8,14 @@ description = "以工业电路、电力和矿物处理支撑自动化与基础�
 icon = "ic2cre:generator"
 dependencies = ["modpack:mechanical_age"]
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#e0b030"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_2"]
+tags = ["modpack", "era", "tier_2"]
+unlock_message = "电气时代 / Electrical Age"
 
 [display]
 frame = "task"
 reveal = "dependencies"
+sort_order = 200

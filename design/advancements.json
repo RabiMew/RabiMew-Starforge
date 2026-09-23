@@ -1,0 +1,281 @@
+{
+ "schema_version": 1,
+ "comment": "Custom Starforge advancements. They RECORD milestones only - they never grant T0-T7 stages. stage_granted advancements are awarded by the generated KubeJS bridge when ProgressiveStages actually grants the stage (never by re-detecting items). inventory_item/kill_entity/changed_dimension use vanilla triggers. custom_event advancements are awarded by the generated guidance script or starforge_compat. reveal_at hides the advancement behind a ProgressiveStages stage via [advancements].locked.",
+ "advancements": [
+  {
+   "id": "first_launch",
+   "title_key": "modpack.advancement.first_launch.title",
+   "description_key": "modpack.advancement.first_launch.description",
+   "icon": "aa_tier1_rocket",
+   "trigger": "changed_dimension",
+   "dimensions": ["earth_orbit", "moon_orbit", "mars_orbit", "venus_orbit", "mercury_orbit", "glacio_orbit"],
+   "frame": "challenge",
+   "hidden": false,
+   "reveal_at": "space_age"
+  },
+  {
+   "id": "edible_player_head",
+   "title_key": "modpack.advancement.edible_player_head.title",
+   "description_key": "modpack.advancement.edible_player_head.description",
+   "icon": "minecraft:player_head",
+   "trigger": "custom_event",
+   "event": "starforge_compat:player_killed_player",
+   "frame": "challenge",
+   "hidden": true
+  },
+  {
+   "id": "mechanical_age",
+   "title_key": "modpack.advancement.mechanical_age.title",
+   "description_key": "modpack.advancement.mechanical_age.description",
+   "icon": "engineering_assembly",
+   "trigger": "stage_granted",
+   "stage": "mechanical_age",
+   "frame": "task"
+  },
+  {
+   "id": "electric_age",
+   "title_key": "modpack.advancement.electric_age.title",
+   "description_key": "modpack.advancement.electric_age.description",
+   "icon": "ic2_generator",
+   "trigger": "stage_granted",
+   "stage": "electric_age",
+   "frame": "task"
+  },
+  {
+   "id": "information_age",
+   "title_key": "modpack.advancement.information_age.title",
+   "description_key": "modpack.advancement.information_age.description",
+   "icon": "information_interface",
+   "trigger": "stage_granted",
+   "stage": "information_age",
+   "frame": "goal"
+  },
+  {
+   "id": "heavy_industry_age",
+   "title_key": "modpack.advancement.heavy_industry_age.title",
+   "description_key": "modpack.advancement.heavy_industry_age.description",
+   "icon": "heavy_industry_control",
+   "trigger": "stage_granted",
+   "stage": "heavy_industry_age",
+   "frame": "goal"
+  },
+  {
+   "id": "atomic_age",
+   "title_key": "modpack.advancement.atomic_age.title",
+   "description_key": "modpack.advancement.atomic_age.description",
+   "icon": "reactor_control",
+   "trigger": "stage_granted",
+   "stage": "atomic_age",
+   "frame": "challenge"
+  },
+  {
+   "id": "space_age",
+   "title_key": "modpack.advancement.space_age.title",
+   "description_key": "modpack.advancement.space_age.description",
+   "icon": "space_control_core",
+   "trigger": "stage_granted",
+   "stage": "space_age",
+   "frame": "challenge"
+  },
+  {
+   "id": "quantum_age",
+   "title_key": "modpack.advancement.quantum_age.title",
+   "description_key": "modpack.advancement.quantum_age.description",
+   "icon": "quantum_control",
+   "trigger": "stage_granted",
+   "stage": "quantum_age",
+   "frame": "challenge"
+  },
+  {
+   "id": "base_registered",
+   "title_key": "modpack.advancement.base_registered.title",
+   "description_key": "modpack.advancement.base_registered.description",
+   "icon": "industrial_console",
+   "trigger": "custom_event",
+   "event": "modpack:quest_register_base",
+   "frame": "task"
+  },
+  {
+   "id": "armed_garrison",
+   "title_key": "modpack.advancement.armed_garrison.title",
+   "description_key": "modpack.advancement.armed_garrison.description",
+   "icon": "gv_guard_egg",
+   "trigger": "custom_event",
+   "event": "modpack:guard_posted",
+   "frame": "task"
+  },
+  {
+   "id": "auto_turret",
+   "title_key": "modpack.advancement.auto_turret.title",
+   "description_key": "modpack.advancement.auto_turret.description",
+   "icon": "tt_turret",
+   "trigger": "inventory_item",
+   "items": ["tt_turret"],
+   "frame": "goal",
+   "reveal_at": "heavy_industry_age"
+  },
+  {
+   "id": "first_horde",
+   "title_key": "modpack.advancement.first_horde.title",
+   "description_key": "modpack.advancement.first_horde.description",
+   "icon": "sfc_horde_alarm",
+   "trigger": "custom_event",
+   "event": "modpack:horde_start",
+   "frame": "task"
+  },
+  {
+   "id": "horde_survived",
+   "title_key": "modpack.advancement.horde_survived.title",
+   "description_key": "modpack.advancement.horde_survived.description",
+   "icon": "ie_revolver",
+   "trigger": "custom_event",
+   "event": "modpack:horde_end",
+   "frame": "goal"
+  },
+  {
+   "id": "drg_arsenal",
+   "title_key": "modpack.advancement.drg_arsenal.title",
+   "description_key": "modpack.advancement.drg_arsenal.description",
+   "icon": "tacz_gun",
+   "trigger": "custom_event",
+   "event": "modpack:drg_gun",
+   "frame": "challenge",
+   "reveal_at": "atomic_age"
+  },
+  {
+   "id": "rail_freight",
+   "title_key": "modpack.advancement.rail_freight.title",
+   "description_key": "modpack.advancement.rail_freight.description",
+   "icon": "rc_cargo_minecart",
+   "trigger": "inventory_item",
+   "items": ["rc_cargo_minecart"],
+   "frame": "task"
+  },
+  {
+   "id": "first_rail_signal",
+   "title_key": "modpack.advancement.first_rail_signal.title",
+   "description_key": "modpack.advancement.first_rail_signal.description",
+   "icon": "rc_block_signal",
+   "trigger": "inventory_item",
+   "items": ["rc_block_signal"],
+   "frame": "task",
+   "reveal_at": "electric_age"
+  },
+  {
+   "id": "ae2_network",
+   "title_key": "modpack.advancement.ae2_network.title",
+   "description_key": "modpack.advancement.ae2_network.description",
+   "icon": "ae2_controller",
+   "trigger": "inventory_item",
+   "items": ["ae2_controller"],
+   "frame": "goal",
+   "reveal_at": "information_age"
+  },
+  {
+   "id": "moon_landing",
+   "title_key": "modpack.advancement.moon_landing.title",
+   "description_key": "modpack.advancement.moon_landing.description",
+   "icon": "aa_flag",
+   "trigger": "changed_dimension",
+   "dimensions": ["moon"],
+   "frame": "task",
+   "reveal_at": "space_age"
+  },
+  {
+   "id": "mars_landing",
+   "title_key": "modpack.advancement.mars_landing.title",
+   "description_key": "modpack.advancement.mars_landing.description",
+   "icon": "aa_flag",
+   "trigger": "changed_dimension",
+   "dimensions": ["mars"],
+   "frame": "task",
+   "reveal_at": "space_age"
+  },
+  {
+   "id": "belt_arrival",
+   "title_key": "modpack.advancement.belt_arrival.title",
+   "description_key": "modpack.advancement.belt_arrival.description",
+   "icon": "minecraft:iron_ore",
+   "trigger": "changed_dimension",
+   "dimensions": ["asteroid_belt"],
+   "frame": "challenge",
+   "reveal_at": "space_age"
+  },
+  {
+   "id": "first_artifact",
+   "title_key": "modpack.advancement.first_artifact.title",
+   "description_key": "modpack.advancement.first_artifact.description",
+   "icon": "artifacts:umbrella",
+   "trigger": "inventory_item",
+   "items": ["#artifacts:artifacts"],
+   "frame": "task"
+  },
+  {
+   "id": "alien_artifact",
+   "title_key": "modpack.advancement.alien_artifact.title",
+   "description_key": "modpack.advancement.alien_artifact.description",
+   "icon": "artifacts:crystal_heart",
+   "trigger": "custom_event",
+   "event": "modpack:alien_artifact",
+   "frame": "goal",
+   "reveal_at": "space_age"
+  },
+  {
+   "id": "first_backpack",
+   "title_key": "modpack.advancement.first_backpack.title",
+   "description_key": "modpack.advancement.first_backpack.description",
+   "icon": "sb_backpack",
+   "trigger": "inventory_item",
+   "items": ["sb_backpack", "sb_iron_backpack", "sb_gold_backpack", "sb_diamond_backpack", "sb_netherite_backpack"],
+   "frame": "task"
+  },
+  {
+   "id": "soph_storage",
+   "title_key": "modpack.advancement.soph_storage.title",
+   "description_key": "modpack.advancement.soph_storage.description",
+   "icon": "ss_controller",
+   "trigger": "custom_event",
+   "event": "modpack:first_soph_storage",
+   "frame": "task"
+  },
+  {
+   "id": "cfb_kitchen",
+   "title_key": "modpack.advancement.cfb_kitchen.title",
+   "description_key": "modpack.advancement.cfb_kitchen.description",
+   "icon": "cfb_table",
+   "trigger": "custom_event",
+   "event": "modpack:cfb_kitchen",
+   "frame": "task"
+  },
+  {
+   "id": "alien_ruins",
+   "title_key": "modpack.advancement.alien_ruins.title",
+   "description_key": "modpack.advancement.alien_ruins.description",
+   "icon": "aa_flag",
+   "trigger": "custom_event",
+   "event": "modpack:quest_alien_ruins",
+   "frame": "goal",
+   "reveal_at": "space_age"
+  },
+  {
+   "id": "colony_established",
+   "title_key": "modpack.advancement.colony_established.title",
+   "description_key": "modpack.advancement.colony_established.description",
+   "icon": "colony_maintenance",
+   "trigger": "inventory_item",
+   "items": ["colony_maintenance"],
+   "frame": "goal",
+   "reveal_at": "space_age"
+  },
+  {
+   "id": "anomaly_research",
+   "title_key": "modpack.advancement.anomaly_research.title",
+   "description_key": "modpack.advancement.anomaly_research.description",
+   "icon": "anomaly_analysis",
+   "trigger": "inventory_item",
+   "items": ["anomaly_analysis"],
+   "frame": "goal",
+   "reveal_at": "atomic_age"
+  }
+ ]
+}

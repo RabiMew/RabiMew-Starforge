@@ -8,12 +8,14 @@ description = "建立居所、农田和厨房，为第一座工厂储备物资�
 icon = "minecraft:crafting_table"
 dependencies = []
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#8b8b8b"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_0"]
+tags = ["modpack", "era", "tier_0"]
+unlock_message = "生存时代 / Survival Age"
 
 [display]
 frame = "task"
-reveal = "dependencies"
+reveal = "always"
+sort_order = 0

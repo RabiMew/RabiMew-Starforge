@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:rail_logistics"
+display_name = "铁路物流 / Rail Logistics"
+description = "货运列车承担跨区段批量运输。 / Freight trains carry bulk cargo between districts."
+icon = "railcraft:cargo_minecart"
+dependencies = ["modpack:bulk_storage"]
+dependency_mode = "all"
+category = "物流仓储 / Logistics"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_2"]
+unlock_message = "铁路物流 / Rail Logistics"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 30

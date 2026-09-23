@@ -8,12 +8,14 @@ description = "建立数字仓储和自动合成，让复杂物流变得可管�
 icon = "modpack:information_interface"
 dependencies = ["modpack:electric_age"]
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#3fa8c8"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_3"]
+tags = ["modpack", "era", "tier_3"]
+unlock_message = "信息时代 / Information Age"
 
 [display]
-frame = "task"
+frame = "goal"
 reveal = "dependencies"
+sort_order = 300

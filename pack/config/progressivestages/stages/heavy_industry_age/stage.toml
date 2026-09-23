@@ -8,12 +8,14 @@ description = "扩建大型设备、自动矿场和重型防线，稳定供应�
 icon = "modpack:heavy_industry_control"
 dependencies = ["modpack:information_age"]
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#a05050"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_4"]
+tags = ["modpack", "era", "tier_4"]
+unlock_message = "重工业时代 / Heavy Industry Age"
 
 [display]
-frame = "task"
+frame = "goal"
 reveal = "dependencies"
+sort_order = 400

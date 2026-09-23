@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "大宗散料有了可检索的集中存放。 / Bulk materials have indexed, centralized storage."
+[[triggers.conditions]]
+type = "craft"
+item = "tag:storagedrawers:drawers"
+count = 4

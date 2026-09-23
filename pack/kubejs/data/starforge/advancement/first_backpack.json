@@ -1,0 +1,78 @@
+{
+ "display": {
+  "icon": {
+   "id": "sophisticatedbackpacks:backpack"
+  },
+  "title": {
+   "translate": "modpack.advancement.first_backpack.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.first_backpack.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "i0": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": "sophisticatedbackpacks:backpack"
+     }
+    ]
+   }
+  },
+  "i1": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": "sophisticatedbackpacks:iron_backpack"
+     }
+    ]
+   }
+  },
+  "i2": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": "sophisticatedbackpacks:gold_backpack"
+     }
+    ]
+   }
+  },
+  "i3": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": "sophisticatedbackpacks:diamond_backpack"
+     }
+    ]
+   }
+  },
+  "i4": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": "sophisticatedbackpacks:netherite_backpack"
+     }
+    ]
+   }
+  }
+ },
+ "requirements": [
+  [
+   "i0",
+   "i1",
+   "i2",
+   "i3",
+   "i4"
+  ]
+ ]
+}

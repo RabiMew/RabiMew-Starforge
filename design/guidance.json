@@ -1,0 +1,102 @@
+{
+ "schema_version": 1,
+ "comment": "Unified runtime guidance: one detection route per real gameplay event, emitted into ProgressiveStages counters / custom advancements / one-time hints. Generated into pack/kubejs/server_scripts/starforge_guidance.js by tools/build-pack.mjs — do not hand-maintain parallel lists in scripts. Detection kinds: craft_item, inventory_item, inventory_tag, inventory_items, block_use (item refs), block_tag (item/block tag resolved at build time), dimension, entity_spawned, quest (polls quest completion via ServerQuestFile), horde_start, horde_end, gun_ns (TaCZ gun NBT namespace), advancement_earned (hooks a vanilla-triggered advancement for its hint).",
+ "alien_dimensions": ["moon", "mars", "venus", "mercury", "glacio", "asteroid_belt"],
+ "events": [
+  {
+   "id": "first_artifact",
+   "once": true,
+   "hint_key": "modpack.hint.first_artifact",
+   "via": { "inventory_tag": "artifacts:artifacts" }
+  },
+  {
+   "id": "alien_artifact",
+   "once": true,
+   "hint_key": "modpack.hint.alien_artifact",
+   "advancement": "alien_artifact",
+   "via": { "inventory_tag": "artifacts:artifacts", "requires_alien_dim": true }
+  },
+  {
+   "id": "first_backpack",
+   "once": true,
+   "hint_key": "modpack.hint.first_backpack",
+   "via": { "inventory_items": ["sb_backpack", "sb_iron_backpack", "sb_gold_backpack", "sb_diamond_backpack", "sb_netherite_backpack"] }
+  },
+  {
+   "id": "first_soph_storage",
+   "once": true,
+   "hint_key": "modpack.hint.first_soph_storage",
+   "advancement": "soph_storage",
+   "via": { "block_use": ["ss_barrel", "ss_chest", "ss_shulker_box", "ss_limited_barrel_2", "ss_controller"] }
+  },
+  {
+   "id": "cfb_kitchen",
+   "once": true,
+   "hint_key": "modpack.hint.cfb_kitchen",
+   "advancement": "cfb_kitchen",
+   "via": { "block_tag": "cookingforblockheads:kitchen_connectors" }
+  },
+  {
+   "id": "drg_gun",
+   "once": true,
+   "hint_key": "modpack.message.drg_gun_tip",
+   "counter": "modpack:drg_gun",
+   "advancement": "drg_arsenal",
+   "via": { "inventory_item": "tacz_gun", "gun_ns": "deep_rock_galactic" }
+  },
+  {
+   "id": "tacz_turret",
+   "once": true,
+   "hint_key": "modpack.message.tacz_turret_tip",
+   "advancement": "auto_turret",
+   "via": { "inventory_item": "tt_turret" }
+  },
+  {
+   "id": "first_moon",
+   "once": true,
+   "hint_key": "modpack.hint.first_moon",
+   "via": { "advancement_earned": "starforge:moon_landing" }
+  },
+  {
+   "id": "first_belt",
+   "once": true,
+   "hint_key": "modpack.hint.first_belt",
+   "via": { "advancement_earned": "starforge:belt_arrival" }
+  },
+  {
+   "id": "guard_posted",
+   "once": true,
+   "counter": "modpack:guard_post",
+   "advancement": "armed_garrison",
+   "via": { "entity_spawned": "guardvillagers:guard", "near_player": 64 }
+  },
+  {
+   "id": "first_horde",
+   "once": true,
+   "hint_key": "modpack.hint.first_horde",
+   "advancement": "first_horde",
+   "via": { "horde_start": true }
+  },
+  {
+   "id": "horde_survived",
+   "once": false,
+   "counter": "modpack:horde_survived",
+   "advancement": "horde_survived",
+   "via": { "horde_end": true }
+  },
+  {
+   "id": "base_registered",
+   "once": true,
+   "counter": "modpack:base_registered",
+   "advancement": "base_registered",
+   "via": { "quest": "register_base" }
+  },
+  {
+   "id": "alien_ruins",
+   "once": true,
+   "hint_key": "modpack.hint.alien_ruins",
+   "advancement": "alien_ruins",
+   "via": { "quest": "alien_ruins" }
+  }
+ ]
+}

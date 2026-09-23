@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "ic2cre:generator"
+  },
+  "title": {
+   "translate": "modpack.advancement.electric_age.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.electric_age.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "triggered": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "requirements": [
+  [
+   "triggered"
+  ]
+ ]
+}

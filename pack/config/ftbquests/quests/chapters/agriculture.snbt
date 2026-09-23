@@ -8,7 +8,7 @@
 	}
 	id: "4274BFE7FD246AAF"
 	images: [ ]
-	order_index: 6
+	order_index: 7
 	progression_mode: "flexible"
 	quest_links: [ ]
 	quests: [
@@ -206,7 +206,7 @@
 			}
 			id: "6E99CCD7093D32CF"
 			x: 6.4d
-			y: 9d
+			y: 10.5d
 			dependencies: [
 				"60EC892D396AFC26"
 			]
@@ -250,10 +250,11 @@
 			}
 			id: "76B18E56A2AF597A"
 			x: 9.6d
-			y: 7.5d
+			y: 9d
 			dependencies: [
 				"091668F16A21A35F"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "14A6F56FA0CDE764"
@@ -268,6 +269,235 @@
 			tasks: [
 				{
 					id: "297548C952079318"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "storagedrawers:oak_full_drawers_2"
+			}
+			id: "5C08D931A3082653"
+			x: 6.4d
+			y: 12d
+			dependencies: [
+				"60EC892D396AFC26"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "5738E8BF8BC41A7F"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:bone_meal"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "2CFB09D303CD0B40"
+					type: "item"
+					item: {
+						count: 1
+						id: "storagedrawers:oak_full_drawers_2"
+					}
+					count: 4
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "cookingforblockheads:cooking_table"
+			}
+			id: "46642DBD06A70ABC"
+			x: 3.2d
+			y: 13.5d
+			dependencies: [
+				"7C549AB52654538C"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "0A113E9C1A3A7F72"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bowl"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "2FF29C6F8E3963CD"
+					type: "item"
+					item: {
+						count: 1
+						id: "cookingforblockheads:cooking_table"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "7B7D6D07E0279B69"
+					type: "item"
+					item: {
+						count: 1
+						id: "cookingforblockheads:sink"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "17F419C4D1DBD81E"
+					type: "item"
+					item: {
+						count: 1
+						id: "cookingforblockheads:counter"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "starforge_compat:electric_burner"
+			}
+			id: "69AE0F6EE8647B0F"
+			x: 6.4d
+			y: 15d
+			dependencies: [
+				"46642DBD06A70ABC"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "33FAE0A5F1B1C14F"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:copper_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "75677A81904646F6"
+					type: "item"
+					item: {
+						count: 1
+						id: "starforge_compat:electric_burner"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ae2:storage_bus"
+			}
+			id: "3909E0CC792F88C2"
+			x: 9.6d
+			y: 16.5d
+			dependencies: [
+				"69AE0F6EE8647B0F"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "7949149A575D89A4"
+					type: "item"
+					item: {
+						count: 1
+						id: "ae2:logic_processor"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3536950C7C088D62"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "appliedcooking:kitchen_station"
+			}
+			id: "404A138A10525F39"
+			x: 12.8d
+			y: 18d
+			dependencies: [
+				"3909E0CC792F88C2"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "42B5CE048B3CB91D"
+					type: "item"
+					item: {
+						count: 2
+						id: "ae2:logic_processor"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "0F7F6ACE6CE975AF"
+					type: "item"
+					item: {
+						count: 1
+						id: "appliedcooking:kitchen_station"
+					}
+					count: 1
+					consume_items: false
+				}
+				{
+					id: "126C253262D773BD"
+					type: "item"
+					item: {
+						count: 1
+						id: "applieddelight:me_cooking_pot"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "cookingforblockheads:white_fridge"
+			}
+			id: "72AC6BB895B11A07"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"404A138A10525F39"
+				"39AD03268D0C83AE"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "5826889B701D7CD8"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "4074027DD3504319"
 					type: "checkmark"
 				}
 			]

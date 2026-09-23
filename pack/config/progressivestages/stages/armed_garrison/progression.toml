@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "基地有常驻武装力量负责警戒。 / Armed guards keep permanent watch over the base."
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:guard_post"
+count = 1

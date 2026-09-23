@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "团队已经受住怪潮袭击并保持防线完整。 / The team has weathered a horde assault with the line intact."
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:horde_survived"
+count = 1

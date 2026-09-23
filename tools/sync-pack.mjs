@@ -27,8 +27,19 @@ function copyTree(src, dest, skipPrefixes) {
 }
 
 // Directories the pack fully owns — wipe stale contents before copying
-// (e.g. ProgressiveStages auto-generates showcase stages we must remove).
-const OWNED_DIRS = ['config/progressivestages/stages', 'config/ftbquests/quests'];
+// (e.g. ProgressiveStages auto-generates showcase stages we must remove;
+// kubejs script/data/asset dirs are regenerated so stale files like a retired
+// starforge_triggers.js must not linger). Runtime-owned kubejs content
+// (export/, config/, stagetest.json) is intentionally NOT listed.
+const OWNED_DIRS = [
+  'config/progressivestages/stages',
+  'config/ftbquests/quests',
+  'kubejs/server_scripts',
+  'kubejs/startup_scripts',
+  'kubejs/client_scripts',
+  'kubejs/data',
+  'kubejs/assets',
+];
 
 function sync(side) {
   const dest = path.join(root, 'run', side);

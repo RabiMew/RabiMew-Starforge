@@ -9,3 +9,11 @@ count = 1
 type = "custom_counter"
 counter = "modpack:craft_space_control_core"
 count = 1
+[unlock]
+toast = "太空时代 / Space Age"
+title = "&l太空时代 / Space Age"
+subtitle = "工业文明的边界不再是地球。 / The bounds of industry no longer end at Earth."
+sound = "minecraft:ui.toast.challenge_complete"
+particle = "minecraft:totem_of_undying"
+progress_nudges = true
+hud_bar = true

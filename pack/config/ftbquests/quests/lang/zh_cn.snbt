@@ -1,5 +1,44 @@
 {
 	file.3CA1F6C961E490AE.title: "星铸 · 任务书"
+	quest.57CE687B27C482B3.title: "机械时代"
+	quest.57CE687B27C482B3.quest_desc: [
+		"团队掌握工程装配与基础机械。此节点与阶段图谱同步，无需手动完成。"
+	]
+	quest.57CE687B27C482B3.quest_subtitle: "推荐阶段：机械时代"
+	quest.30B185E865902CFB.title: "电气时代"
+	quest.30B185E865902CFB.quest_desc: [
+		"电力与电路进入生产体系。此节点与阶段图谱同步，无需手动完成。"
+	]
+	quest.30B185E865902CFB.quest_subtitle: "推荐阶段：电气时代"
+	quest.5CBFEC3F42242B50.title: "信息时代"
+	quest.5CBFEC3F42242B50.quest_desc: [
+		"数字网络统一仓储与合成。此节点与阶段图谱同步，无需手动完成。"
+	]
+	quest.5CBFEC3F42242B50.quest_subtitle: "推荐阶段：信息时代"
+	quest.016079F40895BC4A.title: "重工业时代"
+	quest.016079F40895BC4A.quest_desc: [
+		"重工装备与自动炮塔上线。此节点与阶段图谱同步，无需手动完成。"
+	]
+	quest.016079F40895BC4A.quest_subtitle: "推荐阶段：重工业时代"
+	quest.245AA3038DD177F7.title: "原子时代"
+	quest.245AA3038DD177F7.quest_desc: [
+		"核能并网，科技触及顶峰。此节点与阶段图谱同步，无需手动完成。"
+	]
+	quest.245AA3038DD177F7.quest_subtitle: "推荐阶段：原子时代"
+	quest.3B95DA0212939412.title: "太空时代"
+	quest.3B95DA0212939412.quest_desc: [
+		"火箭离轨，文明跨出地球。此节点与阶段图谱同步，无需手动完成。"
+	]
+	quest.3B95DA0212939412.quest_subtitle: "推荐阶段：太空时代"
+	quest.27746B580BF2533A.title: "量子时代"
+	quest.27746B580BF2533A.quest_desc: [
+		"量子技术打破距离限制。此节点与阶段图谱同步，无需手动完成。"
+	]
+	quest.27746B580BF2533A.quest_subtitle: "推荐阶段：量子时代"
+	chapter.3417920818FE4D66.title: "时代里程碑"
+	chapter.3417920818FE4D66.chapter_subtitle: [
+		"七个科技时代的进度记录——与 ProgressiveStages 图谱同步，无需手动完成。"
+	]
 	quest.0E79A6A14CA31F91.title: "欢迎来到星铸"
 	quest.0E79A6A14CA31F91.quest_desc: [
 		"这本任务书是说明书和里程碑地图：阶段晋级靠制造凭证部件，不依赖提交任务。完成后可随时回到任意章节。"
@@ -49,6 +88,13 @@
 		"备齐铁镐、铁剑与铁桶：下矿、自卫、装水，一件都不能少。"
 	]
 	quest.04678E0F669135E0.quest_subtitle: "推荐阶段：生存时代"
+	quest.13C6FDBBC0A6A1F8.title: "打开阶段图谱"
+	quest.13C6FDBBC0A6A1F8.quest_desc: [
+		"背包界面左侧的按钮会打开 ProgressiveStages 图谱：时代主线、能力分支与每个节点的解锁条件都在那里。任务书只负责路线与说明。"
+		""
+		"{\"text\":\"» 详见手册：团队进度与个人专精\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"团队进度与个人专精\"}}"
+	]
+	quest.13C6FDBBC0A6A1F8.quest_subtitle: "推荐阶段：生存时代"
 	chapter.55C7495156B62A20.title: "启程"
 	chapter.55C7495156B62A20.chapter_subtitle: [
 		"从营地到第一台机器的起步引导：认识任务书、团队进度、厨房、晋级凭证与基地登记。"
@@ -191,6 +237,69 @@
 		"合成单元、分子装配室、样板供应器：网络从此能自己动手做东西，而不只是存东西。"
 	]
 	quest.0456D2DC6A3C47D0.quest_subtitle: "推荐阶段：信息时代"
+	quest.7D9816358D597DD3.title: "抽屉仓储墙"
+	quest.7D9816358D597DD3.quest_desc: [
+		"满墙抽屉按压缩等级分层：普通抽屉存常规散料，压缩抽屉把锭/块/粒自动归并。"
+		""
+		"{\"text\":\"» 详见手册：仓储分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储分层\"}}"
+	]
+	quest.7D9816358D597DD3.quest_subtitle: "推荐阶段：机械时代"
+	quest.17E40D93D5F53AAE.title: "通用仓储网络"
+	quest.17E40D93D5F53AAE.quest_desc: [
+		"Sophisticated Storage 控制器把木桶与限量桶连成可检索仓库，负责抽屉之外的杂项物资。"
+		""
+		"{\"text\":\"» 详见手册：仓储分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储分层\"}}"
+	]
+	quest.17E40D93D5F53AAE.quest_subtitle: "推荐阶段：电气时代"
+	quest.284763ACA7D3BC91.title: "远征背包"
+	quest.284763ACA7D3BC91.quest_desc: [
+		"Sophisticated Backpacks 是野战物流核心：拾取升级自动入包，磁铁、熔炉、堆叠升级按任务配置。"
+		""
+		"{\"text\":\"» 详见手册：远征背包配置\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D8C96A7B6F83F18\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"远征背包配置\"}}"
+	]
+	quest.284763ACA7D3BC91.quest_subtitle: "推荐阶段：机械时代"
+	quest.49FEF6A934F5A795.title: "蒸汽动力"
+	quest.49FEF6A934F5A795.quest_desc: [
+		"Railcraft 锅炉与汽轮机是早期的可靠电源：液体燃烧室吃燃油，高压锅炉出高压蒸汽。"
+		""
+		"{\"text\":\"» 详见手册：高级铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"高级铁路\"}}"
+	]
+	quest.49FEF6A934F5A795.quest_subtitle: "推荐阶段：电气时代"
+	quest.1736F25A60869410.title: "自动装卸"
+	quest.1736F25A60869410.quest_desc: [
+		"高级装卸器按过滤器精确配车，流体装卸器接管罐车——月台不再需要人工盯箱。"
+		""
+		"{\"text\":\"» 详见手册：高级铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"高级铁路\"}}"
+	]
+	quest.1736F25A60869410.quest_subtitle: "推荐阶段：重工业时代"
+	quest.45FDF56BACC668EF.title: "信号联锁"
+	quest.45FDF56BACC668EF.quest_desc: [
+		"控制箱、接收箱与令牌箱把闭塞区间连成联锁：列车进区间前必须持有对应令牌。"
+		""
+		"{\"text\":\"» 详见手册：高级铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"高级铁路\"}}"
+	]
+	quest.45FDF56BACC668EF.quest_subtitle: "推荐阶段：电气时代"
+	quest.37063572DC618E0A.title: "隧道掘进机"
+	quest.37063572DC618E0A.quest_desc: [
+		"隧道掘进机装填钢钻头与轨道包，可以沿直线自动开洞铺轨。给它留好补给车。"
+		""
+		"{\"text\":\"» 详见手册：高级铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"高级铁路\"}}"
+	]
+	quest.37063572DC618E0A.quest_subtitle: "推荐阶段：重工业时代"
+	quest.449D3297E192B8CE.title: "高速铁路"
+	quest.449D3297E192B8CE.quest_desc: [
+		"高速轨道必须配信号与挡停设施，弯道请减速。电力高速轨让机车自己供电。"
+		""
+		"{\"text\":\"» 详见手册：高级铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"高级铁路\"}}"
+	]
+	quest.449D3297E192B8CE.quest_subtitle: "推荐阶段：重工业时代"
+	quest.1A9D2B725EB00DDE.title: "星际枢纽"
+	quest.1A9D2B725EB00DDE.quest_desc: [
+		"把发射场、仓储和装卸月台接入同一条铁路干线：燃料、氧气、补给一车到底。"
+		""
+		"{\"text\":\"» 详见手册：星港铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4BD992661353F0B8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"星港铁路\"}}"
+	]
+	quest.1A9D2B725EB00DDE.quest_subtitle: "推荐阶段：太空时代"
 	chapter.17B3058067D055B5.title: "自动化与物流"
 	chapter.17B3058067D055B5.chapter_subtitle: [
 		"连接原料、机器与需求，让物资在需要的时候送达。"
@@ -276,6 +385,34 @@
 		"{\"text\":\"» 详见手册：基地防御分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6D57B198ED6623C4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"基地防御分层\"}}"
 	]
 	quest.31583156C2BDAC96.quest_subtitle: "推荐阶段：原子时代"
+	quest.5CF44E6653A66A00.title: "武装守卫演习"
+	quest.5CF44E6653A66A00.quest_desc: [
+		"检查每名守卫的武器、弹药与岗位分配，组织一次完整的岗哨交接演练。"
+		""
+		"{\"text\":\"» 详见手册：警卫武器选择\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"725FD622502D6892\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"警卫武器选择\"}}"
+	]
+	quest.5CF44E6653A66A00.quest_subtitle: "推荐阶段：电气时代"
+	quest.5F36C6B42FD75BA9.title: "弹药后勤压力测试"
+	quest.5F36C6B42FD75BA9.quest_desc: [
+		"模拟补给中断：切断自动补货三十分钟，确认库存和本地弹药箱能撑过一次怪潮。"
+		""
+		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
+	]
+	quest.5F36C6B42FD75BA9.quest_subtitle: "推荐阶段：信息时代"
+	quest.771A802F55780549.title: "自动炮塔实战"
+	quest.771A802F55780549.quest_desc: [
+		"在无人值守的情况下让炮塔网独立击退一波袭击，记录弹药消耗与覆盖死角。"
+		""
+		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
+	]
+	quest.771A802F55780549.quest_subtitle: "推荐阶段：重工业时代"
+	quest.7E0B5A7A51829406.title: "深岩武器挑战"
+	quest.7E0B5A7A51829406.quest_desc: [
+		"以 DRG 重型武器完成一次高危目标猎杀，验证弹药后勤能否跟上火力节奏。"
+		""
+		"{\"text\":\"» 详见手册：深岩银河武器定位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"559BD25A382ABD43\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"深岩银河武器定位\"}}"
+	]
+	quest.7E0B5A7A51829406.quest_subtitle: "推荐阶段：原子时代"
 	chapter.23F04414D2AFEB65.title: "军事防御"
 	chapter.23F04414D2AFEB65.chapter_subtitle: [
 		"规划防线与火力，用充足补给守住生产和生活空间。"
@@ -360,6 +497,29 @@
 		"{\"text\":\"» 详见手册：安全空间站\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"安全空间站\"}}"
 	]
 	quest.04089907F6DAA567.quest_subtitle: "推荐阶段：太空时代"
+	quest.7EFD6B90AAB0B745.title: "低重力作战"
+	quest.7EFD6B90AAB0B745.quest_desc: [
+		"低重力下后坐力、跳跃与坠落完全不同。在外星地表完成一次武器实射并记录差异。"
+		""
+		"{\"text\":\"» 详见手册：低重力与外星战斗\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"46C8EE9AF7A2DC7E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"低重力与外星战斗\"}}"
+	]
+	quest.7EFD6B90AAB0B745.quest_subtitle: "推荐阶段：太空时代"
+	quest.01A8A31E7CBB6ACA.title: "返航补给"
+	quest.01A8A31E7CBB6ACA.quest_desc: [
+		"每次远征必须留足返航燃料、氧气和食物。把\"返回储备\"当作硬性载荷，不得挪用。"
+		""
+		"{\"text\":\"» 详见手册：远征背包配置\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D8C96A7B6F83F18\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"远征背包配置\"}}"
+		"{\"text\":\"» 详见手册：航天便利装备\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"航天便利装备\"}}"
+	]
+	quest.01A8A31E7CBB6ACA.quest_subtitle: "推荐阶段：太空时代"
+	quest.2297FE3FCEB77ECA.title: "行星侦察"
+	quest.2297FE3FCEB77ECA.quest_desc: [
+		"每个天体都有不同的重力、温度、辐射与战利品。登陆前先完成侦察清单再下货。"
+		""
+		"{\"text\":\"» 详见手册：外星结构与考古\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"外星结构与考古\"}}"
+		"{\"text\":\"» 详见手册：生物生态调查\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"生物生态调查\"}}"
+	]
+	quest.2297FE3FCEB77ECA.quest_subtitle: "推荐阶段：太空时代"
 	chapter.7A1F8F3DD46D426E.title: "航天殖民"
 	chapter.7A1F8F3DD46D426E.chapter_subtitle: [
 		"规划航行、氧气和补给，把远方据点建设成稳定的生产基地。"
@@ -411,6 +571,58 @@
 		"充能器点亮陨石晶体，氟露英水晶开始批量产出——这是数字网络的原料命脉。"
 	]
 	quest.76B7ECD689453090.quest_subtitle: "推荐阶段：信息时代"
+	quest.3337DD355D021D68.title: "第一件遗物"
+	quest.3337DD355D021D68.quest_desc: [
+		"遗迹与战利品箱会产出 Artifacts 遗物饰品。获得任意一件并装到 Curios 栏位——不同的栏位对应不同部位。"
+		""
+		"{\"text\":\"» 详见手册：Artifacts 与 Curios 栏位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts 与 Curios 栏位\"}}"
+	]
+	quest.3337DD355D021D68.quest_subtitle: "推荐阶段：生存时代"
+	quest.44DA18379651CDA7.title: "月火遗物"
+	quest.44DA18379651CDA7.quest_desc: [
+		"月球与火星的遗迹产出第二档遗物。带回任意一件月/火档位遗物即可。"
+		""
+		"{\"text\":\"» 详见手册：Artifacts 与 Curios 栏位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts 与 Curios 栏位\"}}"
+		"{\"text\":\"» 详见手册：外星结构与考古\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"外星结构与考古\"}}"
+	]
+	quest.44DA18379651CDA7.quest_subtitle: "推荐阶段：太空时代"
+	quest.6032F578C5F37DB7.title: "高危遗物"
+	quest.6032F578C5F37DB7.quest_desc: [
+		"金星与水星的高温高压环境藏着第三档遗物。准备充分再进入，带回任意一件即可。"
+		""
+		"{\"text\":\"» 详见手册：Artifacts 与 Curios 栏位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts 与 Curios 栏位\"}}"
+		"{\"text\":\"» 详见手册：外星结构与考古\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"外星结构与考古\"}}"
+	]
+	quest.6032F578C5F37DB7.quest_subtitle: "推荐阶段：太空时代"
+	quest.0CB50C41FBCD2682.title: "边疆遗物"
+	quest.0CB50C41FBCD2682.quest_desc: [
+		"冰巨星与小行星带是遗物猎人的终点：稀有遗物只在最远处出现。无需集齐图鉴，带回任意一件即可。"
+		""
+		"{\"text\":\"» 详见手册：Artifacts 与 Curios 栏位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts 与 Curios 栏位\"}}"
+		"{\"text\":\"» 详见手册：外星结构与考古\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"外星结构与考古\"}}"
+	]
+	quest.0CB50C41FBCD2682.quest_subtitle: "推荐阶段：太空时代"
+	quest.14C1933433AE2931.title: "生态调查"
+	quest.14C1933433AE2931.quest_desc: [
+		"记录地表与地下的异常生物：末影人变体、蛛形纲群落、洞穴特有种。一本笔记就够，不必猎光它们。"
+		""
+		"{\"text\":\"» 详见手册：生物生态调查\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"生物生态调查\"}}"
+	]
+	quest.14C1933433AE2931.quest_subtitle: "推荐阶段：机械时代"
+	quest.754414537A314DA3.title: "蛛群威胁"
+	quest.754414537A314DA3.quest_desc: [
+		"蛛形纲战士会破坏防线外围。猎杀 3 只蛛形纲战士，确认其群落位置。"
+		""
+		"{\"text\":\"» 详见手册：生物生态调查\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"生物生态调查\"}}"
+	]
+	quest.754414537A314DA3.quest_subtitle: "推荐阶段：机械时代"
+	quest.12E6FEFAE5AD67A7.title: "外星生态"
+	quest.12E6FEFAE5AD67A7.quest_desc: [
+		"月球与火星的原生物种遵循完全不同的规则。记录至少一种外星物种的栖息地。"
+		""
+		"{\"text\":\"» 详见手册：生物生态调查\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"6BE0F716B792B7F8\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"生物生态调查\"}}"
+	]
+	quest.12E6FEFAE5AD67A7.quest_subtitle: "推荐阶段：太空时代"
 	chapter.637830D327841CC8.title: "探索"
 	chapter.637830D327841CC8.chapter_subtitle: [
 		"调查遗迹与异常，带回资源、蓝图和工业捷径。"
@@ -458,6 +670,49 @@
 		"为远征与怪潮季单列一座干粮仓：罐头、饼干与备份种子，平时不动、急时救命。"
 	]
 	quest.76B18E56A2AF597A.quest_subtitle: "推荐阶段：电气时代"
+	quest.5C08D931A3082653.title: "集中储粮"
+	quest.5C08D931A3082653.quest_desc: [
+		"大宗食物与原料进抽屉，厨房只留高频取用量。抽屉存散料，仓库放杂货。"
+		""
+		"{\"text\":\"» 详见手册：仓储分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储分层\"}}"
+	]
+	quest.5C08D931A3082653.quest_subtitle: "推荐阶段：机械时代"
+	quest.46642DBD06A70ABC.title: "基地厨房网络"
+	quest.46642DBD06A70ABC.quest_desc: [
+		"烹饪台、水槽与台面构成厨房网络：烹饪台直接读取相连容器里的食材。把冰箱和台面接进同一网络。"
+		""
+		"{\"text\":\"» 详见手册：CFB 厨房网络\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"73E35DDDFAD2E809\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"CFB 厨房网络\"}}"
+	]
+	quest.46642DBD06A70ABC.quest_subtitle: "推荐阶段：生存时代"
+	quest.69AE0F6EE8647B0F.title: "工业供热"
+	quest.69AE0F6EE8647B0F.quest_desc: [
+		"电力燃烧器为厨房与食品产线提供稳定热源，替代木柴与煤炭的间歇补给。"
+		""
+		"{\"text\":\"» 详见手册：CFB 厨房网络\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"73E35DDDFAD2E809\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"CFB 厨房网络\"}}"
+	]
+	quest.69AE0F6EE8647B0F.quest_subtitle: "推荐阶段：电气时代"
+	quest.3909E0CC792F88C2.title: "食品自动补货"
+	quest.3909E0CC792F88C2.quest_desc: [
+		"让物流或 ME 网络按库存水位自动补充厨房原料，厨师只管出餐。"
+		""
+		"{\"text\":\"» 详见手册：应用烹饪与数字厨房\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0A70E891FF739F21\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"应用烹饪与数字厨房\"}}"
+	]
+	quest.3909E0CC792F88C2.quest_subtitle: "推荐阶段：信息时代"
+	quest.404A138A10525F39.title: "ME 食品网络"
+	quest.404A138A10525F39.quest_desc: [
+		"Applied Cooking 的厨房工作站与 Applied Delight 的 ME 炊具把食品生产挂进数字网络，按需合成。"
+		""
+		"{\"text\":\"» 详见手册：应用烹饪与数字厨房\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0A70E891FF739F21\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"应用烹饪与数字厨房\"}}"
+	]
+	quest.404A138A10525F39.quest_subtitle: "推荐阶段：信息时代"
+	quest.72AC6BB895B11A07.title: "殖民地配餐"
+	quest.72AC6BB895B11A07.quest_desc: [
+		"外星居住舱与温室接入食品网络后，殖民地居民的配餐由系统统一调度，不再靠人背粮。"
+		""
+		"{\"text\":\"» 详见手册：应用烹饪与数字厨房\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0A70E891FF739F21\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"应用烹饪与数字厨房\"}}"
+		"{\"text\":\"» 详见手册：轻量殖民地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5D67189820FB07DC\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"轻量殖民地\"}}"
+	]
+	quest.72AC6BB895B11A07.quest_subtitle: "推荐阶段：太空时代"
 	chapter.4274BFE7FD246AAF.title: "农业与后勤"
 	chapter.4274BFE7FD246AAF.chapter_subtitle: [
 		"供应食物、农产和生物燃料，保障工厂、前线与殖民地。"
@@ -499,6 +754,35 @@
 		"拆除小工具安全清场：旧区改造、事故处理、地形修正都不再靠手拆。"
 	]
 	quest.13129660D86A5A69.quest_subtitle: "推荐阶段：原子时代"
+	quest.33137A5834F5A967.title: "休整区"
+	quest.33137A5834F5A967.quest_desc: [
+		"给基地划一块远离机器轰鸣的休整区：床、照明、简易家具。生活区与工业区分开，守卫和居民才有状态。"
+		""
+		"{\"text\":\"» 详见手册：宜居基地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"宜居基地\"}}"
+	]
+	quest.33137A5834F5A967.quest_subtitle: "推荐阶段：生存时代"
+	quest.7DE5C11A0F9E6A2B.title: "餐厅"
+	quest.7DE5C11A0F9E6A2B.quest_desc: [
+		"餐厅紧邻厨房网络：长桌、座椅、取餐口。让食物的最后一站离人最近。"
+		""
+		"{\"text\":\"» 详见手册：宜居基地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"宜居基地\"}}"
+		"{\"text\":\"» 详见手册：CFB 厨房网络\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"73E35DDDFAD2E809\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"CFB 厨房网络\"}}"
+	]
+	quest.7DE5C11A0F9E6A2B.quest_subtitle: "推荐阶段：生存时代"
+	quest.3A9395C0631B98F1.title: "居民生活区"
+	quest.3A9395C0631B98F1.quest_desc: [
+		"居民需要成套的生活单元：床、储物、工作台位、照明分区。Macaw 与 MDM 家具负责生活质感。"
+		""
+		"{\"text\":\"» 详见手册：宜居基地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"宜居基地\"}}"
+	]
+	quest.3A9395C0631B98F1.quest_subtitle: "推荐阶段：机械时代"
+	quest.18BFCE7EDAE35FD1.title: "外星居住舱"
+	quest.18BFCE7EDAE35FD1.quest_desc: [
+		"外星前哨的居住舱要密封、供氧、独立供电，按\"生存舱+工作舱+气闸\"的三段式搭建。"
+		""
+		"{\"text\":\"» 详见手册：宜居基地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"宜居基地\"}}"
+	]
+	quest.18BFCE7EDAE35FD1.quest_subtitle: "推荐阶段：太空时代"
 	chapter.56F4CC5F9343242B.title: "建筑"
 	chapter.56F4CC5F9343242B.chapter_subtitle: [
 		"建设便于扩展、维护与防守的工厂、基地和空间站。"
@@ -663,6 +947,61 @@
 		"小行星带是真空矿区：重力极低、没有氧气、没有天然落脚点。火箭降落失败可能永久损失，务必携带返航手段并预留火箭备份。"
 	]
 	quest.2BFD78A0764A92FF.quest_subtitle: "航天与风险"
+	quest.215A050EB8A4CB9C.title: "Artifacts 与 Curios 栏位"
+	quest.215A050EB8A4CB9C.quest_desc: [
+		"遗物饰品装在 Curios 栏位而不是盔甲栏：项链、腰带、手套、头饰各有位置，鼠标悬停遗物会显示它属于哪一档（地球→月火→金水→冰巨星/小行星带）。高价值遗物都标了发现地点，拿到先用任务书查栏位再装备。"
+	]
+	quest.215A050EB8A4CB9C.quest_subtitle: "野外与遗迹"
+	quest.706640814E58980D.title: "外星结构与考古"
+	quest.706640814E58980D.quest_desc: [
+		"月球与火星地表散布可探索结构：废弃基地、坠毁飞船、殖民遗迹。金星与水星结构更危险也更丰厚。进入任何外星结构前先确认氧气与返航燃料，带走箱子和方块数据即可，不必清剿。"
+	]
+	quest.706640814E58980D.quest_subtitle: "野外与遗迹"
+	quest.6BE0F716B792B7F8.title: "生物生态调查"
+	quest.6BE0F716B792B7F8.quest_desc: [
+		"这个整合包的生物按生态位分布：Enderman Overhaul 的末影人按群系分化，Creature Feature 占据特殊洞穴与水层，Arachnids 结成蛛群，外星天体各有原生物种。调查时记录栖息地与行为，罕见个体不强求——图鉴不是考核。"
+	]
+	quest.6BE0F716B792B7F8.quest_subtitle: "野外与遗迹"
+	quest.5FBDC2FE9BA6964E.title: "仓储分层"
+	quest.5FBDC2FE9BA6964E.quest_desc: [
+		"仓储按角色分层，不要混用：Storage Drawers 存大宗单一散料（矿锭、粮食、石材），压缩抽屉自动归并等级；Sophisticated Storage 负责杂项仓库与限量桶；Sophisticated Backpacks 管野战背包；AE2 负责数字索引与自动合成，BuildCraft/Railcraft 负责物理运输。抽屉进散料，桶柜进杂货，背包进背包，网络进索引。"
+	]
+	quest.5FBDC2FE9BA6964E.quest_subtitle: "进度与生存"
+	quest.0D8C96A7B6F83F18.title: "远征背包配置"
+	quest.0D8C96A7B6F83F18.quest_desc: [
+		"背包按任务配置升级：野战探索带拾取+磁铁；战斗远征带堆叠+补给；远征外星再塞氧气罐与口粮包。背包栏位可与 Curios 并用——检查快捷键，把备用弹匣放进专门的弹匣袋。"
+	]
+	quest.0D8C96A7B6F83F18.quest_subtitle: "进度与生存"
+	quest.0D4CAFB9EC9E6AC2.title: "宜居基地"
+	quest.0D4CAFB9EC9E6AC2.quest_desc: [
+		"把基地分成工业区与生活区：机器与产线集中管理，生活区配床、餐厅、休整区和照明。Macaw's Furniture、MDM、Supplementaries、FramedBlocks 负责居住质感——框架方块还能套任意材质。外星居住舱按\"气闸-生存舱-工作舱\"搭建并独立供氧。"
+	]
+	quest.0D4CAFB9EC9E6AC2.quest_subtitle: "殖民人口与驻军"
+	quest.73E35DDDFAD2E809.title: "CFB 厨房网络"
+	quest.73E35DDDFAD2E809.quest_desc: [
+		"Cooking for Blockheads 的烹饪台是厨房的\"终端\"：它读取所有相连容器的食材并直接出餐。水槽提供水源，冰箱与台面扩充库存，烤炉处理批量加热。把容器用厨房连接器或在同一网络里串起来，再从终端一次出餐。"
+	]
+	quest.73E35DDDFAD2E809.quest_subtitle: "进度与生存"
+	quest.0A70E891FF739F21.title: "应用烹饪与数字厨房"
+	quest.0A70E891FF739F21.quest_desc: [
+		"Applied Cooking 把厨房挂进 ME 网络：厨房工作站让网络直接调用食材，Applied Delight 的 ME 炊具把农夫乐事锅变成网络设备。配上库存水位与自动合成，食品从\"手动做\"变成\"按需产\"。"
+	]
+	quest.0A70E891FF739F21.quest_subtitle: "进度与生存"
+	quest.46C8EE9AF7A2DC7E.title: "低重力与外星战斗"
+	quest.46C8EE9AF7A2DC7E.quest_desc: [
+		"外星地表重力低于地球：跳得更高、落得更慢，后坐力会把人推得更远，爆炸物轨迹也不同。接敌前先测试武器手感；对付高速生物优先减速和控制，氧气余量永远是第一指标。"
+	]
+	quest.46C8EE9AF7A2DC7E.quest_subtitle: "怪潮与防御"
+	quest.5FB73CF25E88351B.title: "高级铁路"
+	quest.5FB73CF25E88351B.quest_desc: [
+		"进阶铁路靠四件事：闭塞信号把线路切成区间，联锁箱保证一区一车；电力机车吃电网不吃燃料；高速轨道配挡停与减速弯；隧道掘进机自动开洞铺轨。规划干线时先定区间，再放信号，最后铺轨。"
+	]
+	quest.5FB73CF25E88351B.quest_subtitle: "铁路物流"
+	quest.2CE7350DEA19BCD0.title: "客户端工具"
+	quest.2CE7350DEA19BCD0.quest_desc: [
+		"这些模组只影响你自己的客户端，不影响服务器进度：EMI 查配方，Jade 看方块信息，Xaero 地图记路点，Inventory Profiles 整理背包，Mouse Tweaks 拖拽，AppleSkin 看饥饿，Better F3 查坐标，ShulkerBoxTooltip 预览盒内容物，Controlling 查按键冲突。按习惯配置，没有任何一个是进度的门槛。"
+	]
+	quest.2CE7350DEA19BCD0.quest_subtitle: "进度与生存"
 	chapter.13F04EAD5AD7B827.title: "参考手册"
 	chapter.13F04EAD5AD7B827.chapter_subtitle: [
 		"按主题整理的长教程：进度规则、能源、防御、殖民、岗位、铁路与航天风险。任务描述里的链接会跳到这里。"

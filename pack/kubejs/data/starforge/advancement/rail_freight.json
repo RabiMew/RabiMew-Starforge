@@ -1,0 +1,34 @@
+{
+ "display": {
+  "icon": {
+   "id": "railcraft:cargo_minecart"
+  },
+  "title": {
+   "translate": "modpack.advancement.rail_freight.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.rail_freight.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "i0": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": "railcraft:cargo_minecart"
+     }
+    ]
+   }
+  }
+ },
+ "requirements": [
+  [
+   "i0"
+  ]
+ ]
+}

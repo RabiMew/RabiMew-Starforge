@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:stable_logistics"
+display_name = "稳定后勤 / Stable Logistics"
+description = "通用仓储网络支撑日常补给调度。 / Warehouse networks sustain daily resupply."
+icon = "sophisticatedstorage:controller"
+dependencies = ["modpack:base_registered", "modpack:electric_age"]
+dependency_mode = "all"
+category = "殖民建设 / Colony"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_2"]
+unlock_message = "稳定后勤 / Stable Logistics"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 20

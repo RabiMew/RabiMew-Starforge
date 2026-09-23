@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "样例供应器让关键部件按需自动产出。 / Pattern providers auto-produce key components."
+[[triggers.conditions]]
+type = "craft"
+item = "id:ae2:pattern_provider"
+count = 1

@@ -8,7 +8,7 @@ issueTrackerURL="https://github.com/RabiMew/RabiMew-Starforge/issues"
     version="0.1.0"
     displayName="Starforge Compatibility"
     authors="RabiMew"
-    description="Behavior-level glue for Starforge: FE-powered kitchen heat source and horde redstone alarms. Content-level integration stays in KubeJS/datapacks."
+    description="Behavior-level glue for Starforge: FE-powered kitchen heat source, horde redstone alarms and a hidden first-PvP-kill keepsake. Content-level integration stays in KubeJS/datapacks."
 
 [[dependencies.starforge_compat]]
     modId="neoforge"

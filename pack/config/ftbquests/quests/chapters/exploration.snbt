@@ -8,7 +8,7 @@
 	}
 	id: "637830D327841CC8"
 	images: [ ]
-	order_index: 5
+	order_index: 6
 	progression_mode: "flexible"
 	quest_links: [ ]
 	quests: [
@@ -95,12 +95,13 @@
 			}
 			id: "6B02183287572A0A"
 			x: 12.8d
-			y: 10.5d
+			y: 12d
 			dependencies: [
 				"76B7ECD689453090"
 			]
 			shape: "pentagon"
 			size: 1.5d
+			optional: true
 			rewards: [
 				{
 					id: "3E3F333932512E5F"
@@ -136,10 +137,11 @@
 			}
 			id: "33F96CADFA9891F7"
 			x: 16d
-			y: 7.5d
+			y: 10.5d
 			dependencies: [
 				"17108BC68E5E17B5"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "4F1C34BB182EDE9E"
@@ -198,10 +200,11 @@
 			}
 			id: "5FB2C68FD35C744B"
 			x: 16d
-			y: 9d
+			y: 7.5d
 			dependencies: [
 				"17108BC68E5E17B5"
 			]
+			optional: true
 			rewards: [
 				{
 					id: "3C3E4527C8B5557C"
@@ -289,7 +292,7 @@
 			}
 			id: "0B6E927FD2CC7D1B"
 			x: 6.4d
-			y: 12d
+			y: 18d
 			dependencies: [
 				"7B5BD275BEF97E3E"
 			]
@@ -353,6 +356,214 @@
 					}
 					count: 8
 					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "artifacts:umbrella"
+			}
+			id: "3337DD355D021D68"
+			x: 3.2d
+			y: 19.5d
+			dependencies: [
+				"5CFC818ECAF2A1E1"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "0C8C300E19F888F7"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:bread"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5F717D0CDFE61679"
+					type: "advancement"
+					advancement: "starforge:first_artifact"
+					criterion: ""
+				}
+			]
+		}
+		{
+			icon: {
+				id: "artifacts:night_vision_goggles"
+			}
+			id: "44DA18379651CDA7"
+			x: 6.4d
+			y: 21d
+			dependencies: [
+				"3337DD355D021D68"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "2E9D7E2371DB8387"
+					type: "item"
+					item: {
+						count: 4
+						id: "ad_astra:desh_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "2A3CBADD1DC73E08"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "artifacts:crystal_heart"
+			}
+			id: "6032F578C5F37DB7"
+			x: 9.6d
+			y: 22.5d
+			dependencies: [
+				"44DA18379651CDA7"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "0F1A084020C45A73"
+					type: "item"
+					item: {
+						count: 4
+						id: "ad_astra:ostrum_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "3DDEDC982B030FDB"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "artifacts:chorus_totem"
+			}
+			id: "0CB50C41FBCD2682"
+			x: 19.2d
+			y: 9d
+			dependencies: [
+				"6032F578C5F37DB7"
+				"5FB2C68FD35C744B"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "49D51C4670D54A64"
+					type: "item"
+					item: {
+						count: 1
+						id: "modpack:service_medal"
+					}
+					team_reward: true
+				}
+			]
+			tasks: [
+				{
+					id: "048D85945009E444"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "minecraft:ender_pearl"
+			}
+			id: "14C1933433AE2931"
+			x: 6.4d
+			y: 13.5d
+			dependencies: [
+				"7B5BD275BEF97E3E"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "7B45675CC4662114"
+					type: "item"
+					item: {
+						count: 16
+						id: "minecraft:torch"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "2E6D19A59BD06503"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "arachnids:warrior_spawn_egg"
+			}
+			id: "754414537A314DA3"
+			x: 9.6d
+			y: 15d
+			dependencies: [
+				"14C1933433AE2931"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "595018F9B4363277"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:iron_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "47C5F3955E571116"
+					type: "kill"
+					entity: "arachnids:warrior"
+					value: 3
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ad_astra:mogler_spawn_egg"
+			}
+			id: "12E6FEFAE5AD67A7"
+			x: 9.6d
+			y: 16.5d
+			dependencies: [
+				"14C1933433AE2931"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "0EDC253AE1D2C8BD"
+					type: "item"
+					item: {
+						count: 4
+						id: "ad_astra:desh_ingot"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "5682EF63C6B2E2D3"
+					type: "checkmark"
 				}
 			]
 		}

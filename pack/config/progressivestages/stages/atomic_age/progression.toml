@@ -9,3 +9,11 @@ count = 1
 type = "custom_counter"
 counter = "modpack:craft_reactor_control"
 count = 1
+[unlock]
+toast = "原子时代 / Atomic Age"
+title = "&l原子时代 / Atomic Age"
+subtitle = "地球工业的顶峰，下一步是离开摇篮。 / The peak of Earth industry - the cradle is behind."
+sound = "minecraft:ui.toast.challenge_complete"
+particle = "minecraft:totem_of_undying"
+progress_nudges = true
+hud_bar = true

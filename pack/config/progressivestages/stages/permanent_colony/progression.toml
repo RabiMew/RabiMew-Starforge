@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "殖民地后勤组件可本地产出并循环维护。 / Colony logistics modules are produced and recycled locally."
+[[triggers.conditions]]
+type = "craft"
+item = "id:modpack:colony_maintenance"
+count = 1

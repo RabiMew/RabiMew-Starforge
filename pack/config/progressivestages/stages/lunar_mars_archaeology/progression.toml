@@ -1,0 +1,9 @@
+[[triggers]]
+mode = "any_of"
+description = "月球与火星遗迹进入定期考察范围。 / Moon and Mars ruins are under regular survey."
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:moon"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:mars"

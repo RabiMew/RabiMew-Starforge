@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:earth_scouting"
+display_name = "地球探索 / Earth Scouting"
+description = "地图与补给让野外行动有据可依。 / Maps and supplies put field work on a plan."
+icon = "minecraft:compass"
+dependencies = ["modpack:survival_age"]
+dependency_mode = "all"
+category = "探索发现 / Exploration"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_0"]
+unlock_message = "地球探索 / Earth Scouting"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 10

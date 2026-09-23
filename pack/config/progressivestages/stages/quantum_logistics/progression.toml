@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "量子环让跨空间网络合为一体。 / Quantum rings unify networks across any distance."
+[[triggers.conditions]]
+type = "craft"
+item = "id:ae2:quantum_ring"
+count = 1

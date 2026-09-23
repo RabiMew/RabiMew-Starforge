@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:heavy_firepower"
+display_name = "重型火力 / Heavy Firepower"
+description = "深岩银河级重火力武器投入使用。 / Deep Rock Galactic-class heavy weapons are fielded."
+icon = "tacz:modern_kinetic_gun"
+dependencies = ["modpack:horde_defense", "modpack:atomic_age"]
+dependency_mode = "all"
+category = "军事能力 / Military"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_5"]
+unlock_message = "重型火力 / Heavy Firepower"
+
+[display]
+frame = "goal"
+reveal = "dependencies"
+sort_order = 40

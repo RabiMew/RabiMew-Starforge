@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "深岩银河级重火力武器投入使用。 / Deep Rock Galactic-class heavy weapons are fielded."
+[[triggers.conditions]]
+type = "custom_counter"
+counter = "modpack:drg_gun"
+count = 1

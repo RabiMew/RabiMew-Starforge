@@ -5,12 +5,14 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { loadDesign } from './lib/design.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const j = (p) => JSON.parse(readFileSync(path.join(root, p), 'utf8'));
 
-const map = j('design/semantic-map.json');
-const content = j('design/content.json');
+const design = loadDesign(root);
+const map = design.sm;
+const content = design;
 const packItems = new Set(content.items.map((i) => `modpack:${i.id}`));
 
 const registries = {
@@ -50,7 +52,7 @@ for (const [section, entries] of Object.entries(map)) {
 const locksPath = 'design/stage-locks.json';
 if (existsSync(path.join(root, locksPath))) {
   const locks = j(locksPath);
-  const stages = new Set(j('design/content.json').stages.map((s) => s.id));
+  const stages = new Set(design.stages.map((s) => s.id));
   for (const [stageId, lock] of Object.entries(locks)) {
     if (stageId === 'schema_version' || stageId === 'comment') continue;
     if (!stages.has(stageId)) { console.error(`stage-locks: unknown stage ${stageId}`); errors++; continue; }
@@ -68,7 +70,7 @@ if (existsSync(path.join(root, locksPath))) {
 // never be crafted and the chain stalls).
 {
   const deps = {};
-  for (const s of content.stages) deps[s.id] = s.depends_on ?? [];
+  for (const s of design.stages) deps[s.id] = s.depends_on ?? [];
   const ancestors = (id) => {
     const seen = new Set();
     const walk = (x) => (deps[x] ?? []).forEach((d) => { if (!seen.has(d)) { seen.add(d); walk(d); } });
@@ -76,7 +78,7 @@ if (existsSync(path.join(root, locksPath))) {
     return seen;
   };
   const locks = existsSync(path.join(root, locksPath)) ? j(locksPath) : {};
-  for (const s of content.stages) {
+  for (const s of design.stages) {
     const ev = s.unlock_evidence;
     if (!ev?.component) continue;
     const itemId = map.items[ev.component];

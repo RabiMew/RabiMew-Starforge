@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "cookingforblockheads:cooking_table"
+  },
+  "title": {
+   "translate": "modpack.advancement.cfb_kitchen.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.cfb_kitchen.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "triggered": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "requirements": [
+  [
+   "triggered"
+  ]
+ ]
+}

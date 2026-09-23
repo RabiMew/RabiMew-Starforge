@@ -1,0 +1,34 @@
+{
+ "display": {
+  "icon": {
+   "id": "modpack:colony_maintenance"
+  },
+  "title": {
+   "translate": "modpack.advancement.colony_established.title"
+  },
+  "description": {
+   "translate": "modpack.advancement.colony_established.description"
+  },
+  "frame": "goal",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "i0": {
+   "trigger": "minecraft:inventory_changed",
+   "conditions": {
+    "items": [
+     {
+      "items": "modpack:colony_maintenance"
+     }
+    ]
+   }
+  }
+ },
+ "requirements": [
+  [
+   "i0"
+  ]
+ ]
+}

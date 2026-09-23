@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "炮塔网络可在无人值守时压制来袭目标。 / A turret network suppresses attackers without crews."
+[[triggers.conditions]]
+type = "craft"
+item = "id:taczturrets:turret"
+count = 1

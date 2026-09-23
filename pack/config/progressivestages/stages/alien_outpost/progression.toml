@@ -1,0 +1,21 @@
+[[triggers]]
+mode = "any_of"
+description = "团队在其他天体建立了落脚点。 / The team holds an off-world foothold."
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:moon"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:mars"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:venus"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:mercury"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "ad_astra:glacio"
+[[triggers.conditions]]
+type = "dimension"
+dimension = "pv_asteroid_belt:asteroid_belt"

@@ -3,6 +3,8 @@
 // The redstone layer is handled by starforge_compat:horde_alarm (the addon
 // listens to the same events and drives a 15-strength signal) - this script
 // only owns the presentation layer, so the two can evolve independently.
+// Data-layer horde signals (counters / advancements / one-time hints) are
+// emitted by the generated starforge_guidance.js from design/guidance.json.
 
 const HordeStartEvent = 'net.smileycorp.hordes.common.event.HordeStartEvent'
 const HordeEndEvent = 'net.smileycorp.hordes.common.event.HordeEndEvent'

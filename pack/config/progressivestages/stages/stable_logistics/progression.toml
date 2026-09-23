@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "通用仓储网络支撑日常补给调度。 / Warehouse networks sustain daily resupply."
+[[triggers.conditions]]
+type = "craft"
+item = "id:sophisticatedstorage:controller"
+count = 1

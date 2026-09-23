@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:base_registered"
+display_name = "基地登记 / Base Registered"
+description = "工业基地已登记，后续活动按本地设施统计。 / The industrial base is registered; activity counts toward local facilities."
+icon = "modpack:industrial_console"
+dependencies = ["modpack:survival_age"]
+dependency_mode = "all"
+category = "殖民建设 / Colony"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_0"]
+unlock_message = "基地登记 / Base Registered"
+
+[display]
+frame = "task"
+reveal = "dependencies"
+sort_order = 10

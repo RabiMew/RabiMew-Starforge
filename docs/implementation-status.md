@@ -249,3 +249,67 @@ KubeJS 无法表达的行为型兼容，现由自有附属 `starforge-compat-0.1
 ### 仍未实现的 compat 项
 
 - 基地威胁值 H、怪潮阶段化调度、空间站事件白名单（P2 原列项）；DRG 枪包客户端表现（模型/动画/音效/lua 特殊机制）与 TACZ 炮塔多人/区块卸载实机验收（P2 尾项）。
+
+## 2026-09-23 隐藏彩蛋：首次 PvP 击杀奖励（已实现，待实机验证）
+
+`starforge_compat` 新增 `EdiblePlayerHead`（`NeoForge.EVENT_BUS` 三个监听）：
+
+- **触发**：`LivingDeathEvent` 中要求死者为 `ServerPlayer`、`DamageSource.getEntity()` 为另一名 `ServerPlayer`（排除自杀与 `FakePlayer`，覆盖近战/弹射物/引爆物等玩家归因伤害；环境/怪物伤害 `getEntity()` 非玩家不触发）。随后检查隐藏成就 `starforge:edible_player_head` 是否已完成——未完成才发放，天然保证每名杀手只领一次。
+- **特殊头**：仍为 `minecraft:player_head`，但写入 `minecraft:profile`（被害者实时 `GameProfile`，含皮肤属性）、`minecraft:custom_name`（`item.starforge_compat.edible_player_head` = “%s的头颅” / “%s's Head”）、`minecraft:food`（0 营养/0 饱和/`canAlwaysEat`/1.6s 进食时长，靠 1.21.1 的 food 组件获得可食用性与进食动画）与 `minecraft:custom_data` 标记 `starforge:edible_player_head` + `starforge:victim_uuid` + `starforge:victim_name`。普通玩家头无标记、不可食用，行为完全不变。
+- **成就**：`design/content.json` 新增 `trigger: "custom_event"` + `event: "starforge_compat:player_killed_player"`；`build-pack.mjs` 生成 `minecraft:impossible` 判据（只能由 `PlayerAdvancements.award` 授予），`hidden: true`、challenge 框、弹 toast 不广播。与阶段系统、ProgressiveStages、FTB Quests 无任何关联。
+- **食用效果**：`LivingEntityUseItemEvent.Finish` 检测标记头 → `MobEffectInstance` 再生 VI + 凋零 VI，`duration = INFINITE_DURATION`（1.21 原生无限时长，与 `/effect ... infinite` 同义——牛奶、死亡、`/effect clear` 正常移除），`ambient=false`、`showParticles=false`、`showIcon=false`。
+- **Tooltip**：`ItemTooltipEvent` 对标记头追加灰色“食用效果：”一行 + 5 行 `obfuscated` 彩色固定文本（暗紫/青/黄/红/绿；底文是固定翻译键，不靠每帧生成随机串），不泄露真实效果名。
+- **顺手修复**：`tools/fetch-mods.mjs --only` 曾为重建后字节已变的 `local:` jar 携带旧 sha1，导致合并校验必然失败；现仅当旧 sha1 与新 jar 实际 sha1 一致时才携带，变更的条目由 `backfillSha1` 回填。
+- **待实机验证**：双人 PvP 首杀发头 + 跳成就、头颅皮肤/名称渲染、进食动画与满饥饿可吃、双无限效果生效、牛奶可清除、tooltip 乱码行渲染（obfuscated 样式按原版机制逐帧换字形，属预期）。
+
+## 2026-09-23 引导体系 V2：统一数据源 + 能力节点（已实现，静态 + 服务端验证通过）
+
+按 `引导系统V2.txt` 重构引导层架构：**ProgressiveStages = 唯一状态源**（8 时代 + 22 能力节点同图）、**Progression Map = 总导航**、**FTB Quests = 说明书/路线**、**Advancements = 成就记录**、**手册 = 知识库**、**运行时提示 = 场景提醒**。
+
+### 数据源拆分（design/ 新文件）
+
+- `design/progression.json`：30 个进度节点——8 个时代（`kind: "era"`，`triggers`/`locks`/`unlock`/`preview`）+ 22 个能力节点（`kind: "ability"`，dependency 可指向时代或其他能力，**永不反向授权**、不带锁规则）。触发条件五类：原生 `craft`、`pickup`、`dimension`、`custom_counter`、`has_item`（metadata），均服务端可验证。
+- `design/advancements.json`：成就定义独立（`stage_granted` / `vanilla_trigger` / `custom_event` 三类），只记录不授权。
+- `design/guidance.json`：14 条运行时引导事件，每条含检测路由（craft_item/inventory_item(s)/inventory_tag/block_use/block_tag/dimension/entity_spawned/quest/horde_start/horde_end/gun_ns/advancement_earned）与效果（计数器/成就/一次性提示）。
+- `tools/lib/design.mjs`：统一加载器，content+progression+advancements+guidance+semantic-map+stage-locks 合并为单个 design 对象；四个工具全部改走它。
+
+### 生成物
+
+- **ProgressiveStages**：30 个 stage 目录。schema-4 `dependencies`/`dependency_mode`/`[[triggers]]` + `[display]`（frame/reveal/sort_order/category）+ `[unlock]`（toast/progress_nudges/hud_bar）+ `[advancements].locked`（reveal_at 隐藏）；`scope=team`。能力节点无锁、无时代依赖。
+- **FTB Quests**：10 章 160 节点（43 手册页）148 奖励。新增 `milestones` 章——7 个 `gamestage` 任务（`team_stage: true`），团队持阶即自动完成，与 PS 图谱实时同步；`star_map` 任务指引玩家打开 PS 库存按钮的进度图谱；37 个支线新任务全部 `optional: true`。
+- **成就**：29 个 JSON 生成到 `pack/kubejs/data/starforge/advancement/`（含 8 个 `stage_granted` 时代镜像）。
+- **运行时**：`starforge_guidance.js`（生成）取代手写 `starforge_triggers.js`——七条时代证据计数器 + 14 条引导事件 + `ProgressiveStages.onGranted` 同步（stage_granted 成就 + 下一步提示）。维度/FTB 任务用节流 tick 轮询（无 direct 事件）；DRG 枪用 `GunId` NBT 命名空间 `deep_rock_galactic:*` 区分普通 TaCZ 枪；FTB `quest` 路由严禁投喂时代证据计数器（任务书永远可选）。
+- **语言**：652 个双语键（en_us/zh_cn 全量一致）。
+
+### 验证结果（静态，本轮）
+
+```text
+validate-design: PASS — 30 节点 / 7 路线 / 10 章 / 117 任务 / 43 手册页 / 14 引导事件 / 652 双语键
+export-quests:   10 chapters, 160 quest nodes, 148 rewards
+build-pack:      13 items, 30 stages (8 era + 22 ability), 29 advancements, guidance script, 2 lang files
+check-mapping:   PASS — 全部 427 条语义 ID 可解析
+compat 附属构建: starforge-compat-0.1.0.jar 成功
+```
+
+新校验项：进度图无环、时代依赖禁能力反向、依赖阶段不倒挂、required 不依赖 optional、guidance 路由/计数器/引用完整、`via.quest` 禁投时代证据、generated-ID 全局唯一。
+
+### 运行时验证（2026-09-23 dedicated server，Java 21，本轮实跑）
+
+- `/progressivestages validate`：**30/30 通过**（首轮抓出 `[unlock]`/`[advancements]` 段错放 `stage.toml`——文件夹格式下前者属 `progression.toml`、后者属 `rules.toml`，生成器已修正）。
+- 服务端启动 `Done (1.810s)`：`starforge_guidance.js` 0.119s 加载、全部 Java 类解析成功（ResourceLocation/Long/ServerQuestFile/HordeStartEvent/HordeEndEvent），KubeJS 0 错。
+- `Per-stage triggers active for 29 stage(s), 29 rule(s)`（survival_age 为 starting stage 无触发）。
+- `/stage tree`：8 时代主链 + 22 能力分支形状与设计一致。
+- FTB Quests：`Loaded 1 chapter groups, 10 chapters, 160 quests`，双语翻译表加载，无解析错误。
+- **stagetest（FakePlayer，`kubejs/stagetest.json` 启用）全 OK**：30 节点注册、survival 授予、native craft→mechanical、7 条时代计数器、4 条能力计数器（base_registered/guard_post/horde_survived/drg_gun）、bulk_storage native craft、无时代残留 locked。修复两处：补依赖须 `grantBypass`（`grant` 仍检查依赖）；`locked()` 返回未持有阶段而非锁规则。
+- **KubJS 顶层 `const` 跨文件共享**：`HordeEndEvent`/`EVIDENCE` 与 horde.js/旧 triggers.js 冲突报错——生成脚本全部改 `SF_` 前缀（沿用 starforge_dump.js 既有约定）；`global.*` 只能 startup_scripts 用（sfGuidance 导出已移除，无消费者）。
+- `sync-pack.mjs` 新增 `kubejs/{server_scripts,startup_scripts,client_scripts,data,assets}` 为 OWNED_DIRS——旧 `starforge_triggers.js` 在 run/ 残留的问题已根治（runtime 的 export/、config/、stagetest.json 不属 OWNED）。
+- `deep_space`/`highrisk_survey` 的 `any_of`→`all_of`（描述为"抵达 X 与 Y"）。
+
+### 仍待实机验证（需真实玩家/客户端）
+
+- `ProgressiveStages.onGranted` → `stage_granted` 成就颁发给真实玩家（FakePlayer 路径无错但无法观测授予结果）。
+- 14 条引导事件的真实触发（拾取/方块交互/维度轮询/gun_ns/horde/quest/advancement_earned）。
+- FTB `gamestage` 任务的客户端显示与 `team_stage` 同步；milestones 章视觉。
+- `[unlock]` toast/title/hud_bar 实机表现；`[advancements].locked` 隐藏效果。
+- 锁 enforcement（制造/使用/维度进入）真实玩家进世界抽查。
+- 双人 PvP 彩蛋（见上节）。

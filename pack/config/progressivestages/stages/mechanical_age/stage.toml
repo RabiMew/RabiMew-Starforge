@@ -8,12 +8,14 @@ description = "用管道、传送带和基础冶炼，把手工劳动连接成�
 icon = "modpack:engineering_assembly"
 dependencies = ["modpack:survival_age"]
 dependency_mode = "all"
-category = "Starforge"
+category = "文明进程 / Civilization"
 color = "#c07f3f"
 hidden = false
 scope = "team"
-tags = ["modpack", "tier_1"]
+tags = ["modpack", "era", "tier_1"]
+unlock_message = "机械时代 / Mechanical Age"
 
 [display]
 frame = "task"
 reveal = "dependencies"
+sort_order = 100

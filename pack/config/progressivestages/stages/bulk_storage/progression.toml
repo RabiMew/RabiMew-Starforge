@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "抽屉网络按压缩级别管理大宗物资。 / Drawer networks manage bulk goods by compression tier."
+[[triggers.conditions]]
+type = "craft"
+item = "id:storagedrawers:controller"
+count = 1

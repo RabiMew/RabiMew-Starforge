@@ -16,6 +16,8 @@ import net.minecraft.world.item.CreativeModeTabs;
  *   <li>{@code electric_burner}: FE-powered heat source for Farmer's Delight
  *       (works via FD's own HEAT_SOURCES tag + vanilla LIT blockstate).</li>
  *   <li>{@code horde_alarm}: redstone source driven by The Hordes start/end events.</li>
+ *   <li>hidden easter egg: first real player-kill grants an edible victim head
+ *       and a hidden advancement ({@link EdiblePlayerHead}).</li>
  * </ul>
  */
 @Mod(StarforgeCompat.MODID)
@@ -28,6 +30,9 @@ public class StarforgeCompat {
         ModContent.BLOCK_ENTITIES.register(modBus);
         modBus.addListener(this::registerCapabilities);
         modBus.addListener(this::addCreativeTabs);
+        NeoForge.EVENT_BUS.addListener(EdiblePlayerHead::onPlayerDeath);
+        NeoForge.EVENT_BUS.addListener(EdiblePlayerHead::onFinishUsing);
+        NeoForge.EVENT_BUS.addListener(EdiblePlayerHead::onTooltip);
         if (ModList.get().isLoaded("hordes")) {
             NeoForge.EVENT_BUS.addListener(HordeHooks::onHordeStart);
             NeoForge.EVENT_BUS.addListener(HordeHooks::onHordeEnd);

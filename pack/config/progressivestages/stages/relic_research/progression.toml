@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "团队开始收集并利用遗迹遗物。 / The team collects and fields artifacts."
+[[triggers.conditions]]
+type = "pickup"
+item = "tag:artifacts:artifacts"
+count = 1

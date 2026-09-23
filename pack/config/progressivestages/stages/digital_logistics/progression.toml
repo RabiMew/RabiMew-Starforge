@@ -1,0 +1,7 @@
+[[triggers]]
+mode = "any_of"
+description = "ME 网络把仓储与自动合成接入统一索引。 / The ME network indexes storage and autocrafting."
+[[triggers.conditions]]
+type = "craft"
+item = "id:ae2:controller"
+count = 1

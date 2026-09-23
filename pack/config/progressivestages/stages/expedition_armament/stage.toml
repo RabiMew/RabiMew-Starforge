@@ -1,0 +1,21 @@
+[schema]
+version = 4
+
+[stage]
+id = "modpack:expedition_armament"
+display_name = "远征军备 / Expedition Armament"
+description = "弹药与武器产能可支撑跨行星远征作战。 / Munitions output sustains interplanetary campaigns."
+icon = "tacz:ammo"
+dependencies = ["modpack:heavy_firepower", "modpack:space_age"]
+dependency_mode = "all"
+category = "军事能力 / Military"
+color = "#888888"
+hidden = false
+scope = "team"
+tags = ["modpack", "ability", "tier_6"]
+unlock_message = "远征军备 / Expedition Armament"
+
+[display]
+frame = "challenge"
+reveal = "dependencies"
+sort_order = 50

@@ -1,0 +1,565 @@
+{
+ "schema_version": 1,
+ "comment": "Progression map single source. stages = T0-T7 era tree (the only tech gates; locks live in stage-locks.json). abilities = capability badges the team can establish in parallel; they MUST NOT gate eras and carry no lock rules. dependencies may mix era+ability ids for abilities; era dependencies may only reference eras.",
+ "categories": [
+  { "id": "civilization", "name_key": "modpack.map.category.civilization" },
+  { "id": "military", "name_key": "modpack.map.category.military" },
+  { "id": "logistics", "name_key": "modpack.map.category.logistics" },
+  { "id": "exploration", "name_key": "modpack.map.category.exploration" },
+  { "id": "colony", "name_key": "modpack.map.category.colony" }
+ ],
+ "stages": [
+  {
+   "id": "survival_age",
+   "tier": 0,
+   "name_key": "modpack.stage.survival_age",
+   "description_key": "modpack.stage.survival_age.description",
+   "depends_on": [],
+   "unlock_evidence": { "type": "automatic" },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "task",
+   "reveal": "always",
+   "icon": "minecraft:crafting_table",
+   "color": "#8b8b8b",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.survival_age.preview.0", "verify": ["farmersdelight:cooking_pot"] },
+    { "preview_key": "modpack.stage.survival_age.preview.1", "verify": ["minecraft:chest"] }
+   ],
+   "recommended_routes": ["agriculture", "building", "exploration"],
+   "next_steps_key": "modpack.stage.survival_age.next",
+   "unlock": {}
+  },
+  {
+   "id": "mechanical_age",
+   "tier": 1,
+   "name_key": "modpack.stage.mechanical_age",
+   "description_key": "modpack.stage.mechanical_age.description",
+   "depends_on": ["survival_age"],
+   "unlock_evidence": {
+    "type": "server_verified_production",
+    "component": "engineering_assembly",
+    "available_in": "survival_age"
+   },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "task",
+   "reveal": "dependencies",
+   "icon": "modpack:engineering_assembly",
+   "color": "#c07f3f",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.mechanical_age.preview.0", "verify": ["ic2_generator"] },
+    { "preview_key": "modpack.stage.mechanical_age.preview.1", "verify": ["ic2_macerator"] },
+    { "preview_key": "modpack.stage.mechanical_age.preview.2", "verify": ["bc_pipe_item_stone"] },
+    { "preview_key": "modpack.stage.mechanical_age.preview.3", "verify": ["rc_cargo_minecart"] },
+    { "preview_key": "modpack.stage.mechanical_age.preview.4", "verify": ["rc_steel_ingot"] }
+   ],
+   "recommended_routes": ["industry", "automation"],
+   "next_steps_key": "modpack.stage.mechanical_age.next",
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+  },
+  {
+   "id": "electric_age",
+   "tier": 2,
+   "name_key": "modpack.stage.electric_age",
+   "description_key": "modpack.stage.electric_age.description",
+   "depends_on": ["mechanical_age"],
+   "unlock_evidence": {
+    "type": "server_verified_production",
+    "component": "ic2_generator",
+    "available_in": "mechanical_age"
+   },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "task",
+   "reveal": "dependencies",
+   "icon": "ic2cre:generator",
+   "color": "#e0b030",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.electric_age.preview.0", "verify": ["ic2_mfe"] },
+    { "preview_key": "modpack.stage.electric_age.preview.1", "verify": ["tacz_gun_table"] },
+    { "preview_key": "modpack.stage.electric_age.preview.2", "verify": ["ie_turret_gun"] },
+    { "preview_key": "modpack.stage.electric_age.preview.3", "verify": ["rc_block_signal"] },
+    { "preview_key": "modpack.stage.electric_age.preview.4", "verify": ["bg_building_gadget"] },
+    { "preview_key": "modpack.stage.electric_age.preview.5", "verify": ["sd_drawer_controller"] }
+   ],
+   "recommended_routes": ["industry", "military", "automation"],
+   "next_steps_key": "modpack.stage.electric_age.next",
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+  },
+  {
+   "id": "information_age",
+   "tier": 3,
+   "name_key": "modpack.stage.information_age",
+   "description_key": "modpack.stage.information_age.description",
+   "depends_on": ["electric_age"],
+   "unlock_evidence": {
+    "type": "server_verified_production",
+    "component": "information_interface",
+    "available_in": "electric_age"
+   },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "icon": "modpack:information_interface",
+   "color": "#3fa8c8",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.information_age.preview.0", "verify": ["ae2_controller"] },
+    { "preview_key": "modpack.stage.information_age.preview.1", "verify": ["ae2_pattern_provider"] },
+    { "preview_key": "modpack.stage.information_age.preview.2", "verify": ["ae2_storage_bus"] },
+    { "preview_key": "modpack.stage.information_age.preview.3", "verify": ["ae2_interface"] }
+   ],
+   "recommended_routes": ["automation", "military"],
+   "next_steps_key": "modpack.stage.information_age.next",
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+  },
+  {
+   "id": "heavy_industry_age",
+   "tier": 4,
+   "name_key": "modpack.stage.heavy_industry_age",
+   "description_key": "modpack.stage.heavy_industry_age.description",
+   "depends_on": ["information_age"],
+   "unlock_evidence": {
+    "type": "server_verified_production",
+    "component": "heavy_industry_control",
+    "available_in": "information_age"
+   },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "icon": "modpack:heavy_industry_control",
+   "color": "#a05050",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.heavy_industry_age.preview.0", "verify": ["bc_quarry"] },
+    { "preview_key": "modpack.stage.heavy_industry_age.preview.1", "verify": ["ie_arc_furnace"] },
+    { "preview_key": "modpack.stage.heavy_industry_age.preview.2", "verify": ["tt_turret"] },
+    { "preview_key": "modpack.stage.heavy_industry_age.preview.3", "verify": ["rc_high_speed_track"] },
+    { "preview_key": "modpack.stage.heavy_industry_age.preview.4", "verify": ["rc_world_spike"] }
+   ],
+   "recommended_routes": ["industry", "military", "automation"],
+   "next_steps_key": "modpack.stage.heavy_industry_age.next",
+   "unlock": { "toast": true, "progress_nudges": true, "hud_bar": true }
+  },
+  {
+   "id": "atomic_age",
+   "tier": 5,
+   "name_key": "modpack.stage.atomic_age",
+   "description_key": "modpack.stage.atomic_age.description",
+   "depends_on": ["heavy_industry_age"],
+   "unlock_evidence": {
+    "type": "server_verified_production",
+    "component": "reactor_control",
+    "available_in": "heavy_industry_age"
+   },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "icon": "modpack:reactor_control",
+   "color": "#4fae5f",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.atomic_age.preview.0", "verify": ["ic2_nuclear_reactor"] },
+    { "preview_key": "modpack.stage.atomic_age.preview.1", "verify": ["ic2_nano_helmet"] },
+    { "preview_key": "modpack.stage.atomic_age.preview.2", "verify": ["ae2_singularity"] },
+    { "preview_key": "modpack.stage.atomic_age.preview.3", "verify": ["anomaly_analysis"] },
+    { "preview_key": "modpack.stage.atomic_age.preview.4", "verify": ["bg_destruction_gadget"] }
+   ],
+   "recommended_routes": ["industry", "military", "space"],
+   "next_steps_key": "modpack.stage.atomic_age.next",
+   "unlock": {
+    "toast": true, "show_title": true, "subtitle_key": "modpack.stage.atomic_age.subtitle",
+    "sound": "minecraft:ui.toast.challenge_complete", "particle": "minecraft:totem_of_undying",
+    "progress_nudges": true, "hud_bar": true
+   }
+  },
+  {
+   "id": "space_age",
+   "tier": 6,
+   "name_key": "modpack.stage.space_age",
+   "description_key": "modpack.stage.space_age.description",
+   "depends_on": ["atomic_age"],
+   "unlock_evidence": {
+    "type": "server_verified_production",
+    "component": "space_control_core",
+    "available_in": "atomic_age"
+   },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "challenge",
+   "reveal": "dependencies",
+   "icon": "modpack:space_control_core",
+   "color": "#4f6fd8",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.space_age.preview.0", "verify": ["aa_tier1_rocket"] },
+    { "preview_key": "modpack.stage.space_age.preview.1", "verify": ["aa_oxygen_distributor"] },
+    { "preview_key": "modpack.stage.space_age.preview.2", "verify": ["aa_space_suit_chest"] },
+    { "preview_key": "modpack.stage.space_age.preview.3", "verify": ["aa_fuel_refinery"] },
+    { "preview_key": "modpack.stage.space_age.preview.4", "verify": ["earth_orbit"] },
+    { "preview_key": "modpack.stage.space_age.preview.5", "verify": [] }
+   ],
+   "recommended_routes": ["space", "exploration", "agriculture"],
+   "next_steps_key": "modpack.stage.space_age.next",
+   "unlock": {
+    "toast": true, "show_title": true, "subtitle_key": "modpack.stage.space_age.subtitle",
+    "sound": "minecraft:ui.toast.challenge_complete", "particle": "minecraft:totem_of_undying",
+    "progress_nudges": true, "hud_bar": true
+   }
+  },
+  {
+   "id": "quantum_age",
+   "tier": 7,
+   "name_key": "modpack.stage.quantum_age",
+   "description_key": "modpack.stage.quantum_age.description",
+   "depends_on": ["atomic_age"],
+   "unlock_evidence": {
+    "type": "server_verified_production",
+    "component": "quantum_control",
+    "available_in": "atomic_age"
+   },
+   "requires_space": false,
+   "requires_boss": false,
+   "category": "civilization",
+   "frame": "challenge",
+   "reveal": "dependencies",
+   "icon": "modpack:quantum_control",
+   "color": "#a05fd0",
+   "unlock_preview": [
+    { "preview_key": "modpack.stage.quantum_age.preview.0", "verify": ["ic2_quantum_helmet"] },
+    { "preview_key": "modpack.stage.quantum_age.preview.1", "verify": ["ae2_quantum_ring"] },
+    { "preview_key": "modpack.stage.quantum_age.preview.2", "verify": ["ae2_spatial_cell_128"] }
+   ],
+   "recommended_routes": ["automation", "industry"],
+   "next_steps_key": "modpack.stage.quantum_age.next",
+   "unlock": {
+    "toast": true, "show_title": true, "subtitle_key": "modpack.stage.quantum_age.subtitle",
+    "sound": "minecraft:ui.toast.challenge_complete", "particle": "minecraft:totem_of_undying",
+    "progress_nudges": true, "hud_bar": true
+   }
+  }
+ ],
+ "abilities": [
+  {
+   "id": "armed_defense",
+   "category": "military",
+   "tier": 2,
+   "name_key": "modpack.ability.armed_defense",
+   "description_key": "modpack.ability.armed_defense.description",
+   "depends_on": ["electric_age"],
+   "icon": "tacz_gun_table",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 10,
+   "trigger": { "conditions": [{ "type": "craft", "item": "tacz_gun_table" }] }
+  },
+  {
+   "id": "auto_defense",
+   "category": "military",
+   "tier": 4,
+   "name_key": "modpack.ability.auto_defense",
+   "description_key": "modpack.ability.auto_defense.description",
+   "depends_on": ["armed_defense", "heavy_industry_age"],
+   "icon": "tt_turret",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 20,
+   "trigger": { "conditions": [{ "type": "craft", "item": "tt_turret" }] }
+  },
+  {
+   "id": "horde_defense",
+   "category": "military",
+   "tier": 4,
+   "name_key": "modpack.ability.horde_defense",
+   "description_key": "modpack.ability.horde_defense.description",
+   "depends_on": ["auto_defense"],
+   "icon": "sfc_horde_alarm",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "sort_order": 30,
+   "trigger": { "conditions": [{ "type": "custom_counter", "counter": "modpack:horde_survived", "count": 1 }] }
+  },
+  {
+   "id": "heavy_firepower",
+   "category": "military",
+   "tier": 5,
+   "name_key": "modpack.ability.heavy_firepower",
+   "description_key": "modpack.ability.heavy_firepower.description",
+   "depends_on": ["horde_defense", "atomic_age"],
+   "icon": "tacz_gun",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "sort_order": 40,
+   "trigger": { "conditions": [{ "type": "custom_counter", "counter": "modpack:drg_gun", "count": 1 }] }
+  },
+  {
+   "id": "expedition_armament",
+   "category": "military",
+   "tier": 6,
+   "name_key": "modpack.ability.expedition_armament",
+   "description_key": "modpack.ability.expedition_armament.description",
+   "depends_on": ["heavy_firepower", "space_age"],
+   "icon": "tacz_ammo",
+   "frame": "challenge",
+   "reveal": "dependencies",
+   "sort_order": 50,
+   "trigger": { "conditions": [{ "type": "craft", "item": "tacz_ammo", "count": 128 }] }
+  },
+  {
+   "id": "basic_storage",
+   "category": "logistics",
+   "tier": 0,
+   "name_key": "modpack.ability.basic_storage",
+   "description_key": "modpack.ability.basic_storage.description",
+   "depends_on": ["survival_age"],
+   "icon": "sd_drawer2",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 10,
+   "trigger": { "conditions": [{ "type": "craft", "item": "#storagedrawers:drawers", "count": 4 }] }
+  },
+  {
+   "id": "bulk_storage",
+   "category": "logistics",
+   "tier": 2,
+   "name_key": "modpack.ability.bulk_storage",
+   "description_key": "modpack.ability.bulk_storage.description",
+   "depends_on": ["basic_storage", "electric_age"],
+   "icon": "sd_drawer_controller",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 20,
+   "trigger": { "conditions": [{ "type": "craft", "item": "sd_drawer_controller" }] }
+  },
+  {
+   "id": "rail_logistics",
+   "category": "logistics",
+   "tier": 2,
+   "name_key": "modpack.ability.rail_logistics",
+   "description_key": "modpack.ability.rail_logistics.description",
+   "depends_on": ["bulk_storage"],
+   "icon": "rc_cargo_minecart",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 30,
+   "trigger": { "conditions": [{ "type": "craft", "item": "rc_cargo_minecart" }] }
+  },
+  {
+   "id": "digital_logistics",
+   "category": "logistics",
+   "tier": 3,
+   "name_key": "modpack.ability.digital_logistics",
+   "description_key": "modpack.ability.digital_logistics.description",
+   "depends_on": ["rail_logistics", "information_age"],
+   "icon": "ae2_controller",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "sort_order": 40,
+   "trigger": { "conditions": [{ "type": "craft", "item": "ae2_controller" }] }
+  },
+  {
+   "id": "auto_production",
+   "category": "logistics",
+   "tier": 3,
+   "name_key": "modpack.ability.auto_production",
+   "description_key": "modpack.ability.auto_production.description",
+   "depends_on": ["digital_logistics"],
+   "icon": "ae2_pattern_provider",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "sort_order": 50,
+   "trigger": { "conditions": [{ "type": "craft", "item": "ae2_pattern_provider" }] }
+  },
+  {
+   "id": "quantum_logistics",
+   "category": "logistics",
+   "tier": 7,
+   "name_key": "modpack.ability.quantum_logistics",
+   "description_key": "modpack.ability.quantum_logistics.description",
+   "depends_on": ["auto_production", "quantum_age"],
+   "icon": "ae2_quantum_ring",
+   "frame": "challenge",
+   "reveal": "dependencies",
+   "sort_order": 60,
+   "trigger": { "conditions": [{ "type": "craft", "item": "ae2_quantum_ring" }] }
+  },
+  {
+   "id": "earth_scouting",
+   "category": "exploration",
+   "tier": 0,
+   "name_key": "modpack.ability.earth_scouting",
+   "description_key": "modpack.ability.earth_scouting.description",
+   "depends_on": ["survival_age"],
+   "icon": "minecraft:compass",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 10,
+   "trigger": { "conditions": [{ "type": "craft", "item": "minecraft:map" }] }
+  },
+  {
+   "id": "relic_research",
+   "category": "exploration",
+   "tier": 0,
+   "name_key": "modpack.ability.relic_research",
+   "description_key": "modpack.ability.relic_research.description",
+   "depends_on": ["earth_scouting"],
+   "icon": "artifacts:umbrella",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 20,
+   "trigger": { "conditions": [{ "type": "pickup", "item": "#artifacts:artifacts" }] }
+  },
+  {
+   "id": "lunar_mars_archaeology",
+   "category": "exploration",
+   "tier": 6,
+   "name_key": "modpack.ability.lunar_mars_archaeology",
+   "description_key": "modpack.ability.lunar_mars_archaeology.description",
+   "depends_on": ["relic_research", "space_age"],
+   "icon": "aa_flag",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 30,
+   "trigger": {
+    "mode": "any_of",
+    "conditions": [
+     { "type": "dimension", "dimension": "moon" },
+     { "type": "dimension", "dimension": "mars" }
+    ]
+   }
+  },
+  {
+   "id": "highrisk_survey",
+   "category": "exploration",
+   "tier": 6,
+   "name_key": "modpack.ability.highrisk_survey",
+   "description_key": "modpack.ability.highrisk_survey.description",
+   "depends_on": ["lunar_mars_archaeology"],
+   "icon": "aa_ostrum_ingot",
+   "frame": "goal",
+   "reveal": "unlocked",
+   "sort_order": 40,
+   "trigger": {
+    "mode": "all_of",
+    "conditions": [
+     { "type": "dimension", "dimension": "venus" },
+     { "type": "dimension", "dimension": "mercury" }
+    ]
+   }
+  },
+  {
+   "id": "deep_space",
+   "category": "exploration",
+   "tier": 6,
+   "name_key": "modpack.ability.deep_space",
+   "description_key": "modpack.ability.deep_space.description",
+   "depends_on": ["highrisk_survey"],
+   "icon": "aa_calorite_ingot",
+   "frame": "challenge",
+   "reveal": "unlocked",
+   "sort_order": 50,
+   "trigger": {
+    "mode": "all_of",
+    "conditions": [
+     { "type": "dimension", "dimension": "glacio" },
+     { "type": "dimension", "dimension": "asteroid_belt" }
+    ]
+   }
+  },
+  {
+   "id": "base_registered",
+   "category": "colony",
+   "tier": 0,
+   "name_key": "modpack.ability.base_registered",
+   "description_key": "modpack.ability.base_registered.description",
+   "depends_on": ["survival_age"],
+   "icon": "industrial_console",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 10,
+   "trigger": { "conditions": [{ "type": "custom_counter", "counter": "modpack:base_registered", "count": 1 }] }
+  },
+  {
+   "id": "stable_logistics",
+   "category": "colony",
+   "tier": 2,
+   "name_key": "modpack.ability.stable_logistics",
+   "description_key": "modpack.ability.stable_logistics.description",
+   "depends_on": ["base_registered", "electric_age"],
+   "icon": "ss_controller",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 20,
+   "trigger": { "conditions": [{ "type": "craft", "item": "ss_controller" }] }
+  },
+  {
+   "id": "crew_posts",
+   "category": "colony",
+   "tier": 2,
+   "name_key": "modpack.ability.crew_posts",
+   "description_key": "modpack.ability.crew_posts.description",
+   "depends_on": ["stable_logistics"],
+   "icon": "ev_trader",
+   "frame": "task",
+   "reveal": "dependencies",
+   "sort_order": 30,
+   "trigger": { "conditions": [{ "type": "craft", "item": "ev_trader" }] }
+  },
+  {
+   "id": "armed_garrison",
+   "category": "colony",
+   "tier": 2,
+   "name_key": "modpack.ability.armed_garrison",
+   "description_key": "modpack.ability.armed_garrison.description",
+   "depends_on": ["crew_posts"],
+   "icon": "gv_guard_egg",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "sort_order": 40,
+   "trigger": { "conditions": [{ "type": "custom_counter", "counter": "modpack:guard_post", "count": 1 }] }
+  },
+  {
+   "id": "alien_outpost",
+   "category": "colony",
+   "tier": 6,
+   "name_key": "modpack.ability.alien_outpost",
+   "description_key": "modpack.ability.alien_outpost.description",
+   "depends_on": ["armed_garrison", "space_age"],
+   "icon": "aa_space_suit_helmet",
+   "frame": "goal",
+   "reveal": "dependencies",
+   "sort_order": 50,
+   "trigger": {
+    "mode": "any_of",
+    "conditions": [
+     { "type": "dimension", "dimension": "moon" },
+     { "type": "dimension", "dimension": "mars" },
+     { "type": "dimension", "dimension": "venus" },
+     { "type": "dimension", "dimension": "mercury" },
+     { "type": "dimension", "dimension": "glacio" },
+     { "type": "dimension", "dimension": "asteroid_belt" }
+    ]
+   }
+  },
+  {
+   "id": "permanent_colony",
+   "category": "colony",
+   "tier": 6,
+   "name_key": "modpack.ability.permanent_colony",
+   "description_key": "modpack.ability.permanent_colony.description",
+   "depends_on": ["alien_outpost"],
+   "icon": "colony_maintenance",
+   "frame": "challenge",
+   "reveal": "dependencies",
+   "sort_order": 60,
+   "trigger": { "conditions": [{ "type": "craft", "item": "colony_maintenance" }] }
+  }
+ ]
+}
