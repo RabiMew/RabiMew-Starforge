@@ -2798,7 +2798,7 @@
     ]
   },
   {
-    "file": "sophisticatedbackpacks-1.21.1-3.26.3.2158.jar",
+    "file": "sophisticatedbackpacks-1.21.1-3.25.78.2107.jar",
     "modIds": [
       "sophisticatedbackpacks"
     ],
@@ -2807,7 +2807,7 @@
       {
         "modId": "sophisticatedcore",
         "type": "required",
-        "versionRange": "[1.5.1,)",
+        "versionRange": "[1.4.87,)",
         "ordering": "NONE",
         "side": "BOTH"
       },
