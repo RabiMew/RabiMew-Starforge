@@ -39,6 +39,15 @@ function dimId(ref, ctx) {
   if (!v) throw new Error(`${ctx}: unresolvable dimension ref ${ref}`);
   return v;
 }
+// Icons accept either a plain ref or { id, components } — the component map is
+// written verbatim into the FTB item SNBT (e.g. TACZ gunpack blocks need a
+// BlockId custom_data tag to resolve their display name).
+function iconObj(ref, ctx) {
+  if (typeof ref === 'string') return { id: itemId(ref, ctx) };
+  const o = { id: itemId(ref.id, ctx) };
+  if (ref.components) o.components = ref.components;
+  return o;
+}
 
 // ---------- SNBT writer (FTB dialect: no commas, tab indent) ----------
 const D = (v) => ({ __d: v });
@@ -83,8 +92,11 @@ function descLines(loc, q) {
 function taskObj(q, t, idx, pathBase) {
   const id = hexId('task', `${pathBase}/${idx}`);
   switch (t.type) {
-    case 'item':
-      return { id, type: 'item', item: { count: 1, id: itemId(t.target, q.id) }, count: t.count ?? 1, consume_items: false };
+    case 'item': {
+      const item = { count: 1, id: itemId(t.target, q.id) };
+      if (t.components) item.components = t.components;
+      return { id, type: 'item', item, count: t.count ?? 1, consume_items: false };
+    }
     case 'checkmark':
       return { id, type: 'checkmark' };
     case 'stage':
@@ -113,10 +125,12 @@ function taskObj(q, t, idx, pathBase) {
 function rewardObj(q, r, idx, pathBase) {
   // ItemReward stores the amount inside the item stack (unlike ItemTask's
   // separate top-level count field).
+  const item = { count: r.count, id: itemId(r.item, q.id) };
+  if (r.components) item.components = r.components;
   return {
     id: hexId('reward', `${pathBase}/${idx}`),
     type: 'item',
-    item: { count: r.count, id: itemId(r.item, q.id) },
+    item,
     team_reward: r.scope === 'team',
   };
 }
@@ -193,7 +207,7 @@ function questObj(q, chapterId, pos) {
   if (!tasks.length) throw new Error(`${q.id}: no task`);
   const rewards = (q.rewards ?? []).map((r, i) => rewardObj(q, r, i, pathBase));
   const obj = {
-    icon: { id: itemId(q.icon, q.id) },
+    icon: iconObj(q.icon, q.id),
     id: hexId('quest', pathBase),
     x: pos.x, y: pos.y,
   };
@@ -264,7 +278,7 @@ for (const ch of chapters) {
     default_quest_shape: '',
     filename: ch.id,
     group: '',
-    icon: { id: itemId(ch.icon, `chapter ${ch.id}`) },
+    icon: iconObj(ch.icon, `chapter ${ch.id}`),
     id: hexId('chapter', ch.id),
     images: [],
     order_index: ch.order,

@@ -49,6 +49,11 @@
 		{
 			icon: {
 				id: "tacz:workbench_a"
+				components: {
+					"minecraft:custom_data": {
+						BlockId: "tacz:ammo_workbench"
+					}
+				}
 			}
 			id: "6A40076FB5A60443"
 			x: 3.2d
@@ -74,6 +79,11 @@
 					item: {
 						count: 1
 						id: "tacz:workbench_a"
+						components: {
+							"minecraft:custom_data": {
+								BlockId: "tacz:ammo_workbench"
+							}
+						}
 					}
 					count: 1
 					consume_items: false

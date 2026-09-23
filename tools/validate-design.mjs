@@ -119,7 +119,8 @@ function validate() {
   // Semantic key or literal ns:path -> resolved id, verified against the
   // registry export; own kubejs items are validated against content.items.
   const itemRef = (ref) => {
-    const id = sm.items[ref] ?? (ID_RE.test(ref) ? ref : null);
+    const key = ref && typeof ref === 'object' ? ref.id : ref; // icons may be { id, components }
+    const id = sm.items[key] ?? (ID_RE.test(key) ? key : null);
     return id && (regItems.has(id) || ownItems.has(id)) ? id : null;
   };
   const dimRef = (ref) => {
@@ -271,6 +272,7 @@ function validate() {
       claim(hexId('task', `${chId}/${quest.id}/${i}`), `task ${quest.id}[${i}]`);
       assert(TASK_TYPES.has(t.type), `${quest.id}: unsupported task type ${t.type}`);
       if (t.count !== undefined) assert(Number.isInteger(t.count) && t.count >= 1, `${quest.id}: bad count`);
+      if (t.components !== undefined) assert(t.components && typeof t.components === 'object' && !Array.isArray(t.components), `${quest.id}: task ${i} components must be an object`);
       switch (t.type) {
         case 'item':
           assert(itemRef(t.target), `${quest.id}: unresolvable item target ${t.target}`);

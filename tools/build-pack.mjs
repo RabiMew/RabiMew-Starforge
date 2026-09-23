@@ -63,6 +63,10 @@ global.SM = ${JSON.stringify(sm, null, 1)};
 `);
 
 // ---------- 3. Lang files (item names/tooltips via keys + runtime hint keys) ----------
+// Built early but written after stage generation: ProgressiveStages stores
+// display strings as literals, so the stage loop below also registers
+// literal->key pairs (i18nPairs/i18nLang) that must land in these files.
+const langByLocale = {};
 for (const [loc, dict] of [['en_us', en], ['zh_cn', zh]]) {
   const lang = {};
   for (const i of content.items) {
@@ -73,7 +77,7 @@ for (const [loc, dict] of [['en_us', en], ['zh_cn', zh]]) {
   for (const [k, v] of Object.entries(dict)) {
     if (k.startsWith('modpack.')) lang[k] = v;
   }
-  out(`kubejs/assets/${NS}/lang/${loc}.json`, JSON.stringify(lang, null, 1) + '\n');
+  langByLocale[loc] = lang;
 }
 
 // ---------- 4. Item models + generated placeholder textures ----------
@@ -229,8 +233,28 @@ out('config/progressivestages/progressivestages.toml',
 // Eras are the only tech gates — they carry lock rules from stage-locks.json.
 // Ability nodes are capability badges on the same map: they have triggers and
 // dependencies (which may mix eras and abilities) but NEVER lock anything.
+// ProgressiveStages renders display_name/description/category/unlock_message
+// as literal text (no translatable-key support — verified in 3.0.5 bytecode:
+// TextUtil.parseColorCodes -> Component.literal). Stage files keep the
+// bilingual "zh / en" literal (readable + safe fallback); each literal is also
+// registered here as literal -> lang key pairs consumed by the starforge_compat
+// i18n mixins, which swap in the client locale's half at render time.
+const i18nPairs = new Map(); // literal -> lang key
+const i18nLang = { en_us: {}, zh_cn: {} };
+const regPair = (literal, key, zhHalf, enHalf) => {
+  if (!literal || i18nPairs.has(literal)) return;
+  i18nPairs.set(literal, key);
+  i18nLang.zh_cn[key] = zhHalf.replace(/&([0-9a-fk-or])/g, '§$1');
+  i18nLang.en_us[key] = enHalf.replace(/&([0-9a-fk-or])/g, '§$1');
+};
+
 const catNames = {};
-for (const c of design.categories) catNames[c.id] = `${zh[c.name_key] ?? c.id} / ${en[c.name_key] ?? c.id}`;
+for (const c of design.categories) {
+  const zhc = zh[c.name_key] ?? c.id;
+  const enc = en[c.name_key] ?? c.id;
+  catNames[c.id] = `${zhc} / ${enc}`;
+  regPair(catNames[c.id], c.name_key, zhc, enc);
+}
 const advLocks = {};
 for (const a of design.advancements) {
   if (a.reveal_at) (advLocks[a.reveal_at] ??= []).push(`id:starforge:${a.id}`);
@@ -257,6 +281,11 @@ for (const st of allNodes(design)) {
   const unlockMsg = st.unlock_message_key
     ? `${zh[st.unlock_message_key] ?? ''} / ${en[st.unlock_message_key] ?? ''}`
     : `${zhName} / ${enName}`;
+  regPair(`${zhName} / ${enName}`, st.name_key, zhName, enName);
+  if (zhDesc || enDesc) regPair(`${zhDesc} / ${enDesc}`, st.description_key, zhDesc, enDesc);
+  regPair(unlockMsg, st.unlock_message_key ?? st.name_key,
+    st.unlock_message_key ? (zh[st.unlock_message_key] ?? '') : zhName,
+    st.unlock_message_key ? (en[st.unlock_message_key] ?? '') : enName);
   const frame = st.frame ?? (tier >= 6 ? 'challenge' : 'task');
   const reveal = st.reveal ?? 'dependencies';
   const sortOrder = st.sort_order ?? (era ? tier * 100 : tier * 100 + 50);
@@ -296,9 +325,11 @@ ${st.x != null ? `x = ${st.x}\ny = ${st.y ?? 0}\n` : ''}${st.background ? `backg
       if (!itemId) throw new Error(`stage ${st.id}: unlock_evidence component ${ev.component} not in semantic map`);
       // mode=any_of so EITHER the native craft stat OR the KubeJS-driven
       // custom_counter (starforge_guidance.js on ItemEvents.crafted) grants it.
+      const evDescKey = ev.description_key ?? 'modpack.stage.craft_evidence';
+      regPair(`${zh[evDescKey]} / ${en[evDescKey]}`, evDescKey, zh[evDescKey], en[evDescKey]);
       prog = `[[triggers]]
 mode = "any_of"
-description = "Craft the stage evidence item"
+description = ${tomlStr(`${zh[evDescKey]} / ${en[evDescKey]}`)}
 [[triggers.conditions]]
 type = "craft"
 item = "${itemId}"
@@ -350,6 +381,13 @@ item = "${item}"
     if (u.toast) lines.push(`toast = ${tomlStr(typeof u.toast === 'string' ? u.toast : unlockMsg)}`);
     if (u.show_title) lines.push(`title = ${tomlStr(typeof u.show_title === 'string' ? u.show_title : `&l${zhName} / ${enName}`)}`);
     if (u.subtitle_key) lines.push(`subtitle = ${tomlStr(`${zh[u.subtitle_key] ?? ''} / ${en[u.subtitle_key] ?? ''}`)}`);
+    if (u.show_title === true) {
+      regPair(`&l${zhName} / ${enName}`, `${NS}.stage_i18n.${st.id}.title`, `&l${zhName}`, `&l${enName}`);
+    }
+    if (u.subtitle_key) {
+      regPair(`${zh[u.subtitle_key] ?? ''} / ${en[u.subtitle_key] ?? ''}`,
+        u.subtitle_key, zh[u.subtitle_key] ?? '', en[u.subtitle_key] ?? '');
+    }
     if (u.sound) lines.push(`sound = "${u.sound}"`);
     if (u.particle) lines.push(`particle = "${u.particle}"`);
     if (u.progress_nudges) lines.push(`progress_nudges = true`);
@@ -407,6 +445,19 @@ targets.dimensions = ${tomlList(dimIds)}
     }
   }
   out(`${dir}/rules.toml`, rules);
+}
+
+// Stage display i18n: literal -> key pairs for starforge_compat's render-time
+// swap (config is shared by all clients; only the client-side translation
+// layer can pick the right half). Lang files are written here so the
+// synthetic stage_i18n keys (unlock titles) are included.
+out('config/starforge/stage_i18n.json', JSON.stringify({
+  version: 1,
+  pairs: [...i18nPairs.entries()].map(([literal, key]) => ({ key, literal }))
+}, null, 1) + '\n');
+for (const loc of ['en_us', 'zh_cn']) {
+  Object.assign(langByLocale[loc], i18nLang[loc]);
+  out(`kubejs/assets/${NS}/lang/${loc}.json`, JSON.stringify(langByLocale[loc], null, 1) + '\n');
 }
 
 // ---------- 6b. Generated runtime guidance ----------
@@ -582,7 +633,8 @@ for (const blockId of Object.keys(SF_BLK)) {
 const SF_DIMS = ${obj(dimEv)};
 PlayerEvents.tick((e) => {
   const p = e.player;
-  if (!p || p.server.getTickCount() % 20 !== 0) return;
+  // staggered by entity id: players do not all poll on the same server tick
+  if (!p || (p.server.getTickCount() + p.getId()) % 20 !== 0) return;
   try {
     const dim = String(p.level.dimension().location());
     if (String(p.persistentData.getString('sf_last_dim')) === dim) return;
@@ -628,9 +680,19 @@ PlayerEvents.inventoryChanged('tacz:modern_kinetic_gun', (e) => {
 const SF_ALIEN_SET = new Set(${JSON.stringify(allItems)});
 const SF_ALIEN_EV = ${JSON.stringify(alienScan.map((a) => a.p))};
 const SF_ALIEN_DIMS = new Set(${JSON.stringify([...alienDimIds])});
+// event-driven primary path: picking an artifact up inside an alien dimension
+for (const itemId of SF_ALIEN_SET) {
+  PlayerEvents.inventoryChanged(itemId, (e) => {
+    try {
+      if (SF_ALIEN_DIMS.has(String(e.player.level.dimension().location()))) sfEmit(e.player, SF_ALIEN_EV);
+    } catch (err) {}
+  });
+}
+// throttled fallback: covers carrying an artifact into the dimension and any
+// inventory mutations inventoryChanged cannot see (curio equips etc.)
 PlayerEvents.tick((e) => {
   const p = e.player;
-  if (!p || p.server.getTickCount() % 40 !== 0) return;
+  if (!p || (p.server.getTickCount() + p.getId()) % 40 !== 0) return;
   if (SF_ALIEN_EV.every((ev) => p.persistentData.getBoolean(ev.flag))) return;
   try {
     if (!SF_ALIEN_DIMS.has(String(p.level.dimension().location()))) return;
@@ -676,9 +738,12 @@ function sfPollQuests(p) {
   } catch (err) {}
 }
 PlayerEvents.loggedIn((e) => sfPollQuests(e.player));
+// 200-tick fallback poll, staggered per player: FTB Quests' completion event
+// lives on its own architectury bus, not the NeoForge event bus, so KubeJS
+// cannot subscribe to it directly - polling stays, just never in lockstep.
 PlayerEvents.tick((e) => {
   const p = e.player;
-  if (!p || p.server.getTickCount() % 200 !== 0) return;
+  if (!p || (p.server.getTickCount() + p.getId()) % 200 !== 0) return;
   sfPollQuests(p);
 });
 `;

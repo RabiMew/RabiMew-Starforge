@@ -6,21 +6,61 @@
 // Reads jars via `unzip -p`, falling back to `tar -xOf` (bsdtar only; GNU tar can't read zips).
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 
-function jarEntry(jarGlob, entry) {
+function jarPath(jarGlob) {
   const jar = readdirSync(path.join(root, 'mods')).find((f) => jarGlob.test(f));
   if (!jar) throw new Error(`gen-mod-lang-zh: no jar matching ${jarGlob} in mods/`);
-  const p = path.join(root, 'mods', jar);
+  return path.join(root, 'mods', jar);
+}
+
+function jarText(jarGlob, entry) {
+  const p = jarPath(jarGlob);
   try {
-    return JSON.parse(execFileSync('unzip', ['-p', p, entry], { encoding: 'utf8', maxBuffer: 64 << 20 }));
+    return execFileSync('unzip', ['-p', p, entry], { encoding: 'utf8', maxBuffer: 64 << 20 });
   } catch {
-    return JSON.parse(execFileSync('tar', ['-xOf', p, entry], { encoding: 'utf8', maxBuffer: 64 << 20 }));
+    return execFileSync('tar', ['-xOf', p, entry], { encoding: 'utf8', maxBuffer: 64 << 20 });
   }
+}
+
+function jarList(jarGlob) {
+  const p = jarPath(jarGlob);
+  let out;
+  try {
+    out = execFileSync('unzip', ['-Z1', p], { encoding: 'utf8', maxBuffer: 64 << 20 });
+  } catch {
+    out = execFileSync('tar', ['-tf', p], { encoding: 'utf8', maxBuffer: 64 << 20 });
+  }
+  return out.split('\n').map((s) => s.trim()).filter(Boolean);
+}
+
+function jarEntry(jarGlob, entry) {
+  return JSON.parse(jarText(jarGlob, entry));
+}
+
+// Gunpack index/data files are JSONC (// comments). Strip comments without
+// touching "//" sequences inside string literals.
+function parseJsonc(text) {
+  let out = '', inStr = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inStr) {
+      out += c;
+      if (c === '\\') out += text[++i] ?? '';
+      else if (c === '"') inStr = false;
+    } else if (c === '"') {
+      inStr = true;
+      out += c;
+    } else if (c === '/' && text[i + 1] === '/') {
+      while (i < text.length && text[i] !== '\n') i++;
+      out += '\n';
+    } else out += c;
+  }
+  return JSON.parse(out);
 }
 
 // ---------------------------------------------------------------------------
@@ -622,6 +662,47 @@ function genFramedblocks() {
   return out;
 }
 
+// ---------------------------------------------------------------------------
+// tacz: workbench_a/b/c are generic shell blocks — their real names live in
+// gunpack block indexes and only resolve when the stack carries a BlockId
+// custom_data component. Bare stacks (JEI lock placeholders, quest icons,
+// drops) fall back to block.tacz.workbench_*, keys that exist in NO lang file.
+// Emit those fallback keys derived from the gunpack block indexes; index-less
+// shells get a generic name. Both locales are generated — the keys are absent
+// everywhere, unlike the zh-only gaps of the other mods in this script.
+// ---------------------------------------------------------------------------
+
+const TACZ_JAR = /^tacz-neoforge-.*\.jar$/i;
+const TACZ_GENERIC_NAME = { zh_cn: 'TaCZ工作台', en_us: 'TaCZ Workbench' };
+
+function genTacz(loc) {
+  const jarLang = jarEntry(TACZ_JAR, `assets/tacz/lang/${loc}.json`);
+  const indexRe = /^assets\/tacz\/custom\/([^/]+)\/data\/tacz\/index\/blocks\/[^/]+\.json$/;
+  const packLangs = {};
+  const out = {};
+  for (const p of jarList(TACZ_JAR)) {
+    const m = p.match(indexRe);
+    if (!m) continue;
+    const idx = parseJsonc(jarText(TACZ_JAR, p));
+    if (typeof idx?.id !== 'string' || !idx.id.startsWith('tacz:') || typeof idx?.name !== 'string') continue;
+    const key = `block.${idx.id.replace(':', '.')}`;
+    if (key in jarLang) continue; // e.g. block.tacz.gun_smith_table already has a real name
+    const packId = m[1];
+    packLangs[packId] ??= jarEntry(TACZ_JAR, `assets/tacz/custom/${packId}/assets/tacz/lang/${loc}.json`);
+    const name = packLangs[packId][idx.name];
+    if (!name) throw new Error(`tacz: ${p}: name key ${idx.name} missing in ${packId} ${loc} lang`);
+    out[key] = name;
+  }
+  const regBlocks = new Set(JSON.parse(readFileSync(path.join(root, 'registry-export/blocks.json'), 'utf8')));
+  for (const id of regBlocks) {
+    if (!/^tacz:workbench_/.test(id)) continue;
+    const key = `block.${id.replace(':', '.')}`;
+    if (key in jarLang || key in out) continue;
+    out[key] = TACZ_GENERIC_NAME[loc];
+  }
+  return out;
+}
+
 for (const [ns, gen] of [
   ['framedblocks', genFramedblocks],
   ['mcwfurnitures', genMcwFurniture],
@@ -631,6 +712,15 @@ for (const [ns, gen] of [
   const dir = path.join(root, 'pack/kubejs/assets', ns, 'lang');
   mkdirSync(dir, { recursive: true });
   const file = path.join(dir, 'zh_cn.json');
+  writeFileSync(file, JSON.stringify(dict, null, 1) + '\n');
+  console.log(`gen-mod-lang-zh: wrote ${path.relative(root, file)} (${Object.keys(dict).length} keys)`);
+}
+
+for (const loc of ['zh_cn', 'en_us']) {
+  const dict = genTacz(loc);
+  const dir = path.join(root, 'pack/kubejs/assets/tacz/lang');
+  mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, `${loc}.json`);
   writeFileSync(file, JSON.stringify(dict, null, 1) + '\n');
   console.log(`gen-mod-lang-zh: wrote ${path.relative(root, file)} (${Object.keys(dict).length} keys)`);
 }

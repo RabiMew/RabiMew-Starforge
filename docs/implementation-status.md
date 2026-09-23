@@ -79,7 +79,7 @@
 ## 待验证
 
 - 锁 enforcement（配方封锁/使用锁/维度锁）需要真实玩家进世界验证；FakePlayer 已验证授阶链路，真实客户端合成事件路径相同。
-- stage display_name 目前为生成器输出的双语字面量（PS 是否支持 translatable key 未验证；若支持再切回 key）。
+- stage 显示文案 i18n 已落地（待进游戏目验）：字节码确认 PS 3.0.5 不支持 translatable key（`TextUtil.parseColorCodes`→`Component.literal`，文档无 lang 字段）。方案：生成器保留 "zh / en" 字面量并输出 `config/starforge/stage_i18n.json`（literal→lang key，71 对，复用现有 `modpack.*` 键，解锁标题合成 `modpack.stage_i18n.*` 键带 `§l`）；`starforge_compat` 新增 mixin——`ClientStageCache` 的 `getDisplayName/getDescription/getCategory` 按客户端语言返回半句（覆盖图谱节点/详情面板/工具提示/分类/搜索），`TextUtil.parseColorCodes` 把含双语字面量的输入重组为 translatable 复合组件（服务端广播的解锁消息/封锁提示也按各端本地化），`TranslatableContents` 构造器重写含双语字面量的 String args（`stage_required` 等嵌套名称同样本地化）。缺失映射时全部回退原双语字面量。
 - ~~服务端 `HumanoidModel`/`PoseStack` wrong-dist 报错~~ 已修复：根因是 `starforge_dump.js` 用 `ITEM.getKey(ri.getItem())` 取配方产出，Rhino 会反射扫描 Item 实例类（Supplementaries/Ad Astra 的物品带客户端渲染方法签名）。改用 `getItemHolder().unwrapKey()` 后专用服务器日志 0 条 wrong-dist 报错，6605 配方导出中 6336 条含 result。
 
 ## 实测失败 / 技术降级记录

@@ -39,6 +39,7 @@
    "depends_on": ["survival_age"],
    "unlock_evidence": {
     "type": "server_verified_production",
+    "description_key": "modpack.stage.craft_evidence",
     "component": "engineering_assembly",
     "available_in": "survival_age"
    },
@@ -68,6 +69,7 @@
    "depends_on": ["mechanical_age"],
    "unlock_evidence": {
     "type": "server_verified_production",
+    "description_key": "modpack.stage.craft_evidence",
     "component": "ic2_generator",
     "available_in": "mechanical_age"
    },
@@ -98,6 +100,7 @@
    "depends_on": ["electric_age"],
    "unlock_evidence": {
     "type": "server_verified_production",
+    "description_key": "modpack.stage.craft_evidence",
     "component": "information_interface",
     "available_in": "electric_age"
    },
@@ -126,6 +129,7 @@
    "depends_on": ["information_age"],
    "unlock_evidence": {
     "type": "server_verified_production",
+    "description_key": "modpack.stage.craft_evidence",
     "component": "heavy_industry_control",
     "available_in": "information_age"
    },
@@ -155,6 +159,7 @@
    "depends_on": ["heavy_industry_age"],
    "unlock_evidence": {
     "type": "server_verified_production",
+    "description_key": "modpack.stage.craft_evidence",
     "component": "reactor_control",
     "available_in": "heavy_industry_age"
    },
@@ -188,6 +193,7 @@
    "depends_on": ["atomic_age"],
    "unlock_evidence": {
     "type": "server_verified_production",
+    "description_key": "modpack.stage.craft_evidence",
     "component": "space_control_core",
     "available_in": "atomic_age"
    },
@@ -222,6 +228,7 @@
    "depends_on": ["atomic_age"],
    "unlock_evidence": {
     "type": "server_verified_production",
+    "description_key": "modpack.stage.craft_evidence",
     "component": "quantum_control",
     "available_in": "atomic_age"
    },

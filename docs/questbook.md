@@ -153,12 +153,13 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
   "task":   { "type": "item|checkmark|kill|dimension|advancement|biome|structure|stage",
               "target": "<语义键|ns:path|advancement id|#实体标签>",
               "stage": "<progression 节点 id>",                  // type=stage 时
-              "count": 1 },
+              "count": 1,
+              "components": { "minecraft:custom_data": {...} } }, // 可选：写进 item.components（如 TACZ 枪包方块的 BlockId）
   "tasks":  [ ... ],                               // 子步骤清单：多目标任务用 tasks 数组（全部完成）
-  "icon": "<语义键|ns:path>",
+  "icon": "<语义键|ns:path>" 或 { "id": "<语义键|ns:path>", "components": {...} },
   "deps": ["quest_id"],                            // 树形父依赖 → FTB dependencies（flexible：进度自由、完成按序）
   "manual_refs": ["tutorial_id"],                  // 描述尾部生成 change_page 链接
-  "rewards": [{ "item": "<语义键|ns:path>", "count": 8, "scope": "player|team" }],
+  "rewards": [{ "item": "<语义键|ns:path>", "count": 8, "scope": "player|team", "components": {...} }],
   "optional": true,                                // 支线：不计章节完成度
   "tags": ["side_quest"],                          // 可选 FTB 标签
   "required_stage": "<progression 节点 id>",       // 可选：PS 混入强制（本包未用）

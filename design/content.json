@@ -1266,7 +1266,12 @@
     {
      "type": "item",
      "target": "tacz_workbench_a",
-     "count": 1
+     "count": 1,
+     "components": {
+      "minecraft:custom_data": {
+       "BlockId": "tacz:ammo_workbench"
+      }
+     }
     },
     {
      "type": "item",
@@ -1274,7 +1279,14 @@
      "count": 1
     }
    ],
-   "icon": "tacz_workbench_a"
+   "icon": {
+    "id": "tacz_workbench_a",
+    "components": {
+     "minecraft:custom_data": {
+      "BlockId": "tacz:ammo_workbench"
+     }
+    }
+   }
   },
   {
    "id": "armed_guards",

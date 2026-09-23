@@ -510,6 +510,7 @@
  "modpack.stage.atomic_age.subtitle": "地球工业的顶峰，下一步是离开摇篮。",
  "modpack.stage.space_age.subtitle": "工业文明的边界不再是地球。",
  "modpack.stage.quantum_age.subtitle": "距离已不再是物流的限制。",
+ "modpack.stage.craft_evidence": "制造阶段凭证物品",
  "modpack.quest.era_mechanical.title": "机械时代",
  "modpack.quest.era_mechanical.description": "团队掌握工程装配与基础机械。此节点与阶段图谱同步，无需手动完成。",
  "modpack.quest.era_electric.title": "电气时代",
@@ -676,5 +677,8 @@
  "modpack.hint.first_horde": "怪潮已锁定你的位置——守住防线，注意弹药消耗。详见手册：防线构筑。",
  "modpack.hint.first_moon": "月球低重力、无氧：先布氧气分配器，再考虑驻扎。详见手册：外星结构与考古。",
  "modpack.hint.first_belt": "小行星带散布稀有矿脉与最远遗迹，注意返航燃料余量。详见手册：小行星带风险。",
- "modpack.hint.alien_ruins": "外星遗迹的战利品属于高价值档：记录坐标，后续还会再来。详见手册：外星结构与考古。"
+ "modpack.hint.alien_ruins": "外星遗迹的战利品属于高价值档：记录坐标，后续还会再来。详见手册：外星结构与考古。",
+ "modpack.stage_i18n.atomic_age.title": "§l原子时代",
+ "modpack.stage_i18n.space_age.title": "§l太空时代",
+ "modpack.stage_i18n.quantum_age.title": "§l量子时代"
 }

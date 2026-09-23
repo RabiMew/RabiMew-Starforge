@@ -1,6 +1,6 @@
 [[triggers]]
 mode = "any_of"
-description = "Craft the stage evidence item"
+description = "制造阶段凭证物品 / Craft the stage evidence item"
 [[triggers.conditions]]
 type = "craft"
 item = "modpack:engineering_assembly"

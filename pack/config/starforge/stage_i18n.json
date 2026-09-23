@@ -1,0 +1,293 @@
+{
+ "version": 1,
+ "pairs": [
+  {
+   "key": "modpack.map.category.civilization",
+   "literal": "文明进程 / Civilization"
+  },
+  {
+   "key": "modpack.map.category.military",
+   "literal": "军事能力 / Military"
+  },
+  {
+   "key": "modpack.map.category.logistics",
+   "literal": "物流仓储 / Logistics"
+  },
+  {
+   "key": "modpack.map.category.exploration",
+   "literal": "探索发现 / Exploration"
+  },
+  {
+   "key": "modpack.map.category.colony",
+   "literal": "殖民建设 / Colony"
+  },
+  {
+   "key": "modpack.stage.survival_age",
+   "literal": "生存时代 / Survival Age"
+  },
+  {
+   "key": "modpack.stage.survival_age.description",
+   "literal": "建立居所、农田和厨房，为第一座工厂储备物资。 / Build a home, fields, and a kitchen to supply your first factory."
+  },
+  {
+   "key": "modpack.stage.mechanical_age",
+   "literal": "机械时代 / Mechanical Age"
+  },
+  {
+   "key": "modpack.stage.mechanical_age.description",
+   "literal": "用管道、传送带和基础冶炼，把手工劳动连接成生产线。 / Connect pipes, conveyors, and basic smelting into your first production lines."
+  },
+  {
+   "key": "modpack.stage.craft_evidence",
+   "literal": "制造阶段凭证物品 / Craft the stage evidence item"
+  },
+  {
+   "key": "modpack.stage.electric_age",
+   "literal": "电气时代 / Electrical Age"
+  },
+  {
+   "key": "modpack.stage.electric_age.description",
+   "literal": "以工业电路、电力和矿物处理支撑自动化与基础防御。 / Use industrial circuits, power, and ore processing to support automation and basic defenses."
+  },
+  {
+   "key": "modpack.stage.information_age",
+   "literal": "信息时代 / Information Age"
+  },
+  {
+   "key": "modpack.stage.information_age.description",
+   "literal": "建立数字仓储和自动合成，让复杂物流变得可管理。 / Build digital storage and autocrafting to keep complex logistics manageable."
+  },
+  {
+   "key": "modpack.stage.heavy_industry_age",
+   "literal": "重工业时代 / Heavy Industry Age"
+  },
+  {
+   "key": "modpack.stage.heavy_industry_age.description",
+   "literal": "扩建大型设备、自动矿场和重型防线，稳定供应大宗物资。 / Expand heavy machinery, automated mines, and defenses to supply materials in bulk."
+  },
+  {
+   "key": "modpack.stage.atomic_age",
+   "literal": "原子时代 / Atomic Age"
+  },
+  {
+   "key": "modpack.stage.atomic_age.description",
+   "literal": "掌握核能、铱和纳米材料，为航天与量子工业提供基础。 / Master nuclear power, iridium, and nanomaterials for spaceflight and quantum industry."
+  },
+  {
+   "key": "modpack.stage_i18n.atomic_age.title",
+   "literal": "&l原子时代 / Atomic Age"
+  },
+  {
+   "key": "modpack.stage.atomic_age.subtitle",
+   "literal": "地球工业的顶峰，下一步是离开摇篮。 / The peak of Earth industry - the cradle is behind."
+  },
+  {
+   "key": "modpack.stage.space_age",
+   "literal": "太空时代 / Space Age"
+  },
+  {
+   "key": "modpack.stage.space_age.description",
+   "literal": "把地球工业延伸到轨道与外星，建设有保障的殖民据点。 / Extend Earth industry into orbit and onto other worlds with reliable colonial outposts."
+  },
+  {
+   "key": "modpack.stage_i18n.space_age.title",
+   "literal": "&l太空时代 / Space Age"
+  },
+  {
+   "key": "modpack.stage.space_age.subtitle",
+   "literal": "工业文明的边界不再是地球。 / The bounds of industry no longer end at Earth."
+  },
+  {
+   "key": "modpack.stage.quantum_age",
+   "literal": "量子时代 / Quantum Age"
+  },
+  {
+   "key": "modpack.stage.quantum_age.description",
+   "literal": "建设量子装备与大型工业网络；留在地球也能达到这一阶段。 / Build quantum equipment and large industrial networks. This stage can be reached entirely on Earth."
+  },
+  {
+   "key": "modpack.stage_i18n.quantum_age.title",
+   "literal": "&l量子时代 / Quantum Age"
+  },
+  {
+   "key": "modpack.stage.quantum_age.subtitle",
+   "literal": "距离已不再是物流的限制。 / Distance no longer limits logistics."
+  },
+  {
+   "key": "modpack.ability.armed_defense",
+   "literal": "武装防卫 / Armed Defense"
+  },
+  {
+   "key": "modpack.ability.armed_defense.description",
+   "literal": "团队已具备枪械制造能力，可以武装守卫与自卫。 / The team can manufacture firearms for guards and self-defense."
+  },
+  {
+   "key": "modpack.ability.auto_defense",
+   "literal": "自动防御 / Automated Defense"
+  },
+  {
+   "key": "modpack.ability.auto_defense.description",
+   "literal": "炮塔网络可在无人值守时压制来袭目标。 / A turret network suppresses attackers without crews."
+  },
+  {
+   "key": "modpack.ability.horde_defense",
+   "literal": "怪潮防御 / Horde Defense"
+  },
+  {
+   "key": "modpack.ability.horde_defense.description",
+   "literal": "团队已经受住怪潮袭击并保持防线完整。 / The team has weathered a horde assault with the line intact."
+  },
+  {
+   "key": "modpack.ability.heavy_firepower",
+   "literal": "重型火力 / Heavy Firepower"
+  },
+  {
+   "key": "modpack.ability.heavy_firepower.description",
+   "literal": "深岩银河级重火力武器投入使用。 / Deep Rock Galactic-class heavy weapons are fielded."
+  },
+  {
+   "key": "modpack.ability.expedition_armament",
+   "literal": "远征军备 / Expedition Armament"
+  },
+  {
+   "key": "modpack.ability.expedition_armament.description",
+   "literal": "弹药与武器产能可支撑跨行星远征作战。 / Munitions output sustains interplanetary campaigns."
+  },
+  {
+   "key": "modpack.ability.basic_storage",
+   "literal": "基础仓储 / Basic Storage"
+  },
+  {
+   "key": "modpack.ability.basic_storage.description",
+   "literal": "大宗散料有了可检索的集中存放。 / Bulk materials have indexed, centralized storage."
+  },
+  {
+   "key": "modpack.ability.bulk_storage",
+   "literal": "大宗仓储 / Bulk Storage"
+  },
+  {
+   "key": "modpack.ability.bulk_storage.description",
+   "literal": "抽屉网络按压缩级别管理大宗物资。 / Drawer networks manage bulk goods by compression tier."
+  },
+  {
+   "key": "modpack.ability.rail_logistics",
+   "literal": "铁路物流 / Rail Logistics"
+  },
+  {
+   "key": "modpack.ability.rail_logistics.description",
+   "literal": "货运列车承担跨区段批量运输。 / Freight trains carry bulk cargo between districts."
+  },
+  {
+   "key": "modpack.ability.digital_logistics",
+   "literal": "数字物流 / Digital Logistics"
+  },
+  {
+   "key": "modpack.ability.digital_logistics.description",
+   "literal": "ME 网络把仓储与自动合成接入统一索引。 / The ME network indexes storage and autocrafting."
+  },
+  {
+   "key": "modpack.ability.auto_production",
+   "literal": "自动生产 / Auto Production"
+  },
+  {
+   "key": "modpack.ability.auto_production.description",
+   "literal": "样例供应器让关键部件按需自动产出。 / Pattern providers auto-produce key components."
+  },
+  {
+   "key": "modpack.ability.quantum_logistics",
+   "literal": "量子物流 / Quantum Logistics"
+  },
+  {
+   "key": "modpack.ability.quantum_logistics.description",
+   "literal": "量子环让跨空间网络合为一体。 / Quantum rings unify networks across any distance."
+  },
+  {
+   "key": "modpack.ability.earth_scouting",
+   "literal": "地球探索 / Earth Scouting"
+  },
+  {
+   "key": "modpack.ability.earth_scouting.description",
+   "literal": "地图与补给让野外行动有据可依。 / Maps and supplies put field work on a plan."
+  },
+  {
+   "key": "modpack.ability.relic_research",
+   "literal": "遗物研究 / Relic Research"
+  },
+  {
+   "key": "modpack.ability.relic_research.description",
+   "literal": "团队开始收集并利用遗迹遗物。 / The team collects and fields artifacts."
+  },
+  {
+   "key": "modpack.ability.lunar_mars_archaeology",
+   "literal": "月火考古 / Lunar & Mars Archaeology"
+  },
+  {
+   "key": "modpack.ability.lunar_mars_archaeology.description",
+   "literal": "月球与火星遗迹进入定期考察范围。 / Moon and Mars ruins are under regular survey."
+  },
+  {
+   "key": "modpack.ability.highrisk_survey",
+   "literal": "高危行星调查 / High-risk Survey"
+  },
+  {
+   "key": "modpack.ability.highrisk_survey.description",
+   "literal": "金星与水星环境可承受短时考察。 / Venus and Mercury tolerate short expeditions."
+  },
+  {
+   "key": "modpack.ability.deep_space",
+   "literal": "深空探索 / Deep Space"
+  },
+  {
+   "key": "modpack.ability.deep_space.description",
+   "literal": "团队足迹抵达冰巨星与小行星带。 / The team has reached Glacio and the belt."
+  },
+  {
+   "key": "modpack.ability.base_registered",
+   "literal": "基地登记 / Base Registered"
+  },
+  {
+   "key": "modpack.ability.base_registered.description",
+   "literal": "工业基地已登记，后续活动按本地设施统计。 / The industrial base is registered; activity counts toward local facilities."
+  },
+  {
+   "key": "modpack.ability.stable_logistics",
+   "literal": "稳定后勤 / Stable Logistics"
+  },
+  {
+   "key": "modpack.ability.stable_logistics.description",
+   "literal": "通用仓储网络支撑日常补给调度。 / Warehouse networks sustain daily resupply."
+  },
+  {
+   "key": "modpack.ability.crew_posts",
+   "literal": "居民岗位 / Crew Posts"
+  },
+  {
+   "key": "modpack.ability.crew_posts.description",
+   "literal": "村民与雇员开始在基地内担任岗位。 / Villagers and staff hold posts inside the base."
+  },
+  {
+   "key": "modpack.ability.armed_garrison",
+   "literal": "武装驻军 / Armed Garrison"
+  },
+  {
+   "key": "modpack.ability.armed_garrison.description",
+   "literal": "基地有常驻武装力量负责警戒。 / Armed guards keep permanent watch over the base."
+  },
+  {
+   "key": "modpack.ability.alien_outpost",
+   "literal": "外星前哨 / Alien Outpost"
+  },
+  {
+   "key": "modpack.ability.alien_outpost.description",
+   "literal": "团队在其他天体建立了落脚点。 / The team holds an off-world foothold."
+  },
+  {
+   "key": "modpack.ability.permanent_colony",
+   "literal": "永久殖民地 / Permanent Colony"
+  },
+  {
+   "key": "modpack.ability.permanent_colony.description",
+   "literal": "殖民地后勤组件可本地产出并循环维护。 / Colony logistics modules are produced and recycled locally."
+  }
+ ]
+}

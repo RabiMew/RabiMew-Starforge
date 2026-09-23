@@ -510,6 +510,7 @@
  "modpack.stage.atomic_age.subtitle": "The peak of Earth industry - the cradle is behind.",
  "modpack.stage.space_age.subtitle": "The bounds of industry no longer end at Earth.",
  "modpack.stage.quantum_age.subtitle": "Distance no longer limits logistics.",
+ "modpack.stage.craft_evidence": "Craft the stage evidence item",
  "modpack.quest.era_mechanical.title": "Mechanical Age",
  "modpack.quest.era_mechanical.description": "The team masters engineering assembly and basic machines. Synced with the progression map - no manual completion needed.",
  "modpack.quest.era_electric.title": "Electric Age",
@@ -676,5 +677,8 @@
  "modpack.hint.first_horde": "A horde has locked your position - hold the line, watch ammo. Manual: Defense Layers.",
  "modpack.hint.first_moon": "The Moon is low-g and airless: deploy oxygen before settling. Manual: Alien Archaeology.",
  "modpack.hint.first_belt": "The belt holds rare veins and the farthest ruins - watch return fuel. Manual: Belt Risks.",
- "modpack.hint.alien_ruins": "Alien ruins carry high-tier loot: log the coordinates - you will return. Manual: Alien Archaeology."
+ "modpack.hint.alien_ruins": "Alien ruins carry high-tier loot: log the coordinates - you will return. Manual: Alien Archaeology.",
+ "modpack.stage_i18n.atomic_age.title": "§lAtomic Age",
+ "modpack.stage_i18n.space_age.title": "§lSpace Age",
+ "modpack.stage_i18n.quantum_age.title": "§lQuantum Age"
 }
