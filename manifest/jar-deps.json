@@ -1773,6 +1773,10 @@
     ]
   },
   {
+    "file": "I18nUpdateMod-3.7.0-all.jar",
+    "error": "no mods.toml"
+  },
+  {
     "file": "IC2CRE_0.4-dev_NeoForge_1.21.1.jar",
     "modIds": [
       "ic2cre"

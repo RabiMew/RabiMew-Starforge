@@ -5,3 +5,14 @@
 	debug_logging = false
 	linear_progression = false
 	reapply_starting_stages_on_login = true
+
+[client]
+	# Progression-map button on the survival inventory screen.
+	show_inventory_button = true
+	# Offset from the left edge of the inventory GUI (guiLeft). Negative = left of the panel.
+	inventory_button_x = -26
+	# Offset from the top edge (guiTop). 61 aligns with the recipe-book row.
+	inventory_button_y = 61
+	inventory_button_width = 20
+	inventory_button_height = 18
+	inventory_button_icon_size = 14

@@ -144,6 +144,9 @@
     { "key": "defaultoptions", "name": "Default Options", "role": "qol", "side": "client",
       "source": { "type": "modrinth", "slug": "default-options" },
       "notes": "First-install default keybinds/options delivery (config/defaultoptions/*). Requires Balm. Keeps existing players' options.txt untouched on pack updates." },
+    { "key": "i18nupdatemod", "name": "I18nUpdateMod", "role": "qol", "side": "client",
+      "source": { "type": "modrinth", "slug": "i18nupdatemod" },
+      "notes": "CFPAOrg 自动汉化更新 (AGPL-3.0-only, github.com/xfl03/I18nUpdateMod3). Client-only: downloads the community zh_cn mod-translation resource pack and applies it when the game language is zh_cn — other languages unaffected. Loads via ModLauncher ITransformationService — the -all.jar intentionally has no mods.toml (jar-deps reports 'no mods.toml'; expected). Covers third-party mod translations only; Starforge's own text stays in localization/ + kubejs/assets (different namespaces, no overlap). Distributed via mrpack URL like every mod; no jar shipped." },
 
     { "key": "modernfix", "name": "ModernFix", "role": "perf", "side": "both",
       "source": { "type": "modrinth", "slug": "modernfix" } },
