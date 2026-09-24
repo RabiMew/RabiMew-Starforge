@@ -42,7 +42,7 @@
     "Hotkeys": {
         "sort_inventory": {
             "main": {
-                "keys": "BUTTON_3"
+                "keys": "R"
             }
         },
         "sort_inventory_in_columns": {

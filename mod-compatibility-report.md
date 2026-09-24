@@ -43,7 +43,7 @@ QoL layer + performance layer added; all resolved via `tools/fetch-mods.mjs` fro
 | AllTheLeaks | 1.1.13 | both | version-guarded fixes engage (e.g. `betterf3.FixDebugScreen` matched 11.0.3) |
 | Mem Leak Fix GPU | 1.8 (`gpumemleakfix`) | client | loaded with Sodium+ImmediatelyFast, no render errors in log |
 
-Keybind delivery: `pack/config/defaultoptions/keybindings.txt` — only fires on factory-default mappings, so updating the pack never resets player-customized keys. Full mapping table and the duplicate-key audit are in `docs/compatibility.md`.
+Keybind delivery: `pack/config/defaultoptions/keybindings.txt` — only fires on factory-default mappings, so updating the pack never resets player-customized keys. Full mapping table and the duplicate-key audit are in `docs/keybinds.md` (summary in `docs/compatibility.md` §键位整理）.
 
 Known limitation (verified, not hidden): JEI 19.57 stores `overlayEnabled` only in memory (`ClientToggleState` bytecode; no config key exists) — hiding the JEI sidebar requires Ctrl+O per session. Immersive Petroleum reservoir `/place feature` deadlocks chunk gen → watchdog kill; natural generation unaffected (details in `docs/compatibility.md` §实测记录）.
 

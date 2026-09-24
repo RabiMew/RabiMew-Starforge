@@ -16,6 +16,7 @@ Minecraft 1.21.1 / NeoForge 21.1.x 的工业科幻整合包，**Alpha（服务�
 | 村民工业岗位、维护与后勤管理 | [殖民岗位与维护](docs/colony-workforce.md) |
 | 标准战斗基准与 TTK 验收清单 | [战斗基准](docs/combat-benchmark.md) |
 | 模组版本证据、能力边界与适配事项 | [兼容性核查](docs/compatibility.md) |
+| 默认键位表、冲突审计与新 Mod 键位规则 | [键位表与冲突审计](docs/keybinds.md) |
 | 性能模组分侧、真实热点与验收原则 | [性能层](docs/performance.md) |
 | i18n、任务导出、实施顺序和验收 | [实施与验收](docs/implementation.md) |
 | 阶段、路线、任务和提示的语言键引用 | [内容目录](design/content.json) |

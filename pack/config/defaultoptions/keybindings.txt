@@ -2,55 +2,109 @@
 // Format: key_<mapping name>:<InputConstants key name>[:MODIFIER]
 // Applied only to bindings still at factory default / never user-set.
 // Player-remapped keys are never overwritten on pack updates.
+//
+// Layout contract (full table + conflict audit: docs/keybinds.md):
+//   In-game cluster ZXCVGHB: TaCZ refit Z, crawl C, zoom/melee V,
+//   fire-select G, inspect H, backpack B; reload R, gun-interact O,
+//   quick-switch-gun X. GUI-only functions may reuse these letters —
+//   they cannot fire while playing (inventory sort R, recipes R/U...).
+//   Alt+key combos host low-frequency toggles.
 
-// Xaero map cluster: M world map, J waypoint list, N new waypoint, Y minimap settings.
-// Upstream defaults B (new waypoint) and U (waypoint list) collide with
-// Sophisticated Backpacks (B = open backpack) and EMI/JEI Uses (U in GUI).
+// === Guide / progression ===
+// FTB Quests book -> J (main guide); ProgressiveStages tree -> K.
+key_key.ftbquests.quests:key.keyboard.j
+key_key.progressivestages.open_tree:key.keyboard.k
+// KubeJS Kubedex is a demo/dev GUI -> unbound (was K).
+key_key.kubejs.kubedex:key.keyboard.unknown
+
+// === Xaero map cluster ===
+// M world map, Y minimap settings, N new waypoint, U waypoint list.
+// Upstream B (new waypoint) stays off B (backpack). Waypoint list back on
+// upstream U: in-game only, JEI/EMI Uses-U is GUI-only -> context-exclusive.
 key_gui.xaero_open_map:key.keyboard.m
 key_gui.xaero_minimap_settings:key.keyboard.y
-key_gui.xaero_waypoints_key:key.keyboard.j
+key_gui.xaero_waypoints_key:key.keyboard.u
 key_gui.xaero_new_waypoint:key.keyboard.n
-// Enlarged-minimap hold key (was Z) is unbound: Z belongs to TaCZ refit.
+// Enlarged-minimap hold key (was Z) unbound: Z belongs to TaCZ refit,
+// and M already opens the full-screen map.
 key_gui.xaero_enlarge_map:key.keyboard.unknown
+// World-map settings key (]) duplicates minimap settings on Y; unbound.
+key_gui.xaero_open_settings:key.keyboard.unknown
 
-// Ad Astra: R must stay TaCZ reload; V must stay TaCZ melee/zoom.
+// === TaCZ combat cluster (upstream layout kept) ===
+// reload R / refit Z / crawl C / zoom V + melee V (zoom applies only while
+// aiming, melee only while not aiming -> upstream-shared V is safe) /
+// fire-select G / inspect H / interact O / shoot LMB / aim RMB / config Alt+T.
+// TaCZ-addon "Quickly Switch Gun" ships on Tab -> collides with the vanilla
+// player list (real in-game conflict); moved to X.
+key_key.taczaddon.switch_gun.desc:key.keyboard.x
+// Sophisticated Backpacks "run interaction upgrades" was C -> collides with
+// TaCZ crawl in-game; moved to Alt+C (low-frequency combo).
+key_key.sophisticatedbackpacks.inventory_interaction:key.keyboard.c:ALT
+
+// === Vanilla creative hotbar save/load -> unbound ===
+// Frees C (TaCZ crawl) and X (quick-switch); niche creative-only feature.
+key_key.saveToolbarActivator:key.keyboard.unknown
+key_key.loadToolbarActivator:key.keyboard.unknown
+
+// === Iris shader keys off combat letters ===
+// reload was R (TaCZ reload), selection was O (TaCZ interact) -> unbound;
+// both are reachable via Video Settings -> Shader Packs.
+key_iris.keybind.reload:key.keyboard.unknown
+key_iris.keybind.shaderPackSelection:key.keyboard.unknown
+// toggleShaders was K (progression tree) -> F8.
+key_iris.keybind.toggleShaders:key.keyboard.f8
+
+// === Building Gadgets 2 ===
+// settings_menu G / anchor H / range R are held-gadget-gated, so they share
+// TaCZ letters safely (cannot hold gun+gadget in the same hand).
+// undo was U -> collided with the Xaero waypoint list in-game; moved to O,
+// which is held-gun-gated (tacz.interact) -> mutually exclusive.
+key_key.buildinggadgets2.undo:key.keyboard.o
+
+// === Immersive Engineering / Petroleum ===
+// magnetEquip off S (vanilla move-back) -> =
+key_key.immersiveengineering.magnetEquip:key.keyboard.equal
+// railgun zoom off middle-click (vanilla pick-block fires on the same press
+// and swaps the held item) -> Alt+V
+key_key.immersiveengineering.railgunZoom:key.keyboard.v:ALT
+// Immersive Petroleum projector flip off M (Xaero world map) -> -
+key_key.immersivepetroleum.projector.flip:key.keyboard.minus
+
+// === Ad Astra ===
+// R stays TaCZ reload; V stays TaCZ zoom/melee.
 key_key.ad_astra.open_radio:key.keyboard.backslash
 key_key.ad_astra.toggle_suit_flight:key.keyboard.grave.accent
 
-// Easy Villagers: V/C collide with TaCZ melee/zoom and TaCZ crawl.
-key_key.easy_villagers.pick_up:key.keyboard.i
-key_key.easy_villagers.cycle_trades:key.keyboard.unknown
-
-// Supplementaries quiver arrow-cycle off TaCZ's V cluster.
-// (upstream translation key has no "key." prefix)
-key_supplementaries.keybind.quiver:key.keyboard.unknown
-
-// IC2CRE registers UNIVERSAL-context keys: keep them off TaCZ/Xaero letters.
-// mode_switch moves off M (world map); side_inventory off C (TaCZ crawl);
-// hud_mode off X; boost off Left Ctrl (vanilla sprint). alt stays on Left Alt.
+// === IC2CRE (registers UNIVERSAL-context keys) ===
+// mode_switch off M (world map) -> ; ; side_inventory off C (crawl),
+// hud_mode off X (quick-switch), boost off Left Ctrl (sprint) -> unbound.
+// alt stays on Left Alt as IC2CRE's modifier base key.
 key_key.ic2cre.mode_switch:key.keyboard.semicolon
 key_key.ic2cre.side_inventory:key.keyboard.unknown
 key_key.ic2cre.hud_mode:key.keyboard.unknown
 key_key.ic2cre.boost:key.keyboard.unknown
 
-// Railcraft locomotive controls (only useful while riding): moved to arrows,
-// freeing M/B/N for map/backpack/waypoint.
+// === Railcraft (locomotive keys only respond while riding) -> arrows ===
 key_key.railcraft.loco.mode:key.keyboard.up
 key_key.railcraft.loco.whistle:key.keyboard.down
 key_key.railcraft.loco.reverse:key.keyboard.left
-// change_aura (goggles overlay cycle) off G - TaCZ fire-select.
+// change_aura off G (TaCZ fire-select) -> unbound.
 key_key.railcraft.change_aura:key.keyboard.unknown
 
-// GuideMe (AE2 guide book) off G - TaCZ fire-select keeps G.
+// === Misc ===
+// GuideMe (AE2 guide book) off G -> F6.
 key_key.guideme.guide:key.keyboard.f6
-
-// Immersive Engineering magnet toggle off S (vanilla move-back).
-key_key.immersiveengineering.magnetEquip:key.keyboard.equal
-// Immersive Petroleum projector flip off M (Xaero world map).
-key_key.immersivepetroleum.projector.flip:key.keyboard.minus
-// World-Map settings key (]) duplicates minimap settings on Y; unbound.
-key_gui.xaero_open_settings:key.keyboard.unknown
-
-// Curios: upstream default G collides with TaCZ fire-select; unbound by default
-// (inventory button still opens the curio page; bind manually if wanted).
+// Easy Villagers: V/C collide with TaCZ melee/zoom and crawl.
+key_key.easy_villagers.pick_up:key.keyboard.i
+key_key.easy_villagers.cycle_trades:key.keyboard.unknown
+// Supplementaries quiver arrow-cycle off TaCZ's V cluster.
+// (upstream translation key has no "key." prefix)
+key_supplementaries.keybind.quiver:key.keyboard.unknown
+// Curios: upstream default G collides with TaCZ fire-select; unbound by
+// default (inventory button still opens the curio page; bind manually if
+// wanted).
 key_key.curios.open.desc:key.keyboard.unknown
+// Placebo patron/debug visual toggles off the numpad.
+key_placebo.toggleTrails:key.keyboard.unknown
+key_placebo.toggleWings:key.keyboard.unknown
