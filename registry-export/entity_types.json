@@ -286,6 +286,7 @@
 	"railcraft:tunnel_bore",
 	"railcraft:void_chest_minecart",
 	"railcraft:world_spike_minecart",
+	"refurbished_furniture:seat",
 	"sophisticatedbackpacks:everlasting_backpack_item",
 	"supplementaries:bomb",
 	"supplementaries:brick_projectile",
@@ -304,5 +305,10 @@
 	"supplementaries:slingshot_projectile",
 	"tacz:bullet",
 	"tacz:target_minecart",
-	"taczturrets:turret"
+	"taczturrets:turret",
+	"vinery:chair",
+	"vinery:dark_cherry_boat",
+	"vinery:dark_cherry_chest_boat",
+	"vinery:mule",
+	"vinery:wandering_winemaker"
 ]

@@ -713,6 +713,27 @@
 		"{\"text\":\"» See the manual: Lightweight Colonies\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5D67189820FB07DC\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Lightweight Colonies\"}}"
 	]
 	quest.72AC6BB895B11A07.quest_subtitle: "Suggested stage: Space Age"
+	quest.2EDC7790CF384594.title: "Refurbished Kitchen"
+	quest.2EDC7790CF384594.quest_desc: [
+		"A kitchen drawer and a stove turn the pantry into a working kitchen. Refurbished storage blocks join the CFB network natively."
+		""
+		"{\"text\":\"» See the manual: Modern Kitchen\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E9D6B40063DF60A\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Modern Kitchen\"}}"
+	]
+	quest.2EDC7790CF384594.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.123AEA037FB67BAE.title: "Industrial Food Processing"
+	quest.123AEA037FB67BAE.quest_desc: [
+		"Craft the steel butcher knife and start IE machinery on food: cloche produce, press mince, squeeze sauces. The knife is the ticket into Engineers Delight recipes."
+		""
+		"{\"text\":\"» See the manual: Industrial Food Processing\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7AAC1E5061A9C042\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Industrial Food Processing\"}}"
+	]
+	quest.123AEA037FB67BAE.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.47A9DB924B7F855C.title: "Automated Food Factory"
+	quest.47A9DB924B7F855C.quest_desc: [
+		"Assemble Immersive Cooking multiblocks: cookpot and fermenter cover batch cooking and fermentation lines that feed the ME pantry."
+		""
+		"{\"text\":\"» See the manual: Food Automation\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7B0CAA52B3E70CE4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Food Automation\"}}"
+	]
+	quest.47A9DB924B7F855C.quest_subtitle: "Suggested stage: Heavy Industry Age"
 	chapter.4274BFE7FD246AAF.title: "Agriculture and Provisioning"
 	chapter.4274BFE7FD246AAF.chapter_subtitle: [
 		"Supply food, crops, and biofuel to factories, defenses, and colonies."
@@ -771,7 +792,7 @@
 	quest.7DE5C11A0F9E6A2B.quest_subtitle: "Suggested stage: Survival Age"
 	quest.3A9395C0631B98F1.title: "Crew Quarters"
 	quest.3A9395C0631B98F1.quest_desc: [
-		"Residents need real living units: beds, storage, work nooks, lit blocks. Macaw's and MDM furniture carry the livable feel."
+		"Residents need real living units: beds, storage, work nooks, lit blocks. Macaw's and Refurbished furniture carry the livable feel."
 		""
 		"{\"text\":\"» See the manual: Livable Base\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Livable Base\"}}"
 	]
@@ -783,6 +804,27 @@
 		"{\"text\":\"» See the manual: Livable Base\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Livable Base\"}}"
 	]
 	quest.18BFCE7EDAE35FD1.quest_subtitle: "Suggested stage: Space Age"
+	quest.4544E4D977AE36CB.title: "Modern Living"
+	quest.4544E4D977AE36CB.quest_desc: [
+		"Refurbished furniture turns the base into a home: seating, tables, appliances. Comfort is the frame; power comes next."
+		""
+		"{\"text\":\"» See the manual: Modern Living\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7768292ADEE8BE72\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Modern Living\"}}"
+	]
+	quest.4544E4D977AE36CB.quest_subtitle: "Suggested stage: Mechanical Age"
+	quest.4B1C27A3F2032C31.title: "Household Power"
+	quest.4B1C27A3F2032C31.quest_desc: [
+		"The Energized Furniture energy transformer feeds FE from the public grid into the Refurbished home network. Wire the house to the grid."
+		""
+		"{\"text\":\"» See the manual: Household Power\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3D52D8EF523B1359\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Household Power\"}}"
+	]
+	quest.4B1C27A3F2032C31.quest_subtitle: "Suggested stage: Electrical Age"
+	quest.4A11931A05ECF04F.title: "Smart Home"
+	quest.4A11931A05ECF04F.quest_desc: [
+		"Place the computer, power it through the transformer, and open Home Control plus the Starforge apps to monitor the base."
+		""
+		"{\"text\":\"» See the manual: Smart Home\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"53235BFFFF0D5717\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Smart Home\"}}"
+	]
+	quest.4A11931A05ECF04F.quest_subtitle: "Suggested stage: Electrical Age"
 	chapter.56F4CC5F9343242B.title: "Construction"
 	chapter.56F4CC5F9343242B.chapter_subtitle: [
 		"Build factories, bases, and stations that are easy to expand, maintain, and defend."
@@ -974,7 +1016,7 @@
 	quest.0D8C96A7B6F83F18.quest_subtitle: "Progression and Survival"
 	quest.0D4CAFB9EC9E6AC2.title: "Livable Base"
 	quest.0D4CAFB9EC9E6AC2.quest_desc: [
-		"Split the base into industry and living: machines cluster under one management, living quarters get beds, mess, rest zones and light. Macaw's, MDM, Supplementaries and FramedBlocks carry comfort - framed blocks take any texture. Off-world pods build airlock-habitat-workbay and carry their own oxygen."
+		"Split the base into industry and living: machines cluster under one management, living quarters get beds, mess, rest zones and light. Macaw's, Refurbished, Supplementaries and FramedBlocks carry comfort - framed blocks take any texture. Off-world pods build airlock-habitat-workbay and carry their own oxygen."
 	]
 	quest.0D4CAFB9EC9E6AC2.quest_subtitle: "Residents and Garrisons"
 	quest.73E35DDDFAD2E809.title: "CFB Kitchen Networks"
@@ -1002,6 +1044,36 @@
 		"These mods only touch your client, never progression: EMI for recipes, Jade for block info, Xaero maps for waypoints, Inventory Profiles for sorting, Mouse Tweaks for drags, AppleSkin for hunger, Better F3 for coords, ShulkerBoxTooltip for box previews, Controlling for keybinds. Configure to taste - none of them gates anything."
 	]
 	quest.2CE7350DEA19BCD0.quest_subtitle: "Progression and Survival"
+	quest.7768292ADEE8BE72.title: "Modern Living"
+	quest.7768292ADEE8BE72.quest_desc: [
+		"Refurbished covers the full home: chairs, tables, sofas, kitchen cabinetry, lamps and storage. Furniture is plain decor until powered; fridges and drawers double as real containers that CFB can read."
+	]
+	quest.7768292ADEE8BE72.quest_subtitle: "Residents and Garrisons"
+	quest.3D52D8EF523B1359.title: "Household Power"
+	quest.3D52D8EF523B1359.quest_desc: [
+		"Refurbished runs its own electricity. Place the Energized Furniture transformer, feed it FE from the grid, and it powers nearby appliances. Generators and the computer all sit on that home network."
+	]
+	quest.3D52D8EF523B1359.quest_subtitle: "Power, Oil and Networks"
+	quest.53235BFFFF0D5717.title: "Smart Home"
+	quest.53235BFFFF0D5717.quest_desc: [
+		"The computer ships with Paddle Ball, Home Control, Marketplace and Coin Miner. Starforge adds two apps: Starforge Control for base telemetry and Security for alarm and defense state. Everything else stays untouched."
+	]
+	quest.53235BFFFF0D5717.quest_subtitle: "Power, Oil and Networks"
+	quest.0E9D6B40063DF60A.title: "Modern Kitchen"
+	quest.0E9D6B40063DF60A.quest_desc: [
+		"Refurbished kitchen blocks are CFB-aware: drawers, fridges and cabinetry are item providers; sinks and appliances are connectors. One cooking table reads the whole kitchen."
+	]
+	quest.0E9D6B40063DF60A.quest_subtitle: "Progression and Survival"
+	quest.7AAC1E5061A9C042.title: "Industrial Food Processing"
+	quest.7AAC1E5061A9C042.quest_desc: [
+		"Engineers Delight maps food onto IE machines: garden cloche grows crops, the metal press minces, squeezer extracts, fermenter brews. Steel butcher knife gates the tier. Mid-scale only; throughput comes later."
+	]
+	quest.7AAC1E5061A9C042.quest_subtitle: "Progression and Survival"
+	quest.7B0CAA52B3E70CE4.title: "Food Automation"
+	quest.7B0CAA52B3E70CE4.quest_desc: [
+		"Immersive Cooking & Farming adds cookpot, fermenter, food processor and grill multiblocks for high-volume lines. Stage them after IE processing and pipe output to AE2."
+	]
+	quest.7B0CAA52B3E70CE4.quest_subtitle: "Progression and Survival"
 	chapter.13F04EAD5AD7B827.title: "Reference Manual"
 	chapter.13F04EAD5AD7B827.chapter_subtitle: [
 		"Long-form guides by topic: progression rules, power, defense, colonies, jobs, rail, and spaceflight risks. Links inside quest descriptions jump here."

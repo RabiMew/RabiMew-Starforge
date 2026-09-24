@@ -50,7 +50,8 @@
       "rc_signal_controller_box", "rc_signal_receiver_box", "rc_signal_capacitor_box",
       "rc_signal_interlock_box", "rc_signal_block_relay_box", "rc_signal_sequencer_box",
       "rc_analog_signal_controller_box", "rc_token_signal_box", "rc_signal_circuit", "rc_signal_tuner",
-      "rc_switch_track_lever", "rc_switch_track_motor", "rc_switch_track_router"
+      "rc_switch_track_lever", "rc_switch_track_motor", "rc_switch_track_router",
+      "ef_transformer", "rf_computer", "rf_generator", "tmted_knife"
     ],
     "blocks": [],
     "dimensions": []
@@ -73,7 +74,8 @@
       "rc_reinforced_track", "rc_high_speed_track", "rc_high_speed_electric_track",
       "rc_tunnel_bore", "rc_iron_bore_head", "rc_bronze_bore_head", "rc_steel_bore_head", "rc_diamond_bore_head",
       "rc_advanced_item_loader", "rc_advanced_item_unloader",
-      "rc_world_spike", "rc_personal_world_spike", "rc_world_spike_minecart"
+      "rc_world_spike", "rc_personal_world_spike", "rc_world_spike_minecart",
+      "ic_cookpot", "ic_fermenter", "ic_grill", "ic_processor"
     ],
     "blocks": [],
     "dimensions": []

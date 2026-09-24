@@ -10,12 +10,18 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraft.world.item.CreativeModeTabs;
 
+import com.starforge.compat.computer.StarforgePrograms;
+import com.starforge.compat.fluid.RefurbishedFluidCaps;
+import com.starforge.compat.net.StarforgeNet;
+
 /**
  * Starforge Compatibility — small behavior-level glue that tags/KubeJS cannot express:
  * <ul>
  *   <li>{@code electric_burner}: FE-powered heat source for Farmer's Delight
  *       (works via FD's own HEAT_SOURCES tag + vanilla LIT blockstate).</li>
  *   <li>{@code horde_alarm}: redstone source driven by The Hordes start/end events.</li>
+ *   <li>Refurbished computer programs (Starforge Control, Security) plus a
+ *       NeoForge fluid-capability bridge for Refurbished sinks/basins/toilets/baths.</li>
  *   <li>hidden easter egg: first real player-kill grants an edible victim head
  *       and a hidden advancement ({@link EdiblePlayerHead}).</li>
  * </ul>
@@ -30,12 +36,16 @@ public class StarforgeCompat {
         ModContent.BLOCK_ENTITIES.register(modBus);
         modBus.addListener(this::registerCapabilities);
         modBus.addListener(this::addCreativeTabs);
+        modBus.addListener(StarforgeNet::register);
         NeoForge.EVENT_BUS.addListener(EdiblePlayerHead::onPlayerDeath);
         NeoForge.EVENT_BUS.addListener(EdiblePlayerHead::onFinishUsing);
         NeoForge.EVENT_BUS.addListener(EdiblePlayerHead::onTooltip);
         if (ModList.get().isLoaded("hordes")) {
             NeoForge.EVENT_BUS.addListener(HordeHooks::onHordeStart);
             NeoForge.EVENT_BUS.addListener(HordeHooks::onHordeEnd);
+        }
+        if (ModList.get().isLoaded("refurbished_furniture")) {
+            StarforgePrograms.register();
         }
     }
 
@@ -44,6 +54,9 @@ public class StarforgeCompat {
             Capabilities.EnergyStorage.BLOCK,
             ModContent.ELECTRIC_BURNER_BE.get(),
             (be, side) -> be.energy());
+        if (ModList.get().isLoaded("refurbished_furniture")) {
+            RefurbishedFluidCaps.register(event);
+        }
     }
 
     private void addCreativeTabs(BuildCreativeModeTabContentsEvent event) {

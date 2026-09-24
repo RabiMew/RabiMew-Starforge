@@ -3,7 +3,7 @@ const slugs = [
   'sophisticated-backpacks','sophisticated-core','ae2','ad-astra','ad-astra-more-structures',
   'the-hordes','zombies-break-and-build','tacz-turrets','taczaddon','tacz-pack-upgrader','in-control','progressivestages',
   'kubejs','ftb-quests','farmers-delight','cooking-for-blockheads','framedblocks',
-  'supplementaries','macaws-furniture','modern-decorations-mod','building-gadgets','building-gadgets2','enderman-overhaul','mutant-monsters',
+  'supplementaries','macaws-furniture','refurbished-furniture','energized-furniture','engineers-delight','immersive-cooking-adoon','building-gadgets','building-gadgets2','enderman-overhaul','mutant-monsters',
   'creature-feature','arachnids','easy-villagers','guard-villagers','tacz-1.21.1','guard-villagers-tacz-support',
   'polymorph','controlling','searchables','mouse-tweaks','crafting-tweaks','balm','appleskin',
   'jade-addons','jade','carry-on','jei','modernfix','ferrite-core','servercore','fastsuite',

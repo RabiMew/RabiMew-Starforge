@@ -1371,6 +1371,40 @@
     ]
   },
   {
+    "file": "energizedfurniture-1.21.1-0.2.0.jar",
+    "modIds": [
+      "energizedfurniture",
+      "neoforge"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1]",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "engineers_delight-neoforge-1.21.1-2.0.0.jar",
+    "modIds": [
+      "tmted",
+      "neoforge"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,1.22)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "entityculling-neoforge-1.11.2-mc1.21.1.jar",
     "modIds": [
       "entityculling"
@@ -1581,6 +1615,29 @@
         "modId": "additionalplacements",
         "type": "optional",
         "versionRange": "[2.3.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
+    "file": "framework-neoforge-1.21.1-0.13.11.jar",
+    "modIds": [
+      "framework"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,)",
         "ordering": "NONE",
         "side": "BOTH"
       }
@@ -1962,6 +2019,57 @@
     ]
   },
   {
+    "file": "immersivecooking-1.21.1-0.2.0-beta-1.jar",
+    "modIds": [
+      "immersivecooking"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "mandatory": "true",
+        "versionRange": "[21,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "1.21.1",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "immersiveengineering",
+        "mandatory": "true",
+        "versionRange": "[12.4.2-194,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "farmersdelight",
+        "mandatory": "false",
+        "versionRange": "[1.3.2,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "jei",
+        "mandatory": "false",
+        "versionRange": "[19.27.0.336,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "vinery",
+        "mandatory": "false",
+        "versionRange": "[1.5.3,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "ImmersiveEngineering-1.21.1-12.4.2-194.jar",
     "modIds": [
       "immersiveengineering"
@@ -2303,6 +2411,38 @@
     ]
   },
   {
+    "file": "letsdo-vinery-neoforge-1.5.3.jar",
+    "modIds": [
+      "vinery",
+      "copperative",
+      "nethervinery"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "mandatory": "true",
+        "versionRange": "[21.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "mandatory": "true",
+        "versionRange": "[1.21,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "architectury",
+        "mandatory": "true",
+        "versionRange": "[13.0.8,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "libIPN-neoforge-1.21.1-6.6.3.jar",
     "modIds": [
       "libipn"
@@ -2328,29 +2468,6 @@
     ],
     "embeddedModIds": [],
     "deps": []
-  },
-  {
-    "file": "mdm-26.9-neoforge-1.21.1.jar",
-    "modIds": [
-      "mdm"
-    ],
-    "embeddedModIds": [],
-    "deps": [
-      {
-        "modId": "neoforge",
-        "type": "required",
-        "versionRange": "[21.1.190,)",
-        "ordering": "AFTER",
-        "side": "BOTH"
-      },
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21.1]",
-        "ordering": "AFTER",
-        "side": "BOTH"
-      }
-    ]
   },
   {
     "file": "mezz_config-1.21.1-neoforge-0.6.3.jar",
@@ -2604,6 +2721,39 @@
     ]
   },
   {
+    "file": "refurbished_furniture-neoforge-1.21.1-1.0.22.jar",
+    "modIds": [
+      "refurbished_furniture"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "framework",
+        "type": "required",
+        "versionRange": "[0.13.10,)",
+        "ordering": "NONE",
+        "side": "BOTH",
+        "catalogueImageIcon": "refurbished_furniture_icon.png",
+        "catalogueBackground": "refurbished_furniture_background.png",
+        "configuredBackground": "minecraft:textures/block/stone.png"
+      }
+    ]
+  },
+  {
     "file": "resourcefulconfig-neoforge-1.21-3.0.11.jar",
     "modIds": [
       "resourcefulconfig"
@@ -2828,6 +2978,36 @@
     ]
   },
   {
+    "file": "sophisticatedbackpacks-1.21.1-3.26.3.2158.jar",
+    "modIds": [
+      "sophisticatedbackpacks"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "sophisticatedcore",
+        "type": "required",
+        "versionRange": "[1.5.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1.229,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,1.21.2)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "sophisticatedcore-1.21.1-1.5.1.2341.jar",
     "modIds": [
       "sophisticatedcore"
@@ -2956,6 +3136,27 @@
         "modId": "progressivestages",
         "type": "optional",
         "versionRange": "[3.0,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "refurbished_furniture",
+        "type": "optional",
+        "versionRange": "[1.0,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "energizedfurniture",
+        "type": "optional",
+        "versionRange": "[0.2,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "ad_astra",
+        "type": "optional",
+        "versionRange": "[1.16,)",
         "ordering": "AFTER",
         "side": "BOTH"
       }

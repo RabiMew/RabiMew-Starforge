@@ -1,5 +1,5 @@
 // Generates zh_cn lang fallbacks for shipped mods whose bundled zh_cn.json is
-// incomplete (framedblocks, mcwfurnitures) or absent entirely (mdm).
+// incomplete (framedblocks, mcwfurnitures) or absent entirely
 // Output lands in pack/kubejs/assets/<mod>/lang/zh_cn.json;
 // KubeJS assets merge over the jar's own lang file, so only MISSING keys are written.
 // Re-run after bumping any covered mod jar:  node tools/gen-mod-lang-zh.mjs
@@ -117,185 +117,405 @@ function genMcwFurniture() {
 }
 
 // ---------------------------------------------------------------------------
-// mdm: jar ships en_us only — every key needs a zh value. Display names are
-// compositional (room set + color + piece + variant); the rules below resolve
-// the full en_us set and the generator throws on anything unmapped.
+// refurbished_furniture: jar ships en_us only — every key needs a zh value.
+// Block names are compositional (wood/color prefix + piece suffix); the piece
+// table below resolves all ~450 block keys, and RF_KEY_ZH covers the rest.
+// The generator throws on anything unmapped.
 // ---------------------------------------------------------------------------
 
-const MDM_COLOR = {
-  Black: '黑色', Grey: '灰色', Gray: '灰色', 'Light Grey': '淡灰色',
-  'Light Gray': '淡灰色', White: '白色', Blue: '蓝色', Green: '绿色',
-  Red: '红色', Wenge: '温格木色', 'White Wood': '白木',
+const RF_WOOD = {
+  oak: '橡木', spruce: '云杉木', birch: '白桦木', jungle: '丛林木',
+  acacia: '金合欢木', dark_oak: '深色橡木', crimson: '绯红木',
+  warped: '诡异木', mangrove: '红树木', cherry: '樱花木',
 };
 
-// piece name (after set/color prefix and numeric/variant suffixes are
-// stripped) -> zh
-const MDM_PIECE = {
-  // bedroom set pieces
-  'Bunk Bed': '双层床', 'Bunkbed': '双层床', 'Double Bed': '双人床',
-  'Single Bed': '单人床', 'Nightstand': '床头柜', 'Nighstand': '床头柜',
-  'Dresser': '梳妆台', 'Loveseat': '双人沙发', 'Wardrobe': '衣柜',
-  // office set pieces
-  'Chair': '椅子', 'Desk Lamp': '台灯', 'Bookshelf': '书架',
-  'Desk 1 Cabinet': '书桌1·柜', 'Desk 1': '书桌1', 'Desk 2': '书桌2',
-  // kitchen set pieces
-  'Bar Chair': '吧台椅', 'Corner Counter': '转角台面',
-  'Corner Counter With Sink': '带水槽转角台面', 'Counter': '台面',
-  'Dishwasher': '洗碗机', 'Hanging Cabinet': '吊柜',
-  'Hanging Corner Cabinet': '转角吊柜', 'Oven Microwave': '烤箱微波炉',
-  'Small Corner Hanging Cabinet': '小型转角吊柜',
-  'Small Hanging Cabinet': '小型吊柜',
-  // generic set pieces
-  'Bed': '床', 'Cabinet': '柜', 'Cabinet With Drawers': '带抽屉柜',
-  'Corner Cabinet': '转角柜', 'Corner Hanging Cabinet': '转角吊柜',
-  'Footrest': '脚凳', 'Fridge': '冰箱', 'Hanging Shelf': '壁挂置物架',
-  'Island': '中岛', 'Livingroom Cabinet': '客厅柜',
-  'Livingroom Hanging Cabinet': '客厅吊柜', 'Night Table': '床头柜',
-  'TV Stand': '电视柜', 'Tv Stand': '电视柜', 'Coffe Table': '咖啡桌',
-  'Coffee Table': '咖啡桌', 'Oven': '烤箱',
-  'Coffe Table 1 Short': '咖啡桌1（矮）', 'Coffe Table 1 Tall': '咖啡桌1（高）',
-  'Coffe Table Decorated': '咖啡桌（装饰款）',
-  'TV Stand Mid Decorated': '电视柜（中·装饰款）',
-  // colored standalone pieces
-  'Armchair': '扶手椅', 'Bench': '长凳', 'Curtain': '窗帘',
-  'Desk Extension': '书桌扩展件', 'Lamp': '灯', 'Modern Stairs': '现代楼梯',
-  'Moder Stairs': '现代楼梯', 'Modern Fridge': '现代冰箱',
-  'Office Desk': '办公桌', 'Wall Clock': '挂钟',
-  'Washbasin Tap': '洗手盆水龙头', 'Bathtub': '浴缸',
-  'Bathroom Shelf': '浴室置物架', 'Board': '白板',
-  'Couch Corner': '转角沙发', 'Sofa': '沙发', 'Couch': '沙发',
-  'Desk': '书桌', 'Shelf': '置物架', 'Painting': '挂画',
-  'Chandelier': '吊灯', 'Ceiling Lamp': '吊灯',
+const RF_COLOR = {
+  white: '白色', light_gray: '淡灰色', gray: '灰色', black: '黑色',
+  brown: '棕色', red: '红色', orange: '橙色', yellow: '黄色',
+  lime: '黄绿色', green: '绿色', cyan: '青色', light_blue: '淡蓝色',
+  blue: '蓝色', purple: '紫色', magenta: '品红色', pink: '粉红色',
 };
 
-// whole display names -> zh (irregular ids / non-compositional names)
-const MDM_NAME_ZH = {
-  'Baskets': '篮筐', 'Bathroom Mirror': '浴室镜', 'Bathroom Radiator': '浴室暖气片',
-  'Bathroom Shelf 0 2': '浴室置物架 2', 'Bathroom Sink': '浴室洗手池',
-  'Bathroom Sink With Shelf': '带置物架浴室洗手池', 'Bathroom Stand': '浴室架',
-  'Big Ceiling Lamp': '大型吊灯', 'Bowl': '碗', 'Boxes': '收纳箱',
-  'Carpet 1': '地毯 1', 'Carpet 2': '地毯 2', 'Carpet 3': '地毯 3', 'Carpet 4': '地毯 4',
-  'Ceiling Fan': '吊扇', 'Clothes Basket': '衣物篮', 'Chopping Board': '砧板',
-  'Coat Hanger': '衣架', 'Coffee Table 0 4': '咖啡桌 04', 'Cork Board': '软木板',
-  'Couch Corner': '转角沙发', 'Couch Right': '沙发（右）', 'Couchleft': '沙发（左）',
-  'Couchmiddle': '沙发（中）', 'Crib': '婴儿床', 'Curtain Rack': '窗帘杆',
-  'Document Folders': '文件夹', 'Door Mat': '门垫',
-  'Electric Guitar Black': '黑色电吉他', 'Electric Guitar With Stand': '带支架电吉他',
-  'Entryway Carpet': '门厅地毯', 'Fork': '叉子',
-  'Foyer Wall Unit Bottom': '玄关墙柜（下）', 'Foyer Wall Unit Top': '玄关墙柜（上）',
-  'Gas Stove': '燃气灶', 'Hand Soap And Cream Set': '洗手液与护手霜套装',
-  'Hanging Shelf': '壁挂置物架', 'Induction Cooker': '电磁炉',
-  'Knife': '菜刀', 'Knife Stand': '刀架', 'Lamp 03': '灯 03', 'Lantern': '灯笼',
-  'Leafless Bamboo Decoration 1': '无叶竹装饰 1',
-  'Leafless Bamboo Decoration 2': '无叶竹装饰 2',
-  'Leafless Bamboo Decoration 3': '无叶竹装饰 3',
-  'Modern Chandelier 1': '现代吊灯 1', 'Modern Desk 1': '现代书桌 1',
-  'Modern Desk 2': '现代书桌 2', 'Modern Desk Lamp 1': '现代台灯 1',
-  'Modern Lamp 1': '现代落地灯 1', 'Modern Painting': '现代挂画',
-  'Modern Painting 2': '现代挂画 2', 'Mug': '马克杯',
-  'Office Cabinet 1': '办公柜 1', 'Office Cabinet 2': '办公柜 2', 'Office Cabinet 3': '办公柜 3',
-  'Office Shelf': '办公置物架', 'Outdoor Couch': '户外沙发', 'Outdoor Table': '户外桌',
-  'Oven': '烤箱', 'Painting 03': '挂画 03', 'Painting 04': '挂画 04', 'Painting 05': '挂画 05',
-  'Pair Of Boots': '一双靴子', 'Pile Of Towels': '一叠毛巾', 'Plate': '餐盘',
-  'Pool Table': '台球桌', 'Potted Cactus': '仙人掌盆栽', 'Potted Tree': '盆栽树',
-  'Pouf': '软包坐墩', 'Rain Shower': '顶喷淋浴', 'Ring Lamp': '环形灯',
-  'Seasoning Rack': '调料架', 'Shelf': '置物架', 'Shoe Rack': '鞋架',
-  'Shoji Screen': '障子屏风', 'Small Ceiling Lamp': '小型吊灯',
-  'Small Chandelier': '小型枝形吊灯', 'Small Table': '小桌', 'Soap Bar': '肥皂',
-  'Sofa': '沙发', 'Spoon': '勺子', 'Standing White Board': '立式白板',
-  'Steel Shelf': '钢置物架', 'Street Lantern Bottom': '街灯（下段）',
-  'Street Lantern Mid': '街灯（中段）', 'Street Latern Top': '街灯（上段）',
-  'Tall Mirror': '落地镜', 'Toilet': '马桶', 'Toilet Paper Roll': '卫生纸卷',
-  'Toothbrushes': '牙刷', 'Towel Set 1': '毛巾套装 1',
-  'Walkin Shower': '步入式淋浴间', 'Wall Lamp': '壁灯', 'Wall Lamp 2': '壁灯 2',
-  'White Board': '白板', 'Window Blinds': '百叶窗', 'Wooden Wall Clock': '木质挂钟',
-  'Set 3tv Stand': '套组3·电视柜',
+const RF_PIECE = {
+  andesite_stepping_stones: '安山岩踏脚石', azalea_hedge: '杜鹃树篱',
+  basin: '洗手盆', bath: '浴缸', chair: '椅子', computer: '电脑',
+  cooler: '冷藏箱', crate: '板条箱', cutting_board: '切菜板',
+  dark_ceiling_fan: '深色吊扇', dark_ceiling_light: '深色吊灯',
+  dark_electricity_generator: '深色发电机', dark_fridge: '深色冰箱',
+  dark_lightswitch: '深色灯开关', dark_microwave: '深色微波炉',
+  dark_range_hood: '深色抽油烟机', dark_stove: '深色炉灶',
+  dark_toaster: '深色烤面包机', deepslate_stepping_stones: '深板岩踏脚石',
+  desk: '书桌', diorite_stepping_stones: '闪长岩踏脚石', door_mat: '门垫',
+  doorbell: '门铃', drawer: '抽屉柜', frying_pan: '煎锅',
+  granite_stepping_stones: '花岗岩踏脚石', grill: '烤架', hedge: '树篱',
+  kitchen_cabinetry: '厨房橱柜', kitchen_drawer: '厨房抽屉',
+  kitchen_sink: '厨房水槽', kitchen_storage_cabinet: '厨房储物柜',
+  lamp: '灯', lattice_fence: '格栅栅栏', lattice_fence_gate: '格栅栅栏门',
+  light_ceiling_fan: '浅色吊扇', light_ceiling_light: '浅色吊灯',
+  light_electricity_generator: '浅色发电机', light_fridge: '浅色冰箱',
+  light_lightswitch: '浅色灯开关', light_microwave: '浅色微波炉',
+  light_range_hood: '浅色抽油烟机', light_stove: '浅色炉灶',
+  light_toaster: '浅色烤面包机', mail_box: '信箱', milk: '牛奶',
+  plate: '盘子', post_box: '邮筒', recycle_bin: '回收箱', sofa: '沙发',
+  stone_stepping_stones: '石头踏脚石', stool: '凳子',
+  storage_cabinet: '储物柜', storage_jar: '储物罐', table: '桌子',
+  television: '电视机', toilet: '马桶', trampoline: '蹦床',
+  workbench: '工作台',
 };
 
-// lang key -> zh where several ids intentionally share one en name
-const MDM_KEY_ZH = {
-  'block.mdm.foyer_bench': '玄关长凳', 'block.mdm.foyer_bench_dark': '深色玄关长凳',
-  'block.mdm.foyer_bench_wenge': '温格木玄关长凳', 'block.mdm.foyer_bench_white': '白色玄关长凳',
-  'block.mdm.black_foyer_wall_unit': '黑色玄关墙柜（下）',
-  'block.mdm.black_foyer_wall_unit_top': '黑色玄关墙柜（上）',
-  'block.mdm.foyer_wall_unit_bottom': '玄关墙柜（下）',
-  'block.mdm.foyer_wall_unit_top': '玄关墙柜（上）',
-  'block.mdm.white_wood_foyer_wall_unit': '白木玄关墙柜（下）',
-  'block.mdm.white_wood_foyer_wall_unit_top': '白木玄关墙柜（上）',
-  'block.mdm.shoe_rack_2': '鞋架 2', 'block.mdm.shoe_rack_3': '鞋架 3',
-  'block.mdm.pair_of_boots_2': '一双靴子 2', 'block.mdm.pair_of_boots_3': '一双靴子 3',
-  'block.mdm.pair_of_boots_4': '一双靴子 4', 'block.mdm.pair_of_boots_5': '一双靴子 5',
-  'block.mdm.pair_of_boots_6': '一双靴子 6',
-  'gui.mdm.freezergui.label_freezer': '冷冻柜', 'gui.mdm.fridge_gui.label_freezer': '冰箱',
-  'gui.mdm.oven_gui.label_oven': '烤箱', 'gui.mdm.storage.label_storage': '储物',
-  'item.mdm.furniture_parts': '家具部件',
-  'itemGroup.mdm.office': '现代装饰（MDM）', 'item_group.mdm.office': '现代装饰（MDM）',
-  'itemGroup.tabkitchen': '现代装饰·厨房', 'itemGroup.tabplants': '现代装饰·绿植',
-  'itemGroup.tabwood_work': '现代装饰·木工',
+const RF_KEY_ZH = {
+  'itemGroup.refurbished_furniture': 'MrCrayfish 的家具：Refurbished',
+  'filterCategory.refurbished_furniture.general': '通用',
+  'filterCategory.refurbished_furniture.general.desc': '基础家具：椅子、桌子等',
+  'filterCategory.refurbished_furniture.bedroom': '卧室',
+  'filterCategory.refurbished_furniture.bedroom.desc': '床、书桌、梳妆台等',
+  'filterCategory.refurbished_furniture.kitchen': '厨房',
+  'filterCategory.refurbished_furniture.kitchen.desc': '橱柜、台面、电器等',
+  'filterCategory.refurbished_furniture.bathroom': '浴室',
+  'filterCategory.refurbished_furniture.bathroom.desc': '马桶、洗手盆等',
+  'filterCategory.refurbished_furniture.electronics': '电子',
+  'filterCategory.refurbished_furniture.electronics.desc': '灯具、电脑、发电机等',
+  'filterCategory.refurbished_furniture.outdoors': '户外',
+  'filterCategory.refurbished_furniture.outdoors.desc': '信箱、树篱、栅栏等',
+  'filterCategory.refurbished_furniture.storage': '储物',
+  'filterCategory.refurbished_furniture.storage.desc': '所有带储物功能的家具与装饰',
+  'filterCategory.refurbished_furniture.food': '食物',
+  'filterCategory.refurbished_furniture.food.desc': '食物与烹饪食材',
+  'filterCategory.refurbished_furniture.items': '物品',
+  'filterCategory.refurbished_furniture.items.desc': '锅铲、平底锅、吐司等所有物品',
+  'death.attack.refurbished_furniture.ceiling_fan': '%1$s 被吊扇切成了碎片',
+  'death.attack.refurbished_furniture.ceiling_fan.player': '%1$s 被吊扇切成了碎片',
+  'container.refurbished_furniture.workbench': '工作台',
+  'container.refurbished_furniture.drawer': '抽屉柜',
+  'container.refurbished_furniture.crate': '板条箱',
+  'container.refurbished_furniture.kitchen_drawer': '厨房抽屉',
+  'container.refurbished_furniture.cooler': '冷藏箱',
+  'container.refurbished_furniture.fridge': '冰箱',
+  'container.refurbished_furniture.freezer': '冷冻柜',
+  'container.refurbished_furniture.microwave': '微波炉',
+  'container.refurbished_furniture.stove': '炉灶',
+  'container.refurbished_furniture.mailbox': '信箱',
+  'container.refurbished_furniture.post_box': '邮筒',
+  'container.refurbished_furniture.electricity_generator': '发电机',
+  'container.refurbished_furniture.recycle_bin': '回收箱',
+  'container.refurbished_furniture.storage_cabinet': '储物柜',
+  'container.refurbished_furniture.lightswitch': '灯开关',
+  'gui.refurbished_furniture.set_mailbox_name': '设置信箱名称',
+  'gui.refurbished_furniture.rename_mailbox_failed': '更新信箱名称失败',
+  'gui.refurbished_furniture.mailboxes': '信箱',
+  'gui.refurbished_furniture.search': '搜索……',
+  'gui.refurbished_furniture.search_mailboxes': '搜索信箱',
+  'gui.refurbished_furniture.enter_message': '输入留言……',
+  'gui.refurbished_furniture.package_message': '包裹留言',
+  'gui.refurbished_furniture.send': '发送',
+  'gui.refurbished_furniture.how_to': '使用方法',
+  'gui.refurbished_furniture.post_box_info': '从列表中选择一个信箱，可按名称搜索，或用 @ 前缀搜索玩家。把物品放入包裹槽位并可附上留言，点击发送按钮投递包裹。',
+  'gui.refurbished_furniture.workbench_info': '从列表中选择配方并备好所需材料即可制作。工作台会搜索你的背包、自身储物以及相邻储物方块中的材料。',
+  'gui.refurbished_furniture.package_sent_by': '寄件人：%s',
+  'gui.refurbished_furniture.package_open': '右键点击打开',
+  'gui.refurbished_furniture.set_doorbell_name': '设置门铃名称',
+  'gui.refurbished_furniture.doorbell_rang': '门铃响了',
+  'gui.refurbished_furniture.status.online': '在线',
+  'gui.refurbished_furniture.status.offline': '离线',
+  'gui.refurbished_furniture.status.overloaded': '过载',
+  'gui.refurbished_furniture.status.no_fuel': '燃料耗尽',
+  'gui.refurbished_furniture.node_count': '%s / %s',
+  'gui.refurbished_furniture.recycle': '回收',
+  'gui.refurbished_furniture.save': '保存',
+  'gui.refurbished_furniture.next_preset': '下一预设',
+  'gui.refurbished_furniture.previous_preset': '上一预设',
+  'gui.refurbished_furniture.no_power': '缺少电力',
+  'gui.refurbished_furniture.link_too_long': '距离过远',
+  'gui.refurbished_furniture.link_too_many': '连接过多',
+  'gui.refurbished_furniture.link_already_connected': '已连接',
+  'gui.refurbished_furniture.link_invalid_node': '无效节点',
+  'gui.refurbished_furniture.link_unpowerable': '该连接不会被供电',
+  'gui.refurbished_furniture.link_outside_area': '连接跨出了供电区域',
+  'gui.refurbished_furniture.connect_to_power': '请确保该方块正在接受 %s 供电，可用 %s 连接。',
+  'gui.refurbished_furniture.electricity_generator': '发电机',
+  'gui.refurbished_furniture.jei_campfire_info': '继承自营火烹饪',
+  'gui.refurbished_furniture.progress': '%s %s %s',
+  'gui.refurbished_furniture.hold_for_details': '按住 %s 查看详情',
+  'gui.refurbished_furniture.shift': 'SHIFT',
+  'gui.refurbished_furniture.show_all_categories': '显示全部',
+  'gui.refurbished_furniture.mail_box_limit': '你的信箱数量已达上限',
+  'gui.refurbished_furniture.invalid_dimension': '此维度无法放置信箱',
+  'gui.refurbished_furniture.invalid_mailbox': '信箱已禁用：当前维度不允许',
+  'gui.refurbished_furniture.default_mailbox_name': '信箱',
+  'gui.refurbished_furniture.unknown_mailbox_owner': '未知玩家',
+  'gui.refurbished_furniture.delivery_service.unknown_mailbox': '信箱未知或无效',
+  'gui.refurbished_furniture.delivery_service.mailbox_queue_full': '所选信箱的邮件队列已满',
+  'gui.refurbished_furniture.delivery_service.undeliverable_dimension': '所选信箱位于无法投递的维度',
+  'gui.refurbished_furniture.delivery_service.package_sent': '包裹已发送！',
+  'gui.refurbished_furniture.booting': '启动中……',
+  'gui.refurbished_furniture.sliceable': '可切片',
+  'gui.refurbished_furniture.placeable': '可放置',
+  'gui.refurbished_furniture.workbench.search_neighbours.off': '忽略相邻容器',
+  'gui.refurbished_furniture.workbench.search_neighbours.on': '包含相邻容器',
+  'gui.refurbished_furniture.experience_level': '%s/%s 级',
+  'gui.refurbished_furniture.experience_points': '%s 点',
+  'gui.refurbished_furniture.withdraw_experience': '提取经验',
+  'gui.refurbished_furniture.requires_power': '需要 %s 供电',
+  'subtitle.refurbished_furniture.package_open': '撕纸板',
+  'subtitle.refurbished_furniture.chair_slide': '木头滑动',
+  'subtitle.refurbished_furniture.doorbell_chime': '门铃响',
+  'subtitle.refurbished_furniture.electricity_generator_engine': '发电机运转',
+  'subtitle.refurbished_furniture.storage_jar_insert_item': '物品放入',
+  'subtitle.refurbished_furniture.recycle_bin_engine': '粉碎',
+  'subtitle.refurbished_furniture.ceiling_fan_spin': '风扇转动',
+  'subtitle.refurbished_furniture.lightswitch_flick': '开关拨动',
+  'subtitle.refurbished_furniture.trampoline_bounce': '弹跳',
+  'subtitle.refurbished_furniture.trampoline_super_bounce': '强力弹跳',
+  'subtitle.refurbished_furniture.television_channel.colour_test': '高音调测试音',
+  'subtitle.refurbished_furniture.television_channel.white_noise': '白噪声',
+  'subtitle.refurbished_furniture.television_channel.dance_music': '舞曲节拍',
+  'subtitle.refurbished_furniture.television_channel.villager_news': '新闻频道',
+  'subtitle.refurbished_furniture.television_channel.chirp_song': '鸟鸣伴歌',
+  'subtitle.refurbished_furniture.television_channel.ocean_sunset': 'LoFi 节拍',
+  'subtitle.refurbished_furniture.television_channel.blocky_game': '钢琴曲',
+  'subtitle.refurbished_furniture.television_channel.retro_song': '复古街机曲',
+  'subtitle.refurbished_furniture.frying_pan.place_ingredient': '啪嗒',
+  'subtitle.refurbished_furniture.frying_pan.break': '金属铿锵',
+  'subtitle.refurbished_furniture.frying_pan.hit': '金属敲击',
+  'subtitle.refurbished_furniture.frying_pan.place': '金属放置',
+  'subtitle.refurbished_furniture.frying_pan.step': '金属脚步',
+  'subtitle.refurbished_furniture.frying_pan.sizzling': '滋滋作响',
+  'subtitle.refurbished_furniture.toaster.down': '烤面包机启动',
+  'subtitle.refurbished_furniture.toaster.pop': '烤面包机弹出',
+  'subtitle.refurbished_furniture.toaster.insert': '烤面包机咔哒',
+  'subtitle.refurbished_furniture.cooler.open': '冷藏箱打开',
+  'subtitle.refurbished_furniture.cooler.close': '冷藏箱关闭',
+  'subtitle.refurbished_furniture.microwave.open': '微波炉打开',
+  'subtitle.refurbished_furniture.microwave.close': '微波炉关闭',
+  'subtitle.refurbished_furniture.kitchen_drawer.open': '抽屉拉开',
+  'subtitle.refurbished_furniture.kitchen_drawer.close': '抽屉合上',
+  'subtitle.refurbished_furniture.cutting_board.place_ingredient': '物品放上',
+  'subtitle.refurbished_furniture.kitchen_sink.fill': '水流声',
+  'subtitle.refurbished_furniture.fridge.open': '冰箱打开',
+  'subtitle.refurbished_furniture.fridge.close': '冰箱关闭',
+  'subtitle.refurbished_furniture.stove.open': '烤箱打开',
+  'subtitle.refurbished_furniture.stove.close': '烤箱关闭',
+  'subtitle.refurbished_furniture.freezer.open': '冷冻柜打开',
+  'subtitle.refurbished_furniture.freezer.close': '冷冻柜关闭',
+  'subtitle.refurbished_furniture.drawer.open': '木抽屉拉开',
+  'subtitle.refurbished_furniture.drawer.close': '木抽屉合上',
+  'subtitle.refurbished_furniture.workbench.craft': '物品制成',
+  'subtitle.refurbished_furniture.wrench_selected_node': '节点高亮',
+  'subtitle.refurbished_furniture.wrench_remove_link': '断开连接',
+  'subtitle.refurbished_furniture.wrench_connected_link': '连接建立',
+  'subtitle.refurbished_furniture.wrench_hover_link': '悬停连接',
+  'subtitle.refurbished_furniture.knife_chop': '刀切',
+  'subtitle.refurbished_furniture.spatula_scoop': '锅铲翻取',
+  'subtitle.refurbished_furniture.cabinet.open': '柜门打开',
+  'subtitle.refurbished_furniture.cabinet.close': '柜门关闭',
+  'subtitle.refurbished_furniture.microwave.fan': '微波炉嗡鸣',
+  'subtitle.refurbished_furniture.ui.paddle_ball.retro_click': '复古点击',
+  'subtitle.refurbished_furniture.ui.paddle_ball.retro_hit': '复古击打',
+  'subtitle.refurbished_furniture.ui.paddle_ball.retro_success': '复古得分',
+  'subtitle.refurbished_furniture.ui.paddle_ball.retro_fail': '复古失误',
+  'subtitle.refurbished_furniture.ui.paddle_ball.retro_win': '复古胜利',
+  'subtitle.refurbished_furniture.ui.paddle_ball.retro_lose': '复古落败',
+  'computer_program.refurbished_furniture.paddle_ball': '弹接球',
+  'computer_program.refurbished_furniture.paddle_ball.play_ai': '对战 AI',
+  'computer_program.refurbished_furniture.paddle_ball.play_vs': '玩家对战',
+  'computer_program.refurbished_furniture.paddle_ball.main_menu': '主菜单',
+  'computer_program.refurbished_furniture.paddle_ball.you': '你',
+  'computer_program.refurbished_furniture.paddle_ball.win_game': '你赢了 :)',
+  'computer_program.refurbished_furniture.paddle_ball.lose_game': '你输了 :(',
+  'computer_program.refurbished_furniture.paddle_ball.searching_players': '正在寻找对手……',
+  'computer_program.refurbished_furniture.paddle_ball.opponent_left': '对手离开了游戏',
+  'computer_program.refurbished_furniture.paddle_ball.cancel': '取消',
+  'computer_program.refurbished_furniture.paddle_ball.server_required': '需要在服务器中游玩',
+  'computer_program.refurbished_furniture.home_control': '智能家居',
+  'computer_program.refurbished_furniture.home_control.turn_on_all': '全部打开',
+  'computer_program.refurbished_furniture.home_control.turn_off_all': '全部关闭',
+  'computer_program.refurbished_furniture.home_control.info': '智能家居可控制同一电力网络上的设备供电。设备必须与电脑连接在同一网络中才能被发现。在铁砧中重命名设备后再放置，可在应用中更好地区分它们。',
+  'computer_program.refurbished_furniture.marketplace': '市场',
+  'computer_program.refurbished_furniture.coin_miner': '金币矿工',
+  'jei_category.refurbished_furniture.freezer_solidifying': '凝固',
+  'jei_category.refurbished_furniture.cutting_board_slicing': '切片',
+  'jei_category.refurbished_furniture.frying_pan_cooking': '煎炒',
+  'jei_category.refurbished_furniture.microwave_heating': '加热',
+  'jei_category.refurbished_furniture.recycle_bin_recycling': '回收',
+  'jei_category.refurbished_furniture.toaster_heating': '烘烤',
+  'jei_category.refurbished_furniture.grill_cooking': '烧烤',
+  'jei_category.refurbished_furniture.cutting_board_combining': '合成',
+  'jei_category.refurbished_furniture.workbench_constructing': '组装',
+  'jei_category.refurbished_furniture.oven_baking': '烘焙',
+  'jei_category.refurbished_furniture.sink_fluid_transmuting': '流体转化',
+  'backpack.refurbished_furniture.cabinet': '储物柜',
+  'backpack.refurbished_furniture.cabinet.unlock': '打开任意储物柜即可解锁此背包',
+  'item.refurbished_furniture.spatula': '锅铲',
+  'item.refurbished_furniture.knife': '菜刀',
+  'item.refurbished_furniture.package': '包裹',
+  'item.refurbished_furniture.wrench': '扳手',
+  'item.refurbished_furniture.television_remote': '电视遥控器',
+  'item.refurbished_furniture.bread_slice': '面包片',
+  'item.refurbished_furniture.toast': '吐司',
+  'item.refurbished_furniture.sweet_berry_jam': '甜浆果酱',
+  'item.refurbished_furniture.sweet_berry_jam_toast': '甜浆果酱吐司',
+  'item.refurbished_furniture.glow_berry_jam': '发光浆果酱',
+  'item.refurbished_furniture.glow_berry_jam_toast': '发光浆果酱吐司',
+  'item.refurbished_furniture.sea_salt': '海盐',
+  'item.refurbished_furniture.wheat_flour': '小麦粉',
+  'item.refurbished_furniture.dough': '面团',
+  'item.refurbished_furniture.cheese': '奶酪',
+  'item.refurbished_furniture.cheese_sandwich': '奶酪三明治',
+  'item.refurbished_furniture.cheese_toastie': '烤奶酪三明治',
+  'item.refurbished_furniture.raw_vegetable_pizza': '生蔬菜披萨',
+  'item.refurbished_furniture.cooked_vegetable_pizza': '熟蔬菜披萨',
+  'item.refurbished_furniture.vegetable_pizza_slice': '蔬菜披萨片',
+  'item.refurbished_furniture.raw_meatlovers_pizza': '生肉食披萨',
+  'item.refurbished_furniture.cooked_meatlovers_pizza': '熟肉食披萨',
+  'item.refurbished_furniture.meatlovers_pizza_slice': '肉食披萨片',
 };
 
-const MDM_SET_ZH = {
-  'Bedroom Set 1': '卧室套组1·', 'Bedroom set 1': '卧室套组1·',
-  'Office Set 1': '办公套组1·', 'Kitchen Set 3': '厨房套组3·',
-  'Set 1': '套组1·', 'Set 2': '套组2·', 'Set 3': '套组3·',
-};
-
-function mdmPieceZh(piece) {
-  // peel known suffixes, then look up the base in MDM_PIECE
-  let rest = piece;
-  const grab = (re) => {
-    const m = rest.match(re);
-    if (m) rest = rest.slice(0, rest.length - m[0].length);
-    return m;
-  };
-  const bot = grab(/ (Bottom|Top)$/);          // "Shelf Var 1 Bottom"
-  const va = grab(/ Var (\d+)$/);              // "Desk 1 Cabinet Var 4"
-  const pos = grab(/ (Left|Middle|Mid|Right|Side)$/); // "TV Stand Left"
-  const num = grab(/ (\d+)$/);                 // "Cabinet 2"
-  const zh = MDM_PIECE[rest];
-  if (!zh) return null;
-  return zh
-    + (num ? num[1] : '')
-    + (va ? `款式${va[1]}` : '')
-    + (pos ? `（${{ Left: '左', Middle: '中', Mid: '中', Right: '右', Side: '侧' }[pos[1]]}）` : '')
-    + (bot ? `（${bot[1] === 'Bottom' ? '下' : '上'}）` : '');
-}
-
-function mdmNameZh(enName) {
-  if (MDM_NAME_ZH[enName]) return MDM_NAME_ZH[enName];
-  const stripColor = (s) => {
-    for (const c of Object.keys(MDM_COLOR).sort((a, b) => b.length - a.length)) {
-      if (s.startsWith(c + ' ')) return [MDM_COLOR[c], s.slice(c.length + 1)];
+function rfPieceZh(rest) {
+  for (const [w, zh] of Object.entries(RF_WOOD)) {
+    if (rest.startsWith(w + '_')) {
+      const piece = RF_PIECE[rest.slice(w.length + 1)];
+      return piece ? zh + piece : null;
     }
-    return ['', s];
-  };
-  // "Bedroom Set 1 Grey Nightstand 1" / "Office Set 1 Desk 1 Cabinet Var 4" / ...
-  for (const [setEn, setZh] of Object.entries(MDM_SET_ZH)) {
-    if (!enName.startsWith(setEn + ' ')) continue;
-    const [colorZh, rest] = stripColor(enName.slice(setEn.length + 1));
-    const pieceZh = mdmPieceZh(rest);
-    return pieceZh ? `${setZh}${colorZh}${pieceZh}` : null;
   }
-  // "<Color> <piece>" standalones, e.g. "Black Curtain Left"
-  const [colorZh, rest] = stripColor(enName);
-  if (colorZh) {
-    const pieceZh = mdmPieceZh(rest);
-    return pieceZh ? `${colorZh}${pieceZh}` : null;
+  for (const c of Object.keys(RF_COLOR).sort((a, b) => b.length - a.length)) {
+    if (rest.startsWith(c + '_')) {
+      const piece = RF_PIECE[rest.slice(c.length + 1)];
+      return piece ? RF_COLOR[c] + piece : null;
+    }
   }
-  return MDM_PIECE[enName] ?? mdmPieceZh(enName) ?? null;
+  return RF_PIECE[rest] ?? null;
 }
 
-function genMdm() {
-  const en = jarEntry(/^mdm-.*\.jar$/i, 'assets/mdm/lang/en_us.json');
+function genRefurbished() {
+  const en = jarEntry(/^refurbished_furniture-.*\.jar$/i, 'assets/refurbished_furniture/lang/en_us.json');
   const out = {};
   const unresolved = [];
-  for (const [k, v] of Object.entries(en)) {
-    const zh = MDM_KEY_ZH[k] ?? mdmNameZh(v);
+  for (const k of Object.keys(en)) {
+    if (RF_KEY_ZH[k]) { out[k] = RF_KEY_ZH[k]; continue; }
+    const m = k.match(/^(?:block|item)\.refurbished_furniture\.(.+)$/);
+    const zh = m ? rfPieceZh(m[1]) : null;
     if (zh) out[k] = zh;
-    else unresolved.push(`${k} = ${v}`);
+    else unresolved.push(`${k} = ${en[k]}`);
   }
   if (unresolved.length) {
-    throw new Error(`mdm: ${unresolved.length} unresolved keys:\n${unresolved.join('\n')}`);
+    throw new Error(`refurbished_furniture: ${unresolved.length} unresolved keys:\n${unresolved.join('\n')}`);
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------------------
+// energizedfurniture / tmted (Engineers Delight) / immersivecooking: small
+// en_us-only sets — fully explicit tables.
+// ---------------------------------------------------------------------------
+
+const EF_KEY_ZH = {
+  'itemGroup.energizedfurniture': '电力家具',
+  'block.energizedfurniture.energy_transformer': '能量变压器',
+  'gui.energizedfurniture.status.online': '在线',
+  'gui.energizedfurniture.status.offline': '离线',
+  'gui.energizedfurniture.status.overloaded': '过载',
+  'gui.energizedfurniture.status.no_fuel': '燃料耗尽',
+  'gui.energizedfurniture.energy_type.none': '无',
+  'gui.energizedfurniture.energy_type.fe': 'FE',
+  'gui.energizedfurniture.energy_type.fuel': '燃料',
+  'gui.energizedfurniture.node_count': '%s / %s',
+  'gui.energizedfurniture.progress': '%s %s %s',
+  'container.energizedfurniture.energy_transformer': '能量变压器',
+};
+
+function genEnergized() {
+  const en = jarEntry(/^energizedfurniture-.*\.jar$/i, 'assets/energizedfurniture/lang/en_us.json');
+  const out = {};
+  const unresolved = [];
+  for (const k of Object.keys(en)) {
+    if (EF_KEY_ZH[k]) out[k] = EF_KEY_ZH[k];
+    else unresolved.push(`${k} = ${en[k]}`);
+  }
+  if (unresolved.length) {
+    throw new Error(`energizedfurniture: ${unresolved.length} unresolved keys:\n${unresolved.join('\n')}`);
+  }
+  return out;
+}
+
+const TMTED_KEY_ZH = {
+  'itemGroup.tmted': '工程师乐事',
+  'block.tmted.example_block': '示例方块',
+  'item.tmted.example_item': '示例物品',
+  'block.tmted.apple_cider': '苹果酒',
+  'block.tmted.melon_juice': '西瓜汁',
+  'block.tmted.tomato_sauce': '番茄酱',
+  'fluid.tmted.apple_cider': '苹果酒',
+  'fluid.tmted.melon_juice': '西瓜汁',
+  'fluid.tmted.tomato_sauce': '番茄酱',
+  'fluid_type.tmted.apple_cider': '苹果酒',
+  'fluid_type.tmted.melon_juice': '西瓜汁',
+  'fluid_type.tmted.tomato_sauce': '番茄酱',
+  'item.tmted.bottle_of_wodka': '伏特加酒瓶',
+  'item.tmted.wheat_flour': '小麦粉',
+  'item.tmted.steel_knife': '钢刀',
+};
+
+function genTmted() {
+  const en = jarEntry(/^engineers_delight-.*\.jar$/i, 'assets/tmted/lang/en_us.json');
+  const out = {};
+  const unresolved = [];
+  for (const k of Object.keys(en)) {
+    if (TMTED_KEY_ZH[k]) out[k] = TMTED_KEY_ZH[k];
+    else unresolved.push(`${k} = ${en[k]}`);
+  }
+  if (unresolved.length) {
+    throw new Error(`tmted: ${unresolved.length} unresolved keys:\n${unresolved.join('\n')}`);
+  }
+  return out;
+}
+
+const IC_KEY_ZH = {
+  'itemGroup.immersivecooking': '沉浸烹饪与农业',
+  'manual.immersivecooking.main': '沉浸烹饪与农业',
+  'manual.immersivecooking.multiblocks': '多方块结构',
+  'manual.immersivecooking.entry.cookpot': '工业煮锅',
+  'manual.immersivecooking.entry.grill_oven': '烤炉',
+  'subtitle.immersivecooking.cookpot.active': '煮锅沸腾',
+  'subtitle.immersivecooking.food_fermenter.active': '食品发酵罐冷却中',
+  'block.immersivecooking.cookpot': '工业煮锅',
+  'block.immersivecooking.grill_oven': '烤炉',
+  'block.immersivecooking.food_fermenter': '工业食品发酵罐',
+  'config.jade.plugin_immersivecooking.food_fermenter_data': '食品发酵罐数据',
+  'tooltip.immersivecooking.fermenting': '发酵中',
+  'tooltip.immersivecooking.remaining_time': '剩余时间：%s 秒',
+};
+
+const IC_FLUID_ZH = {
+  apple_juice: '苹果汁',
+  red_grapejuice: '红葡萄汁', red_taiga_grapejuice: '针叶林红葡萄汁',
+  red_jungle_grapejuice: '丛林红葡萄汁', red_savanna_grapejuice: '热带草原红葡萄汁',
+  white_grapejuice: '白葡萄汁', white_taiga_grapejuice: '针叶林白葡萄汁',
+  white_jungle_grapejuice: '丛林白葡萄汁', white_savanna_grapejuice: '热带草原白葡萄汁',
+  honey: '蜂蜜',
+};
+
+function icZh(k) {
+  if (IC_KEY_ZH[k]) return IC_KEY_ZH[k];
+  let m = k.match(/^(?:fluid|fluid_type)\.immersivecooking\.(\w+)$/);
+  if (m) return IC_FLUID_ZH[m[1]] ?? null;
+  m = k.match(/^item\.immersivecooking\.(\w+)_bucket$/);
+  if (m && IC_FLUID_ZH[m[1]]) return `${IC_FLUID_ZH[m[1]]}桶`;
+  m = k.match(/^block\.immersivecooking\.(\w+)_fluid_block$/);
+  if (m && IC_FLUID_ZH[m[1]]) return IC_FLUID_ZH[m[1]];
+  return null;
+}
+
+function genImmersiveCooking() {
+  const en = jarEntry(/^immersivecooking-.*\.jar$/i, 'assets/immersivecooking/lang/en_us.json');
+  const out = {};
+  const unresolved = [];
+  for (const k of Object.keys(en)) {
+    const zh = icZh(k);
+    if (zh) out[k] = zh;
+    else unresolved.push(`${k} = ${en[k]}`);
+  }
+  if (unresolved.length) {
+    throw new Error(`immersivecooking: ${unresolved.length} unresolved keys:\n${unresolved.join('\n')}`);
   }
   return out;
 }
@@ -706,7 +926,10 @@ function genTacz(loc) {
 for (const [ns, gen] of [
   ['framedblocks', genFramedblocks],
   ['mcwfurnitures', genMcwFurniture],
-  ['mdm', genMdm],
+  ['refurbished_furniture', genRefurbished],
+  ['energizedfurniture', genEnergized],
+  ['tmted', genTmted],
+  ['immersivecooking', genImmersiveCooking],
 ]) {
   const dict = gen();
   const dir = path.join(root, 'pack/kubejs/assets', ns, 'lang');

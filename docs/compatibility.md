@@ -30,7 +30,11 @@
 | Farmer's Delight | 1.21.1-1.3.4 | [版本记录](https://modrinth.com/mod/farmers-delight/version/XTVZDOol) | 切菜/烹饪锅与厨房识别、自动进出料 |
 | Cooking for Blockheads | 21.1.24+neoforge-1.21.1 | [版本记录](https://modrinth.com/mod/cooking-for-blockheads/version/MQCIy6VF) | 农夫乐事配方桥接、容器与碗回收 |
 | Macaw's Furniture | 3.4.1-mc1.21.1neoforge | [版本记录](https://modrinth.com/mod/macaws-furniture/version/Z5V3Ps7S) | ARR（仅经 manifest URL 分发，同 Easy Villagers）；`neoforge.mods.toml` 无依赖声明；储物家具容量与抽屉/桶仓储层不重叠，见兼容性报告家具层节 |
-| MDM（Modern Decorations Mod） | 26.9-neoforge-1.21.1 | [版本记录](https://modrinth.com/mod/modern-decorations-mod/version/SHiMd2N9) | ARR（同上分发）；硬依赖仅 neoforge≥21.1.190 + mc 1.21.1；全部家具经 `furniture_parts`（圆石+木板+铁粒）切石获得，无平行材料体系；冰箱/烤箱为储物 GUI（非加工设备） |
+| MrCrayfish's Furniture Mod: Refurbished | 1.0.22-neoforge-1.21.1（+ Framework 0.13.11） | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/mrcrayfishs-furniture-mod-refurbished) | 代码 MIT / 资产 ARR（manifest URL 分发）；硬依赖 framework≥0.13.10 + neoforge≥21.1 + mc≥1.21.1；家具经自有 Workbench（`workbench_constructing` 445 条）+ 染色重染；家电带真实加工类型（baking/slicing/freezing/frying/heating/toasting/combining 68 条）；储物 BE 为真实 `Container`，经包内 `kitchen_item_providers` 标签进 CFB 厨房网络；炉灶原生计入 FD 热源 |
+| Energized Furniture | 0.2.0 | CurseForge | ARR（manifest URL 分发）；声明硬依赖仅 neoforge≥21.1.248 + mc 1.21.1，**refurbished_furniture 为未声明的字节码硬依赖**（变压器 BE 继承 `ElectricityGeneratorBlockEntity`）——必须与 Refurbished 同装；FE→Watt 为上游原生转换 |
+| Engineers Delight | 2.0.0-neoforge-1.21.1 | Modrinth `tmted` | MPL-2.0；声明依赖仅 mc[1.21.1,1.22)；IE×FD 联动全部为数据包配方（cloche/press/squeezer/fermenter/mixer/bottler/sawmill），钢制屠宰刀为内容入口 |
+| Immersive Cooking & Farming | 0.2.0-beta-1 | [Modrinth `immersive-cooking-adoon`](https://modrinth.com/mod/immersive-cooking-adoon) | MIT；硬依赖 immersiveengineering≥12.4.2-194（与锁定版精确匹配）+ mc 1.21.1；farmersdelight/jei/vinery 声明为 `mandatory=false` 但 NeoForge 不识别旧字段、按 required 处理——**vinery 1.5.3 已随附锁定**（服务端实测缺它拒载）；**beta 版，多方块组装/运行/重载与 dedicated server 稳定性列入重点验收** |
+| [Let's Do] Vinery | 1.5.3（锁 1.5.3 非 1.5.4：后者发布不足 7 天） | [Modrinth `lets-do-vinery`](https://modrinth.com/mod/lets-do-vinery) | ARR（manifest URL 分发）；依赖 architectury（已锁 13.0.11）；葡萄/酿酒/果园内容模组，Immersive Cooking 事实硬依赖 |
 | FramedBlocks | 10.6.1 | [版本记录](https://modrinth.com/mod/framedblocks/version/FBXGqSP5) | 氧气密封、伪装材质的硬度/抗爆、施工工具兼容 |
 | Supplementaries | 1.21.1-3.9.9 | [版本记录](https://modrinth.com/mod/supplementaries/version/WrZWfRjP) | 前置、交互功能是否重复、管道/红石边界 |
 | Building Gadgets 2 | 1.3.9 | [作者项目页](https://www.curseforge.com/minecraft/mc-mods/building-gadgets) | 现代文件名是 BuildingGadgets2；库存复制、撤销和权限 |
@@ -201,4 +205,6 @@ FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Com
 - 定位：KubeJS/标签无法表达的**行为型**兼容的最小载体。源码 `compat/`，构建 `tools/build-compat.mjs`（无 Gradle：javac + NeoForge AT 变换编译 jar + 确定性打包），`manifest` `local` 源入锁，sha256 以 `manifest/locked-mods.json` 为准。
 - `horde_alarm`：The Hordes `HordeStart/EndEvent` → 登记位点 `setBlock` + 15 强度红石信号。用 `getSignal`/`getDirectSignal` 原生红石接口 + `SavedData` 登记坐标，无 Mixin、无轮询。服务端实测信号 0→15→0、红石灯亮灭随怪潮起止、破坏注销、重启持久化。
 - `electric_burner`：FD 热源。进 `farmersdelight:heat_sources` 且带 `LIT` blockstate，复用 FD 原生 `isHeated`（LIT 语义），无 Mixin。`Capabilities.EnergyStorage.BLOCK` 收 FE，40 FE/tick。实测：IE 创造电容可供电维持满电、断电 CookTime 恒 0、供电后产出 bone_broth。
-- **边界**：不碰 FD/The Hordes 内部行为；方块模型/战利品/配方为占位（无纹理资源），客户端目检待补。原“turret 弹药经济需 Mixin”事项随 Defense Turrets 移除而关闭——继任的 TACZ Turrets 原生消耗容器弹药，不再需要附属注入。
+- Refurbished 电脑应用（2026-09-24 新增）：`Computer.installProgram` 追加 `starforge:starforge_control`（FE/储能/阶段/食物/弹药/氧气/殖民概要）与 `starforge:security`（怪潮警报、TaCZ 炮塔、守卫状态 + 有界警报开关）；服务端 20 tick 采样 → NeoForge payload → 客户端 `Display.bind` 渲染；原有 Paddle Ball/Home Control/Marketplace/Coin Miner 不动；图标走命名空间 `program_icons.png` 按安装序取格。**待实机验证**：程序安装、画面渲染、警报往返。
+- Refurbished 流体容器桥（2026-09-24 新增）：`kitchen_sink/basin/toilet/bath` 的 `FluidContainer`（push/pull，桶模型 1000 mB）注册为 NeoForge `Capabilities.FluidHandler.BLOCK`，使 Supplementaries 水龙头/管道可真实读写；不伪造物品栏能力。**待实机验证**。
+- **边界**：不碰 FD/The Hordes/Refurbished 内部行为；方块模型/战利品/配方为占位（无纹理资源），客户端目检待补。原“turret 弹药经济需 Mixin”事项随 Defense Turrets 移除而关闭——继任的 TACZ Turrets 原生消耗容器弹药，不再需要附属注入。

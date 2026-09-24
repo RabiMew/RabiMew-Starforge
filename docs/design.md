@@ -45,7 +45,7 @@
 | TaCZ（非官方 NeoForge 移植） | 单兵枪械与弹药 | 武器制造接入 IC2/IE/石油/AE2；弹药进入工业经济 | 军事消费端，不是独立枪战科技树 |
 | Guard Villagers TACZ Support | 守卫使用 TaCZ 武器的桥接 | 守卫索敌、射击、耗弹、找弹药/食物、射界调整 | 原生机制优先，行为逐项实测 |
 | 农夫乐事 / 懒人厨房 | 烹饪、厨房储备与基地食堂 | 农产供餐、供 IE 生物燃料；工业回馈设施 | 矿区、前线和殖民据点持续需要补给 |
-| FramedBlocks / Supplementaries / Macaw's Furniture / MDM | 外观、结构造型、标识、实用设施与家具陈设（生活/装饰层） | 消耗统一建筑材料（木材、铁、玻璃等）；家具层不建立独立科技树 | 基地、工业设施、空间站与殖民地的生活区与装饰，不以摆家具计分 |
+| FramedBlocks / Supplementaries / Macaw's Furniture / Refurbished（+Framework / Energized Furniture） | 外观、结构造型、标识、实用设施与家具陈设（生活/装饰层）；Refurbished 另承担现代厨房与智能家居 | 消耗统一建筑材料（木材、铁、玻璃等）；家具层不建立独立科技树；家电经 Energized Furniture 变压器接 FE 电网 | 基地、工业设施、空间站与殖民地的生活区与装饰，不以摆家具计分 |
 | Building Gadgets 2 | 批量施工 | IC2 电池、电路、IE 材料、后期 AE2 部件 | 建筑师承担大型工厂与殖民扩建 |
 | Enderman Overhaul / Mutant Monsters / Creature Feature | 定向敌对生态候选 | 进入维度白名单、遗迹或异常事件池 | 补战术角色，禁止所有生物全维度随机混刷 |
 | Arachnids | 虫群/区域威胁 | 主世界仅限沙漠与恶地；经生物群系标签扩展到金星、水星、霜原星；月球与火星禁用 | 提供大规模战斗与基地防御压力，不替代异常生物定位 |
@@ -171,7 +171,9 @@ T3 的“信息时代”属于中期：T2 要先完成稳定电力与实体物�
 
 保留 IC2 电压、储能与布线的决策价值；BC 燃料物流和 IE 生物柴油是早期与分布式供能方案，核能解决后期规模问题。IC2 的核心定位由高级组件与精炼链保证，不必强制所有路灯也走 EU。
 
-EU / mEU / FE / MJ / AE 的兼容只使用确认过的接口。IC2CRE Dev-0.4 公共能源接口使用 mEU，1000 mEU = 1 EU；不把这个换算当作 FE 或 MJ 比例。最终锁定版本后测试充放电、机器输入限制、BC 引擎与 AE2 电源连接。任何可逆转换回路的输出不得大于输入，不新增无限免费供电通道。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4)
+**FE 公共电网（2026-09-24 定稿）**：`IE / Ad Astra / FE 发电 → FE 公共电网 → 对应转换器 → 特殊能源设备`。IE 与 Ad Astra 直接收发 FE；BuildCraft 使用其原生 FE↔MJ 兼容，不重复造桥；Refurbished 家庭电网经 Energized Furniture 的能源变压器接入（其 `EnergyTransformerBlockEntity` 是 Refurbished `ElectricityGeneratorBlockEntity` 的原生子类，FE 进、Watt 出，功率受上游额定值约束）；IC2CRE 保留 mEU、电压等级与变压器玩法，必要时由 Starforge Compatibility 提供受控 FE↔mEU 转换（当前未实现，列为预留适配）。
+
+EU / mEU / FE / MJ / AE 的兼容只使用确认过的接口。IC2CRE Dev-0.4 公共能源接口使用 mEU，1000 mEU = 1 EU；不把这个换算当作 FE 或 MJ 比例。最终锁定版本后测试充放电、机器输入限制、BC 引擎与 AE2 电源连接。任何可逆转换回路的输出不得大于输入，不新增无限免费供电通道；FE→Refurbished Watt 与 FE↔MJ、FE↔mEU 均为单向受控或上游原生换算，禁止构成循环发电。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4)
 
 ### 统一石油经济
 
@@ -211,9 +213,11 @@ BC CE 与 Immersive Petroleum 同时提供原油、燃料或炼油设备时，�
 
 ## 6. 农业、厨房与施工
 
+食品链为四级路线（2026-09-24 定稿）：`Farmer's Delight 手工烹饪 → Refurbished + Cooking for Blockheads 现代厨房 → IE + Engineers Delight 中型工业加工 → Immersive Cooking & Farming 大规模自动化 → AE2 仓储 → 殖民地/空间站后勤`。层级分工：FD 做手工与小规模；Engineers Delight 用原生 IE 机器配方（园艺玻璃罩/冲压机/挤压机/发酵机/搅拌/装瓶/锯木，钢制屠宰刀为门槛）做中规模工业加工；Immersive Cooking & Farming 的烹饪锅/发酵罐/食品处理机/烤炉多方块只做吞吐与自动化提升，不无成本提高产率；重复工艺按此归属，不双写配方。
+
 T0：农夫乐事种植、切菜板、烹饪锅；懒人厨房集中存料和按需做饭。两套烹饪界面不自动等于完全互通：先测试切菜/锅具配方与厨房食谱识别，不能宣称厨房已自动执行所有农夫乐事配方。
 
-T1：BC 管道、IE 传送带连接收成仓与厨房缓冲。T2：灌溉/照明/供电由已验证设备承担；地球温室先作为结构化农场，不虚构温控机制。电气厨房入口为 `starforge_compat:electric_burner`（FE 供电、断电即停热，见 implementation-status 末节）。T3：AE2 补原料、碗和燃料到厨房/烹饪锅，成品分类回收；机器侧烹饪仍由原设备执行。T4：IE 生物燃料与食物共享种植体系，用库存阈值先保食堂，剩余农产再制燃料。
+T1：BC 管道、IE 传送带连接收成仓与厨房缓冲。T2：Refurbished 现代厨房（工作台制作家具，抽屉/冰箱/橱柜原生进 CFB 厨房网络，水槽/家电作连接器）；灌溉/照明/供电由已验证设备承担；地球温室先作为结构化农场，不虚构温控机制。电气厨房入口为 `starforge_compat:electric_burner`（FE 供电、断电即停热，见 implementation-status 末节）；Refurbished 炉灶原生计入 FD 热源。T2–T3：Engineers Delight 的 IE×FD 原生配方承担中型食品加工。T3：AE2 补原料、碗和燃料到厨房/烹饪锅，成品分类回收；机器侧烹饪仍由原设备执行。T3–T4：Immersive Cooking & Farming 多方块接管大批量自动化产线（beta 版，重点验收稳定性/性能/dedicated server）。T4：IE 生物燃料与食物共享种植体系，用库存阈值先保食堂，剩余农产再制燃料。
 
 T6：月球温室重在密封与储水，火星温室重在产能与防线。断电先切生产，再限非必要设备，保氧气、基础照明与安全返航库存。各基地的氧气、电池与食物按**20 分钟实测耗用**准备缓冲，作为补给建议，不增加永久饥饿惩罚。
 

@@ -58,6 +58,11 @@ public class SupplyPointData extends SavedData {
         return kind == Kind.AMMO ? ammo : food;
     }
 
+    /** Registered-point count for status readouts (Starforge Control app). */
+    public int poolSize(Kind kind) {
+        return pool(kind).size();
+    }
+
     public void add(BlockPos pos, Kind kind) {
         Set<BlockPos> pool = pool(kind);
         if (pool.add(pos.immutable())) {

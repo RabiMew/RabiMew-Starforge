@@ -24,7 +24,7 @@ const VERSION = '0.1.0';
 const JAR_NAME = `starforge-compat-${VERSION}.jar`;
 
 // compile-only mod deps resolved by filename prefix under mods/
-const COMPILE_DEPS = ['The-Hordes', 'tacz-neoforge', 'taczturrets', 'guardvillagerstaczsupport', 'guardvillagers', 'progressivestages', 'geckolib'];
+const COMPILE_DEPS = ['The-Hordes', 'tacz-neoforge', 'taczturrets', 'guardvillagerstaczsupport', 'guardvillagers', 'progressivestages', 'geckolib', 'refurbished_furniture', 'framework', 'energizedfurniture', 'adastra'];
 // nested jarJar deps to extract into compat/build/deps for javac (e.g. SBL is
 // shaded inside the taczturrets jar, so it is never a top-level mods/ file)
 const JARJAR_DEPS = [{ jarPrefix: 'taczturrets', memberPrefix: 'META-INF/jarjar/smartbrainlib-' }];
@@ -53,11 +53,37 @@ const asmTreeJar = findJar(`${path.sep}asm-tree-9.10.1.jar`);
 const antlrJar = findJar(`${path.sep}antlr4-runtime-4.13.1.jar`);
 const slf4jJar = findJar(`${path.sep}slf4j-api-2.0.9.jar`);
 const patchedMc = path.join(outDir, 'mc-at.jar');
+const srcMarker = path.join(outDir, 'mc-at.src');
 const toolSrc = path.join(compatDir, 'tools', 'ApplyAT.java');
 const toolCls = path.join(outDir, 'tools', 'ApplyAT.class');
 const atCfg = path.join(outDir, 'META-INF', 'accesstransformer.cfg');
 
-if (!existsSync(patchedMc)) {
+// The server srg jar has no net.minecraft.client.* classes, but
+// computer/client/** sources need them. Prefer the mojmap client srg jar a
+// local NeoForge/PrismLauncher install produced; falls back to the server jar.
+const clientSrg = (() => {
+  const roots = [
+    process.env.STARFORGE_MC_LIBRARIES,
+    process.env.APPDATA && path.join(process.env.APPDATA, 'PrismLauncher', 'libraries'),
+    process.env.APPDATA && path.join(process.env.APPDATA, '.minecraft', 'libraries'),
+    libDir,
+  ].filter(Boolean);
+  for (const dir of roots) {
+    if (!existsSync(dir)) continue;
+    for (const f of walk(dir)) {
+      if (/client-1\.21\.1-\d{8}\.\d+-srg\.jar$/i.test(path.basename(f))) return f;
+    }
+  }
+  return null;
+})();
+const mcSource = clientSrg || srgJar;
+const hasClientSources = [...walk(srcDir)].some((f) => f.includes(`${path.sep}client${path.sep}`));
+if (!clientSrg && hasClientSources) {
+  console.error('warning: no client-*-srg.jar found; net.minecraft.client.* sources will fail.');
+  console.error('  point STARFORGE_MC_LIBRARIES at a libraries dir containing the client srg jar.');
+}
+
+if (!existsSync(patchedMc) || !existsSync(srcMarker) || readFileSync(srcMarker, 'utf8') !== mcSource) {
   mkdirSync(outDir, { recursive: true });
   execFileSync('unzip', ['-o', '-q', neoforgeJar, 'META-INF/accesstransformer.cfg', '-d', outDir]);
   const toolCp = [atJar, asmJar, asmTreeJar, antlrJar, slf4jJar].join(path.delimiter);
@@ -65,7 +91,8 @@ if (!existsSync(patchedMc)) {
     execFileSync('javac', ['-cp', toolCp, '-d', path.join(outDir, 'tools'), toolSrc], { stdio: 'inherit' });
   }
   execFileSync('java', ['-cp', `${toolCp}${path.delimiter}${path.join(outDir, 'tools')}`,
-    'ApplyAT', atCfg, srgJar, patchedMc], { stdio: 'inherit' });
+    'ApplyAT', atCfg, mcSource, patchedMc], { stdio: 'inherit' });
+  writeFileSync(srcMarker, mcSource);
 }
 
 const cp = [patchedMc, ...libs.filter((f) => f !== srgJar)];

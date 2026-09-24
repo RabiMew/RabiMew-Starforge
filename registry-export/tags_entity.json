@@ -1,156 +1,4 @@
 {
-	"carryon:entity_blacklist": [
-		"ad_astra:tier_1_rocket",
-		"ad_astra:tier_2_rocket",
-		"ad_astra:tier_3_rocket",
-		"ad_astra:tier_4_rocket"
-	],
-	"supplementaries:can_use_cannon_boats": [
-		"minecraft:evoker",
-		"minecraft:illusioner",
-		"minecraft:pillager",
-		"minecraft:vindicator",
-		"supplementaries:plunderer"
-	],
-	"minecraft:deflects_projectiles": [
-		"minecraft:breeze"
-	],
-	"sable:destroy_when_leaving_plot": [
-		"supplementaries:hat_stand"
-	],
-	"minecraft:freeze_immune_entity_types": [
-		"minecraft:polar_bear",
-		"minecraft:snow_golem",
-		"minecraft:stray",
-		"minecraft:wither",
-		"mutantmonsters:mutant_snow_golem"
-	],
-	"minecraft:redirectable_projectile": [
-		"minecraft:breeze_wind_charge",
-		"minecraft:fireball",
-		"minecraft:wind_charge",
-		"supplementaries:slimeball_projectile"
-	],
-	"minecraft:non_controlling_rider": [
-		"minecraft:magma_cube",
-		"minecraft:slime"
-	],
-	"minecraft:sensitive_to_smite": [
-		"ad_astra:corrupted_lunarian",
-		"ad_astra:martian_raptor",
-		"creaturefeature:blossom",
-		"creaturefeature:detritus",
-		"creaturefeature:minds",
-		"minecraft:bogged",
-		"minecraft:drowned",
-		"minecraft:husk",
-		"minecraft:phantom",
-		"minecraft:skeleton",
-		"minecraft:skeleton_horse",
-		"minecraft:stray",
-		"minecraft:wither",
-		"minecraft:wither_skeleton",
-		"minecraft:zoglin",
-		"minecraft:zombie",
-		"minecraft:zombie_horse",
-		"minecraft:zombie_villager",
-		"minecraft:zombified_piglin",
-		"mutantmonsters:mutant_skeleton",
-		"mutantmonsters:mutant_zombie"
-	],
-	"artifacts:creepers": [
-		"minecraft:creeper"
-	],
-	"minecraft:powder_snow_walkable_mobs": [
-		"endermanoverhaul:scarab",
-		"minecraft:endermite",
-		"minecraft:fox",
-		"minecraft:rabbit",
-		"minecraft:silverfish"
-	],
-	"minecraft:illager_friends": [
-		"minecraft:evoker",
-		"minecraft:illusioner",
-		"minecraft:pillager",
-		"minecraft:vindicator",
-		"supplementaries:plunderer"
-	],
-	"supplementaries:can_steer_boats": [
-		"supplementaries:plunderer"
-	],
-	"mutantmonsters:mutants": [
-		"mutantmonsters:mutant_creeper",
-		"mutantmonsters:mutant_enderman",
-		"mutantmonsters:mutant_skeleton",
-		"mutantmonsters:mutant_snow_golem",
-		"mutantmonsters:mutant_zombie"
-	],
-	"supplementaries:tickable_when_captured": [
-		"minecraft:endermite"
-	],
-	"supplementaries:cage_baby_catchable": [
-		"minecraft:cow",
-		"minecraft:goat",
-		"minecraft:pig",
-		"minecraft:sheep"
-	],
-	"supplementaries:can_entity_dismount_from": [
-		"minecraft:boat",
-		"minecraft:chest_boat",
-		"minecraft:chest_minecart",
-		"minecraft:command_block_minecart",
-		"minecraft:furnace_minecart",
-		"minecraft:hopper_minecart",
-		"minecraft:minecart",
-		"minecraft:spawner_minecart",
-		"minecraft:tnt_minecart",
-		"supplementaries:dispenser_minecart"
-	],
-	"c:boats": [
-		"minecraft:boat",
-		"minecraft:chest_boat"
-	],
-	"minecraft:freeze_hurts_extra_types": [
-		"minecraft:blaze",
-		"minecraft:magma_cube",
-		"minecraft:strider"
-	],
-	"tacz:interact_key/whitelist": [
-		"minecraft:boat",
-		"minecraft:camel",
-		"minecraft:chest_boat",
-		"minecraft:chest_minecart",
-		"minecraft:glow_item_frame",
-		"minecraft:horse",
-		"minecraft:interaction",
-		"minecraft:item_frame",
-		"minecraft:minecart",
-		"minecraft:mule",
-		"minecraft:villager",
-		"minecraft:wandering_trader"
-	],
-	"minecraft:immune_to_infested": [
-		"minecraft:silverfish"
-	],
-	"arachnids:danger_entities": [
-		"minecraft:tnt"
-	],
-	"cookingforblockheads:cows": [
-		"minecraft:cow"
-	],
-	"minecraft:frog_food": [
-		"minecraft:magma_cube",
-		"minecraft:slime"
-	],
-	"tacz:interact_key/blacklist": [],
-	"farmersdelight:dog_food_users": [
-		"minecraft:wolf"
-	],
-	"supplementaries:urn_spawn": [
-		"minecraft:bat",
-		"minecraft:silverfish",
-		"minecraft:slime"
-	],
 	"minecraft:dismounts_underwater": [
 		"minecraft:camel",
 		"minecraft:chicken",
@@ -165,48 +13,7 @@
 		"minecraft:trader_llama",
 		"minecraft:zombie_horse"
 	],
-	"minecraft:arthropod": [
-		"creaturefeature:dreamweaver",
-		"endermanoverhaul:scarab",
-		"minecraft:bee",
-		"minecraft:cave_spider",
-		"minecraft:endermite",
-		"minecraft:silverfish",
-		"minecraft:spider",
-		"mutantmonsters:spider_pig"
-	],
-	"farmersdelight:horse_feed_tempted": [
-		"minecraft:donkey",
-		"minecraft:horse",
-		"minecraft:mule"
-	],
-	"c:teleporting_not_supported": [],
-	"supplementaries:eats_fodder": [
-		"minecraft:chicken",
-		"minecraft:cow",
-		"minecraft:goat",
-		"minecraft:mooshroom",
-		"minecraft:pig",
-		"minecraft:sheep"
-	],
-	"arachnids:arachnids": [
-		"arachnids:brainbug",
-		"arachnids:chariot",
-		"arachnids:hopper",
-		"arachnids:warrior",
-		"arachnids:worker"
-	],
-	"c:minecarts": [
-		"minecraft:chest_minecart",
-		"minecraft:command_block_minecart",
-		"minecraft:furnace_minecart",
-		"minecraft:hopper_minecart",
-		"minecraft:minecart",
-		"minecraft:spawner_minecart",
-		"minecraft:tnt_minecart",
-		"supplementaries:dispenser_minecart"
-	],
-	"minecraft:inverted_healing_and_harm": [
+	"minecraft:wither_friends": [
 		"ad_astra:corrupted_lunarian",
 		"ad_astra:martian_raptor",
 		"creaturefeature:blossom",
@@ -229,13 +36,8 @@
 		"mutantmonsters:mutant_skeleton",
 		"mutantmonsters:mutant_zombie"
 	],
-	"supplementaries:ash_blacklist": [
-		"minecraft:iron_golem",
-		"minecraft:magma_cube",
-		"minecraft:slime"
-	],
-	"ad_astra:ignores_air_vortex": [
-		"minecraft:leash_knot"
+	"sable:retain_in_sub_level": [
+		"supplementaries:hat_stand"
 	],
 	"ad_astra:can_survive_in_space": [
 		"ad_astra:lunarian_wandering_trader",
@@ -257,185 +59,26 @@
 		"minecraft:wither",
 		"minecraft:zombie"
 	],
-	"supplementaries:cage_catchable": [
-		"minecraft:allay",
-		"minecraft:armadillo",
-		"minecraft:bat",
-		"minecraft:bee",
-		"minecraft:cat",
-		"minecraft:chicken",
-		"minecraft:endermite",
-		"minecraft:fox",
-		"minecraft:frog",
-		"minecraft:magma_cube",
-		"minecraft:ocelot",
-		"minecraft:parrot",
-		"minecraft:rabbit",
-		"minecraft:slime",
-		"minecraft:vex"
-	],
-	"c:fishes": [
-		"minecraft:cod",
-		"minecraft:pufferfish",
-		"minecraft:salmon",
-		"minecraft:tropical_fish"
-	],
-	"minecraft:skeletons": [
-		"minecraft:bogged",
-		"minecraft:skeleton",
-		"minecraft:skeleton_horse",
-		"minecraft:stray",
-		"minecraft:wither_skeleton",
-		"mutantmonsters:mutant_skeleton"
-	],
-	"c:bosses": [
-		"minecraft:ender_dragon",
-		"minecraft:wither"
-	],
-	"mutantmonsters:spider_pig_targets": [
-		"minecraft:pig",
-		"minecraft:spider"
-	],
-	"ad_astra:can_survive_extreme_heat": [
-		"minecraft:blaze",
-		"minecraft:evoker",
-		"minecraft:magma_cube",
-		"minecraft:spider",
-		"minecraft:stray",
-		"minecraft:zoglin",
-		"minecraft:zombie",
-		"minecraft:zombified_piglin"
-	],
-	"ad_astra:lives_without_oxygen": [
-		"ad_astra:corrupted_lunarian",
-		"ad_astra:lunarian",
-		"ad_astra:martian_raptor",
-		"ad_astra:star_crawler",
-		"minecraft:blaze",
-		"minecraft:bogged",
-		"minecraft:evoker",
-		"minecraft:husk",
-		"minecraft:magma_cube",
-		"minecraft:skeleton",
-		"minecraft:skeleton_horse",
-		"minecraft:snow_golem",
-		"minecraft:spider",
-		"minecraft:stray",
-		"minecraft:wither_skeleton",
-		"minecraft:zoglin",
-		"minecraft:zombie",
-		"minecraft:zombified_piglin",
-		"mutantmonsters:mutant_skeleton"
-	],
-	"minecraft:sensitive_to_impaling": [
-		"creaturefeature:cannonball_crab",
-		"minecraft:axolotl",
-		"minecraft:cod",
-		"minecraft:dolphin",
-		"minecraft:elder_guardian",
-		"minecraft:glow_squid",
-		"minecraft:guardian",
-		"minecraft:pufferfish",
-		"minecraft:salmon",
-		"minecraft:squid",
-		"minecraft:tadpole",
-		"minecraft:tropical_fish",
-		"minecraft:turtle"
-	],
-	"minecraft:sensitive_to_bane_of_arthropods": [
-		"creaturefeature:dreamweaver",
-		"endermanoverhaul:scarab",
-		"minecraft:bee",
-		"minecraft:cave_spider",
-		"minecraft:endermite",
-		"minecraft:silverfish",
-		"minecraft:spider",
-		"mutantmonsters:spider_pig"
-	],
-	"minecraft:illager": [
-		"minecraft:evoker",
-		"minecraft:illusioner",
-		"minecraft:pillager",
-		"minecraft:vindicator",
-		"supplementaries:plunderer"
-	],
-	"ftbquests:no_loot_crates": [],
-	"minecraft:no_anger_from_wind_charge": [
-		"minecraft:bogged",
-		"minecraft:breeze",
-		"minecraft:cave_spider",
-		"minecraft:husk",
-		"minecraft:skeleton",
-		"minecraft:slime",
-		"minecraft:spider",
-		"minecraft:stray",
-		"minecraft:zombie"
-	],
-	"supplementaries:capture_blacklist": [
-		"artifacts:mimic"
-	],
-	"supplementaries:flute_pet": [
-		"minecraft:camel",
-		"minecraft:donkey",
-		"minecraft:fox",
-		"minecraft:horse",
-		"minecraft:llama",
-		"minecraft:mule",
-		"minecraft:skeleton_horse",
-		"minecraft:zombie_horse"
-	],
-	"immersiveengineering:shaderbag/blacklist": [
-		"minecraft:iron_golem",
-		"minecraft:wither"
-	],
-	"c:milkable": [
-		"minecraft:cow",
-		"minecraft:goat",
-		"minecraft:mooshroom"
-	],
-	"supplementaries:rotatable": [
-		"minecraft:armor_stand",
-		"supplementaries:hat_stand"
-	],
-	"ad_astra:can_survive_extreme_cold": [
-		"ad_astra:corrupted_lunarian",
-		"ad_astra:lunarian",
-		"ad_astra:martian_raptor",
-		"ad_astra:star_crawler",
-		"minecraft:evoker",
-		"minecraft:magma_cube",
+	"minecraft:freeze_immune_entity_types": [
 		"minecraft:polar_bear",
 		"minecraft:snow_golem",
-		"minecraft:spider",
 		"minecraft:stray",
 		"minecraft:wither",
-		"minecraft:zombie",
 		"mutantmonsters:mutant_snow_golem"
-	],
-	"c:capturing_not_supported": [
-		"artifacts:mimic"
-	],
-	"supplementaries:jar_catchable": [
-		"minecraft:allay",
-		"minecraft:bee",
-		"minecraft:frog",
-		"minecraft:magma_cube",
-		"minecraft:slime"
 	],
 	"minecraft:immune_to_oozing": [
 		"minecraft:slime"
 	],
-	"endermanoverhaul:ender_pearls": [
-		"endermanoverhaul:ancient_pearl",
-		"endermanoverhaul:bubble_pearl",
-		"endermanoverhaul:corrupted_pearl",
-		"endermanoverhaul:crimson_pearl",
-		"endermanoverhaul:icy_pearl",
-		"endermanoverhaul:soul_pearl",
-		"endermanoverhaul:summoner_pearl",
-		"endermanoverhaul:warped_pearl"
+	"tacz:pretend_melee_damage_on": [],
+	"minecraft:freeze_hurts_extra_types": [
+		"minecraft:blaze",
+		"minecraft:magma_cube",
+		"minecraft:strider"
 	],
-	"minecraft:undead": [
+	"supplementaries:can_steer_boats": [
+		"supplementaries:plunderer"
+	],
+	"minecraft:ignores_poison_and_regen": [
 		"ad_astra:corrupted_lunarian",
 		"ad_astra:martian_raptor",
 		"creaturefeature:blossom",
@@ -458,9 +101,64 @@
 		"mutantmonsters:mutant_skeleton",
 		"mutantmonsters:mutant_zombie"
 	],
-	"supplementaries:cant_bounce_off_awnings": [
-		"supplementaries:slimeball_projectile"
+	"endermanoverhaul:ender_pearls": [
+		"endermanoverhaul:ancient_pearl",
+		"endermanoverhaul:bubble_pearl",
+		"endermanoverhaul:corrupted_pearl",
+		"endermanoverhaul:crimson_pearl",
+		"endermanoverhaul:icy_pearl",
+		"endermanoverhaul:soul_pearl",
+		"endermanoverhaul:summoner_pearl",
+		"endermanoverhaul:warped_pearl"
 	],
+	"minecraft:arthropod": [
+		"creaturefeature:dreamweaver",
+		"endermanoverhaul:scarab",
+		"minecraft:bee",
+		"minecraft:cave_spider",
+		"minecraft:endermite",
+		"minecraft:silverfish",
+		"minecraft:spider",
+		"mutantmonsters:spider_pig"
+	],
+	"minecraft:not_scary_for_pufferfish": [
+		"minecraft:cod",
+		"minecraft:dolphin",
+		"minecraft:elder_guardian",
+		"minecraft:glow_squid",
+		"minecraft:guardian",
+		"minecraft:pufferfish",
+		"minecraft:salmon",
+		"minecraft:squid",
+		"minecraft:tadpole",
+		"minecraft:tropical_fish",
+		"minecraft:turtle"
+	],
+	"c:milkable": [
+		"minecraft:cow",
+		"minecraft:goat",
+		"minecraft:mooshroom"
+	],
+	"c:bosses": [
+		"minecraft:ender_dragon",
+		"minecraft:wither"
+	],
+	"supplementaries:can_use_cannon_boats": [
+		"minecraft:evoker",
+		"minecraft:illusioner",
+		"minecraft:pillager",
+		"minecraft:vindicator",
+		"supplementaries:plunderer"
+	],
+	"arachnids:arachnids": [
+		"arachnids:brainbug",
+		"arachnids:chariot",
+		"arachnids:hopper",
+		"arachnids:warrior",
+		"arachnids:worker"
+	],
+	"ftbquests:no_loot_crates": [],
+	"supplementaries:non_angerable": [],
 	"minecraft:fall_damage_immune": [
 		"minecraft:allay",
 		"minecraft:bat",
@@ -485,18 +183,99 @@
 		"mutantmonsters:mutant_zombie",
 		"mutantmonsters:spider_pig"
 	],
-	"farmersdelight:horse_feed_users": [
-		"minecraft:donkey",
-		"minecraft:horse",
-		"minecraft:llama",
-		"minecraft:mule",
-		"minecraft:skeleton_horse",
-		"minecraft:zombie_horse"
+	"cookingforblockheads:cows": [
+		"minecraft:cow"
 	],
-	"supplementaries:can_slime": [
+	"minecraft:non_controlling_rider": [
+		"minecraft:magma_cube",
 		"minecraft:slime"
 	],
-	"supplementaries:non_angerable": [],
+	"c:teleporting_not_supported": [],
+	"supplementaries:cage_catchable": [
+		"minecraft:allay",
+		"minecraft:armadillo",
+		"minecraft:bat",
+		"minecraft:bee",
+		"minecraft:cat",
+		"minecraft:chicken",
+		"minecraft:endermite",
+		"minecraft:fox",
+		"minecraft:frog",
+		"minecraft:magma_cube",
+		"minecraft:ocelot",
+		"minecraft:parrot",
+		"minecraft:rabbit",
+		"minecraft:slime",
+		"minecraft:vex"
+	],
+	"mutantmonsters:mutants": [
+		"mutantmonsters:mutant_creeper",
+		"mutantmonsters:mutant_enderman",
+		"mutantmonsters:mutant_skeleton",
+		"mutantmonsters:mutant_snow_golem",
+		"mutantmonsters:mutant_zombie"
+	],
+	"supplementaries:cage_baby_catchable": [
+		"minecraft:cow",
+		"minecraft:goat",
+		"minecraft:pig",
+		"minecraft:sheep"
+	],
+	"immersiveengineering:shaderbag/blacklist": [
+		"minecraft:iron_golem",
+		"minecraft:wither"
+	],
+	"supplementaries:urn_spawn": [
+		"minecraft:bat",
+		"minecraft:silverfish",
+		"minecraft:slime"
+	],
+	"c:boats": [
+		"minecraft:boat",
+		"minecraft:chest_boat"
+	],
+	"minecraft:immune_to_infested": [
+		"minecraft:silverfish"
+	],
+	"minecraft:sensitive_to_bane_of_arthropods": [
+		"creaturefeature:dreamweaver",
+		"endermanoverhaul:scarab",
+		"minecraft:bee",
+		"minecraft:cave_spider",
+		"minecraft:endermite",
+		"minecraft:silverfish",
+		"minecraft:spider",
+		"mutantmonsters:spider_pig"
+	],
+	"minecraft:raiders": [
+		"immersiveengineering:bulwark",
+		"immersiveengineering:commando",
+		"immersiveengineering:fusilier",
+		"minecraft:evoker",
+		"minecraft:illusioner",
+		"minecraft:pillager",
+		"minecraft:ravager",
+		"minecraft:vindicator",
+		"minecraft:witch",
+		"supplementaries:plunderer"
+	],
+	"supplementaries:rotatable": [
+		"minecraft:armor_stand",
+		"supplementaries:hat_stand"
+	],
+	"supplementaries:ash_blacklist": [
+		"minecraft:iron_golem",
+		"minecraft:magma_cube",
+		"minecraft:slime"
+	],
+	"minecraft:deflects_projectiles": [
+		"minecraft:breeze"
+	],
+	"minecraft:frog_food": [
+		"minecraft:magma_cube",
+		"minecraft:slime"
+	],
+	"tacz:interact_key/blacklist": [],
 	"minecraft:impact_projectiles": [
 		"minecraft:arrow",
 		"minecraft:breeze_wind_charge",
@@ -514,9 +293,261 @@
 		"supplementaries:brick_projectile",
 		"supplementaries:rope_arrow"
 	],
-	"tacz:use_void_damage_on": [],
+	"supplementaries:jar_catchable": [
+		"minecraft:allay",
+		"minecraft:bee",
+		"minecraft:frog",
+		"minecraft:magma_cube",
+		"minecraft:slime"
+	],
+	"sable:destroy_when_leaving_plot": [
+		"supplementaries:hat_stand"
+	],
+	"supplementaries:tickable_when_captured": [
+		"minecraft:endermite"
+	],
+	"minecraft:sensitive_to_impaling": [
+		"creaturefeature:cannonball_crab",
+		"minecraft:axolotl",
+		"minecraft:cod",
+		"minecraft:dolphin",
+		"minecraft:elder_guardian",
+		"minecraft:glow_squid",
+		"minecraft:guardian",
+		"minecraft:pufferfish",
+		"minecraft:salmon",
+		"minecraft:squid",
+		"minecraft:tadpole",
+		"minecraft:tropical_fish",
+		"minecraft:turtle"
+	],
+	"minecraft:illager_friends": [
+		"minecraft:evoker",
+		"minecraft:illusioner",
+		"minecraft:pillager",
+		"minecraft:vindicator",
+		"supplementaries:plunderer"
+	],
+	"enderzoology:concussion_immune": [
+		"mutantmonsters:endersoul_clone",
+		"mutantmonsters:mutant_enderman"
+	],
+	"minecraft:can_turn_in_boats": [
+		"minecraft:blaze",
+		"minecraft:breeze"
+	],
+	"c:minecarts": [
+		"minecraft:chest_minecart",
+		"minecraft:command_block_minecart",
+		"minecraft:furnace_minecart",
+		"minecraft:hopper_minecart",
+		"minecraft:minecart",
+		"minecraft:spawner_minecart",
+		"minecraft:tnt_minecart",
+		"supplementaries:dispenser_minecart"
+	],
+	"minecraft:sensitive_to_smite": [
+		"ad_astra:corrupted_lunarian",
+		"ad_astra:martian_raptor",
+		"creaturefeature:blossom",
+		"creaturefeature:detritus",
+		"creaturefeature:minds",
+		"minecraft:bogged",
+		"minecraft:drowned",
+		"minecraft:husk",
+		"minecraft:phantom",
+		"minecraft:skeleton",
+		"minecraft:skeleton_horse",
+		"minecraft:stray",
+		"minecraft:wither",
+		"minecraft:wither_skeleton",
+		"minecraft:zoglin",
+		"minecraft:zombie",
+		"minecraft:zombie_horse",
+		"minecraft:zombie_villager",
+		"minecraft:zombified_piglin",
+		"mutantmonsters:mutant_skeleton",
+		"mutantmonsters:mutant_zombie"
+	],
+	"mutantmonsters:spider_pig_targets": [
+		"minecraft:pig",
+		"minecraft:spider"
+	],
+	"minecraft:no_anger_from_wind_charge": [
+		"minecraft:bogged",
+		"minecraft:breeze",
+		"minecraft:cave_spider",
+		"minecraft:husk",
+		"minecraft:skeleton",
+		"minecraft:slime",
+		"minecraft:spider",
+		"minecraft:stray",
+		"minecraft:zombie"
+	],
+	"minecraft:zombies": [
+		"creaturefeature:blossom",
+		"creaturefeature:detritus",
+		"creaturefeature:minds",
+		"minecraft:drowned",
+		"minecraft:husk",
+		"minecraft:zoglin",
+		"minecraft:zombie",
+		"minecraft:zombie_horse",
+		"minecraft:zombie_villager",
+		"minecraft:zombified_piglin",
+		"mutantmonsters:mutant_zombie"
+	],
+	"ad_astra:lives_without_oxygen": [
+		"ad_astra:corrupted_lunarian",
+		"ad_astra:lunarian",
+		"ad_astra:martian_raptor",
+		"ad_astra:star_crawler",
+		"minecraft:blaze",
+		"minecraft:bogged",
+		"minecraft:evoker",
+		"minecraft:husk",
+		"minecraft:magma_cube",
+		"minecraft:skeleton",
+		"minecraft:skeleton_horse",
+		"minecraft:snow_golem",
+		"minecraft:spider",
+		"minecraft:stray",
+		"minecraft:wither_skeleton",
+		"minecraft:zoglin",
+		"minecraft:zombie",
+		"minecraft:zombified_piglin",
+		"mutantmonsters:mutant_skeleton"
+	],
+	"c:capturing_not_supported": [
+		"artifacts:mimic"
+	],
+	"ad_astra:can_survive_extreme_heat": [
+		"minecraft:blaze",
+		"minecraft:evoker",
+		"minecraft:magma_cube",
+		"minecraft:spider",
+		"minecraft:stray",
+		"minecraft:zoglin",
+		"minecraft:zombie",
+		"minecraft:zombified_piglin"
+	],
+	"supplementaries:capture_blacklist": [
+		"artifacts:mimic"
+	],
+	"supplementaries:can_entity_dismount_from": [
+		"minecraft:boat",
+		"minecraft:chest_boat",
+		"minecraft:chest_minecart",
+		"minecraft:command_block_minecart",
+		"minecraft:furnace_minecart",
+		"minecraft:hopper_minecart",
+		"minecraft:minecart",
+		"minecraft:spawner_minecart",
+		"minecraft:tnt_minecart",
+		"supplementaries:dispenser_minecart"
+	],
+	"minecraft:aquatic": [
+		"creaturefeature:cannonball_crab",
+		"minecraft:axolotl",
+		"minecraft:cod",
+		"minecraft:dolphin",
+		"minecraft:elder_guardian",
+		"minecraft:glow_squid",
+		"minecraft:guardian",
+		"minecraft:pufferfish",
+		"minecraft:salmon",
+		"minecraft:squid",
+		"minecraft:tadpole",
+		"minecraft:tropical_fish",
+		"minecraft:turtle"
+	],
+	"arachnids:danger_entities": [
+		"minecraft:tnt"
+	],
+	"minecraft:illager": [
+		"minecraft:evoker",
+		"minecraft:illusioner",
+		"minecraft:pillager",
+		"minecraft:vindicator",
+		"supplementaries:plunderer"
+	],
+	"c:fishes": [
+		"minecraft:cod",
+		"minecraft:pufferfish",
+		"minecraft:salmon",
+		"minecraft:tropical_fish"
+	],
+	"ad_astra:ignores_air_vortex": [
+		"minecraft:leash_knot"
+	],
+	"supplementaries:cant_bounce_off_awnings": [
+		"supplementaries:slimeball_projectile"
+	],
+	"carryon:entity_blacklist": [
+		"ad_astra:tier_1_rocket",
+		"ad_astra:tier_2_rocket",
+		"ad_astra:tier_3_rocket",
+		"ad_astra:tier_4_rocket"
+	],
+	"minecraft:arrows": [
+		"minecraft:arrow",
+		"minecraft:spectral_arrow",
+		"supplementaries:rope_arrow"
+	],
+	"supplementaries:flute_pet": [
+		"minecraft:camel",
+		"minecraft:donkey",
+		"minecraft:fox",
+		"minecraft:horse",
+		"minecraft:llama",
+		"minecraft:mule",
+		"minecraft:skeleton_horse",
+		"minecraft:zombie_horse"
+	],
+	"ad_astra:can_survive_extreme_cold": [
+		"ad_astra:corrupted_lunarian",
+		"ad_astra:lunarian",
+		"ad_astra:martian_raptor",
+		"ad_astra:star_crawler",
+		"minecraft:evoker",
+		"minecraft:magma_cube",
+		"minecraft:polar_bear",
+		"minecraft:snow_golem",
+		"minecraft:spider",
+		"minecraft:stray",
+		"minecraft:wither",
+		"minecraft:zombie",
+		"mutantmonsters:mutant_snow_golem"
+	],
+	"farmersdelight:dog_food_users": [
+		"minecraft:wolf"
+	],
+	"minecraft:beehive_inhabitors": [
+		"minecraft:bee"
+	],
+	"minecraft:skeletons": [
+		"minecraft:bogged",
+		"minecraft:skeleton",
+		"minecraft:skeleton_horse",
+		"minecraft:stray",
+		"minecraft:wither_skeleton",
+		"mutantmonsters:mutant_skeleton"
+	],
+	"minecraft:axolotl_always_hostiles": [
+		"minecraft:drowned",
+		"minecraft:elder_guardian",
+		"minecraft:guardian"
+	],
 	"supplementaries:jar_baby_catchable": [
 		"minecraft:rabbit"
+	],
+	"farmersdelight:horse_feed_users": [
+		"minecraft:donkey",
+		"minecraft:horse",
+		"minecraft:llama",
+		"minecraft:mule",
+		"minecraft:skeleton_horse",
+		"minecraft:zombie_horse"
 	],
 	"minecraft:can_breathe_under_water": [
 		"ad_astra:corrupted_lunarian",
@@ -557,6 +588,24 @@
 		"mutantmonsters:mutant_zombie",
 		"supplementaries:hat_stand"
 	],
+	"minecraft:powder_snow_walkable_mobs": [
+		"endermanoverhaul:scarab",
+		"minecraft:endermite",
+		"minecraft:fox",
+		"minecraft:rabbit",
+		"minecraft:silverfish"
+	],
+	"supplementaries:eats_fodder": [
+		"minecraft:chicken",
+		"minecraft:cow",
+		"minecraft:goat",
+		"minecraft:mooshroom",
+		"minecraft:pig",
+		"minecraft:sheep"
+	],
+	"tacz:use_magic_damage_on": [
+		"minecraft:enderman"
+	],
 	"minecraft:axolotl_hunt_targets": [
 		"minecraft:cod",
 		"minecraft:glow_squid",
@@ -566,25 +615,34 @@
 		"minecraft:tadpole",
 		"minecraft:tropical_fish"
 	],
-	"minecraft:can_turn_in_boats": [
-		"minecraft:blaze",
-		"minecraft:breeze"
+	"farmersdelight:horse_feed_tempted": [
+		"minecraft:donkey",
+		"minecraft:horse",
+		"minecraft:mule"
 	],
-	"minecraft:zombies": [
-		"creaturefeature:blossom",
-		"creaturefeature:detritus",
-		"creaturefeature:minds",
-		"minecraft:drowned",
-		"minecraft:husk",
+	"ad_astra:can_survive_in_acid_rain": [
+		"ad_astra:lander",
+		"ad_astra:tier_1_rocket",
+		"ad_astra:tier_2_rocket",
+		"ad_astra:tier_3_rocket",
+		"ad_astra:tier_4_rocket",
+		"minecraft:blaze",
+		"minecraft:evoker",
+		"minecraft:magma_cube",
+		"minecraft:spider",
+		"minecraft:stray",
 		"minecraft:zoglin",
 		"minecraft:zombie",
-		"minecraft:zombie_horse",
-		"minecraft:zombie_villager",
-		"minecraft:zombified_piglin",
-		"mutantmonsters:mutant_zombie"
+		"minecraft:zombified_piglin"
 	],
-	"sable:retain_in_sub_level": [
-		"supplementaries:hat_stand"
+	"minecraft:redirectable_projectile": [
+		"minecraft:breeze_wind_charge",
+		"minecraft:fireball",
+		"minecraft:wind_charge",
+		"supplementaries:slimeball_projectile"
+	],
+	"artifacts:creepers": [
+		"minecraft:creeper"
 	],
 	"supplementaries:can_dismount_boats": [
 		"immersiveengineering:bulwark",
@@ -602,49 +660,21 @@
 		"minecraft:witch",
 		"supplementaries:plunderer"
 	],
-	"tacz:use_magic_damage_on": [
-		"minecraft:enderman"
+	"tacz:interact_key/whitelist": [
+		"minecraft:boat",
+		"minecraft:camel",
+		"minecraft:chest_boat",
+		"minecraft:chest_minecart",
+		"minecraft:glow_item_frame",
+		"minecraft:horse",
+		"minecraft:interaction",
+		"minecraft:item_frame",
+		"minecraft:minecart",
+		"minecraft:mule",
+		"minecraft:villager",
+		"minecraft:wandering_trader"
 	],
-	"ad_astra:can_survive_in_acid_rain": [
-		"ad_astra:lander",
-		"ad_astra:tier_1_rocket",
-		"ad_astra:tier_2_rocket",
-		"ad_astra:tier_3_rocket",
-		"ad_astra:tier_4_rocket",
-		"minecraft:blaze",
-		"minecraft:evoker",
-		"minecraft:magma_cube",
-		"minecraft:spider",
-		"minecraft:stray",
-		"minecraft:zoglin",
-		"minecraft:zombie",
-		"minecraft:zombified_piglin"
-	],
-	"minecraft:arrows": [
-		"minecraft:arrow",
-		"minecraft:spectral_arrow",
-		"supplementaries:rope_arrow"
-	],
-	"minecraft:aquatic": [
-		"creaturefeature:cannonball_crab",
-		"minecraft:axolotl",
-		"minecraft:cod",
-		"minecraft:dolphin",
-		"minecraft:elder_guardian",
-		"minecraft:glow_squid",
-		"minecraft:guardian",
-		"minecraft:pufferfish",
-		"minecraft:salmon",
-		"minecraft:squid",
-		"minecraft:tadpole",
-		"minecraft:tropical_fish",
-		"minecraft:turtle"
-	],
-	"enderzoology:concussion_immune": [
-		"mutantmonsters:endersoul_clone",
-		"mutantmonsters:mutant_enderman"
-	],
-	"minecraft:wither_friends": [
+	"minecraft:undead": [
 		"ad_astra:corrupted_lunarian",
 		"ad_astra:martian_raptor",
 		"creaturefeature:blossom",
@@ -667,41 +697,8 @@
 		"mutantmonsters:mutant_skeleton",
 		"mutantmonsters:mutant_zombie"
 	],
-	"minecraft:beehive_inhabitors": [
-		"minecraft:bee"
-	],
-	"minecraft:axolotl_always_hostiles": [
-		"minecraft:drowned",
-		"minecraft:elder_guardian",
-		"minecraft:guardian"
-	],
-	"minecraft:raiders": [
-		"immersiveengineering:bulwark",
-		"immersiveengineering:commando",
-		"immersiveengineering:fusilier",
-		"minecraft:evoker",
-		"minecraft:illusioner",
-		"minecraft:pillager",
-		"minecraft:ravager",
-		"minecraft:vindicator",
-		"minecraft:witch",
-		"supplementaries:plunderer"
-	],
-	"minecraft:not_scary_for_pufferfish": [
-		"minecraft:cod",
-		"minecraft:dolphin",
-		"minecraft:elder_guardian",
-		"minecraft:glow_squid",
-		"minecraft:guardian",
-		"minecraft:pufferfish",
-		"minecraft:salmon",
-		"minecraft:squid",
-		"minecraft:tadpole",
-		"minecraft:tropical_fish",
-		"minecraft:turtle"
-	],
-	"tacz:pretend_melee_damage_on": [],
-	"minecraft:ignores_poison_and_regen": [
+	"tacz:use_void_damage_on": [],
+	"minecraft:inverted_healing_and_harm": [
 		"ad_astra:corrupted_lunarian",
 		"ad_astra:martian_raptor",
 		"creaturefeature:blossom",
@@ -723,5 +720,8 @@
 		"minecraft:zombified_piglin",
 		"mutantmonsters:mutant_skeleton",
 		"mutantmonsters:mutant_zombie"
+	],
+	"supplementaries:can_slime": [
+		"minecraft:slime"
 	]
 }

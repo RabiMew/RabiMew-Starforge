@@ -41,7 +41,7 @@
 
 - `design/semantic-map.json` + `tools/check-mapping.mjs`：388 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`），本轮再捕获 `railcraft:iron_track` 臆造 ID（实际为 `railcraft:strap_iron_track`）。
 - `tools/build-pack.mjs`：从 `design/content.json`/`semantic-map.json`/`stage-locks.json`/`localization/*.json` 生成 KubeJS 物品注册、语义映射脚本、双语 lang、物品模型与占位贴图、ProgressiveStages 全局配置与 8 个 stage 定义。`localization/` 仍是唯一文案源。
-- `tools/gen-mod-lang-zh.mjs`：补齐模组自带 `zh_cn` 缺失键（framedblocks 330、mdm 274、mcwfurnitures 56），产物为 `pack/kubejs/assets/<mod>/lang/zh_cn.json`（KubeJS 按键覆盖，不影响 jar 内已有译文）。模组升版后重跑即可。
+- `tools/gen-mod-lang-zh.mjs`：补齐模组自带 `zh_cn` 缺失键（framedblocks 330、refurbished_furniture 654、mcwfurnitures 56、energizedfurniture 12、immersivecooking 53、tmted 15），产物为 `pack/kubejs/assets/<mod>/lang/zh_cn.json`（KubeJS 按键覆盖，不影响 jar 内已有译文）。模组升版后重跑即可。
 - `design/stage-locks.json` + 生成器：每阶段 `stage.toml/progression.toml/rules.toml`。`/progressivestages validate` 8/8 通过；`/stage tree` 显示 T0→T5 链与 T6/T7 分叉（T7 不依赖 T6）。
 - 阶段授予 = 双通道触发（schema-4 `[[triggers]] mode=any_of`）：原生 `craft` 条件 + KubeJS `starforge_triggers.js` 在 `ItemEvents.crafted` 上累加 `custom_counter`。凭证物品：T1 `modpack:engineering_assembly`、T2 `ic2cre:generator`、T3 `information_interface`、T4 `heavy_industry_control`、T5 `reactor_control`、T6 `space_control_core`、T7 `quantum_control`；T0 为 `starting_stages` 自动授予。FTB Teams 团队共享（`team_mode=ftb_teams`）。
 
@@ -127,14 +127,14 @@
 - **性能边界（如实记录）**：ProgressiveStages 自带 Curios compat 每 tick 扫描 curio 槽（上游既有行为）；本层不新增 tick 逻辑。
 - **仍待验证**：客户端 GUI 会话内 Back 槽放入/取出背包实测；Artifacts 营地生成频率在星球维度的目检。
 
-## 2026-09-23 家具层增量调整（-4 / +2，100 启用模组）
+## 2026-09-23 家具层增量调整（-4 / +2，100 启用模组；**MDM 已于 2026-09-24 移除**，当前状态见末节）
 
 - **移除**：Rechiseled 1.2.6 及其独占依赖 SuperMartijn642 Core Lib 1.1.24a / Config Lib 1.1.8 / Fusion 1.3.15b。删除前经 `manifest/jar-deps.json` 反向查询确认：三个库仅有 rechiseled 一个依赖方，rechiseled 自身无其它依赖方。
 - **新增**（Modrinth 1.21.1+NeoForge 最新 release，URL+SHA 经 `fetch-mods --only` 落锁）：
-  - **MDM（Modern Decorations Mod）26.9**：现代家具/街灯/厨房套组，`furniture_parts` 单件入口 + 切石配方获取全部 264 件家具；
+  - ~~**MDM（Modern Decorations Mod）26.9**~~：**2026-09-24 移除**，由 Refurbished + Framework + Energized Furniture 接替（末节）；
   - **Macaw's Furniture 3.4.1**：成套厨房/客厅/浴室家具，含储物衣柜/抽屉柜/水槽。
 - **重叠审计**（详见 `mod-compatibility-report.md` 家具层节）：无配方碰撞（MDM 264 条全部为切石型、McW 为香草材料成形配方）；无平行材料体系（双方消费统一木材/铁/石材）；储物家具与抽屉→Sophisticated→AE2 仓储层级不冲突；家具电器为储物/装饰非加工设备（Cooking for Blockheads 保留功能厨房角色）。**KubeJS 无需配方层整合**。
-- **i18n**：`gen-mod-lang-zh.mjs` 移除 rechiseled 覆盖，新增 mdm（274 键，模组仅带 en_us）与 mcwfurnitures（56 键，补齐 3.4.x 厨房水槽系与沙发色组缺失行）。
+- **i18n**：`gen-mod-lang-zh.mjs` 移除 rechiseled 覆盖，新增 mdm（274 键，模组仅带 en_us——**已随模组移除**）与 mcwfurnitures（56 键，补齐 3.4.x 厨房水槽系与沙发色组缺失行）。
 - Supplementaries 3.9.9、FramedBlocks 10.6.1、Building Gadgets 2 1.3.9 保持原锁定版本未动。
 - **运行时验证**：dedicated server `Done (1.653s)`，mdm 26.9 / mcwfurnitures 3.4.1 正常加载，KubeJS 5/5 脚本 0 错 0 警；仅存 ERROR 为既有告警（4 条姊妹模组 loot_table 缺表 + `modid:example` DataMapLoader 噪音，旧日志同款）。`registry-export/` 已用本次启动重导出（8302 配方；mdm 265 物品/264 方块、mcwfurnitures 654/652；被删模组 ID 清零）。
 - 待验证：客户端实机目检家具模型/储物 GUI 与中文显示。
@@ -193,8 +193,8 @@
 
 ### 厨房 / 家具 / 氧气（`starforge_compat.js`）
 
-- `cookingforblockheads:kitchen_item_providers` + `kitchen_connectors`：+491 件 MDM/Macaw 储物类家具（柜、抽屉、台面、冰箱等）。CFB 标签语义是"对该方块查询 IItemHandler"，无能力的方块仅作连接器——不存在伪造库存；**库存读取有效性待客户端实机验证**。
-- `ad_astra:passes_flood_fill`：+916 件 MDM/McW 家具方块（家具不应封死房间氧气）。FramedBlocks 刻意不加——拟态方块应按被模仿方块的气密性处理。**实际氧气传播行为待客户端实机验证**。
+- `cookingforblockheads:kitchen_item_providers`：+553 件储物类家具（Refurbished 113 + Macaw 440：柜、抽屉、台面、冰箱等）；`kitchen_connectors`：+86 件 Refurbished 家电/水槽/橱柜壳。邮箱、邮筒、回收桶、餐盘刻意排除出 providers；清单全部来自 JAR blockstates 而非猜测。CFB 标签语义是"对该方块查询 IItemHandler/Container"——Refurbished 储物 BE 是真实 `Container`，CFB 原生支持；**库存读取有效性待客户端实机验证**。
+- `ad_astra:passes_flood_fill`：+1101 件 Refurbished/McW 家具方块（家具不应封死房间氧气）。FramedBlocks 刻意不加——拟态方块应按被模仿方块的气密性处理。**实际氧气传播行为待客户端实机验证**。
 
 ### 怪潮警报（`starforge_horde.js` + `starforge_compat` 附属）
 
@@ -326,10 +326,9 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 - **文案**：en/zh 全部 `drg_*` 键更名 `eos_*`，描述更新为 EOS 武器族（高斯/ELP 电浆/特种）与打印台引导；FTB Quests 双语 snbt 重新生成（`eos_arsenal` 等任务 hex id 随更名更新，export-quests 全量重建无残留）。
 - **registry-export**：`recipes.json` 中 DRG 条目（34 配件 + 30 条 `tacz:kjs/*` + AU tracker）替换为 EOS 对应快照（25 枪 + 7 弹 + 57 配件 + 2 换肤 + 2 工作台 + `almostunified:eos` tracker）；待下次实机 dump 复核。
 
-### MDM `electric_guitar_with_stand` 模型修复
+### ~~MDM `electric_guitar_with_stand` 模型修复~~（2026-09-24 随 MDM 移除作废）
 
-- 根因：上游 `mdm:models/custom/electric_guitar_black_standing` 的 120 个 element 中 117 个旋转非法（104×`x:25`、1×`x:2.5`、6×Blockbench euler `{x:47.5}`、2×三轴 euler 站腿）——1.21.1 原版烘焙只接受单轴 ±45/±22.5/0，整模型加载失败（方块状态 `facing` 与贴图均正常，上游 26.9 无修复）。
-- 处置：转换脚本将所有旋转收敛到合法值（25→22.5、2.5→0、euler 取主轴就近；站腿三轴→`x:-45`），输出到 `pack/kubejs/assets/mdm/models/custom/electric_guitar_black_standing.json`（KubeJS 资源覆盖上游，方块/物品模型与 `facing` 旋转不变）。
+- 历史记录：上游 `mdm:models/custom/electric_guitar_black_standing` 的非法旋转曾由资源覆盖修复；模组移除后该覆盖文件与 `pack/kubejs/assets/mdm/` 已删除，记录保留备查。
 
 ### 遗物猎人（first_artifact）成就页背景修复
 
@@ -341,3 +340,23 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 - 按单一数据源执行：`design/progression.json` 7 处 era `unlock.hud_bar` 全部 `true`→`false`（`toast`/`progress_nudges`/`title`/`sound` 不动），`node tools/build-pack.mjs` 重新生成——7 个时代 `progression.toml` 均无 `hud_bar` 行（生成器只在真值时输出）；能力节点本就不带 hud_bar。进度反馈保留：toast、progress_nudges、PS 阶段图谱、FTB Quests、成就页。
 - **验证**：`grep hud_bar pack/config/progressivestages/` 零命中；`validate-design`/`check-mapping` PASS；`node --check` 三个脚本通过；`export-quests` 10 章 160 节点重建。
 - **待实机复核**：EOS 打印台实际配方路由与 `.id()` 生效情况、电浆武器/换肤台表现、吉他模型渲染外观、成就页背景渲染。
+
+## 2026-09-24 家具/厨房/能源/食品层增量（-1 / +6，111 启用模组）
+
+- **移除**：MDM 26.9（无其它模组依赖它，`jar-deps.json` 反向查询确认）。残留清理覆盖 `manifest/*`、`design/*`、`localization/*`、KubeJS 脚本/资源、`pack/config/ftbquests/*`、`registry-export/*`、`run/client`+`run/server` 生成树与 `pack/kubejs/assets/mdm/`；源码 + 生成物全仓扫描 `mdm` 仅剩本文档与兼容性报告中被标记"已移除/作废"的历史条目。
+- **新增**（均经 `fetch-mods` 落锁，版本/依赖逐 jar 核实）：
+  - **Framework 0.13.11**（LGPL-2.1，Refurbished 前置）；
+  - **MrCrayfish's Furniture Mod: Refurbished 1.0.22**（代码 MIT / 资产 ARR）；
+  - **Energized Furniture 0.2.0**（ARR）：变压器 BE 原生继承 Refurbished `ElectricityGeneratorBlockEntity`，FE→Watt 为上游实现；注意其 `neoforge.mods.toml` 是模板，`refurbished_furniture` 属未声明硬依赖；
+  - **Engineers Delight 2.0.0**（MPL-2.0，modid `tmted`）：IE×FD 数据包配方（cloche/press/squeezer/fermenter/mixer/bottler/sawmill）+ 钢制屠宰刀门槛；
+  - **Immersive Cooking & Farming 0.2.0-beta-1**（MIT）：烹饪锅/发酵罐/食品处理机/烤炉多方块 + 专用配方序列化器；IE 硬依赖与本包锁定版精确一致；**beta 版，稳定性/性能/dedicated server 列入重点验收**；
+  - **[Let's Do] Vinery 1.5.3**（ARR，锁 1.5.3 而非发布 5 天的 1.5.4）：IC&F 的 `neoforge.mods.toml` 用旧版 `mandatory=false` 字段，NeoForge 不识别、全部依赖按 required 处理——vinery 实为硬依赖（服务端实测缺它 FML 拒载），其唯一依赖 Architectury 已在锁内。
+- **厨房联动**：`starforge_compat.js` 的 CFB 标签清单改为从安装 JAR blockstates 生成——providers 553（rf 113 + mcw 440，仅真实 `Container` BE：抽屉/冰箱/橱柜/台面等；邮箱/邮筒/回收桶/餐盘排除）、connectors 86（rf 家电与水槽）、氧气穿透 1101（rf 449 + mcw 652）。Refurbished 炉灶原生计入 `farmersdelight:heat_sources`，无需包内工作。
+- **流体桥**：`starforge_compat` 为 `kitchen_sink/basin/toilet/bath` 注册 `Capabilities.FluidHandler.BLOCK`，委托 Refurbished `FluidContainer.push/pull`（1000 mB 桶模型），Supplementaries 水龙头/管道可真实读写；不伪造物品栏 capability。
+- **电脑**：`Computer.installProgram` 追加 Starforge Control / Security 两应用（服务端 20 tick 采样 → payload → 客户端 `Display.bind`），原四应用不动；图标经 `program_icons.png` 命名空间序位。compat jar 编译通过（58 entries，sha256 见 locked-mods）。
+- **能源**：FE 公共电网文档化（design.md §能源与工业核心）——IE/Ad Astra 直连 FE，BC 原生 FE↔MJ，Refurbished 经 Energized 变压器，IC2CRE 保留 mEU；未新增任何 FE↔mEU 转换器，无循环发电通道。
+- **食品分层**：FD 手工 → CFB/Refurbished 厨房（T2）→ Engineers Delight 中型工业（T2–T3，`tmted_knife` 入 `electric_age` 锁）→ Immersive Cooking 自动化（T3–T4，`ic_*` 多方块入 `heavy_industry_age` 锁）→ AE2 → 殖民/航天。优先使用 ED 原生 IE 配方，KubeJS 不重复实现。
+- **任务/手册**：+6 任务（modern_kitchen、industrial_food、food_factory、modern_living、household_power、smart_home）+ 6 手册页，en/zh 双语同步（localization 677 键）；export-quests 10 章 172 节点重建。
+- **i18n**：`gen-mod-lang-zh.mjs` 重写为组合式生成——refurbished_furniture 654、energizedfurniture 12、immersivecooking 53、tmted 15 键 zh_cn；`pack/kubejs/assets/mdm/` 删除。
+- **验证（本轮）**：`build-compat` 编译通过（58 entries）；`build-pack`/`export-quests` 重建成功；`audit-deps`（113 jars 闭包满足）/`check-closure`/`check-mapping`（438 语义映射）/`validate-design`（123 任务/49 手册页/677 双语键）PASS；**dedicated server `Done (1.724s)` 全量启动**：refurbished_furniture 1.0.22 / framework 0.13.11 / energizedfurniture 0.2.0 / tmted 2.0.0 / immersivecooking 0.2.0-beta-1 / vinery 1.5.3 全部加载，KubeJS 8/8 服务端脚本 0 错 0 警，FTB Quests 172 节点加载；运行时 registry-export 重导出（9003 配方；`mdm:` 0 条；`kitchen_item_providers` 688 项含 rf 113、`kitchen_connectors` 131 项含 rf 86、`passes_flood_fill` 1142 项含 rf 449+mcw 652）。
+- **待实机验证**：Refurbished 电脑程序安装/渲染/警报往返（客户端会话）；流体桥经水龙头/管道实测；CFB 对 Refurbished 容器的库存读取；Energized FE→Watt 实际功率与电网拓扑；Immersive Cooking 多方块组装/运行/重载（beta）；家具模型与中文显示目检。

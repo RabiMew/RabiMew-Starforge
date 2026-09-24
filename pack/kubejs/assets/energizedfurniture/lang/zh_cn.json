@@ -1,0 +1,14 @@
+{
+ "itemGroup.energizedfurniture": "电力家具",
+ "block.energizedfurniture.energy_transformer": "能量变压器",
+ "gui.energizedfurniture.status.online": "在线",
+ "gui.energizedfurniture.status.offline": "离线",
+ "gui.energizedfurniture.status.overloaded": "过载",
+ "gui.energizedfurniture.status.no_fuel": "燃料耗尽",
+ "gui.energizedfurniture.energy_type.none": "无",
+ "gui.energizedfurniture.energy_type.fe": "FE",
+ "gui.energizedfurniture.energy_type.fuel": "燃料",
+ "gui.energizedfurniture.node_count": "%s / %s",
+ "gui.energizedfurniture.progress": "%s %s %s",
+ "container.energizedfurniture.energy_transformer": "能量变压器"
+}

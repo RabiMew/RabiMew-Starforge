@@ -64,3 +64,24 @@ config="starforge_compat.mixins.json"
     versionRange="[3.0,)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.starforge_compat]]
+    modId="refurbished_furniture"
+    type="optional"
+    versionRange="[1.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.starforge_compat]]
+    modId="energizedfurniture"
+    type="optional"
+    versionRange="[0.2,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.starforge_compat]]
+    modId="ad_astra"
+    type="optional"
+    versionRange="[1.16,)"
+    ordering="AFTER"
+    side="BOTH"

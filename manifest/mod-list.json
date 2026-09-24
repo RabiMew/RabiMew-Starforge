@@ -343,15 +343,71 @@
       "notes": "Living/decoration layer for bases, industry, stations, colonies. ARR — distributed via manifest URL like Easy Villagers; recipes audited against unified materials."
     },
     {
-      "key": "mdm",
-      "name": "MDM (Modern Decorations Mod)",
+      "key": "framework",
+      "name": "Framework",
+      "role": "library",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "framework"
+      },
+      "notes": "MrCrayfish library — hard dependency of Refurbished ([0.13.10,) per its neoforge.mods.toml). LGPLv2.1."
+    },
+    {
+      "key": "refurbished_furniture",
+      "name": "MrCrayfish's Furniture Mod: Refurbished",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "refurbished-furniture"
+      },
+      "notes": "Modern furniture + native electricity network + Computer (Paddle Ball/Home Control/Marketplace/Coin Miner). Code MIT, assets ARR — manifest-URL distribution only. Requires Framework; stoves are natively in farmersdelight:heat_sources."
+    },
+    {
+      "key": "energized_furniture",
+      "name": "Energized Furniture",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "curseforge",
+        "slug": "energized-furniture"
+      },
+      "notes": "FE→Refurbished bridge: EnergyTransformerBlockEntity extends RF ElectricityGeneratorBlockEntity (native source node) and exposes Capabilities.EnergyStorage.BLOCK. ARR — manifest-URL distribution only. Runtime dep on refurbished_furniture (undeclared in jar metadata)."
+    },
+    {
+      "key": "engineers_delight",
+      "name": "Engineers Delight",
       "role": "content",
       "side": "both",
       "source": {
         "type": "modrinth",
-        "slug": "modern-decorations-mod"
+        "slug": "engineers-delight"
       },
-      "notes": "Modern interior furniture/decor (cookiecraftmods). ARR — manifest-URL distribution only. Overlap with Supplementaries/Macaw's audited; KubeJS merges where needed."
+      "notes": "modid tmted. Native IE×FD machine recipes (Squeezer/Mixer/Bottling/Metal Press/Garden Cloche) — do NOT duplicate in KubeJS. License discrepancy: jar says MIT, Modrinth project says MPL-2.0 (Modrinth wins for distribution metadata)."
+    },
+    {
+      "key": "immersivecooking",
+      "name": "Immersive Cooking & Farming",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "immersive-cooking-adoon"
+      },
+      "notes": "MIT. IE multiblock food automation (Cookpot/FoodFermenter/FoodProcessor) + FD recipe converter. Requires IE + Vinery (see below). Beta — dedicated-server multiblock stability is a tracked acceptance item."
+    },
+    {
+      "key": "vinery",
+      "name": "[Let's Do] Vinery",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "lets-do-vinery",
+        "version_prefix": "1.5.3"
+      },
+      "notes": "Effectively required by Immersive Cooking & Farming: its mods.toml uses legacy `mandatory=false`, which NeoForge ignores — every dependency entry defaults to required. Vinery 1.5.3 (not 1.5.4, too fresh) satisfies [1.5.3,); its only dep, Architectury API, is already locked."
     },
     {
       "key": "buildinggadgets",

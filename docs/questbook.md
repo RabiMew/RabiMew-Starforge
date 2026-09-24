@@ -45,10 +45,10 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 
 | 组 | 教程页 |
 | --- | --- |
-| 进度与生存 `progression` | team_progression · earth_alternative · storage_progression · backpack_kit · kitchen_automation · advanced_storage · expedition_backpack · cfb_kitchen · applied_kitchen · client_qol |
-| 能源·石油·网络 `energy` | power_priority · unified_oil · ae2_bootstrap |
+| 进度与生存 `progression` | team_progression · earth_alternative · storage_progression · backpack_kit · kitchen_automation · advanced_storage · expedition_backpack · cfb_kitchen · applied_kitchen · modern_kitchen · industrial_food · food_automation · client_qol |
+| 能源·石油·网络 `energy` | power_priority · unified_oil · ae2_bootstrap · household_power · smart_home |
 | 怪潮与防御 `defense` | horde_engineers · colony_security · colony_defense · defense_layers · turret_resupply · eos_arsenal · guard_weapons · tacz_addon_basics · low_gravity_combat |
-| 殖民人口与驻军 `colony` | lightweight_colony · colony_residents · colony_guard · colony_armory · colony_ammunition · colony_supply · planetary_garrison · livable_base |
+| 殖民人口与驻军 `colony` | lightweight_colony · colony_residents · colony_guard · colony_armory · colony_ammunition · colony_supply · planetary_garrison · livable_base · modern_living |
 | 岗位与维护 `workforce` | colony_workforce · job_assignment · maintenance_rewards |
 | 铁路物流 `rail` | rail_logistics · starport_rail · railcraft_advanced |
 | 航天与风险 `space` | safe_station · giselle_equipment · asteroid_belt_risk · expedition_ammo |

@@ -1,0 +1,17 @@
+{
+ "itemGroup.tmted": "工程师乐事",
+ "block.tmted.example_block": "示例方块",
+ "item.tmted.example_item": "示例物品",
+ "fluid.tmted.melon_juice": "西瓜汁",
+ "item.tmted.bottle_of_wodka": "伏特加酒瓶",
+ "block.tmted.apple_cider": "苹果酒",
+ "block.tmted.melon_juice": "西瓜汁",
+ "item.tmted.wheat_flour": "小麦粉",
+ "fluid.tmted.apple_cider": "苹果酒",
+ "fluid.tmted.tomato_sauce": "番茄酱",
+ "item.tmted.steel_knife": "钢刀",
+ "block.tmted.tomato_sauce": "番茄酱",
+ "fluid_type.tmted.apple_cider": "苹果酒",
+ "fluid_type.tmted.melon_juice": "西瓜汁",
+ "fluid_type.tmted.tomato_sauce": "番茄酱"
+}

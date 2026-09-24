@@ -3958,7 +3958,7 @@
    "description_key": "modpack.quest.crew_quarters.description",
    "suggested_stage": "mechanical_age",
    "optional": true,
-   "icon": "mdm_parts",
+   "icon": "rf_chair",
    "task": {
     "type": "checkmark"
    },
@@ -4092,6 +4092,210 @@
    ],
    "deps": [
     "moon_landing"
+   ]
+  },
+  {
+   "depends_on": [],
+   "grants_stage": false,
+   "consumes_items": false,
+   "reward_policy": "optional_non_progression",
+   "optional": true,
+   "id": "modern_kitchen",
+   "route": "agriculture",
+   "title_key": "modpack.quest.modern_kitchen.title",
+   "description_key": "modpack.quest.modern_kitchen.description",
+   "suggested_stage": "mechanical_age",
+   "icon": "rf_fridge",
+   "tasks": [
+    {
+     "type": "item",
+     "target": "rf_kitchen_drawer",
+     "count": 1
+    },
+    {
+     "type": "item",
+     "target": "rf_stove",
+     "count": 1
+    }
+   ],
+   "manual_refs": [
+    "modern_kitchen"
+   ],
+   "rewards": [
+    {
+     "item": "farmersdelight:canvas",
+     "count": 4,
+     "scope": "player"
+    }
+   ],
+   "deps": [
+    "cfb_kitchen"
+   ]
+  },
+  {
+   "depends_on": [],
+   "grants_stage": false,
+   "consumes_items": false,
+   "reward_policy": "optional_non_progression",
+   "optional": true,
+   "id": "industrial_food",
+   "route": "agriculture",
+   "title_key": "modpack.quest.industrial_food.title",
+   "description_key": "modpack.quest.industrial_food.description",
+   "suggested_stage": "electric_age",
+   "icon": "tmted_knife",
+   "tasks": [
+    {
+     "type": "item",
+     "target": "tmted_knife",
+     "count": 1
+    }
+   ],
+   "manual_refs": [
+    "industrial_food"
+   ],
+   "rewards": [
+    {
+     "item": "tmted_knife",
+     "count": 1,
+     "scope": "player"
+    }
+   ],
+   "deps": [
+    "industrial_heat"
+   ]
+  },
+  {
+   "depends_on": [],
+   "grants_stage": false,
+   "consumes_items": false,
+   "reward_policy": "optional_non_progression",
+   "optional": true,
+   "id": "food_factory",
+   "route": "agriculture",
+   "title_key": "modpack.quest.food_factory.title",
+   "description_key": "modpack.quest.food_factory.description",
+   "suggested_stage": "heavy_industry_age",
+   "icon": "ic_cookpot",
+   "tasks": [
+    {
+     "type": "item",
+     "target": "ic_cookpot",
+     "count": 1
+    },
+    {
+     "type": "item",
+     "target": "ic_fermenter",
+     "count": 1
+    }
+   ],
+   "manual_refs": [
+    "food_automation"
+   ],
+   "rewards": [
+    {
+     "item": "ic_grill",
+     "count": 1,
+     "scope": "player"
+    }
+   ],
+   "deps": [
+    "industrial_food"
+   ]
+  },
+  {
+   "depends_on": [],
+   "grants_stage": false,
+   "consumes_items": false,
+   "reward_policy": "optional_non_progression",
+   "optional": true,
+   "id": "modern_living",
+   "route": "building",
+   "title_key": "modpack.quest.modern_living.title",
+   "description_key": "modpack.quest.modern_living.description",
+   "suggested_stage": "mechanical_age",
+   "icon": "rf_chair",
+   "task": {
+    "type": "checkmark"
+   },
+   "manual_refs": [
+    "modern_living"
+   ],
+   "rewards": [
+    {
+     "item": "rf_chair",
+     "count": 2,
+     "scope": "player"
+    }
+   ],
+   "deps": [
+    "crew_quarters"
+   ]
+  },
+  {
+   "depends_on": [],
+   "grants_stage": false,
+   "consumes_items": false,
+   "reward_policy": "optional_non_progression",
+   "optional": true,
+   "id": "household_power",
+   "route": "building",
+   "title_key": "modpack.quest.household_power.title",
+   "description_key": "modpack.quest.household_power.description",
+   "suggested_stage": "electric_age",
+   "icon": "ef_transformer",
+   "tasks": [
+    {
+     "type": "item",
+     "target": "ef_transformer",
+     "count": 1
+    }
+   ],
+   "manual_refs": [
+    "household_power"
+   ],
+   "rewards": [
+    {
+     "item": "rf_generator",
+     "count": 1,
+     "scope": "player"
+    }
+   ],
+   "deps": [
+    "modern_living"
+   ]
+  },
+  {
+   "depends_on": [],
+   "grants_stage": false,
+   "consumes_items": false,
+   "reward_policy": "optional_non_progression",
+   "optional": true,
+   "id": "smart_home",
+   "route": "building",
+   "title_key": "modpack.quest.smart_home.title",
+   "description_key": "modpack.quest.smart_home.description",
+   "suggested_stage": "electric_age",
+   "icon": "rf_computer",
+   "tasks": [
+    {
+     "type": "item",
+     "target": "rf_computer",
+     "count": 1
+    }
+   ],
+   "manual_refs": [
+    "smart_home"
+   ],
+   "rewards": [
+    {
+     "item": "minecraft:quartz",
+     "count": 8,
+     "scope": "player"
+    }
+   ],
+   "deps": [
+    "household_power"
    ]
   }
  ],
@@ -4741,6 +4945,42 @@
    "id": "client_qol",
    "text_key": "modpack.tutorial.client_qol",
    "title_key": "modpack.tutorial.client_qol.title",
+   "group": "progression"
+  },
+  {
+   "id": "modern_living",
+   "text_key": "modpack.tutorial.modern_living",
+   "title_key": "modpack.tutorial.modern_living.title",
+   "group": "colony"
+  },
+  {
+   "id": "household_power",
+   "text_key": "modpack.tutorial.household_power",
+   "title_key": "modpack.tutorial.household_power.title",
+   "group": "energy"
+  },
+  {
+   "id": "smart_home",
+   "text_key": "modpack.tutorial.smart_home",
+   "title_key": "modpack.tutorial.smart_home.title",
+   "group": "energy"
+  },
+  {
+   "id": "modern_kitchen",
+   "text_key": "modpack.tutorial.modern_kitchen",
+   "title_key": "modpack.tutorial.modern_kitchen.title",
+   "group": "progression"
+  },
+  {
+   "id": "industrial_food",
+   "text_key": "modpack.tutorial.industrial_food",
+   "title_key": "modpack.tutorial.industrial_food.title",
+   "group": "progression"
+  },
+  {
+   "id": "food_automation",
+   "text_key": "modpack.tutorial.food_automation",
+   "title_key": "modpack.tutorial.food_automation.title",
    "group": "progression"
   }
  ],

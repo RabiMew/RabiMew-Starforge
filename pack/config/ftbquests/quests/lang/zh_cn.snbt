@@ -713,6 +713,27 @@
 		"{\"text\":\"» 详见手册：轻量殖民地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5D67189820FB07DC\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"轻量殖民地\"}}"
 	]
 	quest.72AC6BB895B11A07.quest_subtitle: "推荐阶段：太空时代"
+	quest.2EDC7790CF384594.title: "现代厨房"
+	quest.2EDC7790CF384594.quest_desc: [
+		"厨房抽屉与炉灶把储藏室变成真正的厨房。Refurbished 的储物方块会原生接入 CFB 厨房网络。"
+		""
+		"{\"text\":\"» 详见手册：现代厨房\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E9D6B40063DF60A\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"现代厨房\"}}"
+	]
+	quest.2EDC7790CF384594.quest_subtitle: "推荐阶段：机械时代"
+	quest.123AEA037FB67BAE.title: "工业食品加工"
+	quest.123AEA037FB67BAE.quest_desc: [
+		"制作钢制屠宰刀，把 IE 机器开进食品产线：园艺玻璃罩量产作物、冲压机绞肉、挤压机榨汁。这把刀是 Engineers Delight 配方的入场券。"
+		""
+		"{\"text\":\"» 详见手册：工业食品加工\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7AAC1E5061A9C042\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"工业食品加工\"}}"
+	]
+	quest.123AEA037FB67BAE.quest_subtitle: "推荐阶段：电气时代"
+	quest.47A9DB924B7F855C.title: "自动化食品工厂"
+	quest.47A9DB924B7F855C.quest_desc: [
+		"组装 Immersive Cooking 多方块：烹饪锅与发酵罐撑起批量烹饪与发酵产线，产出直接喂给 ME 仓储。"
+		""
+		"{\"text\":\"» 详见手册：食品自动化\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7B0CAA52B3E70CE4\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"食品自动化\"}}"
+	]
+	quest.47A9DB924B7F855C.quest_subtitle: "推荐阶段：重工业时代"
 	chapter.4274BFE7FD246AAF.title: "农业与后勤"
 	chapter.4274BFE7FD246AAF.chapter_subtitle: [
 		"供应食物、农产和生物燃料，保障工厂、前线与殖民地。"
@@ -771,7 +792,7 @@
 	quest.7DE5C11A0F9E6A2B.quest_subtitle: "推荐阶段：生存时代"
 	quest.3A9395C0631B98F1.title: "居民生活区"
 	quest.3A9395C0631B98F1.quest_desc: [
-		"居民需要成套的生活单元：床、储物、工作台位、照明分区。Macaw 与 MDM 家具负责生活质感。"
+		"居民需要成套的生活单元：床、储物、工作台位、照明分区。Macaw 与 Refurbished 家具负责生活质感。"
 		""
 		"{\"text\":\"» 详见手册：宜居基地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"宜居基地\"}}"
 	]
@@ -783,6 +804,27 @@
 		"{\"text\":\"» 详见手册：宜居基地\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D4CAFB9EC9E6AC2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"宜居基地\"}}"
 	]
 	quest.18BFCE7EDAE35FD1.quest_subtitle: "推荐阶段：太空时代"
+	quest.4544E4D977AE36CB.title: "现代生活"
+	quest.4544E4D977AE36CB.quest_desc: [
+		"Refurbished 家具把基地变成家：座椅、桌子、沙发、整体橱柜、灯具和储物件。家具本身是装饰，通电后才活过来。"
+		""
+		"{\"text\":\"» 详见手册：现代生活\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"7768292ADEE8BE72\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"现代生活\"}}"
+	]
+	quest.4544E4D977AE36CB.quest_subtitle: "推荐阶段：机械时代"
+	quest.4B1C27A3F2032C31.title: "家用供电"
+	quest.4B1C27A3F2032C31.quest_desc: [
+		"Energized Furniture 的能源变压器把公共电网的 FE 接入 Refurbished 家庭电网。给房子接上电网。"
+		""
+		"{\"text\":\"» 详见手册：家用供电\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"3D52D8EF523B1359\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"家用供电\"}}"
+	]
+	quest.4B1C27A3F2032C31.quest_subtitle: "推荐阶段：电气时代"
+	quest.4A11931A05ECF04F.title: "智能家居"
+	quest.4A11931A05ECF04F.quest_desc: [
+		"放置电脑并通过变压器供电，打开 Home Control 与 Starforge 新增应用即可监控基地。"
+		""
+		"{\"text\":\"» 详见手册：智能家居\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"53235BFFFF0D5717\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"智能家居\"}}"
+	]
+	quest.4A11931A05ECF04F.quest_subtitle: "推荐阶段：电气时代"
 	chapter.56F4CC5F9343242B.title: "建筑"
 	chapter.56F4CC5F9343242B.chapter_subtitle: [
 		"建设便于扩展、维护与防守的工厂、基地和空间站。"
@@ -974,7 +1016,7 @@
 	quest.0D8C96A7B6F83F18.quest_subtitle: "进度与生存"
 	quest.0D4CAFB9EC9E6AC2.title: "宜居基地"
 	quest.0D4CAFB9EC9E6AC2.quest_desc: [
-		"把基地分成工业区与生活区：机器与产线集中管理，生活区配床、餐厅、休整区和照明。Macaw's Furniture、MDM、Supplementaries、FramedBlocks 负责居住质感——框架方块还能套任意材质。外星居住舱按\"气闸-生存舱-工作舱\"搭建并独立供氧。"
+		"把基地分成工业区与生活区：机器与产线集中管理，生活区配床、餐厅、休整区和照明。Macaw's Furniture、Refurbished、Supplementaries、FramedBlocks 负责居住质感——框架方块还能套任意材质。外星居住舱按\"气闸-生存舱-工作舱\"搭建并独立供氧。"
 	]
 	quest.0D4CAFB9EC9E6AC2.quest_subtitle: "殖民人口与驻军"
 	quest.73E35DDDFAD2E809.title: "CFB 厨房网络"
@@ -1002,6 +1044,36 @@
 		"这些模组只影响你自己的客户端，不影响服务器进度：EMI 查配方，Jade 看方块信息，Xaero 地图记路点，Inventory Profiles 整理背包，Mouse Tweaks 拖拽，AppleSkin 看饥饿，Better F3 查坐标，ShulkerBoxTooltip 预览盒内容物，Controlling 查按键冲突。按习惯配置，没有任何一个是进度的门槛。"
 	]
 	quest.2CE7350DEA19BCD0.quest_subtitle: "进度与生存"
+	quest.7768292ADEE8BE72.title: "现代生活"
+	quest.7768292ADEE8BE72.quest_desc: [
+		"Refurbished 覆盖整套家居：座椅、桌子、沙发、橱柜、灯具与储物。冰箱和抽屉是真实容器，CFB 可以直接读取。"
+	]
+	quest.7768292ADEE8BE72.quest_subtitle: "殖民人口与驻军"
+	quest.3D52D8EF523B1359.title: "家用供电"
+	quest.3D52D8EF523B1359.quest_desc: [
+		"Refurbished 有自己的电力体系。放置 Energized Furniture 变压器、从电网馈入 FE，即可为附近电器供电。发电机与电脑都挂在这条家庭电网上。"
+	]
+	quest.3D52D8EF523B1359.quest_subtitle: "能源·石油·网络"
+	quest.53235BFFFF0D5717.title: "智能家居"
+	quest.53235BFFFF0D5717.quest_desc: [
+		"电脑自带 Paddle Ball、Home Control、Marketplace、Coin Miner。Starforge 追加两个应用：Starforge Control 显示基地遥测，Security 显示警报与防御状态。原有功能全部保留。"
+	]
+	quest.53235BFFFF0D5717.quest_subtitle: "能源·石油·网络"
+	quest.0E9D6B40063DF60A.title: "现代厨房"
+	quest.0E9D6B40063DF60A.quest_desc: [
+		"Refurbished 厨房方块对 CFB 可见：抽屉、冰箱、橱柜是食材容器，水槽与电器是连接器。一张烹饪台读出整个厨房。"
+	]
+	quest.0E9D6B40063DF60A.quest_subtitle: "进度与生存"
+	quest.7AAC1E5061A9C042.title: "工业食品加工"
+	quest.7AAC1E5061A9C042.quest_desc: [
+		"Engineers Delight 把食品映射到 IE 机器：园艺玻璃罩种植、冲压机绞肉、挤压机榨汁、发酵机酿造。钢制屠宰刀是该层级的门槛。仅做中规模加工，吞吐交给更后期。"
+	]
+	quest.7AAC1E5061A9C042.quest_subtitle: "进度与生存"
+	quest.7B0CAA52B3E70CE4.title: "食品自动化"
+	quest.7B0CAA52B3E70CE4.quest_desc: [
+		"Immersive Cooking & Farming 提供烹饪锅、发酵罐、食品处理机与烤炉多方块，用于大批量产线。排在 IE 加工之后，产出接入 AE2。"
+	]
+	quest.7B0CAA52B3E70CE4.quest_subtitle: "进度与生存"
 	chapter.13F04EAD5AD7B827.title: "参考手册"
 	chapter.13F04EAD5AD7B827.chapter_subtitle: [
 		"按主题整理的长教程：进度规则、能源、防御、殖民、岗位、铁路与航天风险。任务描述里的链接会跳到这里。"

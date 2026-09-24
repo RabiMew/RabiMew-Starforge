@@ -52,7 +52,7 @@
 			}
 			id: "6EB064B477848BC2"
 			x: 6.4d
-			y: 3d
+			y: 13.5d
 			dependencies: [
 				"40DFD7A80A1BED57"
 			]
@@ -95,7 +95,7 @@
 			}
 			id: "5CD5CEBA5468B347"
 			x: 12.8d
-			y: 6d
+			y: 16.5d
 			dependencies: [
 				"751DE25742D71D15"
 			]
@@ -123,7 +123,7 @@
 			}
 			id: "26EC2B4817F9C25D"
 			x: 16d
-			y: 7.5d
+			y: 18d
 			dependencies: [
 				"5CD5CEBA5468B347"
 			]
@@ -160,7 +160,7 @@
 			}
 			id: "40DFD7A80A1BED57"
 			x: 3.2d
-			y: 1.5d
+			y: 12d
 			dependencies: [
 				"67D80191074CCF3A"
 			]
@@ -204,7 +204,7 @@
 			}
 			id: "751DE25742D71D15"
 			x: 9.6d
-			y: 4.5d
+			y: 15d
 			dependencies: [
 				"6EB064B477848BC2"
 			]
@@ -248,7 +248,7 @@
 			}
 			id: "13129660D86A5A69"
 			x: 16d
-			y: 9d
+			y: 19.5d
 			dependencies: [
 				"5CD5CEBA5468B347"
 			]
@@ -282,7 +282,7 @@
 			}
 			id: "33137A5834F5A967"
 			x: 3.2d
-			y: 10.5d
+			y: 1.5d
 			dependencies: [
 				"67D80191074CCF3A"
 			]
@@ -311,7 +311,7 @@
 			}
 			id: "7DE5C11A0F9E6A2B"
 			x: 6.4d
-			y: 15d
+			y: 10.5d
 			dependencies: [
 				"33137A5834F5A967"
 			]
@@ -336,11 +336,11 @@
 		}
 		{
 			icon: {
-				id: "mdm:furniture_parts"
+				id: "refurbished_furniture:oak_chair"
 			}
 			id: "3A9395C0631B98F1"
 			x: 6.4d
-			y: 12d
+			y: 3d
 			dependencies: [
 				"33137A5834F5A967"
 			]
@@ -369,7 +369,7 @@
 			}
 			id: "18BFCE7EDAE35FD1"
 			x: 9.6d
-			y: 13.5d
+			y: 9d
 			dependencies: [
 				"3A9395C0631B98F1"
 			]
@@ -389,6 +389,105 @@
 				{
 					id: "3B9FB9215B7859C7"
 					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "refurbished_furniture:oak_chair"
+			}
+			id: "4544E4D977AE36CB"
+			x: 9.6d
+			y: 4.5d
+			dependencies: [
+				"3A9395C0631B98F1"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "6094C7194FD1F25D"
+					type: "item"
+					item: {
+						count: 2
+						id: "refurbished_furniture:oak_chair"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "6F9A7907D18418C1"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "energizedfurniture:energy_transformer"
+			}
+			id: "4B1C27A3F2032C31"
+			x: 12.8d
+			y: 6d
+			dependencies: [
+				"4544E4D977AE36CB"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "2879BCA4C041BD24"
+					type: "item"
+					item: {
+						count: 1
+						id: "refurbished_furniture:light_electricity_generator"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "603ECD8473DD2E49"
+					type: "item"
+					item: {
+						count: 1
+						id: "energizedfurniture:energy_transformer"
+					}
+					count: 1
+					consume_items: false
+				}
+			]
+		}
+		{
+			icon: {
+				id: "refurbished_furniture:computer"
+			}
+			id: "4A11931A05ECF04F"
+			x: 16d
+			y: 7.5d
+			dependencies: [
+				"4B1C27A3F2032C31"
+			]
+			optional: true
+			rewards: [
+				{
+					id: "1D14A5F7D6F5FBD0"
+					type: "item"
+					item: {
+						count: 8
+						id: "minecraft:quartz"
+					}
+					team_reward: false
+				}
+			]
+			tasks: [
+				{
+					id: "137FCB645FFD7F9B"
+					type: "item"
+					item: {
+						count: 1
+						id: "refurbished_furniture:computer"
+					}
+					count: 1
+					consume_items: false
 				}
 			]
 		}

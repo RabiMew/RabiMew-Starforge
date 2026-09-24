@@ -39,6 +39,9 @@
 	"ic2cre:scrapbox_drop",
 	"ic2cre:semifluid_fuel",
 	"ic2cre:thermal_centrifuging",
+	"immersivecooking:cookpot",
+	"immersivecooking:food_fermenter",
+	"immersivecooking:food_processor",
 	"immersiveengineering:alloy",
 	"immersiveengineering:arc_furnace",
 	"immersiveengineering:blast_furnace",
@@ -77,5 +80,17 @@
 	"railcraft:rolling",
 	"railcraft:rotor_repair",
 	"railcraft:ticket_duplicate",
-	"tacz:gun_smith_table_crafting"
+	"refurbished_furniture:cutting_board_combining",
+	"refurbished_furniture:cutting_board_slicing",
+	"refurbished_furniture:freezer_solidifying",
+	"refurbished_furniture:frying_pan_cooking",
+	"refurbished_furniture:grill_cooking",
+	"refurbished_furniture:microwave_heating",
+	"refurbished_furniture:oven_baking",
+	"refurbished_furniture:toaster_heating",
+	"refurbished_furniture:workbench_constructing",
+	"tacz:gun_smith_table_crafting",
+	"vinery:apple_fermenting",
+	"vinery:apple_mashing",
+	"vinery:wine_fermentation"
 ]

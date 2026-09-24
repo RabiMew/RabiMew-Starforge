@@ -95,7 +95,13 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 | FramedBlocks | 10.6.1 | release:10.6.1 | both | all optional (create/jei/emi/ae2…) |
 | Supplementaries | 1.21.1-3.9.9 | release:3.9.9 | both | moonlight req [1.21-3.6.4,) ✓3.6.8; **incompatible: farmersdelight<1.3.0** (have 1.3.4 ✓), **sodium<0.8.12-beta.1** (have 0.8.13 ✓) |
 | Macaw's Furniture | 3.4.1 | release:3.4.1 | both | no deps declared in `neoforge.mods.toml` |
-| MDM (Modern Decorations Mod) | 26.9 | release:26.9 | both | neoforge req [21.1.190,) ✓21.1.251; minecraft req [1.21.1] ✓ |
+| ~~MDM (Modern Decorations Mod)~~ | 26.9 | **已移除（2026-09-24）**：现代家具层由 MrCrayfish's Furniture Refurbished 接替（原生储物容器 + 电力家电 + 电脑体系，见末节 addendum） | — | — |
+| Framework | 0.13.11 | 0.13.11 (CF; Refurbished 前置库) | both | neoforge req [21.1,) ✓ · minecraft [1.21.1,) ✓ |
+| MrCrayfish's Furniture Mod: Refurbished | 1.0.22 | 1.0.22 (CF; code MIT / assets ARR) | both | framework req [0.13.10,) ✓0.13.11 · neoforge [21.1,) ✓ |
+| Energized Furniture | 0.2.0 | 0.2.0 (CF; ARR) | both | neoforge req [21.1.248,) ✓ · **refurbished_furniture 为隐式依赖**（mods.toml 是模板未声明；`EnergyTransformerBlockEntity extends ElectricityGeneratorBlockEntity` 字节码硬引用——Refurbished 必须同装） |
+| Engineers Delight | 2.0.0 | 2.0.0 (Modrinth `tmted`; MPL-2.0) | both | minecraft [1.21.1,1.22) ✓（IE×FD 配方为数据驱动，无硬代码依赖） |
+| Immersive Cooking & Farming | 0.2.0-beta-1 | 0.2.0-beta-1 (Modrinth `immersive-cooking-adoon`; MIT) | both | immersiveengineering req [12.4.2-194,) ✓exact · **farmersdelight/jei/vinery 实为硬依赖**——其 mods.toml 用旧版 `mandatory=false` 字段，NeoForge 不识别并按默认 required 处理（服务端实测缺 vinery 拒载）；三者均已装 |
+| [Let's Do] Vinery | 1.5.3 | 1.5.3 (Modrinth `lets-do-vinery`; ARR) | both | architectury req（已锁 13.0.11 ✓）——Immersive Cooking 硬依赖，锁 1.5.3 而非 5 天前的 1.5.4 |
 | Building Gadgets 2 | 1.3.9 | 1.3.9 (CF; 1.4.x targets MC 26.1.2 — rejected) | both | — |
 | Enderman Overhaul | 2.0.3 | release:2.0.3 | both | resourcefullib req [3.0.11,) ✓3.0.12; geckolib req [4.7,) ✓4.9.3 |
 | Mutant Monsters | v21.1.1 | release:v21.1.1 | both | puzzleslib req [21.1.10,) ✓21.1.60 |
@@ -253,9 +259,9 @@ Incremental change: removed 4 mods, added 2. Lockfile, `mod-ids.json`, `jar-deps
 | Mod | Locked | Source / license | Side | External deps (from jar) |
 |---|---|---|---|---|
 | Macaw's Furniture | 3.4.1 (`mcw-furniture-3.4.1-mc1.21.1neoforge.jar`, version `Z5V3Ps7S`) | Modrinth `dtWC90iB`; LicenseRef-ARR — manifest-URL distribution (same as Easy Villagers/CFB) | both | none declared in `neoforge.mods.toml` |
-| MDM (Modern Decorations Mod) | 26.9 (`mdm-26.9-neoforge-1.21.1.jar`, version `SHiMd2N9`) | Modrinth `TmUXSYKk`; LicenseRef-ARR | both | neoforge [21.1.190,) ✓21.1.251 · minecraft [1.21.1] ✓ |
+| ~~MDM (Modern Decorations Mod)~~ | 26.9 | **removed 2026-09-24** — replaced by Refurbished + Energized Furniture; see the 2026-09-24 addendum | — | — |
 
-**Overlap audit** (MDM × Macaw's × Supplementaries — registry/recipe inspection of the locked jars):
+**Overlap audit** (MDM × Macaw's × Supplementaries — registry/recipe inspection of the locked jars; **superseded 2026-09-24** — MDM removed, replacement audit in the final addendum):
 
 - **No recipe collisions**: MDM is 1 shaped (`furniture_parts`) + 264 `minecraft:stonecutting` recipes (1 furniture part → 1 piece); Macaw's is shaped vanilla-material recipes through its own intermediates (`cabinet_door`/`cabinet_drawer` = sticks + `#c:chests/wooden` + iron nugget; tag populated: chest, trapped_chest). No cross-mod output/ingredient collisions; Polymorph remains the conflict safety net.
 - **No parallel material system**: MDM funnels every furniture recipe through `furniture_parts` (cobblestone + `#minecraft:planks` + iron nugget); Macaw's consumes vanilla logs/planks/slabs/sticks + `#c:chests/wooden`. Both already spend the pack's unified wood/iron/stone materials — no custom ingot/wood tier introduced, nothing to remap.
@@ -286,3 +292,39 @@ Three compat mods added (Modrinth-locked, deps resolved to existing mods only):
 **KubeJS↔AU boundary**: AU owns output unification at recipe-load; `starforge_unify.js` owns input-side `replaceInput` widening + 5 datapack recipe overrides for serializers neither can rewrite. No overlapping edits to the same recipe by both systems.
 
 **Pending client verification**: EMI hidden-item dedup, CFB furniture inventory reads, Ad Astra flood fill through furniture, Applied Cooking/Delight behaviour, horde alert UX.
+
+## Addendum — 2026-09-24 furniture/kitchen/energy/food layer (111 enabled)
+
+Incremental change: removed MDM, added 6 mods. Lockfile, `mod-ids.json`, `jar-deps.json` regenerated; `audit-deps` + `check-closure` re-verified over all enabled jars. Dedicated server booted to `Done (1.724s)` — all six loaded, KubeJS 8/8 server scripts 0 errors/0 warnings, 9003 recipes exported, `mdm:` = 0 ids.
+
+**Removed**
+
+| Mod | Was locked | Role |
+|---|---|---|
+| MDM (Modern Decorations Mod) | 26.9 | furniture/decor — replaced by Refurbished |
+
+**Added**
+
+| Mod | Locked | Source / license | Side | External deps (from jar) |
+|---|---|---|---|---|
+| Framework | 0.13.11 (`framework-neoforge-1.21.1-0.13.11.jar`) | CurseForge (MrCrayfish); LGPL-2.1 | both | neoforge [21.1,) ✓ · minecraft [1.21.1,) ✓ |
+| MrCrayfish's Furniture Mod: Refurbished | 1.0.22 (`refurbished_furniture-neoforge-1.21.1-1.0.22.jar`) | CurseForge (MrCrayfish); **code MIT / assets ARR** — manifest-URL distribution | both | framework req [0.13.10,) ✓0.13.11 · neoforge [21.1,) ✓ |
+| Energized Furniture | 0.2.0 (`energizedfurniture-1.21.1-0.2.0.jar`) | CurseForge; LicenseRef-ARR | both | neoforge req [21.1.248,) ✓21.1.251 — **ships a template `neoforge.mods.toml`: `refurbished_furniture` is an *undeclared* bytecode dep** (transformer BE subclasses `ElectricityGeneratorBlockEntity`); closure check counts Refurbished as co-required |
+| Engineers Delight | 2.0.0 (`engineers_delight-neoforge-1.21.1-2.0.0.jar`, modid `tmted`) | Modrinth; MPL-2.0 | both | minecraft [1.21.1,1.22) ✓ — IE×FD hookup is datapack recipes, no hard code dep |
+| Immersive Cooking & Farming | 0.2.0-beta-1 (`immersivecooking-1.21.1-0.2.0-beta-1.jar`) | Modrinth `immersive-cooking-adoon` (akki697222); MIT | both | **immersiveengineering req [12.4.2-194,) — exact match** · farmersdelight/jei/vinery `mandatory=false`→NeoForge treats as **required** (server-verified: missing vinery = FML reject); all present |
+| [Let's Do] Vinery | 1.5.3 (`letsdo-vinery-neoforge-1.5.3.jar`) | Modrinth `1DWmBJVA`; ARR | both | architectury req — already locked 13.0.11; chosen over 1.5.4 (released 5 days ago, under the freshness floor) |
+
+**Overlap audit** (Refurbished × Macaw's × Supplementaries × CFB/FD — jar inspection):
+
+- **No recipe collisions**: Refurbished furniture is produced by its own `workbench_constructing` recipes (445 entries, Workbench machine) + dye re-colouring shapeless recipes; appliances add `oven_baking/slicing/freezing/frying/heating/toasting/combining` processing types (68 food-processing entries). Macaw's remains shaped vanilla-material crafting. No cross-mod output/ingredient collisions; Polymorph remains the safety net.
+- **Furniture material flow**: Refurbished consumes vanilla wood/iron/quartz through the Workbench; no parallel ingot/wood tier — nothing for Almost Unified to remap.
+- **Storage**: Refurbished drawers/fridges/cabinetry are real `Container` BEs → listed in `cookingforblockheads:kitchen_item_providers` (113 rf + 440 mcw = 553 ids); non-storage appliances + sinks + cabinetry shells are `kitchen_connectors` (86 rf ids). Mailboxes, post boxes, recycle bins, plates deliberately excluded from providers.
+- **Fluid containers**: Refurbished `kitchen_sink`/`basin`/`toilet`/`bath` expose `FluidContainer` (push/pull, 1000 mB bucket model) but no NeoForge capability — `starforge_compat` registers `Capabilities.FluidHandler.BLOCK` delegating to `push`/`pull`, so Supplementaries faucets/pipes interoperate.
+- **Heat**: Refurbished ships native `farmersdelight:heat_sources` data for its light/dark stoves — Stove×FD compatibility is upstream, no pack-side work needed.
+- **Electricity**: Refurbished runs its own electricity network (`IElectricityNode` graph). Energized Furniture's transformer is a native `ElectricityGeneratorBlockEntity` fed by FE → the FE→home-grid bridge is upstream-native, bounded by its generation rate; no pack-written converter, no FE↔RF loop possible.
+- **Computer**: original apps (Paddle Ball, Home Control, Marketplace, Coin Miner) untouched; `starforge_compat` appends `Starforge Control` (power/stage/food/ammo/oxygen/colony telemetry) and `Security` (horde alarm, TaCZ turrets, guards) via public `Computer.installProgram` + client `Display.bind`, 20-tick cadence, bounded queries only, icons via per-namespace `program_icons.png` insertion order.
+- **Food tiers**: Engineers Delight maps FD produce onto IE machines via native datapack recipes (cloche grow, metal press mince, squeezer juice/sauce, fermenter, mixer, bottler, sawmill — `tmted:*` recipes use real IE serializers). Immersive Cooking & Farming adds cookpot / food fermenter / food processor / grill multiblocks + recipe serializers for the high-throughput tier. Tier boundary: FD manual → Engineers Delight mid-scale IE → Immersive Cooking automation → AE2 logistics; no yield inflation, only throughput/automation.
+- **i18n**: `gen-mod-lang-zh.mjs` rewritten — Refurbished ships `en_us` only → full 654-key zh_cn generated compositionally (wood/colour prefix × piece suffix); Energized 12, Immersive Cooking 53, Engineers Delight (`tmted`) 15 keys filled. MDM generator section removed.
+- **Stage placement**: `electric_age` locks `ef_transformer`/`rf_computer`/`rf_generator`/`tmted_knife`; `heavy_industry_age` locks `ic_cookpot`/`ic_fermenter`/`ic_grill`/`ic_processor`. Furniture decor itself stays unlocked (building materials are T0-open).
+
+**Pending client verification**: computer program install + display rendering + Security alarm toggle round-trip, fluid capability via a real faucet/pipe, CFB kitchen discovery against Refurbished containers, Energized FE→Watt flow, Immersive Cooking multiblock assemble/run/reload stability (beta version flagged).
