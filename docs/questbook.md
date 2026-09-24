@@ -56,7 +56,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 
 ## 2. 任务描述格式
 
-任务描述固定两段式：正文是「目标—操作提示—为什么值得做」的摘要（现有 `modpack.quest.*.description` 文案直接沿用），末尾追加一行 raw JSON `change_page` 链接指向手册页：
+任务描述为三段式：正文摘要（「目标—为什么值得做」，现有 `modpack.quest.*.description` 文案沿用）→ 可选「操作提示」段（见 §2.1）→ 手册链接段。手册链接是 raw JSON `change_page` 行：
 
 ```json
 {"text":"» 详见手册：xxx","color":"aqua","clickEvent":{"action":"change_page","value":"<手册页 hex id>"}}
@@ -65,6 +65,22 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 - 链接文本按语言生成（`modpack.quest.manual_link` 模板，`%1$s` = 手册页标题）。
 - 跨路线跳转只允许指向手册页；任务之间不互相引用。
 - FTB Quests 2100+ 支持 description 行内的 raw JSON text 与 `change_page` clickEvent（value 为目标对象的长 hex ID）。导出器生成**确定性 ID**，链接跨构建稳定。
+
+### 2.1 任务内操作提示（tutorial_hints）
+
+存在**真实操作门槛**的任务（拾取村民、征召警卫、炮塔装弹、机车驾驶等"不知道怎么按"的场景）在 `content.json` 中声明 `tutorial_hints`：2–5 条最关键的即时操作说明，渲染在正文之后、手册链接之前。普通"合成某物"任务不加。
+
+```jsonc
+"tutorial_hints": [
+  { "text_key": "modpack.hint.gv_convert",      // 本地化句子，%N$s 为按键占位符
+    "keys": ["key.sneak", "key.use"] }          // KeyMapping id，与 %1$s/%2$s 一一对应
+]
+```
+
+- 导出器把每条 hint 渲染成一行 JSON 文本组件（`quest_desc` 行）：固定 `· ` 灰色前缀，正文中每个 `%N$s` 替换为原生 **`{"keybind":"<id>"}` 组件**。该组件在客户端逐帧解析玩家当前绑定——**任务文案绝不写死 R/I/J 等字面按键**；Default Options 只负责首次默认，玩家改键后任务书自动跟随。
+- `keys` 只能取自 `design/keybinds.json`（本包已注册 KeyMapping 注册表，见 docs/keybinds.md）；不使用占位符的提示写 `"keys": []`。
+- 提示只写**操作入口**（怎么按）；机制细节（数值、配方、策略）仍走 `manual_refs` 手册页，两者互补：提示告诉玩家"第一步怎么操作"，手册解释"为什么/体系怎么转"。
+- 验证：`validate-design.mjs` 检查 1–5 条上限、text_key 双语存在、key id 已注册、占位符与 keys 一一对应；`export-quests.mjs` 在导出时对未注册 id 直接报错。
 
 ## 3. 检测类型映射
 
@@ -159,6 +175,10 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
   "icon": "<语义键|ns:path>" 或 { "id": "<语义键|ns:path>", "components": {...} },
   "deps": ["quest_id"],                            // 树形父依赖 → FTB dependencies（flexible：进度自由、完成按序）
   "manual_refs": ["tutorial_id"],                  // 描述尾部生成 change_page 链接
+  "tutorial_hints": [{                             // 可选 1–5 条：仅真实操作门槛任务使用（§2.1）
+    "text_key": "modpack.hint.xxx",                // 本地化句子，%N$s 为按键占位符
+    "keys": ["key.sneak", "key.use"]               // design/keybinds.json 内的 KeyMapping id
+  }],
   "rewards": [{ "item": "<语义键|ns:path>", "count": 8, "scope": "player|team", "components": {...} }],
   "optional": true,                                // 支线：不计章节完成度
   "tags": ["side_quest"],                          // 可选 FTB 标签
@@ -216,6 +236,7 @@ tools/export-quests.mjs:
 - **任务阶段一致性**：item 类任务目标的解锁阶段 ≤ `suggested_stage`（同奖励规则；据此把 `anomaly_analysis` 的解锁从 quantum_age 修正为 atomic_age——SF-28 设计为 T5 地球制造，原 stage-locks 条目与设计文档冲突）。
 - 奖励：`scope ∈ {player,team}`、物品解锁阶段 ≤ `suggested_stage`、count ≥ 1；全部奖励非阶段凭证物品本身以外的禁令项。
 - `manual_refs` 指向存在的 tutorial；`deps` 指向同章任务、无环、非自引用，每章至少一个根节点。
+- `tutorial_hints`：1–5 条；`text_key` 双语存在；`keys` 全部命中 `design/keybinds.json` 注册表；zh_cn 文案中的 `%N$s` 占位符与 `keys` 数组一一对应（不缺位、不越界）；双语占位符一致性由全局语言键校验覆盖。
 - 教程：`title_key`、`group` 必填，`modpack.tutorial.group.<group>` 双语键存在。
 - 成就：`advancements.json` 的 icon/reveal_at/dimensions/items/entities/stage 引用全部可解析；`stage_granted` 只能镜像已有进度节点。
 - **guidance 事件**：每条至少一条检测路由；计数器 `modpack:*` 且唯一；`via.quest` 事件严禁投喂 `modpack:craft_*` 时代证据计数器（FTB Quests 永远可选）；advancement/hint/quest/entity/dimension 引用可解析。

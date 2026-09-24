@@ -43,6 +43,8 @@
 	quest.0E79A6A14CA31F91.quest_desc: [
 		"This quest book is a manual and milestone map: stages advance by crafting evidence components, never by turning in quests. Every chapter stays available."
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.ftbquests.quests\"},{\"text\":\" to open or close this quest book at any time.\"}]}"
+		""
 		"{\"text\":\"» See the manual: Team Progression and Specialization\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Team Progression and Specialization\"}}"
 	]
 	quest.0E79A6A14CA31F91.quest_subtitle: "Suggested stage: Survival Age"
@@ -91,6 +93,8 @@
 	quest.13C6FDBBC0A6A1F8.title: "Open the Progression Map"
 	quest.13C6FDBBC0A6A1F8.quest_desc: [
 		"The button left of the inventory GUI opens the ProgressiveStages map: the era spine, capability branches and every unlock condition live there. The questbook only explains routes."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.progressivestages.open_tree\"},{\"text\":\" to open the ProgressiveStages map.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Team Progression and Specialization\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Team Progression and Specialization\"}}"
 	]
@@ -179,6 +183,9 @@
 	quest.4F47C604F5D375CC.quest_desc: [
 		"Power an inscriber independently to make processors, then let the digital network take over existing physical warehouses through storage buses. Presses can be manufactured on Earth and meteorites are an optional shortcut; drawers and stockrooms keep their value."
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Hover over an item and press \"},{\"keybind\":\"key.guideme.guide\"},{\"text\":\" to jump straight to its AE2 guide page.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Stick a Storage Bus on the side of a drawer or chest to bring that inventory onto the network.\"}]}"
+		""
 		"{\"text\":\"» See the manual: AE2 Cold Start\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"79F690776849AD03\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"AE2 Cold Start\"}}"
 	]
 	quest.4F47C604F5D375CC.quest_subtitle: "Suggested stage: Information Age"
@@ -202,6 +209,10 @@
 	quest.1E674A8A5C906BBF.title: "Build a Freight Rail Network"
 	quest.1E674A8A5C906BBF.quest_desc: [
 		"Connect mines and the industrial base with freight trains: cargo carts haul bulk goods, tank carts carry fluids, and loaders handle both ends. Short-range in-base transport still belongs to pipes and conveyors."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on a locomotive to open its fuel and locking GUI; steam locos need water and coal.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Ride a minecart in the train to drive it: \"},{\"keybind\":\"key.railcraft.loco.mode\"},{\"text\":\" mode, \"},{\"keybind\":\"key.railcraft.loco.faster\"},{\"text\":\"/\"},{\"keybind\":\"key.railcraft.loco.slower\"},{\"text\":\" speed, \"},{\"keybind\":\"key.railcraft.loco.reverse\"},{\"text\":\" reverse, \"},{\"keybind\":\"key.railcraft.loco.whistle\"},{\"text\":\" whistle.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"With a crowbar, hold \"},{\"keybind\":\"key.sneak\"},{\"text\":\" and press \"},{\"keybind\":\"key.use\"},{\"text\":\" on two carts in turn to link them into a train.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Rail Logistics\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4642427A4336C17F\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Rail Logistics\"}}"
 	]
@@ -244,6 +255,8 @@
 	quest.7D9816358D597DD3.quest_desc: [
 		"A wall of drawers layered by compression: normal drawers for bulk, compacting drawers auto-collapse ingot/block/nugget tiers."
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on a drawer to insert the held stack (\"},{\"keybind\":\"key.sneak\"},{\"text\":\" + \"},{\"keybind\":\"key.use\"},{\"text\":\" inserts every matching stack); \"},{\"keybind\":\"key.attack\"},{\"text\":\" takes one item, \"},{\"keybind\":\"key.sneak\"},{\"text\":\" + \"},{\"keybind\":\"key.attack\"},{\"text\":\" takes a full stack.\"}]}"
+		""
 		"{\"text\":\"» See the manual: Storage Tiers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Storage Tiers\"}}"
 	]
 	quest.7D9816358D597DD3.quest_subtitle: "Suggested stage: Mechanical Age"
@@ -257,6 +270,9 @@
 	quest.284763ACA7D3BC91.title: "Field Backpack"
 	quest.284763ACA7D3BC91.quest_desc: [
 		"Sophisticated Backpacks are field logistics: pickup upgrade auto-loads drops; magnet, furnace and stack upgrades fit the mission."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.sophisticatedbackpacks.open_backpack\"},{\"text\":\" to open the worn backpack.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.sophisticatedbackpacks.inventory_interaction\"},{\"text\":\" to manually trigger the backpack's interaction upgrades (feeding and the like); each upgrade toggles inside the backpack GUI.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Expedition Loadouts\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D8C96A7B6F83F18\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Expedition Loadouts\"}}"
 	]
@@ -319,6 +335,11 @@
 	quest.6A40076FB5A60443.quest_desc: [
 		"The gun workbench and ammo table stand up — guard and player weapons go industrial instead of being scavenged."
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"With a gun in hand, press \"},{\"keybind\":\"key.tacz.reload.desc\"},{\"text\":\" to reload - ammo must match the gun.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.tacz.refit.desc\"},{\"text\":\" to open the attachment screen for the held gun and fit workbench-made parts.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.tacz.fire_select.desc\"},{\"text\":\" cycles fire mode; \"},{\"keybind\":\"key.tacz.inspect.desc\"},{\"text\":\" inspects the weapon.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"With a gun in hand, press \"},{\"keybind\":\"key.tacz.interact.desc\"},{\"text\":\" to use blocks (doors, chests) without firing.\"}]}"
+		""
 		"{\"text\":\"» See the manual: The Colony Armory\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"15C288AF8333C644\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Colony Armory\"}}"
 		"{\"text\":\"» See the manual: TaCZ Addon: Gunsmith Assistant\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"009B2C59FE3D645E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"TaCZ Addon: Gunsmith Assistant\"}}"
 	]
@@ -327,6 +348,10 @@
 	quest.1AEA18147C0DBE26.quest_desc: [
 		"Issue conventional guns (rifles, SMGs, shotguns) to village guards — they are your most flexible mobile infantry. Keep explosives and exotic weapons in player hands; guards must not level the base."
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"To recruit a guard: hold a sword or crossbow and press \"},{\"keybind\":\"key.sneak\"},{\"text\":\" + \"},{\"keybind\":\"key.use\"},{\"text\":\" on an unemployed or nitwit adult villager.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on a guard to open the equipment GUI - a TaCZ gun in the weapon slot is issued instantly; \"},{\"keybind\":\"key.sneak\"},{\"text\":\" + \"},{\"keybind\":\"key.use\"},{\"text\":\" hands over the held item instead.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Armed guards out of ammo walk to vanilla containers (chests, barrels) within 20 blocks holding matching ammo - keep a stocked box near each post.\"}]}"
+		""
 		"{\"text\":\"» See the manual: Choosing Guard Weapons\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"725FD622502D6892\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Choosing Guard Weapons\"}}"
 		"{\"text\":\"» See the manual: Colony Guards\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C0A7C642219B0D2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Colony Guards\"}}"
 	]
@@ -334,6 +359,9 @@
 	quest.2F8112B376410105.title: "Industrial Sentry Guns"
 	quest.2F8112B376410105.quest_desc: [
 		"Deploy IE sentry turrets (gun turret / chem turret): the industrial age’s early fixed defense. Check ammo, firing lanes, and friend lists — never concentrate all reserves at one post."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on a turret to open its GUI: load ammo and set the target list and options.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Turrets need a redstone signal to activate; hold \"},{\"keybind\":\"key.sneak\"},{\"text\":\" and \"},{\"keybind\":\"key.use\"},{\"text\":\" with an Engineer's Screwdriver to invert that. The target list is a blacklist by default.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Three-Layer Defense\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"482CA592DE6BAB84\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Three-Layer Defense\"}}"
 	]
@@ -347,7 +375,10 @@
 	quest.605556FAD18F13D3.quest_subtitle: "Suggested stage: Electrical Age"
 	quest.0578B3D427AD63A7.title: "Frontline Ammo Boxes"
 	quest.0578B3D427AD63A7.quest_desc: [
-		"Turrets only eat last-mile logistics: place an ammo box beneath or beside the turret and let AE2 / FastPipes keep it filled. Turrets do not take ammo straight from pipes."
+		"Turrets only eat last-mile logistics: park an ammo box directly beneath the turret and let AE2 / FastPipes keep it filled. Turrets do not take ammo straight from pipes."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Turrets pull ammo from the container directly beneath them - park an ammo box under the turret and let pipes or AE2 refill it.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Armed guards fetch matching ammo themselves from vanilla containers within 20 blocks - keep a stocked chest beside each post.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
 	]
@@ -355,6 +386,10 @@
 	quest.13E59D0117879820.title: "Automatic Turret"
 	quest.13E59D0117879820.quest_desc: [
 		"The TACZ turret takes on whatever TaCZ gun you load into it. Install the gun, verify targeting mode and friend recognition, then hook up its ammo box."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on the turret to open its GUI: install a TaCZ gun and ammo, then set targeting mode and allies.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Hold \"},{\"keybind\":\"key.sneak\"},{\"text\":\" and press \"},{\"keybind\":\"key.use\"},{\"text\":\" on the turret to pick it up - the gun and ammo come back with it.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"A container directly under the turret feeds ammo automatically; press \"},{\"keybind\":\"key.use\"},{\"text\":\" with iron bars to repair a damaged turret.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
 	]
@@ -429,6 +464,9 @@
 	quest.7FA3F49803108CD1.quest_desc: [
 		"Bring startup power, oxygen equipment, and building materials to establish a lunar outpost with a safe return plan. Alien mining improves efficiency but is not required for Earth technology."
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Hold \"},{\"keybind\":\"key.sneak\"},{\"text\":\" and press \"},{\"keybind\":\"key.use\"},{\"text\":\" on the rocket to open its fuel and cargo GUI - fuel it up before launch.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on the rocket to board, then press \"},{\"keybind\":\"key.jump\"},{\"text\":\" to ignite and launch.\"}]}"
+		""
 		"{\"text\":\"» See the manual: Space Utility Gear\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Space Utility Gear\"}}"
 		"{\"text\":\"» See the manual: The Safe Station\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Safe Station\"}}"
 	]
@@ -451,6 +489,9 @@
 	quest.0AF6F16EA4174410.title: "Space Utility Gear"
 	quest.0AF6F16EA4174410.quest_desc: [
 		"Oxygen cans, fuel loaders, rocket sensors, and gravity normalizers smooth out daily spaceport work. Environmental enchantment books still cost planet-tier materials and never replace oxygen or fuel systems."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Fill oxygen cans and space suits in the Oxygen Loader GUI; the suit only seals with all four pieces worn.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"In a Jet Suit, press \"},{\"keybind\":\"key.ad_astra.toggle_suit_flight\"},{\"text\":\" to toggle powered flight.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Space Utility Gear\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Space Utility Gear\"}}"
 	]
@@ -485,12 +526,12 @@
 	quest.31E14278C99F13AB.quest_subtitle: "Suggested stage: Space Age"
 	quest.56FE663A93DD6F1A.title: "Moonfall"
 	quest.56FE663A93DD6F1A.quest_desc: [
-		"Plant the first flag on the Moon — the first stop beyond orbit, and a proving ground for oxygen and return reserves."
+		"Plant the first flag on the Moon — the first stop beyond orbit, and a proving ground for oxygen and return reserves. Lunar desh feeds the tier-2 rocket, so mark the veins while you are there."
 	]
 	quest.56FE663A93DD6F1A.quest_subtitle: "Suggested stage: Space Age"
 	quest.3FDFA2A65CA97C91.title: "Mars Expedition"
 	quest.3FDFA2A65CA97C91.quest_desc: [
-		"Reach Mars: desh ore and a second permanent colony site. Pack redundant oxygen, fuel, and a return plan before leaving."
+		"Reach Mars: ostrum veins and a second permanent colony site. The trip needs a tier-2 rocket built from lunar desh — pack redundant oxygen, fuel, and a return plan before leaving."
 	]
 	quest.3FDFA2A65CA97C91.quest_subtitle: "Suggested stage: Space Age"
 	quest.04089907F6DAA567.title: "Life Support"
@@ -666,6 +707,9 @@
 	quest.6E99CCD7093D32CF.title: "Ranch Online"
 	quest.6E99CCD7093D32CF.quest_desc: [
 		"Breeder and farmer blocks come online: food stops depending on fields alone, and leather, feathers, and fertilizer come along."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.easy_villagers.pick_up\"},{\"text\":\" while aiming at a villager to pick it up (or hold \"},{\"keybind\":\"key.sneak\"},{\"text\":\" and press \"},{\"keybind\":\"key.use\"},{\"text\":\" on it).\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on the ground with the villager item to set them down; press \"},{\"keybind\":\"key.use\"},{\"text\":\" on a Farmer, Breeder or similar block to slot them in.\"}]}"
 	]
 	quest.6E99CCD7093D32CF.quest_subtitle: "Suggested stage: Mechanical Age"
 	quest.76B18E56A2AF597A.title: "Seasonal Stockpile"
@@ -676,6 +720,8 @@
 	quest.5C08D931A3082653.title: "Bulk Pantry"
 	quest.5C08D931A3082653.quest_desc: [
 		"Bulk food and ingredients go to drawers; the kitchen keeps only hot stock. Drawers for bulk, barrels for mixed goods."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.use\"},{\"text\":\" on a drawer to insert the held stack (\"},{\"keybind\":\"key.sneak\"},{\"text\":\" + \"},{\"keybind\":\"key.use\"},{\"text\":\" inserts every matching stack); \"},{\"keybind\":\"key.attack\"},{\"text\":\" takes one item, \"},{\"keybind\":\"key.sneak\"},{\"text\":\" + \"},{\"keybind\":\"key.attack\"},{\"text\":\" takes a full stack.\"}]}"
 		""
 		"{\"text\":\"» See the manual: Storage Tiers\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Storage Tiers\"}}"
 	]
@@ -749,6 +795,9 @@
 	quest.6EB064B477848BC2.title: "Build at Industrial Scale"
 	quest.6EB064B477848BC2.quest_desc: [
 		"Make a basic building gadget and stock power and materials. Test placement and undo in a small area before building factories and roads."
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Hold a gadget and press \"},{\"keybind\":\"key.buildinggadgets2.settings_menu\"},{\"text\":\" for the settings menu: mode, material and range all live there.\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.buildinggadgets2.undo\"},{\"text\":\" undoes the last operation; \"},{\"keybind\":\"key.buildinggadgets2.anchor\"},{\"text\":\" records an anchor; \"},{\"keybind\":\"key.buildinggadgets2.range\"},{\"text\":\" adjusts the working range.\"}]}"
 	]
 	quest.6EB064B477848BC2.quest_subtitle: "Suggested stage: Electrical Age"
 	quest.5CD5CEBA5468B347.title: "Build a Maintainable Industrial District"
@@ -934,7 +983,7 @@
 	quest.6D57B198ED6623C4.quest_subtitle: "Hordes and Defense"
 	quest.2E55B63F9D911701.title: "Auto-Turrets: Loading & Resupply"
 	quest.2E55B63F9D911701.quest_desc: [
-		"A TACZ turret takes a TaCZ gun by click or dropped item. It draws ammunition from the chest beneath or beside it — the last mile: FastPipes and AE2 keep the box filled, the turret draws from it. Its lamp shows reloading / empty / ready states."
+		"A TACZ turret takes a TaCZ gun by click or dropped item. It draws ammunition from the container directly beneath it — the last mile: FastPipes and AE2 keep the box filled, the turret draws from it. Its lamp shows reloading / empty / ready states."
 	]
 	quest.2E55B63F9D911701.quest_subtitle: "Hordes and Defense"
 	quest.60BD0CCFC3034959.title: "EOS Dawn Goddess Lab Weapons"

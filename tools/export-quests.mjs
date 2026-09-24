@@ -17,6 +17,10 @@ const content = design;
 const sm = design.sm;
 const locales = { zh_cn: j('localization/zh_cn.json'), en_us: j('localization/en_us.json') };
 const stages = new Map(design.stages.map((s) => [s.id, s]));
+// Registered KeyMapping ids this pack ships (see docs/keybinds.md). Hints may
+// only reference these; the rendered keybind component resolves the player's
+// live binding client-side, so rebinds update quest text automatically.
+const keybindIds = new Set(j('design/keybinds.json').ids);
 
 const outDir = path.join(root, 'pack', 'config', 'ftbquests', 'quests');
 if (existsSync(outDir)) rmSync(outDir, { recursive: true, force: true });
@@ -70,9 +74,35 @@ const file = (obj) => snbt(obj) + '\n';
 
 // ---------- quest text ----------
 const fmt = (loc, keyVal, arg) => keyVal.replace('%1$s', arg);
+// A tutorial hint renders as one JSON text component line: a gray bullet plus
+// the localized sentence with %N$s slots replaced by native keybind components.
+// The component resolves the player's current binding at render time — Default
+// Options only seeds the first binding; quest text never hardcodes a key name.
+function hintLine(dict, h, qid) {
+  const text = dict[h.text_key];
+  if (!text) throw new Error(`${qid}: hint ${h.text_key} has no translation`);
+  const keys = h.keys ?? [];
+  const extra = [];
+  for (const part of text.split(/(%\d+\$s)/)) {
+    const m = part.match(/^%(\d+)\$s$/);
+    if (!m) {
+      if (part) extra.push({ text: part });
+      continue;
+    }
+    const kb = keys[Number(m[1]) - 1];
+    if (!kb) throw new Error(`${qid}: hint ${h.text_key} uses %${m[1]}$s but declares ${keys.length} key(s)`);
+    if (!keybindIds.has(kb)) throw new Error(`${qid}: hint ${h.text_key} uses unregistered keybind ${kb}`);
+    extra.push({ keybind: kb });
+  }
+  return JSON.stringify({ text: '· ', color: 'gray', italic: false, extra });
+}
 function descLines(loc, q) {
   const dict = locales[loc];
   const lines = [dict[q.description_key] ?? q.id];
+  if (q.tutorial_hints?.length) {
+    lines.push('');
+    for (const h of q.tutorial_hints) lines.push(hintLine(dict, h, q.id));
+  }
   if (q.manual_refs?.length) lines.push('');
   for (const ref of q.manual_refs ?? []) {
     const title = dict[`modpack.tutorial.${ref}.title`];

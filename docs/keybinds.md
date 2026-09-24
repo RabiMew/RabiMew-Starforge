@@ -114,6 +114,18 @@ GUI 内的编辑/浏览键（FTB Quests 编辑器、CraftingTweaks 合成格、J
 | DynamicFPS `toggle_*`、ModernFix `config`、EntityCulling `toggle` | （未绑） | 调试/低频 |
 | Xaero `toggle_*`、GUI 缩放键 | （未绑） | 界面内设置可改 |
 
+## 任务书动态按键提示（tutorial_hints）
+
+任务书内给"不知道怎么按"的任务加了**动态按键提示**：导出器把 `design/content.json` 中任务的 `tutorial_hints[].keys` 渲染为 MC 原生 **`{"keybind":"<KeyMapping id>"}`** 文本组件（写入 `quest_desc` 语言行）。组件由客户端在渲染时解析——**永远显示玩家当前绑定**，改键即生效；上表的字面键名（R/I/J 等）只是 Default Options 下发的初值，任务文案中**严禁出现字面按键**。
+
+数据格式与规则见 `docs/questbook.md` §2.1。维护要点：
+
+- **合法 id 表 = `design/keybinds.json`**：本包已注册 KeyMapping id 注册表，`tutorial_hints` 只能引用其中条目。校验器（`validate-design.mjs`）与导出器（`export-quests.mjs`）都会对未注册 id 报错。
+- **id 是 KeyMapping 注册名，不是 Default Options 行名**：`keybindings.txt` 里 `key_key.tacz.reload.desc` 的 `key_` 前缀是该文件的语法前缀，真实注册名是 `key.tacz.reload.desc`（options.txt 中 `key_key.X` 行去掉 `key_` 前缀即注册名）。
+- 注意部分模组的注册名与语言键不同形：TaCZ 的按键注册名带 `.desc` 后缀（`key.tacz.reload.desc`），而 lang 键没有该后缀——以 `run/client/options.txt` 中的注册名为准。
+- **注册表更新流程**：新装/升级 Mod 后，以 `run/client/options.txt` 的 `key_*:` 行重新生成 `design/keybinds.json`（外加已注册但无默认绑定的条目，如 `key.taczaddon.switch_gun.desc`），再跑 `node tools/validate-design.mjs`。
+- 新增 hint 时先在游戏内 Controls/Controlling 确认该功能确有 KeyMapping；没有 KeyMapping 的交互（如"炮塔下方容器自动供弹"）写成纯文本提示、`keys: []`。
+
 ## 新装/更新 Mod 时的键位检查规则
 
 1. **先看触发上下文，再看按键名。** NeoForge 的 `KeyConflictContext`（UNIVERSAL / IN_GAME / GUI）与模组内部的"手持物/瞄准/乘车"条件决定真实冲突；仅字面上同键不等于冲突。

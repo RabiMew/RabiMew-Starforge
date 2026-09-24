@@ -246,6 +246,7 @@ function validate() {
 
   // ---------- questbook: tasks, rewards, layout, manual refs ----------
   const TASK_TYPES = new Set(['item', 'checkmark', 'advancement', 'dimension', 'kill', 'biome', 'structure', 'stage']);
+  const keybindIds = new Set(parse('design/keybinds.json').ids);
   const advTargets = new Set(design.advancements.map((a) => `starforge:${a.id}`));
   const chapterOf = (q) => q.chapter ?? q.route;
   const generatedIds = new Set([hexId('file', 'starforge')]);
@@ -307,6 +308,34 @@ function validate() {
     for (const ref of quest.manual_refs ?? []) {
       assert(tutorialIds.has(ref), `${quest.id}: unknown manual ref ${ref}`);
       assert(has(locales.zh_cn, `modpack.tutorial.${ref}.title`), `${quest.id}: manual ref ${ref} has no title`);
+    }
+    // tutorial_hints: short in-quest operation notes. keys[] must be real
+    // KeyMapping ids from design/keybinds.json, and every declared key must be
+    // consumed by exactly one %N$s placeholder in the localized text.
+    if (quest.tutorial_hints !== undefined) {
+      assert(Array.isArray(quest.tutorial_hints), `${quest.id}: tutorial_hints must be an array`);
+      assert(quest.tutorial_hints.length >= 1 && quest.tutorial_hints.length <= 5,
+        `${quest.id}: tutorial_hints must hold 1-5 entries`);
+      for (const h of quest.tutorial_hints) {
+        assert(h && typeof h === 'object' && !Array.isArray(h), `${quest.id}: bad hint entry`);
+        assert(typeof h.text_key === 'string' && keyPattern.test(h.text_key),
+          `${quest.id}: bad hint text_key`);
+        assert(has(locales.zh_cn, h.text_key), `${quest.id}: hint ${h.text_key} missing zh_cn`);
+        assert(Array.isArray(h.keys), `${quest.id}: hint ${h.text_key} keys must be an array`);
+        for (const k of h.keys) {
+          assert(typeof k === 'string' && keybindIds.has(k),
+            `${quest.id}: hint ${h.text_key} unregistered keybind ${k}`);
+        }
+        const used = new Set([...(locales.zh_cn[h.text_key].matchAll(/%(\d+)\$s/g))]
+          .map((m) => Number(m[1])));
+        for (let i = 1; i <= h.keys.length; i++) {
+          assert(used.has(i), `${quest.id}: hint ${h.text_key} declares unused key ${h.keys[i - 1]}`);
+        }
+        for (const n of used) {
+          assert(n >= 1 && n <= h.keys.length,
+            `${quest.id}: hint ${h.text_key} placeholder %${n}$s exceeds ${h.keys.length} key(s)`);
+        }
+      }
     }
     for (const ref of quest.deps ?? []) {
       assert(questIds.has(ref), `${quest.id}: unknown dep ${ref}`);

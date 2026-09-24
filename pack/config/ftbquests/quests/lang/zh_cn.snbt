@@ -43,6 +43,8 @@
 	quest.0E79A6A14CA31F91.quest_desc: [
 		"这本任务书是说明书和里程碑地图：阶段晋级靠制造凭证部件，不依赖提交任务。完成后可随时回到任意章节。"
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按 \"},{\"keybind\":\"key.ftbquests.quests\"},{\"text\":\" 可随时翻开或合上任务书。\"}]}"
+		""
 		"{\"text\":\"» 详见手册：团队进度与个人专精\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"团队进度与个人专精\"}}"
 	]
 	quest.0E79A6A14CA31F91.quest_subtitle: "推荐阶段：生存时代"
@@ -91,6 +93,8 @@
 	quest.13C6FDBBC0A6A1F8.title: "打开阶段图谱"
 	quest.13C6FDBBC0A6A1F8.quest_desc: [
 		"背包界面左侧的按钮会打开 ProgressiveStages 图谱：时代主线、能力分支与每个节点的解锁条件都在那里。任务书只负责路线与说明。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按 \"},{\"keybind\":\"key.progressivestages.open_tree\"},{\"text\":\" 打开 ProgressiveStages 阶段图谱。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：团队进度与个人专精\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"306787D7CF3A4AAE\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"团队进度与个人专精\"}}"
 	]
@@ -179,6 +183,9 @@
 	quest.4F47C604F5D375CC.quest_desc: [
 		"先以独立电源驱动压印机制作处理器，再让数字网络通过存储总线接管现有实体仓库。模板有地球制造途径，寻找陨石只是可选捷径；抽屉与库房仍然保留价值。"
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"鼠标悬停在物品上按 \"},{\"keybind\":\"key.guideme.guide\"},{\"text\":\"，直接翻到它的 AE2 指南页。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"存储总线贴在抽屉或箱子侧面，实体仓储立即并入网络。\"}]}"
+		""
 		"{\"text\":\"» 详见手册：AE2 冷启动\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"79F690776849AD03\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"AE2 冷启动\"}}"
 	]
 	quest.4F47C604F5D375CC.quest_subtitle: "推荐阶段：信息时代"
@@ -202,6 +209,10 @@
 	quest.1E674A8A5C906BBF.title: "建立铁路货运网"
 	quest.1E674A8A5C906BBF.quest_desc: [
 		"用货运列车把矿区与工业基地连接起来：货运车厢与罐车承担大宗运输，装卸机负责两端交接。基地内部的短距离运输仍交给管道与传送带。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.use\"},{\"text\":\" 机车打开燃料与锁定界面；蒸汽机车需要补水加煤。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"乘上列车中的矿车即可驾驶：\"},{\"keybind\":\"key.railcraft.loco.mode\"},{\"text\":\" 切换模式，\"},{\"keybind\":\"key.railcraft.loco.faster\"},{\"text\":\"/\"},{\"keybind\":\"key.railcraft.loco.slower\"},{\"text\":\" 调速，\"},{\"keybind\":\"key.railcraft.loco.reverse\"},{\"text\":\" 换向，\"},{\"keybind\":\"key.railcraft.loco.whistle\"},{\"text\":\" 鸣笛。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"手持撬棍按住 \"},{\"keybind\":\"key.sneak\"},{\"text\":\" \"},{\"keybind\":\"key.use\"},{\"text\":\" 先后点两节车厢即可连挂成列。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：铁路物流\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4642427A4336C17F\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"铁路物流\"}}"
 	]
@@ -244,6 +255,8 @@
 	quest.7D9816358D597DD3.quest_desc: [
 		"满墙抽屉按压缩等级分层：普通抽屉存常规散料，压缩抽屉把锭/块/粒自动归并。"
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.use\"},{\"text\":\" 抽屉存入整组手持物品（\"},{\"keybind\":\"key.sneak\"},{\"text\":\"+\"},{\"keybind\":\"key.use\"},{\"text\":\" 存入背包内同类全部）；\"},{\"keybind\":\"key.attack\"},{\"text\":\" 取出一件，\"},{\"keybind\":\"key.sneak\"},{\"text\":\"+\"},{\"keybind\":\"key.attack\"},{\"text\":\" 取出一整组。\"}]}"
+		""
 		"{\"text\":\"» 详见手册：仓储分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储分层\"}}"
 	]
 	quest.7D9816358D597DD3.quest_subtitle: "推荐阶段：机械时代"
@@ -257,6 +270,9 @@
 	quest.284763ACA7D3BC91.title: "远征背包"
 	quest.284763ACA7D3BC91.quest_desc: [
 		"Sophisticated Backpacks 是野战物流核心：拾取升级自动入包，磁铁、熔炉、堆叠升级按任务配置。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按 \"},{\"keybind\":\"key.sophisticatedbackpacks.open_backpack\"},{\"text\":\" 打开身上穿着的背包。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按 \"},{\"keybind\":\"key.sophisticatedbackpacks.inventory_interaction\"},{\"text\":\" 手动触发背包内的交互升级（喂食等）；各升级在背包界面中开关。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：远征背包配置\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0D8C96A7B6F83F18\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"远征背包配置\"}}"
 	]
@@ -319,6 +335,11 @@
 	quest.6A40076FB5A60443.quest_desc: [
 		"枪械工作台与弹药台落地——守卫与玩家的武器从此走工业化产线，不再靠缴获。"
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"持枪时按 \"},{\"keybind\":\"key.tacz.reload.desc\"},{\"text\":\" 换弹——弹药必须与枪型匹配。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按 \"},{\"keybind\":\"key.tacz.refit.desc\"},{\"text\":\" 打开持枪的配件改装界面，安装枪匠台制作的配件。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.tacz.fire_select.desc\"},{\"text\":\" 切换开火模式，\"},{\"keybind\":\"key.tacz.inspect.desc\"},{\"text\":\" 检视武器。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"持枪时按 \"},{\"keybind\":\"key.tacz.interact.desc\"},{\"text\":\" 与方块互动（开门、开箱等），避免误开火。\"}]}"
+		""
 		"{\"text\":\"» 详见手册：殖民军械\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"15C288AF8333C644\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民军械\"}}"
 		"{\"text\":\"» 详见手册：TaCZ Addon：枪匠助手\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"009B2C59FE3D645E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"TaCZ Addon：枪匠助手\"}}"
 	]
@@ -327,6 +348,10 @@
 	quest.1AEA18147C0DBE26.quest_desc: [
 		"给村庄警卫配发常规枪械（步枪/冲锋枪/霰弹枪），他们是最灵活的机动步兵。高爆与特殊武器留在玩家手里——别让守卫把基地一起炸了。"
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"征召警卫：主手持剑或弩，按住 \"},{\"keybind\":\"key.sneak\"},{\"text\":\" 对无业或傻子成年村民 \"},{\"keybind\":\"key.use\"},{\"text\":\"。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"对警卫直接 \"},{\"keybind\":\"key.use\"},{\"text\":\" 打开装备界面，武器槽放入 TaCZ 枪械即配发；\"},{\"keybind\":\"key.sneak\"},{\"text\":\"+\"},{\"keybind\":\"key.use\"},{\"text\":\" 是把手中装备直接交给它。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"配枪警卫弹尽时会自动走向 20 格内装有适配弹药的原版容器（箱子/木桶等）取弹——弹药箱放在哨位附近即可。\"}]}"
+		""
 		"{\"text\":\"» 详见手册：警卫武器选择\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"725FD622502D6892\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"警卫武器选择\"}}"
 		"{\"text\":\"» 详见手册：殖民警卫\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4C0A7C642219B0D2\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"殖民警卫\"}}"
 	]
@@ -334,6 +359,9 @@
 	quest.2F8112B376410105.title: "工业哨戒炮"
 	quest.2F8112B376410105.quest_desc: [
 		"部署 IE 哨戒炮（枪械炮塔/化学炮塔）：工业时代的中前期固定防御。检查弹药、射界与友军名单，别把所有弹药储备集中在一个炮位。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.use\"},{\"text\":\" 哨戒炮打开界面：装填弹药并设置目标名单与索敌选项。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"哨戒炮默认需要红石信号才会激活，按住 \"},{\"keybind\":\"key.sneak\"},{\"text\":\" 用工程师螺丝刀 \"},{\"keybind\":\"key.use\"},{\"text\":\" 可反转；目标名单默认是黑名单。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：三层防御\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"482CA592DE6BAB84\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"三层防御\"}}"
 	]
@@ -347,7 +375,10 @@
 	quest.605556FAD18F13D3.quest_subtitle: "推荐阶段：电气时代"
 	quest.0578B3D427AD63A7.title: "前线弹药箱"
 	quest.0578B3D427AD63A7.quest_desc: [
-		"炮塔只吃“最后一公里”：把弹药箱放在炮塔下方或贴邻，再由 AE2 / FastPipes 持续填满它。炮塔不会从管道里直接接弹。"
+		"炮塔只吃“最后一公里”：把弹药箱垫在炮塔正下方一格，再由 AE2 / FastPipes 持续填满它。炮塔不会从管道里直接接弹。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"炮塔从正下方一格的容器自动取弹——弹药箱垫在塔底，再由管道或 AE2 持续填满它。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"配枪警卫缺弹时自取 20 格内原版容器中的适配弹药，弹药箱放在哨位旁即可。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
 	]
@@ -355,6 +386,10 @@
 	quest.13E59D0117879820.title: "自动炮塔"
 	quest.13E59D0117879820.quest_desc: [
 		"TACZ 自动炮塔装入任意 TaCZ 枪械即获其火力。部署后装枪、确认索敌模式与友军识别，再接上弹药补给箱。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.use\"},{\"text\":\" 炮塔打开界面：装入 TaCZ 枪械与弹药，调整索敌模式与友军名单。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按住 \"},{\"keybind\":\"key.sneak\"},{\"text\":\" \"},{\"keybind\":\"key.use\"},{\"text\":\" 炮塔整体回收，枪械与弹药一并返还。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"炮塔正下方的容器自动供弹；炮塔受损时手持铁栏杆 \"},{\"keybind\":\"key.use\"},{\"text\":\" 修理。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
 	]
@@ -429,6 +464,9 @@
 	quest.7FA3F49803108CD1.quest_desc: [
 		"带上启动电源、氧气设备和基础建材，建立可以安全返回的月球前哨。外星采矿提高效率，但不是地球科技的必经之路。"
 		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按住 \"},{\"keybind\":\"key.sneak\"},{\"text\":\" \"},{\"keybind\":\"key.use\"},{\"text\":\" 火箭打开燃料与货舱界面，发射前先注满燃料。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"对火箭 \"},{\"keybind\":\"key.use\"},{\"text\":\" 登船入座，再按 \"},{\"keybind\":\"key.jump\"},{\"text\":\" 点火发射。\"}]}"
+		""
 		"{\"text\":\"» 详见手册：航天便利装备\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"航天便利装备\"}}"
 		"{\"text\":\"» 详见手册：安全空间站\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"安全空间站\"}}"
 	]
@@ -451,6 +489,9 @@
 	quest.0AF6F16EA4174410.title: "航天便利装备"
 	quest.0AF6F16EA4174410.quest_desc: [
 		"氧气罐、燃料装载机、火箭传感器与重力调节器改善航天基地的日常运转。环境附魔手册仍需对应星球的材料，不替代氧气与燃料系统。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"氧气罐与宇航服在供氧装载机界面充氧；宇航服四件穿齐才算密封。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"穿喷气宇航服时按 \"},{\"keybind\":\"key.ad_astra.toggle_suit_flight\"},{\"text\":\" 开关推进飞行。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：航天便利装备\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"344ED9F136392B5D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"航天便利装备\"}}"
 	]
@@ -485,12 +526,12 @@
 	quest.31E14278C99F13AB.quest_subtitle: "推荐阶段：太空时代"
 	quest.56FE663A93DD6F1A.title: "月面落点"
 	quest.56FE663A93DD6F1A.quest_desc: [
-		"在月球插下第一面旗——轨道之外的第一站，也是检验氧气与返程储备的试金石。"
+		"在月球插下第一面旗——轨道之外的第一站，也是检验氧气与返程储备的试金石。月球戴斯矿是二阶火箭的箭材，顺路把矿脉标记下来。"
 	]
 	quest.56FE663A93DD6F1A.quest_subtitle: "推荐阶段：太空时代"
 	quest.3FDFA2A65CA97C91.title: "火星远征"
 	quest.3FDFA2A65CA97C91.quest_desc: [
-		"抵达火星：戴斯矿脉与第二个永久殖民点。去之前把氧气、燃料与返航方案各备一份冗余。"
+		"抵达火星：紫金矿脉与第二个永久殖民点。航程需要二阶火箭（箭材是月球戴斯）；去之前把氧气、燃料与返航方案各备一份冗余。"
 	]
 	quest.3FDFA2A65CA97C91.quest_subtitle: "推荐阶段：太空时代"
 	quest.04089907F6DAA567.title: "生命维持"
@@ -599,7 +640,7 @@
 	quest.6032F578C5F37DB7.quest_subtitle: "推荐阶段：太空时代"
 	quest.0CB50C41FBCD2682.title: "边疆遗物"
 	quest.0CB50C41FBCD2682.quest_desc: [
-		"冰巨星与小行星带是遗物猎人的终点：稀有遗物只在最远处出现。无需集齐图鉴，带回任意一件即可。"
+		"霜原星与小行星带是遗物猎人的终点：稀有遗物只在最远处出现。无需集齐图鉴，带回任意一件即可。"
 		""
 		"{\"text\":\"» 详见手册：Artifacts 与 Curios 栏位\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"215A050EB8A4CB9C\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Artifacts 与 Curios 栏位\"}}"
 		"{\"text\":\"» 详见手册：外星结构与考古\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"706640814E58980D\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"外星结构与考古\"}}"
@@ -666,6 +707,9 @@
 	quest.6E99CCD7093D32CF.title: "牧场启动"
 	quest.6E99CCD7093D32CF.quest_desc: [
 		"养殖棚与农夫装置上线：食物来源不再只靠田，皮革、羽毛、肥料一并进账。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"准星对准村民按 \"},{\"keybind\":\"key.easy_villagers.pick_up\"},{\"text\":\" 即可抱起（也可以按住 \"},{\"keybind\":\"key.sneak\"},{\"text\":\" 对村民 \"},{\"keybind\":\"key.use\"},{\"text\":\"）。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"手持村民物品 \"},{\"keybind\":\"key.use\"},{\"text\":\" 地面放下；对农夫、繁殖器等装置 \"},{\"keybind\":\"key.use\"},{\"text\":\" 则装入其中。\"}]}"
 	]
 	quest.6E99CCD7093D32CF.quest_subtitle: "推荐阶段：机械时代"
 	quest.76B18E56A2AF597A.title: "季节储备"
@@ -676,6 +720,8 @@
 	quest.5C08D931A3082653.title: "集中储粮"
 	quest.5C08D931A3082653.quest_desc: [
 		"大宗食物与原料进抽屉，厨房只留高频取用量。抽屉存散料，仓库放杂货。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.use\"},{\"text\":\" 抽屉存入整组手持物品（\"},{\"keybind\":\"key.sneak\"},{\"text\":\"+\"},{\"keybind\":\"key.use\"},{\"text\":\" 存入背包内同类全部）；\"},{\"keybind\":\"key.attack\"},{\"text\":\" 取出一件，\"},{\"keybind\":\"key.sneak\"},{\"text\":\"+\"},{\"keybind\":\"key.attack\"},{\"text\":\" 取出一整组。\"}]}"
 		""
 		"{\"text\":\"» 详见手册：仓储分层\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FBDC2FE9BA6964E\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储分层\"}}"
 	]
@@ -749,6 +795,9 @@
 	quest.6EB064B477848BC2.title: "用工业工具扩大施工"
 	quest.6EB064B477848BC2.quest_desc: [
 		"制作基础建造工具，准备电池与建筑材料。先在小范围验证放置与撤销，再用于厂房和道路。"
+		""
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"手持小工具按 \"},{\"keybind\":\"key.buildinggadgets2.settings_menu\"},{\"text\":\" 打开设置菜单：模式、材质与作用范围都在这里调。\"}]}"
+		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"keybind\":\"key.buildinggadgets2.undo\"},{\"text\":\" 撤销上一步，\"},{\"keybind\":\"key.buildinggadgets2.anchor\"},{\"text\":\" 记录锚点，\"},{\"keybind\":\"key.buildinggadgets2.range\"},{\"text\":\" 调整作用范围。\"}]}"
 	]
 	quest.6EB064B477848BC2.quest_subtitle: "推荐阶段：电气时代"
 	quest.5CD5CEBA5468B347.title: "建设可维护的工业区"
@@ -934,7 +983,7 @@
 	quest.6D57B198ED6623C4.quest_subtitle: "怪潮与防御"
 	quest.2E55B63F9D911701.title: "自动炮塔：装枪与补给"
 	quest.2E55B63F9D911701.quest_desc: [
-		"TACZ 炮塔对玩家点击或掉落物装入一把 TaCZ 枪。弹药从它下方/相邻的箱子取用——这是“最后一公里物流”：FastPipes 与 AE2 负责把弹药箱填满，炮塔自己取弹。红黄绿状态灯分别提示换弹/缺弹/就绪。"
+		"TACZ 炮塔对玩家点击或掉落物装入一把 TaCZ 枪。弹药从它正下方一格的箱子取用——这是“最后一公里物流”：FastPipes 与 AE2 负责把弹药箱填满，炮塔自己取弹。红黄绿状态灯分别提示换弹/缺弹/就绪。"
 	]
 	quest.2E55B63F9D911701.quest_subtitle: "怪潮与防御"
 	quest.60BD0CCFC3034959.title: "晨曦女神实验室武器定位"

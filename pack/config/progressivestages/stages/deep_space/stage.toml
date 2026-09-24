@@ -4,7 +4,7 @@ version = 4
 [stage]
 id = "modpack:deep_space"
 display_name = "深空探索 / Deep Space"
-description = "团队足迹抵达冰巨星与小行星带。 / The team has reached Glacio and the belt."
+description = "团队足迹抵达霜原星与小行星带。 / The team has reached Glacio and the belt."
 icon = "ad_astra:calorite_ingot"
 dependencies = ["modpack:highrisk_survey"]
 dependency_mode = "all"

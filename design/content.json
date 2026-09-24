@@ -165,6 +165,14 @@
    "chapter": "onboarding",
    "title_key": "modpack.quest.welcome.title",
    "description_key": "modpack.quest.welcome.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.questbook_open",
+      "keys": [
+       "key.ftbquests.quests"
+      ]
+     }
+   ],
    "suggested_stage": "survival_age",
    "depends_on": [],
    "grants_stage": false,
@@ -855,6 +863,18 @@
    "route": "automation",
    "title_key": "modpack.quest.ae2_bootstrap.title",
    "description_key": "modpack.quest.ae2_bootstrap.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.guideme",
+      "keys": [
+       "key.guideme.guide"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.ae2_storage_bus",
+      "keys": []
+     }
+   ],
    "suggested_stage": "information_age",
    "depends_on": [],
    "grants_stage": false,
@@ -981,6 +1001,26 @@
    "route": "automation",
    "title_key": "modpack.quest.rail_freight.title",
    "description_key": "modpack.quest.rail_freight.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.rc_gui",
+      "keys": [
+       "key.use"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.rc_drive",
+      "keys": [
+       "key.railcraft.loco.mode", "key.railcraft.loco.faster", "key.railcraft.loco.slower", "key.railcraft.loco.reverse", "key.railcraft.loco.whistle"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.rc_crowbar",
+      "keys": [
+       "key.sneak", "key.use"
+      ]
+     }
+   ],
    "suggested_stage": "mechanical_age",
    "depends_on": [],
    "grants_stage": false,
@@ -1248,6 +1288,32 @@
    "route": "military",
    "title_key": "modpack.quest.gunsmith.title",
    "description_key": "modpack.quest.gunsmith.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.tacz_reload",
+      "keys": [
+       "key.tacz.reload.desc"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.tacz_refit",
+      "keys": [
+       "key.tacz.refit.desc"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.tacz_mode",
+      "keys": [
+       "key.tacz.fire_select.desc", "key.tacz.inspect.desc"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.tacz_interact",
+      "keys": [
+       "key.tacz.interact.desc"
+      ]
+     }
+   ],
    "depends_on": [],
    "grants_stage": false,
    "consumes_items": false,
@@ -1298,6 +1364,25 @@
    "route": "military",
    "title_key": "modpack.quest.armed_guards.title",
    "description_key": "modpack.quest.armed_guards.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.gv_convert",
+      "keys": [
+       "key.sneak", "key.use"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.gv_gui",
+      "keys": [
+       "key.use",
+       "key.sneak"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.gv_ammo",
+      "keys": []
+     }
+   ],
    "suggested_stage": "electric_age",
    "depends_on": [],
    "grants_stage": false,
@@ -1333,6 +1418,21 @@
    "route": "military",
    "title_key": "modpack.quest.ie_turret.title",
    "description_key": "modpack.quest.ie_turret.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.ie_turret_load",
+      "keys": [
+       "key.use"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.ie_turret_arc",
+      "keys": [
+       "key.sneak",
+       "key.use"
+      ]
+     }
+   ],
    "suggested_stage": "electric_age",
    "depends_on": [],
    "grants_stage": false,
@@ -1405,6 +1505,16 @@
    "route": "military",
    "title_key": "modpack.quest.ammo_logistics.title",
    "description_key": "modpack.quest.ammo_logistics.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.ammo_supply_below",
+      "keys": []
+     },
+     {
+      "text_key": "modpack.hint.guard_resupply",
+      "keys": []
+     }
+   ],
    "suggested_stage": "information_age",
    "depends_on": [],
    "grants_stage": false,
@@ -1433,6 +1543,26 @@
    "route": "military",
    "title_key": "modpack.quest.tacz_turret.title",
    "description_key": "modpack.quest.tacz_turret.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.turret_gui",
+      "keys": [
+       "key.use"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.turret_pickup",
+      "keys": [
+       "key.sneak", "key.use"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.turret_supply",
+      "keys": [
+       "key.use"
+      ]
+     }
+   ],
    "suggested_stage": "heavy_industry_age",
    "depends_on": [],
    "grants_stage": false,
@@ -1639,6 +1769,20 @@
    "route": "space",
    "title_key": "modpack.quest.first_launch.title",
    "description_key": "modpack.quest.first_launch.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.aa_rocket_gui",
+      "keys": [
+       "key.sneak", "key.use"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.aa_launch",
+      "keys": [
+       "key.use", "key.jump"
+      ]
+     }
+   ],
    "suggested_stage": "space_age",
    "depends_on": [],
    "grants_stage": false,
@@ -1746,6 +1890,18 @@
    "route": "space",
    "title_key": "modpack.quest.space_equipment.title",
    "description_key": "modpack.quest.space_equipment.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.aa_oxygen",
+      "keys": []
+     },
+     {
+      "text_key": "modpack.hint.aa_jetsuit",
+      "keys": [
+       "key.ad_astra.toggle_suit_flight"
+      ]
+     }
+   ],
    "suggested_stage": "space_age",
    "depends_on": [],
    "grants_stage": false,
@@ -2515,6 +2671,20 @@
    "route": "agriculture",
    "title_key": "modpack.quest.ranch.title",
    "description_key": "modpack.quest.ranch.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.ev_pickup",
+      "keys": [
+       "key.easy_villagers.pick_up", "key.sneak", "key.use"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.ev_place",
+      "keys": [
+       "key.use"
+      ]
+     }
+   ],
    "depends_on": [],
    "grants_stage": false,
    "consumes_items": false,
@@ -2608,6 +2778,20 @@
    "route": "building",
    "title_key": "modpack.quest.building_gadget.title",
    "description_key": "modpack.quest.building_gadget.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.bg_menu",
+      "keys": [
+       "key.buildinggadgets2.settings_menu"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.bg_actions",
+      "keys": [
+       "key.buildinggadgets2.undo", "key.buildinggadgets2.anchor", "key.buildinggadgets2.range"
+      ]
+     }
+   ],
    "suggested_stage": "electric_age",
    "depends_on": [],
    "grants_stage": false,
@@ -3004,6 +3188,14 @@
    "id": "star_map",
    "title_key": "modpack.quest.star_map.title",
    "description_key": "modpack.quest.star_map.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.progression_map",
+      "keys": [
+       "key.progressivestages.open_tree"
+      ]
+     }
+   ],
    "suggested_stage": "survival_age",
    "icon": "minecraft:filled_map",
    "task": {
@@ -3362,6 +3554,14 @@
    "route": "agriculture",
    "title_key": "modpack.quest.bulk_pantry.title",
    "description_key": "modpack.quest.bulk_pantry.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.drawer",
+      "keys": [
+       "key.use", "key.attack", "key.sneak"
+      ]
+     }
+   ],
    "suggested_stage": "mechanical_age",
    "optional": true,
    "icon": "sd_drawer2",
@@ -3570,6 +3770,14 @@
    "route": "automation",
    "title_key": "modpack.quest.drawer_wall.title",
    "description_key": "modpack.quest.drawer_wall.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.drawer",
+      "keys": [
+       "key.use", "key.attack", "key.sneak"
+      ]
+     }
+   ],
    "suggested_stage": "mechanical_age",
    "optional": true,
    "icon": "sd_compact3",
@@ -3646,6 +3854,20 @@
    "route": "automation",
    "title_key": "modpack.quest.field_backpack.title",
    "description_key": "modpack.quest.field_backpack.description",
+   "tutorial_hints": [
+     {
+      "text_key": "modpack.hint.sb_open",
+      "keys": [
+       "key.sophisticatedbackpacks.open_backpack"
+      ]
+     },
+     {
+      "text_key": "modpack.hint.sb_upgrade",
+      "keys": [
+       "key.sophisticatedbackpacks.inventory_interaction"
+      ]
+     }
+   ],
    "suggested_stage": "mechanical_age",
    "optional": true,
    "icon": "sb_backpack",
