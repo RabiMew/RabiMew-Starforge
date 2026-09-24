@@ -328,3 +328,21 @@ Incremental change: removed MDM, added 6 mods. Lockfile, `mod-ids.json`, `jar-de
 - **Stage placement**: `electric_age` locks `ef_transformer`/`rf_computer`/`rf_generator`/`tmted_knife`; `heavy_industry_age` locks `ic_cookpot`/`ic_fermenter`/`ic_grill`/`ic_processor`. Furniture decor itself stays unlocked (building materials are T0-open).
 
 **Pending client verification**: computer program install + display rendering + Security alarm toggle round-trip, fluid capability via a real faucet/pipe, CFB kitchen discovery against Refurbished containers, Energized FE→Watt flow, Immersive Cooking multiblock assemble/run/reload stability (beta version flagged).
+
+
+## Addendum — 2026-09-24 unified logistics/energy: FastPipes (112 enabled)
+
+Incremental change: **added FastPipes 1.3.7** (Modrinth `fast-pipes` `vLNEmWij`, file `fastpipes-1.21.1-1.3.7.jar`, sha1 `ee2fad8b08c0b122ea4d1a7630dc3791e9586706`, 621,646 B). No mods removed. Lockfile regenerated; `audit-deps`/`check-closure` re-verified. Dedicated server booted clean — 38 `fastpipes:*` items in the fresh registry export, `check-mapping` 472/472 semantic ids resolve.
+
+**Role split now enforced**: FastPipes = default item/fluid/FE network; IE conveyors/fluid pipes = visible industrial lines; BuildCraft pipes = legacy shells (all 51 `buildcrafttransport:*_{item,fluid,power,fe}` recipes re-costed to "same-medium FastPipes pipe + classic material" via KubeJS SF-35 — quarry/pump/engine recipes untouched); Railcraft = long-distance freight; AE2 = digital logistics only.
+
+**Runtime capability verification** (`starforge_captest.js` — real block placement, capability probes per side, ticked transfers):
+
+- Item: vanilla chest → FastPipes item pipe (extractor attached via `NetworkManager.getPipe().getAttachmentManager().setAttachmentAndScanGraph`) → chest: items delivered per pull interval.
+- Fluid: BuildCraft tank → fluid pipe → tank: 16,000 mB water moved, in = out.
+- Energy: Ad Astra energizer (drainable FE buffer, 192,000 FE) → energy pipe (basic extractor) → IC2 electric furnace: source −18,238, sink +15,994, pipe buffer 994 — transfer sustained, no duplication.
+- Per-side probes: IC2CRE batbox/generator/cable expose `EnergyStorage` on all six sides (native FE bridge — no converter added, per design); IE `capacitor_lv` exposes FE all sides but `canExtract=false` (receive-only through the cap); `connector_lv` exposes FE on its wired face only; Ad Astra `coal_generator`/`energizer` all sides; `etrionic_capacitor` none; AE2 `energy_acceptor`/`controller` all sides (a lone acceptor stores nothing without a live ME network — upstream semantics); AE2 `energy_cell` none; Energized `energy_transformer` all sides; BC `mj_dynamo` outputs FE top face only, `engine_fe` exposes no FE cap (BC's own pipe-flow path); Railcraft `charge_terminal`/`charge_motor` expose no FE cap — Charge stays self-contained, no duplicate converter built; Refurbished `kitchen_sink` FluidHandler verified on all six sides via the starforge_compat bridge; Refurbished `cooler` exposes no ItemHandler (not an automation container — upstream semantics).
+
+**Energy conservation**: pipes transfer only; sampled link shows source-loss ≥ sink-gain + pipe buffer, no generation path. All conversions (FE↔MJ via BC's own dynamo/engine, FE→Watt via Energized transformer, IC2 native FE port at 4 FE = 1 EU) are one-way or upstream-native — no loop channels exist.
+
+**Pending manual verification**: attachment GUI filter/priority/routing modes, IE visual line ↔ FastPipes backend hookup at production scale, chunk unload/reload and network re-scan behaviour.

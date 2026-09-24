@@ -8,6 +8,7 @@
 | --- | --- | --- | --- |
 | IC2CRE | Dev-0.4，开发版 | [作者发布页](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4) | 电压、mEU API、核电、UU、物品/流体注册名与配方可覆盖性 |
 | BuildCraft CE | 8.0.19 | [BCCE-team 发布页](https://github.com/BCCE-team/BuildCraft/releases/tag/8.0.19) | 对应 1.21.1 资产、MJ/FE、机器接口、采石场加载与管道可靠性 |
+| FastPipes | 1.3.7（NeoForge 1.21.1，Modrinth `fast-pipes`） | [Modrinth](https://modrinth.com/mod/fast-pipes) / [GitHub](https://github.com/bigenergy/fastpipes) | 已实装为默认通用管网；物品/流体/FE 真实传输已实测（见 implementation-status）；混合网络按单管瓶颈限速，附件含过滤/优先级/分流/红石控制 |
 | Immersive Engineering | 12.4.2-194 | [版本记录](https://modrinth.com/mod/immersiveengineering/version/uNRARSH2) | 配方序列化、重型成形、原油链需要的新增工序 |
 | Immersive Petroleum | 1.21.1-4.5.0-39（CurseForge，NeoForge） | [文件列表](https://www.curseforge.com/minecraft/mc-mods/immersive-petroleum/files/all?version=1.21.1&gameVersionTypeId=6) | 依赖 IE 的版本范围；与 BC 原油/燃料/炼油设备和流体标签的重叠、重复配方归并 |
 | Storage Drawers | 13.11.4 | [Modrinth](https://modrinth.com/mod/storagedrawers) | 声明游戏范围 [1.21,1.21.1]；抽屉控制器与 AE2 存储总线对接、压缩抽屉配方 |
@@ -215,4 +216,5 @@ FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Com
 - `electric_burner`：FD 热源。进 `farmersdelight:heat_sources` 且带 `LIT` blockstate，复用 FD 原生 `isHeated`（LIT 语义），无 Mixin。`Capabilities.EnergyStorage.BLOCK` 收 FE，40 FE/tick。实测：IE 创造电容可供电维持满电、断电 CookTime 恒 0、供电后产出 bone_broth。
 - Refurbished 电脑应用（2026-09-24 新增）：`Computer.installProgram` 追加 `starforge:starforge_control`（FE/储能/阶段/食物/弹药/氧气/殖民概要）与 `starforge:security`（怪潮警报、TaCZ 炮塔、守卫状态 + 有界警报开关）；服务端 20 tick 采样 → NeoForge payload → 客户端 `Display.bind` 渲染；原有 Paddle Ball/Home Control/Marketplace/Coin Miner 不动；图标走命名空间 `program_icons.png` 按安装序取格。**待实机验证**：程序安装、画面渲染、警报往返。
 - Refurbished 流体容器桥（2026-09-24 新增）：`kitchen_sink/basin/toilet/bath` 的 `FluidContainer`（push/pull，桶模型 1000 mB）注册为 NeoForge `Capabilities.FluidHandler.BLOCK`，使 Supplementaries 水龙头/管道可真实读写；不伪造物品栏能力。**待实机验证**。
+- FastPipes capability 互通实测（2026-09-24，starforge_captest.js）：物品管抽取附件向箱子真实交付；流体管在 BC 储罐间搬 16000 mB 水无损耗；能量管从 Ad Astra energizer 抽 FE 送入 IC2 电炉（源净失≥目的净增+管网缓存，无增殖）。IC2CRE batbox/发电机/电缆全六面暴露 EnergyStorage——原生 FE 桥确认，无需另做转换器；Railcraft charge_terminal/charge_motor 不暴露 FE（Charge 自足，不加桥）；BC mj_dynamo 顶面出 FE、engine_fe 不暴露 cap；AE2 接收器/控制器全六面收 FE；Refurbished cooler 无物品 cap、厨房水槽流体桥实测六面可读。
 - **边界**：不碰 FD/The Hordes/Refurbished 内部行为；方块模型/战利品/配方为占位（无纹理资源），客户端目检待补。原“turret 弹药经济需 Mixin”事项随 Defense Turrets 移除而关闭——继任的 TACZ Turrets 原生消耗容器弹药，不再需要附属注入。

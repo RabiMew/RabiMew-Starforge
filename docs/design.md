@@ -23,7 +23,7 @@
 | 模组 | 主要职责 | 输入与输出联动 | 后期仍有用的原因 |
 | --- | --- | --- | --- |
 | IC2CRE | 电力、矿物精炼、电路、核能、铱、纳米及量子技术 | 为 IE、AE2、炮塔与航天供应电路、储能和高级合金 | 高级材料、供能与设备升级始终经过 IC2 |
-| BuildCraft CE | 实体管道、工程施工、泵送与露天采矿 | 接农业、矿场、油田；输出到 IE 原料缓冲仓与 IC2 处理线 | 外围采集、低成本批量运输不值得全部换成 ME 网络 |
+| BuildCraft CE | 采石场、泵、引擎、组装台等特色设备；普通管道降级为遗产适配（配方需 FastPipes 管芯） | 采石/泵送/引擎发电，输出经 FastPipes 进 IE 原料缓冲仓与 IC2 处理线 | 不再承担日常物流管网职责，保留标志性工业设备 |
 | Railcraft Reborn | 行星内重型铁路物流：货运/罐车、装卸机、蒸汽机车与电力机车、信号、隧道掘进、焦化与蒸汽锅炉 | 矿区→铁路货运→工业基地→星港；钢、杂酚油、蒸汽与统一石油经济互认 | 跨基地大宗实体运输始终是铁路的职责，不被管道或 AE2 取代 |
 | 沉浸工程（IE） | 焦化、钢、金属冲压、批量冶炼、重型机器、生物燃料 | 接 IC2 电路与精炼材料；供应机械组件、弹药、结构件 | 大批量耗材与重工业效率优势 |
 | Immersive Petroleum | 油田勘探、开采与精炼的石油化工业 | 接 BC 泵送与运输、IC2 电气控制；输出燃料与化工品到发电、防务与航天 | 统一石油经济的主干加工，与 IE 共用重工业风格 |
@@ -55,7 +55,7 @@ Polymorph、Controlling、Mouse Tweaks、Crafting Tweaks、AppleSkin、Jade Addo
 ### 物流层级（实体 → 网络 → 星际）
 
 ```text
-基地内部短距离    BuildCraft 管道 / IE 传送带
+基地内部短距离    FastPipes 管网（物品/流体/FE 一网，默认方案）
       ↓
 基地·矿区·星港之间  Railcraft 货运铁路（货运车/罐车 + 装卸站 + 信号）
       ↓
@@ -88,7 +88,7 @@ flowchart LR
 | 等级与内部 ID | 上游条件与晋级证据 | 新增能力 | 基地新需求 |
 | --- | --- | --- | --- |
 | T0 `survival_age` | 新团队自动获得 | 原版、农夫乐事基础厨房、普通造型建筑 | 储粮、照明、围栏、维修道路 |
-| T1 `mechanical_age` | T0 手工制成工程装配件 | BC 基础管道/引擎/泵；IE 焦炉、基础高炉、手工工程材料与传送带 | 燃料、木材、钢铁、物流缓冲 |
+| T1 `mechanical_age` | T0 手工制成工程装配件 | FastPipes 基础物品/流体/能量管与基础附件；BC 引擎/泵；IE 焦炉、基础高炉、手工工程材料与传送带 | 燃料、木材、钢铁、物流缓冲 |
 | T2 `electric_age` | T1 制成首台 IC2 基础发电机与基础电路 | IC2 LV，随后以 LV 产线制 MV 组件；双倍矿物处理目标；IE 哨戒炮与 TaCZ 枪匠台 | 电网、稳定铜锡供应、弹药 |
 | T3 `information_age` | T2 电气产线制造信息接口组件 | AE2 压印、基础 ME 网络、控制器、基础自动合成、库存补给；EOS 高斯枪族（工程处理器门槛） | 稳定供电、石英与硅、分区布线 |
 | T4 `heavy_industry_age` | T3 批量制造重工业控制组件 | IE 电弧炉、斗轮采矿等大型设备；BC 采石场；TACZ 自动炮塔；EOS 重型高斯/特种枪械；大规模自动合成 | 大宗电力、矿场、钢材、轮班补给 |
@@ -117,7 +117,7 @@ T3 的“信息时代”属于中期：T2 要先完成稳定电力与实体物�
 | 编号 | 开放制造 | 配方目标（单次产出 1，注明者除外） | 用途与防循环要求 |
 | --- | --- | --- | --- |
 | SF-01 | T0 | 工程装配件 = 铁锭×4 + 铜锭×2 + 红石×2 + 活塞×1 | T1 凭证；完全手工，无钢材或机器前置 |
-| SF-02 | T1 | BC 基础管道：保留低成本玻璃/石料/金属配方；抽取端加入铁齿轮 | 农场和矿区先能使用；不要求 IC2 电路 |
+| SF-02 | T1 | FastPipes 基础管道：沿用原生铁+玻璃配方；抽取附件 = 铁+活塞，不要求 IC2 电路 | 农场和矿区直接用统一管网；BC 管由 SF-35 降级为需 FP 管芯的遗产外壳 |
 | SF-03 | T1 | IC2 发电机 = 原发电部件 + IE 铁机械部件×1；基础电路维持铜线/橡胶/红石冷启动 | 发电机、手工线材、电池不能依赖发电机自身产物 |
 | SF-04 | T2 | IE 电气控制件 = 铜线圈×2 + IC2 基础电路×1；原低压供电设施保留起步配方 | IC2 电气能力进入 IE 批量设备；T1 机械设施不受此限制 |
 | SF-05 | T2 | 信息接口组件 = IC2 高级电路×1 + IE 电子部件×2 + 石英玻璃×2 | T3 凭证；不使用 AE2 处理器、压印机或 ME 网络 |
@@ -171,13 +171,13 @@ T3 的“信息时代”属于中期：T2 要先完成稳定电力与实体物�
 
 保留 IC2 电压、储能与布线的决策价值；BC 燃料物流和 IE 生物柴油是早期与分布式供能方案，核能解决后期规模问题。IC2 的核心定位由高级组件与精炼链保证，不必强制所有路灯也走 EU。
 
-**FE 公共电网（2026-09-24 定稿）**：`IE / Ad Astra / FE 发电 → FE 公共电网 → 对应转换器 → 特殊能源设备`。IE 与 Ad Astra 直接收发 FE；BuildCraft 使用其原生 FE↔MJ 兼容，不重复造桥；Refurbished 家庭电网经 Energized Furniture 的能源变压器接入（其 `EnergyTransformerBlockEntity` 是 Refurbished `ElectricityGeneratorBlockEntity` 的原生子类，FE 进、Watt 出，功率受上游额定值约束）；IC2CRE 保留 mEU、电压等级与变压器玩法，必要时由 Starforge Compatibility 提供受控 FE↔mEU 转换（当前未实现，列为预留适配）。
+**FE 公共电网（2026-09-24 实测定稿）**：`IE / Ad Astra / IC2 发电 → FE 公共电网 → 对应转换器 → 特殊能源设备`。FastPipes 能量管是默认 FE 干线（basic 1k → improved 4k → advanced 8k → elite 16k → ultimate 32k FE/t，混网按单管瓶颈限速），凡暴露 `Capabilities.EnergyStorage.BLOCK` 的设备即插即用，能量抽取附件可主动从可抽取缓存取电。已实测的接口面：IE 电容全六面、接线器按朝向；Ad Astra 燃煤发电机/energizer 全六面（etrionic_capacitor 不暴露 FE）；IC2CRE batbox/发电机/电缆全六面暴露 FE——原生 FE 桥确认存在，不需要另做转换器；AE2 能量接收器/控制器全六面收 FE（能量直接进 ME 网，孤立接收器无网络时不蓄电）；Energized Furniture 能源变压器全六面收 FE 后转 Refurbished Watt；BuildCraft 走自身 FE↔MJ：mj_dynamo 顶面输出 FE，engine_fe 不暴露 FE capability（FE 输入经 BC 自有管道流/plug 适配器），不重复造桥；Railcraft 的 charge_terminal/charge_motor 不暴露 FE capability——Charge 网络保持独立自足，不另做重复转换器。
 
-EU / mEU / FE / MJ / AE 的兼容只使用确认过的接口。IC2CRE Dev-0.4 公共能源接口使用 mEU，1000 mEU = 1 EU；不把这个换算当作 FE 或 MJ 比例。最终锁定版本后测试充放电、机器输入限制、BC 引擎与 AE2 电源连接。任何可逆转换回路的输出不得大于输入，不新增无限免费供电通道；FE→Refurbished Watt 与 FE↔MJ、FE↔mEU 均为单向受控或上游原生换算，禁止构成循环发电。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4)
+EU / mEU / FE / MJ / AE 的兼容只使用确认过的接口。IC2CRE Dev-0.4 公共能源接口使用 mEU，1000 mEU = 1 EU；不把这个换算当作 FE 或 MJ 比例。本版已实测：IC2CRE 方块实体经其内置 FE 端口暴露 NeoForge EnergyStorage（4 FE = 1 EU 换算由模组自身承担），batbox/发电机/电缆均可被 FastPipes 能量管读写——FE↔mEU 桥不再是必需项；BC 的 mj_dynamo 顶面输出 FE、engine_fe 经自有管道流吃 FE，均为上游原生单向换算。任何可逆转换回路的输出不得大于输入，不新增无限免费供电通道；FE→Refurbished Watt、FE↔MJ、IC2 原生 FE 端口均为单向受控或上游原生换算，禁止构成循环发电。守恒抽查（captest）：Ad Astra energizer 经能量管向 IC2 电炉送电，源端净失 ≥ 目的端净增+管网缓存，无增殖。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4)
 
 ### 统一石油经济
 
-油田 → BuildCraft 开采与运输 → Immersive Petroleum 精炼与化工 → IC2 电气控制与精密组件 → IE 重工业加工 → 燃料与化工产品 → 发电、军事耗材与 Ad Astra 航天燃料。
+油田 → BuildCraft 泵送开采、FastPipes 流体管运输 → Immersive Petroleum 精炼与化工 → IC2 电气控制与精密组件 → IE 重工业加工 → 燃料与化工产品 → 发电、军事耗材与 Ad Astra 航天燃料。
 
 BC CE 与 Immersive Petroleum 同时提供原油、燃料或炼油设备时，先导出两者的流体、流体标签与配方再绑定：同种流体共用注册条目或互认标签，重复配方按工序定位保留其一，目标是**一条石油经济**而非两套互不相干的产油系统。优先使用现有标签、capability 与配方实现互通；必须桥接时才用 KubeJS / 数据包，且在实际安装并导出注册表之前不猜 `immersivepetroleum:`、`buildcraft:` 等命名空间下的 fluid ID。
 
@@ -217,7 +217,7 @@ BC CE 与 Immersive Petroleum 同时提供原油、燃料或炼油设备时，�
 
 T0：农夫乐事种植、切菜板、烹饪锅；懒人厨房集中存料和按需做饭。两套烹饪界面不自动等于完全互通：先测试切菜/锅具配方与厨房食谱识别，不能宣称厨房已自动执行所有农夫乐事配方。
 
-T1：BC 管道、IE 传送带连接收成仓与厨房缓冲。T2：Refurbished 现代厨房（工作台制作家具，抽屉/冰箱/橱柜原生进 CFB 厨房网络，水槽/家电作连接器）；灌溉/照明/供电由已验证设备承担；地球温室先作为结构化农场，不虚构温控机制。电气厨房入口为 `starforge_compat:electric_burner`（FE 供电、断电即停热，见 implementation-status 末节）；Refurbished 炉灶原生计入 FD 热源。T2–T3：Engineers Delight 的 IE×FD 原生配方承担中型食品加工。T3：AE2 补原料、碗和燃料到厨房/烹饪锅，成品分类回收；机器侧烹饪仍由原设备执行。T3–T4：Immersive Cooking & Farming 多方块接管大批量自动化产线（beta 版，重点验收稳定性/性能/dedicated server）。T4：IE 生物燃料与食物共享种植体系，用库存阈值先保食堂，剩余农产再制燃料。
+T1：FastPipes 管网、IE 传送带连接收成仓与厨房缓冲。T2：Refurbished 现代厨房（工作台制作家具，抽屉/冰箱/橱柜原生进 CFB 厨房网络，水槽/家电作连接器）；灌溉/照明/供电由已验证设备承担；地球温室先作为结构化农场，不虚构温控机制。电气厨房入口为 `starforge_compat:electric_burner`（FE 供电、断电即停热，见 implementation-status 末节）；Refurbished 炉灶原生计入 FD 热源。T2–T3：Engineers Delight 的 IE×FD 原生配方承担中型食品加工。T3：AE2 补原料、碗和燃料到厨房/烹饪锅，成品分类回收；机器侧烹饪仍由原设备执行。T3–T4：Immersive Cooking & Farming 多方块接管大批量自动化产线（beta 版，重点验收稳定性/性能/dedicated server）。T4：IE 生物燃料与食物共享种植体系，用库存阈值先保食堂，剩余农产再制燃料。
 
 T6：月球温室重在密封与储水，火星温室重在产能与防线。断电先切生产，再限非必要设备，保氧气、基础照明与安全返航库存。各基地的氧气、电池与食物按**20 分钟实测耗用**准备缓冲，作为补给建议，不增加永久饥饿惩罚。
 

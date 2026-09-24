@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-24T02:58:53.010Z",
+  "generated_at": "2026-09-24T04:03:50.955Z",
   "minecraft": "1.21.1",
   "loader": "neoforge",
   "neoforge_version": "21.1.251",
@@ -148,6 +148,25 @@
         }
       ],
       "notes": null
+    },
+    {
+      "key": "fastpipes",
+      "name": "FastPipes",
+      "enabled": true,
+      "role": "content",
+      "side": "both",
+      "version": "1.3.7",
+      "filename": "fastpipes-1.21.1-1.3.7.jar",
+      "size": 621646,
+      "sha1": "ee2fad8b08c0b122ea4d1a7630dc3791e9586706",
+      "sha256": "17a58a6f0b86160df2a2ae0abb638a864a9772c0ebb1459bc238bf542c6c4300",
+      "sha512": "112092240eacaf114eb442135cf873bcb8eee11d9565be2389119d7732052876e00145bc22fe337ae5dad3810df103efe8ef87f7c200521084f3678452bf4cf0",
+      "download_url": "https://cdn.modrinth.com/data/vLNEmWij/versions/hJEwLkgm/fastpipes-1.21.1-1.3.7.jar",
+      "project_page": "https://modrinth.com/mod/fast-pipes",
+      "license": "MIT",
+      "distribution": "modrinth_cdn",
+      "dependencies": [],
+      "notes": "MIT; default universal pipe network: item/fluid/FE transport, extractors/inserters with filters+priority, pipe terminal, tiered barrels. BuildCraft pipes stay as legacy/BC-internal; IE conveyors+fluid pipes are visual-line; Railcraft stays long-haul freight; AE2 stays digital layer. JEI+Jade integrations included."
     },
     {
       "key": "ae2",

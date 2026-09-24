@@ -128,6 +128,7 @@
 		"给发电机接上铜缆与电池盒：电要能发，更要能存能送。线路先走短距离，电网扩张留到后面。"
 		""
 		"{\"text\":\"» 详见手册：电力优先级\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"电力优先级\"}}"
+		"{\"text\":\"» 详见手册：统一管网：FastPipes\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E8B4E397AC0FBCA\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"统一管网：FastPipes\"}}"
 	]
 	quest.13C7D62337B55213.quest_subtitle: "推荐阶段：机械时代"
 	quest.661C32BC2172153E.title: "首批电机"
@@ -142,7 +143,7 @@
 	quest.74254B1A5ACF0303.quest_subtitle: "推荐阶段：机械时代"
 	quest.5AA32800D1C581FB.title: "石油起步"
 	quest.5AA32800D1C581FB.quest_desc: [
-		"用泵抽出原油，铁管送回储罐。统一石油链的第一步：先让液体流进基地，再谈精炼与化工。"
+		"用泵抽出原油，FastPipes 流体管送回储罐。统一石油链的第一步：先让液体流进基地，再谈精炼与化工。"
 		""
 		"{\"text\":\"» 详见手册：统一石油经济\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"统一石油经济\"}}"
 	]
@@ -168,9 +169,10 @@
 	]
 	quest.1E6E9ECA6921E56E.title: "从箱子到生产线"
 	quest.1E6E9ECA6921E56E.quest_desc: [
-		"为大宗矿物、金属锭、零件和农产品准备抽屉与通用仓储，再用管道或传送带接入机器。先设计满仓去向与停机信号，再提升运输速度。"
+		"为大宗矿物、金属锭、零件和农产品准备抽屉与通用仓储，再用 FastPipes 物品管道与抽取附件接入机器。先设计满仓去向与停机信号，再提升运输速度。"
 		""
 		"{\"text\":\"» 详见手册：仓储成长路线\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储成长路线\"}}"
+		"{\"text\":\"» 详见手册：统一管网：FastPipes\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E8B4E397AC0FBCA\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"统一管网：FastPipes\"}}"
 	]
 	quest.1E6E9ECA6921E56E.quest_subtitle: "推荐阶段：机械时代"
 	quest.4F47C604F5D375CC.title: "启动第一个数字仓库"
@@ -213,9 +215,10 @@
 	quest.3991787934E071A4.quest_subtitle: "推荐阶段：太空时代"
 	quest.55D5885078439343.title: "仓储接驳"
 	quest.55D5885078439343.quest_desc: [
-		"木管抽取、石管运输：把散装产线接进统一仓储，让每一箱原料都有去处。"
+		"抽取附件取货、物品管道运输：把散装产线经 FastPipes 接进统一仓储，让每一箱原料都有去处。"
 		""
 		"{\"text\":\"» 详见手册：仓储成长路线\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"仓储成长路线\"}}"
+		"{\"text\":\"» 详见手册：统一管网：FastPipes\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E8B4E397AC0FBCA\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"统一管网：FastPipes\"}}"
 	]
 	quest.55D5885078439343.quest_subtitle: "推荐阶段：机械时代"
 	quest.0DB724B7A030812E.title: "信号闭塞"
@@ -344,7 +347,7 @@
 	quest.605556FAD18F13D3.quest_subtitle: "推荐阶段：电气时代"
 	quest.0578B3D427AD63A7.title: "前线弹药箱"
 	quest.0578B3D427AD63A7.quest_desc: [
-		"炮塔只吃“最后一公里”：把弹药箱放在炮塔下方或贴邻，再由 AE2 / Pipez / BuildCraft 持续填满它。炮塔不会从管道里直接接弹。"
+		"炮塔只吃“最后一公里”：把弹药箱放在炮塔下方或贴邻，再由 AE2 / FastPipes 持续填满它。炮塔不会从管道里直接接弹。"
 		""
 		"{\"text\":\"» 详见手册：自动炮塔：装枪与补给\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"自动炮塔：装枪与补给\"}}"
 	]
@@ -846,7 +849,7 @@
 	quest.08F61C4EED508F67.quest_subtitle: "能源·石油·网络"
 	quest.79F690776849AD03.title: "AE2 冷启动"
 	quest.79F690776849AD03.quest_desc: [
-		"压印机先用独立电源运行，完成处理器后再建控制器。数字网络通过存储总线读取抽屉与仓储控制器；管道与传送带继续承担外围大宗运输，数字层负责调度与合成。"
+		"压印机先用独立电源运行，完成处理器后再建控制器。数字网络通过存储总线读取抽屉与仓储控制器；FastPipes 管网继续承担外围大宗运输，数字层负责调度与合成。"
 	]
 	quest.79F690776849AD03.quest_subtitle: "能源·石油·网络"
 	quest.4B5A9C30A8FBCA52.title: "安全空间站"
@@ -869,6 +872,11 @@
 		"箱子与木桶之后，先用抽屉和通用仓储收大宗散料。容量、过滤和压缩升级随电气时代开放，并消耗工业部件。数字网络建成后读取现有仓库，而不是取代它们。"
 	]
 	quest.453A61A0B4D9C159.quest_subtitle: "进度与生存"
+	quest.0E8B4E397AC0FBCA.title: "统一管网：FastPipes"
+	quest.0E8B4E397AC0FBCA.quest_desc: [
+		"FastPipes 是整合包默认通用管网：物品、流体与 FE 电力共用一套管道。抽取附件从容器与机器取货，带过滤、红石控制与分流模式；输入附件标记投递优先级；传感器/虚空附件负责信号与满仓处理；终端把管网变成可检索的小仓库。IE 传送带与流体管保留作可视化工业产线；BuildCraft 管道仅留作采石场、泵等 BC 特色设备周边的老式方案；Railcraft 管跨区大宗货运；AE2 管数字仓储与自动合成，不承担普通管道职责。供电走 FE 公共电网：FastPipes 能源管道直连 IE、Ad Astra、IC2CRE（原生 FE 端口）与 Railcraft 电力设备；BuildCraft 用自带 FE 引擎与 MJ 发电机互转；Refurbished 家电经能源变压器接入。"
+	]
+	quest.0E8B4E397AC0FBCA.quest_subtitle: "能源·石油·网络"
 	quest.28C9F6D61C4E55C2.title: "背包与远征物资"
 	quest.28C9F6D61C4E55C2.quest_desc: [
 		"背包承担采矿、工程、探索、远征和殖民施工的随身补给。基础背包较早可用；容量、自动拾取和补给升级随阶段开放。背包不代替工厂物流，也不是随身合成网络。"
@@ -876,7 +884,7 @@
 	quest.28C9F6D61C4E55C2.quest_subtitle: "进度与生存"
 	quest.1932C9CEA2E264BB.title: "统一石油经济"
 	quest.1932C9CEA2E264BB.quest_desc: [
-		"油田经管道进入统一石油链：石油工业精炼、电气控制和重工业加工产出燃料与化工品，供发电、防务和航天使用。两套产油设备以同一流体和标签互认为准。"
+		"油田经 FastPipes 流体管进入统一石油链：石油工业精炼、电气控制和重工业加工产出燃料与化工品，供发电、防务和航天使用。两套产油设备以同一流体和标签互认为准。"
 	]
 	quest.1932C9CEA2E264BB.quest_subtitle: "能源·石油·网络"
 	quest.5D67189820FB07DC.title: "轻量殖民地"
@@ -926,7 +934,7 @@
 	quest.6D57B198ED6623C4.quest_subtitle: "怪潮与防御"
 	quest.2E55B63F9D911701.title: "自动炮塔：装枪与补给"
 	quest.2E55B63F9D911701.quest_desc: [
-		"TACZ 炮塔对玩家点击或掉落物装入一把 TaCZ 枪。弹药从它下方/相邻的箱子取用——这是“最后一公里物流”：管道与 AE2 负责把弹药箱填满，炮塔自己取弹。红黄绿状态灯分别提示换弹/缺弹/就绪。"
+		"TACZ 炮塔对玩家点击或掉落物装入一把 TaCZ 枪。弹药从它下方/相邻的箱子取用——这是“最后一公里物流”：FastPipes 与 AE2 负责把弹药箱填满，炮塔自己取弹。红黄绿状态灯分别提示换弹/缺弹/就绪。"
 	]
 	quest.2E55B63F9D911701.quest_subtitle: "怪潮与防御"
 	quest.60BD0CCFC3034959.title: "晨曦女神实验室武器定位"
@@ -971,7 +979,7 @@
 	quest.0B6171AAE7597875.quest_subtitle: "岗位与维护"
 	quest.4642427A4336C17F.title: "铁路物流"
 	quest.4642427A4336C17F.quest_desc: [
-		"铁路承担基地、矿区与星港之间的高吞吐运输：货运车厢装散料，罐车运液体，装卸机对接仓储。基地内部短距离仍用管道与传送带，数字网络负责调度而非取代铁路。"
+		"铁路承担基地、矿区与星港之间的高吞吐运输：货运车厢装散料，罐车运液体，装卸机对接仓储。基地内部短距离交给 FastPipes 管网，数字网络负责调度而非取代铁路。"
 	]
 	quest.4642427A4336C17F.quest_subtitle: "铁路物流"
 	quest.4BD992661353F0B8.title: "星港铁路"
@@ -1006,7 +1014,7 @@
 	quest.6BE0F716B792B7F8.quest_subtitle: "野外与遗迹"
 	quest.5FBDC2FE9BA6964E.title: "仓储分层"
 	quest.5FBDC2FE9BA6964E.quest_desc: [
-		"仓储按角色分层，不要混用：Storage Drawers 存大宗单一散料（矿锭、粮食、石材），压缩抽屉自动归并等级；Sophisticated Storage 负责杂项仓库与限量桶；Sophisticated Backpacks 管野战背包；AE2 负责数字索引与自动合成，BuildCraft/Railcraft 负责物理运输。抽屉进散料，桶柜进杂货，背包进背包，网络进索引。"
+		"仓储按角色分层，不要混用：Storage Drawers 存大宗单一散料（矿锭、粮食、石材），压缩抽屉自动归并等级；Sophisticated Storage 负责杂项仓库与限量桶；Sophisticated Backpacks 管野战背包；AE2 负责数字索引与自动合成，FastPipes 管网/Railcraft 负责物理运输。抽屉进散料，桶柜进杂货，背包进背包，网络进索引。"
 	]
 	quest.5FBDC2FE9BA6964E.quest_subtitle: "进度与生存"
 	quest.0D8C96A7B6F83F18.title: "远征背包配置"

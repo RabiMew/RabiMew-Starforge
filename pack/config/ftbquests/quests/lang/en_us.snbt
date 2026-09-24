@@ -128,6 +128,7 @@
 		"Hook the generator to a batbox with copper cable: power must be stored and delivered, not just made. Keep runs short for now."
 		""
 		"{\"text\":\"» See the manual: Power Priority\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"08F61C4EED508F67\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Power Priority\"}}"
+		"{\"text\":\"» See the manual: One Network: FastPipes\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E8B4E397AC0FBCA\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"One Network: FastPipes\"}}"
 	]
 	quest.13C7D62337B55213.quest_subtitle: "Suggested stage: Mechanical Age"
 	quest.661C32BC2172153E.title: "First Electric Machines"
@@ -142,7 +143,7 @@
 	quest.74254B1A5ACF0303.quest_subtitle: "Suggested stage: Mechanical Age"
 	quest.5AA32800D1C581FB.title: "Oil Bootstrapping"
 	quest.5AA32800D1C581FB.quest_desc: [
-		"Pump crude oil through iron pipes into storage tanks. The first step of the unified oil chain: get the fluid home before worrying about refining."
+		"Pump crude oil through FastPipes fluid pipes into storage tanks. The first step of the unified oil chain: get the fluid home before worrying about refining."
 		""
 		"{\"text\":\"» See the manual: The Unified Oil Economy\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"1932C9CEA2E264BB\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Unified Oil Economy\"}}"
 	]
@@ -168,9 +169,10 @@
 	]
 	quest.1E6E9ECA6921E56E.title: "From Chests to Production Lines"
 	quest.1E6E9ECA6921E56E.quest_desc: [
-		"Use drawers and versatile storage for bulk ore, ingots, parts, and crops, then connect machines with pipes or conveyors. Plan overflow handling and stop signals before increasing transport speed."
+		"Use drawers and versatile storage for bulk ore, ingots, parts, and crops, then connect machines with FastPipes item pipes and extractor attachments. Plan overflow handling and stop signals before increasing transport speed."
 		""
 		"{\"text\":\"» See the manual: The Storage Growth Path\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Storage Growth Path\"}}"
+		"{\"text\":\"» See the manual: One Network: FastPipes\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E8B4E397AC0FBCA\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"One Network: FastPipes\"}}"
 	]
 	quest.1E6E9ECA6921E56E.quest_subtitle: "Suggested stage: Mechanical Age"
 	quest.4F47C604F5D375CC.title: "Start Your First Digital Warehouse"
@@ -213,9 +215,10 @@
 	quest.3991787934E071A4.quest_subtitle: "Suggested stage: Space Age"
 	quest.55D5885078439343.title: "Warehouse Hookup"
 	quest.55D5885078439343.quest_desc: [
-		"Wooden extraction pipes and stone transport pipes: feed the loose production lines into unified storage so every crate has somewhere to go."
+		"Extractor attachments pull, item pipes haul: feed the loose production lines into unified storage over FastPipes so every crate has somewhere to go."
 		""
 		"{\"text\":\"» See the manual: The Storage Growth Path\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"453A61A0B4D9C159\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Storage Growth Path\"}}"
+		"{\"text\":\"» See the manual: One Network: FastPipes\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"0E8B4E397AC0FBCA\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"One Network: FastPipes\"}}"
 	]
 	quest.55D5885078439343.quest_subtitle: "Suggested stage: Mechanical Age"
 	quest.0DB724B7A030812E.title: "Signals and Blocks"
@@ -344,7 +347,7 @@
 	quest.605556FAD18F13D3.quest_subtitle: "Suggested stage: Electrical Age"
 	quest.0578B3D427AD63A7.title: "Frontline Ammo Boxes"
 	quest.0578B3D427AD63A7.quest_desc: [
-		"Turrets only eat last-mile logistics: place an ammo box beneath or beside the turret and let AE2 / Pipez / BuildCraft keep it filled. Turrets do not take ammo straight from pipes."
+		"Turrets only eat last-mile logistics: place an ammo box beneath or beside the turret and let AE2 / FastPipes keep it filled. Turrets do not take ammo straight from pipes."
 		""
 		"{\"text\":\"» See the manual: Auto-Turrets: Loading & Resupply\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2E55B63F9D911701\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Auto-Turrets: Loading & Resupply\"}}"
 	]
@@ -846,7 +849,7 @@
 	quest.08F61C4EED508F67.quest_subtitle: "Power, Oil and Networks"
 	quest.79F690776849AD03.title: "AE2 Cold Start"
 	quest.79F690776849AD03.quest_desc: [
-		"Run the inscriber on independent power first and make processors before the controller. The digital network reads drawers and storage controllers through storage buses; pipes and conveyors still carry bulk transport while the digital layer schedules and crafts."
+		"Run the inscriber on independent power first and make processors before the controller. The digital network reads drawers and storage controllers through storage buses; the FastPipes network still carries bulk transport while the digital layer schedules and crafts."
 	]
 	quest.79F690776849AD03.quest_subtitle: "Power, Oil and Networks"
 	quest.4B5A9C30A8FBCA52.title: "The Safe Station"
@@ -869,6 +872,11 @@
 		"After chests and barrels, use drawers and versatile storage for bulk materials. Capacity, filtering, and compression upgrades open with the Electrical Age and consume industrial components. A digital network reads existing warehouses instead of replacing them."
 	]
 	quest.453A61A0B4D9C159.quest_subtitle: "Progression and Survival"
+	quest.0E8B4E397AC0FBCA.title: "One Network: FastPipes"
+	quest.0E8B4E397AC0FBCA.quest_desc: [
+		"FastPipes is the pack's default general-purpose network: one pipe family carries items, fluids and FE. Extractor attachments pull from containers and machines with filters, redstone control and distribution modes; inserter attachments set delivery priority; sensor/void attachments handle signals and overflow; the terminal turns a pipe network into a searchable mini-warehouse. IE conveyors and fluid pipes stay for visible industrial lines; BuildCraft pipes remain a legacy option around its specialty machines (quarry, pump); Railcraft owns long-distance bulk freight; AE2 owns digital storage and autocrafting, not ordinary pipework. Power runs on one public FE grid: FastPipes energy pipes connect IE, Ad Astra, IC2CRE (native FE port) and Railcraft devices directly; BuildCraft converts with its own FE engine and MJ dynamo; Refurbished appliances join through the Energized Furniture transformer."
+	]
+	quest.0E8B4E397AC0FBCA.quest_subtitle: "Power, Oil and Networks"
 	quest.28C9F6D61C4E55C2.title: "Backpacks and Expedition Kits"
 	quest.28C9F6D61C4E55C2.quest_desc: [
 		"Backpacks serve mining, engineering, exploration, expeditions, and colony construction. Basic packs open early; capacity, pickup, and resupply upgrades unlock by stage. A backpack is not factory logistics or a portable crafting network."
@@ -876,7 +884,7 @@
 	quest.28C9F6D61C4E55C2.quest_subtitle: "Progression and Survival"
 	quest.1932C9CEA2E264BB.title: "The Unified Oil Economy"
 	quest.1932C9CEA2E264BB.quest_desc: [
-		"Oil fields feed one unified chain through pipes: petroleum refining, electrical control, and heavy processing produce fuels and chemicals for power, defense, and spaceflight. Both oil systems must share the same fluids and tags."
+		"Oil fields feed one unified chain through FastPipes fluid pipes: petroleum refining, electrical control, and heavy processing produce fuels and chemicals for power, defense, and spaceflight. Both oil systems must share the same fluids and tags."
 	]
 	quest.1932C9CEA2E264BB.quest_subtitle: "Power, Oil and Networks"
 	quest.5D67189820FB07DC.title: "Lightweight Colonies"
@@ -926,7 +934,7 @@
 	quest.6D57B198ED6623C4.quest_subtitle: "Hordes and Defense"
 	quest.2E55B63F9D911701.title: "Auto-Turrets: Loading & Resupply"
 	quest.2E55B63F9D911701.quest_desc: [
-		"A TACZ turret takes a TaCZ gun by click or dropped item. It draws ammunition from the chest beneath or beside it — the last mile: pipes and AE2 keep the box filled, the turret draws from it. Its lamp shows reloading / empty / ready states."
+		"A TACZ turret takes a TaCZ gun by click or dropped item. It draws ammunition from the chest beneath or beside it — the last mile: FastPipes and AE2 keep the box filled, the turret draws from it. Its lamp shows reloading / empty / ready states."
 	]
 	quest.2E55B63F9D911701.quest_subtitle: "Hordes and Defense"
 	quest.60BD0CCFC3034959.title: "EOS Dawn Goddess Lab Weapons"
@@ -971,7 +979,7 @@
 	quest.0B6171AAE7597875.quest_subtitle: "Jobs and Maintenance"
 	quest.4642427A4336C17F.title: "Rail Logistics"
 	quest.4642427A4336C17F.quest_desc: [
-		"Railways carry high-throughput freight between bases, mines, and spaceports: cargo carts for bulk items, tank carts for fluids, loaders bridging storage at both ends. Pipes and conveyors still serve inside bases; the digital network schedules rather than replaces trains."
+		"Railways carry high-throughput freight between bases, mines, and spaceports: cargo carts for bulk items, tank carts for fluids, loaders bridging storage at both ends. FastPipes networks serve inside bases; the digital network schedules rather than replaces trains."
 	]
 	quest.4642427A4336C17F.quest_subtitle: "Rail Logistics"
 	quest.4BD992661353F0B8.title: "Spaceport Rail"
@@ -1006,7 +1014,7 @@
 	quest.6BE0F716B792B7F8.quest_subtitle: "Field & Ruins"
 	quest.5FBDC2FE9BA6964E.title: "Storage Tiers"
 	quest.5FBDC2FE9BA6964E.quest_desc: [
-		"Storage tiers by role: Storage Drawers hold bulk single materials (ingots, food, stone) with compacting drawers auto-merging tiers; Sophisticated Storage runs mixed warehouses and limited barrels; Sophisticated Backpacks own field carry; AE2 handles digital indexing and autocrafting while BuildCraft/Railcraft move the freight. Bulk to drawers, mixed to barrels, field to packs, index to ME."
+		"Storage tiers by role: Storage Drawers hold bulk single materials (ingots, food, stone) with compacting drawers auto-merging tiers; Sophisticated Storage runs mixed warehouses and limited barrels; Sophisticated Backpacks own field carry; AE2 handles digital indexing and autocrafting while FastPipes/Railcraft move the freight. Bulk to drawers, mixed to barrels, field to packs, index to ME."
 	]
 	quest.5FBDC2FE9BA6964E.quest_subtitle: "Progression and Survival"
 	quest.0D8C96A7B6F83F18.title: "Expedition Loadouts"

@@ -333,7 +333,7 @@
 					type: "item"
 					item: {
 						count: 8
-						id: "buildcrafttransport:wood_fluid"
+						id: "fastpipes:basic_fluid_pipe"
 					}
 					team_reward: false
 				}
@@ -354,7 +354,7 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "buildcrafttransport:iron_fluid"
+						id: "fastpipes:improved_fluid_pipe"
 					}
 					count: 8
 					consume_items: false

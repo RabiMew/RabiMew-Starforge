@@ -81,6 +81,17 @@
       }
     },
     {
+      "key": "fastpipes",
+      "name": "FastPipes",
+      "role": "content",
+      "side": "both",
+      "source": {
+        "type": "modrinth",
+        "slug": "fast-pipes"
+      },
+      "notes": "MIT; default universal pipe network: item/fluid/FE transport, extractors/inserters with filters+priority, pipe terminal, tiered barrels. BuildCraft pipes stay as legacy/BC-internal; IE conveyors+fluid pipes are visual-line; Railcraft stays long-haul freight; AE2 stays digital layer. JEI+Jade integrations included."
+    },
+    {
       "key": "ae2",
       "name": "Applied Energistics 2",
       "role": "content",

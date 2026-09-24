@@ -9,7 +9,7 @@ ProgressiveStages  唯一状态源：8 个时代闸门 + 22 个能力节点（�
 Progression Map    总导航：PS 库存按钮打开，时代主线 + 能力分支 + 解锁条件
 FTB Quests         说明书/路线：主线说明、支线推荐、手册页——完全可选
 Advancements       成就记录：时代镜像 + 一次性玩法成就（只记录，不授权）
-Manual             手册章：43 页分组知识库
+Manual             手册章：44 页分组知识库
 Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一次性提示
 ```
 
@@ -19,7 +19,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 时代里程碑（milestones）  7 个 gamestage 任务，与 PS 时代阶段实时同步（无需手动完成）
 启程（onboarding）        进图即见的前十分钟引导，9 个任务（链式小树，含"打开阶段图谱"）
 七章路线                  工业 / 自动化物流 / 军事 / 航天 / 探索 / 农业后勤 / 建筑，与 content.json routes 一一对应
-参考手册（manual）         43 条教程正文页，8 个分组（无依赖，自由翻阅）
+参考手册（manual）         44 条教程正文页，8 个分组（无依赖，自由翻阅）
 ```
 
 ### 时代里程碑章
@@ -68,7 +68,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 
 ## 3. 检测类型映射
 
-117 个任务节点中约半数自动检测（item/dimension/advancement/kill/gamestage）、半数 checkmark，另有 43 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。支线（optional）只承载推荐与演练，不影响章节完成度与任何阶段授予。下表为原 35 个主线任务的检测映射（新增中间节点均为 item/checkmark/stage 子步骤，详见 content.json）：
+117 个任务节点中约半数自动检测（item/dimension/advancement/kill/gamestage）、半数 checkmark，另有 44 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。支线（optional）只承载推荐与演练，不影响章节完成度与任何阶段授予。下表为原 35 个主线任务的检测映射（新增中间节点均为 item/checkmark/stage 子步骤，详见 content.json）：
 
 | 任务 | 阶段 | task | 目标（语义键/字面量） |
 | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 | ore_processing | T2 | item ×1 | ic2_macerator |
 | nuclear_grid | T5 | checkmark | — |
 | earth_quantum | T7 | item ×1 | quantum_control |
-| physical_logistics | T1 | item ×8 + item ×1 | bc_pipe_item_stone + bc_tank |
+| physical_logistics | T1 | item ×8 + item ×1 | fp_item_pipe_basic + fp_extractor_basic |
 | ae2_bootstrap | T3 | item ×1 | ae2_inscriber |
 | stock_control | T3 | checkmark | — |
 | remote_supply | T7 | item ×1 | ae2_quantum_ring |

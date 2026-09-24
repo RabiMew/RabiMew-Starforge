@@ -39,7 +39,7 @@
 
 ## P1 已实现并验证（服务端）
 
-- `design/semantic-map.json` + `tools/check-mapping.mjs`：388 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`），本轮再捕获 `railcraft:iron_track` 臆造 ID（实际为 `railcraft:strap_iron_track`）。
+- `design/semantic-map.json` + `tools/check-mapping.mjs`：472 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`），本轮再捕获 `railcraft:iron_track` 臆造 ID（实际为 `railcraft:strap_iron_track`）。
 - `tools/build-pack.mjs`：从 `design/content.json`/`semantic-map.json`/`stage-locks.json`/`localization/*.json` 生成 KubeJS 物品注册、语义映射脚本、双语 lang、物品模型与占位贴图、ProgressiveStages 全局配置与 8 个 stage 定义。`localization/` 仍是唯一文案源。
 - `tools/gen-mod-lang-zh.mjs`：补齐模组自带 `zh_cn` 缺失键（framedblocks 330、refurbished_furniture 654、mcwfurnitures 56、energizedfurniture 12、immersivecooking 53、tmted 15），产物为 `pack/kubejs/assets/<mod>/lang/zh_cn.json`（KubeJS 按键覆盖，不影响 jar 内已有译文）。模组升版后重跑即可。
 - `design/stage-locks.json` + 生成器：每阶段 `stage.toml/progression.toml/rules.toml`。`/progressivestages validate` 8/8 通过；`/stage tree` 显示 T0→T5 链与 T6/T7 分叉（T7 不依赖 T6）。
@@ -386,3 +386,33 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 
 - 实现：`starforge_recipes.js` 不再重建 chaos/alloy/old_conversion（`e.remove` 防御保留）；新增 `starforge_viewer_cleanup.js`（服务端 `RecipeViewerEvents.removeEntries('item')`，custom_data 键谓词）与 `starforge_creative_cleanup.js`（启动期 `StartupEvents.modifyCreativeTab` 扫 15 个 tacz 标签页）。隐藏按 `tacz:modern_kinetic_gun`/`tacz:ammo`/`tacz:attachment`/`tacz:workbench_a` 的组件变体匹配，不影响默认 TaCZ 包内容。
 - 未为任何残留项引入依赖 Mod（不装 setsentinel、不装 Patchouli）。
+
+## 2026-09-24 物流与能源统一：FastPipes 默认管网（已实现，实测通过）
+
+### 改动
+
+- **FastPipes 1.3.7**（NeoForge 1.21.1，Modrinth `fast-pipes`，sha1 `ee2fad8b…`）加入清单并锁入 `locked-mods.json`，服务端/客户端均同步加载。
+- **分工定稿**：FastPipes = 默认通用管网（物品/流体/FE）；IE 传送带与流体管 = 可视化工业产线；BuildCraft 管道 = 遗产适配壳（SF-35：51 条 `*_item/_fluid/_power/_fe` 配方改为「同介质 FastPipes 管芯 + 原料」无序配方，采石场/泵/引擎等特色设备配方不受影响）；Railcraft = 长距离大宗货运；AE2 = 中后期数字物流。
+- **阶段分配**：T1 基础三种管+抽取/输入附件+虚空/传感器+扳手；T2 improved 系+终端；T3 advanced 系；T4 elite 流体/能量管+elite 附件；T5 ultimate 流体/能量管+ultimate 附件。FastPipes 桶不进阶段锁。
+- **玩家引导**：任务 physical_logistics/warehouse/fluid_oil 的任务与奖励改为 FastPipes；新增手册页「统一管网：FastPipes」（unified_pipes，energy 组）并从 physical_logistics/warehouse/wiring_up 链入；新增 modpack.tip.* 双语提示，经 `starforge_pipe_hints.js` 给 FastPipes 全套、BC 全系管道、IE 传送带/流体管打角色标签。
+- **配方**：FastPipes 原生配方不动；BC 管道按 SF-35 弱化；统一原油/燃料/杂酚油标签与 Refurbished FluidHandler 桥原样保留。
+
+### Capability 实测（starforge_captest.js，服务端真实放置+tick）
+
+| 链路 | 结果 |
+| --- | --- |
+| 箱子 → item 管(抽取附件) → 箱子 | 通过：批次交付（basic 60 tick/8 件） |
+| BC 储罐 → fluid 管(抽取附件) → BC 储罐 | 通过：16000 mB 水全部送达，进出相等 |
+| Ad Astra energizer → energy 管(抽取附件) → IC2 电炉 | 通过：源 192000→173762，炉获 15994，管网缓存 994，无增殖 |
+| IE capacitor_lv | FE cap 全六面但 receive-only（canExtract=false），不可被抽取端取电，需上游主动推 |
+| IC2CRE batbox/generator/copper_cable | EnergyStorage 全六面暴露——**原生 FE 桥确认**，按约定不加转换器 |
+| AE2 energy_acceptor/controller | 全六面收 FE（孤立接收器不接网不蓄电，属 AE2 原生语义） |
+| Energized energy_transformer | 全六面收 FE（Refurbished 桥不变） |
+| BC mj_dynamo / engine_fe | dynamo 顶面出 FE；engine_fe 不暴露 FE cap（走 BC 自有管道流） |
+| Railcraft charge_terminal/charge_motor | 不暴露 FE cap——Charge 网络自足，按约定不加重复转换器 |
+| Ad Astra etrionic_capacitor / ae2:energy_cell | 不暴露 FE cap（模组内部储能语义） |
+| Refurbished kitchen_sink | 流体桥实测六面可读（starforge_compat 生效） |
+| Refurbished cooler | 无物品 cap（非自动化容器，符合原设计） |
+
+- **守恒结论**：能量管只搬不产；抽查链路源端净失 ≥ 目的端净增 + 管网缓存，未发现增殖。FE↔MJ（mj_dynamo/engine_fe 上游原生）、FE→Watt（Energized 原生）、IC2 原生 FE 端口均为单向或原生换算，无循环发电通道。
+- **遗留验证项**：附件 GUI 的过滤/优先级/分流模式人工验收；IE 可视化产线与 FastPipes 后台接驳的产线级联调；Railcraft Charge 设备端到端运行（自足链路，与 FE 网隔离属预期）；区块卸载/重载与网络重扫行为抽检。

@@ -40972,23 +40972,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41010,23 +41010,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41124,23 +41124,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41162,23 +41162,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"tag": "c:gems/lapis"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:gems/lapis"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41200,23 +41200,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:0b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41238,23 +41238,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41276,23 +41276,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"tag": "c:gems/lapis"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"tag": "c:gems/lapis"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41314,23 +41314,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:3b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41352,23 +41352,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41428,23 +41428,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/quartz"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"item": "buildcraftsilicon:redstone_chipset/quartz"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/quartz"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:1b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"item": "buildcraftsilicon:redstone_chipset/quartz"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41466,23 +41466,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
+					"item": "buildcraftsilicon:redstone_chipset/diamond"
+				},
+				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
-				},
-				{
-					"item": "buildcraftsilicon:redstone_chipset/diamond"
 				}
 			]
 		},
 		"ingredients": [
 			{
+				"item": "buildcraftsilicon:redstone_chipset/diamond"
+			},
+			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
-			},
-			{
-				"item": "buildcraftsilicon:redstone_chipset/diamond"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41504,23 +41504,23 @@
 			"group": "buildcraftsilicon:gate_modifier",
 			"ingredients": [
 				{
-					"tag": "c:gems/lapis"
-				},
-				{
 					"item": "buildcraftsilicon:plug/gate",
 					"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 					"type": "buildcraftlib:strict_nbt"
+				},
+				{
+					"tag": "c:gems/lapis"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:gems/lapis"
-			},
-			{
 				"item": "buildcraftsilicon:plug/gate",
 				"nbt": "{gate:{logic:1b,material:2b,modifier:0b}}",
 				"type": "buildcraftlib:strict_nbt"
+			},
+			{
+				"tag": "c:gems/lapis"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41638,21 +41638,21 @@
 			"group": "buildcraftsilicon:gate_or",
 			"ingredients": [
 				{
-					"item": "buildcraftsilicon:redstone_chipset/iron",
-					"type": "buildcraftlib:strict_nbt"
+					"item": "minecraft:nether_bricks"
 				},
 				{
-					"item": "minecraft:nether_bricks"
+					"item": "buildcraftsilicon:redstone_chipset/iron",
+					"type": "buildcraftlib:strict_nbt"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftsilicon:redstone_chipset/iron",
-				"type": "buildcraftlib:strict_nbt"
+				"item": "minecraft:nether_bricks"
 			},
 			{
-				"item": "minecraft:nether_bricks"
+				"item": "buildcraftsilicon:redstone_chipset/iron",
+				"type": "buildcraftlib:strict_nbt"
 			}
 		],
 		"result": "buildcraftsilicon:plug/gate x1"
@@ -41672,19 +41672,19 @@
 			"MJ": 250000000,
 			"ingredients": [
 				{
-					"item": "buildcraftcore:wrench"
+					"item": "buildcraftsilicon:redstone_chipset/iron"
 				},
 				{
-					"item": "buildcraftsilicon:redstone_chipset/iron"
+					"item": "buildcraftcore:wrench"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "buildcraftcore:wrench"
+				"item": "buildcraftsilicon:redstone_chipset/iron"
 			},
 			{
-				"item": "buildcraftsilicon:redstone_chipset/iron"
+				"item": "buildcraftcore:wrench"
 			}
 		],
 		"result": "buildcraftsilicon:gate_copier x1"
@@ -41705,19 +41705,19 @@
 			"group": "buildcraftsilicon:chipsets",
 			"ingredients": [
 				{
-					"tag": "c:dusts/redstone"
+					"tag": "c:ingots/gold"
 				},
 				{
-					"tag": "c:ingots/gold"
+					"tag": "c:dusts/redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:dusts/redstone"
+				"tag": "c:ingots/gold"
 			},
 			{
-				"tag": "c:ingots/gold"
+				"tag": "c:dusts/redstone"
 			}
 		],
 		"result": "buildcraftsilicon:redstone_chipset/gold x1"
@@ -41738,19 +41738,19 @@
 			"group": "buildcraftsilicon:chipsets",
 			"ingredients": [
 				{
-					"tag": "c:ingots/iron"
+					"tag": "c:dusts/redstone"
 				},
 				{
-					"tag": "c:dusts/redstone"
+					"tag": "c:ingots/iron"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:ingots/iron"
+				"tag": "c:dusts/redstone"
 			},
 			{
-				"tag": "c:dusts/redstone"
+				"tag": "c:ingots/iron"
 			}
 		],
 		"result": "buildcraftsilicon:redstone_chipset/iron x1"
@@ -41772,19 +41772,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:black_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:black_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:black_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:black_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41874,19 +41874,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:cyan_stained_glass"
 				},
 				{
-					"item": "minecraft:cyan_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:cyan_stained_glass"
 			},
 			{
-				"item": "minecraft:cyan_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41908,19 +41908,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:gray_stained_glass"
 				},
 				{
-					"item": "minecraft:gray_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:gray_stained_glass"
 			},
 			{
-				"item": "minecraft:gray_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41942,19 +41942,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:green_stained_glass"
 				},
 				{
-					"item": "minecraft:green_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:green_stained_glass"
 			},
 			{
-				"item": "minecraft:green_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -41976,19 +41976,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:light_blue_stained_glass"
 				},
 				{
-					"item": "minecraft:light_blue_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:light_blue_stained_glass"
 			},
 			{
-				"item": "minecraft:light_blue_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42010,19 +42010,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:light_gray_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:light_gray_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:light_gray_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:light_gray_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42044,19 +42044,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:lime_stained_glass"
 				},
 				{
-					"item": "minecraft:lime_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:lime_stained_glass"
 			},
 			{
-				"item": "minecraft:lime_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42078,19 +42078,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:magenta_stained_glass"
 				},
 				{
-					"item": "minecraft:magenta_stained_glass"
+					"item": "minecraft:iron_bars"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:magenta_stained_glass"
 			},
 			{
-				"item": "minecraft:magenta_stained_glass"
+				"item": "minecraft:iron_bars"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42146,19 +42146,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:pink_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:pink_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:pink_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:pink_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42248,19 +42248,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:white_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:white_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:white_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:white_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42282,19 +42282,19 @@
 			"group": "buildcraftsilicon:lens_filters",
 			"ingredients": [
 				{
-					"item": "minecraft:yellow_stained_glass"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"item": "minecraft:yellow_stained_glass"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:yellow_stained_glass"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"item": "minecraft:yellow_stained_glass"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -42316,19 +42316,19 @@
 			"group": "buildcraftsilicon:lens_regulars",
 			"ingredients": [
 				{
-					"tag": "c:glass_blocks"
+					"item": "minecraft:iron_bars"
 				},
 				{
-					"item": "minecraft:iron_bars"
+					"tag": "c:glass_blocks"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"tag": "c:glass_blocks"
+				"item": "minecraft:iron_bars"
 			},
 			{
-				"item": "minecraft:iron_bars"
+				"tag": "c:glass_blocks"
 			}
 		],
 		"result": "buildcraftsilicon:plug/lens x1"
@@ -43115,19 +43115,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:gray_dye"
 				},
 				{
-					"item": "minecraft:gray_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:gray_dye"
 			},
 			{
-				"item": "minecraft:gray_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/gray x8"
@@ -43251,19 +43251,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:lime_dye"
 				},
 				{
-					"item": "minecraft:lime_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:lime_dye"
 			},
 			{
-				"item": "minecraft:lime_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/lime x8"
@@ -43319,19 +43319,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:orange_dye"
 				},
 				{
-					"item": "minecraft:orange_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:orange_dye"
 			},
 			{
-				"item": "minecraft:orange_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/orange x8"
@@ -43353,19 +43353,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:pink_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:pink_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:pink_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:pink_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/pink x8"
@@ -43421,19 +43421,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:red_dye"
 				},
 				{
-					"item": "minecraft:red_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:red_dye"
 			},
 			{
-				"item": "minecraft:red_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/red x8"
@@ -43455,19 +43455,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:white_dye"
+					"item": "minecraft:redstone"
 				},
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:white_dye"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:white_dye"
+				"item": "minecraft:redstone"
 			},
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:white_dye"
 			}
 		],
 		"result": "buildcrafttransport:wire/white x8"
@@ -43489,19 +43489,19 @@
 			"group": "buildcrafttransport:wires",
 			"ingredients": [
 				{
-					"item": "minecraft:redstone"
+					"item": "minecraft:yellow_dye"
 				},
 				{
-					"item": "minecraft:yellow_dye"
+					"item": "minecraft:redstone"
 				}
 			]
 		},
 		"ingredients": [
 			{
-				"item": "minecraft:redstone"
+				"item": "minecraft:yellow_dye"
 			},
 			{
-				"item": "minecraft:yellow_dye"
+				"item": "minecraft:redstone"
 			}
 		],
 		"result": "buildcrafttransport:wire/yellow x8"
@@ -44135,1108 +44135,6 @@
 		"ingredients": []
 	},
 	{
-		"id": "buildcrafttransport:clay_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:clay_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:clay_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:clay_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:clay_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:clay_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:clay_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:clay_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:clay_fluid"
-			}
-		],
-		"result": "buildcrafttransport:clay_item x1"
-	},
-	{
-		"id": "buildcrafttransport:clay_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "minecraft:clay"
-			},
-			"result": {
-				"item": "buildcrafttransport:clay_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "minecraft:clay"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "minecraft:clay"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "minecraft:clay"
-			}
-		],
-		"result": "buildcrafttransport:clay_item x8"
-	},
-	{
-		"id": "buildcrafttransport:cobblestone_fe",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:cobblestone_power"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:cobblestone_fe"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:cobblestone_power"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:cobblestone_fe x1"
-	},
-	{
-		"id": "buildcrafttransport:cobblestone_fe_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:cobblestone_fe"
-			},
-			"result": {
-				"item": "buildcrafttransport:cobblestone_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:cobblestone_fe"
-			}
-		],
-		"result": "buildcrafttransport:cobblestone_power x1"
-	},
-	{
-		"id": "buildcrafttransport:cobblestone_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:cobblestone_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:cobblestone_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:cobblestone_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:cobblestone_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:cobblestone_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:cobblestone_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:cobblestone_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:cobblestone_fluid"
-			}
-		],
-		"result": "buildcrafttransport:cobblestone_item x1"
-	},
-	{
-		"id": "buildcrafttransport:cobblestone_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "minecraft:cobblestone"
-			},
-			"result": {
-				"item": "buildcrafttransport:cobblestone_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "minecraft:cobblestone"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "minecraft:cobblestone"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "minecraft:cobblestone"
-			}
-		],
-		"result": "buildcrafttransport:cobblestone_item x8"
-	},
-	{
-		"id": "buildcrafttransport:cobblestone_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:cobblestone_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:cobblestone_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:cobblestone_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:cobblestone_power x1"
-	},
-	{
-		"id": "buildcrafttransport:cobblestone_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:cobblestone_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:cobblestone_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:cobblestone_power"
-			}
-		],
-		"result": "buildcrafttransport:cobblestone_item x1"
-	},
-	{
-		"id": "buildcrafttransport:daizuli_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"tag": "c:gems/diamond"
-			},
-			"result": {
-				"item": "buildcrafttransport:daizuli_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "minecraft:lapis_block"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "minecraft:lapis_block"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"tag": "c:gems/diamond"
-			}
-		],
-		"result": "buildcrafttransport:daizuli_item x8"
-	},
-	{
-		"id": "buildcrafttransport:diamond_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:diamond_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:diamond_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_fluid"
-			}
-		],
-		"result": "buildcrafttransport:diamond_item x1"
-	},
-	{
-		"id": "buildcrafttransport:diamond_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"tag": "c:gems/diamond"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"tag": "c:gems/diamond"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"tag": "c:gems/diamond"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"tag": "c:gems/diamond"
-			}
-		],
-		"result": "buildcrafttransport:diamond_item x8"
-	},
-	{
-		"id": "buildcrafttransport:diamond_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:diamond_power x1"
-	},
-	{
-		"id": "buildcrafttransport:diamond_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_power"
-			}
-		],
-		"result": "buildcrafttransport:diamond_item x1"
-	},
-	{
-		"id": "buildcrafttransport:diamond_wood_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_wood_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:diamond_wood_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:diamond_wood_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_wood_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_wood_fluid"
-			}
-		],
-		"result": "buildcrafttransport:diamond_wood_item x1"
-	},
-	{
-		"id": "buildcrafttransport:diamond_wood_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"tag": "c:gems/diamond"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_wood_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"tag": "minecraft:planks"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"tag": "minecraft:planks"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"tag": "c:gems/diamond"
-			}
-		],
-		"result": "buildcrafttransport:diamond_wood_item x8"
-	},
-	{
-		"id": "buildcrafttransport:diamond_wood_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_wood_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:diamond_wood_power x1"
-	},
-	{
-		"id": "buildcrafttransport:diamond_wood_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_wood_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_wood_power"
-			}
-		],
-		"result": "buildcrafttransport:diamond_wood_item x1"
-	},
-	{
-		"id": "buildcrafttransport:emzuli_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			"additional": {
-				"item": "minecraft:lapis_block"
-			},
-			"result": {
-				"item": "buildcrafttransport:emzuli_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			{
-				"item": "minecraft:lapis_block"
-			}
-		],
-		"result": "buildcrafttransport:emzuli_item x1"
-	},
-	{
-		"id": "buildcrafttransport:emzuli_item_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:emzuli_item"
-			},
-			"result": {
-				"item": "buildcrafttransport:diamond_wood_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:emzuli_item"
-			}
-		],
-		"result": "buildcrafttransport:diamond_wood_item x1"
-	},
-	{
 		"id": "buildcrafttransport:filtered_buffer",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shaped",
@@ -45296,734 +44194,6 @@
 			}
 		],
 		"result": "buildcrafttransport:filtered_buffer x1"
-	},
-	{
-		"id": "buildcrafttransport:gold_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:gold_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:gold_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:gold_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:gold_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:gold_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:gold_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:gold_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:gold_fluid"
-			}
-		],
-		"result": "buildcrafttransport:gold_item x1"
-	},
-	{
-		"id": "buildcrafttransport:gold_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"tag": "c:ingots/gold"
-			},
-			"result": {
-				"item": "buildcrafttransport:gold_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"tag": "c:ingots/gold"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/gold"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"tag": "c:ingots/gold"
-			}
-		],
-		"result": "buildcrafttransport:gold_item x8"
-	},
-	{
-		"id": "buildcrafttransport:gold_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:gold_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:gold_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:gold_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:gold_power x1"
-	},
-	{
-		"id": "buildcrafttransport:gold_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:gold_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:gold_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:gold_power"
-			}
-		],
-		"result": "buildcrafttransport:gold_item x1"
-	},
-	{
-		"id": "buildcrafttransport:iron_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:iron_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:iron_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:iron_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:iron_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:iron_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:iron_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:iron_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:iron_fluid"
-			}
-		],
-		"result": "buildcrafttransport:iron_item x1"
-	},
-	{
-		"id": "buildcrafttransport:iron_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"tag": "c:ingots/iron"
-			},
-			"result": {
-				"item": "buildcrafttransport:iron_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"tag": "c:ingots/iron"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "buildcrafttransport:iron_item x8"
-	},
-	{
-		"id": "buildcrafttransport:iron_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:iron_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:iron_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:iron_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:iron_power x1"
-	},
-	{
-		"id": "buildcrafttransport:iron_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:iron_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:iron_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:iron_power"
-			}
-		],
-		"result": "buildcrafttransport:iron_item x1"
-	},
-	{
-		"id": "buildcrafttransport:lapis_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "minecraft:lapis_block"
-			},
-			"result": {
-				"item": "buildcrafttransport:lapis_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "minecraft:lapis_block"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "minecraft:lapis_block"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "minecraft:lapis_block"
-			}
-		],
-		"result": "buildcrafttransport:lapis_item x8"
-	},
-	{
-		"id": "buildcrafttransport:obsidian_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "minecraft:obsidian"
-			},
-			"result": {
-				"item": "buildcrafttransport:obsidian_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "minecraft:obsidian"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "minecraft:obsidian"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "minecraft:obsidian"
-			}
-		],
-		"result": "buildcrafttransport:obsidian_item x8"
 	},
 	{
 		"id": "buildcrafttransport:plug_blocker",
@@ -46110,236 +44280,6 @@
 		"result": "buildcrafttransport:plug_power_adaptor x4"
 	},
 	{
-		"id": "buildcrafttransport:quartz_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:quartz_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:quartz_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:quartz_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:quartz_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:quartz_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:quartz_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:quartz_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:quartz_fluid"
-			}
-		],
-		"result": "buildcrafttransport:quartz_item x1"
-	},
-	{
-		"id": "buildcrafttransport:quartz_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "minecraft:quartz_block"
-			},
-			"result": {
-				"item": "buildcrafttransport:quartz_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "minecraft:quartz_block"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "minecraft:quartz_block"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "minecraft:quartz_block"
-			}
-		],
-		"result": "buildcrafttransport:quartz_item x8"
-	},
-	{
-		"id": "buildcrafttransport:quartz_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:quartz_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:quartz_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:quartz_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:quartz_power x1"
-	},
-	{
-		"id": "buildcrafttransport:quartz_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:quartz_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:quartz_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:quartz_power"
-			}
-		],
-		"result": "buildcrafttransport:quartz_item x1"
-	},
-	{
 		"id": "buildcrafttransport:residue_to_waterproof",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shapeless",
@@ -46361,680 +44301,6 @@
 			}
 		],
 		"result": "buildcrafttransport:waterproof x8"
-	},
-	{
-		"id": "buildcrafttransport:sandstone_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:sandstone_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:sandstone_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:sandstone_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:sandstone_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:sandstone_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:sandstone_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:sandstone_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:sandstone_fluid"
-			}
-		],
-		"result": "buildcrafttransport:sandstone_item x1"
-	},
-	{
-		"id": "buildcrafttransport:sandstone_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": [
-				{
-					"item": "minecraft:sandstone"
-				},
-				{
-					"item": "minecraft:chiseled_sandstone"
-				},
-				{
-					"item": "minecraft:smooth_sandstone"
-				}
-			],
-			"result": {
-				"item": "buildcrafttransport:sandstone_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": [
-				{
-					"item": "minecraft:sandstone"
-				},
-				{
-					"item": "minecraft:chiseled_sandstone"
-				},
-				{
-					"item": "minecraft:smooth_sandstone"
-				}
-			],
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			[
-				{
-					"item": "minecraft:sandstone"
-				},
-				{
-					"item": "minecraft:chiseled_sandstone"
-				},
-				{
-					"item": "minecraft:smooth_sandstone"
-				}
-			],
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			[
-				{
-					"item": "minecraft:sandstone"
-				},
-				{
-					"item": "minecraft:chiseled_sandstone"
-				},
-				{
-					"item": "minecraft:smooth_sandstone"
-				}
-			]
-		],
-		"result": "buildcrafttransport:sandstone_item x8"
-	},
-	{
-		"id": "buildcrafttransport:sandstone_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:sandstone_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:sandstone_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:sandstone_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:sandstone_power x1"
-	},
-	{
-		"id": "buildcrafttransport:sandstone_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:sandstone_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:sandstone_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:sandstone_power"
-			}
-		],
-		"result": "buildcrafttransport:sandstone_item x1"
-	},
-	{
-		"id": "buildcrafttransport:stone_fe",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:stone_power"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:stone_fe"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:stone_power"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:stone_fe x1"
-	},
-	{
-		"id": "buildcrafttransport:stone_fe_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:stone_fe"
-			},
-			"result": {
-				"item": "buildcrafttransport:stone_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:stone_fe"
-			}
-		],
-		"result": "buildcrafttransport:stone_power x1"
-	},
-	{
-		"id": "buildcrafttransport:stone_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:stone_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:stone_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:stone_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:stone_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:stone_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:stone_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:stone_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:stone_fluid"
-			}
-		],
-		"result": "buildcrafttransport:stone_item x1"
-	},
-	{
-		"id": "buildcrafttransport:stone_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "minecraft:stone"
-			},
-			"result": {
-				"item": "buildcrafttransport:stone_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "minecraft:stone"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "minecraft:stone"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "minecraft:stone"
-			}
-		],
-		"result": "buildcrafttransport:stone_item x8"
-	},
-	{
-		"id": "buildcrafttransport:stone_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:stone_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:stone_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:stone_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:stone_power x1"
-	},
-	{
-		"id": "buildcrafttransport:stone_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:stone_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:stone_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:stone_power"
-			}
-		],
-		"result": "buildcrafttransport:stone_item x1"
-	},
-	{
-		"id": "buildcrafttransport:stripes_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "buildcraftcore:gears/gear_gold"
-			},
-			"result": {
-				"item": "buildcrafttransport:stripes_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"item": "buildcraftcore:gears/gear_gold"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"item": "buildcraftcore:gears/gear_gold"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "buildcraftcore:gears/gear_gold"
-			}
-		],
-		"result": "buildcrafttransport:stripes_item x8"
 	},
 	{
 		"id": "buildcrafttransport:structure",
@@ -47072,188 +44338,6 @@
 		"result": "buildcrafttransport:structure x8"
 	},
 	{
-		"id": "buildcrafttransport:void_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:void_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:void_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:void_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:void_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:void_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:void_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:void_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:void_fluid"
-			}
-		],
-		"result": "buildcrafttransport:void_item x1"
-	},
-	{
-		"id": "buildcrafttransport:void_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:void_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"tag": "c:dyes/black"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"tag": "c:dyes/black"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:void_item x8"
-	},
-	{
 		"id": "buildcrafttransport:waterproof",
 		"type": "minecraft:crafting",
 		"serializer": "minecraft:crafting_shapeless",
@@ -47285,284 +44369,6 @@
 			]
 		],
 		"result": "buildcrafttransport:waterproof x1"
-	},
-	{
-		"id": "buildcrafttransport:wood_fe",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:wood_power"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:wood_fe"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:wood_power"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:wood_fe x1"
-	},
-	{
-		"id": "buildcrafttransport:wood_fe_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:wood_fe"
-			},
-			"result": {
-				"item": "buildcrafttransport:wood_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:wood_fe"
-			}
-		],
-		"result": "buildcrafttransport:wood_power x1"
-	},
-	{
-		"id": "buildcrafttransport:wood_fluid",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:wood_item"
-			},
-			"additional": {
-				"item": "buildcrafttransport:waterproof"
-			},
-			"result": {
-				"item": "buildcrafttransport:wood_fluid"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:wood_item"
-			},
-			{
-				"item": "buildcrafttransport:waterproof"
-			}
-		],
-		"result": "buildcrafttransport:wood_fluid x1"
-	},
-	{
-		"id": "buildcrafttransport:wood_fluid_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:wood_fluid"
-			},
-			"result": {
-				"item": "buildcrafttransport:wood_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:wood_fluid"
-			}
-		],
-		"result": "buildcrafttransport:wood_item x1"
-	},
-	{
-		"id": "buildcrafttransport:wood_item",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"right": {
-				"tag": "minecraft:planks"
-			},
-			"result": {
-				"item": "buildcrafttransport:wood_item",
-				"count": 8
-			},
-			"group": "buildcrafttransport:pipes",
-			"mode": "base",
-			"left": {
-				"tag": "minecraft:planks"
-			},
-			"middle": [
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			]
-		},
-		"ingredients": [
-			{
-				"tag": "minecraft:planks"
-			},
-			[
-				{
-					"item": "minecraft:glass"
-				},
-				{
-					"item": "minecraft:white_stained_glass"
-				},
-				{
-					"item": "minecraft:orange_stained_glass"
-				},
-				{
-					"item": "minecraft:magenta_stained_glass"
-				},
-				{
-					"item": "minecraft:light_blue_stained_glass"
-				},
-				{
-					"item": "minecraft:yellow_stained_glass"
-				},
-				{
-					"item": "minecraft:lime_stained_glass"
-				},
-				{
-					"item": "minecraft:pink_stained_glass"
-				},
-				{
-					"item": "minecraft:gray_stained_glass"
-				},
-				{
-					"item": "minecraft:light_gray_stained_glass"
-				},
-				{
-					"item": "minecraft:cyan_stained_glass"
-				},
-				{
-					"item": "minecraft:purple_stained_glass"
-				},
-				{
-					"item": "minecraft:blue_stained_glass"
-				},
-				{
-					"item": "minecraft:brown_stained_glass"
-				},
-				{
-					"item": "minecraft:green_stained_glass"
-				},
-				{
-					"item": "minecraft:red_stained_glass"
-				},
-				{
-					"item": "minecraft:black_stained_glass"
-				}
-			],
-			{
-				"tag": "minecraft:planks"
-			}
-		],
-		"result": "buildcrafttransport:wood_item x8"
-	},
-	{
-		"id": "buildcrafttransport:wood_power",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:wood_item"
-			},
-			"additional": {
-				"item": "minecraft:redstone"
-			},
-			"result": {
-				"item": "buildcrafttransport:wood_power"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "upgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:wood_item"
-			},
-			{
-				"item": "minecraft:redstone"
-			}
-		],
-		"result": "buildcrafttransport:wood_power x1"
-	},
-	{
-		"id": "buildcrafttransport:wood_power_undo",
-		"type": "minecraft:crafting",
-		"serializer": "buildcrafttransport:pipe",
-		"json": {
-			"from": {
-				"item": "buildcrafttransport:wood_power"
-			},
-			"result": {
-				"item": "buildcrafttransport:wood_item"
-			},
-			"group": "buildcrafttransport:pipe_upgrades",
-			"mode": "downgrade"
-		},
-		"ingredients": [
-			{
-				"item": "buildcrafttransport:wood_power"
-			}
-		],
-		"result": "buildcrafttransport:wood_item x1"
 	},
 	{
 		"id": "buildinggadgets2:gadget_cut_paste",
@@ -55285,14 +52091,6 @@
 		"result": "tacz:ammo x60"
 	},
 	{
-		"id": "eos:ammo/alloy",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": [],
-		"result": "tacz:ammo x10"
-	},
-	{
 		"id": "eos:ammo/arrow",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
@@ -55307,6 +52105,461 @@
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
 		"ingredients": [],
 		"result": "tacz:ammo x2"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_aa",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_ba",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_da",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/arrow_mod_dea",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/bayonet_eternity",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/bayonet_katana",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/bayonet_rebellion_of_kronus",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_bipod_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_bipod_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_5",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/grip_eos_grip_6",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/handguard_eos_handguard_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/laser_t2_laser_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/laser_t2_laser_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/laser_t3_laser_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t2_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/magazine_t3_4",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_brake_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_brake_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_brake_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_pistol_brake_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_pistol_silencer_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_silencer_1",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/muzzle_eos_silencer_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_elp_52_t3_default",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_eh_72_hud_sight",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_nvk_nxt",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ps18",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_pvq31",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_pvq31_hs04",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts14",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts15",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts16",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_eos_ts17",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/scope_schmidt_bender_10x56mm",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_css04",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_hs02",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_hs04",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_huds05",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_nvk",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_nxt",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_su_3",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/sight_eos_uh87",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
+	},
+	{
+		"id": "eos:attachments/stock_eos_tactical",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": []
+	},
+	{
+		"id": "eos:attachments/stock_t3_core_2",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:attachment x1"
 	},
 	{
 		"id": "eos:blocks/eos_printer",
@@ -55365,223 +52618,212 @@
 		"result": "tacz:workbench_b x1"
 	},
 	{
-		"id": "eos:blocks/old_conversion",
-		"type": "minecraft:crafting",
-		"serializer": "minecraft:crafting_shaped",
-		"json": {
-			"key": {
-				"B": {
-					"tag": "c:ingots/iron"
-				},
-				"D": {
-					"tag": "c:ingots/copper"
-				}
-			},
-			"pattern": [
-				"BD",
-				"DB"
-			],
-			"result": {
-				"id": "tacz:workbench_a",
-				"count": 1,
-				"components": {
-					"minecraft:custom_data": {
-						"BlockId": "eos_old:old_conversion"
-					}
-				}
-			},
-			"category": "misc"
-		},
-		"ingredients": [
-			{
-				"tag": "c:ingots/iron"
-			},
-			{
-				"tag": "c:ingots/copper"
-			},
-			{
-				"tag": "c:ingots/copper"
-			},
-			{
-				"tag": "c:ingots/iron"
-			}
-		],
-		"result": "tacz:workbench_a x1"
-	},
-	{
 		"id": "eos:gun/chasing_light",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/clover_cross",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_13_t3",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_13_t3x2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_34_t3",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_34c_t3",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_45_t3",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_47_t3",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_52_t3",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/elp_72_t3",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_achilles",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_ar68_t2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
-	},
-	{
-		"id": "eos:gun/eos_chaos",
-		"type": "tacz:gun_smith_table_crafting",
-		"serializer": "tacz:gun_smith_table_crafting",
-		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_helenas_nail",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_hg57_t2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_hg57_t2_smgmod",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_m_57cw_t2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_m_57cw_t2x2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_mg85_t2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_nekomata",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_qgz_86_t2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_riku_t2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/eos_sr85_t2",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/wa2000",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "eos:gun/wa2000_snake_kiss",
 		"type": "tacz:gun_smith_table_crafting",
 		"serializer": "tacz:gun_smith_table_crafting",
 		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
-		"ingredients": []
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos_old:gun/chasing_light_magazine",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
+	},
+	{
+		"id": "eos_old:gun/chasing_light_voice",
+		"type": "tacz:gun_smith_table_crafting",
+		"serializer": "tacz:gun_smith_table_crafting",
+		"encode_error": "JavaException: java.lang.UnsupportedOperationException: null",
+		"ingredients": [],
+		"result": "tacz:modern_kinetic_gun x1"
 	},
 	{
 		"id": "farmersdelight:acacia_cabinet",
@@ -68419,6 +65661,1916 @@
 			}
 		],
 		"result": "farmersdelight:yellow_hanging_canvas_sign x1"
+	},
+	{
+		"id": "fastpipes:advanced_energy_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"P": {
+					"item": "fastpipes:improved_energy_pipe"
+				}
+			},
+			"pattern": [
+				" D ",
+				"DPD",
+				" D "
+			],
+			"result": {
+				"id": "fastpipes:advanced_energy_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "fastpipes:improved_energy_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			[]
+		],
+		"result": "fastpipes:advanced_energy_pipe x1"
+	},
+	{
+		"id": "fastpipes:advanced_extractor_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"P": {
+					"item": "fastpipes:improved_extractor_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"DDD",
+				"DPD"
+			],
+			"result": {
+				"id": "fastpipes:advanced_extractor_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "fastpipes:improved_extractor_attachment"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "fastpipes:advanced_extractor_attachment x1"
+	},
+	{
+		"id": "fastpipes:advanced_fluid_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"P": {
+					"item": "fastpipes:improved_fluid_pipe"
+				}
+			},
+			"pattern": [
+				" D ",
+				"DPD",
+				" D "
+			],
+			"result": {
+				"id": "fastpipes:advanced_fluid_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "fastpipes:improved_fluid_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			[]
+		],
+		"result": "fastpipes:advanced_fluid_pipe x1"
+	},
+	{
+		"id": "fastpipes:advanced_inserter_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"P": {
+					"item": "fastpipes:improved_inserter_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"DDD",
+				"DPD"
+			],
+			"result": {
+				"id": "fastpipes:advanced_inserter_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "fastpipes:improved_inserter_attachment"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "fastpipes:advanced_inserter_attachment x1"
+	},
+	{
+		"id": "fastpipes:advanced_item_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"P": {
+					"item": "fastpipes:improved_item_pipe"
+				}
+			},
+			"pattern": [
+				" D ",
+				"DPD",
+				" D "
+			],
+			"result": {
+				"id": "fastpipes:advanced_item_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "fastpipes:improved_item_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			[],
+			{
+				"tag": "c:gems/diamond"
+			},
+			[]
+		],
+		"result": "fastpipes:advanced_item_pipe x1"
+	},
+	{
+		"id": "fastpipes:basic_energy_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"G": {
+					"tag": "c:glass_blocks"
+				},
+				"R": {
+					"tag": "c:storage_blocks/redstone"
+				}
+			},
+			"pattern": [
+				"III",
+				"GRG",
+				"III"
+			],
+			"result": {
+				"id": "fastpipes:basic_energy_pipe",
+				"count": 6
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:storage_blocks/redstone"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:basic_energy_pipe x6"
+	},
+	{
+		"id": "fastpipes:basic_extractor_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"P": {
+					"item": "minecraft:piston"
+				}
+			},
+			"pattern": [
+				"   ",
+				"III",
+				"IPI"
+			],
+			"result": {
+				"id": "fastpipes:basic_extractor_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "minecraft:piston"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:basic_extractor_attachment x1"
+	},
+	{
+		"id": "fastpipes:basic_fluid_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"G": {
+					"tag": "c:glass_blocks"
+				},
+				"S": {
+					"tag": "c:slimeballs"
+				}
+			},
+			"pattern": [
+				"III",
+				"GSG",
+				"III"
+			],
+			"result": {
+				"id": "fastpipes:basic_fluid_pipe",
+				"count": 6
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:slimeballs"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:basic_fluid_pipe x6"
+	},
+	{
+		"id": "fastpipes:basic_inserter_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"H": {
+					"item": "minecraft:hopper"
+				}
+			},
+			"pattern": [
+				"   ",
+				"III",
+				"IHI"
+			],
+			"result": {
+				"id": "fastpipes:basic_inserter_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "minecraft:hopper"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:basic_inserter_attachment x1"
+	},
+	{
+		"id": "fastpipes:basic_item_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"G": {
+					"tag": "c:glass_blocks"
+				}
+			},
+			"pattern": [
+				"III",
+				"GGG",
+				"III"
+			],
+			"result": {
+				"id": "fastpipes:basic_item_pipe",
+				"count": 6
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:basic_item_pipe x6"
+	},
+	{
+		"id": "fastpipes:copper_barrel",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"C": {
+					"tag": "c:ingots/copper"
+				},
+				"B": {
+					"item": "fastpipes:oak_barrel"
+				}
+			},
+			"pattern": [
+				"CCC",
+				"CBC",
+				"CCC"
+			],
+			"result": {
+				"id": "fastpipes:copper_barrel",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"item": "fastpipes:oak_barrel"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			}
+		],
+		"result": "fastpipes:copper_barrel x1"
+	},
+	{
+		"id": "fastpipes:copper_barrel_upgrade",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"C": {
+					"tag": "c:ingots/copper"
+				},
+				"B": [
+					{
+						"item": "minecraft:barrel"
+					},
+					{
+						"item": "fastpipes:oak_barrel"
+					}
+				]
+			},
+			"pattern": [
+				"CCC",
+				"CBC",
+				"CCC"
+			],
+			"result": {
+				"id": "fastpipes:copper_barrel_upgrade",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			[
+				{
+					"item": "minecraft:barrel"
+				},
+				{
+					"item": "fastpipes:oak_barrel"
+				}
+			],
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/copper"
+			}
+		],
+		"result": "fastpipes:copper_barrel_upgrade x1"
+	},
+	{
+		"id": "fastpipes:diamond_barrel",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"G": {
+					"tag": "c:ingots/gold"
+				},
+				"B": {
+					"item": "fastpipes:gold_barrel"
+				}
+			},
+			"pattern": [
+				"DGD",
+				"GBG",
+				"DGD"
+			],
+			"result": {
+				"id": "fastpipes:diamond_barrel",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"item": "fastpipes:gold_barrel"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "fastpipes:diamond_barrel x1"
+	},
+	{
+		"id": "fastpipes:diamond_barrel_upgrade",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"G": {
+					"tag": "c:ingots/gold"
+				}
+			},
+			"pattern": [
+				"DGD",
+				"GDG",
+				"DGD"
+			],
+			"result": {
+				"id": "fastpipes:diamond_barrel_upgrade",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "fastpipes:diamond_barrel_upgrade x1"
+	},
+	{
+		"id": "fastpipes:elite_energy_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"E": {
+					"tag": "c:gems/emerald"
+				},
+				"P": {
+					"item": "fastpipes:advanced_energy_pipe"
+				}
+			},
+			"pattern": [
+				" E ",
+				"EPE",
+				" E "
+			],
+			"result": {
+				"id": "fastpipes:elite_energy_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:gems/emerald"
+			},
+			[],
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"item": "fastpipes:advanced_energy_pipe"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			[],
+			{
+				"tag": "c:gems/emerald"
+			},
+			[]
+		],
+		"result": "fastpipes:elite_energy_pipe x1"
+	},
+	{
+		"id": "fastpipes:elite_extractor_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"E": {
+					"tag": "c:gems/emerald"
+				},
+				"P": {
+					"item": "fastpipes:advanced_extractor_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"EEE",
+				"EPE"
+			],
+			"result": {
+				"id": "fastpipes:elite_extractor_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"item": "fastpipes:advanced_extractor_attachment"
+			},
+			{
+				"tag": "c:gems/emerald"
+			}
+		],
+		"result": "fastpipes:elite_extractor_attachment x1"
+	},
+	{
+		"id": "fastpipes:elite_fluid_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"E": {
+					"tag": "c:gems/emerald"
+				},
+				"P": {
+					"item": "fastpipes:advanced_fluid_pipe"
+				}
+			},
+			"pattern": [
+				" E ",
+				"EPE",
+				" E "
+			],
+			"result": {
+				"id": "fastpipes:elite_fluid_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:gems/emerald"
+			},
+			[],
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"item": "fastpipes:advanced_fluid_pipe"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			[],
+			{
+				"tag": "c:gems/emerald"
+			},
+			[]
+		],
+		"result": "fastpipes:elite_fluid_pipe x1"
+	},
+	{
+		"id": "fastpipes:elite_inserter_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"E": {
+					"tag": "c:gems/emerald"
+				},
+				"P": {
+					"item": "fastpipes:advanced_inserter_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"EEE",
+				"EPE"
+			],
+			"result": {
+				"id": "fastpipes:elite_inserter_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"tag": "c:gems/emerald"
+			},
+			{
+				"item": "fastpipes:advanced_inserter_attachment"
+			},
+			{
+				"tag": "c:gems/emerald"
+			}
+		],
+		"result": "fastpipes:elite_inserter_attachment x1"
+	},
+	{
+		"id": "fastpipes:gold_barrel",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"G": {
+					"tag": "c:ingots/gold"
+				},
+				"B": {
+					"item": "fastpipes:iron_barrel"
+				}
+			},
+			"pattern": [
+				"GGG",
+				"GBG",
+				"GGG"
+			],
+			"result": {
+				"id": "fastpipes:gold_barrel",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"item": "fastpipes:iron_barrel"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "fastpipes:gold_barrel x1"
+	},
+	{
+		"id": "fastpipes:gold_barrel_upgrade",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"G": {
+					"tag": "c:ingots/gold"
+				},
+				"I": {
+					"tag": "c:ingots/iron"
+				}
+			},
+			"pattern": [
+				"GGG",
+				"GIG",
+				"GGG"
+			],
+			"result": {
+				"id": "fastpipes:gold_barrel_upgrade",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "fastpipes:gold_barrel_upgrade x1"
+	},
+	{
+		"id": "fastpipes:improved_energy_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"G": {
+					"tag": "c:ingots/gold"
+				},
+				"P": {
+					"item": "fastpipes:basic_energy_pipe"
+				}
+			},
+			"pattern": [
+				" G ",
+				"GPG",
+				" G "
+			],
+			"result": {
+				"id": "fastpipes:improved_energy_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			[]
+		],
+		"result": "fastpipes:improved_energy_pipe x1"
+	},
+	{
+		"id": "fastpipes:improved_extractor_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"C": {
+					"tag": "c:ingots/gold"
+				},
+				"P": {
+					"item": "fastpipes:basic_extractor_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"CCC",
+				"CPC"
+			],
+			"result": {
+				"id": "fastpipes:improved_extractor_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"item": "fastpipes:basic_extractor_attachment"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "fastpipes:improved_extractor_attachment x1"
+	},
+	{
+		"id": "fastpipes:improved_fluid_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"G": {
+					"tag": "c:ingots/gold"
+				},
+				"P": {
+					"item": "fastpipes:basic_fluid_pipe"
+				}
+			},
+			"pattern": [
+				" G ",
+				"GPG",
+				" G "
+			],
+			"result": {
+				"id": "fastpipes:improved_fluid_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			[]
+		],
+		"result": "fastpipes:improved_fluid_pipe x1"
+	},
+	{
+		"id": "fastpipes:improved_inserter_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"G": {
+					"tag": "c:ingots/gold"
+				},
+				"P": {
+					"item": "fastpipes:basic_inserter_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"GGG",
+				"GPG"
+			],
+			"result": {
+				"id": "fastpipes:improved_inserter_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"item": "fastpipes:basic_inserter_attachment"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "fastpipes:improved_inserter_attachment x1"
+	},
+	{
+		"id": "fastpipes:improved_item_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"G": {
+					"tag": "c:ingots/gold"
+				},
+				"P": {
+					"item": "fastpipes:basic_item_pipe"
+				}
+			},
+			"pattern": [
+				" G ",
+				"GPG",
+				" G "
+			],
+			"result": {
+				"id": "fastpipes:improved_item_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:ingots/gold"
+			},
+			[],
+			{
+				"tag": "c:ingots/gold"
+			},
+			[]
+		],
+		"result": "fastpipes:improved_item_pipe x1"
+	},
+	{
+		"id": "fastpipes:iron_barrel",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"B": {
+					"item": "fastpipes:copper_barrel"
+				}
+			},
+			"pattern": [
+				"III",
+				"IBI",
+				"III"
+			],
+			"result": {
+				"id": "fastpipes:iron_barrel",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "fastpipes:copper_barrel"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:iron_barrel x1"
+	},
+	{
+		"id": "fastpipes:iron_barrel_upgrade",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"C": {
+					"tag": "c:ingots/copper"
+				}
+			},
+			"pattern": [
+				"III",
+				"ICI",
+				"III"
+			],
+			"result": {
+				"id": "fastpipes:iron_barrel_upgrade",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/copper"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:iron_barrel_upgrade x1"
+	},
+	{
+		"id": "fastpipes:netherite_barrel",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"N": {
+					"tag": "c:ingots/netherite"
+				},
+				"B": {
+					"item": "fastpipes:diamond_barrel"
+				}
+			},
+			"pattern": [
+				"NNN",
+				"NBN",
+				"NNN"
+			],
+			"result": {
+				"id": "fastpipes:netherite_barrel",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"item": "fastpipes:diamond_barrel"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			}
+		],
+		"result": "fastpipes:netherite_barrel x1"
+	},
+	{
+		"id": "fastpipes:netherite_barrel_upgrade",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"N": {
+					"tag": "c:ingots/netherite"
+				},
+				"D": {
+					"tag": "c:gems/diamond"
+				}
+			},
+			"pattern": [
+				"NNN",
+				"NDN",
+				"NNN"
+			],
+			"result": {
+				"id": "fastpipes:netherite_barrel_upgrade",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			},
+			{
+				"tag": "c:ingots/netherite"
+			}
+		],
+		"result": "fastpipes:netherite_barrel_upgrade x1"
+	},
+	{
+		"id": "fastpipes:oak_barrel",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"P": {
+					"tag": "minecraft:planks"
+				},
+				"S": {
+					"tag": "minecraft:wooden_slabs"
+				}
+			},
+			"pattern": [
+				"PSP",
+				"P P",
+				"PSP"
+			],
+			"result": {
+				"id": "fastpipes:oak_barrel",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "minecraft:wooden_slabs"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			[],
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "minecraft:wooden_slabs"
+			},
+			{
+				"tag": "minecraft:planks"
+			}
+		],
+		"result": "fastpipes:oak_barrel x1"
+	},
+	{
+		"id": "fastpipes:sensor_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"T": {
+					"item": "minecraft:redstone_torch"
+				},
+				"R": {
+					"item": "fastpipes:basic_item_pipe"
+				}
+			},
+			"pattern": [
+				" T ",
+				"IRI",
+				"   "
+			],
+			"result": {
+				"id": "fastpipes:sensor_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"item": "minecraft:redstone_torch"
+			},
+			[],
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:sensor_attachment x1"
+	},
+	{
+		"id": "fastpipes:terminal",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"G": {
+					"tag": "c:glass_blocks"
+				},
+				"D": {
+					"tag": "c:gems/diamond"
+				},
+				"P": {
+					"item": "fastpipes:basic_item_pipe"
+				}
+			},
+			"pattern": [
+				"IGI",
+				"DPD",
+				"III"
+			],
+			"result": {
+				"id": "fastpipes:terminal",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:glass_blocks"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:terminal x1"
+	},
+	{
+		"id": "fastpipes:ultimate_energy_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"C": {
+					"item": "minecraft:popped_chorus_fruit"
+				},
+				"P": {
+					"item": "fastpipes:elite_energy_pipe"
+				}
+			},
+			"pattern": [
+				" C ",
+				"CPC",
+				" C "
+			],
+			"result": {
+				"id": "fastpipes:ultimate_energy_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			[],
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "fastpipes:elite_energy_pipe"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			[],
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			[]
+		],
+		"result": "fastpipes:ultimate_energy_pipe x1"
+	},
+	{
+		"id": "fastpipes:ultimate_extractor_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"C": {
+					"item": "minecraft:popped_chorus_fruit"
+				},
+				"P": {
+					"item": "fastpipes:elite_extractor_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"CCC",
+				"CPC"
+			],
+			"result": {
+				"id": "fastpipes:ultimate_extractor_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "fastpipes:elite_extractor_attachment"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			}
+		],
+		"result": "fastpipes:ultimate_extractor_attachment x1"
+	},
+	{
+		"id": "fastpipes:ultimate_fluid_pipe",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"C": {
+					"item": "minecraft:popped_chorus_fruit"
+				},
+				"P": {
+					"item": "fastpipes:elite_fluid_pipe"
+				}
+			},
+			"pattern": [
+				" C ",
+				"CPC",
+				" C "
+			],
+			"result": {
+				"id": "fastpipes:ultimate_fluid_pipe",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			[],
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "fastpipes:elite_fluid_pipe"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			[],
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			[]
+		],
+		"result": "fastpipes:ultimate_fluid_pipe x1"
+	},
+	{
+		"id": "fastpipes:ultimate_inserter_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"C": {
+					"item": "minecraft:popped_chorus_fruit"
+				},
+				"P": {
+					"item": "fastpipes:elite_inserter_attachment"
+				}
+			},
+			"pattern": [
+				"   ",
+				"CCC",
+				"CPC"
+			],
+			"result": {
+				"id": "fastpipes:ultimate_inserter_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			},
+			{
+				"item": "fastpipes:elite_inserter_attachment"
+			},
+			{
+				"item": "minecraft:popped_chorus_fruit"
+			}
+		],
+		"result": "fastpipes:ultimate_inserter_attachment x1"
+	},
+	{
+		"id": "fastpipes:void_attachment",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				},
+				"O": {
+					"item": "minecraft:obsidian"
+				},
+				"P": {
+					"item": "fastpipes:basic_item_pipe"
+				}
+			},
+			"pattern": [
+				" O ",
+				"IPI",
+				"   "
+			],
+			"result": {
+				"id": "fastpipes:void_attachment",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"item": "minecraft:obsidian"
+			},
+			[],
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "fastpipes:void_attachment x1"
+	},
+	{
+		"id": "fastpipes:wrench",
+		"type": "minecraft:crafting",
+		"serializer": "minecraft:crafting_shaped",
+		"json": {
+			"key": {
+				"I": {
+					"tag": "c:ingots/iron"
+				}
+			},
+			"pattern": [
+				" I ",
+				" II",
+				"I  "
+			],
+			"result": {
+				"id": "fastpipes:wrench",
+				"count": 1
+			},
+			"category": "misc"
+		},
+		"ingredients": [
+			[],
+			{
+				"tag": "c:ingots/iron"
+			},
+			[],
+			[],
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			{
+				"tag": "c:ingots/iron"
+			},
+			[],
+			[]
+		],
+		"result": "fastpipes:wrench x1"
 	},
 	{
 		"id": "framedblocks:camo_application",
@@ -160357,6 +159509,1335 @@
 			}
 		],
 		"result": "buildcraftbuilders:quarry x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_clay_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:clay_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"item": "minecraft:clay"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"item": "minecraft:clay"
+			}
+		],
+		"result": "buildcrafttransport:clay_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_clay_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:clay_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:clay"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:clay"
+			}
+		],
+		"result": "buildcrafttransport:clay_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_cobblestone_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:cobblestone_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:cobblestone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:cobblestone"
+			}
+		],
+		"result": "buildcrafttransport:cobblestone_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_cobblestone_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:cobblestone_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"item": "minecraft:cobblestone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"item": "minecraft:cobblestone"
+			}
+		],
+		"result": "buildcrafttransport:cobblestone_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_cobblestone_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:cobblestone_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:cobblestone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:cobblestone"
+			}
+		],
+		"result": "buildcrafttransport:cobblestone_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_cobblestone_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:cobblestone_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:cobblestone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:cobblestone"
+			}
+		],
+		"result": "buildcrafttransport:cobblestone_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_daizuli_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:daizuli_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "c:gems/lapis"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:gems/lapis"
+			}
+		],
+		"result": "buildcrafttransport:daizuli_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_wood_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_wood_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_wood_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_wood_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_wood_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_wood_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_wood_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_wood_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_wood_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_diamond_wood_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:diamond_wood_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				},
+				{
+					"tag": "c:gems/diamond"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			},
+			{
+				"tag": "c:gems/diamond"
+			}
+		],
+		"result": "buildcrafttransport:diamond_wood_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_emzuli_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:emzuli_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "c:gems/emerald"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:gems/emerald"
+			}
+		],
+		"result": "buildcrafttransport:emzuli_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_gold_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:gold_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "c:ingots/gold"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "buildcrafttransport:gold_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_gold_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:gold_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"tag": "c:ingots/gold"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "buildcrafttransport:gold_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_gold_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:gold_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "c:ingots/gold"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "buildcrafttransport:gold_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_gold_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:gold_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "c:ingots/gold"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "c:ingots/gold"
+			}
+		],
+		"result": "buildcrafttransport:gold_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_iron_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:iron_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "c:ingots/iron"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "buildcrafttransport:iron_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_iron_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:iron_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"tag": "c:ingots/iron"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "buildcrafttransport:iron_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_iron_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:iron_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "c:ingots/iron"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "buildcrafttransport:iron_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_iron_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:iron_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "c:ingots/iron"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "c:ingots/iron"
+			}
+		],
+		"result": "buildcrafttransport:iron_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_lapis_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:lapis_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "c:gems/lapis"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "c:gems/lapis"
+			}
+		],
+		"result": "buildcrafttransport:lapis_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_obsidian_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:obsidian_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:obsidian"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:obsidian"
+			}
+		],
+		"result": "buildcrafttransport:obsidian_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_quartz_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:quartz_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:quartz_block"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:quartz_block"
+			}
+		],
+		"result": "buildcrafttransport:quartz_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_quartz_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:quartz_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"item": "minecraft:quartz_block"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"item": "minecraft:quartz_block"
+			}
+		],
+		"result": "buildcrafttransport:quartz_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_quartz_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:quartz_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:quartz_block"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:quartz_block"
+			}
+		],
+		"result": "buildcrafttransport:quartz_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_quartz_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:quartz_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:quartz_block"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:quartz_block"
+			}
+		],
+		"result": "buildcrafttransport:quartz_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_sandstone_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:sandstone_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:sandstone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:sandstone"
+			}
+		],
+		"result": "buildcrafttransport:sandstone_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_sandstone_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:sandstone_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"item": "minecraft:sandstone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"item": "minecraft:sandstone"
+			}
+		],
+		"result": "buildcrafttransport:sandstone_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_sandstone_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:sandstone_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:sandstone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:sandstone"
+			}
+		],
+		"result": "buildcrafttransport:sandstone_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_sandstone_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:sandstone_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:sandstone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:sandstone"
+			}
+		],
+		"result": "buildcrafttransport:sandstone_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_stone_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:stone_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:stone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:stone"
+			}
+		],
+		"result": "buildcrafttransport:stone_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_stone_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:stone_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"item": "minecraft:stone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"item": "minecraft:stone"
+			}
+		],
+		"result": "buildcrafttransport:stone_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_stone_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:stone_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:stone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:stone"
+			}
+		],
+		"result": "buildcrafttransport:stone_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_stone_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:stone_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"item": "minecraft:stone"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"item": "minecraft:stone"
+			}
+		],
+		"result": "buildcrafttransport:stone_power x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_stripes_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:stripes_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:piston"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:piston"
+			}
+		],
+		"result": "buildcrafttransport:stripes_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_void_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:void_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"item": "minecraft:obsidian"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"item": "minecraft:obsidian"
+			}
+		],
+		"result": "buildcrafttransport:void_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_void_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:void_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"item": "minecraft:obsidian"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"item": "minecraft:obsidian"
+			}
+		],
+		"result": "buildcrafttransport:void_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_wood_fe",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:wood_fe",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			}
+		],
+		"result": "buildcrafttransport:wood_fe x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_wood_fluid",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:wood_fluid",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_fluid_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_fluid_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			}
+		],
+		"result": "buildcrafttransport:wood_fluid x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_wood_item",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:wood_item",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_item_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_item_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			}
+		],
+		"result": "buildcrafttransport:wood_item x1"
+	},
+	{
+		"id": "kubejs:kjs/buildcrafttransport_wood_power",
+		"type": "minecraft:crafting",
+		"serializer": "kubejs:shapeless",
+		"json": {
+			"category": "misc",
+			"result": {
+				"id": "buildcrafttransport:wood_power",
+				"count": 1
+			},
+			"ingredients": [
+				{
+					"item": "fastpipes:basic_energy_pipe"
+				},
+				{
+					"tag": "minecraft:planks"
+				}
+			]
+		},
+		"ingredients": [
+			{
+				"item": "fastpipes:basic_energy_pipe"
+			},
+			{
+				"tag": "minecraft:planks"
+			}
+		],
+		"result": "buildcrafttransport:wood_power x1"
 	},
 	{
 		"id": "kubejs:kjs/buildinggadgets2_gadget_building",

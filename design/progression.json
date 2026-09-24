@@ -53,7 +53,7 @@
    "unlock_preview": [
     { "preview_key": "modpack.stage.mechanical_age.preview.0", "verify": ["ic2_generator"] },
     { "preview_key": "modpack.stage.mechanical_age.preview.1", "verify": ["ic2_macerator"] },
-    { "preview_key": "modpack.stage.mechanical_age.preview.2", "verify": ["bc_pipe_item_stone"] },
+    { "preview_key": "modpack.stage.mechanical_age.preview.2", "verify": ["fp_item_pipe_basic"] },
     { "preview_key": "modpack.stage.mechanical_age.preview.3", "verify": ["rc_cargo_minecart"] },
     { "preview_key": "modpack.stage.mechanical_age.preview.4", "verify": ["rc_steel_ingot"] }
    ],

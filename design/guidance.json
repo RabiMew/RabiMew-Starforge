@@ -1,40 +1,70 @@
 {
  "schema_version": 1,
  "comment": "Unified runtime guidance: one detection route per real gameplay event, emitted into ProgressiveStages counters / custom advancements / one-time hints. Generated into pack/kubejs/server_scripts/starforge_guidance.js by tools/build-pack.mjs — do not hand-maintain parallel lists in scripts. Detection kinds: craft_item, inventory_item, inventory_tag, inventory_items, block_use (item refs), block_tag (item/block tag resolved at build time), dimension, entity_spawned, quest (polls quest completion via ServerQuestFile), horde_start, horde_end, gun_ns (TaCZ gun NBT namespace), advancement_earned (hooks a vanilla-triggered advancement for its hint).",
- "alien_dimensions": ["moon", "mars", "venus", "mercury", "glacio", "asteroid_belt"],
+ "alien_dimensions": [
+  "moon",
+  "mars",
+  "venus",
+  "mercury",
+  "glacio",
+  "asteroid_belt"
+ ],
  "events": [
   {
    "id": "first_artifact",
    "once": true,
    "hint_key": "modpack.hint.first_artifact",
-   "via": { "inventory_tag": "artifacts:artifacts" }
+   "via": {
+    "inventory_tag": "artifacts:artifacts"
+   }
   },
   {
    "id": "alien_artifact",
    "once": true,
    "hint_key": "modpack.hint.alien_artifact",
    "advancement": "alien_artifact",
-   "via": { "inventory_tag": "artifacts:artifacts", "requires_alien_dim": true }
+   "via": {
+    "inventory_tag": "artifacts:artifacts",
+    "requires_alien_dim": true
+   }
   },
   {
    "id": "first_backpack",
    "once": true,
    "hint_key": "modpack.hint.first_backpack",
-   "via": { "inventory_items": ["sb_backpack", "sb_iron_backpack", "sb_gold_backpack", "sb_diamond_backpack", "sb_netherite_backpack"] }
+   "via": {
+    "inventory_items": [
+     "sb_backpack",
+     "sb_iron_backpack",
+     "sb_gold_backpack",
+     "sb_diamond_backpack",
+     "sb_netherite_backpack"
+    ]
+   }
   },
   {
    "id": "first_soph_storage",
    "once": true,
    "hint_key": "modpack.hint.first_soph_storage",
    "advancement": "soph_storage",
-   "via": { "block_use": ["ss_barrel", "ss_chest", "ss_shulker_box", "ss_limited_barrel_2", "ss_controller"] }
+   "via": {
+    "block_use": [
+     "ss_barrel",
+     "ss_chest",
+     "ss_shulker_box",
+     "ss_limited_barrel_2",
+     "ss_controller"
+    ]
+   }
   },
   {
    "id": "cfb_kitchen",
    "once": true,
    "hint_key": "modpack.hint.cfb_kitchen",
    "advancement": "cfb_kitchen",
-   "via": { "block_tag": "cookingforblockheads:kitchen_connectors" }
+   "via": {
+    "block_tag": "cookingforblockheads:kitchen_connectors"
+   }
   },
   {
    "id": "eos_gun",
@@ -42,61 +72,140 @@
    "hint_key": "modpack.message.eos_gun_tip",
    "counter": "modpack:eos_gun",
    "advancement": "eos_arsenal",
-   "via": { "inventory_item": "tacz_gun", "gun_ns": "eos" }
+   "via": {
+    "inventory_item": "tacz_gun",
+    "gun_ns": "eos"
+   }
   },
   {
    "id": "tacz_turret",
    "once": true,
    "hint_key": "modpack.message.tacz_turret_tip",
    "advancement": "auto_turret",
-   "via": { "inventory_item": "tt_turret" }
+   "via": {
+    "inventory_item": "tt_turret"
+   }
   },
   {
    "id": "first_moon",
    "once": true,
    "hint_key": "modpack.hint.first_moon",
-   "via": { "advancement_earned": "starforge:moon_landing" }
+   "via": {
+    "advancement_earned": "starforge:moon_landing"
+   }
   },
   {
    "id": "first_belt",
    "once": true,
    "hint_key": "modpack.hint.first_belt",
-   "via": { "advancement_earned": "starforge:belt_arrival" }
+   "via": {
+    "advancement_earned": "starforge:belt_arrival"
+   }
   },
   {
    "id": "guard_posted",
    "once": true,
    "counter": "modpack:guard_post",
    "advancement": "armed_garrison",
-   "via": { "entity_spawned": "guardvillagers:guard", "near_player": 64 }
+   "via": {
+    "entity_spawned": "guardvillagers:guard",
+    "near_player": 64
+   }
   },
   {
    "id": "first_horde",
    "once": true,
    "hint_key": "modpack.hint.first_horde",
    "advancement": "first_horde",
-   "via": { "horde_start": true }
+   "via": {
+    "horde_start": true
+   }
   },
   {
    "id": "horde_survived",
    "once": false,
    "counter": "modpack:horde_survived",
    "advancement": "horde_survived",
-   "via": { "horde_end": true }
+   "via": {
+    "horde_end": true
+   }
   },
   {
    "id": "base_registered",
    "once": true,
    "counter": "modpack:base_registered",
    "advancement": "base_registered",
-   "via": { "quest": "register_base" }
+   "via": {
+    "quest": "register_base"
+   }
   },
   {
    "id": "alien_ruins",
    "once": true,
    "hint_key": "modpack.hint.alien_ruins",
    "advancement": "alien_ruins",
-   "via": { "quest": "alien_ruins" }
+   "via": {
+    "quest": "alien_ruins"
+   }
+  },
+  {
+   "id": "first_fp_pipe",
+   "once": true,
+   "hint_key": "modpack.tip.fastpipes",
+   "via": {
+    "inventory_items": [
+     "fp_item_pipe_basic",
+     "fp_item_pipe_improved",
+     "fp_item_pipe_advanced",
+     "fp_fluid_pipe_basic",
+     "fp_fluid_pipe_improved",
+     "fp_fluid_pipe_advanced",
+     "fp_fluid_pipe_elite",
+     "fp_fluid_pipe_ultimate",
+     "fp_extractor_basic",
+     "fp_inserter_basic",
+     "fp_terminal",
+     "fp_wrench"
+    ]
+   }
+  },
+  {
+   "id": "first_fp_energy",
+   "once": true,
+   "hint_key": "modpack.tip.fastpipes_energy",
+   "via": {
+    "inventory_items": [
+     "fp_energy_pipe_basic",
+     "fp_energy_pipe_improved",
+     "fp_energy_pipe_advanced",
+     "fp_energy_pipe_elite",
+     "fp_energy_pipe_ultimate"
+    ]
+   }
+  },
+  {
+   "id": "first_bc_pipe",
+   "once": true,
+   "hint_key": "modpack.tip.bc_pipe_legacy",
+   "via": {
+    "inventory_items": [
+     "bc_pipe_item_wood",
+     "bc_pipe_item_stone",
+     "bc_pipe_fluid_wood",
+     "bc_pipe_fluid_iron"
+    ]
+   }
+  },
+  {
+   "id": "first_ie_conveyor",
+   "once": true,
+   "hint_key": "modpack.tip.ie_visual",
+   "via": {
+    "inventory_items": [
+     "ie_conveyor",
+     "ie_fluid_pipe"
+    ]
+   }
   }
  ]
 }

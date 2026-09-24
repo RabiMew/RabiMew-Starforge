@@ -13,7 +13,9 @@
       "ic2_copper_cable", "ic2_insulated_copper_cable", "ic2_battery", "ic2_re_battery",
       "ic2_treetap", "ic2_iron_plate", "ic2_coil",
       "bc_engine_redstone", "bc_engine_stone", "bc_pipe_item_wood", "bc_pipe_item_stone",
-      "bc_pipe_fluid_wood", "bc_pipe_fluid_iron", "bc_tank",
+      "bc_pipe_fluid_wood", "bc_pipe_fluid_iron", "bc_tank", "bc_engine_fe", "bc_dynamo_mj",
+      "fp_item_pipe_basic", "fp_fluid_pipe_basic", "fp_energy_pipe_basic",
+      "fp_extractor_basic", "fp_inserter_basic", "fp_void", "fp_sensor", "fp_wrench",
       "ie_light_engineering", "ie_basic_engineering", "ie_iron_component", "ie_steel_component",
       "ie_wirecoil_copper", "ie_conveyor", "ie_jerrycan", "ie_revolver",
       "ev_farmer", "ev_trader", "ev_breeder",
@@ -34,6 +36,8 @@
       "ic2_mfe", "ic2_cesu", "ic2_energy_crystal", "ic2_lapotron_crystal",
       "ic2_electric_motor", "ic2_drill", "ic2_chainsaw", "ic2_electric_treetap",
       "bc_mining_well", "bc_pump",
+      "fp_item_pipe_improved", "fp_fluid_pipe_improved", "fp_energy_pipe_improved",
+      "fp_extractor_improved", "fp_inserter_improved", "fp_terminal",
       "ie_capacitor_lv", "ie_capacitor_mv", "ie_wirecoil_electrum", "ie_fluid_pipe",
       "ie_electronic", "ie_chemthrower", "ie_railgun",
       "ie_turret_gun", "ie_turret_chem",
@@ -61,7 +65,9 @@
       "ae2_inscriber", "ae2_controller", "ae2_charger", "ae2_pattern_provider",
       "ae2_crafting_unit", "ae2_molecular_assembler", "ae2_interface", "ae2_storage_bus",
       "ae2_energy_cell", "ae2_dense_energy_cell",
-      "ae2_engineering_press", "ae2_logic_press", "ae2_calculation_press", "ae2_silicon_press"
+      "ae2_engineering_press", "ae2_logic_press", "ae2_calculation_press", "ae2_silicon_press",
+      "fp_item_pipe_advanced", "fp_fluid_pipe_advanced", "fp_energy_pipe_advanced",
+      "fp_extractor_advanced", "fp_inserter_advanced"
     ],
     "blocks": [],
     "dimensions": []
@@ -75,7 +81,9 @@
       "rc_tunnel_bore", "rc_iron_bore_head", "rc_bronze_bore_head", "rc_steel_bore_head", "rc_diamond_bore_head",
       "rc_advanced_item_loader", "rc_advanced_item_unloader",
       "rc_world_spike", "rc_personal_world_spike", "rc_world_spike_minecart",
-      "ic_cookpot", "ic_fermenter", "ic_grill", "ic_processor"
+      "ic_cookpot", "ic_fermenter", "ic_grill", "ic_processor",
+      "fp_fluid_pipe_elite", "fp_energy_pipe_elite",
+      "fp_extractor_elite", "fp_inserter_elite"
     ],
     "blocks": [],
     "dimensions": []
@@ -88,7 +96,9 @@
       "ic2_nano_helmet", "ic2_nano_chestplate", "ic2_nano_leggings", "ic2_nano_boots",
       "bg_destruction_gadget",
       "ae2_singularity", "ae2_entangled_singularity",
-      "anomaly_analysis"
+      "anomaly_analysis",
+      "fp_fluid_pipe_ultimate", "fp_energy_pipe_ultimate",
+      "fp_extractor_ultimate", "fp_inserter_ultimate"
     ],
     "blocks": [],
     "dimensions": []

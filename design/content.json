@@ -553,7 +553,8 @@
    "consumes_items": false,
    "reward_policy": "optional_non_progression",
    "manual_refs": [
-    "power_priority"
+    "power_priority",
+    "unified_pipes"
    ],
    "rewards": [
     {
@@ -669,7 +670,7 @@
    ],
    "rewards": [
     {
-     "item": "bc_pipe_fluid_wood",
+     "item": "fp_fluid_pipe_basic",
      "count": 8,
      "scope": "player"
     }
@@ -686,7 +687,7 @@
     },
     {
      "type": "item",
-     "target": "bc_pipe_fluid_iron",
+     "target": "fp_fluid_pipe_improved",
      "count": 8
     },
     {
@@ -821,18 +822,19 @@
    "tasks": [
     {
      "type": "item",
-     "target": "bc_pipe_item_stone",
+     "target": "fp_item_pipe_basic",
      "count": 8
     },
     {
      "type": "item",
-     "target": "bc_tank",
+     "target": "fp_extractor_basic",
      "count": 1
     }
    ],
    "icon": "sd_drawer_controller",
    "manual_refs": [
-    "storage_progression"
+    "storage_progression",
+    "unified_pipes"
    ],
    "rewards": [
     {
@@ -1059,7 +1061,8 @@
    "consumes_items": false,
    "reward_policy": "optional_non_progression",
    "manual_refs": [
-    "storage_progression"
+    "storage_progression",
+    "unified_pipes"
    ],
    "rewards": [
     {
@@ -1075,19 +1078,19 @@
    "tasks": [
     {
      "type": "item",
-     "target": "bc_pipe_item_wood",
-     "count": 8
+     "target": "fp_extractor_basic",
+     "count": 1
     },
     {
      "type": "item",
-     "target": "bc_pipe_item_stone",
+     "target": "fp_item_pipe_basic",
      "count": 16
     },
     {
      "type": "checkmark"
     }
    ],
-   "icon": "bc_pipe_item_stone"
+   "icon": "fp_item_pipe_basic"
   },
   {
    "id": "rail_signals",
@@ -4756,6 +4759,12 @@
    "text_key": "modpack.tutorial.storage_progression",
    "title_key": "modpack.tutorial.storage_progression.title",
    "group": "progression"
+  },
+  {
+   "id": "unified_pipes",
+   "text_key": "modpack.tutorial.unified_pipes",
+   "title_key": "modpack.tutorial.unified_pipes.title",
+   "group": "energy"
   },
   {
    "id": "backpack_kit",

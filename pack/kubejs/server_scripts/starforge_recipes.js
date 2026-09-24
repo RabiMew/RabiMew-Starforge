@@ -427,6 +427,46 @@ ServerEvents.recipes((e) => {
     B: '#c:buckets/creosote', S: '#minecraft:wooden_slabs'
   });
 
+  // ---------- SF-35: FastPipes is the default network; BC pipes become legacy shells ----------
+  // Every buildcrafttransport *_item / *_fluid / *_power / *_fe pipe loses its
+  // native glass recipe and is re-added as a FastPipes pipe of the matching
+  // medium plus its classic material. BC pipework stays craftable for the
+  // blocks that still want it (quarry/pump surroundings, plug adapters) but is
+  // never the cheaper logistics route. FastPipes' own recipes are untouched.
+  const bcPipeMats = {
+    clay: 'minecraft:clay', cobblestone: 'minecraft:cobblestone',
+    sandstone: 'minecraft:sandstone', stone: 'minecraft:stone',
+    quartz: 'minecraft:quartz_block', gold: '#c:ingots/gold',
+    iron: '#c:ingots/iron', diamond: '#c:gems/diamond',
+    obsidian: 'minecraft:obsidian', lapis: '#c:gems/lapis',
+    wood: '#minecraft:planks', void: 'minecraft:obsidian',
+    stripes: 'minecraft:piston', daizuli: '#c:gems/lapis',
+    emzuli: '#c:gems/emerald',
+    diamond_wood: ['#minecraft:planks', '#c:gems/diamond']
+  };
+  const bcPipeKinds = {
+    item: i('fp_item_pipe_basic'), fluid: i('fp_fluid_pipe_basic'),
+    power: i('fp_energy_pipe_basic'), fe: i('fp_energy_pipe_basic')
+  };
+  const bcPipeIds = {
+    item: ['clay', 'cobblestone', 'daizuli', 'diamond', 'diamond_wood', 'emzuli',
+      'gold', 'iron', 'lapis', 'obsidian', 'quartz', 'sandstone', 'stone',
+      'stripes', 'void', 'wood'],
+    fluid: ['clay', 'cobblestone', 'diamond', 'diamond_wood', 'gold', 'iron',
+      'quartz', 'sandstone', 'stone', 'void', 'wood'],
+    power: ['cobblestone', 'diamond', 'diamond_wood', 'gold', 'iron', 'quartz',
+      'sandstone', 'stone', 'wood'],
+    fe: ['cobblestone', 'diamond', 'diamond_wood', 'gold', 'iron', 'quartz',
+      'sandstone', 'stone', 'wood']
+  };
+  for (const kind of Object.keys(bcPipeIds)) {
+    for (const mat of bcPipeIds[kind]) {
+      let bcOut = `buildcrafttransport:${mat}_${kind}`;
+      e.remove({ output: bcOut });
+      e.shapeless(bcOut, [bcPipeKinds[kind]].concat(bcPipeMats[mat]));
+    }
+  }
+
   console.log('[starforge] recipe layer loaded');
 });
 
