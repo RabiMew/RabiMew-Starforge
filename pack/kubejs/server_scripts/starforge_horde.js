@@ -15,14 +15,14 @@ NativeEvents.onEvent(HordeStartEvent, (e) => {
   const server = player.getServer()
   const name = player.getGameProfile().getName()
   server.runCommandSilent(`title ${name} times 10 70 20`)
-  server.runCommandSilent(`title ${name} subtitle {"text":"Defend the base!","color":"red"}`)
-  server.runCommandSilent(`title ${name} title {"text":"HORDE INCOMING","color":"dark_red","bold":true}`)
+  server.runCommandSilent(`title ${name} subtitle {"translate":"modpack.horde.subtitle","color":"red"}`)
+  server.runCommandSilent(`title ${name} title {"translate":"modpack.horde.title","color":"dark_red","bold":true}`)
   server.runCommandSilent(`playsound minecraft:event.raid.horn hostile ${name} ~ ~ ~ 1 1`)
-  player.tell(Text.red('A horde is descending on your position - turrets and guards to arms!'))
+  player.tell(Text.translate('modpack.horde.chat_start').red())
 })
 
 NativeEvents.onEvent(HordeEndEvent, (e) => {
   const player = e.getPlayer()
   if (!player) return
-  player.tell(Text.green('The horde has been repelled. Resupply ammo, food and turret stock.'))
+  player.tell(Text.translate('modpack.horde.chat_end').green())
 })

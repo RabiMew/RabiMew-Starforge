@@ -148,7 +148,7 @@ PlayerEvents.tick((e) => {
 });
 
 // ---- stage hooks: advancement sync + next-step hint ----
-const SF_STAGE_ADV = {"modpack:mechanical_age":"mechanical_age","modpack:electric_age":"electric_age","modpack:information_age":"information_age","modpack:heavy_industry_age":"heavy_industry_age","modpack:atomic_age":"atomic_age","modpack:space_age":"space_age","modpack:quantum_age":"quantum_age"};
+const SF_STAGE_ADV = {"modpack:survival_age":"starforge","modpack:mechanical_age":"mechanical_age","modpack:electric_age":"electric_age","modpack:information_age":"information_age","modpack:heavy_industry_age":"heavy_industry_age","modpack:atomic_age":"atomic_age","modpack:space_age":"space_age","modpack:quantum_age":"quantum_age"};
 const SF_STAGE_NEXT = {"modpack:survival_age":"modpack.stage.survival_age.next","modpack:mechanical_age":"modpack.stage.mechanical_age.next","modpack:electric_age":"modpack.stage.electric_age.next","modpack:information_age":"modpack.stage.information_age.next","modpack:heavy_industry_age":"modpack.stage.heavy_industry_age.next","modpack:atomic_age":"modpack.stage.atomic_age.next","modpack:space_age":"modpack.stage.space_age.next","modpack:quantum_age":"modpack.stage.quantum_age.next"};
 ProgressiveStages.onGranted((p, stage) => {
   try {

@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:moon_landing",
  "display": {
   "icon": {
    "id": "ad_astra:white_flag"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.mars_landing.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "task",
   "show_toast": true,
   "announce_to_chat": false,

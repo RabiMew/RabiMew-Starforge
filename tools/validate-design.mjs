@@ -64,7 +64,18 @@ function validate() {
   }
 
   const referenced = new Set();
+  const psMarker = /<ps:([a-z0-9_]+)>/g;
   function collect(value, location = 'content') {
+    if (typeof value === 'string') {
+      // <ps:name> markers resolve to modpack.ps.<name> at render time
+      // (progressivestages.messages -> [messages] config -> compat mixin).
+      for (const m of value.matchAll(psMarker)) {
+        const key = `modpack.ps.${m[1]}`;
+        assert(has(locales.zh_cn, key), `Missing translation: ${key}`);
+        referenced.add(key);
+      }
+      return;
+    }
     if (Array.isArray(value)) return value.forEach((item, i) => collect(item, `${location}[${i}]`));
     if (!value || typeof value !== 'object') return;
     for (const [field, item] of Object.entries(value)) {
@@ -387,6 +398,44 @@ function validate() {
   }
 
   // ---------- custom advancements (record only; never grant stages) ----------
+  // parent builds one Starforge tab tree. Exactly one root (the tab itself);
+  // every other entry must name an existing, non-hidden parent and the graph
+  // must stay acyclic — a hidden node's whole subtree is invisible, so hiding
+  // an intermediate would silently bury its children.
+  const advById = new Map(design.advancements.map((a) => [a.id, a]));
+  const advChildren = new Map(design.advancements.map((a) => [a.id, []]));
+  for (const a of design.advancements) {
+    if (a.parent !== undefined) {
+      assert(/^[a-z][a-z0-9_]*$/.test(a.parent), `advancement ${a.id}: invalid parent id ${a.parent}`);
+      assert.notEqual(a.parent, a.id, `advancement ${a.id}: parent self-reference`);
+      assert(advancementIds.has(a.parent), `advancement ${a.id}: unknown parent ${a.parent}`);
+      advChildren.get(a.parent).push(a.id);
+    }
+    if (a.background !== undefined) {
+      assert.equal(a.parent, undefined, `advancement ${a.id}: background only applies to the root`);
+    }
+  }
+  const advRoots = design.advancements.filter((a) => a.parent === undefined);
+  assert.equal(advRoots.length, 1,
+    `advancements: expected exactly 1 root (the Starforge tab), got ${advRoots.map((a) => a.id).join(', ') || 'none'}`);
+  assert.equal(advRoots[0].id, 'starforge', 'advancements: the tab root must be the starforge advancement');
+  for (const a of design.advancements) {
+    if (a.hidden) assert.equal(advChildren.get(a.id).length, 0,
+      `advancement ${a.id}: a hidden advancement must not have children (they would be invisible)`);
+  }
+  {
+    // cycle check + reachability from the root (every node must hang on the tree)
+    const seen = new Set();
+    const stack = (id, path) => {
+      assert(!path.has(id), `advancement parent cycle at ${id}: ${[...path, id].join(' -> ')}`);
+      if (seen.has(id)) return;
+      seen.add(id);
+      const next = new Set([...path, id]);
+      for (const c of advChildren.get(id)) stack(c, next);
+    };
+    stack('starforge', new Set());
+    assert.equal(seen.size, design.advancements.length, 'advancements: unreachable nodes outside the Starforge tree');
+  }
   for (const a of design.advancements) {
     assert(itemRef(a.icon), `advancement ${a.id}: unresolvable icon ${a.icon}`);
     if (a.reveal_at) assert(nodeIds.has(a.reveal_at), `advancement ${a.id}: unknown reveal_at node`);

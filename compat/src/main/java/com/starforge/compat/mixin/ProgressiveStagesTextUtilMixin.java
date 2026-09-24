@@ -21,7 +21,9 @@ public abstract class ProgressiveStagesTextUtilMixin {
 
     @Inject(method = "parseColorCodes", at = @At("HEAD"), cancellable = true)
     private static void starforge$translateInline(String raw, CallbackInfoReturnable<Component> cir) {
-        if (StageI18n.containsPair(raw)) {
+        if (StageI18n.containsMarker(raw)) {
+            cir.setReturnValue(StageI18n.translateMarkers(raw, TextUtil::parseColorCodes));
+        } else if (StageI18n.containsPair(raw)) {
             cir.setReturnValue(StageI18n.translateInline(raw, TextUtil::parseColorCodes));
         }
     }

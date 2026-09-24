@@ -55,7 +55,7 @@
       "rc_signal_interlock_box", "rc_signal_block_relay_box", "rc_signal_sequencer_box",
       "rc_analog_signal_controller_box", "rc_token_signal_box", "rc_signal_circuit", "rc_signal_tuner",
       "rc_switch_track_lever", "rc_switch_track_motor", "rc_switch_track_router",
-      "ef_transformer", "rf_computer", "rf_generator", "tmted_knife"
+      "ef_transformer", "rf_computer", "tmted_knife"
     ],
     "blocks": [],
     "dimensions": []
@@ -107,7 +107,7 @@
     "items": [
       "aa_nasa_workbench", "aa_launch_pad", "aa_oxygen_loader", "aa_oxygen_distributor",
       "aa_oxygen_gear", "aa_compressor", "aa_energizer", "aa_cryo_freezer", "aa_water_pump",
-      "aa_fuel_refinery", "aa_coal_generator", "aa_solar_panel", "aa_etrionic_blast_furnace",
+      "aa_fuel_refinery", "aa_etrionic_blast_furnace",
       "aa_engine_frame", "aa_steel_engine", "aa_desh_engine", "aa_ostrum_engine", "aa_calorite_engine",
       "aa_nose_cone", "aa_rocket_fin", "aa_gas_tank",
       "aa_steel_tank", "aa_desh_tank", "aa_ostrum_tank", "aa_calorite_tank",

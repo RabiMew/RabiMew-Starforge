@@ -1,0 +1,8 @@
+{
+ "config.structure_layout_optimizer.title": "Structure Layout Optimizer",
+ "config.structure_layout_optimizer.desc": "尝试优化拼图结构生成",
+ "config.structure_layout_optimizer.link.bug_report": "报告 Bug",
+ "config.structure_layout_optimizer.link.license": "许可证",
+ "config.structure_layout_optimizer.deduplicate_shuffled_template_pool_element_list": "去重打乱的模板池元素列表",
+ "config.structure_layout_optimizer.deduplicate_shuffled_template_pool_element_list.desc": "是否使用替代策略，让结构布局生成比本 Mod 默认的模板池权重优化再快一点。该策略通过让结构从模板池收集的部件列表不含重复条目来提速。\n不会破坏结构生成，但会使结构布局与关闭此选项时不同（破坏与原版种子的一致性）。在大型整合包中，许多结构 Mod 使用很高的模板池权重，牺牲一致性换取速度可能是值得的。\n\n优点：从高权重模板池结构中获得更多性能。\n缺点：结构布局与原版种子不再一致。（结构布局不会损坏，只是不同）"
+}

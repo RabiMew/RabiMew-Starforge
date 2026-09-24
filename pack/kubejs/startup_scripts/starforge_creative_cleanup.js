@@ -28,3 +28,18 @@ for (const tab of ['mg', 'ammo', 'scope', 'muzzle', 'stock', 'grip',
   'shotgun', 'smg', 'rpg']) {
   StartupEvents.modifyCreativeTab(`tacz:${tab}`, (e) => e.remove(sfHiddenTacz));
 }
+
+// SF-36: disabled generation devices (recipes removed in starforge_recipes.js,
+// viewer entries hidden in starforge_viewer_cleanup.js). They stay registered
+// so existing saves/blocks keep working, but leave the creative tabs.
+const sfDisabledGeneration = new Set([
+  'ad_astra:coal_generator',
+  'ad_astra:solar_panel',
+  'refurbished_furniture:light_electricity_generator',
+  'refurbished_furniture:dark_electricity_generator',
+  'ae2:vibration_chamber'
+]);
+const sfHiddenGeneration = (stack) => sfDisabledGeneration.has(String(stack.id));
+StartupEvents.modifyCreativeTab('ad_astra:main', (e) => e.remove(sfHiddenGeneration));
+StartupEvents.modifyCreativeTab('refurbished_furniture:creative_tab', (e) => e.remove(sfHiddenGeneration));
+StartupEvents.modifyCreativeTab('ae2:main', (e) => e.remove(sfHiddenGeneration));

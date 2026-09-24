@@ -1,0 +1,6 @@
+{
+ "chat.immersivepetroleum.command.reservoir.infinite": "§d无限§r %1$s",
+ "chat.immersivepetroleum.command.reservoir.inf.toggle.set": "%1$s 的油藏：无限。",
+ "chat.immersivepetroleum.command.reservoir.inf.toggle.unset": "%1$s 的油藏：有限。",
+ "chat.immersivepetroleum.command.reservoir.inf.flow": "无限油藏产量已设为 %1$smB/t"
+}

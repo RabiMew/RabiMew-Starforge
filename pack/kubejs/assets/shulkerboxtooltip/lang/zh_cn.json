@@ -1,0 +1,5 @@
+{
+ "shulkerboxtooltip.colors.shulkerboxtooltip.default.generic_container": "通用容器",
+ "shulkerboxtooltip.config.option.preview.generic_container_preview": "通用容器预览",
+ "shulkerboxtooltip.config.option.preview.generic_container_preview.tooltip": "开启后，带有容器数据组件\n但未受显式支持的物品\n也会像潜影盒一样显示预览。"
+}

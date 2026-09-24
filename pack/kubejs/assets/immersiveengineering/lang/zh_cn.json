@@ -1,0 +1,20 @@
+{
+ "advancement.immersiveengineering.secret_snake": "警报！",
+ "advancement.immersiveengineering.secret_snake.desc": "揪出入侵者",
+ "block.immersiveengineering.hatch": "物品舱口",
+ "block.immersiveengineering.shelf": "板条箱储物架",
+ "chat.immersiveengineering.info.conveyor.stacksize": "每秒将抽取 %1$s 个物品",
+ "chat.immersiveengineering.info.light_level": "光照等级：%1$s",
+ "desc.immersiveengineering.info.batched": "每次最多 %1$s 个",
+ "desc.immersiveengineering.info.filter.tag.from_mod": "物品来自：%1$s",
+ "effect.immersiveengineering.incognito": "匿名",
+ "gui.immersiveengineering.config.shelf.swap": "切换到另一侧",
+ "subtitle.immersiveengineering.alert": "警报！",
+ "subtitle.immersiveengineering.buzzsaw_attack": "圆锯高速旋转",
+ "subtitle.immersiveengineering.buzzsaw_harvest_grinding": "研磨",
+ "subtitle.immersiveengineering.buzzsaw_harvest_sawing": "锯切",
+ "subtitle.immersiveengineering.buzzsaw_motor": "圆锯马达运转",
+ "subtitle.immersiveengineering.drill_attack": "钻头高速旋转",
+ "subtitle.immersiveengineering.drill_harvest": "钻探",
+ "subtitle.immersiveengineering.drill_motor": "钻头马达运转"
+}

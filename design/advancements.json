@@ -1,28 +1,16 @@
 {
  "schema_version": 1,
- "comment": "Custom Starforge advancements. They RECORD milestones only - they never grant T0-T7 stages. stage_granted advancements are awarded by the generated KubeJS bridge when ProgressiveStages actually grants the stage (never by re-detecting items). inventory_item/kill_entity/changed_dimension use vanilla triggers. custom_event advancements are awarded by the generated guidance script or starforge_compat. reveal_at hides the advancement behind a ProgressiveStages stage via [advancements].locked.",
+ "comment": "Custom Starforge advancements. They RECORD milestones only - they never grant T0-T7 stages. stage_granted advancements are awarded by the generated KubeJS bridge when ProgressiveStages actually grants the stage (never by re-detecting items). inventory_item/kill_entity/changed_dimension use vanilla triggers. custom_event advancements are awarded by the generated guidance script or starforge_compat. reveal_at hides the advancement behind a ProgressiveStages stage via [advancements].locked. parent forms a single Starforge tab tree: the 'starforge' root (the only entry without parent, awarded when T0 is granted) -> the era trunk -> themed branches. Every non-root entry MUST declare parent.",
  "default_background": "minecraft:textures/block/smooth_basalt.png",
  "advancements": [
   {
-   "id": "first_launch",
-   "title_key": "modpack.advancement.first_launch.title",
-   "description_key": "modpack.advancement.first_launch.description",
-   "icon": "aa_tier1_rocket",
-   "trigger": "changed_dimension",
-   "dimensions": ["earth_orbit", "moon_orbit", "mars_orbit", "venus_orbit", "mercury_orbit", "glacio_orbit"],
-   "frame": "challenge",
-   "hidden": false,
-   "reveal_at": "space_age"
-  },
-  {
-   "id": "edible_player_head",
-   "title_key": "modpack.advancement.edible_player_head.title",
-   "description_key": "modpack.advancement.edible_player_head.description",
-   "icon": "minecraft:player_head",
-   "trigger": "custom_event",
-   "event": "starforge_compat:player_killed_player",
-   "frame": "challenge",
-   "hidden": true
+   "id": "starforge",
+   "title_key": "modpack.advancement.starforge.title",
+   "description_key": "modpack.advancement.starforge.description",
+   "icon": "space_control_core",
+   "trigger": "stage_granted",
+   "stage": "survival_age",
+   "frame": "task"
   },
   {
    "id": "mechanical_age",
@@ -31,7 +19,8 @@
    "icon": "engineering_assembly",
    "trigger": "stage_granted",
    "stage": "mechanical_age",
-   "frame": "task"
+   "frame": "task",
+   "parent": "starforge"
   },
   {
    "id": "electric_age",
@@ -40,7 +29,8 @@
    "icon": "ic2_generator",
    "trigger": "stage_granted",
    "stage": "electric_age",
-   "frame": "task"
+   "frame": "task",
+   "parent": "mechanical_age"
   },
   {
    "id": "information_age",
@@ -49,7 +39,8 @@
    "icon": "information_interface",
    "trigger": "stage_granted",
    "stage": "information_age",
-   "frame": "goal"
+   "frame": "goal",
+   "parent": "electric_age"
   },
   {
    "id": "heavy_industry_age",
@@ -58,7 +49,8 @@
    "icon": "heavy_industry_control",
    "trigger": "stage_granted",
    "stage": "heavy_industry_age",
-   "frame": "goal"
+   "frame": "goal",
+   "parent": "information_age"
   },
   {
    "id": "atomic_age",
@@ -67,7 +59,8 @@
    "icon": "reactor_control",
    "trigger": "stage_granted",
    "stage": "atomic_age",
-   "frame": "challenge"
+   "frame": "challenge",
+   "parent": "heavy_industry_age"
   },
   {
    "id": "space_age",
@@ -76,7 +69,8 @@
    "icon": "space_control_core",
    "trigger": "stage_granted",
    "stage": "space_age",
-   "frame": "challenge"
+   "frame": "challenge",
+   "parent": "atomic_age"
   },
   {
    "id": "quantum_age",
@@ -85,7 +79,8 @@
    "icon": "quantum_control",
    "trigger": "stage_granted",
    "stage": "quantum_age",
-   "frame": "challenge"
+   "frame": "challenge",
+   "parent": "atomic_age"
   },
   {
    "id": "base_registered",
@@ -94,26 +89,8 @@
    "icon": "industrial_console",
    "trigger": "custom_event",
    "event": "modpack:quest_register_base",
-   "frame": "task"
-  },
-  {
-   "id": "armed_garrison",
-   "title_key": "modpack.advancement.armed_garrison.title",
-   "description_key": "modpack.advancement.armed_garrison.description",
-   "icon": "gv_guard_egg",
-   "trigger": "custom_event",
-   "event": "modpack:guard_posted",
-   "frame": "task"
-  },
-  {
-   "id": "auto_turret",
-   "title_key": "modpack.advancement.auto_turret.title",
-   "description_key": "modpack.advancement.auto_turret.description",
-   "icon": "tt_turret",
-   "trigger": "inventory_item",
-   "items": ["tt_turret"],
-   "frame": "goal",
-   "reveal_at": "heavy_industry_age"
+   "frame": "task",
+   "parent": "starforge"
   },
   {
    "id": "first_horde",
@@ -122,7 +99,8 @@
    "icon": "sfc_horde_alarm",
    "trigger": "custom_event",
    "event": "modpack:horde_start",
-   "frame": "task"
+   "frame": "task",
+   "parent": "base_registered"
   },
   {
    "id": "horde_survived",
@@ -131,7 +109,31 @@
    "icon": "ie_revolver",
    "trigger": "custom_event",
    "event": "modpack:horde_end",
-   "frame": "goal"
+   "frame": "goal",
+   "parent": "first_horde"
+  },
+  {
+   "id": "armed_garrison",
+   "title_key": "modpack.advancement.armed_garrison.title",
+   "description_key": "modpack.advancement.armed_garrison.description",
+   "icon": "gv_guard_egg",
+   "trigger": "custom_event",
+   "event": "modpack:guard_posted",
+   "frame": "task",
+   "parent": "electric_age"
+  },
+  {
+   "id": "auto_turret",
+   "title_key": "modpack.advancement.auto_turret.title",
+   "description_key": "modpack.advancement.auto_turret.description",
+   "icon": "tt_turret",
+   "trigger": "inventory_item",
+   "items": [
+    "tt_turret"
+   ],
+   "frame": "goal",
+   "reveal_at": "heavy_industry_age",
+   "parent": "heavy_industry_age"
   },
   {
    "id": "eos_arsenal",
@@ -141,7 +143,8 @@
    "trigger": "custom_event",
    "event": "modpack:eos_gun",
    "frame": "challenge",
-   "reveal_at": "atomic_age"
+   "reveal_at": "atomic_age",
+   "parent": "atomic_age"
   },
   {
    "id": "rail_freight",
@@ -149,8 +152,11 @@
    "description_key": "modpack.advancement.rail_freight.description",
    "icon": "rc_cargo_minecart",
    "trigger": "inventory_item",
-   "items": ["rc_cargo_minecart"],
-   "frame": "task"
+   "items": [
+    "rc_cargo_minecart"
+   ],
+   "frame": "task",
+   "parent": "mechanical_age"
   },
   {
    "id": "first_rail_signal",
@@ -158,9 +164,12 @@
    "description_key": "modpack.advancement.first_rail_signal.description",
    "icon": "rc_block_signal",
    "trigger": "inventory_item",
-   "items": ["rc_block_signal"],
+   "items": [
+    "rc_block_signal"
+   ],
    "frame": "task",
-   "reveal_at": "electric_age"
+   "reveal_at": "electric_age",
+   "parent": "rail_freight"
   },
   {
    "id": "ae2_network",
@@ -168,9 +177,31 @@
    "description_key": "modpack.advancement.ae2_network.description",
    "icon": "ae2_controller",
    "trigger": "inventory_item",
-   "items": ["ae2_controller"],
+   "items": [
+    "ae2_controller"
+   ],
    "frame": "goal",
-   "reveal_at": "information_age"
+   "reveal_at": "information_age",
+   "parent": "information_age"
+  },
+  {
+   "id": "first_launch",
+   "title_key": "modpack.advancement.first_launch.title",
+   "description_key": "modpack.advancement.first_launch.description",
+   "icon": "aa_tier1_rocket",
+   "trigger": "changed_dimension",
+   "dimensions": [
+    "earth_orbit",
+    "moon_orbit",
+    "mars_orbit",
+    "venus_orbit",
+    "mercury_orbit",
+    "glacio_orbit"
+   ],
+   "frame": "challenge",
+   "hidden": false,
+   "reveal_at": "space_age",
+   "parent": "space_age"
   },
   {
    "id": "moon_landing",
@@ -178,9 +209,12 @@
    "description_key": "modpack.advancement.moon_landing.description",
    "icon": "aa_flag",
    "trigger": "changed_dimension",
-   "dimensions": ["moon"],
+   "dimensions": [
+    "moon"
+   ],
    "frame": "task",
-   "reveal_at": "space_age"
+   "reveal_at": "space_age",
+   "parent": "first_launch"
   },
   {
    "id": "mars_landing",
@@ -188,9 +222,12 @@
    "description_key": "modpack.advancement.mars_landing.description",
    "icon": "aa_flag",
    "trigger": "changed_dimension",
-   "dimensions": ["mars"],
+   "dimensions": [
+    "mars"
+   ],
    "frame": "task",
-   "reveal_at": "space_age"
+   "reveal_at": "space_age",
+   "parent": "moon_landing"
   },
   {
    "id": "belt_arrival",
@@ -198,18 +235,12 @@
    "description_key": "modpack.advancement.belt_arrival.description",
    "icon": "minecraft:iron_ore",
    "trigger": "changed_dimension",
-   "dimensions": ["asteroid_belt"],
+   "dimensions": [
+    "asteroid_belt"
+   ],
    "frame": "challenge",
-   "reveal_at": "space_age"
-  },
-  {
-   "id": "first_artifact",
-   "title_key": "modpack.advancement.first_artifact.title",
-   "description_key": "modpack.advancement.first_artifact.description",
-   "icon": "artifacts:umbrella",
-   "trigger": "inventory_item",
-   "items": ["#artifacts:artifacts"],
-   "frame": "task"
+   "reveal_at": "space_age",
+   "parent": "mars_landing"
   },
   {
    "id": "alien_artifact",
@@ -219,34 +250,8 @@
    "trigger": "custom_event",
    "event": "modpack:alien_artifact",
    "frame": "goal",
-   "reveal_at": "space_age"
-  },
-  {
-   "id": "first_backpack",
-   "title_key": "modpack.advancement.first_backpack.title",
-   "description_key": "modpack.advancement.first_backpack.description",
-   "icon": "sb_backpack",
-   "trigger": "inventory_item",
-   "items": ["sb_backpack", "sb_iron_backpack", "sb_gold_backpack", "sb_diamond_backpack", "sb_netherite_backpack"],
-   "frame": "task"
-  },
-  {
-   "id": "soph_storage",
-   "title_key": "modpack.advancement.soph_storage.title",
-   "description_key": "modpack.advancement.soph_storage.description",
-   "icon": "ss_controller",
-   "trigger": "custom_event",
-   "event": "modpack:first_soph_storage",
-   "frame": "task"
-  },
-  {
-   "id": "cfb_kitchen",
-   "title_key": "modpack.advancement.cfb_kitchen.title",
-   "description_key": "modpack.advancement.cfb_kitchen.description",
-   "icon": "cfb_table",
-   "trigger": "custom_event",
-   "event": "modpack:cfb_kitchen",
-   "frame": "task"
+   "reveal_at": "space_age",
+   "parent": "belt_arrival"
   },
   {
    "id": "alien_ruins",
@@ -256,7 +261,8 @@
    "trigger": "custom_event",
    "event": "modpack:quest_alien_ruins",
    "frame": "goal",
-   "reveal_at": "space_age"
+   "reveal_at": "space_age",
+   "parent": "belt_arrival"
   },
   {
    "id": "colony_established",
@@ -264,9 +270,12 @@
    "description_key": "modpack.advancement.colony_established.description",
    "icon": "colony_maintenance",
    "trigger": "inventory_item",
-   "items": ["colony_maintenance"],
+   "items": [
+    "colony_maintenance"
+   ],
    "frame": "goal",
-   "reveal_at": "space_age"
+   "reveal_at": "space_age",
+   "parent": "space_age"
   },
   {
    "id": "anomaly_research",
@@ -274,9 +283,71 @@
    "description_key": "modpack.advancement.anomaly_research.description",
    "icon": "anomaly_analysis",
    "trigger": "inventory_item",
-   "items": ["anomaly_analysis"],
+   "items": [
+    "anomaly_analysis"
+   ],
    "frame": "goal",
-   "reveal_at": "atomic_age"
+   "reveal_at": "atomic_age",
+   "parent": "atomic_age"
+  },
+  {
+   "id": "first_artifact",
+   "title_key": "modpack.advancement.first_artifact.title",
+   "description_key": "modpack.advancement.first_artifact.description",
+   "icon": "artifacts:umbrella",
+   "trigger": "inventory_item",
+   "items": [
+    "#artifacts:artifacts"
+   ],
+   "frame": "task",
+   "parent": "starforge"
+  },
+  {
+   "id": "first_backpack",
+   "title_key": "modpack.advancement.first_backpack.title",
+   "description_key": "modpack.advancement.first_backpack.description",
+   "icon": "sb_backpack",
+   "trigger": "inventory_item",
+   "items": [
+    "sb_backpack",
+    "sb_iron_backpack",
+    "sb_gold_backpack",
+    "sb_diamond_backpack",
+    "sb_netherite_backpack"
+   ],
+   "frame": "task",
+   "parent": "starforge"
+  },
+  {
+   "id": "soph_storage",
+   "title_key": "modpack.advancement.soph_storage.title",
+   "description_key": "modpack.advancement.soph_storage.description",
+   "icon": "ss_controller",
+   "trigger": "custom_event",
+   "event": "modpack:first_soph_storage",
+   "frame": "task",
+   "parent": "electric_age"
+  },
+  {
+   "id": "cfb_kitchen",
+   "title_key": "modpack.advancement.cfb_kitchen.title",
+   "description_key": "modpack.advancement.cfb_kitchen.description",
+   "icon": "cfb_table",
+   "trigger": "custom_event",
+   "event": "modpack:cfb_kitchen",
+   "frame": "task",
+   "parent": "starforge"
+  },
+  {
+   "id": "edible_player_head",
+   "title_key": "modpack.advancement.edible_player_head.title",
+   "description_key": "modpack.advancement.edible_player_head.description",
+   "icon": "minecraft:player_head",
+   "trigger": "custom_event",
+   "event": "starforge_compat:player_killed_player",
+   "frame": "challenge",
+   "hidden": true,
+   "parent": "starforge"
   }
  ]
 }

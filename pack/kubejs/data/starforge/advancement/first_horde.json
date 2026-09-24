@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:base_registered",
  "display": {
   "icon": {
    "id": "starforge_compat:horde_alarm"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.first_horde.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "task",
   "show_toast": true,
   "announce_to_chat": false,

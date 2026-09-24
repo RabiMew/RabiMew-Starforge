@@ -1,0 +1,8 @@
+{
+ "dimension.pv_asteroid_belt.asteroid_belt": "小行星带",
+ "dimension.pv_asteroid_belt.asteroid_belt_orbit": "小行星带轨道",
+ "biome.pv_asteroid_belt.asteroid_belt": "小行星带",
+ "biome.pv_asteroid_belt.orbit": "小行星带轨道",
+ "planet.pv_asteroid_belt.asteroid_belt": "小行星带",
+ "planet.pv_asteroid_belt.asteroid_belt_orbit": "小行星带周边空域"
+}

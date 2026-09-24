@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:heavy_industry_age",
  "display": {
   "icon": {
    "id": "modpack:reactor_control"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.atomic_age.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "challenge",
   "show_toast": true,
   "announce_to_chat": false,

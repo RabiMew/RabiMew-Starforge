@@ -17,6 +17,8 @@ const content = design;
 const sm = design.sm;
 const locales = { zh_cn: j('localization/zh_cn.json'), en_us: j('localization/en_us.json') };
 const stages = new Map(design.stages.map((s) => [s.id, s]));
+// stage tasks may point at any progression node (era or ability)
+const nodeNames = new Map([...design.stages, ...(design.abilities ?? [])].map((n) => [n.id, n]));
 // Registered KeyMapping ids this pack ships (see docs/keybinds.md). Hints may
 // only reference these; the rendered keybind component resolves the player's
 // live binding client-side, so rebinds update quest text automatically.
@@ -305,6 +307,17 @@ for (const ch of chapters) {
         const stageName = dict[stages.get(q.suggested_stage).name_key] ?? q.suggested_stage;
         lang[loc][`quest.${qid}.quest_subtitle`] = fmt(loc, dict[content.questbook.stage_hint_key] ?? '%1$s', stageName);
       }
+      // Stage tasks: without a localized title FTB Quests renders its alt
+      // title = "Game Stage: <raw stage id>" — leaking modpack:* ids into the
+      // UI. Task titles live in the lang table as task.<hex>.title.
+      (q.tasks ?? (q.task ? [q.task] : [])).forEach((t, i) => {
+        if (t.type !== 'stage') return;
+        const node = nodeNames.get(t.stage);
+        if (!node) throw new Error(`${q.id}: unknown stage task node ${t.stage}`);
+        const taskId = hexId('task', `${ch.id}/${q.path_id ?? q.id}/${i}`);
+        const stageName = dict[node.name_key] ?? t.stage;
+        lang[loc][`task.${taskId}.title`] = fmt(loc, dict[content.questbook.stage_task_key] ?? 'Stage: %1$s', stageName);
+      });
     }
     return obj;
   });

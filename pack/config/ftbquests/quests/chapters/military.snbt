@@ -300,6 +300,11 @@
 		{
 			icon: {
 				id: "tacz:modern_kinetic_gun"
+				components: {
+					"minecraft:custom_data": {
+						GunId: "eos:eos_hg57_t2"
+					}
+				}
 			}
 			id: "39599EDCD459B7B2"
 			x: 16d
@@ -338,6 +343,11 @@
 		{
 			icon: {
 				id: "tacz:modern_kinetic_gun"
+				components: {
+					"minecraft:custom_data": {
+						GunId: "eos:eos_mg85_t2"
+					}
+				}
 			}
 			id: "43727C69AA43A83C"
 			x: 19.2d
@@ -367,6 +377,11 @@
 		{
 			icon: {
 				id: "tacz:modern_kinetic_gun"
+				components: {
+					"minecraft:custom_data": {
+						GunId: "eos:elp_72_t3"
+					}
+				}
 			}
 			id: "09D27335218273DA"
 			x: 22.4d
@@ -547,6 +562,11 @@
 		{
 			icon: {
 				id: "tacz:modern_kinetic_gun"
+				components: {
+					"minecraft:custom_data": {
+						GunId: "eos:eos_helenas_nail"
+					}
+				}
 			}
 			id: "6DD56A7E6F10A880"
 			x: 19.2d

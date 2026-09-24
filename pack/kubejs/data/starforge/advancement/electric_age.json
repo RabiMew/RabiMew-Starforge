@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:mechanical_age",
  "display": {
   "icon": {
    "id": "ic2cre:generator"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.electric_age.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "task",
   "show_toast": true,
   "announce_to_chat": false,

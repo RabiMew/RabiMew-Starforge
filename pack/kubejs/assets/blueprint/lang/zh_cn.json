@@ -1,0 +1,21 @@
+{
+ "blueprint.config.screen_shake_scale": "屏幕震动幅度",
+ "blueprint.config.max_screen_shakers": "屏幕震源上限",
+ "blueprint.config.disable_experimental_settings_screen": "禁用实验性设置界面",
+ "blueprint.config.slabfish_hat.enabled": "Slabfish 帽子",
+ "blueprint.config.slabfish_hat.enabled.tooltip": "开关 Slabfish 帽子。Tier 2+ 赞助者可用。",
+ "blueprint.config.slabfish_hat.sweater": "毛衣",
+ "blueprint.config.slabfish_hat.sweater.tooltip": "开关 Slabfish 帽子的毛衣。Tier 2+ 赞助者可用。",
+ "blueprint.config.slabfish_hat.backpack": "背包",
+ "blueprint.config.slabfish_hat.backpack.tooltip": "开关 Slabfish 帽子的背包。Tier 3+ 赞助者可用。",
+ "blueprint.config.slabfish_hat.type": "类型",
+ "blueprint.config.slabfish_hat.type.tooltip": "开关 Slabfish 帽子的类型。Tier 4+ 赞助者可用。",
+ "blueprint.screen.slabfish_settings": "Slabfish 帽子设置……",
+ "blueprint.screen.slabfish_settings.title": "Slabfish 帽子设置",
+ "blueprint.screen.slabfish_settings.tooltip": "Team Abnormals 赞助者 Slabfish 帽子的设置。在 %s 成为赞助者。",
+ "blueprint.message.redirect": "正在重定向",
+ "biome.blueprint.original_source_marker": "原始来源标记",
+ "entity.blueprint.boat": "船",
+ "entity.blueprint.chest_boat": "运输船",
+ "entity.blueprint.falling_block": "下落的方块"
+}

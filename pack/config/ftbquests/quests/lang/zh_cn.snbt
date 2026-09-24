@@ -5,36 +5,43 @@
 		"团队掌握工程装配与基础机械。此节点与阶段图谱同步，无需手动完成。"
 	]
 	quest.57CE687B27C482B3.quest_subtitle: "推荐阶段：机械时代"
+	task.397DEC5C42BEA574.title: "完成阶段：机械时代"
 	quest.30B185E865902CFB.title: "电气时代"
 	quest.30B185E865902CFB.quest_desc: [
 		"电力与电路进入生产体系。此节点与阶段图谱同步，无需手动完成。"
 	]
 	quest.30B185E865902CFB.quest_subtitle: "推荐阶段：电气时代"
+	task.07C557C44B34015B.title: "完成阶段：电气时代"
 	quest.5CBFEC3F42242B50.title: "信息时代"
 	quest.5CBFEC3F42242B50.quest_desc: [
 		"数字网络统一仓储与合成。此节点与阶段图谱同步，无需手动完成。"
 	]
 	quest.5CBFEC3F42242B50.quest_subtitle: "推荐阶段：信息时代"
+	task.0386E90241184FD5.title: "完成阶段：信息时代"
 	quest.016079F40895BC4A.title: "重工业时代"
 	quest.016079F40895BC4A.quest_desc: [
 		"重工装备与自动炮塔上线。此节点与阶段图谱同步，无需手动完成。"
 	]
 	quest.016079F40895BC4A.quest_subtitle: "推荐阶段：重工业时代"
+	task.3FF75FF9A918EECB.title: "完成阶段：重工业时代"
 	quest.245AA3038DD177F7.title: "原子时代"
 	quest.245AA3038DD177F7.quest_desc: [
 		"核能并网，科技触及顶峰。此节点与阶段图谱同步，无需手动完成。"
 	]
 	quest.245AA3038DD177F7.quest_subtitle: "推荐阶段：原子时代"
+	task.6F91FE2B870A5CE7.title: "完成阶段：原子时代"
 	quest.3B95DA0212939412.title: "太空时代"
 	quest.3B95DA0212939412.quest_desc: [
 		"火箭离轨，文明跨出地球。此节点与阶段图谱同步，无需手动完成。"
 	]
 	quest.3B95DA0212939412.quest_subtitle: "推荐阶段：太空时代"
+	task.012254D0B10A6CD3.title: "完成阶段：太空时代"
 	quest.27746B580BF2533A.title: "量子时代"
 	quest.27746B580BF2533A.quest_desc: [
 		"量子技术打破距离限制。此节点与阶段图谱同步，无需手动完成。"
 	]
 	quest.27746B580BF2533A.quest_subtitle: "推荐阶段：量子时代"
+	task.17D01EB7288F8B86.title: "完成阶段：量子时代"
 	chapter.3417920818FE4D66.title: "时代里程碑"
 	chapter.3417920818FE4D66.chapter_subtitle: [
 		"七个科技时代的进度记录——与 ProgressiveStages 图谱同步，无需手动完成。"
@@ -1108,7 +1115,7 @@
 	quest.7768292ADEE8BE72.quest_subtitle: "殖民人口与驻军"
 	quest.3D52D8EF523B1359.title: "家用供电"
 	quest.3D52D8EF523B1359.quest_desc: [
-		"Refurbished 有自己的电力体系。放置 Energized Furniture 变压器、从电网馈入 FE，即可为附近电器供电。发电机与电脑都挂在这条家庭电网上。"
+		"Refurbished 有自己的电力体系。放置 Energized Furniture 变压器、从电网馈入 FE，即可为附近电器供电。冰箱、灯具与电脑都挂在这条家庭电网上。"
 	]
 	quest.3D52D8EF523B1359.quest_subtitle: "能源·石油·网络"
 	quest.53235BFFFF0D5717.title: "智能家居"

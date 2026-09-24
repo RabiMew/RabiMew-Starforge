@@ -88,7 +88,7 @@ ServerEvents.loaded((e) => {
   var energyIds = [
     'ic2cre:batbox', 'ic2cre:generator', 'ic2cre:copper_cable',
     'immersiveengineering:capacitor_lv', 'immersiveengineering:connector_lv',
-    'ad_astra:etrionic_capacitor', 'ad_astra:coal_generator', 'ad_astra:energizer',
+    'ad_astra:etrionic_capacitor', 'ad_astra:cryo_freezer', 'ad_astra:energizer',
     'buildcraftenergy:engine_fe', 'buildcraftenergy:mj_dynamo',
     'ae2:energy_acceptor', 'ae2:energy_cell', 'ae2:controller',
     'energizedfurniture:energy_transformer',

@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:space_age",
  "display": {
   "icon": {
    "id": "ad_astra:tier_1_rocket"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.first_launch.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "challenge",
   "show_toast": true,
   "announce_to_chat": false,

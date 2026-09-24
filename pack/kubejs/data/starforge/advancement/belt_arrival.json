@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:mars_landing",
  "display": {
   "icon": {
    "id": "minecraft:iron_ore"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.belt_arrival.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "challenge",
   "show_toast": true,
   "announce_to_chat": false,

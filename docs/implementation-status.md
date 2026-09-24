@@ -416,3 +416,150 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 
 - **守恒结论**：能量管只搬不产；抽查链路源端净失 ≥ 目的端净增 + 管网缓存，未发现增殖。FE↔MJ（mj_dynamo/engine_fe 上游原生）、FE→Watt（Energized 原生）、IC2 原生 FE 端口均为单向或原生换算，无循环发电通道。
 - **遗留验证项**：附件 GUI 的过滤/优先级/分流模式人工验收；IE 可视化产线与 FastPipes 后台接驳的产线级联调；Railcraft Charge 设备端到端运行（自足链路，与 FE 网隔离属预期）；区块卸载/重载与网络重扫行为抽检。
+
+## 2026-09-24 成就树重构 + 任务书修复 + 四模组汉化（已实现，静态验证通过）
+
+### 成就页：单根 Starforge 树（取代 29 页平铺）
+
+- 根因回顾：此前 29 个生成成就全部无 `parent`——1.21.1 里每个无父成就自成一页 tab（并在缺 `background` 时呈现缺图背景，即上次修的紫黑格问题根因）。
+- `design/advancements.json`：新增 `starforge` 根成就（图标 `modpack:space_control_core`，背景 `minecraft:textures/block/smooth_basalt.png`，`stage_granted: survival_age`）；其余 29 条全部补 `parent`——时代主干 `mechanical→electric→information→heavy_industry→atomic→{space,quantum}`，防御链 `base_registered→first_horde→horde_survived` + `armed_garrison/auto_turret/eos_arsenal` 挂对应时代，物流 `rail_freight→first_rail_signal`/`ae2_network`，航天 `first_launch→moon→mars→belt_arrival→{alien_artifact,alien_ruins}`，`colony_established`/`anomaly_research`/`soph_storage` 挂所属时代，T0 生活系（`first_artifact`/`first_backpack`/`cfb_kitchen`/`edible_player_head`）挂根。触发条件、`hidden`、`reveal_at` 全部未动。
+- `tools/build-pack.mjs`：非根成就输出 `parent: "starforge:<parent>"`；`display.background` 只写给无 parent 的真根。
+- `tools/validate-design.mjs`：新校验——parent id 格式/自引用/必须已定义；`background` 只允许根持有；**恰好 1 个根且必须是 `starforge`**；hidden 节点禁止有子节点（子树会整体不可见）；从根 DFS 检环并要求全图可达（无孤儿）。
+- 生成物确认：30 个成就 JSON，仅 `starforge.json` 带 `background`，其余 29 个均带 `parent`，无隐藏节点带子。
+
+### 任务书图标修复（4 个 EOS 任务）
+
+- 根因：`eos_arsenal`/`swarm_suppression`/`expedition_firepower`/`eos_challenge` 图标用裸 `tacz:modern_kinetic_gun`——EOS 枪不是注册表物品，是 `minecraft:custom_data` 里 `GunId` 的组件变体（字节码核实 `GunItemDataAccessor.getGunId` 读 `CUSTOM_DATA.GunId`），裸 id 显示为无模型的空壳枪。
+- 处置：`design/content.json` 四任务图标改为 `{ id: "tacz_gun", components: { "minecraft:custom_data": { GunId } } }`——军械库 `eos:eos_hg57_t2`（HG-57 高斯）、虫群压制 `eos:eos_mg85_t2`（MG-85 机枪）、远征火力 `eos:elp_72_t3`（ELP-72 电浆）、武器挑战 `eos:eos_helenas_nail`（艾莲娜之钉，T5 旗舰）；均为 EOS index 中存在且有可用配方的枪（非禁用清单成员）。生成 SNBT 已核实带 `components` 块。
+
+### 阶段任务不再泄露内部 ID
+
+- 根因：FTB Quests `StageTask.getAltTitle()` 回退显示 `ftbquests.task.ftbquests.gamestage: <stage 字面量>`——milestones 章 7 个 gamestage 任务此前在 UI 显示 `modpack:mechanical_age` 等原始 id。
+- 处置：新增双语模板 `modpack.quest.stage_task`（`完成阶段：%1$s` / `Complete stage: %1$s`，挂在 `questbook.stage_task_key`）；`export-quests.mjs` 为每个 stage 任务生成 `task.<hex>.title`（hex 与任务 id 同算法）。生成核对：7 个 gamestage 任务 ↔ 7 条 `task.*.title`，zh 显示「完成阶段：机械时代」、en 显示「Complete stage: Mechanical Age」，lang 文件内零 `modpack:` 残留。
+
+### 四模组简体中文补齐（沿用 KubeJS lang 覆盖）
+
+- **BuildCraft CE 8.0.19**（1976 键）：主 jar 只带 en_us——上游官方把译文拆进独立附属 **BuildCraft Community Edition: Localizations 1.0.2**；其 `zh_cn.json`（2019 键、覆盖全部 en 键）已 vendored 至 `localization/vendor/buildcraft-zh_cn.json`，生成器过滤输出 en 现存键（自动剔除 43 条 RF 时代陈旧键），覆盖不足时构建期报错。35 条与 en 相同的条目为 MJ/FE/B 单位串与品牌名，属正常。
+- **Creature Feature 1.2.3.3**（172 键，jar 无 zh）：实体名表 + 生成式 `*_spawn_egg` 派生 + 显式条目；全键解析，未解析即构建失败。
+- **TACZ Turrets 2.0.0**（34 键，jar 无 zh）：GUI/命令/音效/实体显式表。
+- **Vinery 1.5.3**（187 缺失键，jar 已有 267 键 zh）：只写缺失键，不覆盖官方既有译文；`dark_cherry_*` 沿用官方 `cherry_*` 命名（樱桃木），`§` 与 `%s` 占位符保留。
+
+### 验证（本轮）
+
+```text
+validate-design: PASS — 30 nodes / 7 routes / 10 chapters / 123 quests / 50 manual pages / 18 guidance / 718 bilingual keys
+build-pack:      13 items, 30 stages, 30 advancements, 7 reward pools, guidance script, 2 lang files
+export-quests:   10 chapters, 173 quest nodes (50 manual pages), 154 rewards
+gen-mod-lang-zh: taczturrets 34 + creaturefeature 172 + vinery 187 + buildcraft 1976（+既有 8 模组）
+check-mapping:   PASS — 472 语义 ID 全部解析
+任务 lang:       7× task.<hex>.title 双语，lang 文件无 modpack:* 可见字符串
+```
+
+- **仍待实机目检**：成就树在 1.21.1 客户端的实际 tab 形状与连线；EOS 枪图标在任务书中的组件渲染（`GunId` 变体在 FTB 图标槽的贴图）；四个新 zh 文件的实机显示。
+
+## 2026-09-24 ProgressiveStages 全量简体中文（已实现，静态验证通过）
+
+### 范围判定：lang 键 vs 配置字符串
+
+- 字节码确认：`progressivestages-3.0.5.jar` 仅 `assets/progressivestages/lang/en_us.json`（62 键），无 zh。
+- 用户点名的 `Recipe Locked`/`Item Locked`/`Item and Recipe Locked`/`Stage required`/`Current stage` **不在 lang 文件中**——它们是 `StageConfig` 的 `messages.tooltip_*` 配置默认值（`&` 颜色码字面量），经 `TextUtil.parseColorCodes` 渲染；`messages.*` 共 80+ 键（tooltip/lock/enforcement/14 种 type_label/创造提示/40+ 条 cmd_* 反馈），全部玩家可见路径均过 `parseColorCodes`（已核字节码：`sendSuccess`/`sendFailure`/tooltip/弹出提示无一例外）。
+
+### 机制：`<ps:key>` 标记 + 现有 mixin 扩展
+
+- `StageI18n` 新增 `containsMarker`/`translateMarkers`：正则 `<ps:([a-z0-9_]+)>` → `Component.translatable("modpack.ps.<name>")`；`ProgressiveStagesTextUtilMixin` 先查标记再查双语字面量对。标记段之间的普通文本回传 `parseColorCodes` 递归处理——所以服务端代入的双语阶段字面量（`机械时代 / Mechanical Age`）仍走既有 pair 路径按各端本地化，**{stage} 永不显示 `modpack:*` id**。
+- 关键性质：`{stage}`/`{player}`/`{count}` 等占位符由 Mod 在 `parseColorCodes` **之前**替换，标记位于占位符之外 → 任何占位符位置（含字符串中间、多占位符）都可整句按客户端语言渲染；服务端产生的命令反馈（translatable 组件序列化到客户端）同样按各端本地化。
+- 文案源：`design/content.json` 新增 `progressivestages.messages` 映射（77 个 config 键 → 标记模板）；`localization/*.json` 新增 117 个 `modpack.ps.*` 键（§ 样式内嵌）；`validate-design` 把字符串中的 `<ps:name>` 计入引用检查——未定义标记/未引用键均构建期报错。保留 jar 默认的键：`prefix`（品牌标签）、`tooltip_stage_description`（描述本体已本地化）、`cmd_tree_node`/`cmd_validate_invalid_item`/`cmd_ftb_status_player_stage_list`（纯排版）。
+
+### 生成物
+
+- `pack/config/progressivestages/progressivestages.toml` 新增 `[messages]` 段（77 条标记模板，`{stage}` 等占位符原样保留）。
+- `gen-mod-lang-zh.mjs` 新增 `genProgressiveStages`：62 个真实 lang 键全量 zh（`需要阶段：%s`/`当前阶段：%s`/锁定消息/60 键进度图谱 GUI/键位/FTB 编辑器提示），缺键即构建失败 → `pack/kubejs/assets/progressivestages/lang/zh_cn.json`。
+- `starforge-compat-0.1.0.jar` 重建（sha256 `4b5c6efb…`，确定性构建）；`manifest/locked-mods.json` 已更新，`mods/`、`run/client/mods/`、`run/server/mods/` 三处哈希一致。
+
+### 验证（本轮）
+
+- 标记流水线端到端模拟（含服务端双语阶段名代入）：zh `🔒 物品与配方未解锁`/`需要阶段：机械时代`/`当前阶段：机械时代 （75%）`/`🔒 你还没有解锁这个物品！需要阶段：机械时代`；en `🔒 Item and Recipe Locked`/`Stage required: Mechanical Age`/`Current stage: Mechanical Age (75%)`。
+- 生成 toml 中全部 `<ps:*>` 标记在 zh/en 双侧均有对应 `modpack.ps.*` 键（0 未解析）；zh 侧生成物无 `Recipe Locked`/`Item Locked`/`Stage required`/`Current stage` 残留。
+- `validate-design` PASS（835 双语键）；`export-quests`、`check-mapping`（472 id）无回归。
+- **仍待实机目检**：锁定物品 tooltip、拒绝提示、命令反馈、进度图谱 GUI 的实际渲染（mixin 生效与否只能进游戏确认）。
+
+## 2026-10-13 能源体系清理：消费端统一收 FE（已实现，静态验证通过）
+
+### 禁用清单（删配方 + 隐藏 EMI/JEI + 移除创造栏 + 移出任务书/阶段锁）
+
+| 物品 | 原角色 | 替代路径 |
+| --- | --- | --- |
+| `ad_astra:coal_generator` | AA 燃煤发电（20 FE/t） | IE/IC2CRE/BC 经 FastPipes 供 FE，AA 机器原生收 FE |
+| `ad_astra:solar_panel` | AA 太阳能发电 | 同上 |
+| `refurbished_furniture:light_electricity_generator` | RF 燃料发电 | Energized 变压器 FE→Watt |
+| `refurbished_furniture:dark_electricity_generator` | RF 燃料发电 | 同上 |
+| `ae2:vibration_chamber` | AE2 烧燃料产 AE | AE2 能量接收器收 FE；晶振发电机保留自举 |
+
+五者仅移除玩家侧获取与展示面，注册表条目保留（既有存档方块不炸档）。落地位置：`starforge_recipes.js` SF-36（`e.remove({output})`）、`starforge_viewer_cleanup.js`（EMI/JEI item 条目）、`starforge_creative_cleanup.js`（`ad_astra:main`/`refurbished_furniture:creative_tab`/`ae2:main` 三页签）。
+
+### Energized 变压器配方重写
+
+- 上游配方以被禁的 Refurbished 发电机为原料（light 或 dark），禁用后不可达。
+- 新配方（T2 电网部件）：`铜块×5 + 红石块×1 + IE 电磁线圈(wirecoil_electrum)×2 + IC2 RE-Battery(ic2cre:battery)×1` → `energizedfurniture:energy_transformer`。变压器本身仍为唯一 FE→Refurbished Watt 桥（全六面收 FE，1M FE 缓存，1k FE/t 收发，每节点 1 FE/t 消耗）。
+
+### 设计源同步
+
+- `design/semantic-map.json` 删 `aa_coal_generator`/`aa_solar_panel`/`rf_generator` 三个语义键。
+- `design/stage-locks.json`：`electric_age` 删 `rf_generator`，`space_age` 删 `aa_coal_generator`/`aa_solar_panel`（生成物 rules.toml 同步）。
+- `design/content.json`：`household_power` 任务奖励 `rf_generator` → `rf_fridge`（同任务仍要求提交变压器）。
+- `localization/*.json`：`tutorial.household_power` 不再提"发电机挂家庭电网"；`tip.fastpipes_energy` 改为「IE/IC2CRE/BC 供电入网，AA/AE2/RF 消费」语义。
+- `starforge_captest.js`：能量探测行 `ad_astra:coal_generator` → `ad_astra:cryo_freezer`（AA 机器消费端探测仍在）。
+
+### 发电/耗电审计结论（不改动项）
+
+- IE `dieselGen_output = 4096` FE/t：T5 主力，生物柴油链即成本，维持。
+- IC2 `nuclearOutputScale = 1.0`：反应堆数百~数千 EU/t ×4 FE/EU，铀+散热约束，维持。
+- BC `mjPerFe = 0.1`：engine_fe 与 mj_dynamo 同用 `microMjPerFe()` 换算（4 MJ/t ↔ 40 FE/t 基础值），FE→MJ→FE 往返无损但零净增——守恒安全；齿轮升级各 +2M/+3M µMJ/t。
+- AE2：接收器 0.5 比率（2 FE = 1 AE）、`usageMultiplier = 1.0`；晶振发电机 20 AE/t，`EnergyOverlayGrid` 每网络只放行一台 passive generator——天然防堆叠，保留作自举；大网耗电随节点线性增长，属预期"AE2 是大耗电端"。
+- Ad Astra：机器输入上限 100/150/250/500 FE/t（iron/steel/desh/ostrum）；**etrionic 高炉 10 → 500 FE/件**（`pack/config/ad_astra.jsonc` 新发货——原值按 AA 自带 20 FE/t 发电经济标定，接 FE 网后近乎零成本）；水泵 20 FE/t、energizer 2M FE 缓冲维持。
+- Refurbished：`fuelToPowerRatio = 16`（仅影响已禁用的燃料发电机路径）；家电 Watt 无回 FE 通道，单向受控。
+- FastPipes 能量管 1k/4k/8k/16k/32k FE/t 维持上游默认（包内未发货覆盖文件，默认值即目标值）。
+
+### 无循环/复制论证
+
+- FE→MJ（engine_fe）与 MJ→FE（mj_dynamo）走同一 `microMjPerFe()`，严格对称 → 往返净零。
+- FE→Watt（Energized 变压器）、FE→AE（能量接收器）、FE→mEU（IC2CRE 原生端口）均单向，Watt/AE/mEU 均无返回 FE 的原生通道。
+- 禁用五项全部为非消费侧产能设备；CRG 的 20 AE/t 不出 AE2 内网，且每网络限一台。
+- 守恒实测（既有 captest）：energizer → FastPipes → IC2 电炉，源失 ≥ 目增 + 管缓存；本轮未引入新转换边。
+
+### 验证
+
+- `validate-design`、`check-mapping`、`export-quests`、`build-pack` 全过；生成物（building.snbt 奖励、`electric_age`/`space_age` rules.toml、`starforge_semantic_map.js`）已无被禁 ID。
+- **仍待实机确认**：五件物品在 EMI/JEI/创造栏消失、变压器新配方可合成、既有存档中被禁方块原地保留且失效。
+
+## 2026-10-13 全量本地化审计 + 48 命名空间 zh_cn 补齐（已实现，静态验证通过）
+
+### 审计工具
+
+- 新增 `tools/audit-lang.mjs`：遍历 `manifest/locked-mods.json` 全部 112 个启用条目，从实际 JAR 读取 `assets/<ns>/lang/en_us.json` 与自带 `zh_cn`（容忍 UTF-8 BOM / JSONC 注释与尾逗号），叠加 `pack/kubejs/assets/<ns>/lang/zh_cn.json` 覆盖层后统计缺失键、zh 空值、zh 与 en 完全相同值；另扫描 KubeJS 脚本、`pack/config`、ProgressiveStages TOML、FTB Quests snbt、TaCZ/EOS 枪包与 compat lang 中的疑似硬编码英文。输出 `docs/localization-report.md`。
+- 模组升版后重跑 `node tools/audit-lang.mjs` 即可刷新报告；`gen-mod-lang-zh.mjs` 对任何覆盖命名空间出现未解析键会直接构建失败，防止静默漏译。
+
+### 覆盖结论（以报告为准）
+
+- 84 个语言命名空间 **0 缺失键**；30 个无 `assets/<ns>/lang/` 的 Mod 归为「存在硬编码英文」——全部为性能/库类（sodium、ferritecore、spark 等）或仅管理命令反馈（zombies_break_and_build 的 `/zbb` 回复），正常游玩无玩家可见英文。
+- zh 空值 3 键（IP 储层手册冠词助手 ×2、jade 配置描述 ×1）与 105 个 zh=en 值（MJ/FE 单位、shader/画作名、命令 usage、品牌名）均为上游有意保留，报告逐条列出。
+- `mods/` 中 `jei-19.57.0.446` 与 `sophisticatedbackpacks-3.26.3.2158` 两个 jar 未在 lockfile 登记，报告「JAR 与 manifest 不一致」节提示清理。
+
+### 生成器扩展（`tools/gen-mod-lang-zh.mjs`）
+
+- 分层补齐顺序：JAR 自带 zh → 手写翻译表 → `localization/vendor/cfpa/<ns>.json`（CFPA/I18nUpdateMod zh_cn 子集，因该汉化包不进 lockfile `resources`，玩家侧必须 vendor）。
+- 本轮新增/更新 48 个命名空间覆盖层，重点：buildcraft 1976（vendor 官方 Localizations 附属）、taczturrets 34、creaturefeature 172、vinery 187、jei 283、moonlight 253、xaeroworldmap 322、xaerominimap 128、ftbquests 127、ftbteams 112、guideme 36、blueprint 19、curios 7、immersiveengineering 18、hordes 30。
+- `the_hordes` 实际语言源是 `config_defaults` 内 30 键版本（实体名/感染效果/事件消息/死亡消息），多于主 lang；生成器支持多 en 来源合并。
+- `fastpipes` 自带 zh 含 UTF-8 BOM，两个工具均已兼容，153 键完整无需覆盖。
+- EOS 枪包 zh_cn 与 en 键全等（147 键，9 个 `...` 占位符为有意相同），无需覆盖。
+
+### KubeJS 硬编码英文清理
+
+- `starforge_horde.js` 的怪潮标题/副标题/聊天提示改为 `Text.translate`/`{"translate":...}` 组件，新增 `modpack.horde.title/subtitle/chat_start/chat_end` 双语键（`怪潮来袭`/`保卫基地！` 等）。
+
+### 后续审计流程
+
+1. `node tools/gen-mod-lang-zh.mjs`（重建覆盖层，缺译即失败）
+2. `node tools/build-pack.mjs`（重建 stage_i18n / 任务 / lang）
+3. `node tools/audit-lang.mjs`（刷新 `docs/localization-report.md`）
+4. 新 Mod 入包：先看 JAR 自带 zh → 查 CFPA zip（`run/client/resourcepacks/Minecraft-Mod-Language-Modpack-Converted-1.21.1.zip`）→ 仍缺则加翻译表并 vendor 对应 CFPA 子集。

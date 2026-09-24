@@ -5,36 +5,43 @@
 		"The team masters engineering assembly and basic machines. Synced with the progression map - no manual completion needed."
 	]
 	quest.57CE687B27C482B3.quest_subtitle: "Suggested stage: Mechanical Age"
+	task.397DEC5C42BEA574.title: "Complete stage: Mechanical Age"
 	quest.30B185E865902CFB.title: "Electric Age"
 	quest.30B185E865902CFB.quest_desc: [
 		"Power and circuits enter the production system. Synced with the progression map - no manual completion needed."
 	]
 	quest.30B185E865902CFB.quest_subtitle: "Suggested stage: Electrical Age"
+	task.07C557C44B34015B.title: "Complete stage: Electrical Age"
 	quest.5CBFEC3F42242B50.title: "Information Age"
 	quest.5CBFEC3F42242B50.quest_desc: [
 		"Digital networks unify storage and crafting. Synced with the progression map - no manual completion needed."
 	]
 	quest.5CBFEC3F42242B50.quest_subtitle: "Suggested stage: Information Age"
+	task.0386E90241184FD5.title: "Complete stage: Information Age"
 	quest.016079F40895BC4A.title: "Heavy Industry Age"
 	quest.016079F40895BC4A.quest_desc: [
 		"Heavy industry and auto-turrets come online. Synced with the progression map - no manual completion needed."
 	]
 	quest.016079F40895BC4A.quest_subtitle: "Suggested stage: Heavy Industry Age"
+	task.3FF75FF9A918EECB.title: "Complete stage: Heavy Industry Age"
 	quest.245AA3038DD177F7.title: "Atomic Age"
 	quest.245AA3038DD177F7.quest_desc: [
 		"Nuclear power joins the grid - technology peaks. Synced with the progression map - no manual completion needed."
 	]
 	quest.245AA3038DD177F7.quest_subtitle: "Suggested stage: Atomic Age"
+	task.6F91FE2B870A5CE7.title: "Complete stage: Atomic Age"
 	quest.3B95DA0212939412.title: "Space Age"
 	quest.3B95DA0212939412.quest_desc: [
 		"Rockets leave orbit - civilization leaves Earth. Synced with the progression map - no manual completion needed."
 	]
 	quest.3B95DA0212939412.quest_subtitle: "Suggested stage: Space Age"
+	task.012254D0B10A6CD3.title: "Complete stage: Space Age"
 	quest.27746B580BF2533A.title: "Quantum Age"
 	quest.27746B580BF2533A.quest_desc: [
 		"Quantum tech breaks the distance limit. Synced with the progression map - no manual completion needed."
 	]
 	quest.27746B580BF2533A.quest_subtitle: "Suggested stage: Quantum Age"
+	task.17D01EB7288F8B86.title: "Complete stage: Quantum Age"
 	chapter.3417920818FE4D66.title: "Era Milestones"
 	chapter.3417920818FE4D66.chapter_subtitle: [
 		"A live record of the seven technology eras - synced with the ProgressiveStages map, no manual completion needed."
@@ -1108,7 +1115,7 @@
 	quest.7768292ADEE8BE72.quest_subtitle: "Residents and Garrisons"
 	quest.3D52D8EF523B1359.title: "Household Power"
 	quest.3D52D8EF523B1359.quest_desc: [
-		"Refurbished runs its own electricity. Place the Energized Furniture transformer, feed it FE from the grid, and it powers nearby appliances. Generators and the computer all sit on that home network."
+		"Refurbished runs its own electricity. Place the Energized Furniture transformer, feed it FE from the grid, and it powers nearby appliances. Fridges, lamps and the computer all sit on that home network."
 	]
 	quest.3D52D8EF523B1359.quest_subtitle: "Power, Oil and Networks"
 	quest.53235BFFFF0D5717.title: "Smart Home"

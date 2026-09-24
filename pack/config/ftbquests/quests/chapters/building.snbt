@@ -438,7 +438,7 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "refurbished_furniture:light_electricity_generator"
+						id: "refurbished_furniture:light_fridge"
 					}
 					team_reward: false
 				}

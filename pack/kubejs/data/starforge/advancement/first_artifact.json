@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:starforge",
  "display": {
   "icon": {
    "id": "artifacts:umbrella"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.first_artifact.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "task",
   "show_toast": true,
   "announce_to_chat": false,

@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:starforge",
  "display": {
   "icon": {
    "id": "minecraft:player_head"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.edible_player_head.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "challenge",
   "show_toast": true,
   "announce_to_chat": false,

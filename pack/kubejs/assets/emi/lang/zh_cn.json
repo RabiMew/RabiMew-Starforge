@@ -1,0 +1,8 @@
+{
+ "emi.cheat_mode.true": "总是",
+ "emi.cheat_mode.false": "从不",
+ "emi.cheat_mode.creative": "仅创造模式",
+ "tooltip.emi.synfav.obtained": "已获得 %s/%s",
+ "tooltip.emi.synfav.remaining": "剩余 %s",
+ "tooltip.emi.synfav.batches_remaining": "还可合成 %s 次"
+}

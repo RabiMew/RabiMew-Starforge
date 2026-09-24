@@ -31,6 +31,13 @@ import java.util.function.Function;
 public final class StageI18n {
     private record Pair(String literal, String key) {}
 
+    // <ps:name> markers embedded in ProgressiveStages messages.* config values.
+    // Unlike bilingual literals they survive {placeholder} substitution anywhere
+    // in the string, so lock tooltips / denial messages / command feedback can
+    // all render per-locale via Component.translatable("modpack.ps.<name>").
+    private static final java.util.regex.Pattern MSG =
+        java.util.regex.Pattern.compile("<ps:([a-z0-9_]+)>");
+
     private static volatile List<Pair> pairs;
 
     private StageI18n() {}
@@ -84,6 +91,11 @@ public final class StageI18n {
         return false;
     }
 
+    /** True when raw embeds a {@code <ps:key>} message marker. */
+    public static boolean containsMarker(String raw) {
+        return raw != null && MSG.matcher(raw).find();
+    }
+
     /**
      * Rebuilds {@code raw} into a component where each registered bilingual
      * literal becomes a translatable component; unmatched segments go through
@@ -111,6 +123,32 @@ public final class StageI18n {
             }
         }
         if (seg.length() > 0) result.append(plain.apply(seg.toString()));
+        return result;
+    }
+
+    /**
+     * Rebuilds {@code raw} into a component where each {@code <ps:key>} marker
+     * becomes {@code Component.translatable("modpack.ps." + key)}; unmatched
+     * segments go through {@code plain}. Used for messages.* config strings —
+     * markers sit outside substituted placeholders, so unlike bilingual
+     * literals they work for any placeholder position, and the translatable
+     * components localize per-client even when produced server-side.
+     */
+    public static MutableComponent translateMarkers(String raw, Function<String, Component> plain) {
+        MutableComponent result = Component.empty();
+        StringBuilder seg = new StringBuilder();
+        java.util.regex.Matcher m = MSG.matcher(raw);
+        int i = 0;
+        while (m.find()) {
+            seg.append(raw, i, m.start());
+            if (seg.length() > 0) {
+                result.append(plain.apply(seg.toString()));
+                seg.setLength(0);
+            }
+            result.append(Component.translatable("modpack.ps." + m.group(1)));
+            i = m.end();
+        }
+        if (i < raw.length()) result.append(plain.apply(raw.substring(i)));
         return result;
     }
 

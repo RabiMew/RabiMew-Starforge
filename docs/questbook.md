@@ -84,7 +84,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 
 ## 3. 检测类型映射
 
-117 个任务节点中约半数自动检测（item/dimension/advancement/kill/gamestage）、半数 checkmark，另有 44 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。支线（optional）只承载推荐与演练，不影响章节完成度与任何阶段授予。下表为原 35 个主线任务的检测映射（新增中间节点均为 item/checkmark/stage 子步骤，详见 content.json）：
+173 个任务节点中约半数自动检测（item/dimension/advancement/kill/gamestage）、半数 checkmark，另有 50 页手册。不伪造「运行成功」检测——无法诚实验证的布局/演练/运营目标一律 checkmark。支线（optional）只承载推荐与演练，不影响章节完成度与任何阶段授予。下表为原 35 个主线任务的检测映射（新增中间节点均为 item/checkmark/stage 子步骤，详见 content.json）：
 
 | 任务 | 阶段 | task | 目标（语义键/字面量） |
 | --- | --- | --- | --- |
@@ -220,7 +220,8 @@ tools/export-quests.mjs:
 - FTB Quests 2100+ 把全部文本放在 `lang/<locale>.snbt`，键形如 `chapter.<HEX>.title`、`quest.<HEX>.title` / `.quest_subtitle` / `.quest_desc`（列表）、`chapter.<HEX>.chapter_subtitle`（列表）、`file.<HEX>.title`；客户端按各自 MC 语言渲染，天然满足双语同服。
 - **确定性 63-bit hex ID**（`tools/lib/hexid.mjs`，导出器与校验器共用）：`sha256("ftbquests/<type>:<path>")` 取高 63 bit 转 16 位大写 hex。路径带类型与层级命名空间，如 `chapter:industry`、`quest:industry/ic2_generator`、`task:space/first_launch/0`、`reward:industry/ic2_generator/0`、`manual:unified_oil`、`file:starforge`——同名对象在不同章节/类型下不冲突，`change_page` 链接可预先算得。
 - 章文件字段（2101 实测格式）：`filename/group/icon{id}/id/order_index/progression_mode:"flexible"/default_quest_shape/default_hide_dependency_lines/images/quest_links/quests[]`；任务 `{id,x,y,shape,size,icon{id},min_width,tasks[],rewards[]}`。
-- 任务 SNBT（按 2101 源码字段）：item `{type:"item", item:{id,count:1}, count:N, consume_items:false}`；checkmark `{type:"checkmark"}`；dimension `{type:"dimension", dimension:"ns:dim"}`；advancement `{type:"advancement", advancement:"ns:path", criterion:""}`；kill `{type:"kill", entity:"ns:e" 或 entityTypeTag:"ns:tag", value:1}`；biome/structure 同名字段；**gamestage `{type:"gamestage", stage:"modpack:<id>", team_stage:true}`**（ProgressiveStages 提供 stage provider，团队持有时自动完成）。
+- 任务 SNBT（按 2101 源码字段）：item `{type:"item", item:{id,count:1}, count:N, consume_items:false}`；checkmark `{type:"checkmark"}`；dimension `{type:"dimension", dimension:"ns:dim"}`；advancement `{type:"advancement", advancement:"ns:path", criterion:""}`；kill `{type:"kill", entity:"ns:e" 或 entityTypeTag:"ns:tag", value:1}`；biome/structure 同名字段；**gamestage `{type:"gamestage", stage:"modpack:<id>", team_stage:true}`**（ProgressiveStages 提供 stage provider，团队持有时自动完成）。stage 是任务内部配置，不进 UI：导出器为每个 gamestage 任务另写 `task.<HEX>.title`（模板 `modpack.quest.stage_task` = `完成阶段：%1$s`），否则 FTB 会用 `StageTask.getAltTitle()` 回退显示 `ftbquests.task.ftbquests.gamestage: modpack:<id>` 原始 id。
+- 任务/章/任务奖励图标支持 `{ id, components }`——EOS/TaCZ 枪用 `tacz:modern_kinetic_gun` + `minecraft:custom_data.GunId`（TaCZ `getGunId` 字节码确认该键）；具体枪 id（`eos:*`）是枪包数据而非注册表物品，不可直接作 `id`。
 - 奖励 SNBT：`{type:"item", item:{id,count:N,components?}, team_reward:<bool>}`（数量在物品栈内，与 ItemTask 的顶层 `count` 不同）；`rewards[].pool` 会写入 `components."minecraft:custom_data".reward_pool`（里程碑奖励包的奖池盖章）。
 - item 任务写 `consume_items: false`（显式覆盖，章节默认也是 false 但不依赖默认）。
 - `pack/config/ftbquests/` 经 `sync-pack.mjs` 同时下发到客户端与服务端（任务书数据在服务端持有、客户端同步显示，lang 文件两端都需要）；该目录加入 `OWNED_DIRS` 清 stale。

@@ -38,3 +38,17 @@ RecipeViewerEvents.removeEntries('item', (e) => {
   // conversion recipes are the same dead forge: format.
   e.remove(sfVariant('tacz:workbench_a', 'BlockId', 'eos_old:old_conversion'));
 });
+
+// SF-36: disabled generation devices. Public power is FE -> FastPipes fed by
+// IE / IC2CRE / BuildCraft; Ad Astra, AE2 and Refurbished appliances are
+// consumers only, so these entries are hidden along with their removed
+// recipes (see starforge_recipes.js).
+RecipeViewerEvents.removeEntries('item', (e) => {
+  for (const id of [
+    'ad_astra:coal_generator',
+    'ad_astra:solar_panel',
+    'refurbished_furniture:light_electricity_generator',
+    'refurbished_furniture:dark_electricity_generator',
+    'ae2:vibration_chamber'
+  ]) e.remove(id);
+});

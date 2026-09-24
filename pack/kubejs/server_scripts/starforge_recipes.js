@@ -467,6 +467,31 @@ ServerEvents.recipes((e) => {
     }
   }
 
+  // ---------- SF-36: energy network cleanup ----------
+  // Public generation is IE / IC2CRE / BuildCraft only, all feeding FE into
+  // FastPipes. Ad Astra, AE2 and Refurbished appliances are consumers, so
+  // their standalone generators lose every recipe and leave the player-facing
+  // surfaces (viewer cleanup / creative cleanup strip the rest).
+  const DISABLED_GENERATION = [
+    'ad_astra:coal_generator',
+    'ad_astra:solar_panel',
+    'refurbished_furniture:light_electricity_generator',
+    'refurbished_furniture:dark_electricity_generator',
+    'ae2:vibration_chamber'
+  ];
+  for (const id of DISABLED_GENERATION) e.remove({ output: id });
+
+  // The Energized Furniture transformer is the FE -> Refurbished watt bridge
+  // and stays enabled, but upstream crafts it from a Refurbished generator.
+  // Rebuild it from FE-grid parts instead: electrum coil + charged battery.
+  e.remove({ output: 'energizedfurniture:energy_transformer' });
+  e.shaped('energizedfurniture:energy_transformer', ['CRC', 'WBW', 'CCC'], {
+    C: 'minecraft:copper_block',
+    R: 'minecraft:redstone_block',
+    W: 'immersiveengineering:wirecoil_electrum',
+    B: 'ic2cre:battery'
+  });
+
   console.log('[starforge] recipe layer loaded');
 });
 

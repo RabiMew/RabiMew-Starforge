@@ -1,4 +1,5 @@
 {
+ "parent": "starforge:heavy_industry_age",
  "display": {
   "icon": {
    "id": "taczturrets:turret"
@@ -9,7 +10,6 @@
   "description": {
    "translate": "modpack.advancement.auto_turret.description"
   },
-  "background": "minecraft:textures/block/smooth_basalt.png",
   "frame": "goal",
   "show_toast": true,
   "announce_to_chat": false,
