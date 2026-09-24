@@ -208,6 +208,8 @@
       "project_page": "https://modrinth.com/mod/railcraft-reborn",
       "license": "LicenseRef-Railcraft-Reborn-License",
       "distribution": "modrinth_cdn",
+      "redistribution": "allow",
+      "redistribution_note": "Railcraft Reborn license: public modpacks allowed (no sale, link GitHub, release builds only) — recorded in manifest/mod-list.json",
       "dependencies": [],
       "notes": "Custom license: public modpacks allowed (no sale, link GitHub, release builds only). Layer: inter-base rail logistics between BC/IE in-base transport and AE2/Ad Astra."
     },

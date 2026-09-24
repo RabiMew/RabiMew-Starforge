@@ -18,6 +18,7 @@ Minecraft 1.21.1 / NeoForge 21.1.x 的工业科幻整合包，**Alpha（服务�
 | 模组版本证据、能力边界与适配事项 | [兼容性核查](docs/compatibility.md) |
 | 默认键位表、冲突审计与新 Mod 键位规则 | [键位表与冲突审计](docs/keybinds.md) |
 | 性能模组分侧、真实热点与验收原则 | [性能层](docs/performance.md) |
+| 双版本发布、内嵌许可证规则与安全校验 | [打包与分发](docs/distribution.md) |
 | i18n、任务导出、实施顺序和验收 | [实施与验收](docs/implementation.md) |
 | 阶段、路线、任务和提示的语言键引用 | [内容目录](design/content.json) |
 | 自定义中文 / 英文文本 | [简体中文](localization/zh_cn.json) / [English](localization/en_us.json) |
@@ -32,17 +33,29 @@ node tools/validate-design.mjs
 
 ## 玩家安装（Alpha）
 
-正式发布包是标准 Modrinth `.mrpack`：`starforge-alpha-<version>.mrpack`（见 GitHub Releases / `dist/`）。它声明 Minecraft 1.21.1 + NeoForge 21.1.251 与全部客户端模组的官方下载地址，可被 **Prism Launcher**、**HMCL**、**PCL** 直接导入——不使用任何启动器私有格式。
+正式发布是标准 Modrinth `.mrpack`，双版本并行（见 GitHub Releases / `dist/`）：
+
+| 版本 | 文件 | 适合 | 特点 |
+| --- | --- | --- | --- |
+| **标准版** | `starforge-alpha-<ver>.mrpack` | 网络畅通 / 海外玩家 | 体积小（<1 MB）；除自研附属外不内嵌第三方 jar，全部经官方地址下载+哈希校验 |
+| **中国版** | `starforge-alpha-<ver>-cn.mrpack` | 中国大陆玩家 | 许可证明确允许再分发的约 70 个文件直接随包内嵌，导入时仅需下载约 40 个不能合法内嵌的 Mod（ARR/待审许可证），大幅减少境外 CDN 访问 |
+
+两个版本都是同一标准 mrpack 格式，**Prism Launcher**、**HMCL**、**PCL** 均可直接导入——不使用任何启动器私有格式。
 
 安装步骤（三个启动器通用）：
 
-1. 下载 `starforge-alpha-<version>.mrpack`
+1. 按上表选择并下载对应 `.mrpack`
 2. 打开启动器，选择"导入整合包 / 新建实例 → 导入"
 3. 选择该 `.mrpack` 文件
-4. 等待启动器按清单下载模组（全部来自官方来源并经 hash 校验）
+4. 等待启动器按清单下载剩余模组（全部来自官方来源并经 hash 校验）
 5. 启动游戏
 
-> 第三方模组 jar 不随 `.mrpack` 分发；导入时由启动器从 Modrinth / CurseForge CDN / GitHub Releases / FTB Maven 等官方地址下载。个别仅有 CurseForge CDN 地址的模组在 `dist/client-package-report.md` 中逐条记录。
+> **关于 Prism 的安全提示**：导入中国版时 Prism 会提示部分 Mod"未托管于
+> Modrinth/CurseForge"。这是针对本地随包 jar 的**通用安全提醒，不是病毒
+> 检测**——内嵌 jar 与官方文件逐字节一致（打包时已按 SHA-256/SHA-512 校验）。
+> 每个内嵌文件的来源、许可证与内嵌原因见包内 `THIRD_PARTY_MODS.md`；
+> 可用包内 `SHA256SUMS.txt` 在 `.minecraft` 下 `sha256sum -c` 自行复核。
+> 细节见 [打包与分发](docs/distribution.md)。
 
 默认启用轻量光影 **MakeUp - Ultra Fast**（经 Iris 加载，导入时自动下载）：首次进游戏即生效，可在 视频设置 → Shader Packs 中随时关闭或切换画质档位；关闭后回退到纯 Sodium 渲染，不影响存档。细节见 [性能层](docs/performance.md)。
 
@@ -56,6 +69,8 @@ node tools/setup-client.mjs
 ```
 
 构建 `run/client/`（mods 仅含 `side=both|client`、pack/ 覆盖层），用于本地开发调试。另有 `node tools/package-client.mjs --local` 生成本机测试 ZIP（内含完整 jar，标记 **LOCAL TEST ONLY**，不发布、不入库、不代表已获得再分发许可）。
+
+打包：`node tools/package-client.mjs` 一次产出标准版与 `-cn` 中国版 `.mrpack`（`--standard` / `--cn` 可只构建其一），并自动生成 `dist/THIRD_PARTY_MODS.md`（来源清单）、`dist/SHA256SUMS.txt`（内嵌文件校验）、`dist/client-package-report.md`。内嵌判定按许可证自动执行，规则见 [打包与分发](docs/distribution.md)。
 
 ## 开发者服务端
 
@@ -83,11 +98,13 @@ node tools/release.mjs          # 完整流水线
 node tools/release.mjs --local  # 额外产出开发者本地测试 ZIP
 ```
 
-流水线：validate-design → build-pack → export-quests → fetch-mods（锁定 hash 校验）→ dependency audit → client/server sync → `.mrpack` + server zip → verify-release → `dist/release-report.md`。任一步失败立即中止，不产出"看似成功"的 Release。
+流水线：lockfile audit（重复/缺许可/未知来源/缺哈希即中止）→ validate-design → build-pack → export-quests → fetch-mods（锁定 hash 校验）→ dependency audit → client/server sync → 标准 + CN `.mrpack` + server zip → verify-release → `dist/release-report.md`。任一步失败立即中止，不产出"看似成功"的 Release。
+
+发布到 GitHub Releases 时把两个 `.mrpack`、server zip 以及 `THIRD_PARTY_MODS.md` / `SHA256SUMS.txt` / `client-package-report.md` / `release-report.md` 一并上传，并在 notes 中写明两版区别与适用人群。完整流程见 [打包与分发](docs/distribution.md)。
 
 版本号唯一来源是 `manifest/version.json`；模组版本、下载源、side、hash 唯一来源是 `manifest/locked-mods.json`。
 
-职责划分：`package-client.mjs` → 玩家 `.mrpack`；`package-server.mjs` → 服务端安装包；`package.mjs` → 源码/配置分发 ZIP（旧流程，保留）；`release.mjs` → 完整流水线。
+职责划分：`package-client.mjs` → 玩家标准版 + 中国版 `.mrpack` 及来源清单；`package-server.mjs` → 服务端安装包；`package.mjs` → 源码/配置分发 ZIP（旧流程，保留）；`release.mjs` → 完整流水线。
 
 ## 署名与许可
 

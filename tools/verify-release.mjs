@@ -1,11 +1,16 @@
 // Release verifier. Fails (exit 1) on any check below:
 //   meta     lockfile pins minecraft 1.21.1 / neoforge 21.1.251 / java 21
+//   lockfile no duplicate keys/files/hashes, license+source+hashes recorded,
+//            redistribution overrides carry a documented basis
 //   mods     every enabled jar exists, size+sha1+sha256+sha512 all correct,
 //            side is a known value
 //   client   run/client/mods = exactly the both|client set (no server-only)
 //   server   run/server/mods = exactly the both|server set (no client-only)
 //   mrpack   dist/*.mrpack parses, index schema+dependencies+files[]+hashes+
-//            fileSize+env correct, overrides/ present
+//            fileSize+env correct, overrides/ present, root docs present
+//   mrpack-cn dist/*-cn.mrpack parses; files[] = exactly the non-embeddable
+//            set; every embedded override jar hash-matches a permitted locked
+//            entry; SHA256SUMS.txt consistent
 //   serverzip dist/*-server.zip has install payload and zero jars
 //   local    dist/*-local.zip carries the LOCAL TEST ONLY marker
 //   git      mods/ run/ dist/ *.jar installer.log are ignored and untracked
@@ -18,9 +23,11 @@ import {
   loadLock, loadVersion, artifactStem, packVersionId,
   enabledMods, sideMods, CLIENT_ACCEPTS, SERVER_ACCEPTS, EXPECTED, checkLockMeta,
 } from './lib/manifest.mjs';
-import { verifyLocked, sha1, sha512 } from './lib/hash.mjs';
+import { verifyLocked, sha1, sha256, sha512 } from './lib/hash.mjs';
 import { enabledResources } from './lib/resources.mjs';
 import { listZip, readEntry } from './lib/zip.mjs';
+import { checkLock } from './lib/lockcheck.mjs';
+import { embedStatus } from './lib/license.mjs';
 
 const lock = loadLock();
 const version = loadVersion();
@@ -38,6 +45,14 @@ const jarsIn = (dir) => existsSync(dir) ? readdirSync(dir).filter((f) => f.endsW
 {
   const s = section('meta');
   for (const e of checkLockMeta(lock)) fail(s, e);
+}
+
+// ---- lockfile audit -----------------------------------------------------------
+{
+  const s = section('lockfile');
+  const { fatal: lockFatal, warn: lockWarn } = checkLock(lock);
+  for (const e of lockFatal) fail(s, e);
+  for (const w of lockWarn) s.details.push(`WARN ${w}`);
 }
 
 // ---- mods ------------------------------------------------------------------
@@ -105,11 +120,20 @@ for (const [side, accepts, banned] of [
     try { ents = listZip(zbuf); } catch (e) { fail(s, `unreadable zip: ${e.message}`); ents = null; }
     if (ents) {
       const byName = new Map(ents.map((e) => [e.name, e]));
-      // local:-sourced mods (self-built addons) have no download URL — they are
-      // embedded under overrides/mods/ instead of declared in files[].
+      // Mods embedded under overrides/mods/ in the standard pack: self-built
+      // local: addons (no download URL exists) plus any entry with an explicit
+      // lockfile embed_reason. Nothing else may be embedded — platform-hosted
+      // jars must stay on files[] downloads.
       const embeddedMods = sideMods(lock, CLIENT_ACCEPTS)
-        .filter((m) => m.download_url?.startsWith('local:'));
+        .filter((m) => m.download_url?.startsWith('local:') || m.embed_reason);
       const embeddedPaths = new Set(embeddedMods.map((m) => `mods/${m.filename}`));
+      for (const m of embeddedMods.filter((m) => !m.download_url?.startsWith('local:'))) {
+        const st = embedStatus(m);
+        if (!st.embed) fail(s, `${m.key}: embed_reason set but redistribution not permitted (${st.basis})`);
+      }
+      for (const doc of ['THIRD_PARTY_MODS.md', 'SHA256SUMS.txt', 'SECURITY.md']) {
+        if (!byName.has(doc)) fail(s, `${doc} missing at pack root`);
+      }
       const idxEnt = byName.get('modrinth.index.json');
       if (!idxEnt) fail(s, 'modrinth.index.json missing at zip root');
       let idx = null;
@@ -195,6 +219,120 @@ for (const [side, accepts, banned] of [
       }
       for (const rel of embeddedPaths) {
         if (!byName.has(`overrides/${rel}`)) fail(s, `local mod not embedded in overrides/: ${rel}`);
+      }
+    }
+  }
+}
+
+// ---- CN offline .mrpack -------------------------------------------------------
+// Same format as the standard pack, but every locked entry whose license
+// permits redistribution travels under overrides/ instead of files[].
+// Verifies: files[] is exactly the non-embeddable set, every embedded binary
+// hash-matches a locked entry that is actually allowed to be embedded, and
+// SHA256SUMS.txt covers exactly the embedded set.
+{
+  const s = section('mrpack-cn');
+  const mp = p('dist', `${stem}-cn.mrpack`);
+  if (!existsSync(mp)) { fail(s, `${mp} not found — run tools/package-client.mjs`); }
+  else {
+    const zbuf = readFileSync(mp);
+    let ents;
+    try { ents = listZip(zbuf); } catch (e) { fail(s, `unreadable zip: ${e.message}`); ents = null; }
+    if (ents) {
+      const byName = new Map(ents.map((e) => [e.name, e]));
+      const wantMods = sideMods(lock, CLIENT_ACCEPTS);
+      const wantResources = enabledResources(lock).filter((r) => r.side === 'client' || r.side === 'both');
+      // Expected split: embeddable -> overrides/, rest -> files[].
+      const embeddable = new Map();
+      const remote = new Map();
+      for (const m of wantMods) {
+        const allowed = m.download_url?.startsWith('local:') || embedStatus(m).embed;
+        (allowed ? embeddable : remote).set(`mods/${m.filename}`, m);
+      }
+      for (const r of wantResources) {
+        (embedStatus(r).embed ? embeddable : remote).set(r.path, r);
+      }
+
+      const idxEnt = byName.get('modrinth.index.json');
+      if (!idxEnt) fail(s, 'modrinth.index.json missing at zip root');
+      let idx = null;
+      if (idxEnt) {
+        try { idx = JSON.parse(readEntry(zbuf, idxEnt).toString('utf8')); }
+        catch (e) { fail(s, `modrinth.index.json invalid JSON: ${e.message}`); }
+      }
+      if (idx) {
+        if (idx.formatVersion !== 1) fail(s, `formatVersion ${idx.formatVersion} != 1`);
+        if (idx.name !== EXPECTED.name) fail(s, `name "${idx.name}"`);
+        if (idx.versionId !== packVersionId(version)) fail(s, `versionId "${idx.versionId}"`);
+        if (idx.dependencies?.minecraft !== EXPECTED.minecraft) fail(s, 'dependencies.minecraft wrong');
+        if (idx.dependencies?.neoforge !== EXPECTED.neoforge) fail(s, 'dependencies.neoforge wrong');
+        const seen = new Set();
+        for (const f of idx.files ?? []) {
+          const entry = remote.get(f.path);
+          if (!entry) {
+            fail(s, embeddable.has(f.path)
+              ? `files[] entry ${f.path} should be embedded, not downloaded`
+              : `unexpected files[] entry ${f.path}`);
+            continue;
+          }
+          seen.add(f.path);
+          if (!f.hashes?.sha1 || !f.hashes?.sha512) fail(s, `${f.path}: missing sha1/sha512`);
+          if (f.hashes?.sha512 !== entry.sha512) fail(s, `${f.path}: sha512 != lockfile`);
+          if (!Array.isArray(f.downloads) || !f.downloads.length) fail(s, `${f.path}: downloads empty`);
+          if (!f.fileSize) fail(s, `${f.path}: fileSize missing`);
+          if (f.fileSize !== entry.size) fail(s, `${f.path}: fileSize ${f.fileSize} != locked ${entry.size}`);
+          const envWant = entry.side === 'both' ? 'required' : 'unsupported';
+          if (f.env?.client !== 'required' || f.env?.server !== envWant) {
+            fail(s, `${f.path}: env must be client=required/server=${envWant}, got ${JSON.stringify(f.env)}`);
+          }
+        }
+        for (const fp of remote.keys()) {
+          if (!seen.has(fp)) fail(s, `non-embeddable entry absent from files[]: ${fp}`);
+        }
+      }
+
+      // Embedded overrides: every binary must be an expected embeddable entry
+      // and hash-match the lockfile; every embeddable entry must be present.
+      const sumsEnt = byName.get('SHA256SUMS.txt');
+      const sums = new Map(); // instance path -> sha256 declared in the pack
+      if (!sumsEnt) fail(s, 'SHA256SUMS.txt missing at pack root');
+      else {
+        for (const line of readEntry(zbuf, sumsEnt).toString('utf8').split(/\r?\n/)) {
+          if (!line.trim()) continue;
+          const m = line.match(/^([0-9a-f]{64})  (.+)$/);
+          if (!m) { fail(s, `SHA256SUMS.txt unparsable line: ${line}`); continue; }
+          sums.set(m[2], m[1]);
+        }
+      }
+      const embeddedSeen = new Set();
+      for (const e of ents) {
+        if (!e.name.startsWith('overrides/') || e.name.endsWith('/')) continue;
+        const rel = e.name.slice('overrides/'.length);
+        if (rel === '.keep') continue;
+        const locked = embeddable.get(rel);
+        if (locked) {
+          const data = readEntry(zbuf, e);
+          embeddedSeen.add(rel);
+          if (locked.sha512 && sha512(data) !== locked.sha512) fail(s, `embedded ${rel}: sha512 != lockfile`);
+          if (locked.sha256 && sha256(data) !== locked.sha256) fail(s, `embedded ${rel}: sha256 != lockfile`);
+          if (sums.has(rel) && sums.get(rel) !== sha256(data)) fail(s, `embedded ${rel}: sha256 != SHA256SUMS.txt`);
+          continue;
+        }
+        // Non-binary override must come from pack/ (pack-owned content only).
+        if (/\.(jar|zip|exe|dll)$/i.test(rel)) {
+          fail(s, `embedded binary with no lockfile entry or redistribution right: ${rel}`);
+        } else if (!existsSync(path.join(DIRS.pack, rel))) {
+          fail(s, `override ${rel} has no pack/ source`);
+        }
+      }
+      for (const fp of embeddable.keys()) {
+        if (!embeddedSeen.has(fp)) fail(s, `embeddable entry missing from overrides/: ${fp}`);
+      }
+      for (const [fp] of sums) {
+        if (!embeddedSeen.has(fp)) fail(s, `SHA256SUMS.txt lists non-embedded path: ${fp}`);
+      }
+      for (const doc of ['THIRD_PARTY_MODS.md', 'SECURITY.md']) {
+        if (!byName.has(doc)) fail(s, `${doc} missing at pack root`);
       }
     }
   }

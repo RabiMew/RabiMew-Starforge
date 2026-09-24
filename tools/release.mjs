@@ -1,10 +1,10 @@
 // Unified release pipeline — one command builds and verifies everything:
 //   node tools/release.mjs [--local]
 //
-//   validate-design -> check-mapping -> build-pack -> export-quests -> fetch-mods --locked -> hash validation
-//   -> audit-deps -> client sync -> server sync validation
-//   -> package-client (.mrpack) -> package-server -> verify-release
-//   -> dist/release-report.md
+//   lockfile audit -> validate-design -> check-mapping -> build-pack -> export-quests
+//   -> fetch-mods --locked -> hash validation -> audit-deps -> client sync
+//   -> server sync validation -> package-client (standard + CN .mrpack)
+//   -> package-server -> verify-release -> dist/release-report.md
 //
 // Any failed step aborts the pipeline immediately — a release never ships
 // looking green while a stage is broken. The report is written either way.
@@ -18,6 +18,7 @@ import {
   sideCounts, sideMods, CLIENT_ACCEPTS, EXPECTED,
 } from './lib/manifest.mjs';
 import { ensureLockedJars, backfillSha1 } from './lib/jars.mjs';
+import { checkLock } from './lib/lockcheck.mjs';
 
 checkNode();
 const withLocal = process.argv.includes('--local');
@@ -39,7 +40,14 @@ async function stage(name, fn) {
   }
 }
 
-let lock, version, stem, mrpackOk = false, serverOk = false, localOk = false;
+let lock, version, stem, mrpackOk = false, mrpackCnOk = false, serverOk = false, localOk = false;
+
+await stage('lockfile audit', async () => {
+  const { fatal, warn } = checkLock(loadLock());
+  for (const w of warn) console.warn(`  WARN ${w}`);
+  if (fatal.length) throw new Error(fatal.join('; '));
+  console.log(`  lockfile clean (${warn.length} warning(s))`);
+});
 
 await stage('validate-design', async () => runNode('tools/validate-design.mjs'));
 await stage('check-mapping', async () => runNode('tools/check-mapping.mjs'));
@@ -66,9 +74,11 @@ await stage('server sync validation', async () => {
   runNode('tools/sync-pack.mjs', ['server']);
 });
 
-await stage('client package (.mrpack)', async () => {
+await stage('client packages (.mrpack + -cn)', async () => {
   runNode('tools/package-client.mjs');
   mrpackOk = true;
+  mrpackCnOk = existsSync(p('dist', `${artifactStem(loadVersion())}-cn.mrpack`));
+  if (!mrpackCnOk) throw new Error('CN mrpack not produced by package-client');
 });
 await stage('server package', async () => {
   runNode('tools/package-server.mjs');
@@ -124,9 +134,11 @@ ${steps.map((s) => `| ${s.name} | ${s.ok ? 'PASS' : `FAIL — ${s.error}`} | ${s
 
 ## Artifacts
 
-- .mrpack: ${mrpackOk ? 'built' : 'not built'}
+- .mrpack (standard): ${mrpackOk ? 'built' : 'not built'}
+- .mrpack (CN offline): ${mrpackCnOk ? 'built' : 'not built'}
 - server zip: ${serverOk ? 'built' : 'not built'}
 - local test zip: ${localOk ? 'built (LOCAL TEST ONLY)' : 'not built'}
+- provenance: dist/THIRD_PARTY_MODS.md + dist/SHA256SUMS.txt (upload to GitHub Release alongside the packs)
 - dist/ contents:
 ${distFiles.map((f) => `  - ${f}`).join('\n')}
 

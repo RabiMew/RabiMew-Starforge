@@ -11,8 +11,10 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 
 import path from 'node:path';
 import { DIRS, ROOT, p } from './lib/paths.mjs';
 import { checkNode } from './lib/env.mjs';
-import { loadLock, loadVersion, artifactStem, packVersionId, EXPECTED } from './lib/manifest.mjs';
+import { loadLock, loadVersion, artifactStem, packVersionId, enabledMods, EXPECTED } from './lib/manifest.mjs';
+import { enabledResources } from './lib/resources.mjs';
 import { createZip } from './lib/zip.mjs';
+import { thirdPartyModsMd } from './lib/license.mjs';
 
 checkNode();
 const lock = loadLock();
@@ -96,6 +98,17 @@ licenses and are fetched from official sources at install time rather than
 redistributed inside this zip.
 `;
 entries.push({ name: 'SERVER_README.md', data: Buffer.from(serverReadme, 'utf8') });
+// Provenance manifest: no jars are redistributed, but the recipient should be
+// able to audit every source the setup script will hit.
+entries.push({ name: 'THIRD_PARTY_MODS.md', data: Buffer.from(thirdPartyModsMd({
+  packName: `${EXPECTED.name} / ${EXPECTED.nameZh}`,
+  versionId: packVersionId(version), minecraft: EXPECTED.minecraft, neoforge: EXPECTED.neoforge,
+  variants: [],
+  rows: [
+    ...enabledMods(lock).map((m) => ({ entry: m, type: 'mod' })),
+    ...enabledResources(lock).map((r) => ({ entry: r, type: r.type ?? 'resource' })),
+  ],
+}), 'utf8') });
 
 const out = p('dist', `${stem}-server.zip`);
 writeFileSync(out, createZip(entries));
