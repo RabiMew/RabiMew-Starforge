@@ -2261,46 +2261,6 @@
     ]
   },
   {
-    "file": "jei-1.21.1-neoforge-19.57.0.446.jar",
-    "modIds": [
-      "jei"
-    ],
-    "embeddedModIds": [
-      "mezz_config"
-    ],
-    "deps": [
-      {
-        "modId": "mezz_config",
-        "type": "required",
-        "versionRange": "[0.5.12,1.0.0)",
-        "ordering": "AFTER",
-        "side": "BOTH"
-      },
-      {
-        "modId": "mezz_config_gui",
-        "type": "optional",
-        "versionRange": "[0.5.1,)",
-        "ordering": "AFTER",
-        "side": "CLIENT"
-      },
-      {
-        "modId": "neoforge",
-        "type": "required",
-        "versionRange": "[21.1.238,)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      },
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21, 1.21.1)",
-        "ordering": "NONE",
-        "side": "BOTH",
-        "catalogueImageIcon": "jei-icon.png"
-      }
-    ]
-  },
-  {
     "file": "jei-1.21.1-neoforge-19.57.0.447.jar",
     "modIds": [
       "jei"
@@ -2975,36 +2935,6 @@
         "modId": "sophisticatedcore",
         "type": "required",
         "versionRange": "[1.4.87,)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      },
-      {
-        "modId": "neoforge",
-        "type": "required",
-        "versionRange": "[21.1.229,)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      },
-      {
-        "modId": "minecraft",
-        "type": "required",
-        "versionRange": "[1.21.1,1.21.2)",
-        "ordering": "NONE",
-        "side": "BOTH"
-      }
-    ]
-  },
-  {
-    "file": "sophisticatedbackpacks-1.21.1-3.26.3.2158.jar",
-    "modIds": [
-      "sophisticatedbackpacks"
-    ],
-    "embeddedModIds": [],
-    "deps": [
-      {
-        "modId": "sophisticatedcore",
-        "type": "required",
-        "versionRange": "[1.5.1,)",
         "ordering": "NONE",
         "side": "BOTH"
       },

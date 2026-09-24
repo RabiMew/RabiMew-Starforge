@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ic2cre:painter_white"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ic2cre:painter"
+  }
+}

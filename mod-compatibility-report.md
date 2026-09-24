@@ -79,7 +79,7 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 | Immersive Petroleum | 4.5.0-39 | 4.5.0-39 (Modrinth mirror latest release) | both | immersiveengineering req [1.21.1-12.4.2-194,) — exact match |
 | Storage Drawers | 1.21.1-13.11.4 | release:13.11.4 | both | — |
 | Sophisticated Storage | 1.21.1-1.5.91.2127 | release:1.5.91.2127 | both | sophisticatedcore req [1.4.88,) ✓1.5.1.2341 |
-| Sophisticated Backpacks | 1.21.1-3.26.3.2158 | release:3.26.3.2158 | both | sophisticatedcore req [1.5.1,) ✓ |
+| Sophisticated Backpacks | **1.21.1-3.25.78.2107**（自 3.26.3 降级：3.26.x 改 `runOnBackpacks()` 签名导致 taczaddon `NoSuchMethodError`，上游 issue [#31](https://github.com/Mafuyu404/TACZ-addon/issues/31)） | release:3.26.x（被钉在 3.25.78） | both | sophisticatedcore req [1.5.1,) ✓ |
 | Applied Energistics 2 | 19.2.17 | release:19.2.17 | both | guideme req [21.1.1,) ✓21.1.19; emi/theoneprobe/jade opt |
 | Ad Astra | 1.16.26 | release:1.16.26 | both | resourcefullib req, resourcefulconfig req, common_storage_lib req [0.0.10,) ✓ |
 | Ad Astra: More Structures | 1.0.2 | release:1.0.2 | both | ad_astra req |
@@ -111,7 +111,7 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 | Guard Villagers | 2.4.12 | release:2.4.12 | both | — |
 | TaCZ (unofficial NeoForge port) | 1.1.8-hotfix-r6 | release:1.1.8-hotfix-r6 | both | — |
 | Guard Villagers TACZ Support | 1.0.1 | release:1.0.1 | server | tacz + guardvillagers (both present) |
-| JEI | **19.57.0.446** | beta:19.57.0.446 · release:19.51.0.418 | both | mezz_config req [0.5.12,1.0.0) ✓0.6.3 — see decision below |
+| JEI | **19.57.0.447** | beta:19.57.0.447 · release:19.51.0.418 | both | mezz_config req [0.5.12,1.0.0) ✓0.6.3 — see decision below |
 | GuideME | 21.1.19 | release:21.1.19 | both | — |
 | MezzConfig | 0.6.3 | beta:0.6.3 — no release channel for 1.21.1 | both | — |
 | Polymorph | 1.1.0+1.21.1 | release:1.1.0 (beta 1.2.0 exists — kept stable per policy) | both | — |
@@ -159,7 +159,7 @@ Legend for "latest checked": `release:`/`beta:`/`alpha:` = newest 1.21.1+NeoForg
 
 **No mod version was changed.** Every locked version is either the newest 1.21.1+NeoForge stable or the newest mutually-compatible build:
 
-- **JEI kept at beta `19.57.0.446`** instead of downgrading to stable `19.51.0.418`: FTB XMod Compat 21.1.12 declares its JEI integration optional-dep as `[19.53.0.425,)`. No stable ≥19.53 exists for 1.21.1, so the beta is the only version that keeps the FTB-Quests↔JEI integration alive. Verified loading on both sides.
+- **JEI kept at beta `19.57.0.447`** instead of downgrading to stable `19.51.0.418`: FTB XMod Compat 21.1.12 declares its JEI integration optional-dep as `[19.53.0.425,)`. No stable ≥19.53 exists for 1.21.1, so the beta is the only version that keeps the FTB-Quests↔JEI integration alive. Verified loading on both sides.
 - **In Control 10.3.0 (beta), MezzConfig 0.6.3 (beta), Common Storage Lib 0.0.10 (alpha)**: no release-channel build exists for 1.21.1 at all — these are the latest *and only* compatible builds.
 - **Polymorph 1.1.0 / Rhino build.85**: newer beta exists; kept latest stable per policy.
 - **Rejected as wrong-MC-version**: IC2CRE `ExpPreVersion-26.1.2.1` (MC 26.1.2), Building Gadgets 2 `1.4.x` (MC 26.1.2), FTB `2111.x`/`21.11.x` line (MC 1.21.11).
@@ -191,10 +191,23 @@ Other script APIs verified against the same jar — all current, no migration ne
 - `/reload` via RCON: `Reloaded with no KubeJS errors!`; recipes + tags re-applied; IC2CRE and ProgressiveStages (8 stages) reload hooks fired.
 - Graceful `stop`: all dimensions saved, no errors.
 
-Known non-blocking warnings (pre-existing, not regressions):
-- IC2CRE painter recipes use a custom `tools` JSON element → KubeJS recipe-schema warns and falls back to default (cosmetic; recipes still register).
-- Creature Feature ships `extra_*` loot tables referencing sister Abnormals mods not installed (`caverns_and_chasms`, `oreganized`) → 4 loot-table parse warnings; base loot unaffected.
-- 3 optional-integration mixin soft-skips (Controllable, Create backtank, JEI PacketRecipeTransfer targets absent) — expected without those mods.
+Known non-blocking warnings — 2026-10-15 update: the datapack noise sources below were eliminated by committed `pack/kubejs/data/` overrides (verified on a clean dedicated-server boot, `Done (1.796s)`, `/reload` clean):
+
+- ~~IC2CRE painter recipes use a custom `tools` JSON element → KubeJS recipe-schema warns~~ **FIXED**: `pack/kubejs/data/ic2cre/recipe/painter*.json` (36 files) + `wind_meter.json` re-tag `"category":"tools"→"misc"`; identical recipes, no schema warnings. `plant_ball_from_grass.json` additionally repairs an upstream dead ingredient (`"tag":"minecraft:tall_grass"` — no such tag exists — → `"item"`).
+- ~~Creature Feature ships `extra_*` loot tables referencing sister Abnormals mods not installed~~ **FIXED**: empty-pool tables committed under `pack/kubejs/data/caverns_and_chasms/` + `pack/kubejs/data/oreganized/` — the registered GLMs resolve to an empty table instead of erroring; base loot unaffected.
+- ~~Almost Unified `almostunified:hide` tag "not present in data pack"~~ **FIXED**: explicit `pack/kubejs/data/almostunified/tags/item/hide.json` (`{"values":[]}`); AU still binds entries programmatically at runtime.
+- ~~EOS gun pack ships a misplaced attachment index file under `data/eos/recipe/attachments/sight_eos_rs02.json` (`"type":"scope"` → `Skipping recipe … unknown type`)~~ **FIXED**: `pack/kubejs/data/eos/recipe/attachments/sight_eos_rs02.json` overrides it with a `neoforge:false`-conditioned recipe. The attachment itself is registered via `data/eos/index/` (untouched); it remains uncraftable exactly as upstream — no recipe was invented.
+- `appliedcooking:guide_book` recipe → already conditional on `neoforge:mod_loaded patchouli` (pre-existing fix).
+
+Remaining expected warnings (documented, intentionally kept):
+- Blueprint example data map `modid:example` → single `DataMapLoader` error at boot and `/reload`. Unfixable from `pack/`: `DataMapLoader` parses every resource-stack entry before `replace`/`remove` semantics apply, and pack `filter` sections only apply to namespaces the filtering pack contains — `kubejs/data` (KubeFileResourcePack) does not read `pack.mcmeta`, and a world-scoped filter datapack would not ship with the pack. Harmless upstream example entry; the data map resolves to empty.
+- Optional-integration mixin soft-skips (Controllable, Create backtank, JEI PacketRecipeTransfer, PneumaticCraft upgrade, FTBChunks/FTB Filter System KubeJS plugins absent) — expected without those mods.
+- JarJar "dependency passed as source" for `mezz_config`/`betteradvancedtooltips`/`geckolib` — upstream packaging quirk, harmless.
+- ModernFix static-binding visibility / load-time notices — upstream informational.
+- Offline-mode + RCON warnings — intentional local-dev defaults (`online-mode=false`), README already warns public servers.
+- `isometric-renders:lang/zh_cn.json` malformed values (JSON text components where strings are required) inside the I18nUpdateMod CFPA pack — upstream pack bug originating in the 1.19 source pack; the cached source and converted zips were repaired in place on this machine, but a CFPA re-download on a fresh install can restore the warning.
+- BuildCraft `[lib.tile] Unknown owner for TileEngineStone_*` — pre-existing placed block in the world; world-state noise, not a pack issue.
+- atlaslib `VersionChecker: Failed to process update information` — remote `update.json` serves malformed JSON; upstream/network.
 
 ## Not verified
 
@@ -218,7 +231,7 @@ Two mods added; both resolved via `tools/fetch-mods.mjs --only`, hash-locked, an
 |---|---|---|---|---|
 | Curios API | 9.5.1+1.21.1 | Modrinth `curios`; LGPL-3.0-or-later | both | neoforge [21.1.72,) ✓ · minecraft [1.21,1.22) ✓ |
 | Artifacts | 13.2.5 | Modrinth `artifacts`; MIT | both | neoforge [21.0.133-beta,) ✓ · minecraft 1.21.1 ✓ · **expandability 12.0.0 bundled** via `META-INF/jars/` (jarJar, MIT — Modrinth `X5dUUm4k`) |
-| Sophisticated Backpacks | 1.21.1-3.26.3.2158 (existing) | — | both | native Curios `back` slot integration in jar — no ACL needed |
+| Sophisticated Backpacks | 1.21.1-3.25.78.2107 (existing; pinned below 3.26.x for taczaddon compat — see per-mod table) | — | both | native Curios `back` slot integration in jar — no ACL needed |
 
 Findings:
 - `tools/audit-deps.mjs` bug fixed: NeoForge 21 stores jarJar jars under `META-INF/jars/` (not only `jarjar/`); expandability now correctly recorded in `manifest/mod-ids.json` + `jar-deps.json`.

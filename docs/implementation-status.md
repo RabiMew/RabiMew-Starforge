@@ -617,3 +617,42 @@ check-mapping:   PASS — 472 语义 ID 全部解析
   - FastPipes 端到端：creative 电容 → extractor → 能量管 → 桥 → 电池实收 4096；反向 4096 Charge → 桥 → extractor → 能量管 → BC pump（桥余 2584 + 管缓存 1000 + 泵收 512 = 4096，守恒）。
   - 重启持久化：优雅停机重启后 leftover 逐位恢复上轮终值（direct 4096/0、p2c 4096/4096、c2p 2584/0、redstone 512/0、dz 2048/2000）——FE 缓冲走 BE NBT、Charge 电池走 Railcraft `ChargeSavedData`，均由官方机制持久化。
 - 排障记录：captest 初版缓存 `ChargeStorage` 引用，Railcraft 网络在区块加载时重建节点、旧电池对象静默脱链（喂入计数到但网络不可见）——改为每 tick 经 `access()` 实时解析，亦更符合官方用法。
+
+## 2026-10-15 日志降噪收尾 + 文档一致性清理（已实现，服务端实测通过）
+
+### 已消除的日志噪音（`pack/kubejs/data` 持久化覆盖，非 runtime 补丁）
+
+| 来源 | 原表现 | 处置 |
+| --- | --- | --- |
+| Creature Feature `extra_*` loot table | `caverns_and_chasms:entities/extra_sinister`、`oreganized:entities/extra_{sinister,minds,machination}` 四表缺失 → GLM 引用报解析 ERROR（姊妹 Mod 未装，上游 GLM 全局注册） | 提交空池 `{"type":"minecraft:entity","pools":[]}` 覆盖——GLM 解析到空表静默空转，基础掉落与未装 Mod 现状均不变 |
+| IC2CRE painter 配方族 | `"category":"tools"` 非 KubeJS 已知枚举 → 36 条 recipe-schema WARN（配方本身注册正常） | `pack/kubejs/data/ic2cre/recipe/painter*.json`（36）+ `wind_meter.json` 改 `"misc"`；`plant_ball_from_grass.json` 顺带修复上游死配料（`"tag":"minecraft:tall_grass"` 该 tag 不存在 → `"item"`） |
+| Almost Unified hide tag | `Not all defined tags ... almostunified:hide` | `pack/kubejs/data/almostunified/tags/item/hide.json` 显式定义 `{"values":[]}`；AU 仍运行时程序化绑定隐藏项 |
+| Inventory Profiles Next | 配置文件含已被 libIPN 2.2.5 移除的 `show_button_tooltips` | 自 `pack/config/inventoryprofilesnext/inventoryprofiles.json` 删除该键 |
+| EOS 枪包 `sight_eos_rs02` | 上游把配件 index 文件误放进 `data/eos/recipe/attachments/`（`"type":"scope"` 非配方类型）→ `Skipping recipe … unknown type` | `pack/kubejs/data/eos/recipe/attachments/sight_eos_rs02.json` 覆盖为 `neoforge:false` 条件配方（实测 `/reload` 后告警消失）；配件本体经 `data/eos/index/` 注册不受影响，该配件维持上游"不可合成"现状，未虚构配方 |
+| `isometric-renders:lang/zh_cn.json` | CFPA 汉化包内该文件值是组件对象非字符串 → 客户端 `Skipped language file` | 坏条目源自 I18nUpdateMod 的 1.19 源包（`~/.i18nupdatemod/1.19/`）；已修复源 zip 条目（组件对象→纯文本），转换包每次启动由源重建故修复持久；`kubejs/assets` 覆盖在逐包合并语义下无法阻止 CFPA 文件被解析，不保留无效覆盖 |
+
+### 预期保留的日志（soft-skip / 上游噪音，不强行消除）
+
+Blueprint 示例 data map：`Object with ID modid:example ... dimension` DataMapLoader ERROR（每次启动/重载各 1 条）。已论证无法从 `pack/` 消除——`DataMapLoader` 在 `replace`/`remove` 合并语义生效前逐文件解析全部资源栈（覆盖文件不阻止 jar 文件被解码）；pack `filter` 段仅对过滤包自身包含的命名空间生效，而 `kubejs/data`（KubeFileResourcePack）不读取 `pack.mcmeta`，世界内 filter 数据包又不随整合包分发。该条目是上游示例残留，data map 合并结果为空，无实际影响。
+
+可选集成目标不存在：KubeJS 客户端插件在服务端跳过、FTBChunks/FTB Filter System 集成缺位、Controllable/Create 背包/JEI PacketRecipeTransfer/PneumaticCraft 升级等 mixin 目标缺失、Polymorph JEI mixin、Jade Addons Create 目标。上游噪音：JarJar `mezz_config`/`betteradvancedtooltips`/`geckolib` "dependency passed as source"、ModernFix 静态绑定与加载提示、BuildCraft 流体贴图帧、Creature Feature 着色器 uniform/音效、Railcraft ritual 方块缺少 blockstate 模型（方块真实注册、仅客户端模型告警）、NeoForge 版本检查网络失败、`atlaslib` 更新检查返回畸形 JSON。刻意配置：`online-mode=false` 与 RCON 默认密码告警（README 已声明仅限本地开发）、Curios/Hordes/ProgressiveStages 配置自动修正提示、BuildCraft "unknown owner"（既有存档方块）。
+
+### 文档矛盾修正
+
+- README 能源段："IE/Ad Astra 直接产 FE" → 与 SF-36 实现一致（IE/IC2CRE/BC 发电入网，AA/RF/AE2 发电设备禁用仅耗电）；服务端模组数 88→89、启用条目 111→112、客户端 109→110、SF-01..34→SF-01..37。
+- `mod-compatibility-report.md`：JEI 19.57.0.446→**.447**、Sophisticated Backpacks 3.26.3→**3.25.78.2107**（此前遗漏 d7107bd 降级的文档同步）；「Known non-blocking warnings」节重写为已修复/预期保留两栏。
+- `mods/` 缓存清掉 lockfile 外的两个旧版 jar（jei .446、SB 3.26.3），`audit-lang` 的「JAR 与 manifest 不一致」提示消除。
+
+### 移除项（曾误判后更正）
+
+- ~~`pack/kubejs/data/eos/recipe/attachments/sight_eos_rs02.json`~~ **更正**：此前判断"枪包 zip 的 `data/eos/recipe/**` 不被 RecipeManager 扫描、覆盖无效"是错误的——`Skipping recipe` 告警本身即来自 RecipeManager 解析该文件，重新加入覆盖后 `/reload` 实测告警消失，文件保留（见上表）。
+- `pack/kubejs/data/blueprint/data_maps/dimension/modded_biome_slice_sizes.json`：`{"values":{}}`/`replace:true` 均无法阻止 jar 内 `modid:example` 条目被解析（见「预期保留的日志」），无效覆盖移除。
+- `pack/kubejs/assets/isometric-renders/lang/zh_cn.json`：对 CFPA 包内同路径文件无遮蔽作用（语言文件按包逐个解析合并），无效文件移除。
+- `run/server/world/datapacks/starforge_pack_fixes`：世界内 filter 数据包实验——`filter.block` 正则需 JSON 双反斜杠转义（`\\.json`），修正后包可识别但 filter 仅作用于包自身包含的命名空间（空包不含 `blueprint`），且世界数据包不随 `pack/` 分发，放弃并删除。
+
+### 验证（本轮，最终复测）
+
+- `validate-design` / `check-mapping` / `export-quests` / `build-pack` / `audit-deps` / `audit-lang` 结果见文末验证记录。
+- `sync-pack server` + `sync-pack client` 重建后干净启动：`Done (1.796s)`；`/reload` → `Reloaded with no KubeJS errors!`，KubeJS 10/10 server scripts 0 errors / 0 warnings；正常 `stop`（全部维度保存、RCON 线程关闭）。
+- 最终启动日志 ERROR 仅 1 条：`modid:example`（预期保留，见上）；WARN 无 `extra_*`/painter schema/`almostunified:hide`/`sight_eos_rs02`/`Missing metadata`，全部为可选 soft-skip 与上游信息噪音。
+- 客户端 CFPA `isometric-renders` zh_cn 在源包修复后不再产生 `Skipped language file`（本机缓存修复；其他装机若 CFPA 重新下载会复现，属上游问题）。

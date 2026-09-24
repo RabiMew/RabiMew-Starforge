@@ -23,9 +23,6 @@
         "show_move_all_button": {
             "value": false
         },
-        "show_button_tooltips": {
-            "value": true
-        },
         "enable_profiles_ui": {
             "value": false
         },

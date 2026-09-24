@@ -12,18 +12,13 @@
 | 启用 Mod（manifest） | 112 |
 | 有语言文件的 Mod / 命名空间 | 82 / 84 |
 | 无语言文件的 Mod | 30 |
-| en_us 键总数 | 21484 |
+| en_us 键总数 | 21492 |
 | 缺失键总数 | 0 |
 | zh 空值键 | 3 |
 | zh 与 en 相同（可疑） | 105 |
 
 - **完整**：84 个命名空间
 - **存在硬编码英文**：30 个 Mod
-
-## JAR 与 manifest 不一致
-
-- mods/ 中存在但未锁定：`jei-1.21.1-neoforge-19.57.0.446.jar`
-- mods/ 中存在但未锁定：`sophisticatedbackpacks-1.21.1-3.26.3.2158.jar`
 
 ## 各命名空间覆盖明细
 
@@ -53,7 +48,7 @@
 | almostunified | almostunified | assets | 6 | 6 | - | - | - | - | 完整 |
 | appliedcooking | appliedcooking | assets | 28 | 28 | - | - | - | 2 | 完整 |
 | applieddelight | applieddelight | assets | 24 | 24 | - | - | - | 2 | 完整 |
-| starforge_compat | starforge_compat | assets | 37 | 37 | - | - | - | - | 完整 |
+| starforge_compat | starforge_compat | assets | 45 | 45 | - | - | - | - | 完整 |
 | framedblocks | framedblocks | assets | 436 | 108 | 330 | - | - | - | 完整 |
 | supplementaries | supplementaries | assets | 1366 | 1364 | 2 | - | - | 3 | 完整 |
 | mcw_furniture | mcwfurnitures | assets | 661 | 605 | 56 | - | - | - | 完整 |
@@ -235,7 +230,7 @@
 - ✅ progressivestages.toml：全部消息均为 <ps:*> 标记或双语字面量
 - ✅ stage_i18n.json：覆盖全部 stage.toml 双语字面量
 - ✅ KubeJS 脚本：未发现硬编码英文（经 Text.translate / translate 组件本地化）
-- ✅ starforge_compat：zh_cn 完整（37 键）
+- ✅ starforge_compat：zh_cn 完整（45 键）
 - ✅ EOS 枪包（eos_gun_pack_1.1.1-hotfix1.zip）：zh_cn 完整（147 键，JSONC）
 - ✅ pack/config：未发现疑似英文的玩家可见文本
 

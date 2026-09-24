@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ic2cre:painter_orange"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ic2cre:painter"
+  }
+}

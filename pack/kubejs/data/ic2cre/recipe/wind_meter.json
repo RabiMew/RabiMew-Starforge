@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "ic2cre:bronze_casing"
+    },
+    "P": {
+      "item": "ic2cre:small_power_unit"
+    },
+    "T": {
+      "item": "ic2cre:tin_casing"
+    }
+  },
+  "pattern": [
+    " T ",
+    "TBT",
+    " TP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "ic2cre:wind_meter"
+  },
+  "show_notification": true
+}
