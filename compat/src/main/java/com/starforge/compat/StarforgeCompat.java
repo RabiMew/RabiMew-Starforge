@@ -22,6 +22,9 @@ import com.starforge.compat.net.StarforgeNet;
  *   <li>{@code horde_alarm}: redstone source driven by The Hordes start/end events.</li>
  *   <li>Refurbished computer programs (Starforge Control, Security) plus a
  *       NeoForge fluid-capability bridge for Refurbished sinks/basins/toilets/baths.</li>
+ *   <li>{@code charge_bridge}: bidirectional FE &lt;-&gt; Railcraft Charge
+ *       converter using the official Charge node API (present only when
+ *       Railcraft is loaded).</li>
  *   <li>hidden easter egg: first real player-kill grants an edible victim head
  *       and a hidden advancement ({@link EdiblePlayerHead}).</li>
  * </ul>
@@ -47,6 +50,7 @@ public class StarforgeCompat {
         if (ModList.get().isLoaded("refurbished_furniture")) {
             StarforgePrograms.register();
         }
+        RailcraftBridge.register();
     }
 
     private void registerCapabilities(RegisterCapabilitiesEvent event) {
@@ -54,6 +58,12 @@ public class StarforgeCompat {
             Capabilities.EnergyStorage.BLOCK,
             ModContent.ELECTRIC_BURNER_BE.get(),
             (be, side) -> be.energy());
+        if (RailcraftBridge.CHARGE_BRIDGE_BE != null) {
+            event.registerBlockEntity(
+                Capabilities.EnergyStorage.BLOCK,
+                RailcraftBridge.CHARGE_BRIDGE_BE.get(),
+                (be, side) -> be.energy());
+        }
         if (ModList.get().isLoaded("refurbished_furniture")) {
             RefurbishedFluidCaps.register(event);
         }
@@ -65,6 +75,9 @@ public class StarforgeCompat {
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModContent.ELECTRIC_BURNER_ITEM);
+            if (RailcraftBridge.CHARGE_BRIDGE_ITEM != null) {
+                event.accept(RailcraftBridge.CHARGE_BRIDGE_ITEM);
+            }
         }
     }
 }

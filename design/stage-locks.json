@@ -47,6 +47,7 @@
       "rc_powered_rolling_machine", "rc_crusher",
       "rc_fluid_firebox", "rc_high_pressure_boiler", "rc_steam_turbine",
       "rc_charge_motor", "rc_charge_coil", "rc_charge_terminal", "rc_charge_meter",
+      "sfc_charge_bridge",
       "rc_charge_spool_small", "rc_charge_spool_medium", "rc_charge_spool_large",
       "rc_zinc_carbon_battery", "rc_zinc_silver_battery", "rc_nickel_iron_battery", "rc_nickel_zinc_battery",
       "rc_block_signal", "rc_distant_signal", "rc_token_signal",

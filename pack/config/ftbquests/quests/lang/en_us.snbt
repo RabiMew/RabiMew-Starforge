@@ -314,7 +314,7 @@
 	quest.37063572DC618E0A.quest_subtitle: "Suggested stage: Heavy Industry Age"
 	quest.449D3297E192B8CE.title: "High-speed Rail"
 	quest.449D3297E192B8CE.quest_desc: [
-		"High-speed track demands signals and buffers - slow for corners. Powered HSR lets locomotives self-charge."
+		"High-speed track demands signals and buffers - slow for corners. Powered HSR lets locomotives self-charge: wire the public FE grid into the rail Charge network through an FE <-> Charge Converter."
 		""
 		"{\"text\":\"» See the manual: Advanced Railcraft\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Advanced Railcraft\"}}"
 	]
@@ -930,7 +930,7 @@
 	quest.453A61A0B4D9C159.quest_subtitle: "Progression and Survival"
 	quest.0E8B4E397AC0FBCA.title: "One Network: FastPipes"
 	quest.0E8B4E397AC0FBCA.quest_desc: [
-		"FastPipes is the pack's default general-purpose network: one pipe family carries items, fluids and FE. Extractor attachments pull from containers and machines with filters, redstone control and distribution modes; inserter attachments set delivery priority; sensor/void attachments handle signals and overflow; the terminal turns a pipe network into a searchable mini-warehouse. IE conveyors and fluid pipes stay for visible industrial lines; BuildCraft pipes remain a legacy option around its specialty machines (quarry, pump); Railcraft owns long-distance bulk freight; AE2 owns digital storage and autocrafting, not ordinary pipework. Power runs on one public FE grid: FastPipes energy pipes connect IE, Ad Astra, IC2CRE (native FE port) and Railcraft devices directly; BuildCraft converts with its own FE engine and MJ dynamo; Refurbished appliances join through the Energized Furniture transformer."
+		"FastPipes is the pack's default general-purpose network: one pipe family carries items, fluids and FE. Extractor attachments pull from containers and machines with filters, redstone control and distribution modes; inserter attachments set delivery priority; sensor/void attachments handle signals and overflow; the terminal turns a pipe network into a searchable mini-warehouse. IE conveyors and fluid pipes stay for visible industrial lines; BuildCraft pipes remain a legacy option around its specialty machines (quarry, pump); Railcraft owns long-distance bulk freight; AE2 owns digital storage and autocrafting, not ordinary pipework. Power runs on one public FE grid: FastPipes energy pipes connect IE, Ad Astra and IC2CRE (native FE port) directly; BuildCraft engines output FE straight onto the grid and its machines accept FE directly (1 MJ = 10 FE); the MJ dynamo and FE engine remain optional explicit converters; Refurbished appliances join through the Energized Furniture transformer. Railcraft machines run on their own Charge network and never touch FE pipes directly - drop an FE <-> Charge Converter between the grid and a charge frame to feed electric track and charge devices, or to pull surplus Charge back out as FE."
 	]
 	quest.0E8B4E397AC0FBCA.quest_subtitle: "Power, Oil and Networks"
 	quest.28C9F6D61C4E55C2.title: "Backpacks and Expedition Kits"
@@ -1100,7 +1100,7 @@
 	quest.46C8EE9AF7A2DC7E.quest_subtitle: "Hordes and Defense"
 	quest.5FB73CF25E88351B.title: "Advanced Railcraft"
 	quest.5FB73CF25E88351B.quest_desc: [
-		"Advanced rail rests on four things: block signals cut the line into sections, interlock boxes keep one train per block; electric locomotives draw from the grid; high-speed track wants buffers and speed corners; the tunnel bore cuts and lays on its own. Plan trunk lines section first, signal second, rail last."
+		"Advanced rail rests on four things: block signals cut the line into sections, interlock boxes keep one train per block; electric locomotives draw from Railcraft's Charge network, fed through an FE <-> Charge Converter off the public grid; high-speed track wants buffers and speed corners; the tunnel bore cuts and lays on its own. Plan trunk lines section first, signal second, rail last."
 	]
 	quest.5FB73CF25E88351B.quest_subtitle: "Rail Logistics"
 	quest.2CE7350DEA19BCD0.title: "Client Utilities"

@@ -354,7 +354,7 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 - **厨房联动**：`starforge_compat.js` 的 CFB 标签清单改为从安装 JAR blockstates 生成——providers 553（rf 113 + mcw 440，仅真实 `Container` BE：抽屉/冰箱/橱柜/台面等；邮箱/邮筒/回收桶/餐盘排除）、connectors 86（rf 家电与水槽）、氧气穿透 1101（rf 449 + mcw 652）。Refurbished 炉灶原生计入 `farmersdelight:heat_sources`，无需包内工作。
 - **流体桥**：`starforge_compat` 为 `kitchen_sink/basin/toilet/bath` 注册 `Capabilities.FluidHandler.BLOCK`，委托 Refurbished `FluidContainer.push/pull`（1000 mB 桶模型），Supplementaries 水龙头/管道可真实读写；不伪造物品栏 capability。
 - **电脑**：`Computer.installProgram` 追加 Starforge Control / Security 两应用（服务端 20 tick 采样 → payload → 客户端 `Display.bind`），原四应用不动；图标经 `program_icons.png` 命名空间序位。compat jar 编译通过（58 entries，sha256 见 locked-mods）。
-- **能源**：FE 公共电网文档化（design.md §能源与工业核心）——IE/Ad Astra 直连 FE，BC 原生 FE↔MJ，Refurbished 经 Energized 变压器，IC2CRE 保留 mEU；未新增任何 FE↔mEU 转换器，无循环发电通道。
+- **能源**：FE 公共电网文档化（design.md §能源与工业核心）——IE/Ad Astra 直连 FE，BC 以 `powerMode=DISPLAY_FE` 原生并网（引擎直出 FE、机器收 FE，mj_dynamo/engine_fe 降为可选互转），Refurbished 经 Energized 变压器，IC2CRE 保留 mEU；未新增任何 FE↔mEU 转换器，无循环发电通道。
 - **食品分层**：FD 手工 → CFB/Refurbished 厨房（T2）→ Engineers Delight 中型工业（T2–T3，`tmted_knife` 入 `electric_age` 锁）→ Immersive Cooking 自动化（T3–T4，`ic_*` 多方块入 `heavy_industry_age` 锁）→ AE2 → 殖民/航天。优先使用 ED 原生 IE 配方，KubeJS 不重复实现。
 - **任务/手册**：+6 任务（modern_kitchen、industrial_food、food_factory、modern_living、household_power、smart_home）+ 6 手册页，en/zh 双语同步（localization 677 键）；export-quests 10 章 172 节点重建。
 - **i18n**：`gen-mod-lang-zh.mjs` 重写为组合式生成——refurbished_furniture 654、energizedfurniture 12、immersivecooking 53、tmted 15 键 zh_cn；`pack/kubejs/assets/mdm/` 删除。
@@ -408,7 +408,7 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 | IC2CRE batbox/generator/copper_cable | EnergyStorage 全六面暴露——**原生 FE 桥确认**，按约定不加转换器 |
 | AE2 energy_acceptor/controller | 全六面收 FE（孤立接收器不接网不蓄电，属 AE2 原生语义） |
 | Energized energy_transformer | 全六面收 FE（Refurbished 桥不变） |
-| BC mj_dynamo / engine_fe | dynamo 顶面出 FE；engine_fe 不暴露 FE cap（走 BC 自有管道流） |
+| BC mj_dynamo / engine_fe | dynamo 顶面出 FE；`engine_fe` 实为物品 id（探测打到空气，当时记录"不暴露"系假象）。注：本行是 `powerMode=MJ_ONLY` 下的探测记录；切到 `DISPLAY_FE` 后 BC 机器会暴露收电 FE cap、引擎直推相邻 FE 存储，修正值见末节「BC 能源并网」 |
 | Railcraft charge_terminal/charge_motor | 不暴露 FE cap——Charge 网络自足，按约定不加重复转换器 |
 | Ad Astra etrionic_capacitor / ae2:energy_cell | 不暴露 FE cap（模组内部储能语义） |
 | Refurbished kitchen_sink | 流体桥实测六面可读（starforge_compat 生效） |
@@ -514,7 +514,7 @@ check-mapping:   PASS — 472 语义 ID 全部解析
 
 - IE `dieselGen_output = 4096` FE/t：T5 主力，生物柴油链即成本，维持。
 - IC2 `nuclearOutputScale = 1.0`：反应堆数百~数千 EU/t ×4 FE/EU，铀+散热约束，维持。
-- BC `mjPerFe = 0.1`：engine_fe 与 mj_dynamo 同用 `microMjPerFe()` 换算（4 MJ/t ↔ 40 FE/t 基础值），FE→MJ→FE 往返无损但零净增——守恒安全；齿轮升级各 +2M/+3M µMJ/t。
+- BC `mjPerFe = 0.1`：DISPLAY_FE autoconvert、engine_fe 与 mj_dynamo 同用 `microMjPerFe()` 换算（4 MJ/t ↔ 40 FE/t 基础值），FE→MJ→FE 往返无损但零净增——守恒安全；齿轮升级各 +2M/+3M µMJ/t。
 - AE2：接收器 0.5 比率（2 FE = 1 AE）、`usageMultiplier = 1.0`；晶振发电机 20 AE/t，`EnergyOverlayGrid` 每网络只放行一台 passive generator——天然防堆叠，保留作自举；大网耗电随节点线性增长，属预期"AE2 是大耗电端"。
 - Ad Astra：机器输入上限 100/150/250/500 FE/t（iron/steel/desh/ostrum）；**etrionic 高炉 10 → 500 FE/件**（`pack/config/ad_astra.jsonc` 新发货——原值按 AA 自带 20 FE/t 发电经济标定，接 FE 网后近乎零成本）；水泵 20 FE/t、energizer 2M FE 缓冲维持。
 - Refurbished：`fuelToPowerRatio = 16`（仅影响已禁用的燃料发电机路径）；家电 Watt 无回 FE 通道，单向受控。
@@ -522,7 +522,7 @@ check-mapping:   PASS — 472 语义 ID 全部解析
 
 ### 无循环/复制论证
 
-- FE→MJ（engine_fe）与 MJ→FE（mj_dynamo）走同一 `microMjPerFe()`，严格对称 → 往返净零。
+- FE→MJ（engine_fe）、MJ→FE（mj_dynamo）与 DISPLAY_FE autoconvert 边界均走同一 `microMjPerFe()`，严格对称 → 往返净零。
 - FE→Watt（Energized 变压器）、FE→AE（能量接收器）、FE→mEU（IC2CRE 原生端口）均单向，Watt/AE/mEU 均无返回 FE 的原生通道。
 - 禁用五项全部为非消费侧产能设备；CRG 的 20 AE/t 不出 AE2 内网，且每网络限一台。
 - 守恒实测（既有 captest）：energizer → FastPipes → IC2 电炉，源失 ≥ 目增 + 管缓存；本轮未引入新转换边。
@@ -563,3 +563,57 @@ check-mapping:   PASS — 472 语义 ID 全部解析
 2. `node tools/build-pack.mjs`（重建 stage_i18n / 任务 / lang）
 3. `node tools/audit-lang.mjs`（刷新 `docs/localization-report.md`）
 4. 新 Mod 入包：先看 JAR 自带 zh → 查 CFPA zip（`run/client/resourcepacks/Minecraft-Mod-Language-Modpack-Converted-1.21.1.zip`）→ 仍缺则加翻译表并 vendor 对应 CFPA 子集。
+
+## 2026-09-24 BC 能源并网：`powerMode=DISPLAY_FE`（已实现，运行时 captest 实测通过）
+
+### 改动
+
+- 新发货 `pack/config/buildcraftcore-common.toml`（按上游生成文件全量固化，sync-pack 下发 client/server；`run/smoketest` 为独立实例、已同步改同值）：`[power]` 段 `powerMode = "MJ_ONLY"` → `"DISPLAY_FE"`，`mjPerFe = 0.1`（1 MJ = 10 FE）维持默认不动。
+- 模式语义（`BCLibConfig$PowerMode` 字节码）：`DISPLAY_FE = autoconvert + displayFe`，即同时开启 MJ↔FE 自动边界转换与全 UI FE 单位显示；`MJ_AUTOCONVERT_FE` 只转换不显示，`MJ_ONLY` 两者皆无。`powerMode` 标记 `worldRestart`，改后需重进存档生效。
+- FE 边界的实际路径（BuildCraft CE 8.0.19 字节码核验）：
+  - 引擎（stone/iron）`sendPower()` → `getPortToPower()` → `MjApi2PlatformBridge`：邻居无 MJ endpoint 时回落 `FeEndpoint` 包裹 `Capabilities.EnergyStorage.BLOCK`（`canReceive||canExtract`）——BC 引擎面向 FastPipes 能量管或任意 FE 设备直接推电，按 `microMjPerFe` 折算。引擎自身（`EngineConnector` 仅 `IMjConnector`）不暴露 IEnergyStorage，属预期。
+  - 机器（IMjReceiver 系，如 pump/quarry/laser）经 `MjCapabilityHelper` → `MjReceiverEnergyStorage` 暴露**只收** IEnergyStorage（`canExtract=false`）——FastPipes 能量管/任意 FE 源可直接喂电。
+  - 动力管 `PipeFlowPower` 经 `MjToFeAutoConverter` 把相邻 IEnergyStorage 视作 MJ receiver——BC 动力管网亦可向 FE 网出电。
+  - `mj_dynamo`（MJ→FE）与 `engine_fe`（FE→MJ）保留为可选显式互转设备，配方与阶段锁不动，不再承担并网职责；BC 引擎、机器、MJ 特色全部保留。
+- `starforge_captest.js`：能量探针 +`buildcraftcore:engine[type=stone|iron|fe]`/`pump`/`quarry`/`laser`/`mj_dynamo`（`engine_stone`/`engine_fe` 实为物品 id，方块统一为 `buildcraftcore:engine` + `type` 属性，已修正）；传输目的端候选首选 `buildcraftfactory:pump`；另加端到端链路「燃煤+红石点火的 `engine[type=stone]` → `fastpipes:basic_energy_pipe` → `ic2cre:electric_furnace`」。
+- 文案：`modpack.tutorial.unified_pipes` 与 `modpack.tip.fastpipes_energy`（双语，源头 `localization/*.json`，任务书 snbt 与 kubejs lang 经生成器同步）——BC 由「自带 FE 引擎与 MJ 发电机互转」改为「引擎直出 FE、机器直接收 FE，dynamo/engine_fe 可选互转」。`docs/design.md`/`compatibility.md` 同步。
+
+### 守恒论证（不变量）
+
+- autoconvert 与 dynamo/engine_fe 同走 `microMjPerFe()`（`MjFeConversion`，0.1 MJ/FE = 1 MJ : 10 FE），严格对称，FE→MJ→FE 往返零净增，不引入新发电通道；FastPipes 能量管仍只搬不产。
+
+### 验证
+
+- `node tools/build-pack.mjs` + `export-quests.mjs` + `validate-design.mjs` + `check-mapping.mjs` 全过；`sync-pack.mjs all` 后 `run/server|client/config/buildcraftcore-common.toml` 均为 `DISPLAY_FE`。
+- **运行时 captest 实测（dedicated server，2026-09-24）**：
+  - 探针：`pump`/`quarry`/`laser` 全六面+null 暴露收电 FE cap；`engine[type=stone|iron]` 无 FE cap（推送侧走 MjPort→FeEndpoint，预期）；`engine[type=fe]` 全六面收 FE；`mj_dynamo` 仅顶面出 FE。
+  - 「能量管 → BC 机器」：Ad Astra energizer 192000→190000，`buildcraftfactory:pump` 入账 1000、管道缓存 1000，守恒成立——BC 机器直接吃 FastPipes 管的 FE。
+  - 「BC 引擎 → FastPipes → FE 设备」：`engine[type=stone]` 燃煤点火（需红石信号，`isRedstonePowered`，BC 经典机制）后 burning=true，能量管缓存 770、`ic2cre:electric_furnace` 实收 1200——引擎直推 FE 入管再到任意 FE 设备，全程无 mj_dynamo。
+  - 注：`attemptRotation` 在引擎已朝向接收端时返回 FAIL（表示无需再转），非连接失败；首次转向已记录 SUCCESS。GUI/Jade 的 FE 单位显示属 `displayForgeEnergy()` 语义，客户端目检建议下次进档顺带确认。
+
+## 2026-10-14 FE↔Railcraft Charge 转换器 `starforge_compat:charge_bridge`（已实现，运行时 captest 全项通过）
+
+### 实现
+
+- compat 新增 `ChargeBridgeBlock`/`ChargeBridgeBlockEntity`/`ChargeBridgeMode`/`RailcraftBridge`：
+  - Charge 侧：实现官方 `mods.railcraft.api.charge.ChargeBlock`，`ConnectType.BLOCK`、节点损耗 0、携带 `ChargeStorage.Spec(RECHARGEABLE, 4096, 256, 1.0)` 网络电池——电池由 Railcraft 网络自身创建并经 `ChargeSavedData` 持久化，无任何模拟存储。FE→Charge 走节点电池 `receiveEnergy`（官方充能路径），Charge→FE 走 `access.removeCharge` 从本网活动电池实际抽取，均以返回量为准，部分转移取较小侧。
+  - FE 侧：`Capabilities.EnergyStorage.BLOCK` 六面+any 暴露 4096 FE 缓冲，外部收/发各限 256 FE/t（每 tick 累计，与转换上限独立）。
+  - 模式存于方块状态（`mode`：auto/fe_to_charge/charge_to_fe/off），潜行+空手右击循环；`powered` 红石抑制——`onPlace` 即同步既有信号（修复过「放在已激活红石旁先跑一段才抑制」的放置竞态），`neighborChanged` 跟踪变化。
+  - AUTO 滞回死区：缓冲 ≥3072 推 FE→Charge，≤1024 拉 Charge→FE，死区内不动；每 tick 至多一个方向、严格 1:1，同 tick 双向自激在结构上不可能，两台桥互连只搬运不增殖。
+  - 可选依赖：`RailcraftBridge.LOADED`（ModList `railcraft`）守卫注册、capability 接线与创造栏，无 Railcraft 时 jar 正常加载、holder 全 null，不触碰任何 RC 类。
+- `tools/build-compat.mjs` COMPILE_DEPS +`railcraft`（mods/ 文件名前缀编译期引用）；`neoforge.mods.toml` +optional 依赖段；blockstate（4 朝向×4 模式×2 充能共 32 变体）、orientable 模型（借用 railcraft frame/frame_top_powered 纹理，off 态为未激活面）、战利品表、双语 lang、创造栏 FUNCTIONAL_BLOCKS。
+- Pack：semantic-map `sfc_charge_bridge`；stage-locks `electric_age`（与 RC 电力铁路件同阶段）；SF-37 配方（钢板×4 + charge_terminal + electrum 线圈×2 + ic2 电路 + zinc_carbon_battery）；`high_speed_line` 任务新增 1×转换器交付；`unified_pipes`/`fastpipes_energy`/`railcraft_advanced`/`high_speed_line` 文案统一改为「FE 公共电网经转换器接入 Railcraft Charge 网络，RC 设备不直连 FE 管」。
+
+### captest 扩展与实测（dedicated server，2026-10-14）
+
+- `starforge_captest.js`：能量探针 +`starforge_compat:charge_bridge`；新增 5 个隔离 rig（间距≥4，`ConnectType.BLOCK` 仅面相邻成网，各自独立网）、hermetic 放置（原位空气清块+`removeCharge` 排空，杜绝上轮残留）、leftover 探针（重启持久化证据）、强制区块范围扩至全部测试足迹。
+- 实测结果（`run/server/kubejs/export/captest.json`，全 ok 标志通过）：
+  - 探针：`charge_bridge` 六面+any 暴露 FE；`charge_terminal`/`charge_motor` 依旧 NONE——并网职责在桥。
+  - FE→Charge：馈入 4096 FE 全数入账，`measured_ratio_fe_to_charge = 1.0`，节点电池满仓 4096（满仓边界验证）。
+  - Charge→FE：4096 Charge 全数抽出并回填，往返 `4096→4096` 精确守恒（空仓边界同验证）。
+  - 速率上限：FE 缓冲与 Charge 电池的单 tick 峰值均恰为 256，`rate_capped`。
+  - AUTO 死区：缓冲 2048 + 电池 2000 在 AUTO 下冻结 100 tick——双源不互抽、无振荡、无幽灵能量。
+  - 红石抑制：AUTO+红石下缓冲 512 不变、电池 0。
+  - FastPipes 端到端：creative 电容 → extractor → 能量管 → 桥 → 电池实收 4096；反向 4096 Charge → 桥 → extractor → 能量管 → BC pump（桥余 2584 + 管缓存 1000 + 泵收 512 = 4096，守恒）。
+  - 重启持久化：优雅停机重启后 leftover 逐位恢复上轮终值（direct 4096/0、p2c 4096/4096、c2p 2584/0、redstone 512/0、dz 2048/2000）——FE 缓冲走 BE NBT、Charge 电池走 Railcraft `ChargeSavedData`，均由官方机制持久化。
+- 排障记录：captest 初版缓存 `ChargeStorage` 引用，Railcraft 网络在区块加载时重建节点、旧电池对象静默脱链（喂入计数到但网络不可见）——改为每 tick 经 `access()` 实时解析，亦更符合官方用法。

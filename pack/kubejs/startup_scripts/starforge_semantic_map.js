@@ -374,6 +374,7 @@ global.SM = {
   "apd_pot": "applieddelight:me_cooking_pot",
   "sfc_burner": "starforge_compat:electric_burner",
   "sfc_horde_alarm": "starforge_compat:horde_alarm",
+  "sfc_charge_bridge": "starforge_compat:charge_bridge",
   "rf_chair": "refurbished_furniture:oak_chair",
   "rf_fridge": "refurbished_furniture:light_fridge",
   "rf_kitchen_drawer": "refurbished_furniture:oak_kitchen_drawer",

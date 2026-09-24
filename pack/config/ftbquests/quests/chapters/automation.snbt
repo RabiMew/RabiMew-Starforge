@@ -895,6 +895,16 @@
 					count: 8
 					consume_items: false
 				}
+				{
+					id: "0F6D6FCB434073C3"
+					type: "item"
+					item: {
+						count: 1
+						id: "starforge_compat:charge_bridge"
+					}
+					count: 1
+					consume_items: false
+				}
 			]
 		}
 		{

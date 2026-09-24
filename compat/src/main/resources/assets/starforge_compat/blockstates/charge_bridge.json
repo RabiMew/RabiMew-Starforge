@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=north,mode=auto,powered=false": {
+      "model": "starforge_compat:block/charge_bridge"
+    },
+    "facing=north,mode=auto,powered=true": {
+      "model": "starforge_compat:block/charge_bridge"
+    },
+    "facing=north,mode=fe_to_charge,powered=false": {
+      "model": "starforge_compat:block/charge_bridge"
+    },
+    "facing=north,mode=fe_to_charge,powered=true": {
+      "model": "starforge_compat:block/charge_bridge"
+    },
+    "facing=north,mode=charge_to_fe,powered=false": {
+      "model": "starforge_compat:block/charge_bridge"
+    },
+    "facing=north,mode=charge_to_fe,powered=true": {
+      "model": "starforge_compat:block/charge_bridge"
+    },
+    "facing=north,mode=off,powered=false": {
+      "model": "starforge_compat:block/charge_bridge_off"
+    },
+    "facing=north,mode=off,powered=true": {
+      "model": "starforge_compat:block/charge_bridge_off"
+    },
+    "facing=east,mode=auto,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 90
+    },
+    "facing=east,mode=auto,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 90
+    },
+    "facing=east,mode=fe_to_charge,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 90
+    },
+    "facing=east,mode=fe_to_charge,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 90
+    },
+    "facing=east,mode=charge_to_fe,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 90
+    },
+    "facing=east,mode=charge_to_fe,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 90
+    },
+    "facing=east,mode=off,powered=false": {
+      "model": "starforge_compat:block/charge_bridge_off",
+      "y": 90
+    },
+    "facing=east,mode=off,powered=true": {
+      "model": "starforge_compat:block/charge_bridge_off",
+      "y": 90
+    },
+    "facing=south,mode=auto,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 180
+    },
+    "facing=south,mode=auto,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 180
+    },
+    "facing=south,mode=fe_to_charge,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 180
+    },
+    "facing=south,mode=fe_to_charge,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 180
+    },
+    "facing=south,mode=charge_to_fe,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 180
+    },
+    "facing=south,mode=charge_to_fe,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 180
+    },
+    "facing=south,mode=off,powered=false": {
+      "model": "starforge_compat:block/charge_bridge_off",
+      "y": 180
+    },
+    "facing=south,mode=off,powered=true": {
+      "model": "starforge_compat:block/charge_bridge_off",
+      "y": 180
+    },
+    "facing=west,mode=auto,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 270
+    },
+    "facing=west,mode=auto,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 270
+    },
+    "facing=west,mode=fe_to_charge,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 270
+    },
+    "facing=west,mode=fe_to_charge,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 270
+    },
+    "facing=west,mode=charge_to_fe,powered=false": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 270
+    },
+    "facing=west,mode=charge_to_fe,powered=true": {
+      "model": "starforge_compat:block/charge_bridge",
+      "y": 270
+    },
+    "facing=west,mode=off,powered=false": {
+      "model": "starforge_compat:block/charge_bridge_off",
+      "y": 270
+    },
+    "facing=west,mode=off,powered=true": {
+      "model": "starforge_compat:block/charge_bridge_off",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,90 @@
+[display]
+	#Should I enable colorblind mode?
+	colorBlindMode = false
+	#Should colours be displayed as their own (or a similar) colour in tooltips?
+	useColouredLabels = true
+	#Should colours displayed in tooltips use higher-contrast colours?
+	useHighContrastColouredLabels = false
+	#Should all power values (MJ, MJ/t) be hidden?
+	hidePowerValues = false
+	#Should all fluid values (Buckets, mB, mB/t) be hidden?
+	hideFluidValues = false
+	guideBookEnableDetail = false
+	#Should static fluid values be displayed in terms of buckets rather than thousandths of a bucket? (B vs mB)
+	useBucketsStatic = true
+	#Should flowing fluid values be displayed in terms of buckets per second rather than thousandths of a bucket per tick? (B/s vs mB/t)
+	useBucketsFlow = true
+	#Should localised strings be displayed in long or short form (10 mB / t vs 10 milli buckets per tick)
+	useLongLocalizedName = true
+	#Flow-rate display unit for BuildCraft energy values.
+	#TICKS displays values as unit/t; SECONDS displays values as unit/s.
+	#Allowed Values: TICKS, SECONDS
+	timeGap = "SECONDS"
+	#Disable this if you get texture errors with optifine. Disables some texture switching functionality
+	#when changing config options such as colour blind mode.
+	useSwappableSprites = true
+	#The rotation that items use when travelling through pipes. Set to 'enabled' for full rotation,
+	#'disabled' for no rotation, or 'horizontals_only' to only rotate items when going horizontally.
+	#Allowed Values: DISABLED, HORIZONTALS_ONLY, ENABLED
+	itemRenderRotation = "ENABLED"
+
+[general]
+	#Should BuildCraft miners be allowed to break blocks using player-specific protection?
+	miningBreaksPlayerProtectedBlocks = false
+	#Controls whether BuildCraft machines may keep chunks loaded.
+	#AUTO enables chunk loading in singleplayer/LAN and disables it on dedicated servers.
+	#Allowed Values: ON, AUTO, OFF
+	chunkLoading = "AUTO"
+	#Selects which BuildCraft chunk-loading tiles are allowed to request tickets.
+	#Allowed Values: NONE, STRICT_TILES, SELF_TILES, ALL_TILES
+	chunkLoadLevel = "SELF_TILES"
+	#How long, in seconds, should items stay on the ground? (Vanilla = 300, default = 60)
+	# Default: 60
+	# Range: 5 ~ 600
+	itemLifespan = 60
+	#Should pumps consume water? Enabling this will disable minor optimisations,
+	#but work properly with finite water mods.
+	pumpsConsumeWater = false
+	#Allow items in the common c:tools/wrench tag to operate BuildCraft wrench interactions.
+	#Legacy items implementing BuildCraft's IToolWrench interface remain supported even when disabled.
+	useWrenchTag = true
+	#How far, in minecraft blocks, should markers (volume and path) reach?
+	# Default: 64
+	# Range: 16 ~ 256
+	markerMaxDistance = 64
+	#How far, in minecraft blocks, should pumps reach in fluids? (Default: 64)
+	# Default: 64
+	# Range: 16 ~ 128
+	pumpMaxDistance = 64
+	#How often, in ticks, should network update packets be sent? Increasing this might help network performance.
+	# Default: 10
+	# Range: 1 ~ 10
+	updateFactor = 10
+	#How much power should be required for all mining machines?
+	# Default: 1.0
+	# Range: 1.0 ~ 200.0
+	miningMultiplier = 1.0
+	#How much further down can miners (like the quarry or the mining well) dig?
+	#(Note: values above 256 only have an effect if a mod like cubic chunks is installed).
+	# Default: 256
+	# Range: 32 ~ 4096
+	miningMaxDepth = 256
+	#Disable this if you get sub-standard framerates due to buildcraft's ~60 sprites animating every frame.
+	enableAnimatedSprites = true
+	#The maximum number of search results to display in the guide book.
+	# Default: 1200
+	# Range: 500 ~ 5000
+	maxGuideSearchResults = 1200
+	#The maximum number of items that the guide book will index.
+	# Default: 10000
+	# Range: 1500 ~ 5000000
+	guideItemSearchLimit = 10000
+
+[power]
+	#MJ per 1 FE. Default 0.1 means 1 MJ = 10 FE.
+	# Default: 0.1
+	# Range: 1.0E-4 ~ 0.2
+	mjPerFe = 0.1
+	#MJ_ONLY, MJ_AUTOCONVERT_FE, or DISPLAY_FE
+	#Allowed Values: MJ_ONLY, MJ_AUTOCONVERT_FE, DISPLAY_FE
+	powerMode = "DISPLAY_FE"

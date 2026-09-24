@@ -314,7 +314,7 @@
 	quest.37063572DC618E0A.quest_subtitle: "推荐阶段：重工业时代"
 	quest.449D3297E192B8CE.title: "高速铁路"
 	quest.449D3297E192B8CE.quest_desc: [
-		"高速轨道必须配信号与挡停设施，弯道请减速。电力高速轨让机车自己供电。"
+		"高速轨道必须配信号与挡停设施，弯道请减速。电力高速轨让机车自己供电：用 FE↔Charge 转换器把公共电网接入铁路 Charge 网络。"
 		""
 		"{\"text\":\"» 详见手册：高级铁路\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"5FB73CF25E88351B\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"高级铁路\"}}"
 	]
@@ -930,7 +930,7 @@
 	quest.453A61A0B4D9C159.quest_subtitle: "进度与生存"
 	quest.0E8B4E397AC0FBCA.title: "统一管网：FastPipes"
 	quest.0E8B4E397AC0FBCA.quest_desc: [
-		"FastPipes 是整合包默认通用管网：物品、流体与 FE 电力共用一套管道。抽取附件从容器与机器取货，带过滤、红石控制与分流模式；输入附件标记投递优先级；传感器/虚空附件负责信号与满仓处理；终端把管网变成可检索的小仓库。IE 传送带与流体管保留作可视化工业产线；BuildCraft 管道仅留作采石场、泵等 BC 特色设备周边的老式方案；Railcraft 管跨区大宗货运；AE2 管数字仓储与自动合成，不承担普通管道职责。供电走 FE 公共电网：FastPipes 能源管道直连 IE、Ad Astra、IC2CRE（原生 FE 端口）与 Railcraft 电力设备；BuildCraft 用自带 FE 引擎与 MJ 发电机互转；Refurbished 家电经能源变压器接入。"
+		"FastPipes 是整合包默认通用管网：物品、流体与 FE 电力共用一套管道。抽取附件从容器与机器取货，带过滤、红石控制与分流模式；输入附件标记投递优先级；传感器/虚空附件负责信号与满仓处理；终端把管网变成可检索的小仓库。IE 传送带与流体管保留作可视化工业产线；BuildCraft 管道仅留作采石场、泵等 BC 特色设备周边的老式方案；Railcraft 管跨区大宗货运；AE2 管数字仓储与自动合成，不承担普通管道职责。供电走 FE 公共电网：FastPipes 能源管道直连 IE、Ad Astra 与 IC2CRE（原生 FE 端口）；BuildCraft 引擎直接向电网输出 FE、机器直接接受 FE 供电（1 MJ = 10 FE），MJ 发电机与 FE 引擎仅作可选的显式互转设备；Refurbished 家电经能源变压器接入。Railcraft 设备走自己的 Charge 电力网络，不与 FE 管道直连：在电网与 Charge 框架之间放置 FE↔Charge 转换器（starforge_compat），即可为电力轨道与 Charge 设备供电，反向也可把 Charge 余电输出为 FE。"
 	]
 	quest.0E8B4E397AC0FBCA.quest_subtitle: "能源·石油·网络"
 	quest.28C9F6D61C4E55C2.title: "背包与远征物资"
@@ -1100,7 +1100,7 @@
 	quest.46C8EE9AF7A2DC7E.quest_subtitle: "怪潮与防御"
 	quest.5FB73CF25E88351B.title: "高级铁路"
 	quest.5FB73CF25E88351B.quest_desc: [
-		"进阶铁路靠四件事：闭塞信号把线路切成区间，联锁箱保证一区一车；电力机车吃电网不吃燃料；高速轨道配挡停与减速弯；隧道掘进机自动开洞铺轨。规划干线时先定区间，再放信号，最后铺轨。"
+		"进阶铁路靠四件事：闭塞信号把线路切成区间，联锁箱保证一区一车；电力机车吃 Charge 电网不吃燃料——用 FE↔Charge 转换器从公共电网给它供电；高速轨道配挡停与减速弯；隧道掘进机自动开洞铺轨。规划干线时先定区间，再放信号，最后铺轨。"
 	]
 	quest.5FB73CF25E88351B.quest_subtitle: "铁路物流"
 	quest.2CE7350DEA19BCD0.title: "客户端工具"

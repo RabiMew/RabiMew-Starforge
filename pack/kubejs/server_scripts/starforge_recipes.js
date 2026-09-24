@@ -492,6 +492,16 @@ ServerEvents.recipes((e) => {
     B: 'ic2cre:battery'
   });
 
+  // ---------- SF-37 T2(electric_age): FE <-> Railcraft Charge converter ----------
+  // The starforge_compat charge_bridge joins the public FE grid to Railcraft's
+  // Charge network. Cost anchors: a charge terminal for the network face,
+  // electrum coils + circuit for the FE side, steel shell, charge battery cell.
+  e.shaped(i('sfc_charge_bridge'), ['STS', 'WCW', 'SBS'], {
+    S: i('rc_steel_plate'), T: i('rc_charge_terminal'),
+    W: i('ie_wirecoil_electrum'), C: i('ic2_circuit'),
+    B: i('rc_zinc_carbon_battery')
+  });
+
   console.log('[starforge] recipe layer loaded');
 });
 

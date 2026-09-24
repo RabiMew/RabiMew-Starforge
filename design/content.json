@@ -4115,6 +4115,11 @@
      "type": "item",
      "target": "rc_high_speed_electric_track",
      "count": 8
+    },
+    {
+     "type": "item",
+     "target": "sfc_charge_bridge",
+     "count": 1
     }
    ],
    "manual_refs": [
