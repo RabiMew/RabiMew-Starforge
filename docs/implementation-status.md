@@ -211,7 +211,7 @@
 - **移除**：Defense Turrets 全部内容——manifest/lockfile 条目、5 条 KubeJS 配方、`dt_*` 语义键 7 个、三个阶段锁组、4 个任务节点（first_turret/turret_net/combined_fire/laser_grid）与对应文案。
 - **枪包升级实测**：Pack Upgrader 启动时把旧格式枪包升级为 `+1.21.1` 版（`forge:`→`c:` 标签转换确认——EOS 的配件与 `eos_old` 配方同样依赖此路径）；TaCZ 识别 `eos` 命名空间，25 把枪 + 7 种弹药经 KubeJS 重写为工业材料配方后注册（经 `.id()` 固定回 `eos:*` 命名空间，走 EOS 自带 `eos_printer` 工作台）。
 - **炮塔实测**（DRG 时代，机制不变）：`taczturrets:turret` 召唤、装入 `tacz:ak47` 与枪包武器，对召唤僵尸自动开火击杀，弹药从**脚下箱子**扣取（内置 Inventory 缓冲 10 格）——“最后一公里物流”设计成立；EOS 武器同为 `tacz:modern_kinetic_gun` 物品，链路一致。
-- **枪包不可用内容**：EOS 侧 `eos:eoslab_12g` 有弹药索引但上游无配方（视同禁用，同 DRG 的 `ani_pro`/`pickaxe`/`supply` 先例）。
+- **枪包不可用内容**：EOS 侧 `eos:eoslab_12g` 有弹药索引但上游无配方（视同禁用，同 DRG 的 `ani_pro`/`pickaxe`/`supply` 先例）。**2026-09-24 审计扩充**：`eos:eos_chaos`（setsentinel 依赖缺失）、`eos:alloy`（无枪使用）、全部 60 个 `eos:*` 配件与 `eos_old:old_conversion` 换肤台（上游 forge: 配方全部无法加载）一并禁用——见文末"里程碑奖励包 + EOS 不可用内容清理"节。
 - **枪包阶段门槛**（经配方材料而非物品锁——枪/弹共用 `tacz:` 物品 id，PS 无法按 id 锁）：T3 `ae2:engineering_processor` 高斯枪族（HG-57/M-57CW/AR-68/QGZ-86/极速追星/陸弓）；T4 `ie:heavy_engineering` 重型高斯与特种（MG-85/SR-85/猫又/阿喀琉斯/四叶十字/WA2000 双型）；T5 `ic2cre:containment_reactor_plating`+奇点/异常分析 ELP 电浆系与艾莲娜之钉/混沌。
 - **任务书**：军事章 11 任务（含新增 armed_guards/ie_turret/ammo_logistics/tacz_turret/eos_arsenal/swarm_suppression/expedition_firepower），自动化章新增 `munitions_supply`；手册新增 6 页（分层防御/炮塔补给/EOS 定位/警卫武器/TaCZ Addon/远征弹药）；运行时首次造炮塔与首次获得 EOS 枪各一条一次性提示。
 - **服务端战斗基准**（RCON 实测，4 炮塔 + ~35 怪潮 [30 僵尸+5 Arachnids]）：空载 1.0 → 战斗中 3.0–3.9 ms/tick，TPS 稳定 20；同时在场 `tacz:bullet` 弹丸峰值 36；约 2 分钟内全灭该波次；弹药链实测为 箱→炮塔内仓（10格）→枪膛（打完弹匣后自动从库存补弹）。EOS 武器走同一 `tacz:bullet`/装填机制。
@@ -220,7 +220,7 @@
 ### 已知残留 / 未做
 
 - AU 的 `priority_overrides` 与无 `{material}` 占位符的字面标签条目疑似不生效（`c:coal_coke` 平标签需 `c:{material}` 模式覆盖）；RC 辊压/焦化炉输出已用数据包覆盖兜底。
-- `appliedcooking:guide_book` 配方因 Patchouli 未装而优雅降级（仅 WARN，无害）。
+- ~~`appliedcooking:guide_book` 配方因 Patchouli 未装而优雅降级（仅 WARN，无害）。~~ 2026-09-24：配方文件经 `pack/kubejs/data/appliedcooking/recipe/guide_book.json` 以 `neoforge:mod_loaded patchouli` 条件覆盖——未装 Patchouli 时配方静默跳过（不再产生解析错误日志）；若日后补装 Patchouli 则自动恢复上游行为。
 - Almost Unified `unification/materials.json` 为 AU 自动生成的默认副配置（截断优先级），实测不影响主 `unify.json` 生效——保留观察。
 - EMI 重复条目隐藏（AU `recipe_viewer_hiding`）、厨房读取、氧气穿透——均需客户端实机复核。怪潮警报红石层已经服务端实机验证（见下文）。
 
@@ -360,3 +360,29 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 - **i18n**：`gen-mod-lang-zh.mjs` 重写为组合式生成——refurbished_furniture 654、energizedfurniture 12、immersivecooking 53、tmted 15 键 zh_cn；`pack/kubejs/assets/mdm/` 删除。
 - **验证（本轮）**：`build-compat` 编译通过（58 entries）；`build-pack`/`export-quests` 重建成功；`audit-deps`（113 jars 闭包满足）/`check-closure`/`check-mapping`（438 语义映射）/`validate-design`（123 任务/49 手册页/677 双语键）PASS；**dedicated server `Done (1.724s)` 全量启动**：refurbished_furniture 1.0.22 / framework 0.13.11 / energizedfurniture 0.2.0 / tmted 2.0.0 / immersivecooking 0.2.0-beta-1 / vinery 1.5.3 全部加载，KubeJS 8/8 服务端脚本 0 错 0 警，FTB Quests 172 节点加载；运行时 registry-export 重导出（9003 配方；`mdm:` 0 条；`kitchen_item_providers` 688 项含 rf 113、`kitchen_connectors` 131 项含 rf 86、`passes_flood_fill` 1142 项含 rf 449+mcw 652）。
 - **待实机验证**：Refurbished 电脑程序安装/渲染/警报往返（客户端会话）；流体桥经水龙头/管道实测；CFB 对 Refurbished 容器的库存读取；Energized FE→Watt 实际功率与电网拓扑；Immersive Cooking 多方块组装/运行/重载（beta）；家具模型与中文显示目检。
+
+## 2026-09-24 里程碑奖励包 + EOS 不可用内容清理（已实现，静态验证通过）
+
+### 「服役纪念章」→「里程碑奖励包」
+
+- `modpack:service_medal`（纪念币贴图、纯纪念）更名为 `modpack:milestone_reward_pack`（`minecraft:item/bundle` 贴图）——从纪念品改为可打开的随机奖励容器。任务书里程碑章图标、20 处任务奖励、`design/semantic-map.json`、双语语言文件、生成物全部同步；全仓 `service_medal` 零残留。
+- **奖池**：新增 `design/reward-pools.json`（`tier_1`–`tier_7` 对应七个时代），`build-pack.mjs` 生成 `pack/kubejs/data/modpack/loot_table/milestone_reward/<pool>.json` 原版战利品表（主池 uniform 2–3 抽 + 稀有池 1 抽含 empty 权重控稀有度）；条目经语义映射解析并对照 `registry-export/items.json` 校验，坏引用构建期直接报错。
+- **盖章**：任务奖励新增可选 `rewards[].pool` 字段，`export-quests.mjs` 写入 `item.components."minecraft:custom_data".reward_pool`；校验器强制 pool 只挂在 milestone_reward_pack 上且必须存在于 reward-pools.json。
+- **打开**：`pack/kubejs/server_scripts/starforge_rewards.js` 监听 `ItemEvents.rightClicked`——读取 `reward_pool` 盖章（缺失/非法时按开启者最高已持时代阶段兜底 tier），消耗 1 个并 `loot give modpack:milestone_reward/<pool>`，同 tick 防抖防双手双击。奖励包本身不进任何阶段锁，奖池内容均为该时代已可产的物资/弹药/稀有材料，不含阶段凭证物品。
+
+### EOS 枪包全量审计与禁用清单
+
+扫描 EOS 全部 25 枪 / 8 弹药 / 60 配件 / 2 工作台的 index、display、data、配方与外部命名空间引用：
+
+| 条目 | 结论 | 处置 |
+| --- | --- | --- |
+| `eos:eos_chaos`（ELPC-02 混沌） | display 的 model/animation/hud/state_machine/音效全部引用未安装的 `setsentinel:*` 命名空间 | 配方不重挂（上游 forge: 配方本就不可加载，KubeJS 端亦不再重建）；JEI/EMI/创造标签隐藏 |
+| `eos:eoslab_12g` | 有弹药索引，上游与本包均无配方 | 维持禁用；JEI/EMI/创造标签隐藏 |
+| `eos:alloy` | 弹药索引存在但无任何 EOS 枪使用；唯一消费者是下方全死的配件配方 | 移除 KubeJS 重建配方；JEI/EMI/创造标签隐藏 |
+| `eos:*` 配件 ×60 | 上游 58 条配件配方全部使用 1.21.1 已移除的 `forge:partial_nbt`/`forge:` 标签语法（导出快照仅 34 条 `eos:*` 配方=本包重建的枪/弹/工作台），chasing_light 三件套连上游配方都不存在——全部配件均不可获取 | 全部自 JEI/EMI 与 TaCZ 创造标签隐藏（`AttachmentId` 前缀 `eos:` 谓词） |
+| `eos_old:old_conversion` 换肤台 | 两条 chasing_light 换肤转换配方同为死的 forge: 格式，台子无任何可用配方 | 不再重建其合成配方；JEI/EMI/创造标签隐藏（`BlockId` 谓词） |
+| 其余 24 枪 / 6 弹药 / `eos:eos_printer` | display 仅引用 `eos:`/`tacz:`/`minecraft:` 内部资源，弹药均有本包配方，无外部依赖 | 保留 |
+| 配件标签中的 `deep_rock_galactic:*`/`cib:*`/`hamster:*`/`eosxemx:*` | 上游兼容性标签条目；标签容忍缺失成员，无副作用 | 不处理，记录备查 |
+
+- 实现：`starforge_recipes.js` 不再重建 chaos/alloy/old_conversion（`e.remove` 防御保留）；新增 `starforge_viewer_cleanup.js`（服务端 `RecipeViewerEvents.removeEntries('item')`，custom_data 键谓词）与 `starforge_creative_cleanup.js`（启动期 `StartupEvents.modifyCreativeTab` 扫 15 个 tacz 标签页）。隐藏按 `tacz:modern_kinetic_gun`/`tacz:ammo`/`tacz:attachment`/`tacz:workbench_a` 的组件变体匹配，不影响默认 TaCZ 包内容。
+- 未为任何残留项引入依赖 Mod（不装 setsentinel、不装 Patchouli）。

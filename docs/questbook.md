@@ -24,7 +24,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 
 ### 时代里程碑章
 
-每章任务为一个 `gamestage` 任务（`team_stage: true`），团队拥有对应时代阶段即自动完成——与 ProgressiveStages 图谱完全同步，玩家不需要也无法手动点掉。按 T1→T7 线序排列，奖励 `service_medal`（team 一次）。这是"任务书记录进度"而非"任务书授予进度"的直接体现。
+每章任务为一个 `gamestage` 任务（`team_stage: true`），团队拥有对应时代阶段即自动完成——与 ProgressiveStages 图谱完全同步，玩家不需要也无法手动点掉。按 T1→T7 线序排列，奖励 `milestone_reward_pack`（team 一次，`reward_pool` 盖章对应时代奖池）。这是"任务书记录进度"而非"任务书授予进度"的直接体现。
 
 ### 启程章
 
@@ -127,9 +127,9 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 - **scope=player → `team_reward: false`**（每名队员可领，后进服的队友也有补给）；**scope=team → `team_reward: true`**（全队一次，用于里程碑纪念）。
 - 奖励物品的解锁阶段必须 ≤ 任务 `suggested_stage`（校验器强制）。
 - 不发未解锁机器/电路/唯一蓝图，不用 command 奖励。
-- 里程碑任务（晋级证据、首航、首领、小行星带采矿、量子桥等）发 `service_medal`（服役纪念章，团队一次）——专用纪念物品，不占用实用产出。
+- 里程碑任务（晋级证据、首航、首领、小行星带采矿、量子桥等）发 `milestone_reward_pack`（里程碑奖励包，团队一次）——右键打开的随机奖励容器：奖池按任务 `suggested_stage` 以 `rewards[].pool`（`tier_1`–`tier_7`）盖章进 `minecraft:custom_data.reward_pool`，奖表由 `design/reward-pools.json` 生成（`pack/kubejs/data/modpack/loot_table/milestone_reward/<pool>.json`），右键时由 `starforge_rewards.js` 消耗并 `loot give` 抽取；未盖章的包按开启者当前最高时代阶段兜底。奖池内容是产出物资（资源/弹药/稀有材料/少量特殊物品），不发放阶段凭证物品。
 
-各任务奖励明细见 `design/content.json` 的 `rewards` 字段；方向：军事给弹药原料、航天给补给耗材、建筑给建材、农业给种子食材、里程碑给纪念章。
+各任务奖励明细见 `design/content.json` 的 `rewards` 字段；方向：军事给弹药原料、航天给补给耗材、建筑给建材、农业给种子食材、里程碑给分时代奖池的奖励包。
 
 ## 5. 依赖与排版
 
@@ -201,7 +201,7 @@ tools/export-quests.mjs:
 - **确定性 63-bit hex ID**（`tools/lib/hexid.mjs`，导出器与校验器共用）：`sha256("ftbquests/<type>:<path>")` 取高 63 bit 转 16 位大写 hex。路径带类型与层级命名空间，如 `chapter:industry`、`quest:industry/ic2_generator`、`task:space/first_launch/0`、`reward:industry/ic2_generator/0`、`manual:unified_oil`、`file:starforge`——同名对象在不同章节/类型下不冲突，`change_page` 链接可预先算得。
 - 章文件字段（2101 实测格式）：`filename/group/icon{id}/id/order_index/progression_mode:"flexible"/default_quest_shape/default_hide_dependency_lines/images/quest_links/quests[]`；任务 `{id,x,y,shape,size,icon{id},min_width,tasks[],rewards[]}`。
 - 任务 SNBT（按 2101 源码字段）：item `{type:"item", item:{id,count:1}, count:N, consume_items:false}`；checkmark `{type:"checkmark"}`；dimension `{type:"dimension", dimension:"ns:dim"}`；advancement `{type:"advancement", advancement:"ns:path", criterion:""}`；kill `{type:"kill", entity:"ns:e" 或 entityTypeTag:"ns:tag", value:1}`；biome/structure 同名字段；**gamestage `{type:"gamestage", stage:"modpack:<id>", team_stage:true}`**（ProgressiveStages 提供 stage provider，团队持有时自动完成）。
-- 奖励 SNBT：`{type:"item", item:{id,count:N}, team_reward:<bool>}`（数量在物品栈内，与 ItemTask 的顶层 `count` 不同）。
+- 奖励 SNBT：`{type:"item", item:{id,count:N,components?}, team_reward:<bool>}`（数量在物品栈内，与 ItemTask 的顶层 `count` 不同）；`rewards[].pool` 会写入 `components."minecraft:custom_data".reward_pool`（里程碑奖励包的奖池盖章）。
 - item 任务写 `consume_items: false`（显式覆盖，章节默认也是 false 但不依赖默认）。
 - `pack/config/ftbquests/` 经 `sync-pack.mjs` 同时下发到客户端与服务端（任务书数据在服务端持有、客户端同步显示，lang 文件两端都需要）；该目录加入 `OWNED_DIRS` 清 stale。
 - `release.mjs` 在 `build-pack` 后增加 `export-quests` 步骤。

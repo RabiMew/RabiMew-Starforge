@@ -326,6 +326,11 @@ function validate() {
       assert(Number.isInteger(r.count) && r.count >= 1, `${quest.id}: bad reward count`);
       assert(['player', 'team'].includes(r.scope), `${quest.id}: reward scope must be player|team`);
       availableBy(r.item, quest.suggested_stage, `${quest.id} reward`);
+      if (r.pool !== undefined) {
+        assert.equal(itemRef(r.item), `${content.namespace}:milestone_reward_pack`,
+          `${quest.id}: reward pool stamp is only meaningful on milestone_reward_pack`);
+        assert(design.rewardPools[r.pool], `${quest.id}: unknown reward pool ${r.pool}`);
+      }
     });
   }
 

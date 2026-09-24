@@ -12,5 +12,5 @@ ItemEvents.modifyTooltips((e) => {
   e.add('modpack:armory_workbench', [Text.translate('item.modpack.armory_workbench.tooltip')])
   e.add('modpack:logistics_console', [Text.translate('item.modpack.logistics_console.tooltip')])
   e.add('modpack:life_support_console', [Text.translate('item.modpack.life_support_console.tooltip')])
-  e.add('modpack:service_medal', [Text.translate('item.modpack.service_medal.tooltip')])
+  e.add('modpack:milestone_reward_pack', [Text.translate('item.modpack.milestone_reward_pack.tooltip')])
 });

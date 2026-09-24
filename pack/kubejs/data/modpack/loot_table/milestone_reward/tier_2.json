@@ -1,0 +1,129 @@
+{
+ "type": "minecraft:generic",
+ "pools": [
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 2,
+    "max": 3
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:circuit",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "immersiveengineering:wirecoil_copper",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 4,
+        "max": 8
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "immersiveengineering:plate_iron",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:battery",
+     "weight": 15,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:gunpowder",
+     "weight": 15,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 8,
+        "max": 16
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "immersiveengineering:bullet_casull",
+     "weight": 10,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 4,
+        "max": 8
+       },
+       "add": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:drill",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "artifacts:night_vision_goggles",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:empty",
+     "weight": 8
+    }
+   ]
+  }
+ ]
+}

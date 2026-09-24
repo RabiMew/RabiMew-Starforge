@@ -1,0 +1,132 @@
+{
+ "schema_version": 1,
+ "comment": "里程碑奖励包奖池。milestone_reward_pack 右键打开时按其 custom_data.reward_pool 抽取对应战利品表；任务奖励由 export-quests 按任务 suggested_stage 盖章 tier_N。entries 为主池（每次必抽 rolls 次），rare_entries 为稀有池（独立 1 次，empty 权重控制稀有度）。item 为语义键或字面 id，count 为 [min,max]。",
+ "pools": {
+  "tier_1": {
+   "stage": "mechanical_age",
+   "rolls": [2, 3],
+   "entries": [
+    { "item": "iron_ingot", "weight": 30, "count": [4, 10] },
+    { "item": "copper_ingot", "weight": 25, "count": [6, 12] },
+    { "item": "redstone", "weight": 20, "count": [8, 16] },
+    { "item": "minecraft:coal", "weight": 15, "count": [8, 16] },
+    { "item": "ie_iron_component", "weight": 10, "count": [1, 3] }
+   ],
+   "rare_rolls": 1,
+   "rare_entries": [
+    { "item": "ie_revolver", "weight": 1 },
+    { "item": "art_umbrella", "weight": 1 },
+    { "empty": true, "weight": 8 }
+   ]
+  },
+  "tier_2": {
+   "stage": "electric_age",
+   "rolls": [2, 3],
+   "entries": [
+    { "item": "ic2_circuit", "weight": 20, "count": [1, 2] },
+    { "item": "ie_wirecoil_copper", "weight": 20, "count": [4, 8] },
+    { "item": "ie_plate_iron", "weight": 20, "count": [2, 4] },
+    { "item": "ic2_battery", "weight": 15, "count": [1, 2] },
+    { "item": "minecraft:gunpowder", "weight": 15, "count": [8, 16] },
+    { "item": "ie_bullet_casull", "weight": 10, "count": [4, 8] }
+   ],
+   "rare_rolls": 1,
+   "rare_entries": [
+    { "item": "ic2_drill", "weight": 1 },
+    { "item": "art_nvg", "weight": 1 },
+    { "empty": true, "weight": 8 }
+   ]
+  },
+  "tier_3": {
+   "stage": "information_age",
+   "rolls": [2, 3],
+   "entries": [
+    { "item": "ae2_certus_crystal", "weight": 25, "count": [4, 8] },
+    { "item": "ae2_fluix_crystal", "weight": 20, "count": [2, 6] },
+    { "item": "ae2_quartz_glass", "weight": 15, "count": [2, 4] },
+    { "item": "ae2_logic_processor", "weight": 15, "count": [1, 2] },
+    { "item": "ae2_calculation_processor", "weight": 15, "count": [1, 2] },
+    { "item": "ae2_engineering_processor", "weight": 10, "count": 1 }
+   ],
+   "rare_rolls": 1,
+   "rare_entries": [
+    { "item": "ae2_singularity", "weight": 1 },
+    { "item": "art_nvg", "weight": 1 },
+    { "empty": true, "weight": 8 }
+   ]
+  },
+  "tier_4": {
+   "stage": "heavy_industry_age",
+   "rolls": [2, 3],
+   "entries": [
+    { "item": "ie_steel_component", "weight": 20, "count": [1, 3] },
+    { "item": "ie_plate_steel", "weight": 20, "count": [2, 4] },
+    { "item": "rc_steel_ingot", "weight": 20, "count": [4, 8] },
+    { "item": "ic2_advanced_circuit", "weight": 15, "count": [1, 2] },
+    { "item": "ie_electronic", "weight": 15, "count": [1, 2] },
+    { "item": "ie_bullet_ap", "weight": 10, "count": [4, 8] }
+   ],
+   "rare_rolls": 1,
+   "rare_entries": [
+    { "item": "ie_railgun", "weight": 1 },
+    { "item": "art_crystal_heart", "weight": 1 },
+    { "empty": true, "weight": 8 }
+   ]
+  },
+  "tier_5": {
+   "stage": "atomic_age",
+   "rolls": [2, 3],
+   "entries": [
+    { "item": "ic2_energy_crystal", "weight": 20, "count": [1, 2] },
+    { "item": "ic2_containment_plating", "weight": 15, "count": [1, 2] },
+    { "item": "ie_electronic_adv", "weight": 15, "count": [1, 2] },
+    { "item": "minecraft:gunpowder", "weight": 20, "count": [16, 32] },
+    { "item": "ie_bullet_ap", "weight": 10, "count": [8, 16] },
+    { "item": "ae2_sky_stone", "weight": 10, "count": [2, 4] },
+    { "item": "ic2_lapotron_crystal", "weight": 10, "count": 1 }
+   ],
+   "rare_rolls": 1,
+   "rare_entries": [
+    { "item": "ae2_singularity", "weight": 1 },
+    { "item": "art_chorus_totem", "weight": 1 },
+    { "empty": true, "weight": 7 }
+   ]
+  },
+  "tier_6": {
+   "stage": "space_age",
+   "rolls": [2, 3],
+   "entries": [
+    { "item": "aa_desh_ingot", "weight": 25, "count": [2, 5] },
+    { "item": "aa_ostrum_ingot", "weight": 20, "count": [1, 3] },
+    { "item": "aa_calorite_ingot", "weight": 15, "count": [1, 2] },
+    { "item": "diamond", "weight": 20, "count": [3, 6] },
+    { "item": "aa_etrionic_core", "weight": 10, "count": 1 },
+    { "item": "gz_oxygen_can", "weight": 10, "count": 1 }
+   ],
+   "rare_rolls": 1,
+   "rare_entries": [
+    { "item": "ae2_entangled_singularity", "weight": 1 },
+    { "item": "art_nvg", "weight": 1 },
+    { "empty": true, "weight": 7 }
+   ]
+  },
+  "tier_7": {
+   "stage": "quantum_age",
+   "rolls": [2, 3],
+   "entries": [
+    { "item": "ic2_iridium", "weight": 20, "count": [1, 3] },
+    { "item": "ic2_lapotron_crystal", "weight": 15, "count": [1, 2] },
+    { "item": "ae2_entangled_singularity", "weight": 10, "count": 1 },
+    { "item": "diamond", "weight": 20, "count": [4, 8] },
+    { "item": "minecraft:netherite_scrap", "weight": 15, "count": [1, 2] },
+    { "item": "ic2_energy_crystal", "weight": 20, "count": [2, 4] }
+   ],
+   "rare_rolls": 1,
+   "rare_entries": [
+    { "item": "art_crystal_heart", "weight": 1 },
+    { "item": "art_chorus_totem", "weight": 1 },
+    { "empty": true, "weight": 6 }
+   ]
+  }
+ }
+}

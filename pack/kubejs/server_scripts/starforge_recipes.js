@@ -151,9 +151,19 @@ ServerEvents.recipes((e) => {
   // Recipe ids stay in the eos:* namespace so the pack's own recipe_filters
   // route them to the eos:eos_printer workbench (its whitelist is ^eos:.*$;
   // the default smith table blacklist excludes eos: recipes).
-  // eos:attachments/* stays upstream (loads via pack upgrader), as do the two
-  // eos_old: chasing_light display-variant conversions. eos:eoslab_12g has an
-  // ammo index but no upstream recipe — left uncraftable.
+  //
+  // Unobtainable-content audit (kept disabled; viewers/tabs cleaned by
+  // starforge_viewer_cleanup.js + starforge_creative_cleanup.js):
+  //   eos:eos_chaos — display/model/animation/audio all reference the
+  //     uninstalled setsentinel namespace; unusable. Recipe stays removed.
+  //   eos:eoslab_12g — ammo index exists upstream but no recipe anywhere.
+  //   eos:alloy — ammo index entry no EOS gun fires; only consumed by the
+  //     dead upstream attachment recipes below.
+  //   eos:attachments/* (60) — all upstream recipes use the removed pre-1.21
+  //     forge:partial_nbt/forge:tag ingredient syntax; none load, so every
+  //     EOS attachment is unobtainable.
+  //   eos_old:old_conversion — both chasing_light skin conversions are the
+  //     same dead forge: format; the bench is useless, recipe stays removed.
   for (const rid of [
     'gun/chasing_light', 'gun/clover_cross', 'gun/elp_13_t3', 'gun/elp_13_t3x2',
     'gun/elp_34_t3', 'gun/elp_34c_t3', 'gun/elp_45_t3', 'gun/elp_47_t3',
@@ -228,7 +238,6 @@ ServerEvents.recipes((e) => {
     ['eos:elp_47_t3', EOS_T5('ae2:singularity')],
     ['eos:elp_52_t3', EOS_T5('modpack:anomaly_analysis')],
     ['eos:elp_72_t3', EOS_T5('modpack:anomaly_analysis')],
-    ['eos:eos_chaos', EOS_T5('ae2:singularity')],
     ['eos:eos_helenas_nail', EOS_T5('modpack:anomaly_analysis')]
   ];
   for (let gi = 0; gi < EOS_GUNS.length; gi++) {
@@ -250,11 +259,13 @@ ServerEvents.recipes((e) => {
     [['#c:ingots/copper', 8], ['#c:dusts/redstone', 24], ['ic2cre:energy_crystal', 1]], 2);
   eosAmmo('eos:arrow',
     [['#c:ingots/iron', 4], ['minecraft:stick', 2], ['minecraft:feather', 2]], 60);
-  eosAmmo('eos:alloy',
-    [['#c:ingots/netherite', 2], ['minecraft:nether_star', 1]], 10);
+  // eos:alloy is NOT re-added — no EOS gun fires it and its only consumers
+  // were the dead upstream attachment recipes.
 
-  // EOS workbenches — upstream recipes use forge: tags + the pre-1.21 'nbt'
+  // EOS printer — upstream recipe uses forge: tags + the pre-1.21 'nbt'
   // result syntax; re-added here in current form (c: tags + components).
+  // The eos_old:old_conversion skin bench is intentionally not re-added:
+  // its two conversion recipes are dead forge: format, so it does nothing.
   withId(e.custom({
     type: 'minecraft:crafting_shaped',
     pattern: ['ACA', 'DBD'],
@@ -266,15 +277,6 @@ ServerEvents.recipes((e) => {
     },
     result: { id: 'tacz:workbench_b', components: { 'minecraft:custom_data': { BlockId: 'eos:eos_printer' } } }
   }), 'eos:blocks/eos_printer');
-  withId(e.custom({
-    type: 'minecraft:crafting_shaped',
-    pattern: ['BD', 'DB'],
-    key: {
-      B: { tag: 'c:ingots/iron' },
-      D: { tag: 'c:ingots/copper' }
-    },
-    result: { id: 'tacz:workbench_a', components: { 'minecraft:custom_data': { BlockId: 'eos_old:old_conversion' } } }
-  }), 'eos:blocks/old_conversion');
 
   // ---------- SF-17 T5: space_control_core (T6 evidence) ----------
   // "aerospace alloy" maps to ad_astra:steel_plate (Earth-producible via compressor).

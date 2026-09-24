@@ -1,0 +1,129 @@
+{
+ "type": "minecraft:generic",
+ "pools": [
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 2,
+    "max": 3
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:iridium",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 3
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:lapotron_crystal",
+     "weight": 15,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ae2:quantum_entangled_singularity",
+     "weight": 10,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 1
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:diamond",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 4,
+        "max": 8
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:netherite_scrap",
+     "weight": 15,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:energy_crystal",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+       },
+       "add": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "artifacts:crystal_heart",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "artifacts:chorus_totem",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:empty",
+     "weight": 6
+    }
+   ]
+  }
+ ]
+}

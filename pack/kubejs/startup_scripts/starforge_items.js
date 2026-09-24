@@ -12,5 +12,5 @@ StartupEvents.registry('item', (e) => {
   e.create('modpack:armory_workbench').texture('ae2:item/advanced_card')
   e.create('modpack:logistics_console').texture('ae2:item/basic_card')
   e.create('modpack:life_support_console').texture('ae2:item/card_energy')
-  e.create('modpack:service_medal').texture('ic2cre:item/coin')
+  e.create('modpack:milestone_reward_pack').texture('minecraft:item/bundle')
 });

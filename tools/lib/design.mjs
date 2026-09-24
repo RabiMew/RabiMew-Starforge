@@ -4,6 +4,7 @@
 //   design/progression.json  T0-T7 era stages + capability (ability) nodes
 //   design/advancements.json custom advancement definitions
 //   design/guidance.json     runtime guidance events (detection -> counter/adv/hint)
+//   design/reward-pools.json milestone_reward_pack loot pools per era tier
 //   design/semantic-map.json semantic id registry
 //   design/stage-locks.json  per-era lock rules
 // Loaders return one merged view so every generator reads the same truth.
@@ -17,6 +18,7 @@ export function loadDesign(root) {
   const progression = j(root, 'design/progression.json');
   const advancements = j(root, 'design/advancements.json');
   const guidance = j(root, 'design/guidance.json');
+  const rewardPools = j(root, 'design/reward-pools.json');
   const sm = j(root, 'design/semantic-map.json');
   const locks = j(root, 'design/stage-locks.json');
   return {
@@ -27,6 +29,7 @@ export function loadDesign(root) {
     advancements: advancements.advancements ?? [],
     advancementBackground: advancements.default_background ?? null,
     guidance: guidance ?? { events: [] },
+    rewardPools: rewardPools.pools ?? {},
     sm,
     locks,
   };

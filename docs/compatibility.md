@@ -48,7 +48,7 @@
 | Guard Villagers TACZ Support | 1.0.1 | [Modrinth](https://modrinth.com/mod/guard-villagers-tacz-support) | MIT；元数据声明客户端不支持（服务端/单人）；索敌、射击、耗弹、Ammo Box、找弹药/食物、射界、友军识别、Zombie/Pillager 持枪能力逐项实测 |
 | TaCZ Addon | 1.1.8-fix2（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/taczaddon) | 许可不一致待核：Modrinth API 记 GPL-3.0-only，jar 内 `neoforge.mods.toml` 记 ARR；枪匠台 QoL（附件/弹药按枪过滤、材料清单、JEI 跳转、批量合成、邻近容器与 Sophisticated Backpacks 取料）；**只降操作负担，不改配方成本**；服务端已加载，客户端 GUI 交互列入实机验收 |
 | TaCZ Pack Upgrader | 2.1.3（NeoForge 1.21.1，Modrinth） | [Modrinth](https://modrinth.com/mod/tacz-pack-upgrader) | 许可不一致待核：API 记 LGPL-3.0-or-later，jar 记 ARR；启动时把 `tacz/` 目录旧格式枪包升级为 1.21.1 移植版可读格式（`forge:`→`c:` 标签转换已确认）；只能升级枪包，不能升级 Java addon，也不授予枪包再分发权 |
-| EOS – Dawn Goddess Lab（TaCZ 枪包） | 1.1.1-hotfix1（CF file 7182834，面向 1.21.1/TaCZ≥1.1.5） | [CurseForge](https://www.curseforge.com/minecraft/customization/tacz-eoslab-gunpack) | **All Rights Reserved**——zip 只经 CurseForge CDN manifest 链接分发，绝不入库或嵌入包体；`eos` 命名空间，25 把枪 + 7 种弹药 + 57 种配件，另含 `eos_old` 换肤转换体系；EOS 配方经包内 `recipe_filters` 路由到自带工作台 `eos:eos_printer`（`tacz:workbench_b`+`BlockId`，合成配方已由 KubeJS 以 `c:` 标签+`components` 重写为 1.21.1 形式）；枪/弹配方经 KubeJS 重挂工业材料后以 `.id()` 固定回 `eos:*` 命名空间；已知缺口：`eos:eoslab_12g` 有弹药索引但无上游配方（视同禁用）；模型/动画/音效/脚本特殊机制的客户端实机表现待验收 |
+| EOS – Dawn Goddess Lab（TaCZ 枪包） | 1.1.1-hotfix1（CF file 7182834，面向 1.21.1/TaCZ≥1.1.5） | [CurseForge](https://www.curseforge.com/minecraft/customization/tacz-eoslab-gunpack) | **All Rights Reserved**——zip 只经 CurseForge CDN manifest 链接分发，绝不入库或嵌入包体；`eos` 命名空间，25 把枪 + 7 种弹药 + 57 种配件，另含 `eos_old` 换肤转换体系；EOS 配方经包内 `recipe_filters` 路由到自带工作台 `eos:eos_printer`（`tacz:workbench_b`+`BlockId`，合成配方已由 KubeJS 以 `c:` 标签+`components` 重写为 1.21.1 形式）；枪/弹配方经 KubeJS 重挂工业材料后以 `.id()` 固定回 `eos:*` 命名空间；**不可用内容已统一禁用并隐藏**（2026-09-24 审计）：`eos:eos_chaos` 显示/模型/动画/音效全引用未安装的 `setsentinel:*` 依赖；`eos:eoslab_12g` 有弹药索引但无上游配方；`eos:alloy` 无枪使用；全部 60 个 `eos:*` 配件与 `eos_old` 换肤台的上游配方均为 NeoForge 1.21.1 不支持的 `forge:` 旧格式而无法加载——上述条目经 `starforge_viewer_cleanup.js`/`starforge_creative_cleanup.js` 从 JEI/EMI 与创造标签隐藏，不引入缺失依赖；模型/动画/音效/脚本特殊机制的客户端实机表现待验收 |
 
 ## 体验辅助候选
 
@@ -79,9 +79,17 @@
 
 ## 键位整理（Controlling 已装，首装默认经 Default Options 下发）
 
-实测冲突修复（上游默认 → Starforge 默认）：Xaero 新建路径点 `B→N`（B 留给 Sophisticated Backpacks 打开背包）、路径点列表 `U→J`（U 留给 EMI/JEI 的 Uses）、放大地图 `Z→解绑`（Z 为 TaCZ 配件拆装）、世界地图设置 `]` 解绑、小地图设置 `Y`、世界地图 `M` 不变。`R` 全程为 TaCZ 换弹：EMI/JEI 的 Recipe/Uses 只在 GUI 上下文触发，Building Gadgets 的 `R`/`G`/`U`/`H` 注册在"手持 gadget"的自定义冲突上下文，持枪时不生效。IC2CRE 的 `mode_switch`（原 `M`，UNIVERSAL 上下文）移至 `;`，`side_inventory`/`hud_mode`/`boost`（原 Left Ctrl，与疾跑冲突）解绑；Railcraft 机车 `mode/whistle/reverse` 移到方向键、`change_aura` 解绑；Easy Villagers `pick_up` 移至 `I`、`cycle_trades` 解绑；Supplementaries quiver 解绑；GuideMe 指南书 `G→F6`（G 留给 TaCZ 射击模式切换）；Ad Astra `open_radio→\`、`toggle_suit_flight→`` `；IE `magnetEquip` `S→=`（S 是后退键）；Immersive Petroleum `projector.flip` `M→-`。核心操作（WASD/E/Q/F/Shift/Ctrl/Space/数字栏）与 TaCZ 射击/瞄准/换弹/配件不改。
+完整键位表、逐条冲突审计与新 Mod 检查规则见 [键位表与冲突审计](keybinds.md)。此处只记结论与验证记录。
+
+布局约定：游戏内战斗簇 `Z X C V G H B` + `R`/`O`（TaCZ 改装/快切/爬行/缩放·近战/开火模式/检视/背包/换弹/持械互动）；引导 `J` 任务书、`K` 进度树、`M` 世界地图；GUI 内整理=`R`、配方=`R`、用途=`U`；低频/调试功能默认解绑或收 `Alt+` 组合。
+
+实测冲突修复（上游默认 → Starforge 默认）：Xaero 新建路径点 `B→N`（B 留给 Sophisticated Backpacks 打开背包）、路径点列表 `J→U`（还原上游；J 归 FTB 任务书，U 与 JEI/EMI Uses 的 GUI 上下文互斥）、放大地图 `Z→解绑`、世界地图设置 `]` 解绑、小地图设置 `Y`、世界地图 `M` 不变。TaCZ-addon 快速切枪 `Tab→X`（原版 Tab 是玩家列表，真实冲突）；SB 背包交互升级 `C→Alt+C`（C 归 TaCZ 爬行）；原版创造工具栏存取 `C/X→解绑`；Iris `reload R→解绑`、`shaderPackSelection O→解绑`（均撞 TaCZ，视频设置有入口）、`toggleShaders K→F8`；KubeJS Kubedex `K→解绑`；BG2 `undo U→O`（U 归路径点列表；O 与 TaCZ 持械互动按手持物互斥）；IE `railgunZoom 中键→Alt+V`（中键是原版选取方块）；IC2CRE `mode_switch M→;`、`side_inventory`/`hud_mode`/`boost` 解绑；Railcraft 机车键移方向键、`change_aura` 解绑；Easy Villagers `pick_up→I`、`cycle_trades` 解绑；Supplementaries quiver 解绑；GuideMe `G→F6`；Ad Astra `open_radio→\`、`toggle_suit_flight→`` `；IE `magnetEquip S→=`；IP `projector.flip M→-`；Curios `G→解绑`；Placebo 特效开关解绑。核心操作（WASD/E/Q/F/Shift/Ctrl/Space/数字栏）与 TaCZ 射击/瞄准/换弹/配件不改。
+
+上下文互斥保留的同键：TaCZ 缩放/近战共 `V`（上游按瞄准态分流，字节码确认 `isAim` 分支）；BG2 四键与 TaCZ `G`/`H`/`R`/`O` 共键（持枪与持 gadget 单手互斥）；GUI 内键（IPN 整理 R、EMI/JEI、CraftingTweaks、FTB Quests 编辑器）与游戏内同名字母互不触发。
 
 2026-09-22 干净首装验证：删除 `options.txt` 后启动，Default Options 载入并应用全部 22 条默认（0 错误，日志 `Applied 22 defaults to key mappings (20 keys were reconfigured)`），生成键位与上表一致。对生成结果做全量重复键扫描，剩余同键组合全部为上下文隔离（JEI 键仅在 JEI GUI、FTB Quests 编辑键仅在任务界面、CraftingTweaks 仅在合成 GUI、Sophisticated 自带 `BackpackKeyConflictContext` 仅在容器界面、Railcraft 机车键仅在乘车、Building Gadgets 仅在手持 gadget）或修饰键不同（`Alt+T`/`Alt+X`/`Alt+Z`/`Ctrl+O`），无实际影响冲突。
+
+2026-09-24 复审：扩充至 37 条默认（新增 FTB Quests `J`、ProgressiveStages `K`、TaCZ-addon 快切 `X`、BG2 `undo→O`、Iris `toggleShaders→F8`、IE `railgunZoom→Alt+V`、SB `inventory_interaction→Alt+C` 及原版工具栏/调试类解绑项）。IPN 整理键由 `中键→R`（走 `inventoryprofiles.json`，非原版 KeyMapping）；SophisticatedCore 整理仍为中键（仅其自有容器 GUI）。本轮修复后游戏内上下文无真实冲突；剩余共键均为上述上下文互斥或修饰键不同。待实机回归：删 `options.txt` 重启验证 `Applied N defaults` 计数与最终键位一致。
 
 TaCZ Pack Upgrader 2.1.3（LGPL-3.0-or-later）仅在确实使用旧版 1.20.1 TaCZ 枪包时加入，不默认安装。Guard Villagers TACZ Support 的必需前置为 Guard Villagers 与上述 TaCZ 移植版；Easy Villagers 的 The One Probe / JEI / Jade 为可选前置。
 
@@ -185,7 +193,7 @@ FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Com
 
 - 来源：Modrinth `BmMjyidG`。依赖：ae2 + cooking-for-blockheads + balm（均已装）。
 - 能力声明：Kitchen Station 方块让 Cooking for Blockheads 厨房读取 ME 网络库存。
-- 服务端验证：加载零报错（`appliedcooking:guide_book` 配方因 Patchouli 未装优雅降级）。
+- 服务端验证：加载零报错（`appliedcooking:guide_book` 配方产物是 Patchouli 手册物品，本包未装 Patchouli——已由 `pack/kubejs/data/appliedcooking/recipe/guide_book.json` 以 `neoforge:mod_loaded` 条件覆盖，未装时静默跳过；`kitchen_station` 不受影响）。
 - **待实机验证**：Kitchen Station 实际读取 ME、流体食材行为、多人并发取料。
 
 ### Applied Delight 1.1.0（MIT）

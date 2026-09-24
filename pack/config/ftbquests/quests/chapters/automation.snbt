@@ -189,7 +189,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_7"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -859,7 +864,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_4"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -904,7 +914,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_6"
+							}
+						}
 					}
 					team_reward: true
 				}

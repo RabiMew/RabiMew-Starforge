@@ -1,0 +1,145 @@
+{
+ "type": "minecraft:generic",
+ "pools": [
+  {
+   "rolls": {
+    "type": "minecraft:uniform",
+    "min": 2,
+    "max": 3
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:energy_crystal",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:containment_reactor_plating",
+     "weight": 15,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "immersiveengineering:component_electronic_adv",
+     "weight": 15,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:gunpowder",
+     "weight": 20,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 16,
+        "max": 32
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "immersiveengineering:bullet_armor_piercing",
+     "weight": 10,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 8,
+        "max": 16
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ae2:smooth_sky_stone_block",
+     "weight": 10,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 4
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:lapotron_crystal",
+     "weight": 10,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 1
+       },
+       "add": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "ae2:singularity",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:item",
+     "name": "artifacts:chorus_totem",
+     "weight": 1
+    },
+    {
+     "type": "minecraft:empty",
+     "weight": 7
+    }
+   ]
+  }
+ ]
+}

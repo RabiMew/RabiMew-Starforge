@@ -4,7 +4,7 @@
 	filename: "milestones"
 	group: ""
 	icon: {
-		id: "modpack:service_medal"
+		id: "modpack:milestone_reward_pack"
 	}
 	id: "3417920818FE4D66"
 	images: [ ]
@@ -25,7 +25,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_1"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -55,7 +60,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_2"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -85,7 +95,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_3"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -115,7 +130,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_4"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -145,7 +165,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_5"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -175,7 +200,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_6"
+							}
+						}
 					}
 					team_reward: true
 				}
@@ -205,7 +235,12 @@
 					type: "item"
 					item: {
 						count: 1
-						id: "modpack:service_medal"
+						id: "modpack:milestone_reward_pack"
+						components: {
+							"minecraft:custom_data": {
+								reward_pool: "tier_7"
+							}
+						}
 					}
 					team_reward: true
 				}

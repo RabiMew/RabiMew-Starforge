@@ -127,6 +127,12 @@ function rewardObj(q, r, idx, pathBase) {
   // separate top-level count field).
   const item = { count: r.count, id: itemId(r.item, q.id) };
   if (r.components) item.components = r.components;
+  // reward pool stamp: the milestone_reward_pack open handler reads
+  // custom_data.reward_pool to pick its loot table (see starforge_rewards.js).
+  if (r.pool) {
+    const components = item.components ?? (item.components = {});
+    components['minecraft:custom_data'] = { ...(components['minecraft:custom_data'] ?? {}), reward_pool: r.pool };
+  }
   return {
     id: hexId('reward', `${pathBase}/${idx}`),
     type: 'item',

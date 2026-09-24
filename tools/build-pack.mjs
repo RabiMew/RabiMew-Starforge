@@ -1,7 +1,7 @@
 // Generates runtime pack files from the unified design sources.
 // Sources: design/content.json, design/progression.json, design/advancements.json,
-//          design/guidance.json, design/semantic-map.json, design/stage-locks.json,
-//          localization/en_us.json, localization/zh_cn.json
+//          design/guidance.json, design/reward-pools.json, design/semantic-map.json,
+//          design/stage-locks.json, localization/en_us.json, localization/zh_cn.json
 // Outputs: pack/kubejs/**, pack/config/progressivestages/**
 // Usage: node tools/build-pack.mjs
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
@@ -45,7 +45,7 @@ const itemTextures = {
   armory_workbench: 'ae2:item/advanced_card',
   logistics_console: 'ae2:item/basic_card',
   life_support_console: 'ae2:item/card_energy',
-  service_medal: 'ic2cre:item/coin'
+  milestone_reward_pack: 'minecraft:item/bundle'
 };
 const itemLines = content.items.map((i) =>
   `  e.create('${NS}:${i.id}').texture('${itemTextures[i.id] ?? `${NS}:item/${i.id}`}')`);
@@ -129,7 +129,7 @@ const itemColors = {
   reactor_control: '40a040', space_control_core: '4060d0', colony_maintenance: 'd0a030',
   quantum_control: 'a040c0', anomaly_analysis: '30c0a0',
   industrial_console: '606060', armory_workbench: '804030', logistics_console: '306090', life_support_console: '309060',
-  service_medal: 'c0a030'
+  milestone_reward_pack: 'c0a030'
 };
 for (const i of content.items) {
   if (itemTextures[i.id]) continue;
@@ -148,6 +148,47 @@ ItemEvents.modifyTooltips((e) => {
 ${tipEntries}
 });
 `);
+
+// ---------- 4d. Milestone reward loot tables (design/reward-pools.json) ----------
+// One vanilla loot table per pool: modpack:milestone_reward/<pool>. Quest
+// rewards stamp the pool name into the pack's custom_data.reward_pool and
+// starforge_rewards.js rolls the table on right-click. Entry items resolve
+// through the semantic map and must exist in the registry export or in
+// content.items — a bad ref fails the build, not the player.
+{
+  const regItems = new Set(j('registry-export/items.json'));
+  const ownItems = new Set(content.items.map((i) => `${NS}:${i.id}`));
+  const resolve = (ref, ctx) => {
+    const id = sm.items[ref] ?? ref;
+    if (!/^[a-z0-9_.-]+:[a-z0-9_./-]+$/.test(id) || (!regItems.has(id) && !ownItems.has(id))) {
+      throw new Error(`reward pool ${ctx}: unresolvable item ${ref}`);
+    }
+    return id;
+  };
+  const entry = (e, ctx) => {
+    if (e.empty) return { type: 'minecraft:empty', weight: e.weight ?? 1 };
+    const en = { type: 'minecraft:item', name: resolve(e.item, ctx), weight: e.weight ?? 1 };
+    if (e.count !== undefined) {
+      const [lo, hi] = Array.isArray(e.count) ? e.count : [e.count, e.count];
+      en.functions = [{ function: 'minecraft:set_count',
+        count: { type: 'minecraft:uniform', min: lo, max: hi }, add: false }];
+    }
+    return en;
+  };
+  for (const [pool, def] of Object.entries(design.rewardPools)) {
+    if (!/^[a-z0-9_]+$/.test(pool)) throw new Error(`reward pool ${pool}: bad id`);
+    const pools = [];
+    const [lo, hi] = def.rolls ?? [1, 1];
+    pools.push({ rolls: { type: 'minecraft:uniform', min: lo, max: hi },
+      entries: (def.entries ?? []).map((e, i) => entry(e, `${pool}[${i}]`)) });
+    if (def.rare_entries?.length) {
+      pools.push({ rolls: def.rare_rolls ?? 1,
+        entries: def.rare_entries.map((e, i) => entry(e, `${pool}.rare[${i}]`)) });
+    }
+    out(`kubejs/data/${NS}/loot_table/milestone_reward/${pool}.json`,
+      JSON.stringify({ type: 'minecraft:generic', pools }, null, 1) + '\n');
+  }
+}
 
 // ---------- 4c. Custom advancements (design/advancements.json) ----------
 // They RECORD milestones only — never grant stages. stage_granted/custom_event
@@ -771,4 +812,4 @@ ProgressiveStages.onGranted((p, stage) => {
 // starforge_triggers.js was absorbed into the generated guidance script.
 rmSync(path.join(root, 'pack', 'kubejs', 'server_scripts', 'starforge_triggers.js'), { force: true });
 
-console.log(`build-pack: generated ${content.items.length} items, ${allNodes(design).length} stages (${design.stages.length} era + ${design.abilities.length} ability), ${design.advancements.length} advancements, guidance script, 2 lang files`);
+console.log(`build-pack: generated ${content.items.length} items, ${allNodes(design).length} stages (${design.stages.length} era + ${design.abilities.length} ability), ${design.advancements.length} advancements, ${Object.keys(design.rewardPools).length} reward pools, guidance script, 2 lang files`);
