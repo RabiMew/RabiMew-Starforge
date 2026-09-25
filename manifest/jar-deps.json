@@ -1431,6 +1431,29 @@
     ]
   },
   {
+    "file": "EuphoriaPatcher-1.10.5-r5.9.3-neoforge.jar",
+    "modIds": [
+      "euphoria_patcher"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      }
+    ]
+  },
+  {
     "file": "FarmersDelight-1.21.1-1.3.4.jar",
     "modIds": [
       "farmersdelight"

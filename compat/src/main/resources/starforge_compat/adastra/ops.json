@@ -1,0 +1,257 @@
+{
+ "version": 1,
+ "ops": [
+  {
+   "id": "create-adastra-presets",
+   "type": "create_file",
+   "target": "shaders/lib/shaderSettings/adAstraPresets.glsl",
+   "payload": "payloads/create-adastra-presets.glsl"
+  },
+  {
+   "id": "include-adastra-presets-in-common",
+   "type": "insert_after",
+   "target": "shaders/lib/common.glsl",
+   "anchor": "#ifndef COMMON_FILE_INCLUDED\n#define COMMON_FILE_INCLUDED",
+   "payload": "payloads/include-adastra-presets-in-common.glsl"
+  },
+  {
+   "id": "generate-adastra-world-folders",
+   "type": "generate_world_folders",
+   "target": "shaders/world0",
+   "source_folder": "shaders/world0",
+   "folders": {
+    "world_moon": [
+     "DIM_ADASTRA_MOON"
+    ],
+    "world_mars": [
+     "DIM_ADASTRA_MARS"
+    ],
+    "world_venus": [
+     "DIM_ADASTRA_VENUS"
+    ],
+    "world_mercury": [
+     "DIM_ADASTRA_MERCURY"
+    ],
+    "world_glacio": [
+     "DIM_ADASTRA_GLACIO"
+    ],
+    "world_orbit": [
+     "DIM_ADASTRA_ORBIT"
+    ]
+   }
+  },
+  {
+   "id": "remap-adastra-dimensions",
+   "type": "remap_dimension_properties",
+   "target": "shaders/dimension.properties",
+   "remove_ids": [
+    "ad_astra:venus",
+    "ad_astra:mercury",
+    "ad_astra:venus_orbit",
+    "ad_astra:mercury_orbit",
+    "ad_astra:mars_orbit",
+    "ad_astra:moon_orbit",
+    "ad_astra:glacio_orbit",
+    "ad_astra:earth_orbit",
+    "ad_astra:moon"
+   ],
+   "add_lines": [
+    "dimension.world_moon=ad_astra:moon",
+    "dimension.world_mars=ad_astra:mars",
+    "dimension.world_venus=ad_astra:venus",
+    "dimension.world_mercury=ad_astra:mercury",
+    "dimension.world_glacio=ad_astra:glacio",
+    "dimension.world_orbit=ad_astra:earth_orbit ad_astra:moon_orbit ad_astra:mars_orbit ad_astra:venus_orbit ad_astra:mercury_orbit ad_astra:glacio_orbit pv_asteroid_belt:asteroid_belt pv_asteroid_belt:asteroid_belt_orbit"
+   ]
+  },
+  {
+   "id": "disable-adastra-shadow-with-shadow-quality",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "        program.world0/shadow.enabled=false",
+   "payload": "payloads/disable-adastra-shadow-with-shadow-quality.glsl"
+  },
+  {
+   "id": "disable-adastra-composite7-with-fxaa",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "        program.world0/composite7.enabled=false",
+   "payload": "payloads/disable-adastra-composite7-with-fxaa.glsl"
+  },
+  {
+   "id": "disable-adastra-shadowcomp-without-colored-lighting",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "        program.world0/shadowcomp.enabled=false",
+   "payload": "payloads/disable-adastra-shadowcomp-without-colored-lighting.glsl"
+  },
+  {
+   "id": "disable-adastra-composite8-without-renko-cut",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "        program.world0/composite8.enabled=false",
+   "payload": "payloads/disable-adastra-composite8-without-renko-cut.glsl"
+  },
+  {
+   "id": "disable-adastra-composite9-without-long-exposure",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "        program.world0/composite9.enabled=false",
+   "payload": "payloads/disable-adastra-composite9-without-long-exposure.glsl"
+  },
+  {
+   "id": "disable-adastra-gbuffers-voxels-without-photonics",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "        program.world0/gbuffers_voxels.enabled=false",
+   "payload": "payloads/disable-adastra-gbuffers-voxels-without-photonics.glsl"
+  },
+  {
+   "id": "disable-adastra-shadow-voxels-without-photonics",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "        program.world0/shadow_voxels.enabled=false",
+   "payload": "payloads/disable-adastra-shadow-voxels-without-photonics.glsl"
+  },
+  {
+   "id": "disable-adastra-prepare-unconditionally",
+   "type": "insert_after",
+   "target": "shaders/shaders.properties",
+   "anchor": "    #if !defined END_PORTAL_BEAM || !defined IS_IRIS || defined MC_OS_MAC\n        program.world0/prepare.enabled=false\n    #endif",
+   "payload": "payloads/disable-adastra-prepare-unconditionally.glsl"
+  },
+  {
+   "id": "gate-adastra-weather",
+   "type": "insert_after",
+   "target": "shaders/program/gbuffers_weather.glsl",
+   "anchor": "    if (color.r + color.g < 1.5) color.a *= rainTexOpacity;\n    else color.a *= snowTexOpacity;",
+   "payload": "payloads/gate-adastra-weather.glsl"
+  },
+  {
+   "id": "gate-adastra-dry-weather-side-channels",
+   "type": "insert_after",
+   "target": "shaders/lib/common.glsl",
+   "anchor": "float invRainFactorDynamic = 1.0 - rainFactorDynamic;",
+   "payload": "payloads/gate-adastra-dry-weather-side-channels.glsl"
+  },
+  {
+   "id": "gate-adastra-rain-puddles",
+   "type": "replace_once",
+   "target": "shaders/program/gbuffers_terrain.glsl",
+   "anchor": "#if RAIN_PUDDLES >= 1 && defined OVERWORLD",
+   "payload": "payloads/gate-adastra-rain-puddles.glsl"
+  },
+  {
+   "id": "gate-adastra-rain-water-ripples",
+   "type": "replace_once",
+   "target": "shaders/lib/materials/specificMaterials/translucents/water.glsl",
+   "anchor": "            float pNormalMult = 0.02 * rainFactor * inRainy * pow2(lmCoordM.y);",
+   "payload": "payloads/gate-adastra-rain-water-ripples.glsl"
+  },
+  {
+   "id": "gate-adastra-clouds",
+   "type": "insert_after",
+   "target": "shaders/lib/atmospherics/clouds/mainClouds.glsl",
+   "anchor": "    vec4 clouds = vec4(0.0);",
+   "payload": "payloads/gate-adastra-clouds.glsl"
+  },
+  {
+   "id": "gate-adastra-cloud-shadows",
+   "type": "insert_after",
+   "target": "shaders/lib/lighting/cloudShadows.glsl",
+   "anchor": "        #ifndef OVERWORLD\n            return 1.0;\n        #endif",
+   "payload": "payloads/gate-adastra-cloud-shadows.glsl"
+  },
+  {
+   "id": "gate-adastra-aurora",
+   "type": "insert_after",
+   "target": "shaders/lib/atmospherics/auroraBorealisVisibility.glsl",
+   "anchor": "    float visibility = sqrt1(clamp01(mix(1.0, VdotU, VdotUAmount) * (AURORA_DRAW_DISTANCE * 1.125 + 0.75) - 0.225)) - sunVisibility - maxBlindnessDarkness;",
+   "payload": "payloads/gate-adastra-aurora.glsl"
+  },
+  {
+   "id": "gate-adastra-rainbow",
+   "type": "insert_after",
+   "target": "shaders/lib/atmospherics/rainbow.glsl",
+   "anchor": "    vec3 rainbow = vec3(0.0);",
+   "payload": "payloads/gate-adastra-rainbow.glsl"
+  },
+  {
+   "id": "gate-adastra-nebula",
+   "type": "insert_after",
+   "target": "shaders/lib/atmospherics/nightNebula.glsl",
+   "anchor": "vec3 GetNightNebula(vec3 viewPos, float VdotU, float VdotS) {",
+   "payload": "payloads/gate-adastra-nebula.glsl"
+  },
+  {
+   "id": "preset-border-fog",
+   "type": "replace_once",
+   "target": "shaders/lib/atmospherics/fog/mainFog.glsl",
+   "anchor": "            #ifdef OVERWORLD\n                bool isCustomSky;\n                vec3 fogColorM = GetSky(VdotU, VdotS, dither, true, false, isCustomSky, false);\n                #define BORDER_FOG_DENSITY BORDER_FOG_DENSITY_OVERWORLD\n            #elif defined NETHER",
+   "payload": "payloads/preset-border-fog.glsl"
+  },
+  {
+   "id": "preset-atmospheric-fog-density",
+   "type": "replace_once",
+   "target": "shaders/lib/atmospherics/fog/mainFog.glsl",
+   "anchor": "        float atmFogMultVar = ATMOSPHERIC_FOG_DENSITY * ATM_FOG_MULT;",
+   "payload": "payloads/preset-atmospheric-fog-density.glsl"
+  },
+  {
+   "id": "preset-atmospheric-fog-color",
+   "type": "replace_once",
+   "target": "shaders/lib/atmospherics/fog/mainFog.glsl",
+   "anchor": "            #ifdef OVERWORLD\n                vec3 fogColorM = GetAtmFogColor(altitudeFactorRaw, VdotS);\n            #else\n                vec3 fogColorM = endSkyColor * 1.5;\n            #endif",
+   "payload": "payloads/preset-atmospheric-fog-color.glsl"
+  },
+  {
+   "id": "preset-volumetric-light-multiplier",
+   "type": "replace_once",
+   "target": "shaders/lib/atmospherics/volumetricLight/volumetricLight.glsl",
+   "anchor": "    #ifdef OVERWORLD\n        vec3 vlColor = lightColor;",
+   "payload": "payloads/preset-volumetric-light-multiplier.glsl"
+  },
+  {
+   "id": "override-adastra-sky-colors",
+   "type": "replace_once",
+   "target": "shaders/lib/colors/skyColors.glsl",
+   "anchor": "    #ifdef OVERWORLD",
+   "payload": "payloads/override-adastra-sky-colors.glsl"
+  },
+  {
+   "id": "override-adastra-light-and-ambient-colors",
+   "type": "replace_once",
+   "target": "shaders/lib/colors/lightAndAmbientColors.glsl",
+   "anchor": "    #if defined OVERWORLD",
+   "payload": "payloads/override-adastra-light-and-ambient-colors.glsl"
+  },
+  {
+   "id": "override-adastra-light-color-multiplier",
+   "type": "replace_once",
+   "target": "shaders/lib/colors/colorMultipliers.glsl",
+   "anchor": "        #ifdef OVERWORLD\n            vec3 morningLightMult = vec3(LIGHT_MORNING_R, LIGHT_MORNING_G, LIGHT_MORNING_B) * LIGHT_MORNING_I;",
+   "payload": "payloads/override-adastra-light-color-multiplier.glsl"
+  },
+  {
+   "id": "override-adastra-stars",
+   "type": "replace_once",
+   "target": "shaders/lib/atmospherics/stars.glsl",
+   "anchor": "    star = max0(star - starAmount * 0.1);\n    star *= getStarEdgeFactor(fractPart, STAR_ROUNDNESS_OW / 10.0, STAR_SOFTNESS_OW);\n    star *= star;\n\n    star *= max0(1.0 - pow(abs(VdotS) * 1.002, 100.0) * starsAroundSun) * starBelowHorizonBrightness - horizonFactor * 0.5;\n    #ifndef DAYLIGHT_STARS\n        star *= pow2(pow2(invNoonFactor2)) * (1.0 - 0.5 * sunVisibility);\n    #endif\n\n    #ifdef CLEAR_SKY_WHEN_RAINING\n        star *= min1(invRainFactorDynamic + 0.4);\n    #else\n        star *= invRainFactorDynamic;\n    #endif\n\n    vec3 starColor = GetStarColor(starCoord,\n                                vec3(0.38, 0.4, 0.5),\n                                  vec3(STAR_COLOR_1_OW_R, STAR_COLOR_1_OW_G, STAR_COLOR_1_OW_B),\n                                  vec3(STAR_COLOR_2_OW_R, STAR_COLOR_2_OW_G, STAR_COLOR_2_OW_B),\n                                  vec3(STAR_COLOR_3_OW_R, STAR_COLOR_3_OW_G, STAR_COLOR_3_OW_B),\n                                  float(STAR_COLOR_VARIATION_OW));\n\n    vec3 stars = 40.0 * star * starColor * starBrightness;",
+   "payload": "payloads/override-adastra-stars.glsl"
+  },
+  {
+   "id": "override-adastra-sun-and-moon",
+   "type": "replace_once",
+   "target": "shaders/program/gbuffers_skybasic.glsl",
+   "anchor": "        #if SUN_MOON_STYLE >= 2\n            float absVdotS = abs(VdotS);\n            #if SUN_MOON_STYLE == 2\n                float sunSizeFactor1 = 0.9975;\n                float sunSizeFactor2 = 400.0;\n                float moonCrescentOffset = 0.0055;\n                float moonPhaseFactor1 = 2.45;\n                float moonPhaseFactor2 = 750.0;\n            #else\n                float sunSizeFactor1 = 0.9983;\n                float sunSizeFactor2 = 588.235;\n                float moonCrescentOffset = 0.0042;\n                float moonPhaseFactor1 = 2.2;\n                float moonPhaseFactor2 = 1000.0;\n            #endif\n            if (absVdotS > sunSizeFactor1) {\n                float sunMoonMixer = sqrt1(sunSizeFactor2 * (absVdotS - sunSizeFactor1));\n\n                #ifdef SUN_MOON_DURING_RAIN\n                    sunMoonMixer *= 1.0 - 0.4 * rainFactor2;\n                #else\n                    sunMoonMixer *= 1.0 - rainFactor2;\n                #endif\n\n                if (VdotS > 0.0) {\n                    sunMoonMixer = pow2(sunMoonMixer) * GetHorizonFactor(SdotU);\n\n                    #ifdef CAVE_FOG\n                        sunMoonMixer *= 1.0 - 0.65 * GetCaveFactor();\n                    #endif\n                    float sunBrightness = 25.0;\n                    if (tonemap == ACESTonemap) color.rgb = mix(color.rgb, vec3(1.0, 0.698, 0.5451) * sunBrightness, sunMoonMixer);\n                    else\n                    color.rgb = mix(color.rgb, vec3(0.9, 0.5, 0.3) * sunBrightness, sunMoonMixer);\n                } else {\n                    float horizonFactor = GetHorizonFactor(-SdotU);\n                    sunMoonMixer = max0(sunMoonMixer - 0.25) * 1.33333 * horizonFactor;\n\n                    starCoord = GetStarCoordUpperHemisphere(viewPos.xyz, 1.0) * 0.5 + 0.617;\n                    float moonNoise = texture2DLod(noisetex, starCoord, 0.0).g\n                                    + texture2DLod(noisetex, starCoord * 2.5, 0.0).g * 0.7\n                                    + texture2DLod(noisetex, starCoord * 5.0, 0.0).g * 0.5;\n                    moonNoise = max0(moonNoise - 0.75) * 1.7;\n                    vec3 moonColor = vec3(0.38, 0.4, 0.5);\n                    #if BLOOD_MOON > 0\n                        moonColor = mix(moonColor, vec3(0.4588, 0.149, 0.149) * 1.5, getBloodMoon(sunVisibility));\n                    #endif\n                    moonColor *= (1.2 - (0.2 + 0.2 * sqrt1(nightFactor)) * moonNoise);\n\n                    if (moonPhase >= 1) {\n                        float moonPhaseOffset = 0.0;\n                        if (moonPhase != 4) {\n                            moonPhaseOffset = moonCrescentOffset;\n                            moonColor *= 8.5;\n                        } else moonColor *= 10.0;\n                        if (moonPhase > 4) {\n                            moonPhaseOffset = -moonPhaseOffset;\n                        }\n\n                        float ang = fract(timeAngle - (0.25 + moonPhaseOffset));\n                        ang = (ang + (cos(ang * 3.14159265358979) * -0.5 + 0.5 - ang) / 3.0) * 6.28318530717959;\n                        vec2 sunRotationData2 = vec2(cos(sunPathRotation * 0.01745329251994), -sin(sunPathRotation * 0.01745329251994));\n                        vec3 rawSunVec2 = (gbufferModelView * vec4(vec3(-sin(ang), cos(ang) * sunRotationData2) * 2000.0, 1.0)).xyz;\n\n                        float moonPhaseVdosS = dot(nViewPos, normalize(rawSunVec2.xyz));\n\n                        sunMoonMixer *= pow2(1.0 - min1(pow(abs(moonPhaseVdosS), moonPhaseFactor2) * moonPhaseFactor1));\n                    } else moonColor *= 4.0;\n\n                    #ifdef CAVE_FOG\n                        sunMoonMixer *= 1.0 - 0.5 * GetCaveFactor();\n                    #endif\n\n                    color.rgb = mix(color.rgb, moonColor, sunMoonMixer);\n                }\n            }\n        #endif",
+   "payload": "payloads/override-adastra-sun-and-moon.glsl"
+  },
+  {
+   "id": "override-adastra-sun-angle",
+   "type": "replace_once",
+   "target": "shaders/lib/common.glsl",
+   "anchor": "        #if SUN_ANGLE == -1\n            #if SHADER_STYLE == 1\n                const float sunPathRotation = 0.0;\n                #define PERPENDICULAR_TWEAKS\n            #elif SHADER_STYLE == 4\n                const float sunPathRotation = -40.0;\n            #endif\n        #elif SUN_ANGLE == 0\n            const float sunPathRotation = 0.0;\n            #define PERPENDICULAR_TWEAKS\n        #elif SUN_ANGLE == 20\n            const float sunPathRotation = 20.0;\n        #elif SUN_ANGLE == 30\n            const float sunPathRotation = 30.0;\n        #elif SUN_ANGLE == 40\n            const float sunPathRotation = 40.0;\n        #elif SUN_ANGLE == 50\n            const float sunPathRotation = 50.0;\n        #elif SUN_ANGLE == 60\n            const float sunPathRotation = 60.0;\n        #elif SUN_ANGLE == -20\n            const float sunPathRotation = -20.0;\n        #elif SUN_ANGLE == -30\n            const float sunPathRotation = -30.0;\n        #elif SUN_ANGLE == -40\n            const float sunPathRotation = -40.0;\n        #elif SUN_ANGLE == -50\n            const float sunPathRotation = -50.0;\n        #elif SUN_ANGLE == -60\n            const float sunPathRotation = -60.0;\n        #endif",
+   "payload": "payloads/override-adastra-sun-angle.glsl"
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+# Euphoria Patcher config — shipped by the pack (loaded by EuphoriaPatcher's own TOML
+# config system at config/euphoria_patcher/settings.toml; missing keys self-fill with
+# upstream defaults on first launch).
+# doUpdateChecking=none is deliberate: pack versions are locked in manifest/, and the
+# update checker would otherwise rewrite generated shader files / show update popups.
+[display]
+doPopUpLogging = true
+doDisplayShaderInGameMessage = true
+
+[updates]
+doUpdateChecking = "none"
+
+[maintenance]
+doRenameOldShaderFiles = true
+doDeleteOldShaderFiles = false
+
+[debug]
+doDebugLogging = false
+
+[advanced]
+alternativeShaderNames = ""
+doEmbedShaderSettingsInScreenshots = "enabled"
+extraDimensionShaderCacheSize = 2
+autoMergeBlockProperties = false

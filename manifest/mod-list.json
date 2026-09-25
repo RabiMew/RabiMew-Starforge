@@ -853,6 +853,18 @@
       "notes": "Shader loader for the default shader pack. Sodium 0.8 line requires Iris >=1.8.13; on 1.21.1 NeoForge only the 1.8.14 beta satisfies that (latest stable Iris 1.8.12 pins Sodium 0.6.13, which Supplementaries 3.9.9 declares incompatible [0,0.8.12-beta.1) — a hard mod-loading block, so no all-stable combo exists in this pack). Pin prefix 1.8.14 so a future stable 1.8.14+ release is picked automatically."
     },
     {
+      "key": "euphoria_patcher",
+      "name": "Euphoria Patches",
+      "role": "perf",
+      "side": "client",
+      "source": {
+        "type": "modrinth",
+        "slug": "euphoria-patches",
+        "version_prefix": "1.10.5-r5.9.3"
+      },
+      "notes": "Euphoria Patcher (MPL-2.0, SpacEagle17). Client-only NeoForge mod: at mod construction it patches the installed Complementary Reimagined zip in shaderpacks/ into an extracted pack dir named 'ComplementaryReimagined_<v> + EuphoriaPatches_<v>' (packaged jar contains the binary .patch resource; nothing is re-redistributed by us). The version_prefix encodes the matching Complementary base it can patch (r5.9.3) — it verifies the base archive hash, so the pair must be bumped together with the complementary_reimagined resource below. Default-on selection is pinned via pack/config/iris.properties; per-dimension handling comes from the generated pack's shaders/dimension.properties plus starforge_compat's minimal delta for dims upstream misses (ad_astra:mars/glacio, pv_asteroid_belt:*)."
+    },
+    {
       "key": "immediatelyfast",
       "name": "ImmediatelyFast",
       "role": "perf",
@@ -1265,19 +1277,20 @@
   ],
   "resources": [
     {
-      "key": "makeup_ultra_fast",
-      "name": "MakeUp - Ultra Fast",
+      "key": "complementary_reimagined",
+      "name": "Complementary Shaders - Reimagined",
       "type": "shaderpack",
       "side": "client",
       "dir": "shaderpacks",
       "source": {
         "type": "modrinth",
-        "slug": "makeup-ultra-fast-shaders",
+        "slug": "complementary-reimagined",
         "loaders": [
           "iris"
-        ]
+        ],
+        "version_prefix": "r5.9.3"
       },
-      "notes": "Default shader (LGPL-3.0-or-later). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. Default-on via pack/config/iris.properties + official profile=low preset (pack/shaderpacks/<file>.txt)."
+      "notes": "Base shader for the default shader stack (custom license, see github.com/ComplementaryDevelopment/ComplementaryReimagined License.txt — distribution via Modrinth CDN URL only, never embedded/repacked). Non-mod resource: lands in shaderpacks/ via .mrpack files[] download, never inside mods/ and never on the server. EuphoriaPatcher (mod, see above) patches this zip in-place on first launch into 'ComplementaryReimagined_r5.9.3 + EuphoriaPatches_1.10.5/'; version_prefix pins the exact pair — bump together with the euphoria_patcher mod. Default-on via pack/config/iris.properties + option preset in pack/shaderpacks/<generated dir name>.txt."
     },
     {
       "key": "eos_gun_pack",

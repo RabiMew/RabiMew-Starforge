@@ -1,5 +1,0 @@
-# Iris/OptiFine shader option file — filename must be <locked zip name>.txt.
-# Official preset first, then conservative overrides (keys from shaders.properties only).
-profile=low
-# Cheaper flipped-image reflections instead of raymarching SSR.
-REFLECTION_SLIDER=1

@@ -51,6 +51,7 @@
   "endermanoverhaul": "endermanoverhaul-neoforge-1.21.1-2.0.3.jar",
   "energizedfurniture": "energizedfurniture-1.21.1-0.2.0.jar",
   "entityculling": "entityculling-neoforge-1.11.2-mc1.21.1.jar",
+  "euphoria_patcher": "EuphoriaPatcher-1.10.5-r5.9.3-neoforge.jar",
   "expandability": "artifacts-neoforge-13.2.5.jar -> META-INF/jars/expandability-neoforge-12.0.0.jar",
   "fabric_api_base": "sodium-neoforge-0.8.13+mc1.21.1.jar -> META-INF/jarjar/fabric-api-base-0.4.42+d1308ded19.jar",
   "fabric_block_view_api_v2": "sodium-neoforge-0.8.13+mc1.21.1.jar -> META-INF/jarjar/fabric-block-view-api-v2-1.0.10+9afaaf8c19.jar",

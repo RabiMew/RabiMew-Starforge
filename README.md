@@ -57,7 +57,7 @@ node tools/validate-design.mjs
 > 可用包内 `SHA256SUMS.txt` 在 `.minecraft` 下 `sha256sum -c` 自行复核。
 > 细节见 [打包与分发](docs/distribution.md)。
 
-默认启用轻量光影 **MakeUp - Ultra Fast**（经 Iris 加载，导入时自动下载）：首次进游戏即生效，可在 视频设置 → Shader Packs 中随时关闭或切换画质档位；关闭后回退到纯 Sodium 渲染，不影响存档。细节见 [性能层](docs/performance.md)。
+默认光影为 **Complementary Reimagined + Euphoria Patches**（经 Iris 加载）：基础光影包随清单自动下载，Euphoria Patcher 模组在首次启动时把它补丁成成品光影；starforge_compat 再对 Ad Astra 各星球/轨道维度做逐维度映射，保证行星、太阳与星空正确渲染。可在 视频设置 → Shader Packs 中随时关闭或切换画质档位；关闭后回退到纯 Sodium 渲染，不影响存档。细节见 [性能层](docs/performance.md)。
 
 ## 开发者客户端
 

@@ -243,16 +243,16 @@ Findings:
 
 ## Addendum — 2026-09-22 default shader layer (101 enabled)
 
+> **Superseded 2026-09-25**: MakeUp - Ultra Fast was replaced by Complementary Reimagined + Euphoria Patches — see the 2026-09-25 addendum at the end of this file. The Iris beta justification below remains accurate.
+
 | Entry | Locked | Source / license | Kind | Notes |
 |---|---|---|---|---|
 | Iris | 1.8.14-beta.1+1.21.1-neoforge | Modrinth `iris`; LGPL-3.0-only | client mod | Beta exception justified below |
-| MakeUp - Ultra Fast | 9.5e | Modrinth `izsIPI7a`; LGPL-3.0-or-later | client resource (`shaderpacks/`) | Default-on via `config/iris.properties` |
+| ~~MakeUp - Ultra Fast~~ | ~~9.5e~~ | ~~Modrinth `izsIPI7a`; LGPL-3.0-or-later~~ | ~~client resource~~ | **removed 2026-09-25** — replaced by Complementary Reimagined + Euphoria Patches |
 
 - **Why Iris beta**: Sodium 0.8.13 needs Iris ≥1.8.13; the only 1.21.1+NeoForge build is `1.8.14-beta.1`. Stable Iris 1.8.12 pairs with Sodium 0.6.13, which Supplementaries 3.9.9 declares `incompatible [0,0.8.12-beta.1)` — NeoForge blocks that combo at load, so no all-stable pair exists here.
 - Shader pack is **not** a jar: it enters `modrinth.index.json` as a `shaderpacks/` file with `env server=unsupported` and its official CDN URL + sha1/sha512 — no third-party zip is committed to git. `sync-pack.mjs` skips `shaderpacks/` on the server.
-- First-run profile: official `profile=low` + `REFLECTION_SLIDER=1` via `pack/shaderpacks/MakeUp-UltraFast-9.5e.zip.txt` (OptiFine/Iris per-pack options file).
 - Iris jar metadata checked: `neoforge.mods.toml` declares only `embeddium` as incompatible; no hard Sodium dep (runtime pairing).
-- Client GUI shader-on boot, shader compile log, TaCZ/Ad Astra dimension rendering: **pending real client verification** (see docs/performance.md).
 
 ## Addendum — 2026-09-23 furniture layer (100 enabled)
 
@@ -359,3 +359,23 @@ Incremental change: **added FastPipes 1.3.7** (Modrinth `fast-pipes` `vLNEmWij`,
 **Energy conservation**: pipes transfer only; sampled link shows source-loss ≥ sink-gain + pipe buffer, no generation path. All conversions (FE↔MJ via BC's own dynamo/engine, FE→Watt via Energized transformer, IC2 native FE port at 4 FE = 1 EU) are one-way or upstream-native — no loop channels exist.
 
 **Pending manual verification**: attachment GUI filter/priority/routing modes, IE visual line ↔ FastPipes backend hookup at production scale, chunk unload/reload and network re-scan behaviour.
+
+## Addendum — 2026-09-25 shader stack swap: Complementary Reimagined + Euphoria Patches (113 enabled)
+
+Incremental change: **removed** MakeUp - Ultra Fast 9.5e (shaderpack resource); **added** Complementary Shaders - Reimagined r5.9.3 (shaderpack resource, Modrinth `complementary-reimagined`, custom license — official CDN URL + hashes only, never embedded) and Euphoria Patches 1.10.5-r5.9.3-neoforge (client mod, Modrinth `euphoria_patches`, MPL-2.0, `EuphoriaPatcher-1.10.5-r5.9.3-neoforge.jar`). Lockfile regenerated; shader stack remains Sodium 0.8.13 + Iris 1.8.14-beta.1 — no Oculus/Embeddium.
+
+| Entry | Locked | Source / license | Kind | Notes |
+|---|---|---|---|---|
+| Complementary Reimagined | r5.9.3 | Modrinth CDN; custom license | client resource (`shaderpacks/` zip) | Base pack; left pristine |
+| Euphoria Patches | 1.10.5-r5.9.3-neoforge | Modrinth `euphoria_patches`; MPL-2.0 | client mod | Generates `ComplementaryReimagined_r5.9.3 + EuphoriaPatches_1.10.5/` at mod construction; verifies base hash — pair must bump together |
+
+**Findings:**
+
+- **Paired versioning**: EP 1.10.5 only patches Complementary r5.9.3 (version embedded in its own name); `version_prefix` pins keep them in lockstep.
+- **Startup order**: EP generates the patched dir during mod construction → `starforge_compat` applies the Ad Astra delta during `FMLClientSetupEvent` → Iris builds its first pipeline on world join and reads the already-patched files (log sequence verified).
+- **Ad Astra dimension fix**: generated `dimension.properties` ships `dimension.world0=*`, so unmapped dims (mars, glacio, both `pv_asteroid_belt` dims) inherited the overworld pipeline — clouds/aurora in vacuum and purple missing-texture celestial billboards. Fix is a deterministic runtime patch in `starforge_compat` (`AdAstraShaderPatch`, driven by `ops.json` + 31 GLSL payload ops packed in the jar): clones `world0` into six custom world folders, writes explicit mappings for all `ad_astra:*` + `pv_asteroid_belt:*` dims, gates weather/cloud/aurora/nebula passes, applies per-planet sky/fog/light/star/sun presets, and keeps Ad Astra's textured sky billboards authoritative. Idempotent (marker + per-op checks), fails soft without crashing. Community patcher concept ported with attribution (upstream repo ships no license — logic only, no wholesale copy); dev-time mirror in `tools/patch-euphoria-adastra.mjs`.
+- **Player override safety**: the patch only touches the Euphoria-generated directory; switching to another pack is unaffected, and user-side shader option changes are preserved (options live in the `.txt`, outside patched files).
+
+**Runtime-verified 2026-09-25** (Prism instance, RX 6600, fresh regenerate→patch→join): log shows `Ad Astra shader patch applied` before any pipeline creation; zero shader compile errors. Overworld day (shadows/water reflections/volumetric clouds), night (stars, moonlight), full-moon + snowy-biome aurora, Nether teal fog, End purple mist + dragon silhouette all confirmed. Moon→Earth, Earth-orbit→Moon, Glacio-orbit planet billboards render textured (purple-square bug resolved). Mars ochre dust, Venus orange overcast, Mercury/Moon airless starfields, asteroid belt black space + asteroids — per-dimension presets working. FPS: Euphoria ≈49–55 vs MakeUp(low) ≈66–71 vs shader-off ≈116 at a heavy water+forest viewpoint.
+
+**Known issue (not ours)**: Glacio's sky shows a pink checkered celestial band — visible with shaders off too; it is Ad Astra's own skybox art, not a shader defect.

@@ -34,30 +34,47 @@
 | Dynamic FPS | 3.11.4 | 后台与失焦时的帧率限制；默认聚焦不限帧、失焦 30、最小化 10（`pack/config/dynamic_fps.json`） |
 | Mem Leak Fix GPU | 1.8+1.21.1（modid `gpumemleakfix`，MIT） | 客户端 RenderTarget/VRAM 泄漏清理；延迟队列释放，无强制 GC。与 Sodium+ImmediatelyFast 同实例实测加载无渲染错误日志；VRAM 长期表现仍需游玩观察 |
 | Iris | 1.8.14-beta.1+1.21.1-neoforge（LGPL-3.0-only） | 光影加载器，默认光影的运行时依赖 |
-| MakeUp - Ultra Fast | 9.5e（LGPL-3.0-or-later，Modrinth `izsIPI7a`） | 默认光影包本体；非模组，`shaderpacks/` 资源经 .mrpack 官方 URL + hash 下发 |
+| Complementary Reimagined + Euphoria Patches | r5.9.3 + 1.10.5-r5.9.3-neoforge（custom license + MPL-2.0，Modrinth CDN） | 默认光影栈：基础包是 `shaderpacks/` 资源（.mrpack 官方 URL + hash 下发），Euphoria Patcher 是 client-only 模组，启动时把基础包补丁成成品光影目录 |
 
-## 默认光影方案（MakeUp - Ultra Fast）
+## 默认光影方案（Complementary Reimagined + Euphoria Patches）
 
-Starforge 默认启用 **MakeUp - Ultra Fast 9.5e** 作为轻量光影。选型目标是工业基地、怪潮和多星球探索场景下的画质/性能比，而不是电影级画质展示；优先级为**稳定性 > FPS > 模组兼容性 > 视觉效果**。
+Starforge 默认启用 **Complementary Shaders - Reimagined r5.9.3 + Euphoria Patches 1.10.5**（2026-09-25 起替换 MakeUp - Ultra Fast 9.5e）。选型目标是工业基地、怪潮和多星球探索场景下的稳定性与维度兼容性，优先级为**稳定性 > 模组/维度兼容性 > FPS > 视觉效果**——相比 MakeUp 帧数下降约 25–30%（见下方实测），换取逐维度渲染控制与 Ad Astra 天空盒正确渲染。
 
 | 组件 | 锁定版本 | 侧 | 角色 |
 | --- | --- | --- | --- |
 | Sodium | `mc1.21.1-0.8.13-neoforge`（release，2026-08-28） | client | 渲染管线重写 |
 | Iris | `1.8.14-beta.1+1.21.1-neoforge`（beta，2026-06-13） | client | OptiFine 格式光影加载 |
-| MakeUp - Ultra Fast | `9.5e`（release，2026-09-05） | client（`shaderpacks/`） | 光影包 |
+| Complementary Shaders - Reimagined | `r5.9.3`（custom license，仅官方 CDN URL 分发，不内嵌不重新打包） | client（`shaderpacks/` 资源，非模组） | 基础光影包 |
+| Euphoria Patches | `1.10.5-r5.9.3-neoforge`（MPL-2.0，Modrinth `euphoria_patches`） | client 模组 | 补丁器；版本号编码其可补丁的 Complementary 基线（r5.9.3）并校验基础包哈希——两者必须成对升级 |
 
 **为什么是 Iris beta**：Sodium 0.8.x 系列要求 Iris ≥1.8.13；1.21.1+NeoForge 上满足这一点的只有 1.8.14-beta.1（"Updates to Sodium 0.8"）。最新稳定 Iris 1.8.12 锁定 Sodium 0.6.13，而 Supplementaries 3.9.9 的 `neoforge.mods.toml` 声明 `sodium [0,0.8.12-beta.1)` 为 **incompatible**（其 `CompatSodiumFluidRendererMixin` 依赖 Sodium 0.8 API）——NeoForge 对 `incompatible` 的处理是阻止加载，不是警告。因此本包不存在"全稳定"的 Iris+Sodium 组合，按既定规则采用唯一可行方案：Sodium 0.8.13 + Iris 1.8.14-beta.1。不安装 Oculus/Embeddium 等重复或冲突加载器（Iris 自身声明与 Embeddium 不兼容）。Iris 若发布 1.8.14+ 正式版，重新解析时会自动升级（`version_prefix: "1.8.14"`）。
 
-**默认启用与配置**：`pack/config/iris.properties` 随 .mrpack overrides 下发 `enableShaders=true` + `shaderPack=MakeUp-UltraFast-9.5e.zip`；`pack/shaderpacks/MakeUp-UltraFast-9.5e.zip.txt` 锁定官方 `profile=low`（阴影开：Low 质量/Short 距离、AO、TAA、Bloom、体积云、深度 godrays、折射、太阳反射、植物摆动全部保留）并把 `REFLECTION_SLIDER` 降到 `1`（flipped image，代替耗时的 raymarching SSR）。彩色阴影、DoF、动态模糊、色差、材质高光在该 preset 下均关闭。
+**首次启动行为**：Euphoria Patcher 在模组构造阶段（早于任何世界渲染）读取 `shaderpacks/ComplementaryReimagined_r5.9.3.zip`，校验哈希后生成解包目录 `shaderpacks/ComplementaryReimagined_r5.9.3 + EuphoriaPatches_1.10.5/`；原始 zip 保持不动。生成物不入库，属运行时产物。
 
-**玩家可自行**：视频设置 → Shader Packs 中整体关闭光影（关闭后走纯 Sodium 渲染，不影响内容与存档）、切换 MakeUp 内置 `no_effects`/`shadowless_low~high`/`low`/`medium`/`high`/`extremeplus` 官方档位或逐项微调。
+**默认启用与配置**：`pack/config/iris.properties` 随 .mrpack overrides 下发 `enableShaders=true` + `shaderPack=ComplementaryReimagined_r5.9.3 + EuphoriaPatches_1.10.5`（生成目录名，非 zip）；`pack/shaderpacks/<同名>.txt` 锁定官方 `profile=LOW`（极低/短距阴影、SSAO Medium、水体反射 Medium、体积云 Medium、无光柱、无 FXAA），并关闭 WORLD_BLUR/MOTION_BLUR/色差/世界空间反射、开 IMAGE_SHARPENING、夜空密度 3、极光样式 1、`AURORA_CONDITION=4`（满月或雪地）、NIGHT_NEBULAE=1。`config/euphoria_patcher/settings.toml` 关闭补丁器更新检查（`doUpdateChecking=none`），避免其改写生成文件或弹窗。
 
-**待实机验证**（未在本轮执行，发现问题先降级处理）：
-- IC2CRE / BuildCraft / Immersive Engineering 动态机器模型、AE2 网络方块在光影下的渲染
+**玩家可自行**：视频设置 → Shader Packs 中整体关闭光影（关闭后走纯 Sodium 渲染，不影响内容与存档）、切换包内 profile（LOW/MEDIUM/HIGH…）或逐项微调。
+
+**Ad Astra 维度兼容层（starforge_compat 运行时补丁）**：生成包的 `dimension.properties` 里 `dimension.world0=*` 是兜底通配——上游未映射的维度（`ad_astra:mars`、`ad_astra:glacio`、`pv_asteroid_belt:*` 等）会继承主世界管线，出现太空中白云/极光、行星贴图丢失成紫色方块等问题。`starforge_compat` 客户端初始化时（Euphoria 生成之后、Iris 首次建管线之前）对生成目录做确定性补丁：克隆 `shaders/world0` 生成 `world_moon/mars/venus/mercury/glacio/orbit` 六个自定义世界目录并注入逐维度 `define`；`dimension.properties` 改为显式映射全部 Ad Astra 与小行星带维度；按行星特性关闭阴影/云/天气/极光等 pass，给各行星写科学取向的天空/雾/光照/星/太阳预设；保留 Ad Astra 自身 skytextured 天体渲染。补丁幂等（marker 文件 + 逐项检查）、失败不崩客户端（日志告警后放过）。开发态同款补丁逻辑在 `tools/patch-euphoria-adastra.mjs`，二者共享 `compat/src/main/resources/.../adastra/ops.json` + `payloads/*.glsl` 单一事实源。
+
+**实机验证结论**（2026-09-25，RX 6600，Prism 实例同视角对比）：
+
+| 项目 | 结果 |
+| --- | --- |
+| 启动链 | Euphoria 在模组构造期生成补丁目录 → starforge_compat 应用 Ad Astra 补丁（日志 `Ad Astra shader patch applied`）→ Iris 首次建管线读取的是已补丁文件；无 shader compile error |
+| 主世界 | 白天阴影/水面反射/体积云正常；夜晚星空、月光；满月夜与雪地两种条件下极光均出现（Reimagined 风格） |
+| 下界/末地 | 下界灵魂沙谷青色雾、末地紫色雾+末影龙剪影正常；补丁未回归 vanilla 三维度 |
+| Ad Astra 表面 | 火星赭色尘雾、金星橙色阴云、水星/月球无大气黑天+星空——逐维度预设生效，无白云泄漏 |
+| 轨道与小行星带 | 纯黑太空+密星；地球/月球/水星等天体以正确纹理 billboard 渲染（此前紫色方块已修复）；小行星带与轨道维度无灰雾/白云 |
+| FPS（同视角、水+森林重载场景，453 区块） | Euphoria ≈49–55 fps；MakeUp（profile=low+反射）≈66–71 fps；关光影 ≈116 fps |
+| FPS（其他点位实测） | 主世界夜 ≈48–83，月球 ≈35–72，火星/Glacio ≈32–63，末地 ≈66，轨道/真空场景 ≈59–109 |
+
+**遗留观察项**：
+- IC2CRE / BuildCraft / Immersive Engineering 动态机器模型、AE2 网络方块在新光影下的渲染
 - TaCZ 枪械模型与瞄具（光影下手持/第一人称渲染常见偏差）
-- Ad Astra 各维度天空盒（地球/月球/火星/小行星带）与行星渲染
-- TACZ Turrets 弹幕/索敌、EOS 高射速与 AoE 武器（MG-85、M-57CWX2、ELP-72/52 电浆、四叶十字、艾莲娜之钉等）与 The Hordes 怪潮下的粒子表现、夜间工业基地观感
-- 方块半透明/发光渲染、shader compile error、Iris compatibility warning、黑白屏
+- TACZ Turrets 弹幕/索敌、EOS 高射速与 AoE 武器与怪潮下的粒子表现、夜间工业基地观感
+- Glacio 天空中可见一条粉色棋盘状天体带，关光影同样存在——属 Ad Astra 自带天空盒美术，非光影缺陷
+- 玩家若自行切换其他光影包，Ad Astra 补丁只作用于 Euphoria 生成目录，不影响第三方包
 
 ## 测试后决定
 

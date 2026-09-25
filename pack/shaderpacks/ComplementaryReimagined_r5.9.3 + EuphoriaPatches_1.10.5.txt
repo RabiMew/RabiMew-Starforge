@@ -1,0 +1,27 @@
+# Iris/OptiFine shader option file — filename must equal the generated pack dir name
+# ("ComplementaryReimagined_r5.9.3 + EuphoriaPatches_1.10.5") + .txt.
+# Keys below are verified against ComplementaryReimagined r5.9.3 shaders.properties /
+# lib/common.glsl (Euphoria Patches rides on the same option names).
+#
+# Base preset: official LOW profile (real-time shadows Very Low @ 96 blocks, SSAO Medium,
+# water reflections Medium, clouds Medium, light shafts off, FXAA off, detail Medium).
+profile=LOW
+#
+# Starforge overrides — priority: stability > dimension compat > FPS > visuals.
+TAA_DEFINE=1
+WATER_REFLECT_QUALITY=1
+CLOUD_QUALITY=1
+LIGHTSHAFT_QUALI_DEFINE=1
+WORLD_BLUR=0
+MOTION_BLUR_EFFECT=-1
+CHROMA_ABERRATION=0
+WORLD_SPACE_REFLECTIONS=-1
+IMAGE_SHARPENING=3
+#
+# Night sky (overworld only — these paths are #ifdef OVERWORLD in the shader, so they
+# can never leak into vacuum dimensions even if one is mis-mapped):
+NIGHT_STAR_AMOUNT=3
+AURORA_STYLE_DEFINE=1
+AURORA_CONDITION=4
+NIGHT_NEBULAE=1
+NIGHT_NEBULA_I=50
