@@ -700,3 +700,43 @@ Blueprint 示例 data map：`Object with ID modid:example ... dimension` DataMap
 - coal_generator → basic_energy_pipe（basic_extractor 附件）→ `ad_astra:compressor`：200 tick 入账 3920 FE（≈20 FE/t，`coalGeneratorEnergyGenerationPerTick=20`），消耗煤 1 块起步持续发电，守恒（目的端增量 ≤ 产出上限+初始缓存）。
 - solar_panel → basic_energy_pipe → 消费端：主世界 →IC2 电炉 1200 FE（solar_power 16）；月球 →AA 压缩机 1848 FE（24）；地球轨道 →AE2 控制器入账（32，AE2 侧缓冲有自身回流波动）。三条链路 `moved=true`、`conserved=true`，无能源复制。
 - 昼夜边界：三维度 dayTime 共享同一世界时钟（`time query daytime` 逐维实测同步递增），isDay 于 `dayTime%24000>12000` 统一翻 false 后停发——无「自定义天空视觉白天/逻辑夜晚」错配。月球不复现发电失败的根因是测试位 `canSeeSky=false`（面板被埋于地表下），正常地表放置发电正常；按任务约束未添加兼容修复、未改昼夜判定、未归一星球 solar_power。
+
+## 2026-09-25 FTB Essentials 集成：基础命令 + 管理命令分层（已实现，dedicated server 实测 47/47 通过）
+
+### 版本与依赖
+
+- **FTB Essentials 2101.1.10**（FTB maven `ftb-essentials-neoforge`，1.21.1 分支最新 release；mod-list `source.version` 钉定）。`side: server`——mods.toml `displayTest=IGNORE_SERVER_VERSION` 且官方设计即服务端独占，客户端无需安装。
+- 必需依赖仅 `ftblibrary [2101.1.4,)`（已锁 2101.1.36）；可选 `ftbranks`/`luckperms` 未引入：命令门为原版 op 等级，按玩家区分数值（冷却/家上限）的权限节点暂不需要。
+- `audit-deps` 全量通过（114 jar）；启用模组 113 → **114**（both 87 / client 24 / server 3；服务端 90、客户端 111）。
+
+### 权限模型（源码核实，非猜测）
+
+- 玩家命令 `requires` = 配置 `enabled` 开关（level 0 即可）：`tpa`/`tpahere`/`tpaccept`/`tpdeny`、`home`/`sethome`/`delhome`/`listhomes`、`back`、`spawn`、`playerspawn`、`warp`/`listwarps`、`rtp`、`kickme`、`trashcan`、`nickname`、`leaderboard`、`give_me_kit`、裸 `/speed`（自身速度只读显示）。
+- 管理命令 `requires` = `enabled && hasPermission(2)`（LEVEL_GAMEMASTERS）或 `isGamemaster()`：`fly`/`god`/`heal`/`feed`/`extinguish`/`invsee`/`mute`/`unmute`/`kit`/`tp_offline`/`tpo`/`teleport_last`/`tpx`/`jump`/`setwarp`/`delwarp`/`hat`/`near`/`open <anvil|crafting|smithing|stonecutter>`、`/speed <boost>`、`/enderchest <player>`、`/listhomes <player>`、`/nicknamefor`、带目标参数的 `/recording`/`/streaming`。
+- 数值类可经权限节点按玩家覆盖（`ftbessentials.<cmd>.cooldown`/`.warmup`、`ftbessentials.home.max`、`ftbessentials.back.max`、`ftbessentials.rtp.custom_*`）——无 FTB Ranks/LuckPerms 时全员取配置值（待办1）。
+
+### 配置（pack/config/ftbessentials.snbt）
+
+FTB Library SNBTConfig 直接读 `config/ftbessentials.snbt`（`defaultconfigs/ftbessentials-server.snbt` 仅作首次生成的种子），故以 pack/config 下发全量文件为准。相对上游默认的改动：
+
+- `teleportation.home.max` 1 → **3**（家园限制：单人最多 3 个命名家）。
+- 传送系命令 `warmup` 0 → **3s**（back/home/playerspawn/rtp/spawn/tpa/warp），抑制战斗瞬移逃逸；冷却维持上游（back 30s、rtp 600s、其余 10s）。
+- `misc.enderchest.enabled` → **false**（免费远程末影箱会绕过背包/存储进度线；连带移除管理员 `/enderchest <player>` 子命令，查看玩家背包仍可用 `/invsee`）。
+- 其余维持上游默认：`register_to_namespace=false`（命令在根命名空间，`/tpa` 而非 `/ftbessentials:tpa`）、维度黑白名单空、`team_bases_spawn_override` 保留（未装 FTB Team Bases，惰性）。
+- 注意：模组加载会规范化重写该文件——自定义注释会被剥离，只保留键值与自带注释（行为已确认，勿在此文件内写说明性注释）。
+
+### 汉化
+
+- JAR 自带 `zh_cn` 94/94 键全译（`audit-lang`：ftbessentials 命名空间「完整」，0 缺失）；权限不足提示走 brigadier 字面量过滤→原版「未知命令」中文，无英文残留；冷却（"传送冷却中，剩余 %s"）/预热（"将在 %s 秒后传送"）/TPA/Home/Back/Spawn 提示均已覆盖。
+- `pack/kubejs/assets/ftbessentials/lang/zh_cn.json` 覆盖层微调 12 条上游生硬措辞（`home.show_home` 距里显示、`teleport.notify`/`on_cooldown`、`rtp.*`、`near.players_within`、`tp_offline.*`、`kit.*` 排序）；gen-mod-lang-zh 只写缺失键且按命名空间硬编码，不会覆盖此文件。
+
+### 验证（dedicated server，`kubejs/essentialstest.json` 开启时自动跑）
+
+- `starforge_essentials_test.js`：FakePlayer（level 0）与 console（level 4）双栈对调度器根节点逐一 `canUse` + `dispatcher.execute` 实测——47/47 OK：19 条玩家命令 level-0 可用且已注册；18 条管理命令 level-0 被拒（`CommandSyntaxException`，与原生隐藏一致）、console 可用；`/speed` 裸命令可查自身速度、`<boost>` 子参数仍 op 门；`/enderchest` 从命令树消失（证明 pack 配置生效）；`home.max=3`、`home.warmup=3`、`tpa.cooldown=10` 运行时读值符合配置。
+- RCON 复核：九条目标命令全部注册（无参报 "A player is required"/"incomplete" 而非 "Unknown"）。
+- 服务端 `Done (1.8~2.0s)`，日志唯一 ERROR 为 `modid:example` datamap（blueprint 上游自带，预期保留项，与本模组无关）。
+
+### 待办
+
+- [ ] 真实玩家端到端验证（FakePlayer 触发 `PlayerHooks.isFake` 早退，家园写入/TPA 双人握手/死亡回溯需真人客户端复测）。
+- [ ] 若未来需要按队伍/权限组差异化家上限与冷却，再引入 FTB Ranks 并下发 `ftbessentials.*` 节点（当前全员配置值）。

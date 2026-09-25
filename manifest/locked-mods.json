@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-25T06:16:52.829Z",
+  "generated_at": "2026-09-25T09:41:19.383Z",
   "minecraft": "1.21.1",
   "loader": "neoforge",
   "neoforge_version": "21.1.251",
@@ -2043,6 +2043,25 @@
       "distribution": "ftb_maven",
       "dependencies": [],
       "notes": null
+    },
+    {
+      "key": "ftb_essentials",
+      "name": "FTB Essentials",
+      "enabled": true,
+      "role": "qol",
+      "side": "server",
+      "version": "2101.1.10",
+      "filename": "ftb-essentials-neoforge-2101.1.10.jar",
+      "size": 217288,
+      "sha1": "fa7b3d1b06c0285dcbe8e53a27d44cd7f8d15726",
+      "sha256": "a61de1b883ec9d6d652276f453e8e60b18bd315fef8c62f21d6545260d526587",
+      "sha512": "430dfff9d26840d3b08c07dc819deab5c93f3619b83d03b98d448213b4fc9ea87b44680522d55b954fbe5e29d5d05306e6fc0be77bfcdbbef96c4322115ad3dd",
+      "download_url": "https://maven.ftb.dev/releases/dev/ftb/mods/ftb-essentials-neoforge/2101.1.10/ftb-essentials-neoforge-2101.1.10.jar",
+      "project_page": "https://maven.ftb.dev/#/releases/dev/ftb/mods/ftb-essentials-neoforge",
+      "license": "see-repo",
+      "distribution": "ftb_maven",
+      "dependencies": [],
+      "notes": "Server-side command/utility layer (tpa/home/back/spawn + admin ops). displayTest=IGNORE_SERVER_VERSION and designed server-side-only — clients do not install it. Required deps: ftblibrary>=2101.1.4 (present). Optional ftbranks/luckperms skipped: command gates are vanilla op-level and per-player value overrides are not needed."
     },
     {
       "key": "sophisticatedcore",

@@ -1091,6 +1091,18 @@
       }
     },
     {
+      "key": "ftb_essentials",
+      "name": "FTB Essentials",
+      "role": "qol",
+      "side": "server",
+      "source": {
+        "type": "ftbmaven",
+        "artifact": "ftb-essentials-neoforge",
+        "version": "2101.1.10"
+      },
+      "notes": "Server-side command/utility layer (tpa/home/back/spawn + admin ops). displayTest=IGNORE_SERVER_VERSION and designed server-side-only — clients do not install it. Required deps: ftblibrary>=2101.1.4 (present). Optional ftbranks/luckperms skipped: command gates are vanilla op-level and per-player value overrides are not needed."
+    },
+    {
       "key": "sophisticatedcore",
       "name": "Sophisticated Core",
       "role": "library",

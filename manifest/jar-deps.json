@@ -1684,6 +1684,50 @@
     ]
   },
   {
+    "file": "ftb-essentials-neoforge-2101.1.10.jar",
+    "modIds": [
+      "ftbessentials"
+    ],
+    "embeddedModIds": [],
+    "deps": [
+      {
+        "modId": "neoforge",
+        "type": "required",
+        "versionRange": "[21.1.0,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "minecraft",
+        "type": "required",
+        "versionRange": "[1.21.1,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "ftblibrary",
+        "type": "required",
+        "versionRange": "[2101.1.4,)",
+        "ordering": "NONE",
+        "side": "BOTH"
+      },
+      {
+        "modId": "ftbranks",
+        "type": "optional",
+        "versionRange": "[2100.1.0,)",
+        "ordering": "AFTER",
+        "side": "BOTH"
+      },
+      {
+        "modId": "luckperms",
+        "type": "optional",
+        "versionRange": "[5.4.83,)",
+        "ordering": "AFTER",
+        "side": "SERVER"
+      }
+    ]
+  },
+  {
     "file": "ftb-library-neoforge-2101.1.36.jar",
     "modIds": [
       "ftblibrary"

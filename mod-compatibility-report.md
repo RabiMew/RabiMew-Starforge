@@ -381,3 +381,19 @@ Incremental change: **removed** MakeUp - Ultra Fast 9.5e (shaderpack resource); 
 **Runtime-verified 2026-09-25** (Prism instance, RX 6600, fresh regenerate→patch→join): log shows `Ad Astra shader patch applied` before any pipeline creation; zero shader compile errors. Overworld day (shadows/water reflections/volumetric clouds), night (stars, moonlight), full-moon + snowy-biome aurora, Nether teal fog, End purple mist + dragon silhouette all confirmed. Moon→Earth, Earth-orbit→Moon, Glacio-orbit planet billboards render textured (purple-square bug resolved). Mars ochre dust, Venus orange overcast, Mercury/Moon airless starfields, asteroid belt black space + asteroids — per-dimension presets working. FPS: Euphoria ≈49–55 vs MakeUp(low) ≈66–71 vs shader-off ≈116 at a heavy water+forest viewpoint.
 
 **Known issue (not ours)**: Glacio's sky shows a pink checkered celestial band — visible with shaders off too; it is Ad Astra's own skybox art, not a shader defect.
+
+## Addendum — 2026-09-25 FTB Essentials server layer (114 enabled)
+
+| Mod | Locked | Source / license | Side | External deps (from jar) |
+|---|---|---|---|---|
+| FTB Essentials | 2101.1.10 | FTB maven `ftb-essentials-neoforge`; All Rights Reserved (see-repo) | server | `ftblibrary [2101.1.4,)` ✓ (2101.1.36) · `ftbranks`/`luckperms` optional, absent |
+
+Server-only by design (`displayTest="IGNORE_SERVER_VERSION"`; commands are server-registered, clients connect without it — kept out of the client manifest deliberately). Optional permission mods skipped: command gating is vanilla op-level — player commands check the config `enabled` flag only, admin commands additionally require `hasPermission(2)`.
+
+**Config** (`pack/config/ftbessentials.snbt` — FTB Library reads `config/ftbessentials.snbt` directly; `defaultconfigs` is only a first-boot seed): `home.max` 1→3, teleport warmups 0→3s, `misc.enderchest` disabled (free remote storage would bypass the backpack progression). Everything else upstream default. The mod rewrites this file on load — pack comments are stripped, only keys survive.
+
+**Runtime evidence**: dedicated server `Done (1.8s)`; KubeJS `starforge_essentials_test.js` (flag `kubejs/essentialstest.json`) — 47/47 checks on the live dispatcher: all 19 player commands (`tpa`/`tpahere`/`tpaccept`/`tpdeny`/`home`/`sethome`/`delhome`/`listhomes`/`back`/`spawn`/`playerspawn`/`warp`/`listwarps`/`rtp`/`kickme`/`trashcan`/`nickname`/`leaderboard`/`give_me_kit`) usable by a level-0 FakePlayer source; 18 admin literals refused at level 0 and accepted for console; `/enderchest` absent from the tree; `/sethome`/`/listhomes` reach mod logic at level 0; `/fly` throws at the brigadier gate.
+
+**i18n**: bundled `zh_cn` covers all 94 keys (audit-lang: complete, 0 missing); a small polish overlay at `pack/kubejs/assets/ftbessentials/lang/zh_cn.json` smooths a dozen awkward upstream strings (listhomes distance format, rtp/near/tp_offline phrasing, cooldown/warmup notices). Permission-denied surfaces as vanilla "unknown command" (brigadier filters gated literals) — already localized.
+
+**Known limits (recorded, not blocked)**: FakePlayer is excluded from `FTBEPlayerData` (`PlayerHooks.isFake` early-exit) — real home persistence/TPA handshake/death-back need a human client pass; per-group home limits/cooldowns require FTB Ranks (not installed).

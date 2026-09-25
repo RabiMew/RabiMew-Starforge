@@ -1,6 +1,6 @@
 # 简体中文本地化审计报告
 
-生成：`node tools/audit-lang.mjs` · 2026-09-24 · MC 1.21.1 / neoforge
+生成：`node tools/audit-lang.mjs` · 2026-09-25 · MC 1.21.1 / neoforge
 
 覆盖层级：JAR 自带 `zh_cn`（优先）→ `pack/kubejs/assets/<ns>/lang/zh_cn.json` 覆盖层
 （`tools/gen-mod-lang-zh.mjs` 生成，含 vendor 的 CFPA/I18nUpdateMod 子集）。
@@ -9,15 +9,15 @@
 
 | 指标 | 数量 |
 | --- | --- |
-| 启用 Mod（manifest） | 112 |
-| 有语言文件的 Mod / 命名空间 | 82 / 84 |
+| 启用 Mod（manifest） | 114 |
+| 有语言文件的 Mod / 命名空间 | 84 / 86 |
 | 无语言文件的 Mod | 30 |
-| en_us 键总数 | 21492 |
+| en_us 键总数 | 21603 |
 | 缺失键总数 | 0 |
 | zh 空值键 | 3 |
-| zh 与 en 相同（可疑） | 105 |
+| zh 与 en 相同（可疑） | 106 |
 
-- **完整**：84 个命名空间
+- **完整**：86 个命名空间
 - **存在硬编码英文**：30 个 Mod
 
 ## 各命名空间覆盖明细
@@ -88,6 +88,7 @@
 | defaultoptions | defaultoptions | assets | 6 | 无 | 6 | - | - | - | 完整 |
 | modernfix | modernfix | assets | 155 | 134 | 22 | - | - | - | 完整 |
 | iris | iris | assets | 73 | 67 | 6 | - | - | - | 完整 |
+| euphoria_patcher | euphoria_patcher | assets | 17 | 17 | - | - | - | 1 | 完整 |
 | entityculling | entityculling | assets | 27 | 27 | - | - | - | - | 完整 |
 | dynamicfps | dynamic_fps | assets | 85 | 71 | 14 | - | - | - | 完整 |
 | structure_layout_optimizer | structure_layout_optimizer | assets | 6 | 无 | 6 | - | - | 1 | 完整 |
@@ -95,6 +96,7 @@
 | ftb_library | ftblibrary | assets | 113 | 113 | - | - | - | - | 完整 |
 | ftb_teams | ftbteams | assets | 112 | 无 | 112 | - | - | - | 完整 |
 | ftb_xmod_compat | ftbxmodcompat | assets | 0 | 无 | - | - | - | - | 完整 |
+| ftb_essentials | ftbessentials | assets | 94 | 94 | - | - | - | - | 完整 |
 | sophisticatedcore | sophisticatedcore | assets | 318 | 318 | - | - | - | - | 完整 |
 | balm | balm | assets | 36 | 无 | 36 | - | - | - | 完整 |
 | searchables | searchables | assets | 1 | 1 | - | - | - | - | 完整 |
@@ -214,6 +216,8 @@
   - `inventoryprofiles.tooltip.fast_rename`
 - **betterf3 / betterf3**：1 键
   - `text.betterf3.line.fps_tps`
+- **euphoria_patcher / euphoria_patcher**：1 键
+  - `euphoria_patcher.donation.line2.highlight`
 - **structure_layout_optimizer / structure_layout_optimizer**：1 键
   - `config.structure_layout_optimizer.title`
 - **moonlight / moonlight**：1 键
@@ -225,7 +229,7 @@
 
 ## 语言文件之外的检查
 
-- ✅ FTB Quests snbt：en/zh 键完全一致（547 键）
+- ✅ FTB Quests snbt：en/zh 键完全一致（550 键）
 - ✅ FTB Quests 章节文件：未发现英文硬编码文本（文本经 lang snbt 本地化）
 - ✅ progressivestages.toml：全部消息均为 <ps:*> 标记或双语字面量
 - ✅ stage_i18n.json：覆盖全部 stage.toml 双语字面量
