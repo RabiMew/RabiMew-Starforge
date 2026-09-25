@@ -77,10 +77,13 @@ key_key.ad_astra.open_radio:key.keyboard.backslash
 key_key.ad_astra.toggle_suit_flight:key.keyboard.grave.accent
 
 // === IC2CRE (registers UNIVERSAL-context keys) ===
-// mode_switch off M (world map) -> ; ; side_inventory off C (crawl),
-// hud_mode off X (quick-switch), boost off Left Ctrl (sprint) -> unbound.
+// mode_switch off M (world map) -> C: deliberately shares TaCZ crawl's key;
+// mode_switch only acts while holding a mode-switchable IC2 item, so the
+// stray crawl toggle on mode switching is an accepted overlap (pack design).
+// side_inventory off C (crawl), hud_mode off X (quick-switch),
+// boost off Left Ctrl (sprint) -> unbound.
 // alt stays on Left Alt as IC2CRE's modifier base key.
-key_key.ic2cre.mode_switch:key.keyboard.semicolon
+key_key.ic2cre.mode_switch:key.keyboard.c
 key_key.ic2cre.side_inventory:key.keyboard.unknown
 key_key.ic2cre.hud_mode:key.keyboard.unknown
 key_key.ic2cre.boost:key.keyboard.unknown
