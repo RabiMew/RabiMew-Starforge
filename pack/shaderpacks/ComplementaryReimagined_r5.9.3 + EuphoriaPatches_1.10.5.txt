@@ -3,25 +3,50 @@
 # Keys below are verified against ComplementaryReimagined r5.9.3 shaders.properties /
 # lib/common.glsl (Euphoria Patches rides on the same option names).
 #
-# Base preset: official LOW profile (real-time shadows Very Low @ 96 blocks, SSAO Medium,
-# water reflections Medium, clouds Medium, light shafts off, FXAA off, detail Medium).
+# Base preset: official LOW profile (real-time shadows Very Low @ 96 blocks — required
+# non-OFF for light shafts — SSAO Medium, FXAA off, detail Medium). Explicit lines below
+# always win over the profile.
 profile=LOW
 #
 # Starforge overrides — priority: stability > dimension compat > FPS > visuals.
+# Performance screen: entity shadows OFF, block reflections OFF, water reflections
+# Medium (SSR path tracing), clouds Medium, light shafts Medium, sky-effect
+# reflections Full (clouds/stars/aurora visible in water + block reflections).
+ENTITY_SHADOW=-1
+BLOCK_REFLECT_QUALITY=0
+WATER_REFLECT_QUALITY=2
+CLOUD_QUALITY=2
+LIGHTSHAFT_QUALI_DEFINE=2
+SKY_EFFECT_REFLECTION_DEFINE=2
 TAA_DEFINE=1
-WATER_REFLECT_QUALITY=1
-CLOUD_QUALITY=1
-LIGHTSHAFT_QUALI_DEFINE=1
 WORLD_BLUR=0
 MOTION_BLUR_EFFECT=-1
 CHROMA_ABERRATION=0
 WORLD_SPACE_REFLECTIONS=-1
 IMAGE_SHARPENING=3
 #
+# Visual style — Euphoria "Unbound" globally (SHADER_STYLE=4), with every element
+# pinned explicitly so a later style change can't silently re-skin them.
+# SUN_MOON deliberately stays Reimagined (value 1), not style-following.
+SHADER_STYLE=4
+WATER_STYLE_DEFINE=3
+CLOUD_STYLE_DEFINE=3
+SUN_MOON_STYLE_DEFINE=1
+AURORA_STYLE_DEFINE=2
+RAINBOW_STYLE_DEFINE=4
+#
+# Atmosphere: double-layer Unbound clouds, cloud shadows, sun+moon cloud lighting,
+# aurora terrain/cloud influence, Basic RP support (no PBR — consistent with
+# BLOCK_REFLECT_QUALITY=0).
+DOUBLE_UNBOUND_CLOUDS=true
+CLOUD_SHADOWS=true
+CLOUD_SUN_MOON_SHADING=3
+AURORA_INFLUENCE=true
+RP_MODE=0
+#
 # Night sky (overworld only — these paths are #ifdef OVERWORLD in the shader, so they
 # can never leak into vacuum dimensions even if one is mis-mapped):
 NIGHT_STAR_AMOUNT=3
-AURORA_STYLE_DEFINE=1
 AURORA_CONDITION=4
 NIGHT_NEBULAE=1
 NIGHT_NEBULA_I=50
