@@ -9,8 +9,8 @@
 采用以下层次（V2 引导架构，实现见 `design/progression.json`）：
 
 - **材料与机器能力**承担主要进度：做得出上游组件，才有下游设备。
-- **ProgressiveStages** 是**唯一状态源**：8 个时代阶段（T0–T7，携带锁规则）+ 22 个能力节点（不携带锁、永不反向授予时代）在同一张依赖图上；记录团队的工业成果并执行制造权限与设备能力限制，防止原配方、自动合成或奖励绕过。
-- **Progression Map**（PS 库存按钮打开）是**总导航**：时代主线 + 能力分支 + 各节点解锁条件一览。
+- **ProgressiveStages** 是**唯一的进度记录层**（纯软锁模型）：8 个时代阶段（T0–T7）+ 22 个能力节点（永不反向授予时代）在同一张依赖图上；记录团队的工业成果、驱动里程碑奖励与图谱导航，但**不锁任何物品、配方、机器、维度或界面**。内容门槛完全由配方材料、能源需求、机器链与生存环境承担——允许提前探索或"偷跑"，代价是真实成本而非禁止。
+- **Progression Map**（PS 库存按钮打开）是**总导航**：时代主线 + 能力分支 + 各节点达成条件一览（图谱上显示的是里程碑凭证与依赖关系，不是权限闸门）。
 - **FTB Quests** 提供并列教程、路线说明与可选里程碑；`milestones` 章用 `gamestage` 任务与 PS 图谱实时同步——任务书记录进度但不授予进度；关闭任务系统仍应能从 T0 完成地球 T7。
 - **Advancements** 是成就记录层：时代镜像（`stage_granted`，仅在 PS 实际授阶后由桥接颁发）、原版触发与自定义事件成就，均不授予阶段。
 - **手册**（任务书 manual 章）是详细知识库，分组自由翻阅。
@@ -39,7 +39,7 @@
 | IE 哨戒炮 + TACZ Turrets | 自动防线（T2 工业固定 → T4 军用自动） | TACZ 炮塔消耗装入枪械对应的实弹，从脚下弹药箱取弹；IE 炮塔消耗 IE 弹药 | 多种火力配合，而非一种炮塔通吃 |
 | TaCZ Addon | 枪匠台 QoL：附件/弹药过滤、材料清单、JEI 跳转、邻近容器取料 | 只降操作负担 | 不改配方成本、不解锁科技 |
 | TaCZ Pack Upgrader | 旧格式枪包 → 1.21.1 移植版格式转换 | 启动时自动处理 tacz/ 目录 | 不授予第三方枪包再分发权 |
-| EOS – Dawn Goddess Lab（TaCZ 枪包） | 中后期重型/科幻武器层（ARR，经 CF CDN 分发不入库） | 武器经工业中间件分 T3–T5 解锁；弹药成本显著高于常规枪械 | 虫群/Boss/怪潮/外星远征，不取代常规枪械 |
+| EOS – Dawn Goddess Lab（TaCZ 枪包） | 中后期重型/科幻武器层（ARR，经 CF CDN 分发不入库） | 武器经工业中间件分 T3–T5 材料层级；弹药成本显著高于常规枪械 | 虫群/Boss/怪潮/外星远征，不取代常规枪械 |
 | Easy Villagers | 抽象化殖民设施：农业、人口、贸易、基础材料 | 接食物与材料产线；运输村民支持殖民 | 设施化居民取代大量自由活动实体，压低常驻 AI 开销 |
 | Guard Villagers | 殖民警卫、民兵与驻军 | 消耗军工产线的武器、护甲与弹药库存 | 建筑内部与炮塔死角的第二层防御 |
 | TaCZ（非官方 NeoForge 移植） | 单兵枪械与弹药 | 武器制造接入 IC2/IE/石油/AE2；弹药进入工业经济 | 军事消费端，不是独立枪战科技树 |
@@ -64,7 +64,7 @@ Polymorph、Controlling、Mouse Tweaks、Crafting Tweaks、AppleSkin、Jade Addo
 跨星球           Ad Astra 火箭（人员/火箭货运 → 外星殖民地铁路网）
 ```
 
-Railcraft 只承担**行星内部**的重型实体物流，不取代基地内部管道、不复制 AE2 的数字调度、不承担跨星球运输；Ad Astra 火箭是唯一星际运输层。典型链路：矿区 → 货运铁路 → 工业基地 → AE2/BC 分拣 → 星港 → 火箭 → 外星殖民地；外星殖民地同样用铁路连接登陆区、前哨、矿场、氧气区、工业区与发射场。Railcraft 强制区块加载仅有 WorldSpike 系列方块（T4 阶段锁），默认不提供长距离铁路永久强加载——列车沿途按矿车常规规则加载；星港装卸区建议用 Personal World Spike 做受控点加载。
+Railcraft 只承担**行星内部**的重型实体物流，不取代基地内部管道、不复制 AE2 的数字调度、不承担跨星球运输；Ad Astra 火箭是唯一星际运输层。典型链路：矿区 → 货运铁路 → 工业基地 → AE2/BC 分拣 → 星港 → 火箭 → 外星殖民地；外星殖民地同样用铁路连接登陆区、前哨、矿场、氧气区、工业区与发射场。Railcraft 强制区块加载仅有 WorldSpike 系列方块（`world_spike` 配方已升至 T4 材料：钢部件+高级电路，`personal_world_spike` 保留平价——只在玩家在线时加载），默认不提供长距离铁路永久强加载——列车沿途按矿车常规规则加载；星港装卸区建议用 Personal World Spike 做受控点加载。
 
 ## 3. 科技树：共同底座与可选分支
 
@@ -83,9 +83,9 @@ flowchart LR
   T2 -.持续发展.-> D[军事防御]
 ```
 
-阶段授予以**服务端确认的制造/运行成果**为准，不以捡到物品、登录天数、击杀 Boss、提交任务或进入维度为准。所有晋级所需机器和配方必须在前一阶段已经能使用；晋级后再开放批量化与新能力，避免先解锁才能做出解锁物的死循环。
+阶段授予以**服务端确认的制造/运行成果**为准，不以捡到物品、登录天数、击杀 Boss、提交任务或进入维度为准。每个时代的晋级凭证只要求前一时代的材料链（`design/tech-tiers.json` 记录全部内容的预期可负担时代，校验器强制一致），阶段本身不授予权限——凭证物品的配方就是通往下一时代的真实成本。"偷跑"成立：提前凑齐材料即可提前制造，但材料、能源与机器链保证你无法零成本跳过完整时代。
 
-| 等级与内部 ID | 上游条件与晋级证据 | 新增能力 | 基地新需求 |
+| 等级与内部 ID | 上游条件与晋级证据 | 该时代的典型能力（由材料链自然解锁） | 基地新需求 |
 | --- | --- | --- | --- |
 | T0 `survival_age` | 新团队自动获得 | 原版、农夫乐事基础厨房、普通造型建筑 | 储粮、照明、围栏、维修道路 |
 | T1 `mechanical_age` | T0 手工制成工程装配件 | FastPipes 基础物品/流体/能量管与基础附件；BC 引擎/泵；IE 焦炉、基础高炉、手工工程材料与传送带 | 燃料、木材、钢铁、物流缓冲 |
@@ -104,9 +104,9 @@ T3 的“信息时代”属于中期：T2 要先完成稳定电力与实体物�
 
 ### 团队制造与个人专精
 
-同团队共享工业解锁，新成员加入即同步，不必重做全科技。制造权限归属团队，机器归属以放置者/基地登记记录确定。自动设备使用所属团队权限，不能借“无人操作”绕过。
+同团队共享时代里程碑记录，新成员加入即同步，不必重做凭证物品。制造完全开放：阶段只证明团队已经能造，不限制任何设备；机器归属以放置者/基地登记记录确定，仅用于补给、维护与威胁统计。
 
-跨队可以出售成品。买到量子装备可以使用，但不自动获得量子制造权限；首次制造证据不能由拾取代替。设备能力与威胁按实际部署等级计入，避免低阶段团队购买高级工厂后获得永久新手保护。服务端限制针对制造入口和明确的研究设备，不销毁他人送来的物品、不禁止搬运与普通使用。
+跨队可以出售成品；任何人都能直接使用买到的量子装备——阶段里程碑只按"亲手制成凭证物品"认定，拾取或购买不授予。设备能力与威胁按实际部署等级计入，避免低阶段团队购买高级工厂后获得永久新手保护。服务端不设制造拦截：物品、配方、机器与维度一律不被阶段锁定。
 
 个人职业不使用排他锁。单人可以横向发展；多人通过交易减少重复劳动。默认合作规则不设计 PvP 军备竞争。
 
@@ -142,7 +142,7 @@ T3 的“信息时代”属于中期：T2 要先完成稳定电力与实体物�
 | SF-24 | T7 | 量子装备 = 对应 IC2 纳米装备 + 原量子材料 + 量子控制组件 | 能量、机动性和生存能力升级，仍需基地后勤 |
 | SF-25 | T7 | AE2 量子桥 = 原 AE2 部件 + IC2 铱强化材料 + IE 钢结构件 | 地球远端基地也可使用；量子缠绕奇点完全地球可得 |
 | SF-26 | T2 | 基础建造工具 = IC2 电池×1 + 基础电路×2 + IE 铁机械部件×2 | 批量铺设，照常消耗建筑材料与电力 |
-| SF-27 | T4 / T5 | 替换工具加入高级合金；复制粘贴工具加入 AE2 处理器与大容量电池 | 按独立工具配方分阶；若单工具模式无法分锁，不伪造模式权限 |
+| SF-27 | T4 / T5 | 替换工具加入高级合金；复制粘贴工具加入 AE2 处理器与大容量电池 | 按独立工具配方分阶；若单工具模式无法用配方分级，不伪造模式权限 |
 | SF-28 | T5 | 异常分析模块 = IC2 高级电路×2 + AE2 计算处理器×2 + 高纯材料×4 | 地球实验生产；探索奖励同类模块或特殊外观版，不垄断功能 |
 | SF-29 | T2 | 高级仓储升级 = 对应模组升级基底 + IC2 基础电路×1 + IE 铁机械部件×1 | 容量、过滤、压缩类升级按级开放；不靠钻石直达终局容量 |
 | SF-30 | T2–T4 | 背包高级升级 = 背包升级基底 + IC2 电路 + IE 部件，按级递增 | 容量、拾取与补给功能分阶段；不提供随身合成网络或无限加工 |
@@ -171,11 +171,11 @@ T3 的“信息时代”属于中期：T2 要先完成稳定电力与实体物�
 
 保留 IC2 电压、储能与布线的决策价值；BC 燃料物流和 IE 生物柴油是早期与分布式供能方案，核能解决后期规模问题。IC2 的核心定位由高级组件与精炼链保证，不必强制所有路灯也走 EU。
 
-**FE 公共电网（2026-09-24 实测定稿，2026-10-13 能源清理）**：`IE / IC2CRE / BuildCraft 发电 → FE 公共电网 → 对应转换器 → 特殊能源设备`。Ad Astra、AE2 与 Refurbished 一律作耗电端：Ad Astra 燃煤发电机与太阳能板、Refurbished 明/暗发电机、AE2 振动室已禁用（删配方、隐藏 EMI/JEI 与创造栏、移出任务书与阶段锁，物品保留注册以兼容存档）；AA 机器、AE2 网络与家电各自经原生接口从电网吃电。FastPipes 能量管是默认 FE 干线（basic 1k → improved 4k → advanced 8k → elite 16k → ultimate 32k FE/t，混网按单管瓶颈限速），凡暴露 `Capabilities.EnergyStorage.BLOCK` 的设备即插即用，能量抽取附件可主动从可抽取缓存取电。已实测的接口面：IE 电容全六面、接线器按朝向；Ad Astra energizer/机器全六面（etrionic_capacitor 不暴露 FE）；IC2CRE batbox/发电机/电缆全六面暴露 FE——原生 FE 桥确认存在，不需要另做转换器；AE2 能量接收器/控制器全六面收 FE（能量直接进 ME 网，孤立接收器无网络时不蓄电）；Energized Furniture 能源变压器全六面收 FE 后转 Refurbished Watt（原配方以被禁发电机为原料，已由 FE 电网部件重写配方，见 implementation-status）；BuildCraft 经 `powerMode=DISPLAY_FE`（`pack/config/buildcraftcore-common.toml`，`mjPerFe=0.1` 即 1 MJ = 10 FE，2026-09-24 运行时 captest 实测）原生并网：引擎经 MjPort→FeEndpoint 向相邻 FE 存储（含 FastPipes 能量管）直接推电，机器经 MjReceiverEnergyStorage 暴露收电 cap 直接吃 FE，玩家侧统一显示 FE；mj_dynamo 与 engine_fe 保留为可选显式互转设备，不承担并网职责；Railcraft 的 charge_terminal/charge_motor 不暴露 FE capability——Charge 网络保持独立自足，但经 `starforge_compat:charge_bridge`（FE↔Charge 双向转换器，2026-10-14 captest 实测）并入公共电网：方块实现 Railcraft 官方 `ChargeBlock` 节点 API（ConnectType.BLOCK、零损耗、RECHARGEABLE 4096 网络电池，电池由 Railcraft 自身创建并经 ChargeSavedData 持久化，无模拟存储），FE 侧暴露标准 EnergyStorage；256 FE/t 上限、4096 FE 缓冲、严格 1 FE = 1 Charge（实测转换比 1.0、往返 4096→4096 无损、每 tick 单向杜绝自激回路，两台桥互连只搬运不增殖）；潜行右击循环 AUTO/FE→Charge/Charge→FE/关闭，红石信号强制禁用；配方 SF-37、阶段锁 electric_age（电力铁路起点），无 Railcraft 时整个特性自动缺席。
+**FE 公共电网（2026-09-24 实测定稿，2026-10-16 Ad Astra 前哨电源恢复并网）**：`主力发电 = IE / IC2CRE / BuildCraft；Ad Astra 燃煤发电机与太阳能板 = 行星前哨/外星本地电源`，全部经原生 FE 接口并入同一电网。`ad_astra:coal_generator`/`solar_panel` 已恢复配方与获取面——captest 实测两者全六面+any 暴露 `Capabilities.EnergyStorage.BLOCK`，不做任何转换桥；燃煤发电机（燃料槽=槽位 1，`coalGeneratorEnergyGenerationPerTick=20` FE/t）→ FastPipes 能量管+抽取附件 → Ad Astra 压缩机实测 200 tick 窗口入账 3920 FE（≈20 FE/t 连续，源/管网/目的端守恒）；太阳能板 → 能量管实测三条链路入账：主世界→IC2 电炉 1200 FE、月球→AA 压缩机 1848 FE（白天窗口 24 FE/t）、地球轨道→AE2 控制器（32 FE/t 档）；`dayTime%24000>12000` 入夜即停、`canSeeSky` 遮挡判定原生保留，各星球 solar_power 差异不动（地球 16/月球 24/火星 12/金星 8/水星 64/轨道 32）。月球维度经 captest 确认与主世界共享同一 dayTime 计数器、isDay 边界逐维度一致——「月球太阳能不发电」系面板被埋于无天空可见位置所致，非逻辑缺陷，未做兼容修复。仍禁用：Refurbished 明/暗发电机、AE2 振动室（删配方、隐藏 EMI/JEI 与创造栏，物品保留注册以兼容存档）；AA 机器、AE2 网络与家电各自经原生接口从电网吃电。FastPipes 能量管是默认 FE 干线（basic 1k → improved 4k → advanced 8k → elite 16k → ultimate 32k FE/t，混网按单管瓶颈限速），凡暴露 `Capabilities.EnergyStorage.BLOCK` 的设备即插即用，能量抽取附件可主动从可抽取缓存取电。已实测的接口面：IE 电容全六面、接线器按朝向；Ad Astra energizer/机器全六面（etrionic_capacitor 不暴露 FE）；IC2CRE batbox/发电机/电缆全六面暴露 FE——原生 FE 桥确认存在，不需要另做转换器；AE2 能量接收器/控制器全六面收 FE（能量直接进 ME 网，孤立接收器无网络时不蓄电）；Energized Furniture 能源变压器全六面收 FE 后转 Refurbished Watt（原配方以被禁发电机为原料，已由 FE 电网部件重写配方，见 implementation-status）；BuildCraft 经 `powerMode=DISPLAY_FE`（`pack/config/buildcraftcore-common.toml`，`mjPerFe=0.1` 即 1 MJ = 10 FE，2026-09-24 运行时 captest 实测）原生并网：引擎经 MjPort→FeEndpoint 向相邻 FE 存储（含 FastPipes 能量管）直接推电，机器经 MjReceiverEnergyStorage 暴露收电 cap 直接吃 FE，玩家侧统一显示 FE；mj_dynamo 与 engine_fe 保留为可选显式互转设备，不承担并网职责；Railcraft 的 charge_terminal/charge_motor 不暴露 FE capability——Charge 网络保持独立自足，但经 `starforge_compat:charge_bridge`（FE↔Charge 双向转换器，2026-10-14 captest 实测）并入公共电网：方块实现 Railcraft 官方 `ChargeBlock` 节点 API（ConnectType.BLOCK、零损耗、RECHARGEABLE 4096 网络电池，电池由 Railcraft 自身创建并经 ChargeSavedData 持久化，无模拟存储），FE 侧暴露标准 EnergyStorage；256 FE/t 上限、4096 FE 缓冲、严格 1 FE = 1 Charge（实测转换比 1.0、往返 4096→4096 无损、每 tick 单向杜绝自激回路，两台桥互连只搬运不增殖）；潜行右击循环 AUTO/FE→Charge/Charge→FE/关闭，红石信号强制禁用；配方 SF-37、阶段锁 electric_age（电力铁路起点），无 Railcraft 时整个特性自动缺席。
 
 EU / mEU / FE / MJ / AE 的兼容只使用确认过的接口。IC2CRE Dev-0.4 公共能源接口使用 mEU，1000 mEU = 1 EU；不把这个换算当作 FE 或 MJ 比例。本版已实测：IC2CRE 方块实体经其内置 FE 端口暴露 NeoForge EnergyStorage（4 FE = 1 EU 换算由模组自身承担），batbox/发电机/电缆均可被 FastPipes 能量管读写——FE↔mEU 桥不再是必需项；BC 侧为上游原生对称换算：DISPLAY_FE autoconvert 在引擎/机器/动力管边界按 `microMjPerFe` 自动互转，mj_dynamo/engine_fe 为保留的单向显式转换块。任何可逆转换回路的输出不得大于输入，不新增无限免费供电通道；FE→Refurbished Watt、FE↔MJ、IC2 原生 FE 端口均为单向受控或上游原生换算，禁止构成循环发电。守恒抽查（captest）：Ad Astra energizer 经能量管向 IC2 电炉送电，源端净失 ≥ 目的端净增+管网缓存，无增殖。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4)
 
-**发电/耗电审计（2026-10-13）**：IE 柴油发电机 4096 FE/t 维持上游值（T5 主力，生物柴油产线即成本）；IC2 核电 `nuclearOutputScale = 1.0`（数百至数千 EU/t，按 4 FE/EU 折算为 T5 规模电源，铀料与散热是真实约束）；BC `powerMode=DISPLAY_FE` + `mjPerFe = 0.1`（1 MJ = 10 FE）下 autoconvert、engine_fe 与 mj_dynamo 以同一 `microMjPerFe` 换算——FE→MJ→FE 往返无损但零净增，不构成复制；dynamo 基础 4 MJ/t = 40 FE/t，齿轮升级可提升。Ad Astra 机器分档 100/150/250/500 FE/t 输入上限（iron/steel/desh/ostrum）；etrionic 高炉每件耗能 10 → 500 FE（原值按 AA 自家电网 20 FE/t 经济标定，接入 FE 电网后近乎免费，见 `pack/config/ad_astra.jsonc`）；水泵 20 FE/t 出 50 mB/t 维持。AE2 能量接收器按 0.5 比率收 FE（2 FE = 1 AE），`usageMultiplier = 1.0`；晶振发电机 20 AE/t 且每网络仅一台生效（EnergyOverlayGrid 抑制其余），作自举余量保留；振动室禁用。Refurbished `fuelToPowerRatio = 16`，家电 Watt 仅经 Energized 变压器单向馈入（FE 容量 1M、1k FE/t 收发上限、每节点 1 FE/t），无回流 FE 路径。
+**发电/耗电审计（2026-10-13）**：IE 柴油发电机 4096 FE/t 维持上游值（T5 主力，生物柴油产线即成本）；IC2 核电 `nuclearOutputScale = 1.0`（数百至数千 EU/t，按 4 FE/EU 折算为 T5 规模电源，铀料与散热是真实约束）；BC `powerMode=DISPLAY_FE` + `mjPerFe = 0.1`（1 MJ = 10 FE）下 autoconvert、engine_fe 与 mj_dynamo 以同一 `microMjPerFe` 换算——FE→MJ→FE 往返无损但零净增，不构成复制；dynamo 基础 4 MJ/t = 40 FE/t，齿轮升级可提升。Ad Astra 机器分档 100/150/250/500 FE/t 输入上限（iron/steel/desh/ostrum）；etrionic 高炉每件耗能 10 → 500 FE（原值按 AA 自家电网 20 FE/t 经济标定，接入 FE 电网后近乎免费，见 `pack/config/ad_astra.jsonc`）；水泵 20 FE/t 出 50 mB/t 维持。Ad Astra 发电侧（2026-10-16 恢复）：燃煤发电机 20 FE/t 烧煤稳定供网、太阳能板按星球 solar_power 0–64 档日间发电，均为原生 FE 源经 FastPipes 入网——定位为前哨/外星本地电源，不取代工业主力发电。AE2 能量接收器按 0.5 比率收 FE（2 FE = 1 AE），`usageMultiplier = 1.0`；晶振发电机 20 AE/t 且每网络仅一台生效（EnergyOverlayGrid 抑制其余），作自举余量保留；振动室禁用。Refurbished `fuelToPowerRatio = 16`，家电 Watt 仅经 Energized 变压器单向馈入（FE 容量 1M、1k FE/t 收发上限、每节点 1 FE/t），无回流 FE 路径。
 
 ### 统一石油经济
 
@@ -195,7 +195,7 @@ BC CE 与 Immersive Petroleum 同时提供原油、燃料或炼油设备时，�
 | T3 | AE2 成为实体仓库之上的数字化层 | 实体产线 → 抽屉/通用仓储 → 各自仓储控制器 → AE2 存储总线与网络 → 自动合成与库存管理；AE2 不让实体仓库失去价值 |
 | T7 | AE2 量子桥承担远距离工业网络 | 两端供电与加载要求不变 |
 
-两套实体仓储由各自的控制器汇总，不假定一个控制器能统一管理两套系统；AE2 通过存储总线读取汇总后的库存。Sophisticated Backpacks 承担采矿背包、工程师工具包、探索补给、航天远征物资与殖民施工包；基础背包较早开放，容量、压缩、自动拾取、自动补给等升级随 T2–T4 分阶段开放。背包不是便携 AE2：不提供无限自动加工，不绕过工业物流与阶段限制。
+两套实体仓储由各自的控制器汇总，不假定一个控制器能统一管理两套系统；AE2 通过存储总线读取汇总后的库存。Sophisticated Backpacks 承担采矿背包、工程师工具包、探索补给、航天远征物资与殖民施工包；基础背包较早开放，容量、压缩、自动拾取、自动补给等升级随 T2–T4 分阶段开放。背包不是便携 AE2：不提供无限自动加工，不绕过工业物流与材料阶梯。
 
 ## 5. 七条长期路线
 
@@ -225,7 +225,7 @@ T6：月球温室重在密封与储水，火星温室重在产能与防线。断
 
 食物不硬锁科技，不添加无必要腐败倒计时；高级餐食利用既有饱食/增益机制，提高持续工作与远征舒适度。机械修理由实际维修适配支持，尚未实现时维护组件不假装自动扣除。
 
-建筑材料 T0 起开放。工业外观围绕混凝土、钢架、玻璃、管廊、警示标识统一；装饰方块不因外观自动获得防爆或气密属性。FramedBlocks 伪装材质的硬度、爆炸抗性与氧气密封逐项测试。Building Gadgets 在 T2/T4/T5 分别开放铺设、替换、复制粘贴；破坏工具 T5 可选并受权限约束，禁止复制带库存/能源/实体数据的机器来增殖资源。
+建筑材料 T0 起开放。工业外观围绕混凝土、钢架、玻璃、管廊、警示标识统一；装饰方块不因外观自动获得防爆或气密属性。FramedBlocks 伪装材质的硬度、爆炸抗性与氧气密封逐项测试。Building Gadgets 的铺设/替换/复制粘贴/破坏按 T2/T4/T5 材料分级（基础电路→高级电路/合金→AE2 处理器+蓝波顿水晶，见 SF-26/27/39）；禁止复制带库存/能源/实体数据的机器来增殖资源。
 
 ## 7. 可选里程碑
 
@@ -233,7 +233,7 @@ T6：月球温室重在密封与储水，火星温室重在产能与防线。断
 
 `milestones` 章用 `gamestage` 任务镜像 T1–T7 时代阶段（团队持阶即自动完成），`star_map` 指引玩家打开 ProgressiveStages 进度图谱。支线任务一律 `optional: true`（不计章节完成度）；required 任务不得依赖 optional 任务（校验器强制）。
 
-检测任务不消耗机器；说明类任务允许阅读确认；能力节点通过 PS 触发条件与运行时事件（`design/guidance.json`）识别，不经任务书授予。默认奖励为少量食物、原材料或里程碑奖励包（右键打开的随机奖励容器，奖池按时代分层，见 design/reward-pools.json），不发尚未解锁的机器、电路与唯一蓝图，不以领取奖励授予阶段。
+检测任务不消耗机器；说明类任务允许阅读确认；能力节点通过 PS 触发条件与运行时事件（`design/guidance.json`）识别，不经任务书授予。默认奖励为少量食物、原材料或里程碑奖励包（右键打开的随机奖励容器，奖池按时代分层，见 design/reward-pools.json），不发超出该时代材料层级的机器、电路与唯一蓝图，不发放尚未到达星球的深空材料（tier_6 不含金星/霜原材料），不以领取奖励授予阶段。
 
 终局展示的是运营能力：工厂有备用电，防线能补给，远端库存有阈值，殖民地能在断供时坚持一段时间。地球 T7 也有等价长期目标：多区域工业、灾后恢复与高效城市后勤，不要求去太空才能“通关”。
 

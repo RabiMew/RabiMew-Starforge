@@ -34,15 +34,15 @@
 
 ## 正在实现
 
-- P1 阶段推进链路已实测通过（见下「阶段推进实测」）；锁 enforcement 待真实玩家进世界验证。
+- P1 阶段推进链路已实测通过（见下「阶段推进实测」）；锁 enforcement 已随 2026-10-15 软锁重构整体移除（见文末），阶段里程碑同步待实机验证。
 - P2 防御原型：配置层已落地并加载验证（见下「P2 已实现」）；炮塔弹药消耗已由 TACZ Turrets 原生解决（见降级记录）；怪潮阶段化仍需 compat 模组。
 
 ## P1 已实现并验证（服务端）
 
 - `design/semantic-map.json` + `tools/check-mapping.mjs`：472 条语义→真实 ID 映射全部解析成功（含 `modpack:` 本地物品白名单校验）；首轮即捕获 8 条猜测错误 ID（如 `buildcrafttransport:pipe_item_wood` 实为 `buildcrafttransport:wood_item`），本轮再捕获 `railcraft:iron_track` 臆造 ID（实际为 `railcraft:strap_iron_track`）。
-- `tools/build-pack.mjs`：从 `design/content.json`/`semantic-map.json`/`stage-locks.json`/`localization/*.json` 生成 KubeJS 物品注册、语义映射脚本、双语 lang、物品模型与占位贴图、ProgressiveStages 全局配置与 8 个 stage 定义。`localization/` 仍是唯一文案源。
+- `tools/build-pack.mjs`：从 `design/content.json`/`semantic-map.json`/`tech-tiers.json`/`localization/*.json` 生成 KubeJS 物品注册、语义映射脚本、双语 lang、物品模型与占位贴图、ProgressiveStages 全局配置与 30 个 stage 定义。`localization/` 仍是唯一文案源。
 - `tools/gen-mod-lang-zh.mjs`：补齐模组自带 `zh_cn` 缺失键（framedblocks 330、refurbished_furniture 654、mcwfurnitures 56、energizedfurniture 12、immersivecooking 53、tmted 15），产物为 `pack/kubejs/assets/<mod>/lang/zh_cn.json`（KubeJS 按键覆盖，不影响 jar 内已有译文）。模组升版后重跑即可。
-- `design/stage-locks.json` + 生成器：每阶段 `stage.toml/progression.toml/rules.toml`。`/progressivestages validate` 8/8 通过；`/stage tree` 显示 T0→T5 链与 T6/T7 分叉（T7 不依赖 T6）。
+- `design/tech-tiers.json` + 生成器：每阶段 `stage.toml/progression.toml/rules.toml`（rules.toml 自软锁重构起不再含物品/配方/维度锁，仅保留成就 reveal 排序）。`/progressivestages validate` 8/8 通过；`/stage tree` 显示 T0→T5 链与 T6/T7 分叉（T7 不依赖 T6）。
 - 阶段授予 = 双通道触发（schema-4 `[[triggers]] mode=any_of`）：原生 `craft` 条件 + KubeJS `starforge_triggers.js` 在 `ItemEvents.crafted` 上累加 `custom_counter`。凭证物品：T1 `modpack:engineering_assembly`、T2 `ic2cre:generator`、T3 `information_interface`、T4 `heavy_industry_control`、T5 `reactor_control`、T6 `space_control_core`、T7 `quantum_control`；T0 为 `starting_stages` 自动授予。FTB Teams 团队共享（`team_mode=ftb_teams`）。
 
 ### 阶段推进实测（dedicated server，`kubejs/stagetest.json` 开启时自动跑）
@@ -50,18 +50,18 @@
 - `starforge_stage_test.js` 用 FakePlayer 验证：8/8 阶段注册 → 授予 `survival_age` → 依次推进 mechanical→electric→information→heavy_industry→atomic→space+quantum，**全部 OK**（`kubejs/export/stagetest.json` 记录）。
 - 服务端日志确认 `Per-stage triggers active for 7 stage(s), 7 rule(s) total`，7 个 trigger 全部触发授阶。
 - 关键技术修正：PS schema-4 的触发语法是 `[[triggers]]` + `[[triggers.conditions]]`（`type`/`item`/`counter`/`count`），不是早期猜测的 `[[grants]] condition={...}`（该写法被静默忽略导致授阶全 FAIL）；`custom_counter` 的字段名是 `counter`（兼容 `key`/`id`/`target`）。
-- 锁实现：`[recipes].locked_items` 封制造 + `action=use/place` 锁使用/放置 + `action=enter` 锁维度（space_age 锁全部 Ad Astra 维度与轨道）。示例计数：electric_age 28 锁、space_age 35 锁。
+- 锁实现（已于 2026-10-15 移除，记录备查）：当时为 `[recipes].locked_items` 封制造 + `action=use/place` 锁使用/放置 + `action=enter` 锁维度（space_age 锁全部 Ad Astra 维度与轨道）。现全部由配方材料链 + Ad Astra 火箭/燃料/氧气原生门槛取代，rules.toml 不再含锁规则。
 - KubeJS 配方层 `starforge_recipes.js`：SF-01..SF-30 中除 TaCZ（SF-31..33，走枪包数据）外全部落地。实测导出 6606 配方：46 条 `kubejs:`/`minecraft:kjs/` 新配方生效，32 条被替换的原配方全部移除（含 `ic2cre:generator`/`generator_from_furnace` 双路径）。流体原料配方（IE capacitor 三级）用 `e.custom` 原样保留 `immersiveengineering:fluid_stack` 成分。
 - 石油经济已统一（实测 tag 导出）：`starforge_fluids.js` 在 `ServerEvents.tags('fluid')` 桥接两层——原油层 `c:oil`/`c:crude_oil`/`ic2cre:fluid_heat/oil` 现含全部 8 种原油等价物（BC oil/dense/heavy + flowing、ad_astra:oil、IP crudeoil）；燃料层 `c:fuel`/`ic2cre:fluid_heat/fuel` 现含 22 种精炼燃料（IP diesel/diesel_sulfur/gasoline、IE biodiesel/high_power_biodiesel、BC 五种燃料 + flowing、ad_astra fuel/cryo_fuel）。原生 `ad_astra:oil` 与 `ad_astra:tier_*_rocket_fuel` 本已互通，桥接补齐了剩余缺口。本轮再加第三层——杂酚油 `c:creosote`/`ic2cre:semifluid_generator/creosote` 统一 railcraft+IE+ic2cre 共 6 种流体形态。
 
 ### 2026-09-22 扩展集成（已验证）
 
-- **Railcraft 分层**（`design/stage-locks.json`，PS 规则生成实测加载）：T1 蒸汽核心（strap_iron_track、装卸机、焦炉/高炉砖、低压锅炉、蒸汽机车、货运/罐车、基础信号件）；T2 电气化（电力轨/机车、动力辊压机、破碎机、流体燃烧室+高压锅炉+蒸汽涡轮、charge 网络与电池、全套信号盒）；T4 重型（加固/高速轨、隧道掘进机四种钻头、高级装卸机、WorldSpike 全家——唯一的强加载入口）。`railcraft-server.toml` 实测**无区块加载开关**，故以阶段锁而非配置控制 WorldSpike。
+- **Railcraft 分层**（`design/tech-tiers.json` 层级表）：T1 蒸汽核心（strap_iron_track、装卸机、焦炉/高炉砖、低压锅炉、蒸汽机车、货运/罐车、基础信号件）；T2 电气化（电力轨/机车、动力辊压机、破碎机、流体燃烧室+高压锅炉+蒸汽涡轮、charge 网络与电池、全套信号盒）；T4 重型（加固/高速轨、隧道掘进机四种钻头、高级装卸机、WorldSpike——唯一的强加载入口）。`railcraft-server.toml` 实测**无区块加载开关**，故 WorldSpike 改由配方成本约束（SF-38：钢部件+高级电路等 T4 材料）；`personal_world_spike` 保留平价配方（仅在线加载）。
 - **Railcraft×统一流体经济**：`pack/kubejs/data/railcraft/data_maps/fluid/fluid_heat.json`（RC 自带同路径文件的合法覆盖，保留 `#c:creosote`=4800 并接入 `#c:oil`=16000、`#c:crude_oil`=16000、`#c:fuel`=64000——BC/IP/Ad Astra 燃料可烧流体锅炉）。
 - **杂酚油互认**：`wooden_tie` 原配方硬编码 `railcraft:creosote_bucket`；新增 `c:buckets/creosote` 物品标签（railcraft/IE/ic2cre 三种桶）并经 KubeJS 重写配方接收该标签（导出确认 `kubejs:kjs/railcraft_wooden_tie` 生效）。
-- **Asteroid Belt**：维度锁并入 `space_age`；`incontrol/spawn.json` 拒绝两 belt 维度的自然敌对生成；Chunky 实测 500 格半径预生成 4225 区块/32 秒，`neoforge tps` 全维度 20.000。矿物为原版系矿石 + Ad Astra 铁构件（NBT palette 实测）；误降/丢火箭机制保留。
+- **Asteroid Belt**：维度层级并入 `space_age`（tech-tiers 元数据；实际门槛为火箭等级/燃料/氧气）；`incontrol/spawn.json` 拒绝两 belt 维度的自然敌对生成；Chunky 实测 500 格半径预生成 4225 区块/32 秒，`neoforge tps` 全维度 20.000。矿物为原版系矿石 + Ad Astra 铁构件（NBT palette 实测）；误降/丢火箭机制保留。
 - **战利品护栏**：`pv` 命名空间 `glacio_loot_simple`/`mercury_loot_simple` 经 `kubejs/data` 覆盖，直刷 `ad_astra:space_suit` 被移除（不白送航天服）；其余普通材料与行星素材保留。Simple Structures 与 More Structures 结构集/命名空间不重叠，共存保留。
-- **Giselle**：全部功能性方块纳入 `space_age` 阶段锁（燃料装载机/火箭传感器/重力稳定器/自动 NASA 台/氧气罐/下界合金氧气罐），不绕过氧气、燃料与火箭等级。可选联动（Mekanism/PNC/AE2/TIF）未装，对应 mixin 安静跳过。
+- **Giselle**：全部功能性方块归入 `space_age` 层级（tech-tiers 元数据：燃料装载机/火箭传感器/重力稳定器/自动 NASA 台/氧气罐/下界合金氧气罐），配方材料链保证不绕过氧气、燃料与火箭等级。可选联动（Mekanism/PNC/AE2/TIF）未装，对应 mixin 安静跳过。
 - **工具链修正**：`check-closure.mjs` 学会解析机器配方的 `outputs[]`/`results[]`（此前 84 条 `railcraft:crushing` 全部误判孤儿），新增地球流体容器白名单（杂酚油桶=焦炉地球产出）与 RC 地表矿白名单（jar biome_modifier 核实 `#minecraft:is_overworld`；`firestone` 为下界专属未列入）。
 - 铱的地球路径确认：`ic2cre:iridium` 由 `iridium_shard→iridium_ore→iridium` 链产出（铱矿无 overworld worldgen，IC2CRE biome_modifier 仅加锡/铅/铀+橡胶树，已核实 jar 内 `neoforge/biome_modifier/`），UU/scanner 链为地球路线基础。
 - **地球闭环实测**（`tools/check-closure.mjs`，基于 6605 条真实配方导出递归展开）：`ad_astra:tier_1_rocket` **0 项太空独占材料**——首航完全由地球工业完成（钢件+IC2 电机+IE 钢构件+气罐，全部地球可产）；`ad_astra:tier_2_rocket` 需月球 desh（符合递进设计，非违规）。T1–T7 全部阶段凭证物品、纳米甲/量子甲、AE2 controller 均 0 太空依赖、0 死槽——**T7 地球量子路线不碰太空已验证到配方图层面**。tag 配料按「任一成员地球可得即通过」处理；IC2/IE 地表矿与橡胶树经 worldgen 白名单豁免（jar 内 biome_modifier 已核实指向 `#minecraft:is_overworld`）。
@@ -78,7 +78,7 @@
 
 ## 待验证
 
-- 锁 enforcement（配方封锁/使用锁/维度锁）需要真实玩家进世界验证；FakePlayer 已验证授阶链路，真实客户端合成事件路径相同。
+- ~~锁 enforcement~~ 已随 2026-10-15 软锁重构移除（rules.toml 不再生成锁规则）；FakePlayer 已验证授阶链路，真实客户端合成事件路径相同——待实机复核的是"阶段纯记录、不再拦截"的回归确认。
 - stage 显示文案 i18n 已落地（待进游戏目验）：字节码确认 PS 3.0.5 不支持 translatable key（`TextUtil.parseColorCodes`→`Component.literal`，文档无 lang 字段）。方案：生成器保留 "zh / en" 字面量并输出 `config/starforge/stage_i18n.json`（literal→lang key，71 对，复用现有 `modpack.*` 键，解锁标题合成 `modpack.stage_i18n.*` 键带 `§l`）；`starforge_compat` 新增 mixin——`ClientStageCache` 的 `getDisplayName/getDescription/getCategory` 按客户端语言返回半句（覆盖图谱节点/详情面板/工具提示/分类/搜索），`TextUtil.parseColorCodes` 把含双语字面量的输入重组为 translatable 复合组件（服务端广播的解锁消息/封锁提示也按各端本地化），`TranslatableContents` 构造器重写含双语字面量的 String args（`stage_required` 等嵌套名称同样本地化）。缺失映射时全部回退原双语字面量。
 - ~~服务端 `HumanoidModel`/`PoseStack` wrong-dist 报错~~ 已修复：根因是 `starforge_dump.js` 用 `ITEM.getKey(ri.getItem())` 取配方产出，Rhino 会反射扫描 Item 实例类（Supplementaries/Ad Astra 的物品带客户端渲染方法签名）。改用 `getItemHolder().unwrapKey()` 后专用服务器日志 0 条 wrong-dist 报错，6605 配方导出中 6336 条含 result。
 
@@ -268,10 +268,10 @@ KubeJS 无法表达的行为型兼容，现由自有附属 `starforge-compat-0.1
 
 ### 数据源拆分（design/ 新文件）
 
-- `design/progression.json`：30 个进度节点——8 个时代（`kind: "era"`，`triggers`/`locks`/`unlock`/`preview`）+ 22 个能力节点（`kind: "ability"`，dependency 可指向时代或其他能力，**永不反向授权**、不带锁规则）。触发条件五类：原生 `craft`、`pickup`、`dimension`、`custom_counter`、`has_item`（metadata），均服务端可验证。
+- `design/progression.json`：30 个进度节点——8 个时代（`kind: "era"`，`triggers`/`unlock`/`unlock_preview`）+ 22 个能力节点（`kind: "ability"`，dependency 可指向时代或其他能力，**永不反向授权**）。触发条件五类：原生 `craft`、`pickup`、`dimension`、`custom_counter`、`has_item`（metadata），均服务端可验证。时代层级表独立存于 `design/tech-tiers.json`（纯设计元数据，不生成锁规则）。
 - `design/advancements.json`：成就定义独立（`stage_granted` / `vanilla_trigger` / `custom_event` 三类），只记录不授权。
 - `design/guidance.json`：14 条运行时引导事件，每条含检测路由（craft_item/inventory_item(s)/inventory_tag/block_use/block_tag/dimension/entity_spawned/quest/horde_start/horde_end/gun_ns/advancement_earned）与效果（计数器/成就/一次性提示）。
-- `tools/lib/design.mjs`：统一加载器，content+progression+advancements+guidance+semantic-map+stage-locks 合并为单个 design 对象；四个工具全部改走它。
+- `tools/lib/design.mjs`：统一加载器，content+progression+advancements+guidance+semantic-map+tech-tiers 合并为单个 design 对象；四个工具全部改走它。
 
 ### 生成物
 
@@ -368,7 +368,7 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 - `modpack:service_medal`（纪念币贴图、纯纪念）更名为 `modpack:milestone_reward_pack`（`minecraft:item/bundle` 贴图）——从纪念品改为可打开的随机奖励容器。任务书里程碑章图标、20 处任务奖励、`design/semantic-map.json`、双语语言文件、生成物全部同步；全仓 `service_medal` 零残留。
 - **奖池**：新增 `design/reward-pools.json`（`tier_1`–`tier_7` 对应七个时代），`build-pack.mjs` 生成 `pack/kubejs/data/modpack/loot_table/milestone_reward/<pool>.json` 原版战利品表（主池 uniform 2–3 抽 + 稀有池 1 抽含 empty 权重控稀有度）；条目经语义映射解析并对照 `registry-export/items.json` 校验，坏引用构建期直接报错。
 - **盖章**：任务奖励新增可选 `rewards[].pool` 字段，`export-quests.mjs` 写入 `item.components."minecraft:custom_data".reward_pool`；校验器强制 pool 只挂在 milestone_reward_pack 上且必须存在于 reward-pools.json。
-- **打开**：`pack/kubejs/server_scripts/starforge_rewards.js` 监听 `ItemEvents.rightClicked`——读取 `reward_pool` 盖章（缺失/非法时按开启者最高已持时代阶段兜底 tier），消耗 1 个并 `loot give modpack:milestone_reward/<pool>`，同 tick 防抖防双手双击。奖励包本身不进任何阶段锁，奖池内容均为该时代已可产的物资/弹药/稀有材料，不含阶段凭证物品。
+- **打开**：`pack/kubejs/server_scripts/starforge_rewards.js` 监听 `ItemEvents.rightClicked`——读取 `reward_pool` 盖章（缺失/非法时按开启者最高已持时代阶段兜底 tier），消耗 1 个并 `loot give modpack:milestone_reward/<pool>`，同 tick 防抖防双手双击。奖励包不进任何层级表，奖池内容均为该时代已可产的物资/弹药/稀有材料，不含阶段凭证物品与未抵达星球的深空材料（tier_6 已移除 calorite/desh/ostrum 行星锭）。
 
 ### EOS 枪包全量审计与禁用清单
 
@@ -393,7 +393,7 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 
 - **FastPipes 1.3.7**（NeoForge 1.21.1，Modrinth `fast-pipes`，sha1 `ee2fad8b…`）加入清单并锁入 `locked-mods.json`，服务端/客户端均同步加载。
 - **分工定稿**：FastPipes = 默认通用管网（物品/流体/FE）；IE 传送带与流体管 = 可视化工业产线；BuildCraft 管道 = 遗产适配壳（SF-35：51 条 `*_item/_fluid/_power/_fe` 配方改为「同介质 FastPipes 管芯 + 原料」无序配方，采石场/泵/引擎等特色设备配方不受影响）；Railcraft = 长距离大宗货运；AE2 = 中后期数字物流。
-- **阶段分配**：T1 基础三种管+抽取/输入附件+虚空/传感器+扳手；T2 improved 系+终端；T3 advanced 系；T4 elite 流体/能量管+elite 附件；T5 ultimate 流体/能量管+ultimate 附件。FastPipes 桶不进阶段锁。
+- **层级分配**（tech-tiers 元数据）：T1 基础三种管+抽取/输入附件+虚空/传感器+扳手；T2 improved 系+终端；T3 advanced 系；T4 elite 流体/能量管+elite 附件；T5 ultimate 流体/能量管+ultimate 附件。FastPipes 桶不进层级表。
 - **玩家引导**：任务 physical_logistics/warehouse/fluid_oil 的任务与奖励改为 FastPipes；新增手册页「统一管网：FastPipes」（unified_pipes，energy 组）并从 physical_logistics/warehouse/wiring_up 链入；新增 modpack.tip.* 双语提示，经 `starforge_pipe_hints.js` 给 FastPipes 全套、BC 全系管道、IE 传送带/流体管打角色标签。
 - **配方**：FastPipes 原生配方不动；BC 管道按 SF-35 弱化；统一原油/燃料/杂酚油标签与 Refurbished FluidHandler 桥原样保留。
 
@@ -404,6 +404,9 @@ compat 附属构建: starforge-compat-0.1.0.jar 成功
 | 箱子 → item 管(抽取附件) → 箱子 | 通过：批次交付（basic 60 tick/8 件） |
 | BC 储罐 → fluid 管(抽取附件) → BC 储罐 | 通过：16000 mB 水全部送达，进出相等 |
 | Ad Astra energizer → energy 管(抽取附件) → IC2 电炉 | 通过：源 192000→173762，炉获 15994，管网缓存 994，无增殖 |
+| AA coal_generator（槽位1填煤）→ energy 管(抽取附件) → AA compressor | 通过（2026-10-16）：200 tick 窗口压缩机入账 3920 FE（≈20 FE/t），源/管网/目的端守恒、无增殖 |
+| AA solar_panel → energy 管(抽取附件) → IC2 电炉 / AA compressor / AE2 控制器 | 通过（2026-10-16 跨维度）：主世界(solar_power 16)→IC2 电炉 1200 FE；月球(24)→压缩机 1848 FE；地球轨道(32)→AE2 控制器入账；全部 `dayTime%24000>12000` 入夜即停、`canSeeSky` 遮挡生效 |
+| AA coal_generator / solar_panel | FE cap 全六面+any 暴露（canExtract/canReceive 均 true）——原生并网，无转换桥 |
 | IE capacitor_lv | FE cap 全六面但 receive-only（canExtract=false），不可被抽取端取电，需上游主动推 |
 | IC2CRE batbox/generator/copper_cable | EnergyStorage 全六面暴露——**原生 FE 桥确认**，按约定不加转换器 |
 | AE2 energy_acceptor/controller | 全六面收 FE（孤立接收器不接网不蓄电，属 AE2 原生语义） |
@@ -478,24 +481,24 @@ check-mapping:   PASS — 472 语义 ID 全部解析
 
 ### 验证（本轮）
 
-- 标记流水线端到端模拟（含服务端双语阶段名代入）：zh `🔒 物品与配方未解锁`/`需要阶段：机械时代`/`当前阶段：机械时代 （75%）`/`🔒 你还没有解锁这个物品！需要阶段：机械时代`；en `🔒 Item and Recipe Locked`/`Stage required: Mechanical Age`/`Current stage: Mechanical Age (75%)`。
-- 生成 toml 中全部 `<ps:*>` 标记在 zh/en 双侧均有对应 `modpack.ps.*` 键（0 未解析）；zh 侧生成物无 `Recipe Locked`/`Item Locked`/`Stage required`/`Current stage` 残留。
-- `validate-design` PASS（835 双语键）；`export-quests`、`check-mapping`（472 id）无回归。
-- **仍待实机目检**：锁定物品 tooltip、拒绝提示、命令反馈、进度图谱 GUI 的实际渲染（mixin 生效与否只能进游戏确认）。
+- 标记流水线端到端模拟（含服务端双语阶段名代入）：zh `需要阶段：机械时代`/`当前阶段：机械时代 （75%）`；en `Stage required: Mechanical Age`/`Current stage: Mechanical Age (75%)`（锁拒绝类文案已随 2026-10-15 软锁重构移除，见文末）。
+- 生成 toml 中全部 `<ps:*>` 标记在 zh/en 双侧均有对应 `modpack.ps.*` 键（0 未解析）。
+- `validate-design` PASS（双语键）；`export-quests`、`check-mapping`（472 id）无回归。
+- **仍待实机目检**：命令反馈、进度图谱 GUI、阶段 toast 的实际渲染（mixin 生效与否只能进游戏确认）。
 
 ## 2026-10-13 能源体系清理：消费端统一收 FE（已实现，静态验证通过）
 
-### 禁用清单（删配方 + 隐藏 EMI/JEI + 移除创造栏 + 移出任务书/阶段锁）
+### 禁用清单（删配方 + 隐藏 EMI/JEI + 移除创造栏 + 移出任务书/层级表）
 
 | 物品 | 原角色 | 替代路径 |
 | --- | --- | --- |
-| `ad_astra:coal_generator` | AA 燃煤发电（20 FE/t） | IE/IC2CRE/BC 经 FastPipes 供 FE，AA 机器原生收 FE |
-| `ad_astra:solar_panel` | AA 太阳能发电 | 同上 |
+| ~~`ad_astra:coal_generator`~~ | AA 燃煤发电（20 FE/t） | **2026-10-16 已恢复**：原生 FE cap 实测并网，定位前哨本地电源，见文末「Ad Astra 前哨电源恢复」节 |
+| ~~`ad_astra:solar_panel`~~ | AA 太阳能发电 | **2026-10-16 已恢复**：同上 |
 | `refurbished_furniture:light_electricity_generator` | RF 燃料发电 | Energized 变压器 FE→Watt |
 | `refurbished_furniture:dark_electricity_generator` | RF 燃料发电 | 同上 |
 | `ae2:vibration_chamber` | AE2 烧燃料产 AE | AE2 能量接收器收 FE；晶振发电机保留自举 |
 
-五者仅移除玩家侧获取与展示面，注册表条目保留（既有存档方块不炸档）。落地位置：`starforge_recipes.js` SF-36（`e.remove({output})`）、`starforge_viewer_cleanup.js`（EMI/JEI item 条目）、`starforge_creative_cleanup.js`（`ad_astra:main`/`refurbished_furniture:creative_tab`/`ae2:main` 三页签）。
+剩余三者仅移除玩家侧获取与展示面，注册表条目保留（既有存档方块不炸档）。落地位置：`starforge_recipes.js` SF-36（`e.remove({output})`）、`starforge_viewer_cleanup.js`（EMI/JEI item 条目）、`starforge_creative_cleanup.js`（`refurbished_furniture:creative_tab`/`ae2:main` 等页签）。
 
 ### Energized 变压器配方重写
 
@@ -504,11 +507,11 @@ check-mapping:   PASS — 472 语义 ID 全部解析
 
 ### 设计源同步
 
-- `design/semantic-map.json` 删 `aa_coal_generator`/`aa_solar_panel`/`rf_generator` 三个语义键。
-- `design/stage-locks.json`：`electric_age` 删 `rf_generator`，`space_age` 删 `aa_coal_generator`/`aa_solar_panel`（生成物 rules.toml 同步）。
+- `design/semantic-map.json` 删 `aa_coal_generator`/`aa_solar_panel`/`rf_generator` 三个语义键。（2026-10-16：`aa_*` 两键已随发电恢复重新加入；`rf_generator` 保持删除。）
+- `design/tech-tiers.json`：`electric_age` 删 `rf_generator`，`space_age` 删 `aa_coal_generator`/`aa_solar_panel`（生成物同步）。（2026-10-16：两键已恢复至 `space_age` items，`space_age.preview.6` 解锁预览同步生成。）
 - `design/content.json`：`household_power` 任务奖励 `rf_generator` → `rf_fridge`（同任务仍要求提交变压器）。
-- `localization/*.json`：`tutorial.household_power` 不再提"发电机挂家庭电网"；`tip.fastpipes_energy` 改为「IE/IC2CRE/BC 供电入网，AA/AE2/RF 消费」语义。
-- `starforge_captest.js`：能量探测行 `ad_astra:coal_generator` → `ad_astra:cryo_freezer`（AA 机器消费端探测仍在）。
+- `localization/*.json`：`tutorial.household_power` 不再提"发电机挂家庭电网"；`tip.fastpipes_energy` 改为「IE/IC2CRE/BC 供电入网，AA/AE2/RF 消费」语义。（2026-10-16：tip/unified_pipes 已改为「AA 发电作前哨本地电源入网」语义，新增 `tutorial.outpost_power` 挂入 `orbital_station` manual_refs。）
+- `starforge_captest.js`：能量探测行 `ad_astra:coal_generator` → `ad_astra:cryo_freezer`（AA 机器消费端探测仍在）。（2026-10-16：探测行已恢复 `coal_generator`+`solar_panel`，另增四组 AA→FastPipes→消费端实传 rig 与跨维度昼夜快照。）
 
 ### 发电/耗电审计结论（不改动项）
 
@@ -574,7 +577,7 @@ check-mapping:   PASS — 472 语义 ID 全部解析
   - 引擎（stone/iron）`sendPower()` → `getPortToPower()` → `MjApi2PlatformBridge`：邻居无 MJ endpoint 时回落 `FeEndpoint` 包裹 `Capabilities.EnergyStorage.BLOCK`（`canReceive||canExtract`）——BC 引擎面向 FastPipes 能量管或任意 FE 设备直接推电，按 `microMjPerFe` 折算。引擎自身（`EngineConnector` 仅 `IMjConnector`）不暴露 IEnergyStorage，属预期。
   - 机器（IMjReceiver 系，如 pump/quarry/laser）经 `MjCapabilityHelper` → `MjReceiverEnergyStorage` 暴露**只收** IEnergyStorage（`canExtract=false`）——FastPipes 能量管/任意 FE 源可直接喂电。
   - 动力管 `PipeFlowPower` 经 `MjToFeAutoConverter` 把相邻 IEnergyStorage 视作 MJ receiver——BC 动力管网亦可向 FE 网出电。
-  - `mj_dynamo`（MJ→FE）与 `engine_fe`（FE→MJ）保留为可选显式互转设备，配方与阶段锁不动，不再承担并网职责；BC 引擎、机器、MJ 特色全部保留。
+  - `mj_dynamo`（MJ→FE）与 `engine_fe`（FE→MJ）保留为可选显式互转设备，配方不动，不再承担并网职责；BC 引擎、机器、MJ 特色全部保留。
 - `starforge_captest.js`：能量探针 +`buildcraftcore:engine[type=stone|iron|fe]`/`pump`/`quarry`/`laser`/`mj_dynamo`（`engine_stone`/`engine_fe` 实为物品 id，方块统一为 `buildcraftcore:engine` + `type` 属性，已修正）；传输目的端候选首选 `buildcraftfactory:pump`；另加端到端链路「燃煤+红石点火的 `engine[type=stone]` → `fastpipes:basic_energy_pipe` → `ic2cre:electric_furnace`」。
 - 文案：`modpack.tutorial.unified_pipes` 与 `modpack.tip.fastpipes_energy`（双语，源头 `localization/*.json`，任务书 snbt 与 kubejs lang 经生成器同步）——BC 由「自带 FE 引擎与 MJ 发电机互转」改为「引擎直出 FE、机器直接收 FE，dynamo/engine_fe 可选互转」。`docs/design.md`/`compatibility.md` 同步。
 
@@ -602,7 +605,7 @@ check-mapping:   PASS — 472 语义 ID 全部解析
   - AUTO 滞回死区：缓冲 ≥3072 推 FE→Charge，≤1024 拉 Charge→FE，死区内不动；每 tick 至多一个方向、严格 1:1，同 tick 双向自激在结构上不可能，两台桥互连只搬运不增殖。
   - 可选依赖：`RailcraftBridge.LOADED`（ModList `railcraft`）守卫注册、capability 接线与创造栏，无 Railcraft 时 jar 正常加载、holder 全 null，不触碰任何 RC 类。
 - `tools/build-compat.mjs` COMPILE_DEPS +`railcraft`（mods/ 文件名前缀编译期引用）；`neoforge.mods.toml` +optional 依赖段；blockstate（4 朝向×4 模式×2 充能共 32 变体）、orientable 模型（借用 railcraft frame/frame_top_powered 纹理，off 态为未激活面）、战利品表、双语 lang、创造栏 FUNCTIONAL_BLOCKS。
-- Pack：semantic-map `sfc_charge_bridge`；stage-locks `electric_age`（与 RC 电力铁路件同阶段）；SF-37 配方（钢板×4 + charge_terminal + electrum 线圈×2 + ic2 电路 + zinc_carbon_battery）；`high_speed_line` 任务新增 1×转换器交付；`unified_pipes`/`fastpipes_energy`/`railcraft_advanced`/`high_speed_line` 文案统一改为「FE 公共电网经转换器接入 Railcraft Charge 网络，RC 设备不直连 FE 管」。
+- Pack：semantic-map `sfc_charge_bridge`；tech-tiers `electric_age`（与 RC 电力铁路件同层级）；SF-37 配方（钢板×4 + charge_terminal + electrum 线圈×2 + ic2 电路 + zinc_carbon_battery）；`high_speed_line` 任务新增 1×转换器交付；`unified_pipes`/`fastpipes_energy`/`railcraft_advanced`/`high_speed_line` 文案统一改为「FE 公共电网经转换器接入 Railcraft Charge 网络，RC 设备不直连 FE 管」。
 
 ### captest 扩展与实测（dedicated server，2026-10-14）
 
@@ -656,3 +659,44 @@ Blueprint 示例 data map：`Object with ID modid:example ... dimension` DataMap
 - `sync-pack server` + `sync-pack client` 重建后干净启动：`Done (1.796s)`；`/reload` → `Reloaded with no KubeJS errors!`，KubeJS 10/10 server scripts 0 errors / 0 warnings；正常 `stop`（全部维度保存、RCON 线程关闭）。
 - 最终启动日志 ERROR 仅 1 条：`modid:example`（预期保留，见上）；WARN 无 `extra_*`/painter schema/`almostunified:hide`/`sight_eos_rs02`/`Missing metadata`，全部为可选 soft-skip 与上游信息噪音。
 - 客户端 CFPA `isometric-renders` zh_cn 在源包修复后不再产生 `Skipped language file`（本机缓存修复；其他装机若 CFPA 重新下载会复现，属上游问题）。
+
+## 2026-10-15 进度体系重构：移除全部硬锁，改为纯软锁（已实现，静态验证通过）
+
+### 动机与决策
+
+任务/进度不再直接锁定维度、配方、机器或物品使用。ProgressiveStages 保留为**唯一进度记录层**（8 时代里程碑 + 22 能力节点、图谱导航、凭证触发、成就同步、里程碑奖励兜底 tier），但不再生成任何锁规则。内容门槛全部由真实成本承担：配方材料链（钢件/电路/处理器/行星锭）、能源需求（FE 电网）、机器链（压印器/装配台/NASA 台）、火箭等级/燃料/氧气/环境生存（Ad Astra 原生）。允许提前探索"偷跑"，代价是真实材料与能源而非权限。
+
+### 变更
+
+- `design/stage-locks.json` → `design/tech-tiers.json`：内容不变（各时代 items/blocks/dimensions 清单），语义改为**预期可负担时代**的描述性元数据，供 `suggested_stage` 与奖励层级一致性校验；不再驱动任何运行时规则。
+- `tools/build-pack.mjs`：不再从层级表生成 rules.toml 锁段（`[recipes].locked_items`、`action=use/place/enter` 全部消失）；rules.toml 现仅承载 `[advancements].locked` 成就 reveal 排序。`progressivestages.messages` 移除全部锁拒绝文案（item/recipe/type locked、dropped/hotbar 提示、masked_name、creative bypass 弹窗）；`tooltip_stage_required`/`current_stage`/`deps_*` 等依赖与进度显示键保留（图谱 GUI 仍展示前置与达成进度）。
+- `tools/check-mapping.mjs` / `tools/validate-design.mjs`：层级表校验保留（语义键可解析、只挂时代、不跨层重复），措辞改为 affordability 语义。
+- `pack/kubejs/server_scripts/starforge_recipes.js`：WorldSpike 配方升阶（原金+钻石+末影珍珠过廉——RC 无 chunk-loading 配置开关，唯一强加载源需 T4 级成本）；新增 SF-39 `gadget_destruction` 配方（与 copy_paste 同 T5 档）。
+- `design/reward-pools.json`：`tier_6` 移除 calorite/desh/ostrum 行星锭（里程碑奖励不得跳过星球开采环节）。
+- `localization/*.json`：删除 `modpack.message.stage_required`/`manufacturing_denied`/`gui.required_stage`/`gui.recipe_locked` 与全部 `modpack.ps.*` 锁拒绝键（masked_name、item/recipe/type_locked、dropped/hotbar、creative_l1-3）；preview/tutorial 文案"解锁"→"可用/投产/开放"措辞。
+- `starforge_stage_test.js`：断言改里程碑语义——`locked()` 仅为"未持有节点"信息接口，不携带权限含义。
+- 文档：`design.md`/`questbook.md`/`implementation.md`/`performance.md`/`mod-compatibility-report.md`/`README.md` 同步。
+
+### 保留的自然门槛（软锁主体，未改动）
+
+- 火箭 tier / desh-ostrum-calorite 行星矿 / 氧气罐与燃料精炼：Ad Astra 原生维度门槛不变。
+- NASA 台/发射台 ← `space_control_core`（钢件+IC2 电路+AE2 处理器）；采石场 ← 钢件+高级电路+钻石镐；重工程块 ← 合金+高级电路+钢板；量子环 ← 铱+工程处理器+重工程——SF-01..39 材料链即门槛。
+- 廉价发电禁用清单收紧为 RF 明/暗发电机 + AE2 振动室（2026-10-16：AA 燃煤发电机/太阳能板已恢复为 space_age 前哨本地电源，并网实测见文末）；`ic2cre:creative_generator` 无配方确认。
+- 守卫/Easy Villagers 交易不提供科技件；Simple Structures 战利品护栏（不直送航天服）维持。
+
+## 2026-10-16 Ad Astra 前哨电源恢复并网（已实现，dedicated server captest 实测）
+
+### 变更
+
+- `starforge_recipes.js` / `starforge_viewer_cleanup.js` / `starforge_creative_cleanup.js`：`DISABLED_GENERATION` 与对应清理清单移除 `ad_astra:coal_generator`、`ad_astra:solar_panel`（`refurbished_furniture:light/dark_electricity_generator`、`ae2:vibration_chamber` 维持禁用）。上游配方自动恢复（dump 实测：coal_generator = `c:ingots/iron`×8 + `c:storage_blocks/coal`×2 + 熔炉；solar_panel = photovoltaic_etrium_cell×3 + `ad_astra:desh_plates`×2 + `c:plates/steel`×3——上游本就使用 `c:`/mod 标签，无需重写）；EMI/JEI 与创造页签条目自动恢复。
+- `design/semantic-map.json`：恢复 `aa_coal_generator`/`aa_solar_panel` 语义键；`design/tech-tiers.json`：两键回 `space_age` items（affordability 元数据，非锁）；`design/progression.json`：space_age 新增 `preview.6`「燃煤发电机与太阳能板供给行星前哨」（verify = 两键）+ 双语键。
+- `design/content.json`：新增 `outpost_power` 教程（energy 组），挂入 `orbital_station` manual_refs；`tip.fastpipes_energy`/`tutorial.unified_pipes` 文案改为「AA 发电=前哨本地电源入网」。
+- `starforge_captest.js`：能量探测行恢复两个 id；新增四组实机 rig——`coal_generator`（槽位1填煤，上游 serverTick 从 `getItem(1)` 取燃料；槽位 0 是 POWER_ITEM 充电槽）→ 能量管+抽取附件 → `ad_astra:compressor`；`solar_panel` 分别置于主世界/`ad_astra:moon`/`ad_astra:earth_orbit` → 能量管 → IC2 电炉/AA 压缩机/AE2 控制器；按 t60/t150/t200 三次快照记录 dimension、dayTime%24000、canSeeSky、PlanetApi.getSolarPower、isDay/canFunction、内部储能与六面 cap 行为。setup 时将世界 dayTime 校到 11900，使 200 tick 窗口覆盖 12000 昼夜边界。
+- 未在 `starforge_compat` 增加任何 FE 转换层——实测原生 capability 满足并网。
+
+### captest 实测结论（dedicated server）
+
+- `ad_astra:coal_generator`、`ad_astra:solar_panel`：EnergyStorage 全六面+`any` 暴露，canExtract/canReceive 均 true（cap.max 分别 10000/50000）。
+- coal_generator → basic_energy_pipe（basic_extractor 附件）→ `ad_astra:compressor`：200 tick 入账 3920 FE（≈20 FE/t，`coalGeneratorEnergyGenerationPerTick=20`），消耗煤 1 块起步持续发电，守恒（目的端增量 ≤ 产出上限+初始缓存）。
+- solar_panel → basic_energy_pipe → 消费端：主世界 →IC2 电炉 1200 FE（solar_power 16）；月球 →AA 压缩机 1848 FE（24）；地球轨道 →AE2 控制器入账（32，AE2 侧缓冲有自身回流波动）。三条链路 `moved=true`、`conserved=true`，无能源复制。
+- 昼夜边界：三维度 dayTime 共享同一世界时钟（`time query daytime` 逐维实测同步递增），isDay 于 `dayTime%24000>12000` 统一翻 false 后停发——无「自定义天空视觉白天/逻辑夜晚」错配。月球不复现发电失败的根因是测试位 `canSeeSky=false`（面板被埋于地表下），正常地表放置发电正常；按任务约束未添加兼容修复、未改昼夜判定、未归一星球 solar_power。

@@ -99,7 +99,7 @@
 	quest.04678E0F669135E0.quest_subtitle: "推荐阶段：生存时代"
 	quest.13C6FDBBC0A6A1F8.title: "打开阶段图谱"
 	quest.13C6FDBBC0A6A1F8.quest_desc: [
-		"背包界面左侧的按钮会打开 ProgressiveStages 图谱：时代主线、能力分支与每个节点的解锁条件都在那里。任务书只负责路线与说明。"
+		"背包界面左侧的按钮会打开 ProgressiveStages 图谱：时代主线、能力分支与每个节点的达成条件都在那里。阶段只是里程碑记录——任务书只负责路线与说明，一切内容按真实材料与能量需求开放。"
 		""
 		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"按 \"},{\"keybind\":\"key.progressivestages.open_tree\"},{\"text\":\" 打开 ProgressiveStages 阶段图谱。\"}]}"
 		""
@@ -483,6 +483,7 @@
 		"把空间站建成安全仓储、科研和转运节点。默认不会出现敌人，仍需维持氧气与电力；特殊事件只在明确开启后发生。"
 		""
 		"{\"text\":\"» 详见手册：安全空间站\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"安全空间站\"}}"
+		"{\"text\":\"» 详见手册：前哨电源\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2659054093D4E114\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"前哨电源\"}}"
 	]
 	quest.7FD9F6B5176631DF.quest_subtitle: "推荐阶段：太空时代"
 	quest.0E6767E1E6DA1ED6.title: "让殖民地能够自治"
@@ -928,9 +929,14 @@
 		"箱子与木桶之后，先用抽屉和通用仓储收大宗散料。容量、过滤和压缩升级随电气时代开放，并消耗工业部件。数字网络建成后读取现有仓库，而不是取代它们。"
 	]
 	quest.453A61A0B4D9C159.quest_subtitle: "进度与生存"
+	quest.2659054093D4E114.title: "前哨电源"
+	quest.2659054093D4E114.quest_desc: [
+		"行星前哨就地取电：Ad Astra 燃煤发电机烧煤稳定输出 FE，太阳能板白天发电、功率随星球变化（轨道最强，金星最弱），两者都原生暴露 FE 接口，用 FastPipes 能量管直连电网，再给氧气分配器、AE2 与其他设备供电。工业主力发电仍归 IE/IC2/BuildCraft，燃煤发电机与太阳能板定位于前哨与外星本地电源，不取代主电网。夜间注意储能，太阳能被遮挡或入夜即停发。"
+	]
+	quest.2659054093D4E114.quest_subtitle: "能源·石油·网络"
 	quest.0E8B4E397AC0FBCA.title: "统一管网：FastPipes"
 	quest.0E8B4E397AC0FBCA.quest_desc: [
-		"FastPipes 是整合包默认通用管网：物品、流体与 FE 电力共用一套管道。抽取附件从容器与机器取货，带过滤、红石控制与分流模式；输入附件标记投递优先级；传感器/虚空附件负责信号与满仓处理；终端把管网变成可检索的小仓库。IE 传送带与流体管保留作可视化工业产线；BuildCraft 管道仅留作采石场、泵等 BC 特色设备周边的老式方案；Railcraft 管跨区大宗货运；AE2 管数字仓储与自动合成，不承担普通管道职责。供电走 FE 公共电网：FastPipes 能源管道直连 IE、Ad Astra 与 IC2CRE（原生 FE 端口）；BuildCraft 引擎直接向电网输出 FE、机器直接接受 FE 供电（1 MJ = 10 FE），MJ 发电机与 FE 引擎仅作可选的显式互转设备；Refurbished 家电经能源变压器接入。Railcraft 设备走自己的 Charge 电力网络，不与 FE 管道直连：在电网与 Charge 框架之间放置 FE↔Charge 转换器（starforge_compat），即可为电力轨道与 Charge 设备供电，反向也可把 Charge 余电输出为 FE。"
+		"FastPipes 是整合包默认通用管网：物品、流体与 FE 电力共用一套管道。抽取附件从容器与机器取货，带过滤、红石控制与分流模式；输入附件标记投递优先级；传感器/虚空附件负责信号与满仓处理；终端把管网变成可检索的小仓库。IE 传送带与流体管保留作可视化工业产线；BuildCraft 管道仅留作采石场、泵等 BC 特色设备周边的老式方案；Railcraft 管跨区大宗货运；AE2 管数字仓储与自动合成，不承担普通管道职责。供电走 FE 公共电网：FastPipes 能源管道直连 IE、Ad Astra 与 IC2CRE（原生 FE 端口）；Ad Astra 燃煤发电机与太阳能板同样经原生 FE 接口入网，作行星前哨本地电源；BuildCraft 引擎直接向电网输出 FE、机器直接接受 FE 供电（1 MJ = 10 FE），MJ 发电机与 FE 引擎仅作可选的显式互转设备；Refurbished 家电经能源变压器接入。Railcraft 设备走自己的 Charge 电力网络，不与 FE 管道直连：在电网与 Charge 框架之间放置 FE↔Charge 转换器（starforge_compat），即可为电力轨道与 Charge 设备供电，反向也可把 Charge 余电输出为 FE。"
 	]
 	quest.0E8B4E397AC0FBCA.quest_subtitle: "能源·石油·网络"
 	quest.28C9F6D61C4E55C2.title: "背包与远征物资"
@@ -995,7 +1001,7 @@
 	quest.2E55B63F9D911701.quest_subtitle: "怪潮与防御"
 	quest.60BD0CCFC3034959.title: "晨曦女神实验室武器定位"
 	quest.60BD0CCFC3034959.quest_desc: [
-		"EOS 武器库是重型科幻层：高斯枪族（HG-57、AR-68、MG-85）、ELP 电浆系列（ELP-13 到 ELP-72）与特种军械（艾莲娜之钉、四叶十字、阿喀琉斯）。它们通过工业中间件分阶段解锁，弹药成本明显高于常规枪械。EOS 配方在 EOS 打印台上执行——用磨制深板岩、铁、铜与黄色玻璃合成该工作台。"
+		"EOS 武器库是重型科幻层：高斯枪族（HG-57、AR-68、MG-85）、ELP 电浆系列（ELP-13 到 ELP-72）与特种军械（艾莲娜之钉、四叶十字、阿喀琉斯）。它们通过工业中间件分阶开放，弹药成本明显高于常规枪械。EOS 配方在 EOS 打印台上执行——用磨制深板岩、铁、铜与黄色玻璃合成该工作台。"
 	]
 	quest.60BD0CCFC3034959.quest_subtitle: "怪潮与防御"
 	quest.725FD622502D6892.title: "警卫武器选择"

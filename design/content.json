@@ -1850,7 +1850,8 @@
    "reward_policy": "optional_non_progression",
    "icon": "aa_flag",
    "manual_refs": [
-    "safe_station"
+    "safe_station",
+    "outpost_power"
    ],
    "rewards": [
     {
@@ -4761,10 +4762,6 @@
    "text_key": "modpack.message.stage_unlocked"
   },
   {
-   "id": "stage_required",
-   "text_key": "modpack.message.stage_required"
-  },
-  {
    "id": "horde_warning",
    "text_key": "modpack.message.horde_warning"
   },
@@ -4845,10 +4842,6 @@
    "text_key": "modpack.message.threat_changed"
   },
   {
-   "id": "manufacturing_denied",
-   "text_key": "modpack.message.manufacturing_denied"
-  },
-  {
    "id": "return_reserve",
    "text_key": "modpack.message.return_reserve"
   },
@@ -4927,16 +4920,8 @@
    "text_key": "modpack.gui.safe_station"
   },
   {
-   "id": "required_stage",
-   "text_key": "modpack.gui.required_stage"
-  },
-  {
    "id": "contribution",
    "text_key": "modpack.gui.contribution"
-  },
-  {
-   "id": "recipe_locked",
-   "text_key": "modpack.gui.recipe_locked"
   },
   {
    "id": "colony_population",
@@ -5031,6 +5016,12 @@
    "text_key": "modpack.tutorial.storage_progression",
    "title_key": "modpack.tutorial.storage_progression.title",
    "group": "progression"
+  },
+  {
+   "id": "outpost_power",
+   "text_key": "modpack.tutorial.outpost_power",
+   "title_key": "modpack.tutorial.outpost_power.title",
+   "group": "energy"
   },
   {
    "id": "unified_pipes",
@@ -5304,20 +5295,10 @@
  ],
  "progressivestages": {
   "messages": {
-   "tooltip_masked_name": "<ps:masked_name>",
-   "tooltip_item_and_recipe_locked": "<ps:item_and_recipe_locked>",
-   "tooltip_item_locked": "<ps:item_locked>",
-   "tooltip_recipe_locked": "<ps:recipe_locked>",
    "tooltip_stage_required": "<ps:stage_required>{stage}",
    "tooltip_current_stage": "<ps:current_stage>{stage}<ps:current_progress_l>{progress}<ps:current_progress_r>",
    "tooltip_stage_required_generic": "<ps:required_generic>",
    "tooltip_current_stage_none": "<ps:current_none>",
-   "item_locked": "<ps:item_locked_msg>{stage}",
-   "item_locked_generic": "<ps:item_locked_generic>",
-   "type_locked": "<ps:type_locked_a>{type}<ps:type_locked_b>{stage}",
-   "type_locked_generic": "<ps:type_locked_generic_a>{type}<ps:type_locked_generic_b>",
-   "items_dropped": "<ps:dropped_a>{count}<ps:dropped_b>",
-   "items_moved_hotbar": "<ps:hotbar_a>{count}<ps:hotbar_b>",
    "missing_dependencies": "<ps:deps_a>{stage}<ps:deps_b>{dependencies}<ps:deps_c>",
    "type_label_block": "<ps:type_block>",
    "type_label_dimension": "<ps:type_dimension>",
@@ -5333,9 +5314,6 @@
    "type_label_pet_taming": "<ps:type_pet_taming>",
    "type_label_pet_breeding": "<ps:type_pet_breeding>",
    "type_label_pet_commanding": "<ps:type_pet_commanding>",
-   "creative_bypass_popup_line1": "<ps:creative_l1>",
-   "creative_bypass_popup_line2": "<ps:creative_l2>",
-   "creative_bypass_popup_line3": "<ps:creative_l3>",
    "cmd_stage_not_found": "<ps:cmd_stage_nf>{stage}",
    "cmd_already_has_stage": "<ps:cmd_already>{stage}",
    "cmd_grant_success": "<ps:cmd_grant_a>{stage}<ps:cmd_grant_b>{player}",

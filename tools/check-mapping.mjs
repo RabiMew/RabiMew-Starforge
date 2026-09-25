@@ -48,49 +48,47 @@ for (const [section, entries] of Object.entries(map)) {
     if (!reg.has(id)) { console.error(`MISSING ${section} ${sem} -> ${id}`); errors++; }
   }
 }
-// stage-locks.json: every entry must be a semantic key declared in the map's matching section.
-const locksPath = 'design/stage-locks.json';
-if (existsSync(path.join(root, locksPath))) {
-  const locks = j(locksPath);
+// tech-tiers.json: design-only affordability metadata (NOT runtime locks — the
+// pack is pure soft-lock). Every entry must be a semantic key declared in the
+// map's matching section so quest/reward consistency checks can resolve it.
+const tiers = design.tiers ?? {};
+{
   const stages = new Set(design.stages.map((s) => s.id));
-  for (const [stageId, lock] of Object.entries(locks)) {
+  for (const [stageId, tier] of Object.entries(tiers)) {
     if (stageId === 'schema_version' || stageId === 'comment') continue;
-    if (!stages.has(stageId)) { console.error(`stage-locks: unknown stage ${stageId}`); errors++; continue; }
+    if (!stages.has(stageId)) { console.error(`tech-tiers: unknown stage ${stageId}`); errors++; continue; }
     for (const section of ['items', 'blocks', 'dimensions']) {
       const lookup = section === 'dimensions' ? map.dimensions : map.items;
-      for (const sem of lock[section] ?? []) {
-        if (!lookup[sem]) { console.error(`stage-locks ${stageId}.${section}: unmapped semantic key ${sem}`); errors++; }
+      for (const sem of tier[section] ?? []) {
+        if (!lookup[sem]) { console.error(`tech-tiers ${stageId}.${section}: unmapped semantic key ${sem}`); errors++; }
       }
     }
   }
 }
 
-// Progression-deadlock guard: a stage's unlock_evidence item must not be locked
-// by any stage outside that stage's ancestor set (otherwise the evidence can
-// never be crafted and the chain stalls).
+// Milestone-craftability guard: every era's unlock_evidence component must have
+// at least one recipe producing it (stages are earned by crafting; an
+// uncraftable component would make the milestone unreachable).
 {
-  const deps = {};
-  for (const s of design.stages) deps[s.id] = s.depends_on ?? [];
-  const ancestors = (id) => {
-    const seen = new Set();
-    const walk = (x) => (deps[x] ?? []).forEach((d) => { if (!seen.has(d)) { seen.add(d); walk(d); } });
-    walk(id);
-    return seen;
-  };
-  const locks = existsSync(path.join(root, locksPath)) ? j(locksPath) : {};
+  const recipes = j('registry-export/recipes.json');
+  const craftable = new Set();
+  const addResult = (rid) => { if (rid) craftable.add(rid); };
+  for (const r of recipes) {
+    const m = /^(\S+) x\d+$/.exec(r.result ?? '');
+    addResult(m ? m[1] : r.json?.result?.id ?? r.json?.result?.item);
+    for (const arr of [r.json?.outputs, r.json?.results]) {
+      if (!Array.isArray(arr)) continue;
+      for (const o of arr) addResult(o?.result?.id ?? o?.result?.item ?? o?.id ?? o?.item);
+    }
+  }
   for (const s of design.stages) {
     const ev = s.unlock_evidence;
     if (!ev?.component) continue;
     const itemId = map.items[ev.component];
     if (!itemId) continue; // already reported above
-    const anc = ancestors(s.id);
-    for (const [lockStage, lock] of Object.entries(locks)) {
-      if (lockStage === 'schema_version' || lockStage === 'comment') continue;
-      const ids = [...(lock.items ?? []), ...(lock.blocks ?? [])].map((k) => map.items[k] ?? k);
-      if (ids.includes(itemId) && !anc.has(lockStage)) {
-        console.error(`DEADLOCK: ${s.id} evidence ${itemId} is locked by non-ancestor stage ${lockStage}`);
-        errors++;
-      }
+    if (!craftable.has(itemId)) {
+      console.error(`UNCRAFTABLE: ${s.id} evidence ${itemId} has no recipe in registry-export`);
+      errors++;
     }
   }
 }

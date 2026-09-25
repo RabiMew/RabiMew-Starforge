@@ -140,11 +140,23 @@ ServerEvents.recipes((e) => {
     L: i('ic2_lead_plate'), S: 'immersiveengineering:component_steel', A: i('ic2_advanced_circuit')
   });
 
+  // ---------- SF-38 T4: WorldSpike re-cost ----------
+  // railcraft:world_spike is the pack's only always-on chunkloader; upstream
+  // gold+diamond+pearl pricing would hand it to T0 bases. Re-cost it into the
+  // T4 material family (steel components + advanced circuits). The
+  // personal_world_spike stays vanilla — it only loads while its owner is
+  // online, so it self-limits server load. world_spike_minecart inherits the
+  // new cost by building on the block.
+  e.remove({ output: i('rc_world_spike') });
+  e.shaped(i('rc_world_spike'), ['SAS', 'DED', 'OOO'], {
+    S: i('ie_steel_component'), A: i('ic2_advanced_circuit'),
+    D: '#c:gems/diamond', E: 'minecraft:ender_pearl', O: 'minecraft:obsidian'
+  });
+
   // ---------- SF-16: EOS – Dawn Goddess Lab gun pack — industrial re-costing ----------
   // The pack ships flat vanilla-ish recipes (iron/copper + coals + netherite)
   // behind legacy forge: tags. Guns and ammo all share tacz:* item ids, so
-  // ProgressiveStages cannot lock them — the gate is the stage-locked
-  // industrial material inside each recipe instead:
+  // tiers are enforced purely by the industrial material inside each recipe:
   //   T3 (information_age): ae2:engineering_processor — gauss firearms (57x24/68x57/arrow)
   //   T4 (heavy_industry_age): immersiveengineering:heavy_engineering — heavy gauss / 85x76 / 308
   //   T5 (atomic_age): ic2cre:containment_reactor_plating + singularity/anomaly — ELP plasma / exotic
@@ -279,9 +291,10 @@ ServerEvents.recipes((e) => {
   }), 'eos:blocks/eos_printer');
 
   // ---------- SF-17 T5: space_control_core (T6 evidence) ----------
-  // "aerospace alloy" maps to ad_astra:steel_plate (Earth-producible via compressor).
+  // "aerospace alloy" = the shared steel-plate tag (IE/IC2CRE/Railcraft plates
+  // are Earth-producible; bare ad_astra:steel_plate has no producing recipe).
   e.shaped(i('space_control_core'), ['SCS', 'EBE', 'SCS'], {
-    S: i('aa_steel_plate'), C: i('ic2_advanced_circuit'),
+    S: '#ad_astra:steel_plates', C: i('ic2_advanced_circuit'),
     E: i('ae2_engineering_processor'), B: i('ie_steel_component')
   });
 
@@ -400,6 +413,12 @@ ServerEvents.recipes((e) => {
     i: '#c:ingots/iron', e: '#c:gems/emerald', d: '#c:gems/diamond',
     P: i('ae2_engineering_processor'), C: i('ic2_lapotron_crystal')
   });
+  // SF-39: destruction gadget sits in the same T5 material tier.
+  e.remove({ output: 'buildinggadgets2:gadget_destruction' });
+  e.shaped('buildinggadgets2:gadget_destruction', ['iei', 'dPd', 'iCi'], {
+    i: '#c:ingots/iron', e: '#c:gems/emerald', d: '#c:gems/diamond',
+    P: i('ae2_engineering_processor'), C: i('ic2_lapotron_crystal')
+  });
 
   // ---------- SF-28 T5: anomaly analysis module ----------
   e.shapeless(i('anomaly_analysis'), [
@@ -468,13 +487,14 @@ ServerEvents.recipes((e) => {
   }
 
   // ---------- SF-36: energy network cleanup ----------
-  // Public generation is IE / IC2CRE / BuildCraft only, all feeding FE into
-  // FastPipes. Ad Astra, AE2 and Refurbished appliances are consumers, so
-  // their standalone generators lose every recipe and leave the player-facing
-  // surfaces (viewer cleanup / creative cleanup strip the rest).
+  // Industrial mains generation is IE / IC2CRE / BuildCraft, all feeding FE
+  // into FastPipes. Ad Astra machines also generate: coal_generator and
+  // solar_panel keep their upstream recipes as planetary/outpost local power
+  // (solar output scales with the planet's solar_power datapack value), wired
+  // to the same FE grid like everything else. What stays disabled: Refurbished
+  // fuel generators (the Energized transformer already bridges FE -> Watt) and
+  // the AE2 vibration chamber (FE arrives via the energy acceptor).
   const DISABLED_GENERATION = [
-    'ad_astra:coal_generator',
-    'ad_astra:solar_panel',
     'refurbished_furniture:light_electricity_generator',
     'refurbished_furniture:dark_electricity_generator',
     'ae2:vibration_chamber'

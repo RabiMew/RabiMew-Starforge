@@ -10,56 +10,8 @@
    "entries": [
     {
      "type": "minecraft:item",
-     "name": "ad_astra:desh_ingot",
-     "weight": 25,
-     "functions": [
-      {
-       "function": "minecraft:set_count",
-       "count": {
-        "type": "minecraft:uniform",
-        "min": 2,
-        "max": 5
-       },
-       "add": false
-      }
-     ]
-    },
-    {
-     "type": "minecraft:item",
-     "name": "ad_astra:ostrum_ingot",
-     "weight": 20,
-     "functions": [
-      {
-       "function": "minecraft:set_count",
-       "count": {
-        "type": "minecraft:uniform",
-        "min": 1,
-        "max": 3
-       },
-       "add": false
-      }
-     ]
-    },
-    {
-     "type": "minecraft:item",
-     "name": "ad_astra:calorite_ingot",
-     "weight": 15,
-     "functions": [
-      {
-       "function": "minecraft:set_count",
-       "count": {
-        "type": "minecraft:uniform",
-        "min": 1,
-        "max": 2
-       },
-       "add": false
-      }
-     ]
-    },
-    {
-     "type": "minecraft:item",
      "name": "minecraft:diamond",
-     "weight": 20,
+     "weight": 30,
      "functions": [
       {
        "function": "minecraft:set_count",
@@ -74,7 +26,39 @@
     },
     {
      "type": "minecraft:item",
-     "name": "ad_astra:etrionic_core",
+     "name": "ad_astra_giselle_addon:oxygen_can",
+     "weight": 14,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ad_astra:fuel_bucket",
+     "weight": 12,
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       },
+       "add": false
+      }
+     ]
+    },
+    {
+     "type": "minecraft:item",
+     "name": "ic2cre:lapotron_crystal",
      "weight": 10,
      "functions": [
       {
@@ -90,15 +74,15 @@
     },
     {
      "type": "minecraft:item",
-     "name": "ad_astra_giselle_addon:oxygen_can",
-     "weight": 10,
+     "name": "minecraft:netherite_scrap",
+     "weight": 8,
      "functions": [
       {
        "function": "minecraft:set_count",
        "count": {
         "type": "minecraft:uniform",
         "min": 1,
-        "max": 1
+        "max": 2
        },
        "add": false
       }

@@ -1,18 +1,2 @@
-[[rules]]
-id = "modpack:atomic_age/lock_use"
-effect = "lock"
-action = "use"
-priority = 500
-targets.items = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis", "fastpipes:ultimate_fluid_pipe", "fastpipes:ultimate_energy_pipe", "fastpipes:ultimate_extractor_attachment", "fastpipes:ultimate_inserter_attachment"]
-
-[[rules]]
-id = "modpack:atomic_age/lock_place"
-effect = "lock"
-action = "place"
-priority = 500
-targets.blocks = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis", "fastpipes:ultimate_fluid_pipe", "fastpipes:ultimate_energy_pipe", "fastpipes:ultimate_extractor_attachment", "fastpipes:ultimate_inserter_attachment"]
-
-[recipes]
-locked_items = ["ic2cre:nuclear_reactor", "ic2cre:reactor_chamber_block", "ic2cre:reactor_plating", "ic2cre:containment_reactor_plating", "ic2cre:matter_generator", "ic2cre:scanner", "ic2cre:uu_scanner", "ic2cre:pattern_storage", "ic2cre:mfsu", "ic2cre:mfsu_upgrade_kit", "ic2cre:nano_helmet", "ic2cre:nano_chestplate", "ic2cre:nano_leggings", "ic2cre:nano_boots", "buildinggadgets2:gadget_destruction", "ae2:singularity", "ae2:quantum_entangled_singularity", "modpack:anomaly_analysis", "fastpipes:ultimate_fluid_pipe", "fastpipes:ultimate_energy_pipe", "fastpipes:ultimate_extractor_attachment", "fastpipes:ultimate_inserter_attachment"]
 [advancements]
 locked = ["id:starforge:eos_arsenal", "id:starforge:anomaly_research"]

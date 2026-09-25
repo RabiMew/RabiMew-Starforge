@@ -252,6 +252,8 @@ global.SM = {
   "aa_cryo_freezer": "ad_astra:cryo_freezer",
   "aa_water_pump": "ad_astra:water_pump",
   "aa_fuel_refinery": "ad_astra:fuel_refinery",
+  "aa_coal_generator": "ad_astra:coal_generator",
+  "aa_solar_panel": "ad_astra:solar_panel",
   "aa_etrionic_blast_furnace": "ad_astra:etrionic_blast_furnace",
   "aa_etrionic_capacitor": "ad_astra:etrionic_capacitor",
   "aa_tier1_rocket": "ad_astra:tier_1_rocket",

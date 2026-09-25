@@ -93,6 +93,7 @@ ServerEvents.loaded((e) => {
     'ic2cre:batbox', 'ic2cre:generator', 'ic2cre:copper_cable',
     'immersiveengineering:capacitor_lv', 'immersiveengineering:connector_lv',
     'ad_astra:etrionic_capacitor', 'ad_astra:cryo_freezer', 'ad_astra:energizer',
+    'ad_astra:coal_generator', 'ad_astra:solar_panel',
     'buildcraftenergy:mj_dynamo',
     // BC powerMode=DISPLAY_FE: IMjReceiver tiles (machines) expose a receive-only
     // IEnergyStorage via MjReceiverEnergyStorage. NOTE: buildcraftenergy:engine_*
@@ -287,6 +288,230 @@ ServerEvents.loaded((e) => {
     } catch (err) { transfers.engine_fueled = 'ERR:' + err; }
     transfers.engine = { eng: engPos, pipe: epipePos, dst: edstPos };
 
+    // ---------- AA outpost generators on the real FastPipes grid ----------
+    // rig a (overworld): ad_astra:coal_generator (fueled) -> basic_energy_pipe
+    //   (+extractor) -> ad_astra:compressor (AA consumer)
+    // rig b (overworld): ad_astra:solar_panel -> pipe -> ic2cre:electric_furnace
+    // rig c (ad_astra:moon): solar_panel -> pipe -> ad_astra:compressor
+    // rig d (ad_astra:earth_orbit): solar_panel -> pipe -> ae2:controller
+    // The shared world dayTime is moved to 11900 so the solar rigs sit on both
+    // sides of the 12000 isDay() cutoff inside one 200-tick window — the moon
+    // report can then show generation, cutoff, or a visual-clock mismatch.
+    // Per-dimension dayTime/getDayTime/canSeeSky/PlanetApi.getSolarPower and
+    // every-side FE cap behaviour are all recorded; snapshots repeat at
+    // t60/t150/t200 from the tick handler.
+    var PlanetApi = null;
+    try { PlanetApi = Java.loadClass('earth.terrarium.adastra.api.planets.PlanetApi'); } catch (e0) {}
+    var HeightmapTypes = null;
+    try { HeightmapTypes = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types'); } catch (e0) {}
+
+    try {
+      var dayBase = Math.floor(level.getDayTime() / 24000) * 24000;
+      level.setDayTime(dayBase + 11900);
+      transfers.aa_daytime_set = 11900;
+    } catch (e0) { transfers.aa_daytime_set = 'ERR:' + e0; }
+
+    var attachIn = function (levelObj, pipePos, side, attachId) {
+      try {
+        var pipe2 = NetworkManager.get(levelObj).getPipe(pipePos);
+        var stack2 = new ItemStack(reg.ITEM.get(reg.RL.parse(attachId)));
+        var att2 = stack2.getItem().getFactory().create(pipe2, side);
+        pipe2.getAttachmentManager().setAttachmentAndScanGraph(side, att2);
+        return 'attached:' + String(att2.getId());
+      } catch (err) { return 'ERR:' + err; }
+    };
+
+    var aaEnergyCapInfo = function (levelObj, pos) {
+      var info = { exposed: false };
+      var cap = sfCapAt(CAPS.energy, levelObj, pos, null);
+      if (cap != null) {
+        info.exposed = true;
+        info.stored = cap.getEnergyStored();
+        info.max = cap.getMaxEnergyStored();
+        info.canExtract = cap.canExtract();
+        info.canReceive = cap.canReceive();
+        info.simExtract = cap.extractEnergy(10000, true);
+        info.simInsert = cap.receiveEnergy(10000, true);
+        var sides = {};
+        for (var sd = 0; sd < 6; sd++) {
+          var scap = sfCapAt(CAPS.energy, levelObj, pos, Direction.values()[sd]);
+          if (scap != null) {
+            sides[String(Direction.values()[sd])] = {
+              stored: scap.getEnergyStored(),
+              simExtract: scap.extractEnergy(10000, true),
+              simInsert: scap.receiveEnergy(10000, true)
+            };
+          }
+        }
+        info.sides = sides;
+      }
+      return info;
+    };
+
+    var placeSolarRig = function (levelObj, dimName, rx, rz, dstId) {
+      var rig = { kind: 'solar', dim: dimName, dstId: dstId, ok: false };
+      if (levelObj == null) { rig.note = 'dimension unavailable'; return rig; }
+      try {
+        // Synchronously generate the columns first — getChunk() blocks on a
+        // ServerLevel — otherwise MOTION_BLOCKING sees an empty column and the
+        // rig lands buried under the real surface (canSeeSky stays false).
+        levelObj.getChunk(rx >> 4, (rz - 1) >> 4);
+        levelObj.getChunk(rx >> 4, rz >> 4);
+        levelObj.getChunk(rx >> 4, (rz + 1) >> 4);
+        levelObj.setChunkForced(rx >> 4, (rz - 1) >> 4, true);
+        levelObj.setChunkForced(rx >> 4, rz >> 4, true);
+        levelObj.setChunkForced(rx >> 4, (rz + 1) >> 4, true);
+        var py = levelObj.getMinBuildHeight() + 2;
+        if (HeightmapTypes != null) {
+          var hm = levelObj.getHeight(HeightmapTypes.MOTION_BLOCKING, rx, rz - 1);
+          if (hm > py) py = hm;
+        }
+        var panelPos = new BlockPos(rx, py, rz - 1);
+        var pipePos = new BlockPos(rx, py, rz);
+        var dstPos = new BlockPos(rx, py, rz + 1);
+        // Air first: leftover blocks from a previous captest run keep their
+        // stored energy/item state and would pollute the measurement.
+        var AIR2 = reg.BLOCK.get(reg.RL.parse('minecraft:air'));
+        levelObj.setBlockAndUpdate(panelPos, AIR2.defaultBlockState());
+        levelObj.setBlockAndUpdate(pipePos, AIR2.defaultBlockState());
+        levelObj.setBlockAndUpdate(dstPos, AIR2.defaultBlockState());
+        sfCapPlace(levelObj, reg, 'ad_astra:solar_panel', panelPos);
+        sfCapPlace(levelObj, reg, 'fastpipes:basic_energy_pipe', pipePos);
+        sfCapPlace(levelObj, reg, dstId, dstPos);
+        rig.pos = [rx, py, rz - 1];
+        rig.extractor = attachIn(levelObj, pipePos, Direction.NORTH, 'fastpipes:basic_extractor_attachment');
+        var be3 = levelObj.getBlockEntity(panelPos);
+        rig.dayTime = levelObj.getDayTime();
+        rig.dayTimeMod = levelObj.getDayTime() % 24000;
+        rig.canSeeSky = levelObj.canSeeSky(panelPos.above());
+        if (PlanetApi != null) {
+          try { rig.solarPower = PlanetApi.API.getSolarPower(levelObj); } catch (e0) { rig.solarPower = 'ERR:' + e0; }
+          try {
+            var planetObj = PlanetApi.API.getPlanet(levelObj);
+            rig.planet = planetObj != null ? String(planetObj.dimension().location()) : 'null';
+          } catch (e0) { rig.planet = 'ERR:' + e0; }
+        }
+        if (be3 != null) {
+          try { rig.isDay = be3.isDay(); } catch (e0) {}
+          try { rig.canFunction = be3.canFunction(); } catch (e0) {}
+        }
+        rig.cap = aaEnergyCapInfo(levelObj, panelPos);
+        var pc0 = sfCapAt(CAPS.energy, levelObj, pipePos, null);
+        rig.pipeStored0 = pc0 != null ? pc0.getEnergyStored() : -1;
+        var dc0 = sfCapAt(CAPS.energy, levelObj, dstPos, null);
+        rig.dstStored0 = dc0 != null ? dc0.getEnergyStored() : -1;
+        rig.srcPos = panelPos; rig.pipePos = pipePos; rig.dstPos = dstPos;
+        rig.levelObj = levelObj;
+        rig.ok = true;
+      } catch (e0) { rig.error = String(e0); }
+      return rig;
+    };
+
+    var placeCoalRig = function (levelObj, rx, ry, rz, dstId) {
+      var rig = { kind: 'coal', dim: String(levelObj.dimension), dstId: dstId, ok: false };
+      try {
+        var genPos = new BlockPos(rx, ry, rz - 1);
+        var pipePos = new BlockPos(rx, ry, rz);
+        var dstPos = new BlockPos(rx, ry, rz + 1);
+        var AIR3 = reg.BLOCK.get(reg.RL.parse('minecraft:air'));
+        levelObj.setBlockAndUpdate(genPos, AIR3.defaultBlockState());
+        levelObj.setBlockAndUpdate(pipePos, AIR3.defaultBlockState());
+        levelObj.setBlockAndUpdate(dstPos, AIR3.defaultBlockState());
+        sfCapPlace(levelObj, reg, 'ad_astra:coal_generator', genPos);
+        sfCapPlace(levelObj, reg, 'fastpipes:basic_energy_pipe', pipePos);
+        sfCapPlace(levelObj, reg, dstId, dstPos);
+        var genBE = levelObj.getBlockEntity(genPos);
+        // CoalGeneratorBlockEntity slots: 0 = chargeable item (POWER_ITEM),
+        // 1 = fuel. Upstream serverTick burns from getItem(1).
+        var ih = sfCapAt(CAPS.item, levelObj, genPos, null);
+        if (ih != null) {
+          ih.insertItem(1, new ItemStack(reg.ITEM.get(reg.RL.parse('minecraft:coal')), 16), false);
+        } else if (genBE != null && genBE.setItem != null) {
+          genBE.setItem(1, new ItemStack(reg.ITEM.get(reg.RL.parse('minecraft:coal')), 16));
+        }
+        if (genBE != null) {
+          try { rig.coalLoaded = genBE.getItem(1).getCount(); } catch (e0) {}
+        }
+        rig.extractor = attachIn(levelObj, pipePos, Direction.NORTH, 'fastpipes:basic_extractor_attachment');
+        rig.cap = aaEnergyCapInfo(levelObj, genPos);
+        var gc0 = sfCapAt(CAPS.energy, levelObj, genPos, null);
+        rig.srcStored0 = gc0 != null ? gc0.getEnergyStored() : -1;
+        var dc1 = sfCapAt(CAPS.energy, levelObj, dstPos, null);
+        rig.dstStored0 = dc1 != null ? dc1.getEnergyStored() : -1;
+        rig.srcPos = genPos; rig.pipePos = pipePos; rig.dstPos = dstPos;
+        rig.levelObj = levelObj;
+        rig.ok = true;
+      } catch (e0) { rig.error = String(e0); }
+      return rig;
+    };
+
+    var aaSnap = function (rig, tag) {
+      var snap = { tag: tag, dim: rig.dim, kind: rig.kind, dstId: rig.dstId };
+      try {
+        snap.dayTime = rig.levelObj.getDayTime();
+        snap.dayTimeMod = rig.levelObj.getDayTime() % 24000;
+        if (rig.kind === 'solar') {
+          snap.canSeeSky = rig.levelObj.canSeeSky(rig.srcPos.above());
+          var be4 = rig.levelObj.getBlockEntity(rig.srcPos);
+          if (be4 != null) {
+            try { snap.isDay = be4.isDay(); } catch (e0) {}
+            try { snap.canFunction = be4.canFunction(); } catch (e0) {}
+          }
+        } else {
+          var be5 = rig.levelObj.getBlockEntity(rig.srcPos);
+          if (be5 != null) {
+            try { snap.coalLeft = be5.getItem(1).getCount(); } catch (e0) {}
+          }
+        }
+        var scap = sfCapAt(CAPS.energy, rig.levelObj, rig.srcPos, null);
+        if (scap != null) snap.srcStored = scap.getEnergyStored();
+        var pcap = sfCapAt(CAPS.energy, rig.levelObj, rig.pipePos, null);
+        if (pcap != null) snap.pipeStored = pcap.getEnergyStored();
+        var dcap = sfCapAt(CAPS.energy, rig.levelObj, rig.dstPos, null);
+        if (dcap != null) snap.dstStored = dcap.getEnergyStored();
+      } catch (e0) { snap.error = String(e0); }
+      return snap;
+    };
+
+    var aaPipesRow = tz + 6;
+    var aaRigs = [];
+    aaRigs.push(placeCoalRig(level, tx, ty, aaPipesRow, 'ad_astra:compressor'));
+    aaRigs.push(placeSolarRig(level, 'minecraft:overworld', tx + 4, aaPipesRow, 'ic2cre:electric_furnace'));
+    var Registries = Java.loadClass('net.minecraft.core.registries.Registries');
+    var ResourceKey = Java.loadClass('net.minecraft.resources.ResourceKey');
+    transfers.aa_dim_errors = {};
+    var aaGetLevel = function (dimId) {
+      var lvl = null;
+      var errs = [];
+      try {
+        lvl = e.server.getLevel(dimId);
+      } catch (e0) { errs.push('str:' + e0); }
+      if (lvl == null) {
+        try {
+          lvl = e.server.getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(dimId)));
+        } catch (e1) { errs.push('key:' + e1); }
+      }
+      if (lvl == null && errs.length) transfers.aa_dim_errors[dimId] = errs;
+      return lvl;
+    };
+    var moonLevel = aaGetLevel('ad_astra:moon');
+    aaRigs.push(placeSolarRig(moonLevel, 'ad_astra:moon', tx + 8, aaPipesRow, 'ad_astra:compressor'));
+    var orbitLevel = aaGetLevel('ad_astra:earth_orbit');
+    aaRigs.push(placeSolarRig(orbitLevel, 'ad_astra:earth_orbit', tx + 12, aaPipesRow, 'ae2:controller'));
+    transfers.aaRigs = aaRigs;
+    transfers.aaSnap = aaSnap;
+    transfers.aa_snaps = [];
+    result.transfers.aa_rigs = aaRigs.map(function (r) {
+      return {
+        kind: r.kind, dim: r.dim, dstId: r.dstId, ok: r.ok, extractor: r.extractor,
+        pos: r.pos, dayTime: r.dayTime, dayTimeMod: r.dayTimeMod,
+        canSeeSky: r.canSeeSky, solarPower: r.solarPower, planet: r.planet, isDay: r.isDay,
+        canFunction: r.canFunction, coalLoaded: r.coalLoaded, cap: r.cap,
+        dstStored0: r.dstStored0, pipeStored0: r.pipeStored0, srcStored0: r.srcStored0,
+        note: r.note, error: r.error
+      };
+    });
+
     // ---------- charge bridge rigs (starforge_compat:charge_bridge) ----------
     // Five isolated rigs, all >4 blocks apart so each Charge node is its own
     // grid (ConnectType.BLOCK only links face-adjacent blocks). Conversion is
@@ -471,6 +696,14 @@ ServerEvents.tick((e) => {
     }
     charge.prev = { buf: bufNow, bat: batNow };
   }
+  // AA rigs: mid-window samples (day before the 12000 cutoff / night after it)
+  var aaSnapFn0 = sfCaptest.transfers ? sfCaptest.transfers.aaSnap : null;
+  var aaRigs0 = sfCaptest.transfers ? sfCaptest.transfers.aaRigs : null;
+  if (aaSnapFn0 && aaRigs0 && (sfCaptest.ticks === 60 || sfCaptest.ticks === 150)) {
+    for (var srx = 0; srx < aaRigs0.length; srx++) {
+      sfCaptest.transfers.aa_snaps.push(aaSnapFn0(aaRigs0[srx], 't' + sfCaptest.ticks));
+    }
+  }
   if (sfCaptest.ticks < 200) return;
   var t = sfCaptest, r = t.result, level = t.level;
   try {
@@ -608,6 +841,52 @@ ServerEvents.tick((e) => {
         ' | pipe->charge bat=' + rr.fastpipes_fe_to_charge.charge_battery +
         ' | charge->pipe dst=' + c2pDstStored + '/pipe=' + c2pPipeStored +
         ' | redstone buf=' + g4buf + ' | deadzone buf=' + g5buf + '/bat=' + g5bat);
+    }
+
+    // AA outpost generator rigs: final sample + conservation bound. A rig
+    // conserves if what the destination gained never exceeds what the source
+    // could have produced in the window (rated output * ticks + initial
+    // buffers) — anything above that is duplication.
+    var aaRigsF = t.transfers.aaRigs;
+    var aaSnapFnF = t.transfers.aaSnap;
+    if (aaRigsF && aaSnapFnF) {
+      var aaFinal = [];
+      for (var ar = 0; ar < aaRigsF.length; ar++) {
+        var rigF = aaRigsF[ar];
+        var fsnap = aaSnapFnF(rigF, 't200');
+        t.transfers.aa_snaps.push(fsnap);
+        var dstGain = (typeof fsnap.dstStored === 'number' ? fsnap.dstStored : -1) - (rigF.dstStored0 || 0);
+        var srcEnd = (typeof fsnap.srcStored === 'number') ? fsnap.srcStored : -1;
+        var pipeEnd = (typeof fsnap.pipeStored === 'number') ? fsnap.pipeStored : -1;
+        var rateCap = rigF.kind === 'coal'
+          ? (function () {
+              try {
+                return Java.loadClass('earth.terrarium.adastra.common.config.MachineConfig')
+                  .coalGeneratorEnergyGenerationPerTick;
+              } catch (e0) { return 20; }
+            })()
+          : (typeof rigF.solarPower === 'number' ? rigF.solarPower : 0);
+        var maxProduced = rateCap * 200 + Math.max(0, rigF.srcStored0 || 0);
+        var gained = Math.max(0, dstGain) + Math.max(0, pipeEnd) + Math.max(0, srcEnd - (rigF.srcStored0 || 0));
+        aaFinal.push({
+          kind: rigF.kind, dim: rigF.dim, dstId: rigF.dstId,
+          extractor: rigF.extractor, cap_exposed: rigF.cap ? rigF.cap.exposed : false,
+          canSeeSky: rigF.canSeeSky, solarPower: rigF.solarPower,
+          dayTimeMod_setup: rigF.dayTimeMod, isDay_setup: rigF.isDay,
+          srcStored_start: rigF.srcStored0, srcStored_end: srcEnd,
+          pipeStored_end: pipeEnd, dstStored_start: rigF.dstStored0, dstStored_end: fsnap.dstStored,
+          dst_gain: dstGain, coal_left: fsnap.coalLeft,
+          produced_upper_bound: maxProduced,
+          conserved: dstGain <= maxProduced + 1,
+          moved: dstGain > 0 || pipeEnd > 0,
+          note: fsnap.error
+        });
+        console.log('[captest] aa_rig ' + rigF.kind + '@' + rigF.dim + ' -> ' + rigF.dstId +
+          ': dst_gain=' + dstGain + ' src=' + (rigF.srcStored0 || 0) + '->' + srcEnd +
+          ' pipe=' + pipeEnd + ' conserved=' + (dstGain <= maxProduced + 1));
+      }
+      r.transfers.aa_snaps = t.transfers.aa_snaps;
+      r.transfers.aa_final = aaFinal;
     }
   } catch (err) {
     r.notes.push('measure error: ' + err);

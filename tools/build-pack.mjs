@@ -1,7 +1,7 @@
 // Generates runtime pack files from the unified design sources.
 // Sources: design/content.json, design/progression.json, design/advancements.json,
 //          design/guidance.json, design/reward-pools.json, design/semantic-map.json,
-//          design/stage-locks.json, localization/en_us.json, localization/zh_cn.json
+//          design/tech-tiers.json, localization/en_us.json, localization/zh_cn.json
 // Outputs: pack/kubejs/**, pack/config/progressivestages/**
 // Usage: node tools/build-pack.mjs
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
@@ -22,7 +22,6 @@ const out = (p, data) => {
 const design = loadDesign(root);
 const content = design;
 const sm = design.sm;
-const locks = design.locks;
 const en = j('localization/en_us.json');
 const zh = j('localization/zh_cn.json');
 const NS = content.namespace; // modpack
@@ -298,10 +297,12 @@ out('config/progressivestages/progressivestages.toml',
 	inventory_button_icon_size = 14
 ` + psMessagesToml());
 
-// ---------- 6. Stage definitions (era gates + ability nodes, one graph) ----------
-// Eras are the only tech gates — they carry lock rules from stage-locks.json.
+// ---------- 6. Stage definitions (era milestones + ability nodes, one graph) ----------
+// Pure soft-lock model: stages are team milestones and guidance only — no stage
+// emits lock rules. Affordability order is documented in design/tech-tiers.json
+// and enforced by recipes/materials/energy/machine chains, not ProgressiveStages.
 // Ability nodes are capability badges on the same map: they have triggers and
-// dependencies (which may mix eras and abilities) but NEVER lock anything.
+// dependencies (which may mix eras and abilities).
 // ProgressiveStages renders display_name/description/category/unlock_message
 // as literal text (no translatable-key support — verified in 3.0.5 bytecode:
 // TextUtil.parseColorCodes -> Component.literal). Stage files keep the
@@ -465,53 +466,13 @@ item = "${item}"
   }
   out(`${dir}/progression.toml`, prog);
 
-  // rules.toml — lock rules only on era stages (abilities never lock).
-  // [advancements].locked is a rule section (hides entries until owned).
+  // rules.toml — no gameplay locks: items, blocks, recipes and dimensions are
+  // never denied by stage. [advancements].locked only keeps custom Starforge
+  // advancement entries hidden until the era milestone is reached (pure reveal
+  // ordering — the underlying actions are always possible).
   let rules = '';
-  if (era) {
-    const lock = locks[st.id] ?? { items: [], blocks: [], dimensions: [] };
-    const itemIds = (lock.items ?? []).map((k) => {
-      const id = sm.items[k];
-      if (!id) throw new Error(`stage ${st.id}: unmapped lock item ${k}`);
-      return id;
-    });
-    const dimIds = (lock.dimensions ?? []).map((k) => {
-      const id = sm.dimensions[k];
-      if (!id) throw new Error(`stage ${st.id}: unmapped lock dimension ${k}`);
-      return id;
-    });
-    if (itemIds.length) {
-      rules += `[[rules]]
-id = "${NS}:${st.id}/lock_use"
-effect = "lock"
-action = "use"
-priority = 500
-targets.items = ${tomlList(itemIds)}
-
-[[rules]]
-id = "${NS}:${st.id}/lock_place"
-effect = "lock"
-action = "place"
-priority = 500
-targets.blocks = ${tomlList(itemIds)}
-
-[recipes]
-locked_items = ${tomlList(itemIds)}
-`;
-    }
-    if (dimIds.length) {
-      rules += `
-[[rules]]
-id = "${NS}:${st.id}/lock_dim_enter"
-effect = "lock"
-action = "enter"
-priority = 500
-targets.dimensions = ${tomlList(dimIds)}
-`;
-    }
-    if (advLocks[st.id]?.length) {
-      rules += `${rules.endsWith('\n') ? '' : '\n'}[advancements]\nlocked = ${tomlList(advLocks[st.id])}\n`;
-    }
+  if (advLocks[st.id]?.length) {
+    rules += `[advancements]\nlocked = ${tomlList(advLocks[st.id])}\n`;
   }
   out(`${dir}/rules.toml`, rules);
 }

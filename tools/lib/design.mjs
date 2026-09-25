@@ -6,7 +6,7 @@
 //   design/guidance.json     runtime guidance events (detection -> counter/adv/hint)
 //   design/reward-pools.json milestone_reward_pack loot pools per era tier
 //   design/semantic-map.json semantic id registry
-//   design/stage-locks.json  per-era lock rules
+//   design/tech-tiers.json   per-era affordability tiers (design metadata, not locks)
 // Loaders return one merged view so every generator reads the same truth.
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -20,7 +20,7 @@ export function loadDesign(root) {
   const guidance = j(root, 'design/guidance.json');
   const rewardPools = j(root, 'design/reward-pools.json');
   const sm = j(root, 'design/semantic-map.json');
-  const locks = j(root, 'design/stage-locks.json');
+  const tiers = j(root, 'design/tech-tiers.json');
   return {
     ...content,
     stages: progression.stages,
@@ -31,12 +31,12 @@ export function loadDesign(root) {
     guidance: guidance ?? { events: [] },
     rewardPools: rewardPools.pools ?? {},
     sm,
-    locks,
+    tiers,
   };
 }
 
 // Every node on the progression map (eras + abilities) shares the modpack
-// namespace and the same dependency graph — abilities just carry no locks.
+// namespace and the same dependency graph — none of them gate gameplay.
 export function allNodes(design) {
   return [...design.stages, ...design.abilities];
 }

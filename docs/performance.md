@@ -172,7 +172,7 @@ Starforge 默认启用 **Complementary Shaders - Reimagined r5.9.3 + Euphoria Pa
 - BC 管道实体运输
 - IC2 / IE 工厂机器 tick
 - 多殖民地区块加载与 Ad Astra 多维度探索
-- Railcraft 列车实体 tick（长编组 + 装卸站）、WorldSpike 强加载区块数（唯一强加载源，T4 阶段锁；`railcraft-server.toml` 无开关）、高速轨 `highSpeedTrackMaxSpeed`（默认 1.0，如 chunk 加载跟不上可调低）
+- Railcraft 列车实体 tick（长编组 + 装卸站）、WorldSpike 强加载区块数（唯一强加载源，配方已升至 T4 材料；`railcraft-server.toml` 无开关）、高速轨 `highSpeedTrackMaxSpeed`（默认 1.0，如 chunk 加载跟不上可调低）
 - Asteroid Belt 世界生成：jigsaw 小行星结构 + 两套维度；实测 Chunky 预生成 500 格半径 4225 区块约 32 秒，spark 采样已留存
 - 两个 Ad Astra 结构模组（More Structures + Simple Structures）同维度共存的结构密度与战利品开销
 - Immersive Petroleum 油藏特征：`/place feature` 强制放置会在 `FeatureReservoir.scanChunkForNewReservoirs` 的区块递归中挂死 watchdog（详见 compatibility.md 实测记录）；自然生成未见触发，但列为世界生成风险项

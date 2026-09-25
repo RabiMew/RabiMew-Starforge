@@ -5,8 +5,8 @@ FTB Quests 2101.1.36（NeoForge 1.21.1）承载任务书。**任务书是说明�
 引导体系的职责分层（V2）：
 
 ```text
-ProgressiveStages  唯一状态源：8 个时代闸门 + 22 个能力节点（同一张依赖图）
-Progression Map    总导航：PS 库存按钮打开，时代主线 + 能力分支 + 解锁条件
+ProgressiveStages  唯一进度记录层：8 个时代里程碑 + 22 个能力节点（同一张依赖图，纯软锁、不锁内容）
+Progression Map    总导航：PS 库存按钮打开，时代主线 + 能力分支 + 达成条件
 FTB Quests         说明书/路线：主线说明、支线推荐、手册页——完全可选
 Advancements       成就记录：时代镜像 + 一次性玩法成就（只记录，不授权）
 Manual             手册章：44 页分组知识库
@@ -37,7 +37,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 | `milestone_assembly` | item：工程装配件 | **制成 T1 晋级证据**，讲清"做部件晋级"规则 |
 | `register_base` | checkmark | 登记基地、认识基地状态 GUI |
 | `routes_overview` | checkmark | 七章导览，之后自由选路 |
-| `star_map` | checkmark | 指引玩家用 PS 库存按钮打开进度图谱（主线+能力分支+解锁条件） |
+| `star_map` | checkmark | 指引玩家用 PS 库存按钮打开进度图谱（主线+能力分支+达成条件） |
 
 ### 参考手册章
 
@@ -132,7 +132,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 | industrial_district | T4 | checkmark | — |
 | colony_architecture | T6 | checkmark | — |
 
-多任务任务（physical_logistics、rail_freight）默认「全部完成」。`physical_logistics` 不用抽屉控制器做目标：它属于 T2 解锁，任务推荐阶段是 T1。
+多任务任务（physical_logistics、rail_freight）默认「全部完成」。`physical_logistics` 不用抽屉控制器做目标：它属于 T2 材料层级，任务推荐阶段是 T1。
 
 `first_launch` 用数据包自定义 advancement（`changed_dimension` → 六个轨道维度任一，`requirements` 单行多判据 = OR），`hidden` display 弹 toast 不刷屏聊天。由 `content.json` 的 `advancements[]` 声明、`build-pack.mjs` 生成到 `pack/kubejs/data/starforge/advancement/`。
 
@@ -141,8 +141,8 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 `reward_policy: optional_non_progression` 落地为按任务差异化的物品奖励。规则：
 
 - **scope=player → `team_reward: false`**（每名队员可领，后进服的队友也有补给）；**scope=team → `team_reward: true`**（全队一次，用于里程碑纪念）。
-- 奖励物品的解锁阶段必须 ≤ 任务 `suggested_stage`（校验器强制）。
-- 不发未解锁机器/电路/唯一蓝图，不用 command 奖励。
+- 奖励物品的材料层级（`design/tech-tiers.json` 记录的预期时代）必须 ≤ 任务 `suggested_stage`（校验器强制）。
+- 不发超出该时代层级的机器/电路/唯一蓝图，不用 command 奖励，不发尚未到达星球的深空材料（tier_6 池已移除 calorite/desh/ostrum 等行星锭）。
 - 里程碑任务（晋级证据、首航、首领、小行星带采矿、量子桥等）发 `milestone_reward_pack`（里程碑奖励包，团队一次）——右键打开的随机奖励容器：奖池按任务 `suggested_stage` 以 `rewards[].pool`（`tier_1`–`tier_7`）盖章进 `minecraft:custom_data.reward_pool`，奖表由 `design/reward-pools.json` 生成（`pack/kubejs/data/modpack/loot_table/milestone_reward/<pool>.json`），右键时由 `starforge_rewards.js` 消耗并 `loot give` 抽取；未盖章的包按开启者当前最高时代阶段兜底。奖池内容是产出物资（资源/弹药/稀有材料/少量特殊物品），不发放阶段凭证物品。
 
 各任务奖励明细见 `design/content.json` 的 `rewards` 字段；方向：军事给弹药原料、航天给补给耗材、建筑给建材、农业给种子食材、里程碑给分时代奖池的奖励包。
@@ -182,7 +182,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
   "rewards": [{ "item": "<语义键|ns:path>", "count": 8, "scope": "player|team", "components": {...} }],
   "optional": true,                                // 支线：不计章节完成度
   "tags": ["side_quest"],                          // 可选 FTB 标签
-  "required_stage": "<progression 节点 id>",       // 可选：PS 混入强制（本包未用）
+  "required_stage": "<progression 节点 id>",       // 可选：PS 混入显示字段（本包未用；阶段从不阻止任务）
   "shape": "pentagon", "size": 1.5                 // 可选，默认 circle / 1.0
 },
 
@@ -207,7 +207,7 @@ Runtime hints      starforge_guidance.js：真实事件 → 计数器/成就/一
 
 ```text
 tools/export-quests.mjs:
-  tools/lib/design.mjs（design/content.json + progression.json + semantic-map.json + stage-locks.json）+ localization/*.json
+  tools/lib/design.mjs（design/content.json + progression.json + semantic-map.json + tech-tiers.json）+ localization/*.json
     → pack/config/ftbquests/quests/data.snbt              （任务书根对象 + file 标题）
     → pack/config/ftbquests/quests/chapter_groups.snbt    （空组列表）
     → pack/config/ftbquests/quests/chapters/<id>.snbt     （结构：任务/坐标/图标/任务项/奖励）
@@ -230,12 +230,12 @@ tools/export-quests.mjs:
 ## 8. 校验器新增检查（validate-design.mjs）
 
 - 章节：id 唯一、`title_key`/`description_key`/icon 存在且可解析，10 章。
-- **进度图**：8 时代 + 22 能力节点全局无环；时代依赖只能是时代（能力永不反向授权）；能力触发条件（craft/pickup/dimension/custom_counter/has_item）逐条解析校验；`reveal ∈ {always,dependencies,unlocked}`、`frame ∈ {task,goal,challenge}`、category 有效；`stage-locks.json` 只允许挂在时代上。
+- **进度图**：8 时代 + 22 能力节点全局无环；时代依赖只能是时代（能力永不反向授权）；能力触发条件（craft/pickup/dimension/custom_counter/has_item）逐条解析校验；`reveal ∈ {always,dependencies,unlocked}`、`frame ∈ {task,goal,challenge}`、category 有效；`tech-tiers.json` 层级表只允许挂在时代上（描述性元数据，不产生锁规则）。
 - 任务：`chapter` 合法（route 任务缺省取 `route`）；`task.type` ∈ 允许集合（含 `stage`）；`task.target`/`task.stage` 可解析并对照 `registry-export/`——item/图标/奖励解析后须在 `items.json` 或为本包 `modpack:*` 自定义物品（对照 `content.items`），dimension 须在 `dimensions.json`，kill 实体/标签须在 `entity_types.json`/`tags_entity.json`，advancement 须是 `advancements.json` 中声明的 `starforge:<id>`，stage 须是进度图节点；biome/structure 仅校验 `ns:path` 格式（注册表导出不含这两类）。
 - **依赖阶段不倒挂**：`deps` 指向的 `suggested_stage` 不得高于本任务（支线排程与主线一致）。
 - **optional 规则**：非 optional 任务不得依赖 optional 任务（required 不等待 side quest）。
-- **任务阶段一致性**：item 类任务目标的解锁阶段 ≤ `suggested_stage`（同奖励规则；据此把 `anomaly_analysis` 的解锁从 quantum_age 修正为 atomic_age——SF-28 设计为 T5 地球制造，原 stage-locks 条目与设计文档冲突）。
-- 奖励：`scope ∈ {player,team}`、物品解锁阶段 ≤ `suggested_stage`、count ≥ 1；全部奖励非阶段凭证物品本身以外的禁令项。
+- **任务阶段一致性**：item 类任务目标的材料层级（tech-tiers.json）≤ `suggested_stage`（同奖励规则；据此把 `anomaly_analysis` 的层级从 quantum_age 修正为 atomic_age——SF-28 设计为 T5 地球制造，原分层条目与设计文档冲突）。
+- 奖励：`scope ∈ {player,team}`、物品材料层级 ≤ `suggested_stage`、count ≥ 1；全部奖励非阶段凭证物品本身以外的禁令项。
 - `manual_refs` 指向存在的 tutorial；`deps` 指向同章任务、无环、非自引用，每章至少一个根节点。
 - `tutorial_hints`：1–5 条；`text_key` 双语存在；`keys` 全部命中 `design/keybinds.json` 注册表；zh_cn 文案中的 `%N$s` 占位符与 `keys` 数组一一对应（不缺位、不越界）；双语占位符一致性由全局语言键校验覆盖。
 - 教程：`title_key`、`group` 必填，`modpack.tutorial.group.<group>` 双语键存在。
@@ -248,7 +248,7 @@ tools/export-quests.mjs:
 
 - 双语客户端实测：无裸键、无混杂语言、`change_page` 链接跳转到正确手册页。
 - 全任务可完成：创造档走查一遍；生存抽查 item/advancement/dimension/kill 四类。
-- 奖励不绕锁：领取不到高于自身阶段的物品；`team_reward` 语义正确（per-player/per-team）。
-- 任务书可完全禁用：禁用后 T0→T7 路径不变（ProgressiveStages 不变）。
+- 奖励不跳阶：里程碑奖池只给该时代可达的物资，不发放尚未到达星球的深空材料；`team_reward` 语义正确（per-player/per-team）。
+- 任务书可完全禁用：禁用后 T0→T7 路径不变（ProgressiveStages 里程碑与配方材料链均不受影响）。
 - `first_launch` advancement 与整本任务书做客户端实机烟测（进图开书、章节齐全、达成进度触发任务完成）。
-- 章内泳道与 `stage-locks.json` 实际解锁抽查一致。
+- 章内泳道与 `tech-tiers.json` 预期材料层级抽查一致。

@@ -1,8 +1,9 @@
 // Starforge stage self-test — runs ONLY when kubejs/stagetest.json exists with {"enabled":true}.
-// Verifies: all 30 progression nodes registered (8 era gates + 22 ability
-// badges), era grants via the KubeJS counter route (what starforge_guidance.js
-// drives for real players), ability grants via their counters, and that
-// ability nodes never lock anything (locked() stays empty once eras resolve).
+// Pure soft-lock model: stages are team milestones/guidance only — no runtime
+// content is locked. Verifies: all 30 progression nodes registered (8 era
+// milestones + 22 ability badges), era grants via the KubeJS counter route
+// (what starforge_guidance.js drives for real players), ability grants via
+// their counters, and era acquisition order stays intact.
 ServerEvents.loaded((e) => {
   var flag = JsonIO.read('kubejs/stagetest.json');
   if (!flag || !flag.enabled) return;
@@ -24,7 +25,9 @@ ServerEvents.loaded((e) => {
     var eval = function () { try { ProgressiveStages.evaluate(player); } catch (e9) {} };
     log('fake player created', player !== null);
     log('all 30 progression nodes registered', ProgressiveStages.all().size() === 30);
-    log('locked before grants: ' + String(ProgressiveStages.locked(player)), ProgressiveStages.locked(player).size() > 0);
+    // locked() reports nodes the player has not earned yet — informational
+    // only; under the soft-lock model it carries no permission semantics.
+    log('unearned nodes before grants: ' + String(ProgressiveStages.locked(player)), ProgressiveStages.locked(player).size() > 0);
 
     ProgressiveStages.grant(player, 'modpack:survival_age');
     log('grant survival_age', has('survival_age'));
@@ -81,9 +84,9 @@ ServerEvents.loaded((e) => {
     log('craft -> bulk_storage (native trigger, recorded)', true);
 
     log('final stages: ' + String(ProgressiveStages.list(player)), true);
-    // locked() = stages the player does not own yet. All 7 era stages were
-    // granted above, so every remaining locked node must be an ability badge —
-    // ability nodes never carry lock rules, but unearned stages stay "locked".
+    // locked() = milestones the player has not earned yet. All 7 remaining
+    // era stages were granted above, so every still-unearned node must be an
+    // ability badge — abilities never depend on era milestones.
     var ERAS = ['survival_age', 'mechanical_age', 'electric_age', 'information_age', 'heavy_industry_age', 'atomic_age', 'space_age', 'quantum_age'];
     var eraStillLocked = [];
     var lockedNow = ProgressiveStages.locked(player);

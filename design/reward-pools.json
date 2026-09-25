@@ -96,12 +96,11 @@
    "stage": "space_age",
    "rolls": [2, 3],
    "entries": [
-    { "item": "aa_desh_ingot", "weight": 25, "count": [2, 5] },
-    { "item": "aa_ostrum_ingot", "weight": 20, "count": [1, 3] },
-    { "item": "aa_calorite_ingot", "weight": 15, "count": [1, 2] },
-    { "item": "diamond", "weight": 20, "count": [3, 6] },
-    { "item": "aa_etrionic_core", "weight": 10, "count": 1 },
-    { "item": "gz_oxygen_can", "weight": 10, "count": 1 }
+    { "item": "diamond", "weight": 30, "count": [3, 6] },
+    { "item": "gz_oxygen_can", "weight": 14, "count": [1, 2] },
+    { "item": "ad_astra:fuel_bucket", "weight": 12, "count": [1, 2] },
+    { "item": "ic2_lapotron_crystal", "weight": 10, "count": 1 },
+    { "item": "minecraft:netherite_scrap", "weight": 8, "count": [1, 2] }
    ],
    "rare_rolls": 1,
    "rare_entries": [

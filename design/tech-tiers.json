@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "comment": "What each stage unlocks. Keys are stage ids from content.json; values are semantic keys resolved via semantic-map.json. Milestone components are never locked (they are the evidence that grants the NEXT stage).",
+  "comment": "Design metadata only - NOT runtime locks. Starforge uses a pure soft-lock model: nothing here gates item use, block placement, recipes, or dimension entry at runtime. Entries record the era at which each item/block is expected to become AFFORDABLE through its recipe chain (materials, energy, machine dependencies) or - for dimensions - reachable via rocket tier/fuel/oxygen requirements. Quest `suggested_stage` values and reward tiers are validated against this table so guidance matches the real economy. Milestone components sit at the end of each era (they are the evidence that marks the NEXT stage).",
   "survival_age": {
     "items": [],
     "blocks": [],
@@ -108,7 +108,7 @@
     "items": [
       "aa_nasa_workbench", "aa_launch_pad", "aa_oxygen_loader", "aa_oxygen_distributor",
       "aa_oxygen_gear", "aa_compressor", "aa_energizer", "aa_cryo_freezer", "aa_water_pump",
-      "aa_fuel_refinery", "aa_etrionic_blast_furnace",
+      "aa_fuel_refinery", "aa_coal_generator", "aa_solar_panel", "aa_etrionic_blast_furnace",
       "aa_engine_frame", "aa_steel_engine", "aa_desh_engine", "aa_ostrum_engine", "aa_calorite_engine",
       "aa_nose_cone", "aa_rocket_fin", "aa_gas_tank",
       "aa_steel_tank", "aa_desh_tank", "aa_ostrum_tank", "aa_calorite_tank",

@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "comment": "Progression map single source. stages = T0-T7 era tree (the only tech gates; locks live in stage-locks.json). abilities = capability badges the team can establish in parallel; they MUST NOT gate eras and carry no lock rules. dependencies may mix era+ability ids for abilities; era dependencies may only reference eras.",
+ "comment": "Progression map single source. stages = T0-T7 era tree recorded as TEAM MILESTONES ONLY - pure soft-lock model: era/ability nodes never lock items, blocks, recipes, screens, dimensions or trades at runtime; access is shaped by recipes, materials, energy, machine chains and survival requirements (design/tech-tiers.json documents the intended affordability order). abilities = capability badges the team can establish in parallel; they MUST NOT gate eras. dependencies may mix era+ability ids for abilities; era dependencies may only reference eras.",
  "categories": [
   { "id": "civilization", "name_key": "modpack.map.category.civilization" },
   { "id": "military", "name_key": "modpack.map.category.military" },
@@ -210,7 +210,8 @@
     { "preview_key": "modpack.stage.space_age.preview.2", "verify": ["aa_space_suit_chest"] },
     { "preview_key": "modpack.stage.space_age.preview.3", "verify": ["aa_fuel_refinery"] },
     { "preview_key": "modpack.stage.space_age.preview.4", "verify": ["earth_orbit"] },
-    { "preview_key": "modpack.stage.space_age.preview.5", "verify": [] }
+    { "preview_key": "modpack.stage.space_age.preview.5", "verify": [] },
+    { "preview_key": "modpack.stage.space_age.preview.6", "verify": ["aa_coal_generator", "aa_solar_panel"] }
    ],
    "recommended_routes": ["space", "exploration", "agriculture"],
    "next_steps_key": "modpack.stage.space_age.next",

@@ -111,8 +111,9 @@ function validate() {
   assert.equal(content.planets.length, 8);
   const stages = new Map(design.stages.map((stage) => [stage.id, stage]));
   const tierOf = (id) => stages.get(id).tier;
-  // Every node on the progression map (eras + abilities). Eras are the only
-  // tech gates; abilities may depend on anything, eras on eras only.
+  // Every node on the progression map (eras + abilities). Stages are
+  // milestones only — nothing gates gameplay; abilities may depend on
+  // anything, eras on eras only.
   const nodeIds = new Set([...stageIds, ...abilityIds]);
   const nodes = new Map(allNodes(design).map((n) => [n.id, n]));
   for (const ab of design.abilities) assert(!stageIds.has(ab.id), `${ab.id}: ability id collides with an era stage`);
@@ -120,7 +121,7 @@ function validate() {
 
   // ---------- chapters ----------
   const sm = parse('design/semantic-map.json');
-  const locks = parse('design/stage-locks.json');
+  const tiers = parse('design/tech-tiers.json');
   const regItems = new Set(parse('registry-export/items.json'));
   const regDims = new Set(parse('registry-export/dimensions.json'));
   const regEnts = new Set(parse('registry-export/entity_types.json'));
@@ -138,16 +139,17 @@ function validate() {
     const id = sm.dimensions[ref] ?? (ID_RE.test(ref) ? ref : null);
     return id && regDims.has(id) ? id : null;
   };
-  // item semantic key -> stage id that unlocks it (absent = ungated)
-  const lockedAt = {};
-  for (const [stage, lock] of Object.entries(locks)) {
-    for (const key of lock.items ?? []) assert(!lockedAt[key], `${key}: locked by two stages`);
-    for (const key of lock.items ?? []) lockedAt[key] = stage;
+  // item semantic key -> era id where it is expected to become affordable
+  // (tech-tiers.json is design metadata only — nothing is hard-locked at runtime)
+  const tierAt = {};
+  for (const [stage, tier] of Object.entries(tiers)) {
+    for (const key of tier.items ?? []) assert(!tierAt[key], `${key}: listed in two tiers`);
+    for (const key of tier.items ?? []) tierAt[key] = stage;
   }
   const availableBy = (ref, stageId, ctx) => {
-    if (!lockedAt[ref]) return; // literal or ungated refs cannot be checked offline
-    assert(tierOf(lockedAt[ref]) <= tierOf(stageId),
-      `${ctx}: ${ref} unlocks at ${lockedAt[ref]}, later than suggested stage ${stageId}`);
+    if (!tierAt[ref]) return; // literal or unlisted refs cannot be checked offline
+    assert(tierOf(tierAt[ref]) <= tierOf(stageId),
+      `${ctx}: ${ref} sits at tier ${tierAt[ref]}, later than suggested stage ${stageId}`);
   };
 
   const orders = new Set();
@@ -202,10 +204,10 @@ function validate() {
   }
   assert(!ancestors('quantum_age').has('space_age'), 'Earth quantum route depends on space');
   assert(!ancestors('space_age').has('quantum_age'), 'Space bootstrap depends on quantum technology');
-  // Locks only ever attach to era stages — abilities must never gate content.
-  for (const k of Object.keys(locks)) {
+  // Tier tables only ever attach to era stages — abilities carry no tiering.
+  for (const k of Object.keys(tiers)) {
     if (k === 'schema_version' || k === 'comment') continue;
-    assert(stageIds.has(k), `stage-locks: ${k} is not an era stage`);
+    assert(stageIds.has(k), `tech-tiers: ${k} is not an era stage`);
   }
 
   // ---------- ability nodes (capability branches of the same map) ----------

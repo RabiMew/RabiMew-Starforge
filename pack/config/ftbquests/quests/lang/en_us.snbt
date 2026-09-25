@@ -99,7 +99,7 @@
 	quest.04678E0F669135E0.quest_subtitle: "Suggested stage: Survival Age"
 	quest.13C6FDBBC0A6A1F8.title: "Open the Progression Map"
 	quest.13C6FDBBC0A6A1F8.quest_desc: [
-		"The button left of the inventory GUI opens the ProgressiveStages map: the era spine, capability branches and every unlock condition live there. The questbook only explains routes."
+		"The button left of the inventory GUI opens the ProgressiveStages map: the era spine, capability branches and every milestone condition live there. Stages are milestones only — the questbook explains routes while everything stays gated by real materials and energy."
 		""
 		"{\"text\":\"· \",\"color\":\"gray\",\"italic\":false,\"extra\":[{\"text\":\"Press \"},{\"keybind\":\"key.progressivestages.open_tree\"},{\"text\":\" to open the ProgressiveStages map.\"}]}"
 		""
@@ -483,6 +483,7 @@
 		"Build a safe station for storage, research, and transfers. Enemies do not appear by default, but oxygen and power are still required. Special events only occur when explicitly enabled."
 		""
 		"{\"text\":\"» See the manual: The Safe Station\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"4B5A9C30A8FBCA52\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"The Safe Station\"}}"
+		"{\"text\":\"» See the manual: Outpost Power\",\"color\":\"aqua\",\"italic\":false,\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2659054093D4E114\"},\"hoverEvent\":{\"action\":\"show_text\",\"value\":\"Outpost Power\"}}"
 	]
 	quest.7FD9F6B5176631DF.quest_subtitle: "Suggested stage: Space Age"
 	quest.0E6767E1E6DA1ED6.title: "Make Colonies Self-Sufficient"
@@ -928,14 +929,19 @@
 		"After chests and barrels, use drawers and versatile storage for bulk materials. Capacity, filtering, and compression upgrades open with the Electrical Age and consume industrial components. A digital network reads existing warehouses instead of replacing them."
 	]
 	quest.453A61A0B4D9C159.quest_subtitle: "Progression and Survival"
+	quest.2659054093D4E114.title: "Outpost Power"
+	quest.2659054093D4E114.quest_desc: [
+		"Planetary outposts generate locally: the Ad Astra coal generator burns coal for steady FE, and the solar panel generates during daylight with output that scales per planet (strongest in orbit, weakest on Venus). Both expose native FE caps - wire them straight into the FastPipes energy grid to run oxygen distributors, AE2 and other machines. IE/IC2/BuildCraft remain the industrial mains generators; outpost power supplements, never replaces, the main grid. Watch storage at night: panels stop when the sun is down or the sky is blocked."
+	]
+	quest.2659054093D4E114.quest_subtitle: "Power, Oil and Networks"
 	quest.0E8B4E397AC0FBCA.title: "One Network: FastPipes"
 	quest.0E8B4E397AC0FBCA.quest_desc: [
-		"FastPipes is the pack's default general-purpose network: one pipe family carries items, fluids and FE. Extractor attachments pull from containers and machines with filters, redstone control and distribution modes; inserter attachments set delivery priority; sensor/void attachments handle signals and overflow; the terminal turns a pipe network into a searchable mini-warehouse. IE conveyors and fluid pipes stay for visible industrial lines; BuildCraft pipes remain a legacy option around its specialty machines (quarry, pump); Railcraft owns long-distance bulk freight; AE2 owns digital storage and autocrafting, not ordinary pipework. Power runs on one public FE grid: FastPipes energy pipes connect IE, Ad Astra and IC2CRE (native FE port) directly; BuildCraft engines output FE straight onto the grid and its machines accept FE directly (1 MJ = 10 FE); the MJ dynamo and FE engine remain optional explicit converters; Refurbished appliances join through the Energized Furniture transformer. Railcraft machines run on their own Charge network and never touch FE pipes directly - drop an FE <-> Charge Converter between the grid and a charge frame to feed electric track and charge devices, or to pull surplus Charge back out as FE."
+		"FastPipes is the pack's default general-purpose network: one pipe family carries items, fluids and FE. Extractor attachments pull from containers and machines with filters, redstone control and distribution modes; inserter attachments set delivery priority; sensor/void attachments handle signals and overflow; the terminal turns a pipe network into a searchable mini-warehouse. IE conveyors and fluid pipes stay for visible industrial lines; BuildCraft pipes remain a legacy option around its specialty machines (quarry, pump); Railcraft owns long-distance bulk freight; AE2 owns digital storage and autocrafting, not ordinary pipework. Power runs on one public FE grid: FastPipes energy pipes connect IE, Ad Astra and IC2CRE (native FE port) directly; Ad Astra coal generators and solar panels feed FE in through the same native interface as planetary outpost power; BuildCraft engines output FE straight onto the grid and its machines accept FE directly (1 MJ = 10 FE); the MJ dynamo and FE engine remain optional explicit converters; Refurbished appliances join through the Energized Furniture transformer. Railcraft machines run on their own Charge network and never touch FE pipes directly - drop an FE <-> Charge Converter between the grid and a charge frame to feed electric track and charge devices, or to pull surplus Charge back out as FE."
 	]
 	quest.0E8B4E397AC0FBCA.quest_subtitle: "Power, Oil and Networks"
 	quest.28C9F6D61C4E55C2.title: "Backpacks and Expedition Kits"
 	quest.28C9F6D61C4E55C2.quest_desc: [
-		"Backpacks serve mining, engineering, exploration, expeditions, and colony construction. Basic packs open early; capacity, pickup, and resupply upgrades unlock by stage. A backpack is not factory logistics or a portable crafting network."
+		"Backpacks serve mining, engineering, exploration, expeditions, and colony construction. Basic packs open early; capacity, pickup, and resupply upgrades open by tier. A backpack is not factory logistics or a portable crafting network."
 	]
 	quest.28C9F6D61C4E55C2.quest_subtitle: "Progression and Survival"
 	quest.1932C9CEA2E264BB.title: "The Unified Oil Economy"
@@ -995,7 +1001,7 @@
 	quest.2E55B63F9D911701.quest_subtitle: "Hordes and Defense"
 	quest.60BD0CCFC3034959.title: "EOS Dawn Goddess Lab Weapons"
 	quest.60BD0CCFC3034959.quest_desc: [
-		"The EOS arsenal is the heavy sci-fi layer: gauss firearms (HG-57, AR-68, MG-85), ELP plasma weapons (ELP-13 to ELP-72), and exotic ordnance (Helena's Nail, Clover Cross, Achilles). They unlock via staged industrial materials and cost far more ammunition than conventional guns. EOS recipes run on the EOS Printer workbench — craft it from polished deepslate, iron, copper and yellow glass."
+		"The EOS arsenal is the heavy sci-fi layer: gauss firearms (HG-57, AR-68, MG-85), ELP plasma weapons (ELP-13 to ELP-72), and exotic ordnance (Helena's Nail, Clover Cross, Achilles). They open up through staged industrial materials and cost far more ammunition than conventional guns. EOS recipes run on the EOS Printer workbench — craft it from polished deepslate, iron, copper and yellow glass."
 	]
 	quest.60BD0CCFC3034959.quest_subtitle: "Hordes and Defense"
 	quest.725FD622502D6892.title: "Choosing Guard Weapons"
@@ -1045,7 +1051,7 @@
 	quest.4BD992661353F0B8.quest_subtitle: "Rail Logistics"
 	quest.344ED9F136392B5D.title: "Space Utility Gear"
 	quest.344ED9F136392B5D.quest_desc: [
-		"Oxygen cans are portable oxygen storage, fuel loaders refill rockets automatically, and rocket sensors plus gravity normalizers simplify base automation. These devices unlock in the Space Age and still cost real materials."
+		"Oxygen cans are portable oxygen storage, fuel loaders refill rockets automatically, and rocket sensors plus gravity normalizers simplify base automation. These devices become practical in the Space Age and still cost real materials."
 	]
 	quest.344ED9F136392B5D.quest_subtitle: "Spaceflight and Hazards"
 	quest.2BFD78A0764A92FF.title: "Asteroid Belt Hazards"

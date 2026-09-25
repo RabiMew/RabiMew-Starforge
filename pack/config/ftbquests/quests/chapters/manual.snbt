@@ -152,9 +152,26 @@
 			icon: {
 				id: "ftbquests:book"
 			}
-			id: "0E8B4E397AC0FBCA"
+			id: "2659054093D4E114"
 			x: 4d
 			y: 3d
+			shape: "rsquare"
+			optional: true
+			min_width: 360
+			tasks: [
+				{
+					id: "76642EC3A80C8D84"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: {
+				id: "ftbquests:book"
+			}
+			id: "0E8B4E397AC0FBCA"
+			x: 4d
+			y: 4.5d
 			shape: "rsquare"
 			optional: true
 			min_width: 360
@@ -188,7 +205,7 @@
 			}
 			id: "1932C9CEA2E264BB"
 			x: 4d
-			y: 4.5d
+			y: 6d
 			shape: "rsquare"
 			optional: true
 			min_width: 360
@@ -783,7 +800,7 @@
 			}
 			id: "3D52D8EF523B1359"
 			x: 4d
-			y: 6d
+			y: 7.5d
 			shape: "rsquare"
 			optional: true
 			min_width: 360
@@ -800,7 +817,7 @@
 			}
 			id: "53235BFFFF0D5717"
 			x: 4d
-			y: 7.5d
+			y: 9d
 			shape: "rsquare"
 			optional: true
 			min_width: 360

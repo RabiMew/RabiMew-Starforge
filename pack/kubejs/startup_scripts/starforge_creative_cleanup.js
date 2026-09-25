@@ -31,10 +31,10 @@ for (const tab of ['mg', 'ammo', 'scope', 'muzzle', 'stock', 'grip',
 
 // SF-36: disabled generation devices (recipes removed in starforge_recipes.js,
 // viewer entries hidden in starforge_viewer_cleanup.js). They stay registered
-// so existing saves/blocks keep working, but leave the creative tabs.
+// so existing saves/blocks keep working, but leave the creative tabs. Ad Astra
+// coal_generator/solar_panel are intentionally NOT listed — restored as
+// planetary outpost generators on the FE grid.
 const sfDisabledGeneration = new Set([
-  'ad_astra:coal_generator',
-  'ad_astra:solar_panel',
   'refurbished_furniture:light_electricity_generator',
   'refurbished_furniture:dark_electricity_generator',
   'ae2:vibration_chamber'
