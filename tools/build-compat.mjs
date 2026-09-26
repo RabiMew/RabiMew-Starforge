@@ -24,7 +24,7 @@ const VERSION = '0.1.0';
 const JAR_NAME = `starforge-compat-${VERSION}.jar`;
 
 // compile-only mod deps resolved by filename prefix under mods/
-const COMPILE_DEPS = ['The-Hordes', 'tacz-neoforge', 'taczturrets', 'guardvillagerstaczsupport', 'guardvillagers', 'progressivestages', 'geckolib', 'refurbished_furniture', 'framework', 'energizedfurniture', 'adastra', 'railcraft'];
+const COMPILE_DEPS = ['The-Hordes', 'Atlas-Lib', 'tacz-neoforge', 'taczturrets', 'guardvillagerstaczsupport', 'guardvillagers', 'progressivestages', 'geckolib', 'refurbished_furniture', 'framework', 'energizedfurniture', 'adastra', 'railcraft'];
 // nested jarJar deps to extract into compat/build/deps for javac (e.g. SBL is
 // shaded inside the taczturrets jar, so it is never a top-level mods/ file)
 const JARJAR_DEPS = [{ jarPrefix: 'taczturrets', memberPrefix: 'META-INF/jarjar/smartbrainlib-' }];

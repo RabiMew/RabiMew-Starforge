@@ -1,0 +1,40 @@
+[
+	"minecraft:zombie-35-0-0",
+	"minecraft:zombie_villager-4-0-0",
+	"minecraft:husk-8-0-0",
+	"minecraft:skeleton-10-0-0",
+	"minecraft:drowned-6-0-0",
+	"minecraft:creeper-6-0-0",
+	"minecraft:stray-6-0-0",
+	"minecraft:bogged-6-0-0",
+	"minecraft:witch-3-0-0",
+	"mutantmonsters:mutant_zombie-2-0-0",
+	{
+		"entity": "minecraft:zombie_horse",
+		"weight": 2,
+		"first_day": 10,
+		"last_day": 0,
+		"nbt": "{Passengers:[{id:'minecraft:zombie'}]}"
+	},
+	{
+		"entity": "minecraft:skeleton_horse",
+		"weight": 2,
+		"first_day": 15,
+		"last_day": 0,
+		"nbt": "{Passengers:[{id:'minecraft:stray',HandItems:[{id:'minecraft:bow',Count:1b}]}]}"
+	},
+	{
+		"entity": "minecraft:cave_spider",
+		"weight": 3,
+		"first_day": 15,
+		"last_day": 0,
+		"nbt": "{Passengers:[{id:'minecraft:bogged',HandItems:[{id:'minecraft:bow',Count:1b}]}]}"
+	},
+	{
+		"entity": "minecraft:phantom",
+		"weight": 2,
+		"first_day": 20,
+		"last_day": 0,
+		"nbt": "{Passengers:[{id:'minecraft:creeper'}]}"
+	}
+]

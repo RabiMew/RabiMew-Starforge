@@ -20,6 +20,8 @@ import com.starforge.compat.net.StarforgeNet;
  *   <li>{@code electric_burner}: FE-powered heat source for Farmer's Delight
  *       (works via FD's own HEAT_SOURCES tag + vanilla LIT blockstate).</li>
  *   <li>{@code horde_alarm}: redstone source driven by The Hordes start/end events.</li>
+ *   <li>{@code starforge:stage} horde-script condition: ProgressiveStages team
+ *       era stages as spawn-table gates (replaces the unbuilt GameStages path).</li>
  *   <li>Refurbished computer programs (Starforge Control, Security) plus a
  *       NeoForge fluid-capability bridge for Refurbished sinks/basins/toilets/baths.</li>
  *   <li>{@code charge_bridge}: bidirectional FE &lt;-&gt; Railcraft Charge
@@ -46,6 +48,9 @@ public class StarforgeCompat {
         if (ModList.get().isLoaded("hordes")) {
             NeoForge.EVENT_BUS.addListener(HordeHooks::onHordeStart);
             NeoForge.EVENT_BUS.addListener(HordeHooks::onHordeEnd);
+            if (ModList.get().isLoaded("progressivestages")) {
+                HordeStageCondition.register();
+            }
         }
         if (ModList.get().isLoaded("refurbished_furniture")) {
             StarforgePrograms.register();

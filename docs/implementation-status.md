@@ -85,7 +85,7 @@
 ## 实测失败 / 技术降级记录
 
 - ~~**DefenseTurrets 炮塔无弹药/能量消耗**~~ **已随模组移除而关闭**：原炮塔 BE `shoot` 不消耗任何物品（原生无限射击），Mixin 注入方案不再需要。继任者 TACZ Turrets 原生消耗弹药：装入 TaCZ 枪后从脚下/相邻容器取弹（服务端实测：AK47 与 DRG gk2 均从下方箱子取弹并击杀目标），“弹药经济”由继任模组原生实现，无需附属。
-- **The Hordes 阶段化组成受限**：其 `gamestages:gamestage` 条件依赖 darkhax GameStages API（未安装；与 ProgressiveStages 是两套体系）。降级：组成表用 `first_day/last_day` 天数窗口做固定档位升级；真正的「按团队科技阶段换表」需要 compat 层或事件驱动调度（设计文档已预留该适配路径）。
+- ~~**The Hordes 阶段化组成受限**~~ **2026-09-25 已实现**：`starforge_compat` 新增 `starforge:stage` 脚本条件（`DataRegistry.registerConditionDeserializer` 公开钩子，镜像上游 `gamestages:gamestage` 的 JSON 形式，后端 `ProgressiveStagesAPI.hasStage`——无 Mixin、无轮询）。组成表拆为五档时代表，脚本按团队时代阶段换表（末节）；原 `first_day/last_day` 固定档位降级方案随表重写下线。
 - **怪潮预算 B=12+0.8H 未实现**：基地威胁值 H 需要基地登记/设备摘要等适配层，当前用固定 spawnAmount/days 近似；文档允许 MVP 固定档位，不宣称动态威胁已实现。
 - **下界/末地怪潮未单独关闭**：Hordes 无维度条件，In Control 无法区分怪潮来源；记为已知缺口（玩家在对应维度被追潮属于边缘情况）。
 - 其余历史记录见 git 历史与上文「正在实现/待验证」。
@@ -100,7 +100,7 @@
 ## 尚未实现（按批次）
 
 - P1 收尾：锁 enforcement 实机验证、AE2 冷启动链路实玩验证（新玩家从 T0 合成链是否全程可通）。
-- P2 收尾：starforge-compat 附属已首轮交付（红石怪潮警报 + 厨房动态热源，服务端实测通过，见末节）；剩余项：基地威胁 H、事件预算、怪潮阶段化、空间站临时事件白名单；真实怪潮多人实机验收。（炮塔弹药消耗已由 TACZ Turrets 原生解决，不再是 Mixin 缺口。）
+- P2 收尾：starforge-compat 附属已首轮交付（红石怪潮警报 + 厨房动态热源，服务端实测通过，见末节）；剩余项：基地威胁 H、事件预算、空间站临时事件白名单、真实怪潮多人实机验收。（炮塔弹药消耗已由 TACZ Turrets 原生解决，不再是 Mixin 缺口；怪潮阶段化 2026-09-25 已实现，末节。）
 - P3–P6：T4–T7 高级链条实测、Ad Astra 首航**实机**验证（配方图闭环已验证，见「地球闭环实测」）、殖民岗位、任务、发行打包、性能实测。
 - 客户端实机验证已补（Prism 离线账号 `RabiTest`，Starforge-DOtest 实例）：主菜单 → `--quickPlayMultiplayer` 直连专用服务器 → 进世界 → EMI/JEMI 80 个 JEI 分类 + 原生插件共 63630 配方 → Default Options 22 条键位全量生效 0 错误。皮肤拉取/3D 层渲染/小地图雷达实测关闭画面仍待人工目检。
 
@@ -740,3 +740,27 @@ FTB Library SNBTConfig 直接读 `config/ftbessentials.snbt`（`defaultconfigs/f
 
 - [ ] 真实玩家端到端验证（FakePlayer 触发 `PlayerHooks.isFake` 早退，家园写入/TPA 双人握手/死亡回溯需真人客户端复测）。
 - [ ] 若未来需要按队伍/权限组差异化家上限与冷却，再引入 FTB Ranks 并下发 `ftbessentials.*` 节点（当前全员配置值）。
+
+## 2026-09-25 怪潮阶段化 + 模组版本增量（已实现，dedicated server 实测 7/7 通过）
+
+### 模组版本增量
+
+- `audit-versions` 例行扫出 4 个可升级 release，经 `fetch-mods --only` 落锁、`audit-deps` 全量通过（118 jar）：
+  - Sophisticated Backpacks 3.25.78.2107 → **3.26.3.2158**
+  - Balm 21.0.65 → **21.0.66**
+  - Moonlight Lib 3.6.8 → **3.6.9**
+  - AzureLib 3.1.11 → **3.1.12**
+- 服务端 `Done (1.965s)` 零新错误。注意：Windows 上 `taczpackupgrader` 首次启动若 `temp/` 残留解包目录会 `AccessDeniedException` 崩于 mod construction——删掉 `run/server/taczpackupgrader/temp` 重启即可（瞬时文件锁，非版本兼容问题）。
+
+### 怪潮阶段化（`starforge:stage` 脚本条件 + 五档时代表）
+
+- **条件实现**：`compat/HordeStageCondition.java` 经 `DataRegistry.registerConditionDeserializer` 公开钩子注册 `starforge:stage`，JSON 形式与上游 `gamestages:gamestage` 一致（`{"name":"starforge:stage","value":"<stage id>"}`，value 经 `ValueGetter` 可接动态值）；`apply()` 用 `ProgressiveStagesAPI.hasStage(ctx.getPlayer(), StageId.parse(id))`——team scope 时代阶段按目标玩家团队解析；无 Mixin、无轮询、仅 hordes+progressivestages 双装时注册。`build-compat` 编译依赖补 `Atlas-Lib`（`DataType`/`ValueGetter` 签名需要）。
+- **表拆分**（`pack/config/hordes/.../tables/`）：原单表天数窗口降级方案 → 按 defense-and-colonies.md 威胁梯度拆五档——`default`（T0–T1 纯近战：zombie/zombie_villager/husk）、`default_t2`（electric_age：+skeleton/drowned 远程、spider 快攻）、`default_t3`（information_age 覆盖 T3–T4：+creeper/stray/bogged 佯攻侧翼、witch 事件日 15+）、`default_t5`（atomic_age：+mutant_zombie、zombie_horse 僵尸骑士）、`default_t6`（space_age 覆盖 T6–T7：+skeleton_horse 流髑弓手、洞穴蜘蛛沼骸骑士、幻翼携苦力怕——多方向错峰压力）。
+- **脚本调度**：`scripts/default.json` 按时代阶段升序逐条 `set_spawntable`（后匹配覆盖先匹配，阶段链单调故最高达成档生效）；海洋群系 drowned 覆盖保持在最后。
+- **T6–T7 行星生态缺口（如实记录）**：编队升级已按阶段切换，但"按行星生态定制编队"需要维度条件——The Hordes 无 dimension 条件/维度 ValueGetter，后续可在 compat 加 `starforge:dimension` 条件再分行星表；当前太空时代共用 default_t6。
+- **验证**：`starforge_horde_stage_test.js`（`kubejs/hordetest.json` 开启自动跑）——FakePlayer + `HordeSavedData.getEvent` 真 HordeEvent，逐档 `grantBypass` 后构造真 `HordeBuildSpawnDataEvent` 经 `HordeScriptLoader.applyScripts` 全链路求值并断言 `spawnData.getTable()`：7/7 OK（无阶段/`mechanical_age`→`hordes:default`，`electric_age`→`default_t2`，`information_age`→`default_t3`，`atomic_age`→`default_t5`，`space_age`→`default_t6`）。脚本载入零解析错误，服务端 `Done` 正常。
+
+### 待办
+
+- [ ] 真实怪潮事件内玩家端实机复核（FakePlayer 已走通条件→表选择全链路；真实波次生成/多基地并发待多人验收）。
+- [ ] T6+ 行星生态编队：`starforge:dimension` 条件 + 分行星表（需先定各星球编队设计）。

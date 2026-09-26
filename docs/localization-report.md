@@ -96,7 +96,7 @@
 | ftb_library | ftblibrary | assets | 113 | 113 | - | - | - | - | 完整 |
 | ftb_teams | ftbteams | assets | 112 | 无 | 112 | - | - | - | 完整 |
 | ftb_xmod_compat | ftbxmodcompat | assets | 0 | 无 | - | - | - | - | 完整 |
-| ftb_essentials | ftbessentials | assets | 94 | 94 | - | - | - | - | 完整 |
+| ftb_essentials | ftbessentials | assets | 94 | 94 | 12 | - | - | - | 完整 |
 | sophisticatedcore | sophisticatedcore | assets | 318 | 318 | - | - | - | - | 完整 |
 | balm | balm | assets | 36 | 无 | 36 | - | - | - | 完整 |
 | searchables | searchables | assets | 1 | 1 | - | - | - | - | 完整 |

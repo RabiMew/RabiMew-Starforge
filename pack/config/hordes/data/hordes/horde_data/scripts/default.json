@@ -7,6 +7,54 @@
         "conditions": []
     },
     {
+        "function": "hordes:set_spawntable",
+        "value": [
+            "hordes:default_t2"
+        ],
+        "conditions": [
+            {
+                "name": "starforge:stage",
+                "value": "modpack:electric_age"
+            }
+        ]
+    },
+    {
+        "function": "hordes:set_spawntable",
+        "value": [
+            "hordes:default_t3"
+        ],
+        "conditions": [
+            {
+                "name": "starforge:stage",
+                "value": "modpack:information_age"
+            }
+        ]
+    },
+    {
+        "function": "hordes:set_spawntable",
+        "value": [
+            "hordes:default_t5"
+        ],
+        "conditions": [
+            {
+                "name": "starforge:stage",
+                "value": "modpack:atomic_age"
+            }
+        ]
+    },
+    {
+        "function": "hordes:set_spawntable",
+        "value": [
+            "hordes:default_t6"
+        ],
+        "conditions": [
+            {
+                "name": "starforge:stage",
+                "value": "modpack:space_age"
+            }
+        ]
+    },
+    {
         "function": "hordes:multiple",
         "value": [
             {
