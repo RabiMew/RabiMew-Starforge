@@ -764,3 +764,11 @@ FTB Library SNBTConfig 直接读 `config/ftbessentials.snbt`（`defaultconfigs/f
 
 - [ ] 真实怪潮事件内玩家端实机复核（FakePlayer 已走通条件→表选择全链路；真实波次生成/多基地并发待多人验收）。
 - [ ] T6+ 行星生态编队：`starforge:dimension` 条件 + 分行星表（需先定各星球编队设计）。
+
+## 2026-09-26 IC2CRE 上游停用 → 自托管镜像（已生效）
+
+- **事件**：`BigFish520/IC2-CRE` 作者移除全部发布、归档仓库（2026-09-26），README 宣布 2026-09-30 删除项目；唯一存档内容只剩停用声明（repo zipball 仅 99 B README）。`releases/download/Dev-0.4/...` 404——直接击穿 0.1.0/0.1.1 的全新安装路径。
+- **合法性**：jar 内 `LICENSE` = MIT（© 2020–2026 IC2:CRE / BigFish520）——允许带署名再分发。
+- **处置**：本仓库 `vendor-deps` release 托管字节一致的 jar（sha256 `e08d68bc…` 未变，size 7,902,401）+ 提取的 LICENSE + 上游源码快照。`mod-list.json` 源改为 `github` → 本仓库 `vendor-deps`，新增 `license: "MIT"`；`resolveGithub` 增加 `src.license`/`src.version` 覆盖字段。
+- **分发效果**：标准版 mrpack `downloads[]` 指向镜像（GitHub 全局可达）；MIT 属 PERMISSIVE → **CN 版自动内嵌 jar**（CN 嵌入式 70→71、远程 43→42）——正好规避 GitHub 对国内不可达的问题。服务端 zip 不含第三方 jar，setup 走镜像 URL。
+- 0.1.1 产物已重新打包上传；0.1.0 release 顶部加了弃用警告指向 0.1.1。

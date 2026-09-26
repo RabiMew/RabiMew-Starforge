@@ -102,8 +102,8 @@ async function resolveGithub(src) {
   const re = new RegExp(src.asset);
   const asset = rel.assets.find((a) => re.test(a.name));
   if (!asset) throw new Error(`github:${src.repo}@${src.tag}: asset ${src.asset} not found`);
-  return { version: src.tag, filename: asset.name, url: asset.browser_download_url,
-    page: rel.html_url, license: 'see-repo', deps: [], distribution: 'github_release' };
+  return { version: src.version ?? src.tag, filename: asset.name, url: asset.browser_download_url,
+    page: rel.html_url, license: src.license ?? 'see-repo', deps: [], distribution: 'github_release' };
 }
 
 async function resolveFtbMaven(src) {

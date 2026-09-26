@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-25T14:03:36.323Z",
+  "generated_at": "2026-09-26T03:23:51.901Z",
   "minecraft": "1.21.1",
   "loader": "neoforge",
   "neoforge_version": "21.1.251",
@@ -15,15 +15,15 @@
       "version": "Dev-0.4",
       "filename": "IC2CRE_0.4-dev_NeoForge_1.21.1.jar",
       "size": 7902401,
-      "sha1": "cb913197f3bde1f90fdb5551d221b9ce0f3cfa6b",
       "sha256": "e08d68bcc58004e7d58f57022733f2ce880048aa5cdd4afe3ea3850f7bbbfb25",
       "sha512": "57642082be6bd87416b2de621ef0d9e9d712a31e387e25c9b1f7858945ed25dfec05dbbba1b4656890ac1ad2b63eeba9ec2d6dd1433838919e1b0a5f56cbbbf7",
-      "download_url": "https://github.com/BigFish520/IC2-CRE/releases/download/Dev-0.4/IC2CRE_0.4-dev_NeoForge_1.21.1.jar",
-      "project_page": "https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4",
-      "license": "see-repo",
+      "download_url": "https://github.com/RabiMew/RabiMew-Starforge/releases/download/vendor-deps/IC2CRE_0.4-dev_NeoForge_1.21.1.jar",
+      "project_page": "https://github.com/RabiMew/RabiMew-Starforge/releases/tag/vendor-deps",
+      "license": "MIT",
       "distribution": "github_release",
       "dependencies": [],
-      "notes": null
+      "notes": "Upstream BigFish520/IC2-CRE discontinued: releases removed, repo archived 2026-09-26, deletion announced 2026-09-30. Jar is MIT (LICENSE in jar); byte-identical mirror hosted on our vendor-deps release — sha256 unchanged.",
+      "sha1": "cb913197f3bde1f90fdb5551d221b9ce0f3cfa6b"
     },
     {
       "key": "buildcraft",

@@ -13,10 +13,13 @@
       "side": "both",
       "source": {
         "type": "github",
-        "repo": "BigFish520/IC2-CRE",
-        "tag": "Dev-0.4",
-        "asset": "^IC2CRE_0\\.4-dev_NeoForge_1\\.21\\.1\\.jar$"
-      }
+        "repo": "RabiMew/RabiMew-Starforge",
+        "tag": "vendor-deps",
+        "asset": "^IC2CRE_0\\.4-dev_NeoForge_1\\.21\\.1\\.jar$",
+        "license": "MIT",
+        "version": "Dev-0.4"
+      },
+      "notes": "Upstream BigFish520/IC2-CRE discontinued: releases removed, repo archived 2026-09-26, deletion announced 2026-09-30. Jar is MIT (LICENSE in jar); byte-identical mirror hosted on our vendor-deps release — sha256 unchanged."
     },
     {
       "key": "buildcraft",

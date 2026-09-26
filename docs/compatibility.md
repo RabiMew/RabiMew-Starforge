@@ -6,7 +6,7 @@
 
 | 模组 | 本轮找到的候选 | 第一方证据 | 仍须验证 |
 | --- | --- | --- | --- |
-| IC2CRE | Dev-0.4，开发版 | [作者发布页](https://github.com/BigFish520/IC2-CRE/releases/tag/Dev-0.4) | 电压、mEU API、核电、UU、物品/流体注册名与配方可覆盖性 |
+| IC2CRE | Dev-0.4，开发版 | [镜像（上游已停用）](https://github.com/RabiMew/RabiMew-Starforge/releases/tag/vendor-deps) | 电压、mEU API、核电、UU、物品/流体注册名与配方可覆盖性 |
 | BuildCraft CE | 8.0.19 | [BCCE-team 发布页](https://github.com/BCCE-team/BuildCraft/releases/tag/8.0.19) | 对应 1.21.1 资产、MJ/FE、机器接口、采石场加载与管道可靠性 |
 | FastPipes | 1.3.7（NeoForge 1.21.1，Modrinth `fast-pipes`） | [Modrinth](https://modrinth.com/mod/fast-pipes) / [GitHub](https://github.com/bigenergy/fastpipes) | 已实装为默认通用管网；物品/流体/FE 真实传输已实测（见 implementation-status）；混合网络按单管瓶颈限速，附件含过滤/优先级/分流/红石控制 |
 | Immersive Engineering | 12.4.2-194 | [版本记录](https://modrinth.com/mod/immersiveengineering/version/uNRARSH2) | 配方序列化、重型成形、原油链需要的新增工序 |
@@ -127,7 +127,7 @@ Modrinth 数据使用官方 `/v2/project/{slug}/version` 接口并同时筛选 `
 
 FTB Quests 的作者页面明确指出 KubeJS、JEI 等集成需要 FTB XMod Compat；版本锁定时同时解析 FTB Library、FTB Teams 等实际依赖，不能仅凭核心模组名单装包。[FTB Quests 说明](https://www.curseforge.com/minecraft/mc-mods/ftb-quests-forge)
 
-其余库以选定文件元数据为准递归解析，不从其他 Minecraft 版本抄前置。本轮新增候选已从文件元数据解析出前置：Sophisticated Core（Sophisticated Storage/Backpacks）、Balm（Crafting Tweaks）、Searchables（Controlling）、Jade（Jade Addons）、Placebo（FastSuite）、Almanac（Let Me Despawn）；锁定时递归复核完整闭包。IC2CRE 已把 Energy Core 合入主体，API JAR 仅用于编译，不能当运行模组；1.21.1 的 Energy Control 子附属状态不能按 26.1.2 推断。[IC2CRE 发布说明](https://github.com/BigFish520/IC2-CRE/releases)
+其余库以选定文件元数据为准递归解析，不从其他 Minecraft 版本抄前置。本轮新增候选已从文件元数据解析出前置：Sophisticated Core（Sophisticated Storage/Backpacks）、Balm（Crafting Tweaks）、Searchables（Controlling）、Jade（Jade Addons）、Placebo（FastSuite）、Almanac（Let Me Despawn）；锁定时递归复核完整闭包。IC2CRE 已把 Energy Core 合入主体，API JAR 仅用于编译，不能当运行模组；1.21.1 的 Energy Control 子附属状态不能按 26.1.2 推断。上游 BigFish520/IC2-CRE 已于 2026-09-26 停止并归档（发布全撤、仓库宣布 2026-09-30 删除）；jar 为 MIT（LICENSE 在 jar 内），字节一致的镜像在本仓库 [vendor-deps release](https://github.com/RabiMew/RabiMew-Starforge/releases/tag/vendor-deps)，sha256 未变。
 
 默认配方查看器为 EMI（客户端侧），JEI 保留装载作为 API/插件兼容层（ftb-xmod-compat、BC CE、IC2CRE 等依赖其插件注册）。客户端放渲染与 UI 模组；公共内容、KubeJS 逻辑/资源、任务定义由同一构建源生成。服务端不加载纯客户端渲染依赖，客户端与服务器逻辑内容哈希必须一致。
 

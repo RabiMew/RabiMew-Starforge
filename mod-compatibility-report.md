@@ -217,7 +217,7 @@ Remaining expected warnings (documented, intentionally kept):
 ## Sources
 
 - Modrinth API v2 `project/{slug}/version` (per-mod channels above)
-- GitHub Releases: `BigFish520/IC2-CRE`, `BCCE-team/BuildCraft`
+- GitHub Releases: `RabiMew/RabiMew-Starforge` release `vendor-deps`（IC2CRE 镜像——上游 `BigFish520/IC2-CRE` 2026-09-26 停用归档、宣布 2026-09-30 删除；jar MIT、字节一致 sha256 未变）, `BCCE-team/BuildCraft`
 - FTB Maven: `maven.ftb.dev/releases/dev/ftb/mods/{artifact}/maven-metadata.xml`
 - NeoForge Maven: `maven.neoforged.net/releases/net/neoforged/neoforge/maven-metadata.xml`
 - Jar metadata: `manifest/jar-deps.json` (extracted `neoforge.mods.toml` dependencies)
